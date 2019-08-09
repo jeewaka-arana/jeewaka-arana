@@ -10,6 +10,7 @@ import { ProfileComponent } from './examples/profile/profile.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { DoctorprofilepageComponent } from './doctor/doctorprofilepage/doctorprofilepage.component';
 import{DoctoradminpageComponent }from './doctor/doctoradminpage/doctoradminpage.component';
+import {PatienthomeComponent} from './patient/patienthome/patienthome.component';
 
 
 const routes: Routes =[
@@ -22,7 +23,9 @@ const routes: Routes =[
     { path: 'user', component: LoginComponent },
     { path: 'home', component: ComponentsComponent },
     { path: 'doctorview', component: DoctorprofilepageComponent},
-    { path: 'doctoradmin', component:DoctoradminpageComponent }
+    { path: 'doctoradmin', component:DoctoradminpageComponent },
+    { path: 'patient', component:PatienthomeComponent }
+
 
     
 ];

@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DoctoradminpageComponent } from './doctor/doctoradminpage/doctoradminpage.component';
 import { DoctorprofilepageComponent } from './doctor/doctorprofilepage/doctorprofilepage.component';
+import { PatienthomeComponent } from './patient/patienthome/patienthome.component';
 
 
 
@@ -19,7 +20,8 @@ import { DoctorprofilepageComponent } from './doctor/doctorprofilepage/doctorpro
         AppComponent,
         NavbarComponent,
         DoctoradminpageComponent,
-        DoctorprofilepageComponent
+        DoctorprofilepageComponent,
+        PatienthomeComponent
      
     ],
     imports: [
