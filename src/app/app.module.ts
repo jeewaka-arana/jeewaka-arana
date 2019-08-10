@@ -12,6 +12,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DoctoradminpageComponent } from './doctor/doctoradminpage/doctoradminpage.component';
 import { DoctorprofilepageComponent } from './doctor/doctorprofilepage/doctorprofilepage.component';
 import { PatienthomeComponent } from './patient/patienthome/patienthome.component';
+import { AppointmentComponent } from './patient/appointment/appointment.component';
+import { AppStep2Component } from './patient/appointment/app-step2/app-step2.component';
+import { AppStep1Component } from './patient/appointment/app-step1/app-step1.component';
+import { AppStep3Component } from './patient/appointment/app-step3/app-step3.component';
+import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
+import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
+import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+
 
 
 
@@ -21,7 +29,15 @@ import { PatienthomeComponent } from './patient/patienthome/patienthome.componen
         NavbarComponent,
         DoctoradminpageComponent,
         DoctorprofilepageComponent,
-        PatienthomeComponent
+        PatienthomeComponent,
+        AppointmentComponent,
+        AppStep2Component,
+        AppStep1Component,
+        AppStep3Component,
+        SelectbynameComponent,
+        SelectbydiseaseComponent,
+        SearchdoctorComponent,
+        
      
     ],
     imports: [

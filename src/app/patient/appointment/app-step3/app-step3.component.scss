@@ -1,0 +1,94 @@
+// steps
+$progress-color: #E5E5E5;
+$progress-text-color: #999;
+$progress-border-color: #D4D4D1;
+$progress-border-style: dashed;
+$progress-border-width: 1px;
+$progress-number-padding: 4px 0 0 2px;
+
+$progress-active: #16C4C7;
+$progress-text-active: #222;
+$progress-number-active: #FFF;
+
+$progress-complete: #79BD9A;
+$progress-text-complete: #79BD9A;
+$progress-number-complete: #FFF;
+
+$progress-number-width: 33px;
+$progress-number-space: 6px;
+
+@mixin progress-alt-style($text, $weight, $color, $number) {
+  color: $text;
+  font-weight: $weight;
+      
+  > .number {
+    background: $color;
+    color: $number;
+  }
+      
+  &::before {
+    border-color: $color;
+  }
+}
+
+.progress-steps {
+  display: table;
+  table-layout: fixed;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  height: calc(#{$progress-number-width} + 1em);
+  margin-bottom: 16px;
+  margin-top: 40px;
+  
+  > li {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+    top: 40px;
+    color: $progress-text-color;
+    
+    &.active {
+      @include progress-alt-style($progress-text-active, 600, $progress-active, $progress-number-active);
+    }
+    
+    &.complete {
+      @include progress-alt-style($progress-text-complete, 600, $progress-complete, $progress-number-complete);
+    }
+    
+    > .number {
+      box-sizing: border-box;
+      display: block;
+      font-size: 1.2em;
+      font-weight: 300;
+      border-radius: 50%;
+      background: $progress-color;
+      width: $progress-number-width;
+      height: $progress-number-width;
+      padding: $progress-number-padding;
+      text-align: center;
+      left: calc(50% - #{$progress-number-width / 2});
+      top: #{-$progress-number-width - 1px};
+      position: absolute;
+    }
+    
+    &::before {
+      position: absolute;
+      width: calc(100% - #{$progress-number-width + ($progress-number-space * 2)});
+      content: '';
+      border-bottom: $progress-border-style $progress-border-width $progress-border-color;
+      left: calc(-50% + #{($progress-number-width / 2) + $progress-number-space});
+      top: -#{($progress-number-width / 2) + 2px};
+    }
+    
+    &:first-child::before {
+      border: none;
+    }
+  }
+}
+
+
+
+

@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ExamplesComponent } from './examples.component';
 import { SigninComponent } from './signin/signin.component';
-import { NavbarComponent } from '../shared/navbar/navbar.component';
+
 
 @NgModule({
     imports: [
@@ -30,6 +30,7 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
         ExamplesComponent,
         ProfileComponent,
         SigninComponent
+       
     ]
 })
 export class ExamplesModule { }
