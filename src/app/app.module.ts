@@ -22,8 +22,8 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
+import {NotepadComponent} from './doctor/notepad/notepad.component';
 
 
 
@@ -36,7 +36,8 @@ import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component
         SignupComponent,
         SignPatientComponent,
         SignDoctorComponent,
-        WaitingComponent
+        WaitingComponent,
+        NotepadComponent
      
     ],
     imports: [
@@ -48,7 +49,7 @@ import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component
         ComponentsModule,
         ExamplesModule,
         ReactiveFormsModule,
-        AngularFireModule.initializeApp(environment.firebase),//initializing with firebase
+        AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
         AngularFirestoreModule, // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule // imports firebase/storage only needed for storage features

@@ -3,21 +3,13 @@ import{AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} fro
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/observable';
 import {FormGroup,FormControl} from '@angular/forms';
+import{CrudService} from 'app/core/crud.service';
+import { Router } from '@angular/router';
 
 
-import{Doctoradminpage}from './doctoradminpage.model';
 
-interface Doctors{
-  
-  name :string;
-  Specialist:string;
-  QualifiedStatus:string;
-  Address:string;
-  tp:string;
-  email:string;
-  dateTime:string;
+import{Doctoradminpage}from '../../core/models/doctoradminpage.model';
 
-}
 
 @Component({
   selector: 'app-doctoradminpage',
@@ -25,44 +17,31 @@ interface Doctors{
   styleUrls: ['./doctoradminpage.component.scss']
 })
 export class DoctoradminpageComponent implements OnInit {
-DoctorsCol :AngularFirestoreCollection<Doctoradminpage>;
-Doctors:Doctoradminpage[];
 
 
+formdata=new FormGroup({ 
+   
+  name :new FormControl(''),
+  Specialist:new FormControl(''),
+  QualifiedStatus:new FormControl(''),
+  Address:new FormControl(''),
+  tp:new FormControl(''),
+  email:new FormControl(''),
+  dateTime:new FormControl('')
+ });
 
-//insert data
-name :string;
-Specialist:string;
-QualifiedStatus:string;
-Address:string;
-tp:string;
-email:string;
-dateTime:string;
-
-
-//
-  constructor(private afs:AngularFirestore) { }
+  constructor(private CrudService:CrudService,private router:Router) { }
 
   ngOnInit() {
     window.document.body.style.backgroundImage='url("../../../assets/img/doctoradmin.jpg")';
-
-this.DoctorsCol=this.afs.collection('Doctors');
-this.DoctorsCol.valueChanges().subscribe(res=>{
-
-  this.Doctors=res.map(item=>{
-    return item as Doctoradminpage;
-  })
-});
-
-console.log(this.Doctors);
+    this.formdata;
 
   }
 
-  //insert data function
-  savevalue(){
 
-    this.afs.collection('Doctors').add({'name':this.name, 'Specialist':this.Specialist,'QualifiedStatus':this.QualifiedStatus,'Address':this.Address,'tp':this.tp,'email':this.email,'dateTime':this.dateTime});
-
+  savevalue(data) {
+    this.CrudService.updateProfile(data);
+   
   }
 
 }

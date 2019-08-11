@@ -1,6 +1,8 @@
 export class Doctoradminpage {
     $key :string;
 
+    pictureurl:String;
+    
     name :string;
     Specialist:string;
     QualifiedStatus:string;
