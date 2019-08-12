@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFirestore } from '@angular/fire/firestore'; //for firestore connection
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'; //for firestore connection
 import { Patient } from './models/patient.model';
 import { Doctor } from './models/doctor.model';
 import {Doctoradminpage} from './models/doctoradminpage.model';
@@ -9,6 +9,7 @@ import {Doctoradminpage} from './models/doctoradminpage.model';
   providedIn: 'root'
 })
 export class CrudService {
+  
 
   constructor(private afs:AngularFirestore) { }
 
@@ -21,8 +22,16 @@ export class CrudService {
   }
   
   updateProfile(user:Doctoradminpage){
-return this.afs.collection('test').add(user);
+
+    var doctorRef=this.afs.collection('test');
+    doctorRef.doc("6DiuPaU010wWROp2CuwP").update(user);
+    
   }
+
+
+//update doctor view page according to the doctor admin page
+
+ 
 
 
 }
