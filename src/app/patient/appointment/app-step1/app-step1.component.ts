@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/map'
-import { AppStep1 } from './app-step1.model';
+import { AppStep1 } from '../../../core/models/app-step1.model';
 
 interface example {
   firstname : string;
