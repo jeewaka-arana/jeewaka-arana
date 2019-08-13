@@ -53,18 +53,26 @@
                                               <div ngbDropdownMenu class="dropdown-menu">
                                                     <div class="row" id="checkRadios">
                                                             <div class="col-sm-6 col-lg-3">
-                                                                <p class="category">Checkboxes</p>
+                                                                <h6 class="category">Gender</h6>
                                                                 <div class="form-check">
                                                                     <label class="form-check-label">
                                                                         <input class="form-check-input" type="checkbox">
                                                                         <span class="form-check-sign"></span>
-                                                                        Unchecked
+                                                                        Male
                                                                     </label>
+                                                                  </div>  
+                                                                  <div class="form-check">
+                                                                    <label class="form-check-label">
+                                                                      <input class="form-check-input" type="checkbox">
+                                                                      <span class="form-check-sign"></span>
+                                                                      Female
+                                                                  </label>
                                                                 </div>
                                                             </div>
-                                                        </div>   
-                                                    <div class="col-sm-6 col-lg-3">
-                                                            <p class="category">Radios</p>
+                                                        </div> 
+                                                        <div class="inline" id="checkRadios">  
+                                                          <div class="col-sm-6 col-lg-3">
+                                                            <h6 class="category">Consultation Fee</h6>
                                                             <div class="form-check form-check-radio">
                                                                 <label class="form-check-label">
                                                                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
@@ -73,6 +81,7 @@
                                                                 </label>
                                                             </div>
                                                         </div>
+                                                      </div>
                                               </div>
                                           </div>
                                         </li>
@@ -90,6 +99,16 @@
                                                 <a class="dropdown-item" href="#">Years of Experience</a>
                                                 <a class="dropdown-item" href="#">Recommendation</a>
                                               </div>
+                                          </div>
+                                        </li>
+                                        <li class="nav-item">
+                                          <div ngbDropdown class="dropdown">
+                                              <a href="#" class="nav-link">
+                                                <p>
+                                                Show doctors near me
+                                            </p>
+                                                <i class="now-ui-icons location_compass-05"></i>
+                                          </a>
                                           </div>
                                         </li>
                                 </ul>
@@ -181,10 +200,16 @@
                 <div class="img-btn">
                     <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
                 </div>
-                <div>
+                <div class="column">
                     <h4>Dr.Roshan Madola</h4>
                     <p>MSc - Dietitics / Nutrition</p>
-                    <p>Dietitian/Nutritionist, Sports Nutritionist, 34 Years Experience Overall  (34 years as specialist)</p>
+                    <p>Dietitian/Nutritionist, Sports Nutritionist</p>
+                    <p> Years Experience Overall  (34 years as specialist)</p>
+                    <p>Apollo Spectra Hospitals</p>
+                    <button routerLink="/doctorview" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
+                    <button class="btn btn-primary btn-round ico" type="button">Contact Clinic</button>
+                    <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Appointment</button>
+                    <button class="btn btn-primary btn-round ico" type="button"> Call now</button>
                     </div>
             </div>
         </div>
