@@ -48,6 +48,23 @@
     </div>
     </div>
   </div>
+
+  <div>
+        <form action="/action_page.php">
+            First name:<br>
+            <input type="text" [(ngModel)]="firstname" name="firstname" value="Mickey">
+            <br>
+            Last name:<br>
+            <input type="text" [(ngModel)]="lastname"  name="lastname" value="Mouse">
+            <br><br>
+            <input type="submit" value="Submit" (click)="addName()">
+          </form> 
+          <li>
+              <strong>{{example.firstname}}</strong>
+              <br>
+              <!-- <strong>{{example.lastname}}</strong> -->
+          </li>
+  </div>
  
   
     <footer class="footer footer-default">
