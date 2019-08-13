@@ -33,7 +33,7 @@ formdata=new FormGroup({
   constructor(private CrudService:CrudService,private router:Router) { }
 
   ngOnInit() {
-    window.document.body.style.backgroundImage='url("../../../assets/img/doctoradmin.jpg")';
+    window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
     this.formdata;
 
   }
