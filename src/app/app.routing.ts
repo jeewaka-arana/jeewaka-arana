@@ -13,6 +13,15 @@ import{DoctoradminpageComponent }from './doctor/doctoradminpage/doctoradminpage.
 import { SignDoctorComponent } from './signup/sign-doctor/sign-doctor.component';
 import {SignPatientComponent} from './signup/sign-patient/sign-patient.component';
 import{WaitingComponent} from './signup/sign-doctor/waiting/waiting.component';
+import {PatienthomeComponent} from './patient/patienthome/patienthome.component';
+import { AppointmentComponent } from './patient/appointment/appointment.component';
+import { AppStep1Component } from './patient/appointment/app-step1/app-step1.component';
+import { AppStep2Component } from './patient/appointment/app-step2/app-step2.component';
+import { AppStep3Component } from './patient/appointment/app-step3/app-step3.component';
+import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
+import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
+import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+
 
 
 
@@ -29,7 +38,17 @@ const routes: Routes =[
     { path: 'doctoradmin', component:DoctoradminpageComponent },
     { path: 'signup/sign-patient', component:SignPatientComponent },
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
-    { path: 'default', component: WaitingComponent}
+    { path: 'default', component: WaitingComponent},
+    { path: 'patienthome', component:PatienthomeComponent },
+    { path: 'appointment', component:AppointmentComponent },
+    { path: 'appstep1', component:AppStep1Component },
+    { path: 'appstep2', component:AppStep2Component },
+    { path: 'appstep3', component:AppStep3Component },
+    { path: 'byname', component:SelectbynameComponent },
+    { path: 'bydisease', component:SelectbydiseaseComponent },
+    { path: 'doctorname', component:SelectbynameComponent },
+    { path: 'diseasename', component:SelectbydiseaseComponent },
+    { path: 'searchdoctor', component:SearchdoctorComponent },
 
     
 ];
