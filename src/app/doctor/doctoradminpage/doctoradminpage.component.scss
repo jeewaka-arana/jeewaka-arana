@@ -1,37 +1,22 @@
-
-form h1 {
-color: black;
-text-align: center;
-}
-form {
-font-size: 22px;
-color: black;
-}
-input {
-display: block;
-clear: both;
-}
-
-label input {
-display: block;
-color: red;
-}
-body {
-
-background-color: #ccffcc;
-}
-button{
-
-border-radius: 8px;
-padding: 14px 40px;
-margin-left: 40%;
-background-color:  #004d00;
-font-size: 35px;
-font-style: bold;
-}
-legend{
-
-color:   #004d00;
-font-weight:bold;
-font-family:"Courier New",Courier;
-}
+.uploadpreview{
+    width:150px;
+    height:150px;
+    display:block;
+    border:1px solid #ccc;
+    margin:0 auto 15px;
+    background-size:100% auto;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+  
+  .upload-wrap{
+    float:left;
+    width:200px;
+  }
+  
+  input[type="file"] {
+      color: transparent;
+      width: 120px;
+      margin: 0 auto;
+      display: block;
+  }

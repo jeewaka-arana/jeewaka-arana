@@ -1,0 +1,41 @@
+import { Component, OnInit } from '@angular/core';
+import {CrudService} from 'app/core/crud.service';
+import {FormGroup,FormControl} from '@angular/forms'; //for forms
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-sign-doctor',
+  templateUrl: './sign-doctor.component.html',
+  styleUrls: ['./sign-doctor.component.scss']
+})
+export class SignDoctorComponent implements OnInit {
+
+  formdata=new FormGroup({ 
+   
+    FirstName:new FormControl(''),
+    LastName:new FormControl(''),
+    UserName:new FormControl(''),
+    Email:new FormControl(''),
+    Phone:new FormControl(''),
+    NIC:new FormControl(''),
+    Country:new FormControl('Please select your Country...'),
+    City:new FormControl('Please select your City...'),
+    Position:new FormControl(''),
+    RegistrationNumber:new FormControl(''),
+    FileUrl:new FormControl(''),
+    Password:new FormControl('')
+   });
+
+  constructor(private CrudService:CrudService,private router:Router) { }
+
+  ngOnInit() {
+    this.formdata;
+   }
+ 
+   
+   onClickSubmit(data) {
+     this.CrudService.createDoctor(data);
+     this.router.navigate(['default', {queryParams: { registered: 'true' } }]);
+   }
+
+}

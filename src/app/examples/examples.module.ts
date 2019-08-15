@@ -12,7 +12,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { ExamplesComponent } from './examples.component';
 import { SigninComponent } from './signin/signin.component';
 
-
 @NgModule({
     imports: [
         CommonModule,
@@ -30,7 +29,6 @@ import { SigninComponent } from './signin/signin.component';
         ExamplesComponent,
         ProfileComponent,
         SigninComponent
-       
     ]
 })
 export class ExamplesModule { }

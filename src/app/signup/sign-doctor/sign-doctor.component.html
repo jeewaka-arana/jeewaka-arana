@@ -1,0 +1,106 @@
+<div class="section section-signup" style="background-image: url('https://s2.best-wallpaper.net/wallpaper/2560x1920/1708/Nettle-leaves-black-background_2560x1920.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+    <div class="container register" >
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://www.ummc.edu.my/images/ico/doctor-icon.png" alt=""/>
+                <h3>Welcome</h3>
+                <p>"People will trust you, confide in you, and appreciate your efforts.  You can do amazing things for people if you don’t let the system get you down."</p>
+                <button class="btnLogin"  routerLink="/user">login</button>
+            </div>
+            <div class="col-md-9 register-right">
+                
+                
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Register as a Doctor</h3>
+                        <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name..." value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name..." value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="UserName" placeholder="User Name..." value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" formControlName="Email" placeholder="Your Email..." value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="Phone" placeholder="Your Phone..." value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="NIC" placeholder="NIC Number..." value="" />
+                                </div>
+                               
+                                <div class="form-group">
+                                    <select class="form-control" formControlName="Country">
+                                        <option class="hidden"  selected disabled>Please select your Country...</option>
+                                        <option>Srilanka</option>
+                                        <option>Norway</option>
+                                        <option>Switzerland</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" formControlName="City">
+                                        <option class="hidden"  selected disabled>Please select your City...</option>
+                                        <option>Colombo</option>
+                                        <option>Galle</option>
+                                        <option>Kandy</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                  <div class="form-group">
+                                        <label class="container">
+                                                <input type="radio" checked="checked" formControlName="Postion" name="radio">
+                                                <span class="checkmark"></span>
+                                                Qualified only
+                                              </label>
+                                              <label class="container">
+                                                <input type="radio" name="radio" formControlName="Postion">
+                                                <span class="checkmark"></span>
+                                                Generation only
+                                              </label>
+                                              <label class="container">
+                                                <input type="radio" formControlName="Postion" name="radio">
+                                                <span class="checkmark"></span>
+                                                Both
+                                              </label>
+                                             
+                                </div>
+                                <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="RegistrationNumber" placeholder="Enter Your Registration Number..." value="" />
+                                    </div>
+                                    <div class="form-group">
+                                   
+                                            <div class="upload-btn-wrapper">
+                                                <p>If you are registered please upload the certification for verification</p>
+                                                <button class="btn btn-primary btn-simple btn-round" type="button">Upload</button>
+                                                    <input type="file" name="myfile" formControlName="FileUrl" />
+                                                  </div>
+                                            
+                                        </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" formControlName="Password" placeholder="Password..." value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" formControlName="ConfPassword" placeholder="Confirm Password..." value="" />
+                                </div>
+                             
+                          
+                                <input type="submit" class="btnRegister"  formControlName="submit" value="Register" (click)="Onsubmit()"/>
+                            </div>
+                        </div>
+                        </form>
+
+                    </div>
+                  
+                
+            </div>
+        </div>
+    
+      </div>
+    </div>
