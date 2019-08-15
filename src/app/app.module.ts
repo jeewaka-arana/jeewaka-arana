@@ -14,6 +14,15 @@ import { DoctorprofilepageComponent } from './doctor/doctorprofilepage/doctorpro
 import { SignupComponent } from './signup/signup.component';
 import { SignPatientComponent } from './signup/sign-patient/sign-patient.component';
 import { SignDoctorComponent } from './signup/sign-doctor/sign-doctor.component';
+import { PatienthomeComponent } from './patient/patienthome/patienthome.component';
+import { AppointmentComponent } from './patient/appointment/appointment.component';
+import { AppStep2Component } from './patient/appointment/app-step2/app-step2.component';
+import { AppStep1Component } from './patient/appointment/app-step1/app-step1.component';
+import { AppStep3Component } from './patient/appointment/app-step3/app-step3.component';
+import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
+import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
+import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import {CrudService} from './core/crud.service';
@@ -37,7 +46,15 @@ import {NotepadComponent} from './doctor/notepad/notepad.component';
         SignPatientComponent,
         SignDoctorComponent,
         WaitingComponent,
-        NotepadComponent
+        NotepadComponent,
+        PatienthomeComponent,
+        AppointmentComponent,
+        AppStep2Component,
+        AppStep1Component,
+        AppStep3Component,
+        SelectbynameComponent,
+        SelectbydiseaseComponent,
+        SearchdoctorComponent,
      
     ],
     imports: [
