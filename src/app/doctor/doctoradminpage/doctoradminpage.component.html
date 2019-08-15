@@ -1,74 +1,299 @@
-<form name="newad" method="post" enctype="multipart/form-data" action="">
-  <title>DoctorProfileAdmin</title>
-  
-  
-  <body>
-  
-  <table>
-  
-  
-  
-  <img style="margin-left:25px;" src="avatar.png" width="200" height="200" />
-  <tr><td><input type="file" name="image" ></td></tr>
-  <tr><td><input name="Submit" type="submit" value="Upload image"></td></tr>
-  
-  
-  
-  
-  </table>
 
-  
-  
-  <form name='' id='' action='' method='post'>
-          
-  <fieldset>
-  <table>
-  
-  <legend>Edit Personal Details</legend>
-  
-  
-    <tr>
-                  <td>
-                 
-                      <label>Address</label><input type='text' name='txt_category' id='category' value='Address' disabled><br>
-                      <label>Telephone No</label><input type='text' name='txt_stage' id='stage' value='Telephone No' disabled><br>
-                   <label>Available Dates</label>  <input type='text' name='txt_category' id='category' value='Dates' disabled><br>
-                     <label>Available Time</label> <input type='text' name='txt_stage' id='stage' value='Time' disabled><br><br>
-                     
-                      
-                      <input type="button" name='edit' value='edit'><br>
-                      <input type="button" name='save' value='save'>
+<app-navbar></app-navbar>
+
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url(assets/img/doctoradmin.jpg);">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <h1 class="title">Edit Your Profile</h1>
+                <div class="text-center">
+                  
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h2 class="title">Edit Profile</h2>
                     
-                  </td>
+                </div>
+            </div>
+
+            <div class="container">
+                   
+                      <hr>
+                    <div class="row">
+                      <!-- left column -->
+                      <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="upload-wrap">
+                                <h5>upload a profile picture</h5>
+                                <div class="uploadpreview 03"></div>
+                                
+                                <input id="04" type="file" accept="image/*">
+                              </div>
+
+
+                        </div>
+                      </div>
+
+
+
+
+
+<!-- 
+
+                     
+                   <script>  $('.upload-wrap input[type=file]').change(function(){
+                        var id = $(this).attr("id");
+                        var newimage = new FileReader();
+                        newimage.readAsDataURL(this.files[0]);
+                        newimage.onload = function(e){
+                          $('.uploadpreview.' + id ).css('background-image', 'url(' + e.target.result + ')' );
+                        }
+                      });
               
-              </tr>
+              </script>
+               -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      
+                      
+                      <!-- edit form column -->
+                      <div class="col-md-9 personal-info">
+                          <div class="alert alert-info alert-dismissable">
+                          
+                        </div>
+                        <h3>Personal info</h3>
+                       
+                            
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label"><b>Name:</b></label>
+                              <div class="col-lg-8">
+                                <input class="form-control" formControlName="name" type="text"  >
+                                {{Doctors}}
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label"><b>Specialist:</b></label>
+                              <div class="col-lg-8">
+                                <input class="form-control" formControlName="Specialist" type="text" value="aaa">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label"><b>Qualified Status:</b></label>
+                              <div class="col-lg-8">
+                                <input class="form-control"formControlName="QualifiedStatus"type="text" value="aaaa">
+                              </div>
+                            </div>
+                           
+                            <div class="form-group">
+                              <label class="col-lg-3 control-label"><b>Address:</b></label>
+                              <div class="col-lg-8">
+
+                                <input class="form-control" formControlName="Address" type="text" value="aaaa">
+                              </div>
+                            </div>
+                            <!-- insert data to firebase -->
+                            <div class="form-group">
+                                  <label class="col-lg-3 control-label"><b>Telephone Number:</b></label>
+                                  <div class="col-lg-8">
+  
+                                    <input class="form-control" formControlName="tp"  type="text" value="aaaa">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                      <label class="col-lg-3 control-label"><b>Email Address:</b></label>
+                                      <div class="col-lg-8">
+      
+                                        <input class="form-control" formControlName="email" type="email" value="aaaa">
+                                        
+                                      </div>
+                                    </div>
+                                    {{this.email}}
+
+
+                            <div class="form-group">
+                              <label class="col-md-3 control-label"><b>Available Dates & Times:</b></label>
+                              <div class="col-md-8">
+                                <input class="form-control" formControlName="datetime"  type="text" value="janeuser">
+                              </div>
+                            </div>
+                            <input type="submit" value="Save" (click)="savevalue()">
+                            
+                          </form>
+                
+
+                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+    <h2>Upload Photos</h2>
+
+    <div class="upload-wrap">
+        <div class="uploadpreview 01"></div>
+        <input id="01" type="file" accept="image/*">
+      </div>
+      
+      <div class="upload-wrap">
+        <div class="uploadpreview 02"></div>
+        <input id="02" type="file" accept="image/*">
+      </div>
+      
+      <div class="upload-wrap">
+        <div class="uploadpreview 03"></div>
+        <input id="03" type="file" accept="image/*">
+      </div>
+      
+      <div class="upload-wrap">
+          <div class="uploadpreview 03"></div>
+          <input id="04" type="file" accept="image/*">
+        </div>
+     <script>  $('.upload-wrap input[type=file]').change(function(){
+          var id = $(this).attr("id");
+          var newimage = new FileReader();
+          newimage.readAsDataURL(this.files[0]);
+          newimage.onload = function(e){
+            $('.uploadpreview.' + id ).css('background-image', 'url(' + e.target.result + ')' );
+          }
+        });
+
+</script>
+
+
+
+</div>
+
+
+
+
+
+<div>
+
+    <br><br><br><br><br><br>
+
+    <br><br><br><br><br><br><h2>Upload a video clip</h2>
+
+    <div class="upload-wrap">
+        <div class="uploadpreview 01"></div>
+        <input id="05" type="file" accept="video/*">
+      </div>
+      
+  
+      
+     
+     <script>  $('.upload-wrap input[type=file]').change(function(){
+          var id = $(this).attr("id");
+          var newimage = new FileReader();
+          newimage.readAsDataURL(this.files[0]);
+          newimage.onload = function(e){
+            $('.uploadpreview.' + id ).css('background-image', 'url(' + e.target.result + ')' );
+          }
+        });
+
+</script>
+
+
+
+
+
+
+</div>
+
+<div >
+<br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><h2>Add a article</h2>
+
+    <app-notepad></app-notepad>
+    
+
+
+</div>
+
+
+
+
+
+
+
+
+            
+
+    
+         
+            
+         
+           
+<br><br><br><br><br><br><br><br><br>
+
+
+    
+    <footer class="footer footer-default">
+        <div class="container">
+            
+            <div class="copyright">
+                &copy;
+                {{data | date: 'yyyy'}}, Designed by Jeewaka Arana Team
               
-       
-  
-  </table>
-    </fieldset>
-  
-  
-   <br><br> <button type="button">View Your Profile</button>
-   </form>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script>
-          
-       $(document).ready(function(){
-  
-           $("form input[type=text],form input[type=checkbox]").prop("disabled",true);
-  
-           $("input[name=edit]").on("click",function(){
-  
-               $(this).closest("td").find("input[type=text],input[type=checkbox],select").removeAttr("disabled");
-           })
-  
-           $("input[name=save]").on("click",function(){
-  
-              $(this).closest("td").find("input[type=text],input[type=checkbox],select").prop("disabled",true);
-           })
-  
-  
-       })
-      </script>
+            </div>
+        </div>
+    </footer>
+
