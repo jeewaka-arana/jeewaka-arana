@@ -33,6 +33,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
 import {NotepadComponent} from './doctor/notepad/notepad.component';
+import { AdminComponent } from './admin/admin.component';
 
 import { UserloginComponent } from './userlogin/userlogin.component';
 
@@ -60,7 +61,7 @@ import { UserloginComponent } from './userlogin/userlogin.component';
         SelectbydiseaseComponent,
         SearchdoctorComponent,
         UserloginComponent,
-      
+      AdminComponent
      
     ],
     imports: [

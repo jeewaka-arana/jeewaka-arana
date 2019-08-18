@@ -22,6 +22,7 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+import{AdminComponent} from './admin/admin.component';
 
 
 import { UserloginComponent } from './userlogin/userlogin.component';
@@ -56,6 +57,7 @@ const routes: Routes =[
     { path: 'login', component: UserloginComponent}
 
 
+ { path: 'admin', component:AdminComponent }
     
 ];
 
