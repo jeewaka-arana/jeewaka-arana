@@ -34,6 +34,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
 import {NotepadComponent} from './doctor/notepad/notepad.component';
 
+import { UserloginComponent } from './userlogin/userlogin.component';
+
+
+
 
 
 @NgModule({
@@ -55,6 +59,8 @@ import {NotepadComponent} from './doctor/notepad/notepad.component';
         SelectbynameComponent,
         SelectbydiseaseComponent,
         SearchdoctorComponent,
+        UserloginComponent,
+      
      
     ],
     imports: [

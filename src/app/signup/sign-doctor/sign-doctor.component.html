@@ -9,33 +9,32 @@
             </div>
             <div class="col-md-9 register-right">
                 
-                
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading">Register as a Doctor</h3>
                         <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name..." value="" />
+                                    <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name..." value="" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name..." value="" />
+                                    <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name..." value="" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="UserName" placeholder="User Name..." value="" />
+                                    <input type="text" class="form-control" formControlName="UserName" placeholder="User Name..." value="" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" formControlName="Email" placeholder="Your Email..." value="" />
+                                    <input type="email" class="form-control" formControlName="Email" placeholder="Your Email..." value="" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="Phone" placeholder="Your Phone..." value="" />
+                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="Phone" placeholder="Your Phone..." value="" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="NIC" placeholder="NIC Number..." value="" />
+                                    <input type="text" class="form-control" formControlName="NIC" placeholder="NIC Number..." value="" required/>
                                 </div>
                                
                                 <div class="form-group">
-                                    <select class="form-control" formControlName="Country">
+                                    <select class="form-control" formControlName="Country" required>
                                         <option class="hidden"  selected disabled>Please select your Country...</option>
                                         <option>Srilanka</option>
                                         <option>Norway</option>
@@ -43,7 +42,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" formControlName="City">
+                                    <select class="form-control" formControlName="City" required>
                                         <option class="hidden"  selected disabled>Please select your City...</option>
                                         <option>Colombo</option>
                                         <option>Galle</option>
@@ -55,43 +54,43 @@
                             <div class="col-md-6">
                                   <div class="form-group">
                                         <label class="container">
-                                                <input type="radio" checked="checked" formControlName="Postion" name="radio">
+                                                <input type="radio" checked="checked" value="Qualified only" formControlName="Position" required>
                                                 <span class="checkmark"></span>
                                                 Qualified only
                                               </label>
                                               <label class="container">
-                                                <input type="radio" name="radio" formControlName="Postion">
+                                                <input type="radio" value="Generation only"  formControlName="Position" required>
                                                 <span class="checkmark"></span>
                                                 Generation only
                                               </label>
                                               <label class="container">
-                                                <input type="radio" formControlName="Postion" name="radio">
+                                                <input type="radio" value="Both" formControlName="Position" required >
                                                 <span class="checkmark"></span>
                                                 Both
                                               </label>
                                              
                                 </div>
                                 <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="RegistrationNumber" placeholder="Enter Your Registration Number..." value="" />
+                                        <input type="text" class="form-control" formControlName="RegistrationNumber" placeholder="Enter Your Registration Number..." value="" required/>
                                     </div>
                                     <div class="form-group">
                                    
                                             <div class="upload-btn-wrapper">
                                                 <p>If you are registered please upload the certification for verification</p>
                                                 <button class="btn btn-primary btn-simple btn-round" type="button">Upload</button>
-                                                    <input type="file" name="myfile" formControlName="FileUrl" />
+                                                    <input type="file" name="myfile" formControlName="FileUrl"  required/>
                                                   </div>
                                             
                                         </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" formControlName="Password" placeholder="Password..." value="" />
+                                    <input type="password" class="form-control" formControlName="Password" placeholder="Password..." value=""  required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" formControlName="ConfPassword" placeholder="Confirm Password..." value="" />
+                                    <input type="password" class="form-control" formControlName="ConfPassword" placeholder="Confirm Password..." value=""  required/>
                                 </div>
                              
                           
-                                <input type="submit" class="btnRegister"  formControlName="submit" value="Register" (click)="Onsubmit()"/>
+                                <input type="submit" class="btnRegister"  formControlName="submit" value="Register" (click)="onClickSubmit"/>
                             </div>
                         </div>
                         </form>

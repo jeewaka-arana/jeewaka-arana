@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {CrudService} from 'app/core/crud.service';
-import {FormGroup,FormControl} from '@angular/forms'; //for forms
+import {FormGroup,FormControl,Validators} from '@angular/forms'; //for forms
 import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-sign-doctor',
@@ -24,7 +26,11 @@ export class SignDoctorComponent implements OnInit {
     RegistrationNumber:new FormControl(''),
     FileUrl:new FormControl(''),
     Password:new FormControl('')
-   });
+   },
+// {
+//   validator:MustvalidateDirective('password', 'confirmPassword')
+// }
+   );
 
   constructor(private CrudService:CrudService,private router:Router) { }
 
@@ -38,4 +44,5 @@ export class SignDoctorComponent implements OnInit {
      this.router.navigate(['default', {queryParams: { registered: 'true' } }]);
    }
 
+ 
 }

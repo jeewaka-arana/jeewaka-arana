@@ -13,6 +13,7 @@ import{DoctoradminpageComponent }from './doctor/doctoradminpage/doctoradminpage.
 import { SignDoctorComponent } from './signup/sign-doctor/sign-doctor.component';
 import {SignPatientComponent} from './signup/sign-patient/sign-patient.component';
 import{WaitingComponent} from './signup/sign-doctor/waiting/waiting.component';
+
 import {PatienthomeComponent} from './patient/patienthome/patienthome.component';
 import { AppointmentComponent } from './patient/appointment/appointment.component';
 import { AppStep1Component } from './patient/appointment/app-step1/app-step1.component';
@@ -21,6 +22,9 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+
+
+import { UserloginComponent } from './userlogin/userlogin.component';
 
 
 
@@ -49,6 +53,8 @@ const routes: Routes =[
     { path: 'doctorname', component:SelectbynameComponent },
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
+    { path: 'login', component: UserloginComponent}
+
 
     
 ];
