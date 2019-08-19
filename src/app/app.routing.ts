@@ -54,10 +54,8 @@ const routes: Routes =[
     { path: 'doctorname', component:SelectbynameComponent },
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
-    { path: 'login', component: UserloginComponent}
-
-
- { path: 'admin', component:AdminComponent }
+    { path: 'login', component: UserloginComponent},
+    { path: 'admin', component:AdminComponent }
     
 ];
 

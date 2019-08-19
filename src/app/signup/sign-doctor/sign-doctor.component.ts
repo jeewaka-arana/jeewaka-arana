@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CrudService} from 'app/core/crud.service';
 import {FormGroup,FormControl,Validators} from '@angular/forms'; //for forms
 import { Router } from '@angular/router';
+import {AuthService} from '../../core/auth.service';
 
 
 
@@ -32,15 +33,17 @@ export class SignDoctorComponent implements OnInit {
 // }
    );
 
-  constructor(private CrudService:CrudService,private router:Router) { }
+  constructor(private CrudService:CrudService,private router:Router,private AuthService:AuthService) { }
 
   ngOnInit() {
     this.formdata;
    }
+
  
    
    onClickSubmit(data) {
      this.CrudService.createDoctor(data);
+    //  this.AuthService.SignUp(data.Email,data.Password);
      this.router.navigate(['default', {queryParams: { registered: 'true' } }]);
    }
 
