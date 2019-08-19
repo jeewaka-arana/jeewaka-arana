@@ -36,6 +36,7 @@ import {NotepadComponent} from './doctor/notepad/notepad.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { UserloginComponent } from './userlogin/userlogin.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -61,7 +62,8 @@ import { UserloginComponent } from './userlogin/userlogin.component';
         SelectbydiseaseComponent,
         SearchdoctorComponent,
         UserloginComponent,
-      AdminComponent
+      AdminComponent,
+      HomeComponent
      
     ],
     imports: [
