@@ -23,9 +23,8 @@ import { SelectbynameComponent } from './patient/appointment/selectbyname/select
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
 import{AdminComponent} from './admin/admin.component';
-
-
 import { UserloginComponent } from './userlogin/userlogin.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -55,7 +54,8 @@ const routes: Routes =[
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'login', component: UserloginComponent},
-    { path: 'admin', component:AdminComponent }
+    { path: 'admin', component:AdminComponent },
+    { path: 'signup', component:SignupComponent },
     
 ];
 
