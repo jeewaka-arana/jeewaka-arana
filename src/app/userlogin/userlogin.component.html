@@ -12,7 +12,7 @@
                   </div>
                   <div class="content">
                     <div class="wrapper">
-                        <form class="form-signin" [formGroup]="formdata" (ngSubmit) = "Login(loginForm.value)">       
+                        <form class="form-signin" [formGroup]="loginForm" (ngSubmit) = "Login(loginForm.value)">       
                           <h3 class="heading">Login</h3>
                           <div class="inputdiv"><input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" />
                           </div>

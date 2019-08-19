@@ -43,7 +43,7 @@ export class SignDoctorComponent implements OnInit {
    
    onClickSubmit(data) {
      this.CrudService.createDoctor(data);
-    //  this.AuthService.SignUp(data.Email,data.Password);
+     this.AuthService.SignUp(data.Email,data.Password);
      this.router.navigate(['default', {queryParams: { registered: 'true' } }]);
    }
 
