@@ -62,8 +62,8 @@ import { HomeComponent } from './home/home.component';
         SelectbydiseaseComponent,
         SearchdoctorComponent,
         UserloginComponent,
-      AdminComponent,
-      HomeComponent
+        AdminComponent,
+        HomeComponent
      
     ],
     imports: [

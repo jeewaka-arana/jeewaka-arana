@@ -13,4 +13,16 @@ export class Doctor {
     RegistrationNumber:string
     FileUrl:string;
     Password:string;
+   profilepic:string;
+    Specialist:string;
+   Address:string;
+   dateTime:string;
+   note:string;
+   img1:string;
+   img2:string;
+   img3:string;
+   video:string;
+   article:string;
+
+
 }
