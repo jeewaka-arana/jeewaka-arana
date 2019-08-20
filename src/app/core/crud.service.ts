@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'; //for firestore connection
 import { Patient } from './models/patient.model';
 import { Doctor } from './models/doctor.model';
-import {Doctoradminpage} from './models/doctoradminpage.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +20,12 @@ export class CrudService {
     return this.afs.collection('Doctors').add(user);
   }
   
-  updateProfile(user:Doctoradminpage){
+  updateProfile(user:Doctor){
 
-    var doctorRef=this.afs.collection('test');
-    doctorRef.doc("6DiuPaU010wWROp2CuwP").update(user);
+    // var doctorRef=this.afs.collection('Doctors');
+    // doctorRef.doc("6DiuPaU010wWROp2CuwP").update(user);
+
+    return this.afs.collection('Doctors').add(user);
     
   }
 

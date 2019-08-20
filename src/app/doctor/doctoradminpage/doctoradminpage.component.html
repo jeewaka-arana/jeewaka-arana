@@ -35,32 +35,20 @@
                                 <h5>upload a profile picture</h5>
                                 <div class="uploadpreview 03"></div>
                                 
-                                <input id="04" type="file" accept="image/*">
-                              </div>
-
+                                <input id="04" formControlName="profilepic" type="file" accept="image/*">
+                              </div><br><br><br><br>
+                              
 
                         </div>
+                      
+                        <br><br><br><br><br>
+                        <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/> 
+
+
+
                       </div>
 
-
-
-
-
-<!-- 
-
                      
-                   <script>  $('.upload-wrap input[type=file]').change(function(){
-                        var id = $(this).attr("id");
-                        var newimage = new FileReader();
-                        newimage.readAsDataURL(this.files[0]);
-                        newimage.onload = function(e){
-                          $('.uploadpreview.' + id ).css('background-image', 'url(' + e.target.result + ')' );
-                        }
-                      });
-              
-              </script>
-               -->
-
 
 
 
@@ -85,9 +73,7 @@
                       
                       <!-- edit form column -->
                       <div class="col-md-9 personal-info">
-                          <div class="alert alert-info alert-dismissable">
-                          
-                        </div>
+                         
                         <h3>Personal info</h3>
                        
                             
@@ -95,7 +81,7 @@
                             <div class="form-group">
                               <label class="col-lg-3 control-label"><b>Name:</b></label>
                               <div class="col-lg-8">
-                                <input class="form-control" formControlName="name" type="text"  >
+                                <input class="form-control" formControlName="name" type="text" value="Dr." disabled>
                               
                               </div>
                             </div>
@@ -108,7 +94,7 @@
                             <div class="form-group">
                               <label class="col-lg-3 control-label"><b>Qualified Status:</b></label>
                               <div class="col-lg-8">
-                                <input class="form-control"formControlName="QualifiedStatus"type="text" value="aaaa">
+                                <input class="form-control" formControlName="Position" type="text" value="Generation only"  disabled>
                               </div>
                             </div>
                            
@@ -124,14 +110,14 @@
                                   <label class="col-lg-3 control-label"><b>Telephone Number:</b></label>
                                   <div class="col-lg-8">
   
-                                    <input class="form-control" formControlName="tp"  type="text" value="aaaa">
+                                    <input class="form-control" formControlName=Phone  type="text" value="aaaa">
                                   </div>
                                 </div>
                                 <div class="form-group">
                                       <label class="col-lg-3 control-label"><b>Email Address:</b></label>
                                       <div class="col-lg-8">
       
-                                        <input class="form-control" formControlName="email" type="email" value="aaaa">
+                                        <input class="form-control" formControlName="Email" type="email" value="sample@gmail.com" disabled>
                                         
                                       </div>
                                     </div>
@@ -146,98 +132,76 @@
                                 </div>
                             </div>
                             
-                            <input type="submit" value="Save" formControlName="submit" (click)="savevalue()"  >
-                            
+                            <!-- <input type="submit" value="Save" formControlName="submit" (click)="savevalue()"  > -->
+                            <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                           
                           </form>
                 
 <div>
-  <br><br><br><br><br>
+
+
+  <br><br><br><br><br><br><br><br><br>
 <h2>Update Today Special Note</h2>
 <div class="col-lg-8">
-    <textarea rows="10" cols="75" ></textarea>
+    <textarea rows="10" cols="75"  formControlName="note" ></textarea>
   
-  </div>
-  <div class="center">
-
-      <button class="btn" name="button1">Save</button>
+           
     
   </div>
+  <br><br><br><br><br>
+  <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
+
+  <br><br><br><br><br><br>
 
 
-
-    <h2>Upload Photos</h2>
+    <h2>Upload photos</h2>
 
     <div class="upload-wrap">
         <div class="uploadpreview 01"></div>
-        <input id="01" type="file" accept="image/*">
+        <input id="01" type="file" accept="image/*"   formControlName="img1">
       </div>
       
       <div class="upload-wrap">
         <div class="uploadpreview 02"></div>
-        <input id="02" type="file" accept="image/*">
+        <input id="02" type="file" accept="image/*" formControlName="img2">
       </div>
       
       <div class="upload-wrap">
         <div class="uploadpreview 03"></div>
-        <input id="03" type="file" accept="image/*">
+        <input id="03" type="file" accept="image/*" formControlName="img3">
       </div>
       
       
-     <script>  $('.upload-wrap input[type=file]').change(function(){
-          var id = $(this).attr("id");
-          var newimage = new FileReader();
-          newimage.readAsDataURL(this.files[0]);
-          newimage.onload = function(e){
-            $('.uploadpreview.' + id ).css('background-image', 'url(' + e.target.result + ')' );
-          }
-        });
+    <br><br><br><br><br><br><br><br><br><br><br>
 
-</script>
-
-
+      <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
 
 </div>
 
-<div class="center">
 
-    <button class="btn" name="button2">Save</button>
-  
-</div>
 
+<br><br>
 
 
 
 <div>
 
-    <br><br><br><br><br><br>
+
 
     <br><br><br><br><br><br><h2>Upload a video clip</h2>
 
     <div class="upload-wrap">
         <div class="uploadpreview 01"></div>
-        <input id="05" type="file" accept="video/*">
+        <input id="05" type="file" accept="video/*" formControlName="video">
       </div>
       
-  
+      <br><br><br><br><br><br>
       
-     
-     <script>  $('.upload-wrap input[type=file]').change(function(){
-          var id = $(this).attr("id");
-          var newimage = new FileReader();
-          newimage.readAsDataURL(this.files[0]);
-          newimage.onload = function(e){
-            $('.uploadpreview.' + id ).css('background-image', 'url(' + e.target.result + ')' );
-          }
-        });
-
-</script>
+    
 </div>
-<br><br>
-<div class="center">
+<br><br><br><br><br><br>
+<input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
 
-    <button class="btn" name="button3">Save</button>
-  
-</div>
 
 
 <div >
@@ -245,6 +209,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><h2>Add a article</h2>
 
     <app-notepad></app-notepad>
+    <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
     
 
 
@@ -277,5 +242,7 @@
               
             </div>
         </div>
+
+
     </footer>
 

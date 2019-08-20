@@ -61,7 +61,8 @@ import { UserloginComponent } from './userlogin/userlogin.component';
         SelectbydiseaseComponent,
         SearchdoctorComponent,
         UserloginComponent,
-      AdminComponent
+      AdminComponent,
+     
      
     ],
     imports: [

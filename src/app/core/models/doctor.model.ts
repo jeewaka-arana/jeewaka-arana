@@ -1,16 +1,33 @@
 export class Doctor {
 
-    DocId:String;
-    FirstName:String;
-    LastName:String;
-    UserName:String;
-    Email:String;
-    Phone:Number;
-    NIC:String;
-    Country:String;
-    City:String;
-    Position:String;
-    RegistrationNumber:String
-    FileUrl:String;
-    Password:String;
+    DocId:string;
+    FirstName:string;
+    LastName:string;
+    UserName:string;
+    Email:string;
+    Phone:number;
+    NIC:string;
+    Country:string;
+    City:string;
+    Position:string;
+    RegistrationNumber:string
+    FileUrl:string;
+    Password:string;
+
+
+
+
+    
+    profilepic:string;
+    Specialist:string;
+   Address:string;
+   dateTime:string;
+   note:string;
+   img1:string;
+   img2:string;
+   img3:string;
+   video:string;
+   article:string;
+
+
 }
