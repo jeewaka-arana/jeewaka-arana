@@ -36,6 +36,7 @@ import {NotepadComponent} from './doctor/notepad/notepad.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { UserloginComponent } from './userlogin/userlogin.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -62,7 +63,11 @@ import { UserloginComponent } from './userlogin/userlogin.component';
         SearchdoctorComponent,
         UserloginComponent,
       AdminComponent,
+<<<<<<< HEAD
      
+=======
+      HomeComponent
+>>>>>>> ae59e7f4f53d1e2bc933d08e87381531b741a9e7
      
     ],
     imports: [
