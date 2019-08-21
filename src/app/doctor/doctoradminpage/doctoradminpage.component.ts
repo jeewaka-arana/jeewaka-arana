@@ -32,7 +32,7 @@ formdata=new FormGroup({
   img3:new FormControl(''),
 
   video:new FormControl(''),
-
+article:new FormControl(''),
 
 
  });

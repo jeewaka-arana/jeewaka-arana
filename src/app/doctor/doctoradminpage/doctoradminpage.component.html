@@ -24,11 +24,11 @@
                 </div>
             </div>
 
-            <div class="container">
+             <!-- <div class="container">
                    
                       <hr>
                     <div class="row">
-                      <!-- left column -->
+                      
                       <div class="col-md-3">
                         <div class="text-center">
                             <div class="upload-wrap">
@@ -46,13 +46,39 @@
 
 
 
-                      </div>
+                      </div>  -->
 
                      
 
 
+<div class="card" style="width:25rem">
+  <div class="card-body">
+
+    <form [formGroup]="formTemplate">
+
+      <div class="form-group">
+        <label>select file to upload </label>
+
+<input type="file" class="form-control" formControlName="profilepic">
+
+      </div>
 
 
+      <div>
+
+          <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+          </div>
+    </form>
+
+
+
+
+  </div>
+
+
+
+
+</div>
 
 
 
@@ -208,7 +234,37 @@
 <br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><h2>Add a article</h2>
 
-    <app-notepad></app-notepad>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <app-notepad></app-notepad> 
+    
     <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
     
 
