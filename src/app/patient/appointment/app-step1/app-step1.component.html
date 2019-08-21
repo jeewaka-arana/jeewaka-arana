@@ -59,11 +59,13 @@
             <br><br>
             <input type="submit" value="Submit" (click)="addName()">
           </form> 
-          <li>
-              <strong>{{example.firstname}}</strong>
-              <br>
+          <ul *ngFor="let example of examples | async">
+            <li>
+              <strong>{{example.firstname}} </strong>
+              
               <strong>{{example.lastname}}</strong>
           </li>
+          </ul>
   </div>
  
   

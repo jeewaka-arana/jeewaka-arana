@@ -216,3 +216,29 @@ h4 {
     margin-bottom: 40px;
     font-weight: 700;
 }
+
+.byLetter {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.byLetter a {
+  display: inline-block;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+#container ul { list-style: none; }
+#container .buttons { margin-bottom: 10px; }
+
+#container .list li { width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding-bottom: 10px; }
+
+#container .grid li { float: left; width: 20%; height: 50px; border-right: 1px dotted #CCC; border-bottom: 1px dotted #CCC; padding: 20px; }
+
+
+button {
+    display: inline;
+    margin-left: 70%;
+}

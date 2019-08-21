@@ -22,6 +22,7 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+import { SearchdoctorService } from './core/searchdoctor.service'
 
 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -37,6 +38,7 @@ import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/datab
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
 import {NotepadComponent} from './doctor/notepad/notepad.component';
+<<<<<<< Updated upstream
 import { AdminComponent } from './admin/admin.component';
 
 import { UserloginComponent } from './userlogin/userlogin.component';
@@ -46,6 +48,11 @@ import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 
 
+=======
+import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
+import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
+import { from } from 'rxjs';
+>>>>>>> Stashed changes
 
 
 
@@ -68,12 +75,17 @@ import { ImageListComponent } from './images/image-list/image-list.component';
         SelectbynameComponent,
         SelectbydiseaseComponent,
         SearchdoctorComponent,
+<<<<<<< Updated upstream
         UserloginComponent,
         AdminComponent,
         HomeComponent,
         ImagesComponent,
         ImageComponent,
         ImageListComponent
+=======
+        DoctorfordComponent,
+        ConfirmationComponent,
+>>>>>>> Stashed changes
      
     ],
     imports: [
@@ -86,12 +98,12 @@ import { ImageListComponent } from './images/image-list/image-list.component';
         ExamplesModule,
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
-        AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+        AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
       AngularFireDatabaseModule
     ],
-    providers: [CrudService],
+    providers: [CrudService,SearchdoctorService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

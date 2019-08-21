@@ -22,12 +22,17 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+<<<<<<< Updated upstream
 import{AdminComponent} from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
+=======
+import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
+import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
+>>>>>>> Stashed changes
 
 
 
@@ -56,9 +61,15 @@ const routes: Routes =[
     { path: 'doctorname', component:SelectbynameComponent },
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
+<<<<<<< Updated upstream
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
     { path: 'signup', component:SignupComponent },
+=======
+    { path: 'doctorford', component:DoctorfordComponent},
+    { path: 'confirmation', component:ConfirmationComponent},
+    
+>>>>>>> Stashed changes
     
     {path:'image' ,component:ImageComponent,children:[
 

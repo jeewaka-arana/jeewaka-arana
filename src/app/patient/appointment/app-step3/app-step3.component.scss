@@ -92,3 +92,164 @@ $progress-number-space: 6px;
 
 
 
+
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  // background-color: #E8E8E8;
+  display: flex;
+  justify-content:20%;
+  align-items: center;
+  font-family: "Open Sans", Arial, sans-serif;
+  color: #696969;
+}
+
+.reservation {
+  margin-right: 70px;
+  margin-left: 70px;
+  padding: 20px 40px;
+  height: 95%;
+  align-self: center;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2)
+}
+
+header {
+  // display: flex;
+  // justify-content: space-between; 
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+header picture {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 80px 20px 20px;
+  
+}
+
+picture .title {
+  text-transform: none;
+  font-weight: bold;
+  // align-items: center;
+}
+picture .info {
+  font-weight: bold;
+  align-items: center;
+}
+
+.reservation {
+  width: 406px;
+  background-color: #fff;
+}
+
+header img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #696969;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+header a,
+.table_number a {
+  // color: #696969;
+  font-size: 8px;
+  text-decoration: none;
+}
+
+.table_number {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+
+.table_number .count {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.table_number .number {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.date_time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+.header-user-detail, .header-card-detail {
+  text-align: center;
+  padding-top: 20px;
+  text-transform: capitalize;
+}
+
+input {
+  width: 90%;
+  background-color: #fff;
+  padding: 15px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin: 0 0 3% 3%;
+  border: 0;
+}
+
+input[type="text"] {
+  text-transform: capitalize;
+}
+
+input:focus {
+  outline: none;
+}
+
+.profile-details {
+  background-color: #fff;
+}
+
+.remove-card-details li {
+  padding: 5px;
+  font-size: 1em;
+}
+
+.user-form {
+  padding: 30px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative; 
+}
+
+.user-form, .remove-card-details {
+  background-color: #D8D8D8;
+  width: 100%;
+  margin: auto;
+}
+
+.ico {
+  margin: 30px 30px; 
+}
+
+
+
