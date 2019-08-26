@@ -44,6 +44,7 @@ import { ImageListComponent } from './images/image-list/image-list.component';
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
+import { NoteditComponent } from './doctor/notedit/notedit.component';
 
 
 
@@ -76,6 +77,7 @@ import { from } from 'rxjs';
         ImageListComponent,
         DoctorfordComponent,
         ConfirmationComponent,
+        NoteditComponent,
 
      
     ],

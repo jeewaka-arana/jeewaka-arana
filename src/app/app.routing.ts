@@ -29,7 +29,7 @@ import { ImageListComponent } from './images/image-list/image-list.component';
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import{NotepadComponent}from './doctor/notepad/notepad.component';
-
+import{NoteditComponent} from './doctor/notedit/notedit.component';
 
 
 
@@ -68,7 +68,8 @@ const routes: Routes =[
 {path:'list',component:ImageListComponent}   
 ]},
 
-{path:'notepad',component:NotepadComponent}
+{path:'notepad',component:NotepadComponent},
+{path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent}
 
     ]
 

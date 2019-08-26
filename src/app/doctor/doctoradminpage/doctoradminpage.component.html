@@ -1,5 +1,5 @@
 <div class="page-header page-header-small">
-    <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url(assets/img/doctoradmin.jpg);">
+    <div class="page-header-image rellax-header" data-rellax-speed="-8" >
     </div>
     <div class="container">
         <div class="content-center">
@@ -25,6 +25,23 @@
       <div class="section section-about-us" >
         <div class="container" class="center">
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <app-notedit></app-notedit>
             <div class="card" style="width:45rem">
                 <div class="card-body" >
               
@@ -53,6 +70,21 @@
   
   
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
               <div class="card" style="width:70rem">
                   <div class="card-body" >
@@ -62,13 +94,7 @@
                            
                        
                             <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label"><b>Name:</b></label>
-                                  <div class="col-lg-8">
-                                    <input class="form-control" formControlName="name" type="text" value="Dr." disabled>
-                                  
-                                  </div>
-                                </div>
+                               
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label"><b>Specialist:</b></label>
                                   <div class="col-lg-8">
@@ -76,19 +102,14 @@
                                     
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label"><b>Qualified Status:</b></label>
-                                  <div class="col-lg-8">
-                                    <input class="form-control" formControlName="Position" type="text" value="Generation only"  disabled>
-                                  </div>
-                                </div>
+                                
                                
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label"><b>Address:</b></label>
                                   <div class="col-lg-8">
-    
-                                    <input class="form-control" formControlName="Address" type="text" value="aaaa">
-                                  </div>
+                                        <textarea rows="5" cols="75" formControlName="Address"></textarea>
+                                      
+                                      </div>
                                 </div>
                                 <!-- insert data to firebase -->
                                 <div class="form-group">
@@ -98,14 +119,7 @@
                                         <input class="form-control" formControlName=Phone  type="text" value="aaaa">
                                       </div>
                                     </div>
-                                    <div class="form-group">
-                                          <label class="col-lg-3 control-label"><b>Email Address:</b></label>
-                                          <div class="col-lg-8">
-          
-                                            <input class="form-control" formControlName="Email" type="email" value="sample@gmail.com" disabled>
-                                            
-                                          </div>
-                                        </div>
+                                    
                                        
     
     
@@ -170,47 +184,84 @@
   
   
   <!-- write another submit function -->
-              
-  <div class="card" style="width:70rem">
+  
+        <div class="section section-about-us" >
+                <div class="container" class="center">
+            
+  <div class="card" style="width:50rem">
       <div class="card-body" >
-          <form [formGroup]="formdata" (save)="onSubmit(formdata.value)" >
-  <div class="section section-about-us" >
-  
-      <div class="container" class="center">
-  
+         
   
   
       <h2>Upload photos</h2>
   <br><br>
   
-      <div class="upload-wrap">
-          <div class="uploadpreview 01"></div>
-          <input id="01" type="file" accept="image/*"  #fileUploader  formControlName="img1">
-          <div  class="form-group" >
-              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
-              </div>
-        </div>
-    
+
+ 
+  
         
-        <div class="upload-wrap">
-          <div class="uploadpreview 02"></div>
-          <input id="02" type="file" accept="image/*"  #fileUploader formControlName="img2">
+  <form [formGroup]="formdata" (save)="submitImg1(formdata.value)" >
+
+        <div class="text=center">
+                <img [src]="img1" width="250px" height="250px" (click)="fileUploader.click()">
+            </div>
+     <br>
+            <div class="form-group">
+            
+      
+      <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img1" (change)="showpreview1($event)" >
+      
+            </div>
+          
           <div  class="form-group" >
-              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
+              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg1()"/>         
               </div>
-        </div>
         
-        <div class="upload-wrap">
-          <div class="uploadpreview 03"></div>
-          <input id="03" type="file" accept="image/*"  #fileUploader  formControlName="img3">
+   
+</form>
+<br><br><br><br>
+
+           
+        
+<form [formGroup]="formdata" (save)="submitImg2(formdata.value)" >
+        <div class="text=center">
+                <img [src]="img2" width="250px" height="250px" (click)="fileUploader.click()">
+            </div>
+     <br>
+            <div class="form-group">
+            
+      
+      <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img2" (change)="showpreview2($event)" >
+      
+            </div>
+          
           <div  class="form-group" >
-              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
+              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg2()"/>         
               </div>
-        </div>
         
-        </div>
-        </div>
-        </form>
+    </form>
+    <br><br><br><br>  
+
+
+
+    <form [formGroup]="formdata" (save)="submitImg3(formdata.value)" >
+            <div class="text=center">
+                    <img [src]="img3" width="250px" height="250px" (click)="fileUploader.click()">
+                </div>
+         <br>
+                <div class="form-group">
+                
+          
+          <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img3" (change)="showpreview3($event)" >
+          
+                </div>
+              
+              <div  class="form-group" >
+                  <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg3()"/>         
+                  </div>
+    </form>
+    <br><br><br><br> 
+       
      </div>
       </div>
   
@@ -219,16 +270,22 @@
   
   
   
-      <div class="card" style="width:70rem">
+      <div class="card" style="width:50rem">
           <div class="card-body" >
               <div class="section section-about-us" >
                   <div class="container" class="center">
                       <h2>Upload a video clip</h2>
-                      <input id="05" type="file" accept="video/*" formControlName="video"> 
+                      <form [formGroup]="formdata" (save)="submitvideo(formdata.value)" >
+                        <div class="form-group">
+                      <input type="file" accept="video/*" class="form-control" #fileUploader formControlName="video"  >
+
+</div>
+
+                      <!-- <input id="05" type="file" accept="video/*" formControlName="video">  -->
   <div  class="form-group" >
-  <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+  <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitvideo()"/>         
   </div> 
-  
+  </form>
   </div>
   </div>
   </div>
@@ -264,8 +321,7 @@
   
   
   
-  
-  
+ 
   
   
         
