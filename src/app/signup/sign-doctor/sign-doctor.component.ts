@@ -15,11 +15,11 @@ export class SignDoctorComponent implements OnInit {
 
   formdata=new FormGroup({ 
    
-    FirstName:new FormControl(''),
-    LastName:new FormControl(''),
-    UserName:new FormControl(''),
-    Email:new FormControl(''),
-    Phone:new FormControl(''),
+    FirstName:new FormControl('',[Validators.required]),
+    LastName:new FormControl('',[Validators.required]),
+    UserName:new FormControl('',[Validators.required]),
+    Email:new FormControl('',[Validators.required]),
+    Phone:new FormControl('',[Validators.required]),
     NIC:new FormControl(''),
     Country:new FormControl('Please select your Country...'),
     City:new FormControl('Please select your City...'),
@@ -28,9 +28,7 @@ export class SignDoctorComponent implements OnInit {
     FileUrl:new FormControl(''),
     Password:new FormControl('')
    },
-// {
-//   validator:MustvalidateDirective('password', 'confirmPassword')
-// }
+
    );
 
   constructor(private CrudService:CrudService,private router:Router,private AuthService:AuthService) { }
