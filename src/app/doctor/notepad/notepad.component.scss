@@ -1,113 +1,121 @@
-*,*::before,*::after{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-
-html{
-    font-size: 1.1rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-}
-
-.toolbar{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(20px,40px));
-    background-color: rgb(231, 231, 231);
-    color: rgb(0, 0, 0);
-    grid-gap: 1rem;
-    padding: 1rem;
-    justify-content: center;
-    align-items:center;
-}
-
-.tool-items{
-    background-color: rgb(27, 26, 26);
-     padding-top: .6rem;
-     padding-bottom:.6rem;
-    cursor: pointer;
-    color: #ffff;
-}
-.tool-items:hover{
-    box-shadow: none;
-    background-color: #6b5e5e;
-
-}
-
-
-
-.center{
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-}
-
-
-.editor{
-    width:70vw;
-    height: 50vh;
-    margin: 2rem;
-    padding: 1rem;
-    font-size: 1.2rem;
-    box-shadow: 0 .1rem .4rem black;
-    border: 1px solid black;
-    overflow-y: auto;
-}
-
-.getcontent{
-    white-space: pre;
-    width: 80vw;
-    background-color: rgb(255, 255, 255);
-    overflow: auto;
-    padding: 1rem;
-    display: none;
-    margin-top: 1rem;
-    box-shadow: .1rem .1rem .5rem rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
-}
-
-
-
-.btn{
-      padding: .50rem;
-      background-color: #d4553f;
-      margin-right: 1rem;
-      color: #fffffc;
-      letter-spacing: .1rem;
-      font-size: 2.5rem;
-      border-radius: .5rem;
+body {
+    background : #f2f2f2;
+      font-family: sans-serif;
+      font-size: 20px;
+    }
+    
+    .texteditor {
+      width: 650px;
+      height: 250px;
+      position: relative;
+      margin: 0px auto;
+      outline:none;
+      padding : 15px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 15px;
+       box-shadow : 0px 10px 20px 0px rgba(0,0,0,0.8);
+      overflow : hidden;
+    
+    }
+    
+    .tooltip {
+      margin: 25px 135px;
+    }
+    
+    button {
+      border-radius: 2px;
+      background-color: white;
+      border: none;
+      border-radius: 6px;
+      color: #7e7e7e;
+      font-size: 18px;
+      padding: 7px;
+       box-shadow : 0px 10px 20px 0px rgba(0,0,0,0.25);
+    }
+    
+    button:hover {
+      color: black;
+      border: 1.5px solid grey;
+    }
+    
+    .bold {
+      width: 35px;
+      height: 45px;
       cursor: pointer;
-      outline: none;
-      box-shadow: 0 .4rem .4rem black;
-      transition: all .3s;
-}
-
-.btn:hover{
-      background-color: #7e1111d0;
-      box-shadow: 0 .1rem .1rem black;
-}
-
-
-
-img{
-    width: 60px;
-    height: 60px;
-    margin-top: .4rem;
-    border-radius: 50rem;
-}
-label {
-    margin-left: 0.04rem;
-    padding-left:.7rem
-}
-
-
-
-
-.container .btn:hover {
-    background-color: black;
-    color: white;
-  }
-
-
-  
+      outline:none;
+    }
+    
+    .italics {
+      width: 35px;
+      height: 45px;
+      cursor: pointer;
+      outline:none;
+    }
+    
+    .underline {
+      width: 35px;
+      height: 45px;
+      cursor: pointer;
+      outline:none;
+    }
+    .size{
+      height : 46px;
+     }
+    .link {
+      width: 36px;
+      height: 45px;
+      cursor: pointer;
+      outline:none;
+      color : grey;
+      font-size:18px;
+    }
+    .color:hover {
+      border-color: black;
+      color: inherit;
+    }
+    select {
+       height: 25px;
+       width: 45px;
+       font-size: 14px;
+       font-weight: bold;
+       color: grey;
+       background: #fafafa;
+       border: 1px solid #d3d3d3;
+       border-radius: 3px;
+       outline: none;
+       cursor: pointer;
+    }
+    select:hover{
+      color:black;
+    }
+    a{
+      cursor:pointer;
+    }
+    
+    /* Follow me template*/
+    
+    .follow-me{
+      font-family : 'Source Sans Pro', sans-serif;
+      font-size:12.3px;
+      color : grey;
+     }
+    .follow-me i{
+    color: #F51060;
+    }
+    .follow-me a{
+    color: grey;
+      text-decoration:none;
+    }
+    .follow-me a:hover{
+    color: grey;
+      text-decoration:underline;
+    }
+    
+    /*fork github ribbon */
+    
+    .fork{
+      position: absolute; 
+      top: 0; 
+      right: 0; 
+    }

@@ -1,304 +1,285 @@
-
-
-
-<div class="wrapper">
-    <div class="page-header page-header-small">
-        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url(assets/img/doctoradmin.jpg);">
-        </div>
-        <div class="container">
-            <div class="content-center">
-                <h1 class="title">Edit Your Profile</h1>
-                <div class="text-center">
-                  
-                  
-                </div>
-            </div>
-        </div>
+<div class="page-header page-header-small">
+    <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url(assets/img/doctoradmin.jpg);">
     </div>
-    <div class="section section-about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    <h2 class="title">Edit Profile</h2>
-                    
-                </div>
-            </div>
-
-             <!-- <div class="container">
-                   
-                      <hr>
-                    <div class="row">
-                      
-                      <div class="col-md-3">
-                        <div class="text-center">
-                            <div class="upload-wrap">
-                                <h5>upload a profile picture</h5>
-                                <div class="uploadpreview 03"></div>
-                                
-                                <input id="04" formControlName="profilepic" type="file" accept="image/*">
-                              </div><br><br><br><br>
-                              
-
-                        </div>
-                      
-                        <br><br><br><br><br>
-                        <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/> 
-
-
-
-                      </div>  -->
-
-                     
-
-
-<div class="card" style="width:25rem">
-  <div class="card-body">
-
-    <form [formGroup]="formTemplate">
-
-      <div class="form-group">
-        <label>select file to upload </label>
-
-<input type="file" class="form-control" formControlName="profilepic">
-
-      </div>
-
-
-      <div>
-
-          <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
-          </div>
-    </form>
-
-
-
-
-  </div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      
-                      
-                      <!-- edit form column -->
-                      <div class="col-md-9 personal-info">
-                         
-                        <h3>Personal info</h3>
-                       
-                            
-                        <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
-                            <div class="form-group">
-                              <label class="col-lg-3 control-label"><b>Name:</b></label>
-                              <div class="col-lg-8">
-                                <input class="form-control" formControlName="name" type="text" value="Dr." disabled>
-                              
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label class="col-lg-3 control-label"><b>Specialist:</b></label>
-                              <div class="col-lg-8">
-                                <input class="form-control" formControlName="Specialist" type="text" value="aaa">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label class="col-lg-3 control-label"><b>Qualified Status:</b></label>
-                              <div class="col-lg-8">
-                                <input class="form-control" formControlName="Position" type="text" value="Generation only"  disabled>
-                              </div>
-                            </div>
-                           
-                            <div class="form-group">
-                              <label class="col-lg-3 control-label"><b>Address:</b></label>
-                              <div class="col-lg-8">
-
-                                <input class="form-control" formControlName="Address" type="text" value="aaaa">
-                              </div>
-                            </div>
-                            <!-- insert data to firebase -->
-                            <div class="form-group">
-                                  <label class="col-lg-3 control-label"><b>Telephone Number:</b></label>
-                                  <div class="col-lg-8">
-  
-                                    <input class="form-control" formControlName=Phone  type="text" value="aaaa">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                      <label class="col-lg-3 control-label"><b>Email Address:</b></label>
-                                      <div class="col-lg-8">
-      
-                                        <input class="form-control" formControlName="Email" type="email" value="sample@gmail.com" disabled>
-                                        
-                                      </div>
-                                    </div>
-                                   
-
-
-                            <div class="form-group">
-                              <label class="col-md-3 control-label"><b>Available Dates & Times:</b></label>
-                              <div class="col-lg-8">
-                                  <textarea rows="10" cols="75" formControlName="dateTime"></textarea>
-                                
-                                </div>
-                            </div>
-                            
-                            <!-- <input type="submit" value="Save" formControlName="submit" (click)="savevalue()"  > -->
-                            <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>         
-                           
-                          </form>
-                
-<div>
-
-
-  <br><br><br><br><br><br><br><br><br>
-<h2>Update Today Special Note</h2>
-<div class="col-lg-8">
-    <textarea rows="10" cols="75"  formControlName="note" ></textarea>
-  
-           
-    
-  </div>
-  <br><br><br><br><br>
-  <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
-
-  <br><br><br><br><br><br>
-
-
-    <h2>Upload photos</h2>
-
-    <div class="upload-wrap">
-        <div class="uploadpreview 01"></div>
-        <input id="01" type="file" accept="image/*"   formControlName="img1">
-      </div>
-      
-      <div class="upload-wrap">
-        <div class="uploadpreview 02"></div>
-        <input id="02" type="file" accept="image/*" formControlName="img2">
-      </div>
-      
-      <div class="upload-wrap">
-        <div class="uploadpreview 03"></div>
-        <input id="03" type="file" accept="image/*" formControlName="img3">
-      </div>
-      
-      
-    <br><br><br><br><br><br><br><br><br><br><br>
-
-      <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
-
-</div>
-
-
-
-<br><br>
-
-
-
-<div>
-
-
-
-    <br><br><br><br><br><br><h2>Upload a video clip</h2>
-
-    <div class="upload-wrap">
-        <div class="uploadpreview 01"></div>
-        <input id="05" type="file" accept="video/*" formControlName="video">
-      </div>
-      
-      <br><br><br><br><br><br>
-      
-    
-</div>
-<br><br><br><br><br><br>
-<input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
-
-
-
-<div >
-<br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><h2>Add a article</h2>
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <app-notepad></app-notepad> 
-    
-    <input type="submit" class="btnRegister"  formControlName="submit" value="Save" (click)="savevalue()"/>  
-    
-
-
-</div>
-
-
-
-
-
-
-
-
-            
-
-    
-         
-            
-         
-           
-<br><br><br><br><br><br><br><br><br>
-
-
-    
-    <footer class="footer footer-default">
-        <div class="container">
-            
-            <div class="copyright">
-                &copy;
-                {{data | date: 'yyyy'}}, Designed by Jeewaka Arana Team
+    <div class="container">
+        <div class="content-center">
+            <h1 class="title">Edit Your Profile</h1>
+            <div class="text-center">
+              
               
             </div>
         </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+  
+      <div class="section section-about-us" >
+        <div class="container" class="center">
+  
+            <div class="card" style="width:45rem">
+                <div class="card-body" >
+              
+                  <form [formGroup]="formdata" (save)="onSubmit(formdata.value)" >
+                    <div class="text=center">
+                        <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()">
+                    </div>
+             
+                    <div class="form-group">
+                      <label>select profile picture to upload </label>
+              
+              <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="profilepicurl" (change)="showpreview($event)" >
+              
+                    </div>
+              
+              
+                    <div  class="form-group" >
+                        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
+                        </div>
+                  </form>
+                </div>
+  
+  
+  
+              </div>
+  
+  
+  
+  
+              <div class="card" style="width:70rem">
+                  <div class="card-body" >
+                
+                        <!-- edit form column -->
+                        <div class="formGroup" class="center">
+                           
+                       
+                            <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label"><b>Name:</b></label>
+                                  <div class="col-lg-8">
+                                    <input class="form-control" formControlName="name" type="text" value="Dr." disabled>
+                                  
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label"><b>Specialist:</b></label>
+                                  <div class="col-lg-8">
+                                      <textarea rows="10" cols="75" formControlName="Specialist"></textarea>
+                                    
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label"><b>Qualified Status:</b></label>
+                                  <div class="col-lg-8">
+                                    <input class="form-control" formControlName="Position" type="text" value="Generation only"  disabled>
+                                  </div>
+                                </div>
+                               
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label"><b>Address:</b></label>
+                                  <div class="col-lg-8">
+    
+                                    <input class="form-control" formControlName="Address" type="text" value="aaaa">
+                                  </div>
+                                </div>
+                                <!-- insert data to firebase -->
+                                <div class="form-group">
+                                      <label class="col-lg-3 control-label"><b>Telephone Number:</b></label>
+                                      <div class="col-lg-8">
+      
+                                        <input class="form-control" formControlName=Phone  type="text" value="aaaa">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="col-lg-3 control-label"><b>Email Address:</b></label>
+                                          <div class="col-lg-8">
+          
+                                            <input class="form-control" formControlName="Email" type="email" value="sample@gmail.com" disabled>
+                                            
+                                          </div>
+                                        </div>
+                                       
+    
+    
+                                <div class="form-group">
+                                  <label class="col-md-5 control-label"><b>Available Dates & Times:</b></label>
+                                  <div class="col-lg-8">
+                                      <textarea rows="10" cols="75" formControlName="dateTime"></textarea>
+                                    
+                                    </div>
+                                </div>
+                                          
+                    <div  class="form-group" >
+                        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                        </div>
+                              </form>
+                    </div>
+                    </div>
+                    </div>
+  
+  
+                                
+                    <div class="card" style="width:70rem">
+                        <div class="card-body" >
 
+                            <!-- edit form column -->
+                        <div class="formGroup" class="center">
+                           
+                       
+                            <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
+                            <div class="section section-about-us" >
+                                <div class="container" class="center">
+                          <h2>Update Today Special Note</h2>
+                          <div class="col-lg-8">
+      <textarea rows="10" cols="125"  formControlName="note" ></textarea>
+  
+  
+       
+    </div>
+    <div  class="form-group" >
+        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+        </div> 
+  
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- write another submit function -->
+              
+  <div class="card" style="width:70rem">
+      <div class="card-body" >
+          <form [formGroup]="formdata" (save)="onSubmit(formdata.value)" >
+  <div class="section section-about-us" >
+  
+      <div class="container" class="center">
+  
+  
+  
+      <h2>Upload photos</h2>
+  <br><br>
+  
+      <div class="upload-wrap">
+          <div class="uploadpreview 01"></div>
+          <input id="01" type="file" accept="image/*"  #fileUploader  formControlName="img1">
+          <div  class="form-group" >
+              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
+              </div>
+        </div>
+    
+        
+        <div class="upload-wrap">
+          <div class="uploadpreview 02"></div>
+          <input id="02" type="file" accept="image/*"  #fileUploader formControlName="img2">
+          <div  class="form-group" >
+              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
+              </div>
+        </div>
+        
+        <div class="upload-wrap">
+          <div class="uploadpreview 03"></div>
+          <input id="03" type="file" accept="image/*"  #fileUploader  formControlName="img3">
+          <div  class="form-group" >
+              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
+              </div>
+        </div>
+        
+        </div>
+        </div>
+        </form>
+     </div>
+      </div>
+  
+  
+  
+  
+  
+  
+      <div class="card" style="width:70rem">
+          <div class="card-body" >
+              <div class="section section-about-us" >
+                  <div class="container" class="center">
+                      <h2>Upload a video clip</h2>
+                      <input id="05" type="file" accept="video/*" formControlName="video"> 
+  <div  class="form-group" >
+  <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+  </div> 
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <div class="card" style="width:70rem">
+      <div class="card-body" >
 
-    </footer>
-
+            <!-- edit form column -->
+            <div class="formGroup" class="center">
+                           
+                       
+                <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
+                <div class="section section-about-us" >
+          <div class="section section-about-us" >
+              <div class="container" class="center">
+                  <h2>Add a article</h2>
+                  <app-notepad></app-notepad> 
+                  <div  class="form-group" >
+                      <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                      </div>
+  
+  
+        </div>
+        </div>
+        </div>
+        </form>
+        </div>
+        </div>
+        </div>
+  
+  
+  
+  
+  
+  
+  
+        
+      <footer class="footer footer-default">
+          <div class="container">
+              
+              <div class="copyright">
+                  &copy;
+                  {{data | date: 'yyyy'}}, Designed by Jeewaka Arana Team
+                
+              </div>
+          </div>
+  
+  
+      </footer>
+  
+      

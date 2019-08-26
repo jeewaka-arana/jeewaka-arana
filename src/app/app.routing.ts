@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
 import { ComponentsComponent } from './components/components.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { LoginComponent } from './examples/login/login.component';
@@ -13,7 +12,6 @@ import{DoctoradminpageComponent }from './doctor/doctoradminpage/doctoradminpage.
 import { SignDoctorComponent } from './signup/sign-doctor/sign-doctor.component';
 import {SignPatientComponent} from './signup/sign-patient/sign-patient.component';
 import{WaitingComponent} from './signup/sign-doctor/waiting/waiting.component';
-
 import {PatienthomeComponent} from './patient/patienthome/patienthome.component';
 import { AppointmentComponent } from './patient/appointment/appointment.component';
 import { AppStep1Component } from './patient/appointment/app-step1/app-step1.component';
@@ -22,17 +20,16 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
-<<<<<<< Updated upstream
 import{AdminComponent} from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
-=======
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
->>>>>>> Stashed changes
+import{NotepadComponent}from './doctor/notepad/notepad.component';
+
 
 
 
@@ -61,26 +58,20 @@ const routes: Routes =[
     { path: 'doctorname', component:SelectbynameComponent },
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
-<<<<<<< Updated upstream
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
     { path: 'signup', component:SignupComponent },
-=======
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
-    
->>>>>>> Stashed changes
-    
     {path:'image' ,component:ImageComponent,children:[
-
 {path:'upload',component:ImageComponent},//image/upload
-{path:'list',component:ImageListComponent}
+{path:'list',component:ImageListComponent}   
+]},
+
+{path:'notepad',component:NotepadComponent}
 
     ]
 
-
-    }
-];
 
 @NgModule({
     imports: [

@@ -13,7 +13,7 @@ export class Doctor {
     RegistrationNumber:string
     FileUrl:string;
     Password:string;
-   profilepic:string;
+   profilepicurl:string;
     Specialist:string;
    Address:string;
    dateTime:string;
