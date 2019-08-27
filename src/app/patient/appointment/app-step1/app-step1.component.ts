@@ -16,8 +16,8 @@ interface example {
 })
 export class AppStep1Component implements OnInit {
 
-  exampleCol: AngularFirestoreCollection<AppStep1>;
-  example: Observable<AppStep1[]>;
+  examplesCol: AngularFirestoreCollection<AppStep1>;
+  examples: Observable<AppStep1[]>;
 
   firstname:string;
   lastname:string;
@@ -26,8 +26,8 @@ export class AppStep1Component implements OnInit {
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
-    this.exampleCol=this.afs.collection('example');
-    this.example=this.exampleCol.valueChanges();
+    this.examplesCol=this.afs.collection('example');
+    this.examples=this.examplesCol.valueChanges();
   }
 
   addName(){

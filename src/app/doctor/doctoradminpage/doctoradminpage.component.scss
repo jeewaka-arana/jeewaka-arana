@@ -1,3 +1,16 @@
+.btnRegister{
+    float:left;
+    //margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #f96332;
+    color: #fff;
+    font-weight: 600;
+    width: 30%;
+    cursor: pointer;
+}
+
 .uploadpreview{
     width:150px;
     height:150px;
@@ -13,28 +26,9 @@
     float:left;
     width:200px;
   }
+
+
+
+
   
-  input[type="file"] {
-      color: transparent;
-      width: 120px;
-      margin: 0 auto;
-      display: block;
-  }
-
-
-  .btnRegister{
-    float:left;
-    //margin-top: 10%;
-    border: none;
-    border-radius: 1.5rem;
-    padding: 2%;
-    background: #f96332;
-    color: #fff;
-    font-weight: 600;
-    width: 30%;
-    cursor: pointer;
-}
-
-
-
 

@@ -22,6 +22,7 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
+import { SearchdoctorService } from './core/searchdoctor.service'
 
 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -30,14 +31,20 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
 import {NotepadComponent} from './doctor/notepad/notepad.component';
 import { AdminComponent } from './admin/admin.component';
-
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HomeComponent } from './home/home.component';
-
+import { ImagesComponent } from './images/images.component';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component';
+import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
+import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
+import { from } from 'rxjs';
+import { NoteditComponent } from './doctor/notedit/notedit.component';
 
 
 
@@ -61,13 +68,21 @@ import { HomeComponent } from './home/home.component';
         SelectbynameComponent,
         SelectbydiseaseComponent,
         SearchdoctorComponent,
+ 
         UserloginComponent,
         AdminComponent,
-        HomeComponent
+        HomeComponent,
+        ImagesComponent,
+        ImageComponent,
+        ImageListComponent,
+        DoctorfordComponent,
+        ConfirmationComponent,
+        NoteditComponent,
+
      
     ],
     imports: [
-        BrowserAnimationsModule,
+        BrowserAnimationsModule, 
         NgbModule.forRoot(),
         FormsModule,
         RouterModule,
@@ -76,12 +91,12 @@ import { HomeComponent } from './home/home.component';
         ExamplesModule,
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
-        AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+        AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-        AngularFireStorageModule // imports firebase/storage only needed for storage features
-      
+        AngularFireStorageModule, // imports firebase/storage only needed for storage features
+      AngularFireDatabaseModule
     ],
-    providers: [CrudService],
+    providers: [CrudService,SearchdoctorService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,38 +15,32 @@
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name..." value="" required="" />
+                                    <input type="text" class="form-control" formControlName="FirstName" placeholder="First Name..." value=""  />
+                                    <span *ngIf="FirstName.invalid && FirstName.errors.required"></span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name..." value="" required/>
+                                    <input type="text" class="form-control" formControlName="LastName" placeholder="Last Name..." value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="UserName" placeholder="User Name..." value="" required/>
+                                    <input type="text" class="form-control" formControlName="UserName" placeholder="User Name..." value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" formControlName="Email" placeholder="Your Email..." value="" required/>
+                                    <input type="email" class="form-control" formControlName="Email" placeholder="Your Email..." value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="Phone" placeholder="Your Phone..." value="" required/>
+                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="Phone" placeholder="Your Phone..." value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" formControlName="NIC" placeholder="NIC Number..." value="" required/>
+                                    <input type="text" class="form-control" formControlName="NIC" placeholder="NIC Number..." value="" />
                                 </div>
                                
+                              
                                 <div class="form-group">
-                                    <select class="form-control" formControlName="Country" required>
-                                        <option class="hidden"  selected disabled>Please select your Country...</option>
-                                        <option>Srilanka</option>
-                                        <option>Norway</option>
-                                        <option>Switzerland</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control" formControlName="City" required>
+                                    <select class="form-control-select" formControlName="City" >
                                         <option class="hidden"  selected disabled>Please select your City...</option>
-                                        <option>Colombo</option>
-                                        <option>Galle</option>
-                                        <option>Kandy</option>
+                                        <option >Colombo</option>
+                                        <option >Galle</option>
+                                        <option >Kandy</option>
                                     </select>
                                 </div>
                                 
