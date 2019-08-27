@@ -147,7 +147,7 @@
                 <i class="fa fa-user-circle"></i>
             </span>
           </div>
-            <input type="text" [(ngModel)]="searchterm" (keydown)="search($event)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
+            <input type="text" (keydown)="search($event)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
           </div>
     </div>
     <button class="btn btn-primary btn-round btn-sm" type="button">Search</button>
@@ -157,15 +157,15 @@
 
 
 <div>
-<ul *ngFor = "let example of examples">
+<ul *ngFor = "let name of names" || >
   <!-- <li> -->
-    {{example.firstname}}
+    {{name.firstname}}
   <!-- </li> -->
   <!-- <li>
     {{example.LastName}}
   </li> -->
 </ul>
-<div *ngIf = "examples?.length < 1">
+<div *ngIf = "names?.length < 1">
   <p>Sorry, not found</p>
 </div>
 </div>
@@ -179,14 +179,14 @@
               <div class="container">                  
                     <div class="row">
                             <div class="col-md-20 col-xl-10" >
-
+<ul *ngFor="let example of examples | async">
         <div class="card" >
             <div class="row">
                 <div class="img-btn">
                     <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
                 </div>
-                <div class="column">
-                    <h4>Dr.Roshan Madola</h4>
+                <div class="column">  
+                    <h4>Dr. {{example.firstname}} {{example.lastname}}</h4>
                     <p>MSc - Dietitics / Nutrition</p>
                     <p>Dietitian/Nutritionist, Sports Nutritionist</p>
                     <p> Years Experience Overall  (34 years as specialist)</p>
@@ -197,59 +197,7 @@
                     <button class="btn btn-primary btn-round ico" type="button"> Call now</button>
                     </div>
             </div>
-        </div>
-
-        <div class="card" >
-                <div class="row">
-                    <div class="img-btn">
-                        <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
-                    </div>
-                    <div>
-                        <h4>Dr.Roshan Madola</h4>
-                        <p>MSc - Dietitics / Nutrition</p>
-                        <p>Dietitian/Nutritionist, Sports Nutritionist, 34 Years Experience Overall  (34 years as specialist)</p>
-                        </div>
-                </div>
-        </div>
-
-        <div class="card" >
-                <div class="row">
-                    <div class="img-btn">
-                        <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
-                    </div>
-                    <div>
-                        <h4>Dr.Roshan Madola</h4>
-                        <p>MSc - Dietitics / Nutrition</p>
-                        <p>Dietitian/Nutritionist, Sports Nutritionist, 34 Years Experience Overall  (34 years as specialist)</p>
-                        </div>
-                </div>
-        </div>
-
-        <div class="card" >
-                <div class="row">
-                    <div class="img-btn">
-                        <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
-                    </div>
-                    <div>
-                        <h4>Dr.Roshan Madola</h4>
-                        <p>MSc - Dietitics / Nutrition</p>
-                        <p>Dietitian/Nutritionist, Sports Nutritionist, 34 Years Experience Overall  (34 years as specialist)</p>
-                        </div>
-                </div>
-        </div>
-
-        <div class="card" >
-                <div class="row">
-                    <div class="img-btn">
-                        <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
-                    </div>
-                    <div>
-                        <h4>Dr.Roshan Madola</h4>
-                        <p>MSc - Dietitics / Nutrition</p>
-                        <p>Dietitian/Nutritionist, Sports Nutritionist, 34 Years Experience Overall  (34 years as specialist)</p>
-                        </div>
-                </div>
-        </div>
+        </div></ul>
                             </div>
                     </div>
                 </div>

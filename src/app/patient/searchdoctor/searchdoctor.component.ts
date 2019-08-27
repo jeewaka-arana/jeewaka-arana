@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore,  AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Subject } from 'rxjs/Subject';
 import { Observable} from 'rxjs/Rx'
 import { observable } from 'rxjs';
 import { Doctor } from 'app/core/models/doctor.model';
+
+interface example {
+  firstname : string;
+  lastname : string;
+}
 
 @Component({
   selector: 'app-searchdoctor',
@@ -12,30 +17,35 @@ import { Doctor } from 'app/core/models/doctor.model';
 })
 export class SearchdoctorComponent implements OnInit {
 
-   
   searchterm: string;
- 
 
   startAt = new Subject();
   endAt = new Subject();
 
-  examples;
+  names;
   start;
   end;
 
- 
-
   startobs = this.startAt.asObservable();
   endobs = this.endAt.asObservable();
+
+  examplesCol: AngularFirestoreCollection<Doctor>;
+  examples: Observable<Doctor[]>;
+
+  firstname:string;
+  lastname:string;
 
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
     Observable.combineLatest(this.startobs, this.endobs).subscribe((value) =>{
       this.firequery(value[0], value[1]).subscribe((firstnames) => {
-        this.examples=firstnames;
+        this.names=firstnames;
       })
     })
+
+    this.examplesCol=this.afs.collection('example');
+    this.examples=this.examplesCol.valueChanges();
   }
 
   search($event){
@@ -45,6 +55,10 @@ export class SearchdoctorComponent implements OnInit {
   }
   firequery(start, end){
     return this.afs.collection('example', ref => ref.limit(20).orderBy('firstname').startAt(start).endAt(end)).valueChanges();
+  }
+
+  addName(){
+    this.afs.collection('example').add({'firstname':this.firstname, 'lastname':this.lastname});
   }
   
   
