@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Subject } from 'rxjs/Subject';
 import { Observable} from 'rxjs/Rx'
 import { observable } from 'rxjs';
+import { Doctor } from 'app/core/models/doctor.model';
 
 @Component({
   selector: 'app-searchdoctor',
@@ -11,12 +12,18 @@ import { observable } from 'rxjs';
 })
 export class SearchdoctorComponent implements OnInit {
 
+   
   searchterm: string;
+ 
 
   startAt = new Subject();
   endAt = new Subject();
 
   examples;
+  start;
+  end;
+
+ 
 
   startobs = this.startAt.asObservable();
   endobs = this.endAt.asObservable();
@@ -37,7 +44,11 @@ export class SearchdoctorComponent implements OnInit {
     this.endAt.next(q + "\uf8ff");
   }
   firequery(start, end){
-    return this.afs.collection('Doctors', ref => ref.limit(20).orderBy('FirstName').startAt(start).endAt(end)).valueChanges();
+    return this.afs.collection('example', ref => ref.limit(20).orderBy('firstname').startAt(start).endAt(end)).valueChanges();
   }
   
-}
+  
+  }
+
+
+
