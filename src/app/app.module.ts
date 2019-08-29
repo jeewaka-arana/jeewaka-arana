@@ -47,6 +47,8 @@ import { from } from 'rxjs';
 import { NoteditComponent } from './doctor/notedit/notedit.component';
 import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
+import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
+import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
 
 
@@ -82,6 +84,8 @@ import { TestComponent } from './test/test.component';
         ConfirmationComponent,
         NoteditComponent,
         TestComponent,
+        DocLoginComponent,
+        PatLoginComponent,
 
     ],
     imports: [
