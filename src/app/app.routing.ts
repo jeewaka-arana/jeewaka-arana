@@ -30,7 +30,7 @@ import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import{NotepadComponent}from './doctor/notepad/notepad.component';
 import{NoteditComponent} from './doctor/notedit/notedit.component';
-
+import { TestComponent } from './test/test.component';
 
 
 
@@ -63,6 +63,7 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
+    { path: 'test', component:TestComponent},
     
     
     {path:'image' ,component:ImageComponent,children:[

@@ -19,8 +19,11 @@
 	  position: relative;
 	  font-size: 13px;
 	  height: auto;
-      padding: 10px;
-      
+	  padding: 15px;
+	 
+
+	  
+
 		
 
 		&:focus {
@@ -30,6 +33,7 @@
 	}
 
 	
+		  
 
 	
 }
@@ -38,3 +42,10 @@
  padding-bottom: 20px;
 }
 
+input.form-control{
+	width: 24.9em;
+	margin-left: 32%;
+	padding:20px;
+	border-radius: 5px;
+	
+}

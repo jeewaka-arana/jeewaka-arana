@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CrudService} from 'app/core/crud.service';
-import {FormGroup,FormControl} from '@angular/forms'; //for forms
-import { Router } from '@angular/router';
+import { AuthService } from 'app/core/auth.service';
+
 
 @Component({
   selector: 'app-sign-patient',
@@ -10,30 +9,19 @@ import { Router } from '@angular/router';
 })
 export class SignPatientComponent implements OnInit {
 
-  formdata=new FormGroup({ 
-   
-    FirstName:new FormControl(''),
-    LastName:new FormControl(''),
-    UserName:new FormControl(''),
-    Email:new FormControl(''),
-    Phone:new FormControl(''),
-    NIC:new FormControl(''),
-    Country:new FormControl('Please select your Country...'),
-    City:new FormControl('Please select your City...'),
-    Password:new FormControl('')
-   });
 
+  authError: any;
 
-  constructor(private CrudService:CrudService,private router:Router) { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    this.formdata;
-   }
- 
-   
-   onClickSubmit(data) {
-     this.CrudService.createPatient(data);
-     this.router.navigate(['user', {queryParams: { registered: 'true' } }]);
-   }
+    this.auth.eventAuthError$.subscribe( data => {
+      this.authError = data;
+    })
+  }
+
+  createUser(frm) {
+    this.auth.createPatient(frm.value);
+  }
 
 }
