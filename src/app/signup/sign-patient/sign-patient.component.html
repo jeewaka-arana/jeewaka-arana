@@ -5,7 +5,7 @@
             <img src="https://vegfund.org/wp-content/uploads/VegFund_Logo_Icon_White.png" alt=""/>
             <h3>Welcome</h3>
             <p>The utility of Ayurveda is to maintain the health of a healthy individual and heal the disease of the sick.</p>
-            <button class="btnLogin"  routerLink="/user">login</button>
+            <button class="btnLogin"  routerLink="/login">login</button>
         </div>
         <div class="col-md-9 register-right">
             
@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-6">
                                 <div class="form-group">
-                                        <select class="form-control" formControlName="Country">
+                                        <select ngModel #country="ngModel" name="country" type="text" class="form-control" id="country"  class="form-control" >
                                             <option class="hidden"  selected disabled>Please select your Country...</option>
                                             <option>Srilanka</option>
                                             <option>Norway</option>
@@ -49,7 +49,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-control" formControlName="City">
+                                        <select ngModel #city="ngModel" name="city" type="text" class="form-control" id="city"  class="form-control" >
                                             <option class="hidden"  selected disabled>Please select your City...</option>
                                             <option>Colombo</option>
                                             <option>Galle</option>

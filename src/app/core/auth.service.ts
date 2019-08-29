@@ -68,7 +68,7 @@ export class AuthService {
 
         this.insertDoctorData(userCredential)
           .then(() => {
-            this.router.navigate(['/home']);
+            this.router.navigate(['/default']);
           });
       })
       .catch( error => {
@@ -81,7 +81,11 @@ export class AuthService {
       Firstname: this.newUser.firstName,
       Lastname: this.newUser.lastName,
       PhoneNumber:this.newUser.phone,
-      NIC:this.newUser.nic
+      NIC:this.newUser.nic,
+      City:this.newUser.city,
+      Position:this.newUser.position,
+      RegistrationNumber:this.newUser.regnumber
+
     })
   }
 
@@ -91,7 +95,10 @@ export class AuthService {
       Firstname: this.newUser.firstName,
       Lastname: this.newUser.lastName,
       PhoneNumber:this.newUser.phone,
-      NIC:this.newUser.nic
+      NIC:this.newUser.nic,
+      Country:this.newUser.country,
+      City:this.newUser.city
+
     })
   }
 
