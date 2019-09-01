@@ -19,9 +19,6 @@ export class UserloginComponent implements OnInit {
     })
   }
 
-  login(frm) {
-    this.auth.login(frm.value.email, frm.value.password);
-  }
-  
+ 
 
 }

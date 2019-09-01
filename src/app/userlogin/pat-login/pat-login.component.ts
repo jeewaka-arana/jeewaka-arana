@@ -19,7 +19,7 @@ export class PatLoginComponent implements OnInit {
   }
 
   login(frm) {
-    this.auth.login(frm.value.email, frm.value.password);
+    this.auth.pat_login(frm.value.email, frm.value.password);
   }
 
 }

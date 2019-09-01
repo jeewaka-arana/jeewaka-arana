@@ -68,10 +68,9 @@ const routes: Routes =[
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
-    
     {path:'image' ,component:ImageComponent,children:[
-{path:'upload',component:ImageComponent},//image/upload
-{path:'list',component:ImageListComponent}   
+    {path:'upload',component:ImageComponent},//image/upload
+    {path:'list',component:ImageListComponent}   
 ]},
 
 {path:'notepad',component:NotepadComponent},

@@ -11,13 +11,14 @@ import {AuthService} from '../../core/auth.service';
 export class SignDoctorComponent implements OnInit {
 
   authError: any;
-
+  tom=false;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.auth.eventAuthError$.subscribe( data => {
       this.authError = data;
     })
+
   }
 
   createUser(frm) {

@@ -19,7 +19,7 @@ export class DocLoginComponent implements OnInit {
   }
 
   login(frm) {
-    this.auth.login(frm.value.email, frm.value.password);
+    this.auth.doc_login(frm.value.email, frm.value.password);
   }
 
 }
