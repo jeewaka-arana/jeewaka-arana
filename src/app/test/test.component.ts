@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 
-
 @Component({
-  selector: 'app-userlogin',
-  templateUrl: './userlogin.component.html',
-  styleUrls: ['./userlogin.component.scss']
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.scss']
 })
-export class UserloginComponent implements OnInit {
+export class TestComponent implements OnInit {
 
   authError: any;
 
@@ -19,6 +18,10 @@ export class UserloginComponent implements OnInit {
     })
   }
 
- 
+
+
 
 }
+
+
+

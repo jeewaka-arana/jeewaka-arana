@@ -30,7 +30,9 @@ import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import{NotepadComponent}from './doctor/notepad/notepad.component';
 import{NoteditComponent} from './doctor/notedit/notedit.component';
-
+import { TestComponent } from './test/test.component';
+import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
+import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
 
 
@@ -63,11 +65,12 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
-    
-    
+    { path: 'test', component:TestComponent},
+    { path: 'dlogin', component:DocLoginComponent},
+    { path: 'plogin', component:PatLoginComponent},
     {path:'image' ,component:ImageComponent,children:[
-{path:'upload',component:ImageComponent},//image/upload
-{path:'list',component:ImageListComponent}   
+    {path:'upload',component:ImageComponent},//image/upload
+    {path:'list',component:ImageListComponent}   
 ]},
 
 {path:'notepad',component:NotepadComponent},

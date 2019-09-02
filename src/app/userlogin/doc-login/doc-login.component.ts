@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/core/auth.service';
 
-
 @Component({
-  selector: 'app-sign-patient',
-  templateUrl: './sign-patient.component.html',
-  styleUrls: ['./sign-patient.component.scss']
+  selector: 'app-doc-login',
+  templateUrl: './doc-login.component.html',
+  styleUrls: ['./doc-login.component.scss']
 })
-export class SignPatientComponent implements OnInit {
-
+export class DocLoginComponent implements OnInit {
 
   authError: any;
 
@@ -20,8 +18,8 @@ export class SignPatientComponent implements OnInit {
     })
   }
 
-  createUser(frm) {
-    this.auth.createPatient(frm.value);
+  login(frm) {
+    this.auth.doc_login(frm.value.email, frm.value.password);
   }
 
 }

@@ -45,6 +45,11 @@ import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
 import { NoteditComponent } from './doctor/notedit/notedit.component';
+import { AuthService } from './core/auth.service';
+import { TestComponent } from './test/test.component';
+import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
+import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+
 
 
 
@@ -78,8 +83,10 @@ import { NoteditComponent } from './doctor/notedit/notedit.component';
         DoctorfordComponent,
         ConfirmationComponent,
         NoteditComponent,
+        TestComponent,
+        DocLoginComponent,
+        PatLoginComponent,
 
-     
     ],
     imports: [
         BrowserAnimationsModule, 
@@ -95,8 +102,9 @@ import { NoteditComponent } from './doctor/notedit/notedit.component';
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
       AngularFireDatabaseModule
+
     ],
-    providers: [CrudService,SearchdoctorService],
+    providers: [CrudService,SearchdoctorService,AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

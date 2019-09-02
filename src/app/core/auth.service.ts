@@ -1,47 +1,120 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import 'rxjs/add/operator/toPromise';
-import * as firebase from 'firebase/app';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+import { ThrowStmt } from '@angular/compiler';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(
-    public afAuth: AngularFireAuth
-  ){}
+  private eventAuthError = new BehaviorSubject<string>("");
+  eventAuthError$ = this.eventAuthError.asObservable();
 
-  SignUp(email, password) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        window.alert("You have been successfully registered!");
-        console.log(result.user)
-      }).catch((error) => {
-        window.alert(error.message)
+  newUser: any;
+
+  constructor(
+    private afAuth: AngularFireAuth,
+    private db: AngularFirestore,
+    private router: Router) { }
+
+  getUserState() {
+    return this.afAuth.authState;
+  }
+
+  pat_login( email: string, password: string) {
+    this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .catch(error => {
+        this.eventAuthError.next(error);
+      })
+      .then(userCredential => {
+        if(userCredential) {
+          this.router.navigate(['/patienthome']);
+        }
       })
   }
-  
 
+  doc_login( email: string, password: string) {
+    this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .catch(error => {
+        this.eventAuthError.next(error);
+      })
+      .then(userCredential => {
+        if(userCredential) {
+          this.router.navigate(['/default']);
+        }
+      })
+  }
 
-  doLogin(value){
-    return new Promise<any>((resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(value.email, value.password)
-      .then(res => {
-        resolve(res);
-      }, err => reject(err))
+  createPatient(user) {
+    console.log(user);
+    this.afAuth.auth.createUserWithEmailAndPassword( user.email, user.password)
+      .then( userCredential => {
+        this.newUser = user;
+        console.log(userCredential);
+        userCredential.user.updateProfile( {
+          displayName: user.firstName + ' ' + user.lastName
+        });
+
+        this.insertPatientData(userCredential)
+          .then(() => {
+            this.router.navigate(['/home']);
+          });
+      })
+      .catch( error => {
+        this.eventAuthError.next(error);
+      });
+  }
+
+  createDoctor(user) {
+    console.log(user);
+    this.afAuth.auth.createUserWithEmailAndPassword( user.email, user.password)
+      .then( userCredential => {
+        this.newUser = user;
+        console.log(userCredential);
+        userCredential.user.updateProfile( {
+          displayName: user.firstName + ' ' + user.lastName
+        });
+
+        this.insertDoctorData(userCredential)
+          .then(() => {
+            this.router.navigate(['/default']);
+          });
+      })
+      .catch( error => {
+        this.eventAuthError.next(error);
+      });
+  }
+  insertDoctorData(userCredential: firebase.auth.UserCredential) {
+    return this.db.doc(`Doctors/${userCredential.user.uid}`).set({
+      Email: this.newUser.email,
+      Firstname: this.newUser.firstName,
+      Lastname: this.newUser.lastName,
+      PhoneNumber:this.newUser.phone,
+      NIC:this.newUser.nic,
+      City:this.newUser.city,
+      Position:this.newUser.position,
+      RegistrationNumber:this.newUser.regnumber
+
     })
   }
 
-  doLogout(){
-    return new Promise((resolve, reject) => {
-      if(firebase.auth().currentUser){
-        this.afAuth.auth.signOut();
-        resolve();
-      }
-      else{
-        reject();
-      }
-    });
+  insertPatientData(userCredential: firebase.auth.UserCredential) {
+    return this.db.doc(`Patients/${userCredential.user.uid}`).set({
+      Email: this.newUser.email,
+      Firstname: this.newUser.firstName,
+      Lastname: this.newUser.lastName,
+      PhoneNumber:this.newUser.phone,
+      NIC:this.newUser.nic,
+      Country:this.newUser.country,
+      City:this.newUser.city
+
+    })
+  }
+
+  logout() {
+    return this.afAuth.auth.signOut();
   }
 }
