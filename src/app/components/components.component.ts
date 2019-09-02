@@ -10,6 +10,7 @@ import * as Rellax from 'rellax';
     ngb-progressbar {
         margin-top: 5rem;
     }
+    
     `]
 })
 
