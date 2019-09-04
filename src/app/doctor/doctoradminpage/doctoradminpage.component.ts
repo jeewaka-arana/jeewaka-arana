@@ -297,12 +297,26 @@ submitImg3(formValue){
 //upload video
 
 
+ 
+showpreview4(event:any){
+  if(event.target.files && event.target.files[0]){
+    const reader = new FileReader();
+    reader.onload=(e:any)=> this.video = e.target.result;
+    reader.readAsDataURL(event.target.files[0]);
+    this.videoclip =event.target.files[0];
+  }
+  else{
+    this.video ='../../../assets/img/avatar.png';
+    this.videoclip= null;
+  }
+
+}
 resetFormvideo(){
 
 
   this.formdata.reset();
 this.formdata.setValue({
-video:''
+  video:''
 });
 this.video='../../../assets/img/avatar.png';
 this.videoclip=null;
@@ -312,13 +326,13 @@ this.isSubmitted4=false;
 
 
 
-
+//submit img3
 submitvideo(formValue){
 
 
   this.isSubmitted4=true;
   if(this.formdata.valid){
-    var filePath = `Video/${this.videoclip.name}_${new Date().getTime()}`;
+    var filePath = `video/${this.videoclip.name}_${new Date().getTime()}`;
   const fileRef= this.storage.ref(filePath);
     this.storage.upload(filePath,this.videoclip).snapshotChanges().pipe(
     finalize(()=>{
@@ -330,12 +344,6 @@ submitvideo(formValue){
   ).subscribe();
   
   }
-
-  
-
-
-
-
 }
 
 

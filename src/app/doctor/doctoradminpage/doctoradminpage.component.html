@@ -277,7 +277,7 @@
                       <h2>Upload a video clip</h2>
                       <form [formGroup]="formdata" (save)="submitvideo(formdata.value)" >
                         <div class="form-group">
-                      <input type="file" accept="video/*" class="form-control" #fileUploader formControlName="video"  >
+                      <input type="file" accept="video/*" class="form-control" #fileUploader formControlName="video"  (change)="showpreview4($event)" >
 
 </div>
 
