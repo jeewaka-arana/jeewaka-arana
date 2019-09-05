@@ -157,7 +157,7 @@
 
 
 <div>
-<ul *ngFor = "let name of names" || >
+<ul *ngFor = "let name of names" >
   <!-- <li> -->
     {{name.firstname}}
   <!-- </li> -->
@@ -186,7 +186,7 @@
                     <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
                 </div>
                 <div class="column">  
-                    <h4>Dr. {{example.firstname}} {{example.lastname}}</h4>
+                    <h4>Dr. {{example.firstname}} {{example.lastname}} {{example.number}}</h4>
                     <p>MSc - Dietitics / Nutrition</p>
                     <p>Dietitian/Nutritionist, Sports Nutritionist</p>
                     <p> Years Experience Overall  (34 years as specialist)</p>

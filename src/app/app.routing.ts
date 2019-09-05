@@ -34,6 +34,7 @@ import { ConfirmationComponent } from './patient/appointment/confirmation/confir
 
 
 
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -63,6 +64,7 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
+    
     
     
     {path:'image' ,component:ImageComponent,children:[

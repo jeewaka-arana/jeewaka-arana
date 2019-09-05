@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import { AgmCoreModule } from '@agm/core'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -22,7 +23,7 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
-import { SearchdoctorService } from './core/searchdoctor.service'
+import { SearchdoctorService } from './core/searchdoctor.service';
 
 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +31,7 @@ import {CrudService} from './core/crud.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {AngularFirestore } from '@angular/fire/firestore'
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/database';
 
@@ -95,7 +97,8 @@ import { from } from 'rxjs';
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
-      AngularFireDatabaseModule
+      AngularFireDatabaseModule,
+     
     ],
     providers: [CrudService,SearchdoctorService],
     bootstrap: [AppComponent]

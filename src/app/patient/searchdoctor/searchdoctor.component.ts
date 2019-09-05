@@ -34,6 +34,7 @@ export class SearchdoctorComponent implements OnInit {
 
   firstname:string;
   lastname:string;
+  number:number;
 
   constructor(private afs: AngularFirestore) { }
 
@@ -44,8 +45,10 @@ export class SearchdoctorComponent implements OnInit {
       })
     })
 
-    this.examplesCol=this.afs.collection('example');
+    this.examplesCol=this.afs.collection('example', ref => ref.orderBy('number'));
     this.examples=this.examplesCol.valueChanges();
+    // this.examplesCol=this.afs.collection('example', ref => ref.orderBy('number').where("number", "==", 2));
+    // this.examplesCol=this.afs.collection('example', ref => ref.where("number", ">", 0).where("number", "<=", 3));
   }
 
   search($event){
@@ -56,11 +59,6 @@ export class SearchdoctorComponent implements OnInit {
   firequery(start, end){
     return this.afs.collection('example', ref => ref.limit(20).orderBy('firstname').startAt(start).endAt(end)).valueChanges();
   }
-
-  addName(){
-    this.afs.collection('example').add({'firstname':this.firstname, 'lastname':this.lastname});
-  }
-  
   
   }
 

@@ -12,6 +12,6 @@ export const environment = {
     projectId: "jeevaka-arana",
     storageBucket: "jeevaka-arana.appspot.com",
     messagingSenderId: "992572599146",
-    appId: "1:992572599146:web:d25b221fc3a92420"
+    appId: "1:992572599146:web:d25b221fc3a92420",
   }
 };
