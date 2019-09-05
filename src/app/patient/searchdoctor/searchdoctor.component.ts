@@ -6,8 +6,17 @@ import { observable } from 'rxjs';
 import { Doctor } from 'app/core/models/doctor.model';
 
 interface example {
-  firstname : string;
-  lastname : string;
+  // firstname : string;
+  // lastname : string;
+  Firstname:string;
+  Lastname:string;
+  Email:string;
+  PhoneNumber:number;
+  NIC:string;
+  City:string;
+  Position:string;
+  RegistrationNumber:string;
+    
 }
 
 @Component({
@@ -32,10 +41,18 @@ export class SearchdoctorComponent implements OnInit {
   examplesCol: AngularFirestoreCollection<Doctor>;
   examples: Observable<Doctor[]>;
 
-  firstname:string;
-  lastname:string;
-  number:number;
-
+  // firstname:string;
+  // lastname:string;
+  // number:number;
+  Firstname:string;
+  Lastname:string;
+  Email:string;
+  PhoneNumber:number;
+  NIC:string;
+  City:string;
+  Position:string;
+  RegistrationNumber:string;
+  
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
@@ -45,10 +62,11 @@ export class SearchdoctorComponent implements OnInit {
       })
     })
 
-    this.examplesCol=this.afs.collection('example', ref => ref.orderBy('number'));
+    this.examplesCol=this.afs.collection('Doctors', ref => ref.orderBy('City'));
     this.examples=this.examplesCol.valueChanges();
     // this.examplesCol=this.afs.collection('example', ref => ref.orderBy('number').where("number", "==", 2));
     // this.examplesCol=this.afs.collection('example', ref => ref.where("number", ">", 0).where("number", "<=", 3));
+  
   }
 
   search($event){
@@ -57,7 +75,7 @@ export class SearchdoctorComponent implements OnInit {
     this.endAt.next(q + "\uf8ff");
   }
   firequery(start, end){
-    return this.afs.collection('example', ref => ref.limit(20).orderBy('firstname').startAt(start).endAt(end)).valueChanges();
+    return this.afs.collection('Doctors', ref => ref.limit(20).orderBy('Firstname').startAt(start).endAt(end)).valueChanges();
   }
   
   }
