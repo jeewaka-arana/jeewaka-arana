@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import{AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore'
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/observable';
-import {FormGroup,FormControl} from '@angular/forms';
+import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 import{CrudService} from 'app/core/crud.service';
 import { Router } from '@angular/router';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+import {AuthService} from '../../core/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 
@@ -36,7 +38,7 @@ isSubmitted4:boolean;
 
 formdata=new FormGroup({ 
   profilepicurl:new FormControl(''),
-  Specialist:new FormControl(''),
+  Specialist:new FormControl('') ,
  
   Address:new FormControl(''),
   Phone:new FormControl(''),
@@ -52,9 +54,19 @@ formdata=new FormGroup({
 article:new FormControl(''),
 
 
+
+
  });
 
-  constructor(private CrudService:CrudService,private router:Router,private storage:AngularFireStorage) { }
+
+ 
+ 
+
+  constructor(private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth,private service:'DoctoradminService') { 
+
+
+
+  }
 
   ngOnInit() {
     window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
@@ -64,6 +76,9 @@ article:new FormControl(''),
     this.resetForm2();
     this.resetForm3();
    this.resetFormvideo();
+
+// this.service.getImageDetailList();
+
   }
 
 
@@ -71,6 +86,19 @@ article:new FormControl(''),
     this.CrudService.updateProfile(data);
    
   }
+
+
+
+
+  // get formControls(){
+
+  //   return this.formdata['controls'];
+  // }
+
+
+
+  
+  //profile picture
 
   showpreview(event:any){
     if(event.target.files && event.target.files[0]){
@@ -326,7 +354,7 @@ this.isSubmitted4=false;
 
 
 
-//submit img3
+//submit 
 submitvideo(formValue){
 
 
@@ -345,6 +373,12 @@ submitvideo(formValue){
   
   }
 }
+
+
+
+
+//getting data
+
 
 
 

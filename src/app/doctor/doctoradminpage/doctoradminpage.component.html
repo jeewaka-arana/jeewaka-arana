@@ -25,24 +25,8 @@
       <div class="section section-about-us" >
         <div class="container" class="center">
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <app-notedit></app-notedit>
-            <div class="card" style="width:45rem">
+            <div class="card" style="width:45rem" >
                 <div class="card-body" >
               
                   <form [formGroup]="formdata" (save)="onSubmit(formdata.value)" >
@@ -55,6 +39,7 @@
               
               <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="profilepicurl" (change)="showpreview($event)" >
               
+              <!-- <div class= "text-danger" *ngIf="isSubmitted && formControls.profilepicurl.errors?.required"  >This is required.</div> -->
                     </div>
               
               
@@ -69,11 +54,106 @@
               </div>
   
   
+
+
+
+
   
 
+              <div class="card" style="width:70rem" >
+                <div class="card-body" >
+
+                        <div class="formGroup" class="center">
+                           
+                       
+                                <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
+                                   
+                                    <div class="form-group">
+
+                                            <label class="col-lg-3 control-label"><b>Specialist:</b></label>
+
+                                            <div class="row">
+                                                    <div class="column" >
+                                                            <input type="checkbox" name="d1" class="largerCheckbox" value="Orthopedics"> Orthopedics<br><br>
+                                                            <input type="checkbox" name="d2" class="largerCheckbox" value="Arthritis"> Arthritis<br><br>
+                                                            <input type="checkbox" name="d3"  class="largerCheckbox" value="Neurological Disorders"> Neurological Disorders<br><br>
+                                                            <input type="checkbox" name="d4" class="largerCheckbox" value="Spinal Disorders"> Spinal Disorders<br><br>
+                                                            <input type="checkbox" name="d5"  class="largerCheckbox" value=" Paralysis / Hemiplagia"> Paralysis / Hemiplagia<br><br>
+                                                            <input type="checkbox" name="d6"  class="largerCheckbox" value="Gynaecological Disorders"> Gynaecological Disorders<br><br>
+                                                            <input type="checkbox" name="d7" class="largerCheckbox" value="Varicose Venis"> Varicose Venis<br><br>
+                                                            <input type="checkbox" name="d8" class="largerCheckbox" value="Chronic Ulcers"> Chronic Ulcers<br><br>
+                                                            <input type="checkbox" name="d9" class="largerCheckbox" value=" Diabetic Ulcers">  Diabetic Ulcers<br><br>
+                                                   </div>
+
+                                                
+                                                    <div class="column">
+                                                            <input type="checkbox" name="d1" class="largerCheckbox" value="Urinary Calculi"> Urinary Calculi<br><br>
+                                                            <input type="checkbox" name="d2" class="largerCheckbox" value="Urinary Diseases"> Urinary Diseases<br><br>
+                                                            <input type="checkbox" name="d3"  class="largerCheckbox" value="ENT"> ENT<br><br>
+                                                            <input type="checkbox" name="d4" class="largerCheckbox" value="Skin Disorders"> Skin Disorders<br><br>
+                                                            <input type="checkbox" name="d5"  class="largerCheckbox" value="Hypertension"> Hypertension<br><br>
+                                                            <input type="checkbox" name="d6"  class="largerCheckbox" value="Diabetes Mellitus"> Diabetes Mellitus<br><br>
+                                                            <input type="checkbox" name="d7" class="largerCheckbox" value="Cholestrol"> Cholestrol<br><br>
+                                                            
+                                                            <input type="checkbox" name="d8" class="largerCheckbox" value=" Obesity"> Obesity<br><br>
+                                                            <input type="checkbox" name="d9" class="largerCheckbox" value="Pediatrics"> Pediatrics <br><br>
 
 
 
+                                                    </div>
+                                                    <div class="column" >
+                                                            
+                                                            <input type="checkbox" name="d1" class="largerCheckbox"> Hemorrhoids <br><br>
+                                                            <input type="checkbox" name="d2" class="largerCheckbox" > Fistula<br><br>
+                                                            <input type="checkbox" name="d3"  class="largerCheckbox"> Gastritis <br><br>
+                                                            <input type="checkbox" name="d4" class="largerCheckbox"><br><br>
+                                                            <input type="checkbox" name="d5"  class="largerCheckbox"> <br><br>
+                                                            <input type="checkbox" name="d6"  class="largerCheckbox"> <br><br>
+                                                            <input type="checkbox" name="d7" class="largerCheckbox"> <br><br>
+                                                            <input type="checkbox" name="d8" class="largerCheckbox" ><br><br>
+                                                            <input type="checkbox" name="d9" class="largerCheckbox"> <br><br>
+
+
+
+
+
+
+                                                    </div>
+                                                    <div class="column" >
+                                                            <input type="checkbox" name="d1" class="largerCheckbox">  <br><br>
+                                                            <input type="checkbox" name="d2" class="largerCheckbox" ><br><br>
+                                                            <input type="checkbox" name="d3"  class="largerCheckbox">  <br><br>
+                                                            <input type="checkbox" name="d4" class="largerCheckbox"><br><br>
+                                                            <input type="checkbox" name="d5"  class="largerCheckbox"> <br><br>
+                                                            <input type="checkbox" name="d6"  class="largerCheckbox"> <br><br>
+                                                            <input type="checkbox" name="d7" class="largerCheckbox"> <br><br>
+                                                            <input type="checkbox" name="d8" class="largerCheckbox" ><br><br>
+                                                            <input type="checkbox" name="d9" class="largerCheckbox"> <br><br>
+
+
+                                                    </div>
+                                                  </div>
+                                                  
+
+
+
+
+<!--                                     
+                                      <label class="col-lg-3 control-label"><b>Specialist:</b></label> 
+                                      <app-checkbox></app-checkbox> 
+                                    -->
+    
+                                    </div>
+
+                               <br><br><br><br><br><br>
+                                          
+                                <div  class="form-group" >
+                                    <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                                    </div>
+</form>
+              </div>
+              </div>
+              </div>
 
 
 
@@ -87,7 +167,7 @@
 
   
               <div class="card" style="width:70rem">
-                  <div class="card-body" >
+                  <div class="card-body" > 
                 
                         <!-- edit form column -->
                         <div class="formGroup" class="center">
@@ -95,14 +175,7 @@
                        
                             <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
                                
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label"><b>Specialist:</b></label>
-                                  <div class="col-lg-8">
-                                      <textarea rows="10" cols="75" formControlName="Specialist"></textarea>
-                                    
-                                    </div>
-                                </div>
-                                
+                               
                                
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label"><b>Address:</b></label>
@@ -110,13 +183,20 @@
                                         <textarea rows="5" cols="75" formControlName="Address"></textarea>
                                       
                                       </div>
-                                </div>
+                                      
+
+                                    
+                                    </div>
+
+
+                            
                                 <!-- insert data to firebase -->
                                 <div class="form-group">
                                       <label class="col-lg-3 control-label"><b>Telephone Number:</b></label>
                                       <div class="col-lg-8">
       
-                                        <input class="form-control" formControlName=Phone  type="text" value="aaaa">
+                                        <input class="form-control" formControlName="Phone"  type="text" value="aaaa">
+                                        
                                       </div>
                                     </div>
                                     
@@ -129,7 +209,9 @@
                                       <textarea rows="10" cols="75" formControlName="dateTime"></textarea>
                                     
                                     </div>
+                                  
                                 </div>
+
                                           
                     <div  class="form-group" >
                         <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
@@ -210,14 +292,15 @@
             
       
       <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img1" (change)="showpreview1($event)" >
-      
+      <!-- <div class= "text-danger" *ngIf="isSubmitted1 && formControls.img1.errors?.required"  >This is required.</div> -->
             </div>
           
           <div  class="form-group" >
               <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg1()"/>         
-              </div>
+             
+            </div>
         
-   
+    
 </form>
 <br><br><br><br>
 
@@ -232,13 +315,13 @@
             
       
       <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img2" (change)="showpreview2($event)" >
-      
+      <!-- <div class= "text-danger" *ngIf="isSubmitted2 && formControls.img2.errors?.required"  >This is required.</div> -->
             </div>
           
-          <div  class="form-group" >
+          
+         <div  class="form-group" >
               <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg2()"/>         
               </div>
-        
     </form>
     <br><br><br><br>  
 
@@ -278,10 +361,10 @@
                       <form [formGroup]="formdata" (save)="submitvideo(formdata.value)" >
                         <div class="form-group">
                       <input type="file" accept="video/*" class="form-control" #fileUploader formControlName="video"  (change)="showpreview4($event)" >
-
+                      <!-- <div class= "text-danger" *ngIf="isSubmitted4 && formControls.video.errors?.required"  >This is required.</div> -->
 </div>
 
-                      <!-- <input id="05" type="file" accept="video/*" formControlName="video">  -->
+                      
   <div  class="form-group" >
   <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitvideo()"/>         
   </div> 
@@ -292,11 +375,11 @@
   </div>
   
   
-  
+  <!--
   <div class="card" style="width:70rem">
-      <div class="card-body" >
+       <div class="card-body" >
 
-            <!-- edit form column -->
+        
             <div class="formGroup" class="center">
                            
                        
@@ -317,14 +400,17 @@
         </form>
         </div>
         </div>
-        </div>
+        </div> -->
   
   
-  
+                
+        <div class="card" style="width:70rem">
+                <div class="card-body" >
+<h2>Comment Section</h2>
  
-  
-  
-        
+  </div>
+</div>
+
       <footer class="footer footer-default">
           <div class="container">
               

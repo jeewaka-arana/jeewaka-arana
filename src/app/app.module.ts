@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -54,6 +55,7 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
 
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -73,7 +75,9 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         SelectbynameComponent,
         SelectbydiseaseComponent,
         SearchdoctorComponent,
+
  
+
         UserloginComponent,
         AdminComponent,
         HomeComponent,
@@ -86,6 +90,7 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
+    
 
     ],
     imports: [
@@ -101,7 +106,8 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
-      AngularFireDatabaseModule
+      AngularFireDatabaseModule,
+      NgMultiSelectDropDownModule.forRoot(),
 
     ],
     providers: [CrudService,SearchdoctorService,AuthService],
