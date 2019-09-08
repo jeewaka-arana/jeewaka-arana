@@ -49,6 +49,8 @@ import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+import { DoclistComponent } from './admin/doclist/doclist.component';
+import { EditprofileComponent } from './admin/editprofile/editprofile.component';
 
 
 
@@ -86,6 +88,8 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
+        DoclistComponent,
+        EditprofileComponent,
 
     ],
     imports: [

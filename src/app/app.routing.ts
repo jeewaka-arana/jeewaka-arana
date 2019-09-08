@@ -33,8 +33,8 @@ import{NoteditComponent} from './doctor/notedit/notedit.component';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
-
-
+import { DoclistComponent } from './admin/doclist/doclist.component';
+import { EditprofileComponent } from './admin/editprofile/editprofile.component';
 
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -62,6 +62,7 @@ const routes: Routes =[
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
+    { path: 'admin/doclist', component:DoclistComponent },
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
@@ -70,7 +71,8 @@ const routes: Routes =[
     { path: 'plogin', component:PatLoginComponent},
     {path:'image' ,component:ImageComponent,children:[
     {path:'upload',component:ImageComponent},//image/upload
-    {path:'list',component:ImageListComponent}   
+    {path:'list',component:ImageListComponent}, 
+    {path:'admin/editprofile',component:EditprofileComponent}
 ]},
 
 {path:'notepad',component:NotepadComponent},

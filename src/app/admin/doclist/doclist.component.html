@@ -1,0 +1,96 @@
+<div class="wrapper">
+  <div class="page-header page-header-small" filter-color="orange">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
+      </div>
+      <div class="container">
+          <div class="content-center">
+              <div class="photo-container">
+                  <img src="assets/img/default-avatar.png" alt="">
+              </div>
+              <h3 class="title">Admin name</h3>
+              <p class="category">Ayurvedic Doctor</p>
+              <div class="button-container">
+                      <a href="/admin/editprofile" class="btn btn-primary btn-round btn-lg">Edit profile</a>
+                     <!-- <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
+                        <i class="fab fa-instagram"></i>
+                      </a>-->
+                  </div>
+          </div>
+      </div>
+  </div>
+  <div class="section" >
+      <div class="container">
+      
+        <h3 class="title" aria-placeholder="center">Welcome to admin page</h3>
+        
+          <div id ="sidebar" style=" width:300px;height:400px;">
+
+ 
+                  <ul>
+                  <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
+                  color:white;"> <a routerLink="/admin/doclist">Doctor list</a></li>
+                  <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
+                  color:white;"><a routerLink="/admin/doclist">Add Articles </a></li>
+                  <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
+                  color:white;"><a routerLink="/admin/doclist">Reviews</a></li>
+                  <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
+                  color:white;"><a routerLink="/admin/doclist">Doctor requests </a></li>
+                  </ul>
+            
+          </div>
+          
+          <div id="data" style="height:700px;
+          background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9QP7eI51umqEBlQ85i1CJLawiA4B1lAZrv5pR5WBUl-3115cltw ');
+          background-size: cover; 
+          background-position: top center; 
+          min-height: 700px;
+          color:white;
+          font-family:Helvetica;
+          font-size:25px;
+          ">
+             <p>Doctor list</p>
+
+          </div>
+                  
+      </div>
+  </div>
+
+  <footer class="footer footer-default">
+      <div class="container">
+          <nav>
+              <ul>
+                  <li>
+                      <a href="https://www.creative-tim.com">
+                          Creative Tim
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.creative-tim.com/about-us">
+                          About Us
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://blog.creative-tim.com">
+                          Blog
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                          MIT License
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="copyright">
+              &copy;
+              {{data | date: 'yyyy'}}, Designed by
+              <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+          </div>
+      </div>
+  </footer>
+</div>
+
