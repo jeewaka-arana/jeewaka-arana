@@ -10,7 +10,11 @@ import { finalize } from 'rxjs/operators';
 import {AuthService} from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
+interface Doctors{
 
+  Address:string;
+  Email:string;
+}
 
 
 @Component({
@@ -59,10 +63,7 @@ article:new FormControl(''),
  });
 
 
- 
- 
-
-  constructor(private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth,private service:'DoctoradminService') { 
+  constructor(private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth) { 
 
 
 
@@ -76,8 +77,7 @@ article:new FormControl(''),
     this.resetForm2();
     this.resetForm3();
    this.resetFormvideo();
-
-// this.service.getImageDetailList();
+//get data from databse
 
   }
 

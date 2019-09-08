@@ -74,7 +74,8 @@ const routes: Routes =[
 ]},
 
 {path:'notepad',component:NotepadComponent},
-{path:'master',component:DoctorprofilepageComponent}
+{path:'master',component:DoctorprofilepageComponent},
+{path:'notedit',component:NoteditComponent}
 
 
     ]

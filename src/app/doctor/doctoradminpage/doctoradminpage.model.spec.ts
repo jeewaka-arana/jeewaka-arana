@@ -2,6 +2,9 @@
 
 describe('Doctoradminpage', () => {
   it('should create an instance', () => {
-  //  expect(new Doctoradminpage()).toBeTruthy();
+    //expect(new Doctoradminpage()).toBeTruthy();
   });
 });
+
+
+

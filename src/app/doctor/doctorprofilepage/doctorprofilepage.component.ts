@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import{Doctor} from '../../core/models/doctor.model';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'; //for firestore connection
-import { Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection ,AngularFirestoreDocument} from '@angular/fire/firestore'; //for firestore connection
+import { Observable } from 'rxjs/observable';
+import 'rxjs/add/operator/map';
 
-
-
+//retrive  data
 interface Doctors{
 
   DocId:string;
@@ -44,8 +44,8 @@ interface Doctors{
 export class DoctorprofilepageComponent implements OnInit {
 
 
-  DoctorsCol:AngularFirestoreCollection< Doctor>;
-  Doctors:Observable< Doctor[]>;
+  postsCol:AngularFirestoreCollection< Doctors>;
+  posts:Observable< Doctors[]>;
 
 
   DocId:string;
@@ -123,8 +123,8 @@ export class DoctorprofilepageComponent implements OnInit {
     // window.document.body.style.backgroundImage='url(https://monodomo.com/free-wallpapers/ayurveda-wallpapers-desktop-background-For-Free-Wallpaper.jpg)';
  
  
- this.DoctorsCol=this.afs.collection('Doctors');
- this.Doctors=this.DoctorsCol.valueChanges();
+ this.postsCol=this.afs.collection('Doctors');
+ this.posts=this.postsCol.valueChanges();
  
  
  
