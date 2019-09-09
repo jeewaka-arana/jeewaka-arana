@@ -49,8 +49,8 @@ export class DoctorprofilepageComponent implements OnInit {
 
 
   DocId:string;
-  FirstName:string;
-  LastName:string;
+  Firstname:string;
+  Lastname:string;
   UserName:string;
   Email:string;
   Phone:number;
@@ -71,33 +71,6 @@ export class DoctorprofilepageComponent implements OnInit {
  img3:string;
  video:string;
  article:string;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

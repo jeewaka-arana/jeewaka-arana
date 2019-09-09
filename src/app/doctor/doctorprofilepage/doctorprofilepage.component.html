@@ -2,7 +2,7 @@
 <div class="wrapper">
         
           <div class="page-header page-header-small">
-              <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://tejashaven.com.au/wp-content/uploads/2016/04/massage-therapy-Australia-03.jpg');">
+              <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://www.schoolhousehotel.com/upload/slide_images/spa-1.jpg');">
               </div>
               <div class="container">
                   <div class="content-center">
@@ -35,18 +35,26 @@
                             
                             <form class="form-horizontal" role="form">
                               <div class="form-group">
-                                
 
-<ul *ngFor="let post of posts | async">
-                                <label class="col-lg-5 control-label" ><b><span> Name: </span>Dr.Amarasingha</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b><span>Specialist:</span> Cancers</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b><span>Status:</span>  {{post.Position}}</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b><span>Address</span> {{ post.Address}}</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b> <span>Telephone Number:</span> {{post.Phone}}</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b> <span>Email Address:</span> amarasingha@gmail.com</b></label><br><br>
 
+                                    <div class="card" style="width:75rem">
+                                    <div class="card-body">
+
+
+                        <ul *ngFor="let post of posts | async">
+                                <label class="col-lg-15 control-label" ><b><span> Name: </span>Dr. {{post.Firstname}}   {{post.Lastname}}</b></label><br><br>
+                                <label class="col-lg-15 control-label"><b><span>Specialist:</span> Cancers</b></label><br><br>
+                                <label class="col-lg-15 control-label"><b><span>Status:</span>  {{post.Position}}</b></label><br><br>
+                                <label class="col-lg-15 control-label"><b><span>Address</span> {{ post.Address}}</b></label><br><br>
+                                <label class="col-lg-15 control-label"><b> <span>Telephone Number:</span> {{post.Phone}}</b></label><br><br>
+                                <label class="col-lg-15 control-label"><b> <span>Email Address:</span> {{post.Email}}</b></label><br><br>
+                                <label class="col-lg-19 control-label" ><b><span>Today Special Note: </span> {{post.note}}</b></label><br>
                             </ul>
+
+                            </div>
+                            </div>
 <!--
+
                                 
                               
                                   <div class="form-group">
@@ -89,41 +97,41 @@
                 <div class="card-body" >
 
       
-    <label class="col-md-9 control-label"><b><span>Available Dates & Times:</span></b></label>
+    <label class="col-md-20 control-label"><b><span>Available Dates & Times:</span></b></label>
     
-</div>
-</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="card" style="width:45rem">
-            <div class="card-body" >
-
-<h2>Special Notes For Today</h2>
-
-<div class="col-lg-8" >
-  <textarea rows="5" cols="85" disabled ></textarea>
-
-
-</div>
  
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <div class="card" style="width:45rem">
+            <div class="card-body" > -->
+                    
+                    
+<!-- <h2>Special Notes For Today</h2>
+
+<div class="col-lg-8" >
+  <textarea rows="5" cols="85" value="{{post.note}}" disabled ></textarea>
+
+
+</div> -->
 
 
 

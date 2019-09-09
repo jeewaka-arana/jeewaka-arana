@@ -23,6 +23,12 @@ interface Doctors{
   styleUrls: ['./doctoradminpage.component.scss']
 })
 export class DoctoradminpageComponent implements OnInit {
+
+
+
+
+
+
 img : string;
 img1:string;
 img2:string;
@@ -78,6 +84,7 @@ article:new FormControl(''),
     this.resetForm3();
    this.resetFormvideo();
 //get data from databse
+
 
   }
 
