@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
-import { AgmCoreModule } from '@agm/core'
+import { AgmCoreModule } from '@agm/core';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -25,7 +26,7 @@ import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
 import { SearchdoctorService } from './core/searchdoctor.service';
 
-
+// import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {CrudService} from './core/crud.service';
 import { AngularFireModule } from '@angular/fire';

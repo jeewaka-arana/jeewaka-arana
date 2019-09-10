@@ -72,12 +72,22 @@
                                                         </div> 
                                                         <div class="inline" id="checkRadios">  
                                                           <div class="col-sm-6 col-lg-3">
-                                                            <h6 class="category">Consultation Fee</h6>
+                                                            <h6 class="category">Position</h6>
                                                             <div class="form-check form-check-radio">
                                                                 <label class="form-check-label">
                                                                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
                                                                     <span class="form-check-sign"></span>
-                                                                    Radio is on
+                                                                    Qualified
+                                                                </label>
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
+                                                                    <span class="form-check-sign"></span>
+                                                                   Generation
+                                                                </label>
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
+                                                                    <span class="form-check-sign"></span>
+                                                                    both
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -137,7 +147,7 @@
                 <i class="fa fa-user-circle"></i>
             </span>
           </div>
-            <input type="text" [(ngModel)]="searchterm" (keydown)="search($event)" class="form-control" placeholder="doctor name" (focus)="focus=true" (blur)="focus=false">
+            <input type="text" [(ngModel)]="Firstname" (keydown)="filterName('Firstname',Firstname)" class="form-control" placeholder="doctor name" (focus)="focus=true" (blur)="focus=false">
           </div>
     </div>
     <div class="col-sm-6 col-lg-3">
@@ -147,16 +157,33 @@
                 <i class="fa fa-user-circle"></i>
             </span>
           </div>
-            <input type="text" (keydown)="search($event)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
+            <input type="text" [(ngModel)]="City" (keydown)="filterArea('City',City)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
           </div>
     </div>
-    <button class="btn btn-primary btn-round btn-sm" type="button">Search</button>
+    
 </div>
 
+<!-- <div>
+  <mat-form-field>
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+  </mat-form-field>
+  
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let name of names" [value]="option">{{name.Firstname}} {{name.Lastname}}</mat-option>
+  </mat-autocomplete>
+  <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let name of names" [value]="option">
+              {{name.Firstname}} {{name.Lastname}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+</div> -->
 
-
-
-<div>
+<!-- <div>
 <ul *ngFor = "let name of names" >
   
     {{name.Firstname}} {{name.Lastname}}
@@ -165,7 +192,7 @@
 <div *ngIf = "names?.length == 0">
   <p>Sorry, not found</p>
 </div>
-</div>
+</div> -->
 
    </div>
         </div>     
@@ -176,16 +203,16 @@
               <div class="container">                  
                     <div class="row">
                             <div class="col-md-20 col-xl-10" >
-<ul *ngFor="let example of examples | async">
+<ul *ngFor="let results of filteredNames">
         <div class="card" >
             <div class="row">
                 <div class="img-btn">
                     <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
                 </div>
                 <div class="column">  
-                    <h4>Dr. {{example.Firstname}} {{example.Lastname}}</h4>
-                    <h6>{{example.RegistrationNumber}}</h6>
-                    <p>{{example.Email}}</p>
+                    <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
+                    <h6>{{results.RegistrationNumber}}</h6>
+                    <p>{{results.Email}}</p>
                     <p>Dietitian/Nutritionist, Sports Nutritionist</p>
                     <p> Years Experience Overall  (34 years as specialist)</p>
                     <p>Apollo Spectra Hospitals</p>
