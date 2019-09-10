@@ -1,30 +1,9 @@
-
-
- 
 <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="500">
     <div class="container">
-      <div class="dropdown button-dropdown">
-        <div ngbDropdown>
-          <a class="dropdown-toggle" ngbDropdownToggle>
-              <span class="button-bar"></span>
-              <span class="button-bar"></span>
-              <span class="button-bar"></span>
-          </a>
-           <div ngbDropdownMenu>
-             <a class="dropdown-header">Welcome to Jeewaka Arana</a>
-             <a class="dropdown-item" href="#">Home</a>
-             <a class="dropdown-item" href="#">About Us</a>
-             <a class="dropdown-item" href="#">Sign In</a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Separated link</a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Change Language</a>
-           </div>
-         </div>
-      </div>
+      <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
         <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" ngbTooltip="Designed by Jeewaka Arana Team">
-                Menu
+            <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+               
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
                 <span class="navbar-toggler-bar bar1"></span>
@@ -34,71 +13,67 @@
         </div>
         <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
-
-
-
-
-
+  
+  
+  
+  
+  
                 <li class="nav-item">
-                    <a class="nav-link"   routerLink="/home" >
+                    <a class="nav-link"   routerLink="/index" >
                         <i class="now-ui-icons business_bank"></i>
                         <p>Home</p>
                     </a>
                 </li>
-
-
-
+  
+  
+  
                 
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/user" >
+                  <a class="nav-link" routerLink="/index" >
                       <i class="now-ui-icons business_globe"></i>
                       <p>Change Language</p>
                   </a>
               </li>
-    
-
-
+  
+                
+  
+  
+  
                 <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                    <p class="d-lg-none d-xl-none">Twitter</p>
+                  <a class="nav-link btn btn-neutral" routerLink="/login">
+                      <i class="now-ui-icons arrows-1_share-66"></i>
+                      <p>Log In</p>
                   </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-                    <i class="fab fa-facebook-square"></i>
-                    <p class="d-lg-none d-xl-none">Facebook</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                    <p class="d-lg-none d-xl-none">Instagram</p>
-                  </a>
-                </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-neutral" routerLink="/signup">
+                    <i class="now-ui-icons arrows-1_share-66"></i>
+                    <p>Sign In</p>
+                </a>
+            </li>
+            
+             
             </ul>
         </div>
     </div>
-</nav>
+  </nav>
+  
 
-<div class="wrapper">
-    <div class="page-header clear-filter" filter-color="orange">
-      
-<div class="content-center brand">
-        <img class="n-logo" src="assets/img/now-logo.png" alt="">
-        
+
+<div class="page-header" filter-color="orange">
+    <div class="page-header-image" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQySwkndiTZtCseFJrMgucIFQczN0Kf7ihKC0md8LA26A_8ccGC)"></div>
+    <div class="container">
+            
+        <div class="col-md-4 content-center">
+            <img src="assets/img/logome.png" height="20%" width="20%" />
+                <h3>SIGN AS</h3>
+            <br><br>
+            <button class="btn btn-primary btn-round" type="button" routerLink="/signup/sign-doctor">
+                <i class="now-ui-icons users_single-02"></i> as Doctor
+            </button>
+            <button class="btn btn-primary btn-round" type="button" routerLink="/signup/sign-patient">
+                <i class="now-ui-icons users_single-02"></i> as Patient
+            </button>
     </div>
-    <h2 style="color: white">Sign as:</h2>
-    <div class="container-fluid" style="margin:6px 60px">
-      
-  
-      <button class="button button2" routerLink="/signup/sign-doctor">Doctor</button>
-      <button class="button button2" routerLink="/signup/sign-patient">Patient</button>
-      <div style="width:100%;height:400px;">
-        <img src="assets/img/doc2.jpg" alt="Norway" style="float:left;width:20%;height:70%;object-fit:cover;margin: 6px 60px;">
-  
-        <img src="assets/img/pa.jpg" alt="Paris" style="float:left;width:20%;height:70%;object-fit:cover;margin: 6px 60px;">
-      </div>
-    </div>
-     </div> 
-  </div>
+   
+</div>
