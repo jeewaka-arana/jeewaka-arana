@@ -50,6 +50,9 @@ import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+import { NewUserComponent } from './doctor/new-user/new-user.component';
+
+
 
 
 
@@ -90,6 +93,8 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
+        NewUserComponent,
+       
     
 
     ],

@@ -14,30 +14,36 @@
           <div class="section section-about-us">
               <div class="container">
                
-                      <div class="col-md-8 ml-auto mr-auto text-center">
+                      <!-- <div class="col-md-8 ml-auto mr-auto text-center">
                           <h2 class="title"></h2>
                          
-                      </div>
+                      </div> -->
                       <img  src="../../../assets/img/avatar.png" width="250" height="250" />
   
-
-
-                      <div class="container">
-                        
-                          <hr>
+<br>
+<br>
+</div>
+          </div>
+                      <!-- <div class="container">
+                         -->
                         <div class="row">
                           <!-- left column -->
                           
                           <!-- edit form column -->
-                          <div class="col-md-9 personal-info">
-                           
+                          <!-- <div class="col-md-9 personal-info">
+                            -->
                             
-                            
-                            <form class="form-horizontal" role="form">
-                              <div class="form-group">
+<!--                             
+                            <form class="form-horizontal" role="form"> -->
+                              <!-- <div class="form-group"> -->
 
+                                    <div class="row">
+                                            <div class="column">
 
-                                    <div class="card" style="width:75rem">
+                                    <div class="card" style="width:40rem;margin-left:5px;" >
+                                        
+                                       
+  
                                     <div class="card-body">
 
 
@@ -53,58 +59,36 @@
 
                             </div>
                             </div>
-<!--
 
-                                
-                              
-                                  <div class="form-group">
-                                        <label class="col-lg-3 control-label"><b>Email Address:</b></label>
-                                        <div class="col-lg-8">
-        
-                                          <input class="form-control" type="text" value="amarasingha@gmail.com" disabled>
-                                        </div>
-                                      </div>
-
-
- -->
 </div>
 
-
-<div class="form-group">
-  
-  
-  <!-- <div class="col-lg-8" >
-  <textarea rows="10" cols="150"  placeholder= "Monday-Friday 8 a.m - 3 p.m" disabled></textarea>
-
-</div> -->
-  </div>
+<!-- </div> -->
 
 
+
+
+                            
                               
                               
-                            </form>
-                          </div>
-                      </div>
-                    </div>
-                    <hr>
+                            <!-- </form> -->
+                          <!-- </div> -->
+                   
 
-<div>
-
-
-
-
-        <div class="card" style="width:75rem">
+                          <div class="column">
+        <div class="card" style="width:45rem;margin-left:40px;">
                 <div class="card-body" >
-
+                        <ul *ngFor="let post of posts | async">
       
-    <label class="col-md-20 control-label"><b><span>Available Dates & Times:</span></b></label>
+    <label class="col-md-10 control-label"><b><span>Available Dates & Times:</span>{{post.dateTime}}</b></label>
     
-
+</ul>
 
 
  
 </div>
 </div>
+</div>
+</div>
 
 
 
@@ -118,20 +102,6 @@
 
 
 
-
-
-<!-- 
-    <div class="card" style="width:45rem">
-            <div class="card-body" > -->
-                    
-                    
-<!-- <h2>Special Notes For Today</h2>
-
-<div class="col-lg-8" >
-  <textarea rows="5" cols="85" value="{{post.note}}" disabled ></textarea>
-
-
-</div> -->
 
 
 
@@ -140,10 +110,10 @@
                  
 
 
-                  <div class="separator separator-primary"></div>
+                 
                   <div class="section-story-overview">
                       <div class="row">
-                          <div class="col-md-6">
+                          <div class="col-md-5">
                               <div class="image-container image-left" style="background-image: url('assets/img/a1.jpg')">
                                   <!-- First image on the left side -->
                                   
@@ -151,11 +121,9 @@
                               <!-- Second image on the left side of the article -->
                               <div class="image-container" style="background-image: url('assets/img/a2.jpg')"></div>
                           </div>
-                        
+                     
 
-
-
-                          <div class="col-md-5">
+                          <div class="col-md-6">
                               <!-- First image on the right side, above the article -->
                               <div class="image-container image-right" style="background-image: url('assets/img/a3.jpg')"></div>
                              
@@ -170,6 +138,8 @@
              
               
           </div>
+
+          
           <div class="section section-team text-center">
               <div class="container">
                   <h2 class="title">About Our Place</h2>
@@ -218,6 +188,11 @@
 
           <div class="section section-contact-us text-center">
               <div class="container">
+
+                
+                    <div class="formGroup" >
+                      
+                            <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
                   <h2 class="title">Send your comments</h2>
                   <p class="description">Your thougths are very important ..</p>
                   <div class="row">
@@ -241,14 +216,18 @@
                           <div class="textarea-container">
                               <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
                           </div>
-                          <div class="send-button">
-                              <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>
-                          </div>
+                          <div  class="form-group" >
+                                <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                                </div>
                       </div>
                   </div>
+
+
+
+                  </form>
               </div>
           </div>
-
+</div>
 
 
 
@@ -285,5 +264,5 @@
                   </div>
               </div>
           </footer>
-      </div>
+      
       

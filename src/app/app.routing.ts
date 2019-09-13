@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
@@ -33,6 +33,7 @@ import{NoteditComponent} from './doctor/notedit/notedit.component';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+import{NewUserComponent} from './doctor/new-user/new-user.component';
 
 
 
@@ -75,8 +76,9 @@ const routes: Routes =[
 
 {path:'notepad',component:NotepadComponent},
 {path:'master',component:DoctorprofilepageComponent},
-{path:'notedit',component:NoteditComponent}
+{path:'notedit',component:NoteditComponent},
 
+{path:'n' ,component:NewUserComponent}
 
     ]
 

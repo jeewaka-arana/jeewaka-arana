@@ -3,7 +3,10 @@ import{Doctor} from '../../core/models/doctor.model';
 import { AngularFirestore, AngularFirestoreCollection ,AngularFirestoreDocument} from '@angular/fire/firestore'; //for firestore connection
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/map';
-
+import{CrudService} from 'app/core/crud.service';
+import { Router } from '@angular/router';
+import {AuthService} from '../../core/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 //retrive  data
 interface Doctors{
 
@@ -78,7 +81,7 @@ export class DoctorprofilepageComponent implements OnInit {
   // private itemsCollection: AngularFirestoreCollection<Doctor>;
   // Doctorview: Observable<Doctor[]>;
 
-  constructor(private  afs: AngularFirestore) {
+  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router) {
   //   this.itemsCollection = afs.collection<Doctor>('Doctors');
   
   //   this.Doctorview = this.itemsCollection.valueChanges();
@@ -103,5 +106,6 @@ export class DoctorprofilepageComponent implements OnInit {
  
  
   }
+
 
 }

@@ -9,12 +9,15 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import {AuthService} from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { validateConfig } from '@angular/router/src/config';
 
 interface Doctors{
 
   Address:string;
   Email:string;
 }
+
+
 
 
 @Component({
@@ -24,9 +27,15 @@ interface Doctors{
 })
 export class DoctoradminpageComponent implements OnInit {
 
+//
+
+// postsCol:AngularFirestoreCollection< Doctors>;
+// posts:Observable< Doctors[]>;
+//
 
 
-
+Address:string;
+Email:string;
 
 
 img : string;
@@ -69,7 +78,7 @@ article:new FormControl(''),
  });
 
 
-  constructor(private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth) { 
+  constructor(private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth,private  afs: AngularFirestore) { 
 
 
 
@@ -83,7 +92,15 @@ article:new FormControl(''),
     this.resetForm2();
     this.resetForm3();
    this.resetFormvideo();
+   
+   
+   //
+  
+ 
 //get data from databse
+
+// this.postsCol=this.afs.collection('Doctors');
+// this.posts=this.postsCol.valueChanges();
 
 
   }
