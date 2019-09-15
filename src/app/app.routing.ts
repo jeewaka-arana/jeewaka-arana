@@ -24,8 +24,7 @@ import{AdminComponent} from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { ImageComponent } from './images/image/image.component';
-import { ImageListComponent } from './images/image-list/image-list.component';
+
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import{NotepadComponent}from './doctor/notepad/notepad.component';
@@ -33,8 +32,8 @@ import{NoteditComponent} from './doctor/notedit/notedit.component';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
-import{NewUserComponent} from './doctor/new-user/new-user.component';
 
+//
 
 
 const routes: Routes =[
@@ -69,16 +68,14 @@ const routes: Routes =[
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
-    {path:'image' ,component:ImageComponent,children:[
-    {path:'upload',component:ImageComponent},//image/upload
-    {path:'list',component:ImageListComponent}   
-]},
+//     {path:'image' ,component:ImageComponent,children:[
+      
+// ]},
 
 {path:'notepad',component:NotepadComponent},
 {path:'master',component:DoctorprofilepageComponent},
 {path:'notedit',component:NoteditComponent},
 
-{path:'n' ,component:NewUserComponent}
 
     ]
 

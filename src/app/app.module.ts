@@ -39,9 +39,7 @@ import {NotepadComponent} from './doctor/notepad/notepad.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HomeComponent } from './home/home.component';
-import { ImagesComponent } from './images/images.component';
-import { ImageComponent } from './images/image/image.component';
-import { ImageListComponent } from './images/image-list/image-list.component';
+
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
@@ -50,7 +48,10 @@ import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
-import { NewUserComponent } from './doctor/new-user/new-user.component';
+
+
+
+
 
 
 
@@ -84,16 +85,15 @@ import { NewUserComponent } from './doctor/new-user/new-user.component';
         UserloginComponent,
         AdminComponent,
         HomeComponent,
-        ImagesComponent,
-        ImageComponent,
-        ImageListComponent,
+      
         DoctorfordComponent,
         ConfirmationComponent,
         NoteditComponent,
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
-        NewUserComponent,
+       
+     
        
     
 

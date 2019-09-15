@@ -40,7 +40,7 @@
                                     <div class="row">
                                             <div class="column">
 
-                                    <div class="card" style="width:40rem;margin-left:5px;" >
+                                    <div class="card" style="width:40rem;margin-left:55px;" >
                                         
                                        
   
@@ -80,7 +80,7 @@
                         <ul *ngFor="let post of posts | async">
       
     <label class="col-md-10 control-label"><b><span>Available Dates & Times:</span>{{post.dateTime}}</b></label>
-    
+   
 </ul>
 
 
@@ -186,7 +186,7 @@
 
 
 
-          <div class="section section-contact-us text-center">
+          <!-- <div class="section section-contact-us text-center">
               <div class="container">
 
                 
@@ -203,7 +203,7 @@
                                 <i class="now-ui-icons users_circle-08"></i>
                             </span>
                           </div>
-                            <input type="text" class="form-control" placeholder="Your Name" (focus)="focus=true" (blur)="focus=false">
+                            <input type="text" class="form-control" formControlName="name" placeholder="Your Name" (focus)="focus=true" (blur)="focus=false">
                         </div>
                         <div class="input-group input-lg" [ngClass]="{'input-group-focus':focus1===true}">
                           <div class="input-group-prepend" >
@@ -211,10 +211,10 @@
                                   <i class="now-ui-icons ui-1_email-85"></i>
                             </span>
                           </div>
-                            <input type="text" class="form-control" placeholder="Your email address" (focus)="focus1=true" (blur)="focus1=false">
+                            <input type="text" class="form-control" formControlName="email" placeholder="Your email address" (focus)="focus1=true" (blur)="focus1=false">
                         </div>
                           <div class="textarea-container">
-                              <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
+                              <textarea class="form-control" formControlName="msg" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
                           </div>
                           <div  class="form-group" >
                                 <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
@@ -227,24 +227,12 @@
                   </form>
               </div>
           </div>
-</div>
+</div> -->
 
 
 
 
 
-
-<div>
-    <ul *ngFor ="let Doctors of Doctorss | async">
-        <li>
-            <strong>
-
-                {{Doctors.Address}}
-            </strong>
-        </li>
-
-    </ul>
-</div>
 
 
 

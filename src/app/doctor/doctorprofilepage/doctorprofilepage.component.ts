@@ -7,6 +7,10 @@ import{CrudService} from 'app/core/crud.service';
 import { Router } from '@angular/router';
 import {AuthService} from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+
+import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
+import { ImageService } from 'app/core/image.service';
+
 //retrive  data
 interface Doctors{
 
@@ -74,18 +78,27 @@ export class DoctorprofilepageComponent implements OnInit {
  img3:string;
  video:string;
  article:string;
+ 
+
+ //comment section
+ name:string;
+ email:string;
+ msg:string;
+
+ 
+formdata=new FormGroup({ 
+  name:new FormControl(''),
+  email:new FormControl('') ,
+  msg:new FormControl('')
+
+});
 
 
 
 
-  // private itemsCollection: AngularFirestoreCollection<Doctor>;
-  // Doctorview: Observable<Doctor[]>;
 
-  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router) {
-  //   this.itemsCollection = afs.collection<Doctor>('Doctors');
+  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private service:ImageService ) {
   
-  //   this.Doctorview = this.itemsCollection.valueChanges();
-
 
 
   }
@@ -94,7 +107,8 @@ export class DoctorprofilepageComponent implements OnInit {
 
   ngOnInit() {
  
- 
+   //get image details
+  this.service.getImageDetailList();
  
     // window.document.body.style.backgroundImage='url(https://monodomo.com/free-wallpapers/ayurveda-wallpapers-desktop-background-For-Free-Wallpaper.jpg)';
  
@@ -106,6 +120,12 @@ export class DoctorprofilepageComponent implements OnInit {
  
  
   }
+//pass patients comments from doctor view page
+  savevalue(data) {
+    this.CrudService.passData(data);
+   
+  }
+
 
 
 }
