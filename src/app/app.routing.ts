@@ -68,9 +68,7 @@ const routes: Routes =[
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
-//     {path:'image' ,component:ImageComponent,children:[
-      
-// ]},
+   
 
 {path:'notepad',component:NotepadComponent},
 {path:'master',component:DoctorprofilepageComponent},

@@ -92,6 +92,8 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
+     
+       
        
      
        

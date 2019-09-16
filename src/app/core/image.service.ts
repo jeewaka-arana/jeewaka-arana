@@ -13,7 +13,7 @@ export class ImageService {
 
 
   getImageDetailList(){
-    this.imageDetailList = this.firebase.list('Doctors');
+    this.imageDetailList = this.firebase.list('imageDetails');
 
   }
 insertImageDetails(imageDetails){
