@@ -50,7 +50,9 @@ import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { DropzoneDirective } from './doctor/dropzone.directive';
 import { UploaderComponent } from './doctor/uploader/uploader.component';
-import { UploadTaskComponent } from './doctor/upload-task/upload-task.component'
+import { UploadTaskComponent } from './doctor/upload-task/upload-task.component';
+import { CommentComponent } from './doctor/commentsection/comment/comment.component';
+
 
 
 
@@ -89,6 +91,9 @@ import { UploadTaskComponent } from './doctor/upload-task/upload-task.component'
         DropzoneDirective,
         UploaderComponent,
         UploadTaskComponent,
+        CommentComponent,
+    
+
       
      
        

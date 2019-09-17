@@ -36,6 +36,8 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
 import{UploaderComponent}from './doctor/uploader/uploader.component';
 
+
+
 import { from } from 'rxjs';
 
 
@@ -77,7 +79,7 @@ const routes: Routes =[
 {path:'master',component:DoctorprofilepageComponent},
 {path:'notedit',component:NoteditComponent},
 
-{path:'u',component:UploaderComponent}
+{path:'u',component:UploaderComponent},
     ]
 
 

@@ -38,15 +38,17 @@
              
                     <div class="form-group">
                       <label>select profile picture to upload </label>
-<!--               
-                      <input type="file" (change)="featuredPhotoSelected($event)" ><br><br>
-                      <img [src]="(featuredPhotoStream | async)?.url" alt="Featured Photo"> -->
+               
+                     
               <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="profilepicurl" (change)="showpreview($event)" >
               
               
                     </div>
               
               
+        
+
+
                     <div  class="form-group" >
                         <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
                         </div>

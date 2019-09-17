@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import{AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 
 
@@ -7,8 +7,8 @@ import { Observable } from 'rxjs/observable';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 import{CrudService} from 'app/core/crud.service';
 import { Router } from '@angular/router';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { finalize } from 'rxjs/operators';
+import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import { finalize, tap } from 'rxjs/operators';
 import {AuthService} from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { validateConfig } from '@angular/router/src/config';
@@ -25,10 +25,15 @@ import { AngularFireDatabase } from '@angular/fire/database';
   styleUrls: ['./doctoradminpage.component.scss']
 })
 export class DoctoradminpageComponent implements OnInit {
+  //////
 
 
   
+  
+  //////
 
+
+  
 
 Address:string;
 Email:string;
@@ -72,6 +77,7 @@ article:new FormControl(''),
 
 
  });
+  
 
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore) { 
 
@@ -81,16 +87,17 @@ article:new FormControl(''),
   ngOnInit() {
     window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
     this.formdata;
+//
 
-    this.resetForm();
-  //   this.resetForm1();
+////
+this.resetForm();
+  // this.resetForm1();
   //   this.resetForm2();
   //   this.resetForm3();
   //  this.resetFormvideo();
   
    
-  
-  
+ 
  
  }
 
@@ -99,6 +106,8 @@ article:new FormControl(''),
     this.CrudService.updateProfile(data);
    
   }
+  ///////
+ 
 
 
 
@@ -128,6 +137,12 @@ article:new FormControl(''),
   }
 
 
+
+
+
+
+
+
   onSubmit(formValue){
 this.isSubmitted=true;
 if(this.formdata.valid){
@@ -135,13 +150,12 @@ if(this.formdata.valid){
 const fileRef= this.storage.ref(filePath);
   this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
   finalize(async()=>{
-    fileRef.getDownloadURL().subscribe((url)=>{
+    fileRef.getDownloadURL().subscribe(async (url)=>{
 formValue['profilepicurl']=url;
 
 // get url from storage
 //  this.service.insertImageDetails(formValue);
  
-this.db.collection('files').add( { /*downloadURL: this.downloadURL,*/ filePath });
 
 
 this.resetForm();
@@ -172,8 +186,7 @@ this.isSubmitted=false;
 
 
 
-
-
+  
 
 
   //newly added functions for 3 photo upload
