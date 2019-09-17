@@ -52,6 +52,7 @@ import { DropzoneDirective } from './doctor/dropzone.directive';
 import { UploaderComponent } from './doctor/uploader/uploader.component';
 import { UploadTaskComponent } from './doctor/upload-task/upload-task.component';
 import { CommentComponent } from './doctor/commentsection/comment/comment.component';
+import { Up1Component } from './doctor/up1/up1.component';
 
 
 
@@ -92,6 +93,7 @@ import { CommentComponent } from './doctor/commentsection/comment/comment.compon
         UploaderComponent,
         UploadTaskComponent,
         CommentComponent,
+        Up1Component,
     
 
       

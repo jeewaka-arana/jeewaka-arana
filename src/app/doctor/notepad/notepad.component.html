@@ -1,36 +1,18 @@
-<!-- 
 
- <div class="card" style="width:45rem;margin-left: 5px;" >
-    <div class="card-body" >
-  
-
-    
-            <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()">
-        </div>
- 
-        <div class="form-group">
-          <label>select profile picture to upload </label>
-   
-         
-  <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="profilepicurl" (change)="showpreview($event)" >
-  
-  
-        </div>
-  <h1>aaaaaaa</h1> -->
   
  <div class="card" style="width:45rem;margin-left: 5px;" >
     <div class="card-body" >
   
   <div class="form-group">
         <label>select profile picture to upload </label><br>
-    <!-- <label class="file-label"> -->
+   
 <div>
         <img [src]="img" width="250px" height="250px">
 </div>
             
     <input  type="file" (change)="showpreview($event);onDrop($event.target.files)">
    
-  <!-- </label> -->
+  
 </div>
 
 <div *ngFor="let file of files">
@@ -40,3 +22,25 @@
 </div>
 </div>
 
+<!-- second one -->
+<div class="card" style="width:45rem;margin-left: 5px;" >
+  <div class="card-body" >
+
+<div class="form-group">
+      <label> picture to upload </label><br>
+ 
+<div>
+      <img [src]="img1" width="250px" height="250px">
+</div>
+          
+  <input  type="file" (change)="showpreview1($event);onDrop1($event.target.files1)">
+ 
+
+</div>
+
+<div *ngFor="let file1 of files1">
+  <app-upload-task [file]="file1"></app-upload-task>
+</div>
+  
+</div>
+</div>

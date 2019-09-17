@@ -3,36 +3,32 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
-
-
 @Component({
-  selector: 'app-upload-task',
-  templateUrl: './upload-task.component.html',
-  styleUrls: ['./upload-task.component.scss']
+  selector: 'app-up1',
+  templateUrl: './up1.component.html',
+  styleUrls: ['./up1.component.scss']
 })
-export class UploadTaskComponent implements OnInit {
-
+export class Up1Component implements OnInit {
 
   
   @Input() file: File;
+  // @Input() file1: File;
 
   task: AngularFireUploadTask;
 
   percentage: Observable<number>;
   snapshot: Observable<any>;
   downloadURL;
-
-
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
   ngOnInit() {
-
     this.startUpload();
   }
+
   startUpload() {
 
     // The storage path
-    const path = `ProfilePictures/${Date.now()}_${this.file.name}`;
+    const path = `Img1/${Date.now()}_${this.file.name}`;
 
     // Reference to storage bucket
     const ref = this.storage.ref(path);
@@ -53,6 +49,4 @@ export class UploadTaskComponent implements OnInit {
       }),
     );
   }
-
 }
-
