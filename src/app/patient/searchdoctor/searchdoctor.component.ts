@@ -39,6 +39,8 @@ export class SearchdoctorComponent implements OnInit {
   City:string;
   Position:string;
   RegistrationNumber:string;
+  expyear: number;
+
 
   filters ={}
 
@@ -47,11 +49,18 @@ export class SearchdoctorComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.afs.collection('Doctors',ref => ref.limit(4)).valueChanges().subscribe(results => {
+    this.afs.collection('Doctors',ref => ref.limit(4).orderBy('Lastname')).valueChanges().subscribe(results => {
       this.results = results;
       this.applyFilters()
     })
-  }
+    }
+  
+  // firequery(){
+  //     return this.afs.collection('Doctors', ref => ref.orderBy('expyear'));
+  //   }
+  // loadByName($event){
+  //   this.examplesCol=this.afs.collection ( 'Doctors', ref => ref.orderBy('expyear'))
+  // }
 
   private applyFilters(){
     this.filteredNames = _.filter(this.results, _.conforms(this.filters))

@@ -159,6 +159,7 @@
           </div>
             <input type="text" [(ngModel)]="City" (keydown)="filterArea('City',City)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
           </div>
+          
     </div>
     
 </div>
@@ -213,6 +214,7 @@
                     <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
                     <h6>{{results.RegistrationNumber}}</h6>
                     <p>{{results.Email}}</p>
+                    <p>{{results.expyear}}</p>
                     <p>Dietitian/Nutritionist, Sports Nutritionist</p>
                     <p> Years Experience Overall  (34 years as specialist)</p>
                     <p>Apollo Spectra Hospitals</p>
