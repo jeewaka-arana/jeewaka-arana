@@ -32,8 +32,11 @@ import{NoteditComponent} from './doctor/notedit/notedit.component';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
-
 //
+
+import{UploaderComponent}from './doctor/uploader/uploader.component';
+
+import { from } from 'rxjs';
 
 
 const routes: Routes =[
@@ -74,7 +77,7 @@ const routes: Routes =[
 {path:'master',component:DoctorprofilepageComponent},
 {path:'notedit',component:NoteditComponent},
 
-
+{path:'u',component:UploaderComponent}
     ]
 
 

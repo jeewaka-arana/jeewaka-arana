@@ -13,19 +13,9 @@ import {AuthService} from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { validateConfig } from '@angular/router/src/config';
 import { Doctor } from 'app/core/models/doctor.model';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 
-// import { FirebaseListObservable, FirebaseObjectObservable, 
-//   AngularFireDatabase } from '@angular/fire/database-deprecated';
-
-// import{FirebaseObjectObservable }from '@angular/fire/database-deprecated';
-
-// import * as firebase from 'firebase';
-
-// interface featuredPhotoesUrls{
-//   url?:string;
-
-// }
 
 
 
@@ -83,8 +73,7 @@ article:new FormControl(''),
 
  });
 
-
-  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth) { 
+  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore) { 
 
 
   }
@@ -93,7 +82,7 @@ article:new FormControl(''),
     window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
     this.formdata;
 
-  //   this.resetForm();
+    this.resetForm();
   //   this.resetForm1();
   //   this.resetForm2();
   //   this.resetForm3();
@@ -122,64 +111,64 @@ article:new FormControl(''),
 
 
   
-  //profile picture
+  // profile picture
 
-  // showpreview(event:any){
-  //   if(event.target.files && event.target.files[0]){
-  //     const reader = new FileReader();
-  //     reader.onload=(e:any)=> this.img = e.target.result;
-  //     reader.readAsDataURL(event.target.files[0]);
-  //     this.selectedImage =event.target.files[0];
-  //   }
-  //   else{
-  //     this.img ='../../../assets/img/avatar.png';
-  //     this.selectedImage = null;
-  //   }
+  showpreview(event:any){
+    if(event.target.files && event.target.files[0]){
+      const reader = new FileReader();
+      reader.onload=(e:any)=> this.img = e.target.result;
+      reader.readAsDataURL(event.target.files[0]);
+      this.selectedImage =event.target.files[0];
+    }
+    else{
+      this.img ='../../../assets/img/avatar.png';
+      this.selectedImage = null;
+    }
  
-  // }
+  }
 
 
-//   onSubmit(formValue){
-// this.isSubmitted=true;
-// if(this.formdata.valid){
-//   var filePath = `ProfilePictures/${this.selectedImage.name}_${new Date().getTime()}`;
-// const fileRef= this.storage.ref(filePath);
-//   this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
-//   finalize(()=>{
-//     fileRef.getDownloadURL().subscribe((url)=>{
-// formValue['profilepicurl']=url;
+  onSubmit(formValue){
+this.isSubmitted=true;
+if(this.formdata.valid){
+  var filePath = `ProfilePictures/${this.selectedImage.name}_${new Date().getTime()}`;
+const fileRef= this.storage.ref(filePath);
+  this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
+  finalize(async()=>{
+    fileRef.getDownloadURL().subscribe((url)=>{
+formValue['profilepicurl']=url;
 
-//get url from storage
+// get url from storage
 //  this.service.insertImageDetails(formValue);
  
-//
+this.db.collection('files').add( { /*downloadURL: this.downloadURL,*/ filePath });
 
 
-// this.resetForm();
-//     })
-//   })
-// ).subscribe();
+this.resetForm();
+    })
+  })
+).subscribe();
 
 
-// }
+}
 
 
 
-//   }
+  }
 
 
-//   resetForm(){
+  resetForm(){
 
 
-//     this.formdata.reset();
-// this.formdata.setValue({
-//   profilepicurl:''
-// });
-// this.img='../../../assets/img/avatar.png';
-// this.selectedImage=null;
+    this.formdata.reset();
+this.formdata.setValue({
+  profilepicurl:''
+});
+this.img='../../../assets/img/avatar.png';
+this.selectedImage=null;
 
-// this.isSubmitted=false;
-//   }
+this.isSubmitted=false;
+  }
 
 
 
