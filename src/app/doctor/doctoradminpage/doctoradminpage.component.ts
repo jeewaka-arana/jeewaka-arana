@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import{AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
-
-
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/observable';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
@@ -25,6 +23,15 @@ import { AngularFireDatabase } from '@angular/fire/database';
   styleUrls: ['./doctoradminpage.component.scss']
 })
 export class DoctoradminpageComponent implements OnInit {
+
+  // files: File[] =[];
+  
+
+  // onDrop(files: FileList) {
+  //   for (let i = 0; i <1; i++) {
+  //     this.files.push(files.item(i));
+  //   }
+  // }
   //////
 
 
@@ -39,21 +46,21 @@ Address:string;
 Email:string;
 
 
-img : string;
-img1:string;
-img2:string;
-img3:string;
-video:string;
-selectedImage:any;
-image1:any;
-image2:any;
-image3:any;
-videoclip:any;
-isSubmitted:boolean;
-isSubmitted1:boolean;
-isSubmitted2:boolean;
-isSubmitted3:boolean;
-isSubmitted4:boolean;
+// img : string;
+// img1:string;
+// img2:string;
+// img3:string;
+// video:string;
+// selectedImage:any;
+// image1:any;
+// image2:any;
+// image3:any;
+// videoclip:any;
+// isSubmitted:boolean;
+// isSubmitted1:boolean;
+// isSubmitted2:boolean;
+// isSubmitted3:boolean;
+// isSubmitted4:boolean;
 
 
 formdata=new FormGroup({ 
@@ -90,7 +97,7 @@ article:new FormControl(''),
 //
 
 ////
-this.resetForm();
+// this.resetForm();
   // this.resetForm1();
   //   this.resetForm2();
   //   this.resetForm3();
@@ -100,6 +107,21 @@ this.resetForm();
  
  
  }
+   
+//  showpreview(event:any){
+//   if(event.target.files && event.target.files[0]){
+//     const reader = new FileReader();
+//     reader.onload=(e:any)=> this.img = e.target.result;
+//     reader.readAsDataURL(event.target.files[0]);
+//     this.selectedImage =event.target.files[0];
+//   }
+//   else{
+//     this.img ='../../../assets/img/avatar.png';
+//     this.selectedImage = null;
+//   }
+
+// }
+
 
 
   savevalue(data) {
@@ -122,19 +144,6 @@ this.resetForm();
   
   // profile picture
 
-  showpreview(event:any){
-    if(event.target.files && event.target.files[0]){
-      const reader = new FileReader();
-      reader.onload=(e:any)=> this.img = e.target.result;
-      reader.readAsDataURL(event.target.files[0]);
-      this.selectedImage =event.target.files[0];
-    }
-    else{
-      this.img ='../../../assets/img/avatar.png';
-      this.selectedImage = null;
-    }
- 
-  }
 
 
 
@@ -143,46 +152,47 @@ this.resetForm();
 
 
 
-  onSubmit(formValue){
-this.isSubmitted=true;
-if(this.formdata.valid){
-  var filePath = `ProfilePictures/${this.selectedImage.name}_${new Date().getTime()}`;
-const fileRef= this.storage.ref(filePath);
-  this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
-  finalize(async()=>{
-    fileRef.getDownloadURL().subscribe(async (url)=>{
-formValue['profilepicurl']=url;
+
+//   onSubmit(formValue){
+// this.isSubmitted=true;
+// if(this.formdata.valid){
+//   var filePath = `ProfilePictures/${this.selectedImage.name}_${new Date().getTime()}`;
+// const fileRef= this.storage.ref(filePath);
+//   this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
+//   finalize(async()=>{
+//     fileRef.getDownloadURL().subscribe(async (url)=>{
+// formValue['profilepicurl']=url;
 
 // get url from storage
 //  this.service.insertImageDetails(formValue);
  
 
 
-this.resetForm();
-    })
-  })
-).subscribe();
+// this.resetForm();
+//     })
+//   })
+// ).subscribe();
 
 
-}
+// }
 
 
 
-  }
+//   }
 
 
-  resetForm(){
+//   resetForm(){
 
 
-    this.formdata.reset();
-this.formdata.setValue({
-  profilepicurl:''
-});
-this.img='../../../assets/img/avatar.png';
-this.selectedImage=null;
+//     this.formdata.reset();
+// this.formdata.setValue({
+//   profilepicurl:''
+// });
+// this.img='../../../assets/img/avatar.png';
+// this.selectedImage=null;
 
-this.isSubmitted=false;
-  }
+// this.isSubmitted=false;
+//   }
 
 
 

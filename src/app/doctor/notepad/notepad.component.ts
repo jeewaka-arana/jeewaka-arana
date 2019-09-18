@@ -3,15 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-notepad',
   templateUrl: './notepad.component.html',
-  styleUrls: ['./notepad.component.scss']
+  styleUrls: ['./notepad.component.scss'],
+  
 })
 export class NotepadComponent implements OnInit {
 
-  files: File[] = [];
+  files: File[] =[];
   files1: File[]=  [];
 
   onDrop(files: FileList) {
-    for (let i = 0; i < files.length; i++) {
+    for (let i = 0; i <1; i++) {
       this.files.push(files.item(i));
     }
   }
@@ -56,7 +57,7 @@ export class NotepadComponent implements OnInit {
  
   }
 
-  showpreview1(event:any){
+   showpreview1(event:any){
         if(event.target.files && event.target.files[0]){
           const reader = new FileReader();
           reader.onload=(e:any)=> this.img1 = e.target.result;

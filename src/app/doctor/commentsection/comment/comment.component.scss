@@ -1,10 +1,4 @@
-body {
-    background: #222427;
-    padding: 2em;
-    color:#fff;
-    font-family: 'Arial';
-}
-input, textarea {
+.input, textarea {
     display:block;
     width: 100%;
     margin-bottom:15px;
@@ -15,7 +9,7 @@ input, textarea {
     color:#fff;
 }
 
-input[type='submit'] {
+.input[type='submit'] {
     background-color:#ffcc00;
     cursor:pointer;
     color:#000;
@@ -24,20 +18,23 @@ input[type='submit'] {
     padding:20px;
 }
 
-ul {
+.ul {
     list-style-type:none;
     width:100%;
     margin:0;padding:0;
 }
-ul li {
+.ul li {
     background-color:#414a59;
     padding:20px;
     margin-bottom:2px;
     color:#bec8d9;
 }
-ul li a {
+.ul li a {
     color:#ffcc00;
 }
-h1 {
+
+
+
+.h1 {
     margin-top:50px;
 }

@@ -1,4 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -48,8 +49,7 @@ import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
-import { DropzoneDirective } from './doctor/dropzone.directive';
-import { UploaderComponent } from './doctor/uploader/uploader.component';
+
 import { UploadTaskComponent } from './doctor/upload-task/upload-task.component';
 import { CommentComponent } from './doctor/commentsection/comment/comment.component';
 import { Up1Component } from './doctor/up1/up1.component';
@@ -89,8 +89,7 @@ import { Up1Component } from './doctor/up1/up1.component';
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
-        DropzoneDirective,
-        UploaderComponent,
+        
         UploadTaskComponent,
         CommentComponent,
         Up1Component,
@@ -107,6 +106,7 @@ import { Up1Component } from './doctor/up1/up1.component';
     ],
     imports: [
         BrowserAnimationsModule, 
+        BrowserModule,
         NgbModule.forRoot(),
         FormsModule,
         RouterModule,

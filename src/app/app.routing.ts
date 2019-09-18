@@ -34,7 +34,7 @@ import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 //
 
-import{UploaderComponent}from './doctor/uploader/uploader.component';
+import{CommentComponent} from './doctor/commentsection/comment/comment.component';
 
 
 
@@ -78,8 +78,8 @@ const routes: Routes =[
 {path:'notepad',component:NotepadComponent},
 {path:'master',component:DoctorprofilepageComponent},
 {path:'notedit',component:NoteditComponent},
+{path:'comment',component:CommentComponent}
 
-{path:'u',component:UploaderComponent},
     ]
 
 
