@@ -4,25 +4,19 @@
     <div class="card-body" >
   
   <div class="form-group">
-  
-                      
-          
+     
         <label>select profile picture to upload </label><br>
-   
 <div>
         <img [src]="img" width="250px" height="250px">
 </div>
             
     <input  type="file" (change)="showpreview($event);onDrop($event.target.files)">
   
-  
 </div>
 
 <div *ngFor="let file of files">
     <upload-task [file]="file"></upload-task>
   </div>
-
-  
 </div>
 </div>
 
