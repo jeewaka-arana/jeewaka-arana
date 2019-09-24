@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { ThrowStmt } from '@angular/compiler';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -47,6 +46,7 @@ export class AuthService {
         }
       })
   }
+
   doc_login( email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {
@@ -61,7 +61,7 @@ export class AuthService {
 
   createPatient(user) {
     console.log(user);
-    this.afAuth.auth.createUserWithEmailAndPassword( user.email, user.password)
+    this.afAuth.auth.createUserWithEmailAndPassword(user.email,user.password)
       .then( userCredential => {
         this.newUser = user;
         console.log(userCredential);
@@ -71,7 +71,7 @@ export class AuthService {
 
         this.insertPatientData(userCredential)
           .then(() => {
-            this.router.navigate(['/home']);
+            this.router.navigate(['/index']);
           });
       })
       .catch( error => {
@@ -98,6 +98,7 @@ export class AuthService {
         this.eventAuthError.next(error);
       });
   }
+
   insertDoctorData(userCredential: firebase.auth.UserCredential) {
     return this.db.doc(`Doctors/${userCredential.user.uid}`).set({
       Email: this.newUser.email,
