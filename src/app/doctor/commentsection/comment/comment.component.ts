@@ -54,9 +54,9 @@ export class CommentComponent implements OnInit {
     this.post = this.postDoc.valueChanges();
   }
 
-  deletePost(postId) {
-    this.afs.doc('posts/'+postId).delete();
-  }
+  // deletePost(postId) {
+  //   this.afs.doc('posts/'+postId).delete();
+  // }
 
 
 }

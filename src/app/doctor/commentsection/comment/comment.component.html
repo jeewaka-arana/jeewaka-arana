@@ -1,16 +1,57 @@
 
-<input type="text" [(ngModel)]="title" name="title" placeholder="Title..">
-<textarea [(ngModel)]="content" name="content" placeholder="Content.."></textarea>
-<input type="submit" value="Add a Post" (click)="addPost()">
+           <div class="section section-contact-us text-center">
+            <div class="container">
+
+              
+                  <div class="formGroup" >
+                    
+                          <form  class="form-horizontal" role="form" >
+                <h2 class="title">Send your comments</h2>
+                <p class="description">Your thougths are very important ..</p>
+                <div class="row">
+                    <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                      <div class="input-group input-lg">
+                        <div class="input-group-prepend" >
+                          <span class="input-group-text">
+                              <i class="now-ui-icons users_circle-08"></i>
+                          </span>
+                        </div>
+                          <input type="text" class="form-control" [(ngModel)]="title" name="title" placeholder="Your name">
+                      </div>
+          
+                        <div class="textarea-container">
+                            <textarea class="form-control"  [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
+                        </div>
+                        <div  class="form-group" >
+                              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="addPost()"/>         
+                              </div>
+                    </div>
+                </div>
+
+
+
+                </form>
+            </div>
+        </div>
+</div> 
+
+
+<!-- 
+
+<input type="text" [(ngModel)]="title" name="title" placeholder="Your name">
+<textarea [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
+<input type="submit" value="Add a comment" (click)="addPost()"> -->
 
 
 <ul *ngFor="let post of posts | async">
   <li (click)="getPost(post.id)">
-    <strong>{{ post.data.title }} (<a href="comment" (click)="deletePost(post.id)">delete</a>)</strong>
+    <strong>{{ post.data.title }} </strong>
     <br>
-    {{ post.data.content }}
+    <h1>{{ post.data.content }}</h1>
   </li>
 </ul>
+
+
 
 
 

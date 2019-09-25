@@ -75,11 +75,11 @@
                    
 
                           <div class="column">
-        <div class="card" style="width:45rem;margin-left:40px;">
+        <div class="card" style="width:35rem;margin-left:40px;">
                 <div class="card-body" >
                         <ul *ngFor="let post of posts | async">
       
-    <label class="col-md-10 control-label"><b><span>Available Dates & Times:</span>{{post.dateTime}}</b></label>
+    <label class="col-md-10 control-label"><b><span>Available Dates & Times:</span><br>{{post.dateTime}}</b></label>
    
 </ul>
 
@@ -185,8 +185,8 @@
 
 
 
-
-          <!-- <div class="section section-contact-us text-center">
+<!-- 
+           <div class="section section-contact-us text-center">
               <div class="container">
 
                 
@@ -227,10 +227,10 @@
                   </form>
               </div>
           </div>
-</div> -->
+</div>  -->
 
 
-
+ <app-comment></app-comment> 
 
 
 
