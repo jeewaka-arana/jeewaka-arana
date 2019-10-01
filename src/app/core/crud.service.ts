@@ -32,7 +32,7 @@ export class CrudService {
     doctorRef.doc(id).update(user);
 
     
-    
+  
   }
 
   getDoctor(){

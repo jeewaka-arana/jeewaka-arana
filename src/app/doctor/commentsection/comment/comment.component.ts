@@ -24,8 +24,10 @@ export class CommentComponent implements OnInit {
   title:string;
   content:string;
 
+
   postDoc: AngularFirestoreDocument<Post>;
   post: Observable<Post>;
+  AuthService: any;
   
   
   constructor(private afs: AngularFirestore) { }
@@ -46,6 +48,15 @@ export class CommentComponent implements OnInit {
   
 
   addPost() {
+
+    // var id=this.AuthService.userId;
+
+    // var doctorRef=this.afs.collection('Doctors');
+    
+    // doctorRef.doc(id).update({'title': this.title, 'content': this.content});
+
+
+    // 
     this.afs.collection('posts').add({'title': this.title, 'content': this.content});
   }
 
