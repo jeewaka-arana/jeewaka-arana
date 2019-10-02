@@ -43,12 +43,15 @@
 <input type="submit" value="Add a comment" (click)="addPost()"> -->
 
 
-<ul *ngFor="let post of posts | async">
+<ul *ngFor="let post of posts | async" id="opening">
   <div (click)="getPost(post.id)">
     <div class="card" style="width: 55rem;margin-left: 25px;"> 
       <img src="https://lh3.googleusercontent.com/jdGQeW-p_GrMkIFzy0pMHRXM7f5-WMKmDGLsjNWLRsv3-xgtkslPe_8MZ8h5kW3M2ZIY8Ac=s85" >
     <strong style="color: blue">{{ post.data.title }} </strong> {{ post.data.content }}
-    
+   <br> <i class="fa fa-reply" style="font-size:28px;color:red;margin-left: 725px;"></i>
+   <!--  -->
+   <!-- <p id="opening">Hyperlinks are utilized by a web browser to move from one page to another...</p> -->
+   <a href="opening">Reply </a>
   </div>
   </div>
 </ul>
@@ -56,6 +59,6 @@
 
 
 
-
+<!-- 
 <h3>{{ (post | async)?.title }}</h3>
-<p>{{ (post | async)?.content }}</p>
+<p>{{ (post | async)?.content }}</p> -->
