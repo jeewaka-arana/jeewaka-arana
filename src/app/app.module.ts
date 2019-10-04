@@ -53,7 +53,8 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { UploadTaskComponent } from './doctor/upload-task/upload-task.component';
 import { CommentComponent } from './doctor/commentsection/comment/comment.component';
 import { Up1Component } from './doctor/up1/up1.component';
-import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
+
+ import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
 
 
 
@@ -94,6 +95,7 @@ import { ReactionComponent } from './doctor/reaction/reaction/reaction.component
         UploadTaskComponent,
         CommentComponent,
         Up1Component,
+       
         ReactionComponent,
     
 

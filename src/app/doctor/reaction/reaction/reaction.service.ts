@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase,AngularFireObject} from '@angular/fire/database';
 import {AngularFireAuth} from '@angular/fire/auth';
-import { Observable } from 'rxjs';
+import * as _ from "lodash";
+
+import { Observable } from 'rxjs/observable';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class ReactionService {
 
 userId:string;
-emojiList = ['like','dislike','heart','angry']
+emojiList = ['a']
+
 
 
   constructor(private db:AngularFireDatabase,private afAuth:AngularFireAuth) { 
@@ -35,9 +40,10 @@ this.db.object(`reactions/${itemId}`).update(data)
 
   ///utilities for sorting reactions
 
-  countReactions(reactions){
-
-    return _.mapValues (_.groupBy(reactions),'length')
+  countReactions(reactions) {
+    return _.mapValues(_.groupBy(reactions), 'length')
   }
-
+  userReaction(reactions) {
+    return _.get(reactions, this.userId)
+  }
 }

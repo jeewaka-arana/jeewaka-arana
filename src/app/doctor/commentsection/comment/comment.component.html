@@ -6,24 +6,27 @@
                   <div class="formGroup" >
                     
                           <form  class="form-horizontal" role="form" >
-                <h2 class="title">Send your comments</h2>
-                <p class="description">Your thougths are very important ..</p>
+                <h2 class="title">Your thougths are very important ..</h2>
+                <!-- <p class="description">Your thougths are very important ..</p> -->
                 <div class="row">
                     <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                       <div class="input-group input-lg">
                         <div class="input-group-prepend" >
-                          <span class="input-group-text">
+                          <!-- <span class="input-group-text">
                               <i class="now-ui-icons users_circle-08"></i>
-                          </span>
+                          </span> -->
                         </div>
-                          <input type="text" class="form-control" [(ngModel)]="title" name="title" placeholder="Your name">
+                        <div class="col-lg-8">
+                          <input class="form-control" [(ngModel)]="title" name="title" placeholder="Your name">
+                      </div>
                       </div>
           
                         <div class="textarea-container">
                             <textarea class="form-control"  [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
                         </div>
+                        <br><br><br>
                         <div  class="form-group" >
-                              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="addPost()"/>         
+                              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Post Comment" (click)="addPost()"/>         
                               </div>
                     </div>
                 </div>

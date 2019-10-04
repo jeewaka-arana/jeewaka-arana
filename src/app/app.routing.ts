@@ -36,6 +36,7 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
 import{CommentComponent} from './doctor/commentsection/comment/comment.component';
 
+import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
 
 
 import { from } from 'rxjs';
@@ -78,8 +79,9 @@ const routes: Routes =[
 {path:'notepad',component:NotepadComponent},
 {path:'master',component:DoctorprofilepageComponent},
 {path:'notedit',component:NoteditComponent},
-{path:'comment',component:CommentComponent}
+{path:'comment',component:CommentComponent},
 
+ {path:'reaction',component:ReactionComponent}
     ]
 
 
