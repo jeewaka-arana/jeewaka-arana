@@ -9,6 +9,9 @@ import {AuthService} from '../../core/auth.service';
   styleUrls: ['./sign-doctor.component.scss']
 })
 export class SignDoctorComponent implements OnInit {
+ 
+
+
 
   authError: any;
   tom=false;

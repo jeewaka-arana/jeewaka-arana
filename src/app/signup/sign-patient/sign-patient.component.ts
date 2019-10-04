@@ -9,7 +9,7 @@ import { AuthService } from 'app/core/auth.service';
 })
 export class SignPatientComponent implements OnInit {
 
-
+ 
   authError: any;
 
   constructor(private auth: AuthService) { }
@@ -18,10 +18,46 @@ export class SignPatientComponent implements OnInit {
     this.auth.eventAuthError$.subscribe( data => {
       this.authError = data;
     })
+    
+
+  
   }
 
   createUser(frm) {
     this.auth.createPatient(frm.value);
   }
 
+  test(controlName: string){
+    if(controlName=="qwerty"){
+      console.log("hi");
+    }
+    else{
+      console.log("bye")
+    }
+  }
+
+  showpassword(passwd){
+    console.log("veliya");
+   if(passwd.type==="password"){
+     passwd.type="text"
+     console.log("ulla");
+     return true;
+   }
+   else{
+     passwd.type="password"
+     console.log("else kulla");
+     return false;
+   }
+  }
+  
+checkpassword(password:string,confPassword:string){
+
+  if(password==confPassword){
+    return true;
+  }
+  else{
+    return false;
+  }
+
+}
 }
