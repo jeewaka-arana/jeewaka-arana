@@ -1,0 +1,12 @@
+<div *ngIf="percentage1 | async as pct">
+  <progress [value]="pct" max="100"></progress>
+  {{ pct | number }}%
+</div>
+
+
+
+<div *ngIf="snapshot1 | async as snap">
+
+  {{ snap.bytesTransferred }} of {{ snap.totalBytes }} 
+</div>
+

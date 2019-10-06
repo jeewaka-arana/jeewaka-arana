@@ -38,8 +38,8 @@ import{CommentComponent} from './doctor/commentsection/comment/comment.component
 
 import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
 
-
 import { from } from 'rxjs';
+import {Img1Component} from './doctor/pictures/img1/img1.component';
 
 
 const routes: Routes =[
@@ -81,7 +81,10 @@ const routes: Routes =[
 
 {path:'comment',component:CommentComponent},
 
- {path:'reaction',component:ReactionComponent}
+ {path:'reaction',component:ReactionComponent},
+ {path:'img1',component:Img1Component},
+ 
+
     ]
 
 

@@ -59,6 +59,7 @@ import { ProfileComponent } from './doctor/pictures/profile/profile.component';
 import { Img1Component } from './doctor/pictures/img1/img1.component';
 import { Img2Component } from './doctor/pictures/img2/img2.component';
 import { ViewbuttonComponent } from './doctor/viewbutton/viewbutton.component';
+import { UploadTask1Component } from './doctor/pictures/upload-task1/upload-task1.component';
 
 
 
@@ -110,6 +111,8 @@ import { ViewbuttonComponent } from './doctor/viewbutton/viewbutton.component';
         Img2Component,
        
         ViewbuttonComponent,
+       
+        UploadTask1Component,
        
        
     
