@@ -36,7 +36,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
-import {NotepadComponent} from './doctor/notepad/notepad.component';
+
 import { AdminComponent } from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HomeComponent } from './home/home.component';
@@ -44,17 +44,22 @@ import { HomeComponent } from './home/home.component';
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
-import { NoteditComponent } from './doctor/notedit/notedit.component';
+
 import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
-import { UploadTaskComponent } from './doctor/upload-task/upload-task.component';
+import { UploadTaskComponent } from './doctor/pictures/upload-task/upload-task.component';
 import { CommentComponent } from './doctor/commentsection/comment/comment.component';
 import { Up1Component } from './doctor/up1/up1.component';
 
  import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
+import { ProfileComponent } from './doctor/pictures/profile/profile.component';
+import { Img1Component } from './doctor/pictures/img1/img1.component';
+import { Img2Component } from './doctor/pictures/img2/img2.component';
+import { ViewbuttonComponent } from './doctor/viewbutton/viewbutton.component';
+
 
 
 
@@ -69,7 +74,7 @@ import { Up1Component } from './doctor/up1/up1.component';
         SignPatientComponent,
         SignDoctorComponent,
         WaitingComponent,
-        NotepadComponent,
+       
         PatienthomeComponent,
         AppointmentComponent,
         AppStep2Component,
@@ -87,7 +92,7 @@ import { Up1Component } from './doctor/up1/up1.component';
       
         DoctorfordComponent,
         ConfirmationComponent,
-        NoteditComponent,
+     
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
@@ -97,6 +102,16 @@ import { Up1Component } from './doctor/up1/up1.component';
         Up1Component,
        
         ReactionComponent,
+       
+        ProfileComponent,
+       
+        Img1Component,
+       
+        Img2Component,
+       
+        ViewbuttonComponent,
+       
+       
     
 
       

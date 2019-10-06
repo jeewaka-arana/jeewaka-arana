@@ -22,9 +22,9 @@ export class Doctor {
    img2:string;
    img3:string;
    video:string;
-   article:string;
+   
 //comment section
-name:string;
-email:string;
-msg:string;
+cname:string;
+cmail:string;
+cmsg:string;
 }

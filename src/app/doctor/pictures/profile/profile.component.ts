@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormControl } from '@angular/forms';
+
 @Component({
-  selector: 'app-notepad',
-  templateUrl: './notepad.component.html',
-  styleUrls: ['./notepad.component.scss'],
-  
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class NotepadComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   files: File[] =[];
   files1: File[]=  [];
 
@@ -17,8 +18,18 @@ export class NotepadComponent implements OnInit {
   img : string;
   selectedImage:any;
   isSubmitted:boolean;
+
+  
+formdata=new FormGroup({ 
+  img:new FormControl(''),
+
+  
+
+ });
   constructor() { }
+
   ngOnInit() {
+    this.formdata;
   }
   showpreview(event:any){
     if(event.target.files && event.target.files[0]){
@@ -34,19 +45,6 @@ export class NotepadComponent implements OnInit {
  
   }
 
-  //  showpreview1(event:any){
-  //       if(event.target.files && event.target.files[0]){
-  //         const reader = new FileReader();
-  //         reader.onload=(e:any)=> this.img1 = e.target.result;
-  //         reader.readAsDataURL(event.target.files[0]);
-  //         this.image1 =event.target.files[0];
-  //       }
-  //       else{
-  //         this.img1 ='../../../assets/img/avatar.png';
-  //         this.image1 = null;
-  //       }
-     
-  //     }
 
 
 }

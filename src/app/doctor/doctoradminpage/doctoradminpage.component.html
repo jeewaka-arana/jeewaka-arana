@@ -25,9 +25,7 @@
       <div class="section section-about-us" >
         <!-- <div class="container" class="center"> -->
  
-
-   
-
+<app-viewbutton></app-viewbutton>
             
                 <!-- <div class="card-body" >
               
@@ -65,10 +63,10 @@
   
   
 <div>
+ 
 
+   <app-profile></app-profile>
 
-   <app-notepad></app-notepad>
-  
 </div>
               <div class="card" style="width:75rem;margin-left: 5px;" >
                 <div class="card-body" >
@@ -455,17 +453,44 @@
    -->
   
   
-<!--   
-                
-        <div class="card" style="width:92rem;margin-left: 5px">
-                <div class="card-body" >
-                  
-                    <ul *ngFor="let post of posts | async">
-                        <label class="col-lg-15 control-label"><b> <span>Email Address:</span>{{ post.Email }}</b></label>
-                     
-                    </ul>
-  </div>
-</div> -->
+           
+   <div class="card" style="width:55rem;margin-left: 10rem;">
+    <div class="card-body" >
+      
+     
+            <div class="formGroup" >
+                    
+              <form  [formGroup]="formdata" (ngSubmit)="submitcomplain(formdata.value)" class="form-horizontal" role="form" autocomplete="on" >
+    <h5 class="title" style="color: orange">If you have any complains or suggetions Send to our team ..</h5>
+    
+            <div  class="form-group" >
+            <div class="col-lg-8">
+              <input class="form-control" style="width: 20rem;" formControlName="cname" name="cname" placeholder="Your name">
+          </div><br>
+        </div>
+
+        <div  class="form-group" >
+          <div class="col-lg-8">
+            <input class="form-control" style="width: 20rem;"   formControlName="cmail" name="cmail" placeholder="Your Email">
+        </div>
+</div>
+          
+          <div  class="form-group" >
+            <div class="textarea-container">
+                <textarea class="form-control"   formControlName="cmsg" name="cmsg" placeholder="Your message"></textarea>
+            </div>
+          </div>
+            <br><br><br>
+            <div  class="form-group" >
+              <input type="submit" class="btnRegister   float-right" style="width: 15rem;" formControlName="submit" value="Send Us" (click)="submitcomplain()"/>         
+              </div> 
+    
+
+
+    </form>
+</div>
+</div>
+</div> 
 
 
 

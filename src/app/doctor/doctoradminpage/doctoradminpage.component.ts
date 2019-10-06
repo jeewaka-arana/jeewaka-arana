@@ -24,20 +24,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class DoctoradminpageComponent implements OnInit {
 
-  // files: File[] =[];
-  
-
-  // onDrop(files: FileList) {
-  //   for (let i = 0; i <1; i++) {
-  //     this.files.push(files.item(i));
-  //   }
-  // }
-  //////
-
-
-  
-  
-  //////
+ 
 
 
   
@@ -72,6 +59,7 @@ formdata=new FormGroup({
  
   dateTime:new FormControl(''),
   note:new FormControl(''),
+  img:new FormControl(''),
   img1:new FormControl(''),
   img2:new FormControl(''),
 
@@ -80,14 +68,22 @@ formdata=new FormGroup({
   video:new FormControl(''),
 article:new FormControl(''),
 
+cname:new FormControl(''),
+cmail:new FormControl(''),
+cmsg:new FormControl(''),
+
 
 
 
  });
   
 
-  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore) { 
-
+  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder) { 
+// this.formdata = fb.group({
+//   'cname':[null,Validators.required],
+//   'cmail':[null,Validators.required],
+//   'cmsg':[null,Validators.required],
+// })
 
   }
 
@@ -130,7 +126,9 @@ article:new FormControl(''),
   }
   ///////
  
-
+  submitcomplain(data){
+    this.CrudService. passData(data);
+  }
 
 
 

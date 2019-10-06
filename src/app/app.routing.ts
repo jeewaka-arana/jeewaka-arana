@@ -27,8 +27,8 @@ import { HomeComponent } from './home/home.component';
 
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
-import{NotepadComponent}from './doctor/notepad/notepad.component';
-import{NoteditComponent} from './doctor/notedit/notedit.component';
+
+
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
@@ -76,9 +76,9 @@ const routes: Routes =[
     { path: 'plogin', component:PatLoginComponent},
    
 
-{path:'notepad',component:NotepadComponent},
+
 {path:'master',component:DoctorprofilepageComponent},
-{path:'notedit',component:NoteditComponent},
+
 {path:'comment',component:CommentComponent},
 
  {path:'reaction',component:ReactionComponent}
