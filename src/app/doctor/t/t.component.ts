@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
 import { async } from 'q';
 import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
-  selector: 'app-img2',
-  templateUrl: './img2.component.html',
-  styleUrls: ['./img2.component.scss']
+  selector: 'app-t',
+  templateUrl: './t.component.html',
+  styleUrls: ['./t.component.scss']
 })
-export class Img2Component implements OnInit {
- 
+export class TComponent implements OnInit {
+
+  
   constructor(private storage: AngularFireStorage , private db: AngularFirestore) { }
   
   private name;
@@ -52,7 +53,7 @@ export class Img2Component implements OnInit {
         const promise =   this.fileRef.getDownloadURL().toPromise(); 
         promise.then( (result)=>{
           console.log(result); 
-          this.db.collection('Images2').add({Filename:this.name , path: result})
+          this.db.collection('Images').add({Filename:this.name , path: result})
         }); 
         this.state =  true; 
       } 

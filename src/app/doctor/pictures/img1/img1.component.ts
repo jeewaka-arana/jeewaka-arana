@@ -8,12 +8,12 @@ import { FormGroup,FormControl } from '@angular/forms';
   styleUrls: ['./img1.component.scss']
 })
 export class Img1Component implements OnInit {
-  files1: File[] =[];
-  files2: File[]=  [];
+  files: File[] =[];
+  //  files1: File[]=  [];
 
   onDrop1(files1: FileList) {
     for (let k = 0; k <1; k++) {
-      this.files1.push(files1.item(k));
+      this.files.push(files1.item(k));
     }
   }
   img1 : string;
@@ -32,12 +32,12 @@ formdata=new FormGroup({
   ngOnInit() {
     this.formdata;
   }
-  showpreview1(event1:any){
-    if(event1.target1.files1 && event1.target1.files2[0]){
+  showpreview1(event:any){
+    if(event.target.files && event.target.files[0]){
       const reader = new FileReader();
-      reader.onload=(e:any)=> this.img1 = e.target1.result;
-      reader.readAsDataURL(event1.target1.files2[0]);
-      this.selectedImage1 =event1.target1.files2[0];
+      reader.onload=(e:any)=> this.img1 = e.target.result;
+      reader.readAsDataURL(event.target.files[0]);
+      this.selectedImage1 =event.target.files[0];
     }
     else{
       this.img1 ='../../../assets/img/avatar.png';

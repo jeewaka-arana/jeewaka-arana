@@ -8,7 +8,7 @@ import { FormGroup,FormControl } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
   files: File[] =[];
-  files1: File[]=  [];
+  // files1: File[]=  [];
 
   onDrop(files: FileList) {
     for (let i = 0; i <1; i++) {

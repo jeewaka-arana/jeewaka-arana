@@ -8,7 +8,7 @@
       <img [src]="img1" width="250px" height="250px" (click)="fileUploader.click()">
 </div>
           
-  <input  type="file"  accept="image/*" class="form-control" #fileUploader formControlName="img1" (change)="showpreview1($event1);onDrop1($event1.target1.files1)">
+  <input  type="file"  accept="image/*" class="form-control" #fileUploader formControlName="img1" (change)="showpreview1($event);onDrop1($event.target.files)">
   <div  class="form-group" >
     <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" />         
    
@@ -16,8 +16,7 @@
 </form>
 
 
-<div *ngFor="let file1 of files1">
-  <app-upload-task1 [file1]="file1"> </app-upload-task1>
-</div>
-
+<div *ngFor="let file1 of files">
+  <app-upload-task1  [file1]="file1"> </app-upload-task1>
+</div> 
 

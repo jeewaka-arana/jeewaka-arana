@@ -1,8 +1,9 @@
 
 
+
 <input type="file" (change)="upload($event.target.files)" >
 <h4>File name = {{name}}</h4> <br> 
 <h4>File type = {{type}}</h4> <br>  
-
+<h3 style="color: red">Wait until Upload finished.</h3>
 
 <h4> <div *ngIf="state"> <hr> Upload finished and values added to the database </div></h4> <br> 
