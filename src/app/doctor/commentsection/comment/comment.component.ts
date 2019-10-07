@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import * as firebase from 'firebase';
+
 
 interface Post {
   title: string;
@@ -15,9 +17,23 @@ interface PostId extends Post {
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.scss']
+  styleUrls: ['./comment.component.scss'],
+ 
+
 })
 export class CommentComponent implements OnInit {
+
+
+
+  //
+  clickMessage = '';
+
+  onClickMe() {
+    // this.clickMessage = 'You are my hero!';
+    
+  }
+
+  //
   postsCol: AngularFirestoreCollection<Post>;
   posts: any;
 
@@ -63,6 +79,10 @@ export class CommentComponent implements OnInit {
   getPost(postId) {
     this.postDoc = this.afs.doc('posts/'+postId);
     this.post = this.postDoc.valueChanges();
+
+
+    //
+   
   }
 
 

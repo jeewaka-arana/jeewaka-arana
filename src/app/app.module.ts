@@ -52,15 +52,16 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
 import { UploadTaskComponent } from './doctor/pictures/upload-task/upload-task.component';
 import { CommentComponent } from './doctor/commentsection/comment/comment.component';
-import { Up1Component } from './doctor/up1/up1.component';
+
 
  import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
 import { ProfileComponent } from './doctor/pictures/profile/profile.component';
-import { Img1Component } from './doctor/pictures/img1/img1.component';
-import { Img2Component } from './doctor/pictures/img2/img2.component';
+
+
 import { ViewbuttonComponent } from './doctor/viewbutton/viewbutton.component';
-import { UploadTask1Component } from './doctor/pictures/upload-task1/upload-task1.component';
 import { TComponent } from './doctor/t/t.component';
+import { VideoComponent } from './doctor/pictures/video/video.component';
+import { UploadVideoComponent } from './doctor/pictures/upload-video/upload-video.component';
 
 
 
@@ -101,21 +102,24 @@ import { TComponent } from './doctor/t/t.component';
         
         UploadTaskComponent,
         CommentComponent,
-        Up1Component,
+    
        
         ReactionComponent,
        
         ProfileComponent,
        
-        Img1Component,
-       
-        Img2Component,
+        
+
        
         ViewbuttonComponent,
        
-        UploadTask1Component,
+    
        
         TComponent,
+       
+        VideoComponent,
+       
+        UploadVideoComponent,
        
        
     

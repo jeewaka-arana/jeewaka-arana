@@ -39,9 +39,8 @@ import{CommentComponent} from './doctor/commentsection/comment/comment.component
 import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
 
 import { from } from 'rxjs';
-import {Img1Component} from './doctor/pictures/img1/img1.component';
-import{TComponent} from './doctor/t/t.component'
-import { Img2Component } from './doctor/pictures/img2/img2.component';
+
+import{TComponent} from './doctor/t/t.component';
 
 
 const routes: Routes =[
@@ -84,9 +83,9 @@ const routes: Routes =[
 {path:'comment',component:CommentComponent},
 
  {path:'reaction',component:ReactionComponent},
- {path:'img1',component:Img1Component},
+ 
  {path:'t',component:TComponent},
- {path:'img2',component:Img2Component},
+ 
  
 
     ]

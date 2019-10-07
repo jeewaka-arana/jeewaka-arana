@@ -49,12 +49,20 @@
 <ul *ngFor="let post of posts | async" id="opening">
   <div (click)="getPost(post.id)">
     <div class="card" style="width: 55rem;margin-left: 25px;"> 
-      <img src="https://lh3.googleusercontent.com/jdGQeW-p_GrMkIFzy0pMHRXM7f5-WMKmDGLsjNWLRsv3-xgtkslPe_8MZ8h5kW3M2ZIY8Ac=s85" >
-    <strong style="color: blue">{{ post.data.title }} </strong> {{ post.data.content }}
-   <br> <i class="fa fa-reply" style="font-size:28px;color:red;margin-left: 725px;"></i>
+      <img src="../../../../assets/img/comment.png" style="height: 90px; width: 90px">
+    <strong >{{ post.data.title }} </strong>
+      <hr>
+    <br> <br>{{ post.data.content }}
+   <!-- <br> <i class="fa fa-reply" style="font-size:28px;color:red;margin-left: 725px;"></i> -->
    <!--  -->
    <!-- <p id="opening">Hyperlinks are utilized by a web browser to move from one page to another...</p> -->
-   <a href="opening">Reply </a>
+   <!-- <a href="opening">Reply </a> -->
+
+
+
+   <button type="button" class="reply" (click)="onClickMe()">Reply</button>
+   {{clickMessage}}
+
   </div>
   </div>
 </ul>

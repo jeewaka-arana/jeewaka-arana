@@ -23,36 +23,11 @@
       
   
       <div class="section section-about-us" >
-        <!-- <div class="container" class="center"> -->
+        
  
 <app-viewbutton></app-viewbutton>
             
-                <!-- <div class="card-body" >
               
-                  <form [formGroup]="formdata" (save)="onSubmit(formdata.value)" >
-                    <div class="text=center">
-                        <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()">
-                    </div>
-             
-                    <div class="form-group">
-                      <label>select profile picture to upload </label>
-               
-                     
-              <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="profilepicurl" (change)="showpreview($event)" >
-              
-              
-                    </div>
-              
-              
-        
-
-
-                    <div  class="form-group" >
-                        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
-                        </div>
-                  </form>
-                </div>
-   -->
 
 
 
@@ -233,7 +208,7 @@
               <div class="row">
                   <div class="col col-md-5">
 
-              <div class="card"  style="margin-left:5px;width:38.5rem;">
+              <div class="card"  style="margin-left:5px;width:77rem;">
                   <div class="card-body"> 
                     
                      
@@ -283,7 +258,7 @@
        
     </div>
     <div  class="form-group" >
-        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+        <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
         </div> 
   
   </div>
@@ -299,43 +274,21 @@
 
 
 
-  
-<div class="card" style="width:35rem;margin-left: 5px">
-    <div class="card-body" >
-        <div class="section section-about-us" >
-            <div class="container" class="center">
-                <h2>Upload a video clip</h2>
-                <form [formGroup]="formdata" (save)="submitvideo(formdata.value)" >
-                  <div class="form-group">
-                <input type="file" accept="video/*" class="form-control" #fileUploader formControlName="video"  (change)="showpreview4($event)" >
-                <!-- <div class= "text-danger" *ngIf="isSubmitted4 && formControls.video.errors?.required"  >This is required.</div> -->
-</div>
-
-                
-<div  class="form-group" >
-<input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitvideo()"/>         
-</div> 
-</form>
-</div>
-</div>
-</div>
-</div>
-
-
+<app-video></app-video>
   </div>
 
-
+<!-- 
   <div class="col col-md-6">
 
            
       <div class="card" style="margin-left:95px">
           <div class="card-body" >
-             
-      
+              -->
+<!--       
       
           <h2>Upload photos</h2>
       <br><br>
-      
+       -->
     
      
       
@@ -360,7 +313,7 @@
             
         
     </form> -->
-<div>
+<!-- <div>
     <app-img1></app-img1>
 
   </div>
@@ -378,7 +331,7 @@
                 
           
           <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img2" (change)="showpreview2($event)" >
-          <!-- <div class= "text-danger" *ngIf="isSubmitted2 && formControls.img2.errors?.required"  >This is required.</div> -->
+         
                 </div>
               
               
@@ -419,7 +372,7 @@
   
   
   
-  
+   -->
   
   
   
@@ -454,9 +407,12 @@
   </div>
   </div>
   </div>
-  </div>
+ 
    -->
-  
+  <!-- </div>
+  </div>
+  </div> -->
+  </div>
   
            
    <div class="card" style="width:55rem;margin-left: 10rem;">
@@ -466,7 +422,7 @@
             <div class="formGroup" >
                     
               <form  [formGroup]="formdata" (ngSubmit)="submitcomplain(formdata.value)" class="form-horizontal" role="form" autocomplete="on" >
-    <h5 class="title" style="color: orange">If you have any complains or suggetions Send to our team ..</h5>
+    <h5 class="title" >If you have any complains or suggetions Send to our team ..</h5>
     
             <div  class="form-group" >
             <div class="col-lg-8">
