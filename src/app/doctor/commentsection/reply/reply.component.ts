@@ -15,14 +15,11 @@ interface PostId extends Post {
 }
 
 @Component({
-  selector: 'app-comment',
-  templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.scss'],
- 
-
+  selector: 'app-reply',
+  templateUrl: './reply.component.html',
+  styleUrls: ['./reply.component.scss']
 })
-export class CommentComponent implements OnInit {
-
+export class ReplyComponent implements OnInit {
 
 
   //
@@ -91,11 +88,15 @@ export class CommentComponent implements OnInit {
   //   this.afs.doc('posts/'+postId).delete();
   // }
 
-  // openCommentText(postId){
+  openCommentText(postId){
     
-  //   console.log(postId)
-  //   postId.isOpen = !postId.isOpen;
-  // }
+    console.log(postId)
+    postId.isOpen = !postId.isOpen;
+  }
+
+openPost(){
 
 
+  
+}
 }

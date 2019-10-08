@@ -62,6 +62,8 @@ import { ViewbuttonComponent } from './doctor/viewbutton/viewbutton.component';
 import { TComponent } from './doctor/t/t.component';
 import { VideoComponent } from './doctor/pictures/video/video.component';
 import { UploadVideoComponent } from './doctor/pictures/upload-video/upload-video.component';
+import { ReplyComponent } from './doctor/commentsection/reply/reply.component';
+import { MynavComponent } from './doctor/mynav/mynav.component';
 
 
 
@@ -120,6 +122,10 @@ import { UploadVideoComponent } from './doctor/pictures/upload-video/upload-vide
         VideoComponent,
        
         UploadVideoComponent,
+       
+        ReplyComponent,
+       
+        MynavComponent,
        
        
     

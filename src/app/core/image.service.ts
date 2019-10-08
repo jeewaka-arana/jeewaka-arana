@@ -1,50 +1,30 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
+import{Observable} from 'rxjs/Rx';
+import{AngularFireAuth} from  '@angular/fire/auth';
+import{GalleryImageModule} from '../core/models/gallery-image/gallery-image.module';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
+private uid:string;
+constructor(private afAuth:AngularFireAuth,private db:AngularFireDatabase){
+  this.afAuth.authState.subscribe(auth =>{
+    if(auth !== undefined && auth!==null) {
+      this.uid = auth.uid;
+    }
+  })
 
-//   imageDetailList:AngularFireList<any>;
 
+//   getImages(){
 
-//   constructor(private firebase:AngularFireDatabase) { }
-
-
-//   getImageDetailList(){
-//     this.imageDetailList = this.firebase.list('imageDetails');
+//     return this.db.list('files');
+    
 
 //   }
-// insertImageDetails(imageDetails){
-
-//   this.imageDetailList.push(imageDetails);
-
-// }
-private basePath = '/Pofilepictures';
-file: File;
-url = '';
-constructor(private afStorage: AngularFireStorage) { }
-
-handleFiles(event) {
-  this.file = event.target.files[0];
-}
-
-//method to upload file at firebase storage
-// async uploadFile() {
-//   if (this.file) {
-//     const filePath = `${this.basePath}/${this.file.name}`;    //path at which image will be stored in the firebase storage
-//     const snap = await this.afStorage.upload(filePath, this.file);    //upload task
-//     this.getUrl(snap);
-//   } else {alert('Please select an image'); }
-// }
-
-//method to retrieve download url
-private async getUrl(snap: firebase.storage.UploadTaskSnapshot) {
-  const url = await snap.ref.getDownloadURL();
-  this.url = url;  //store the URL
-  console.log(this.url);
 }
 
 

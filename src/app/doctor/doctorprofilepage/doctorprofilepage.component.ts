@@ -10,7 +10,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 import { ImageService } from 'app/core/image.service';
-
+import{GalleryImageModule} from '../../core/models/gallery-image/gallery-image.module';
 //retrive  data
 interface Doctors{
 
@@ -84,7 +84,8 @@ export class DoctorprofilepageComponent implements OnInit {
  name:string;
  email:string;
  msg:string;
-
+//pictures
+images:Observable<GalleryImageModule[]>;
  
 formdata=new FormGroup({ 
   name:new FormControl(''),
@@ -98,7 +99,7 @@ formdata=new FormGroup({
 // imageList: any[];
 // rowIndexArray: any[];
 
-  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private service:ImageService ) {
+  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private imageService:ImageService ) {
   
 
 
@@ -108,13 +109,8 @@ formdata=new FormGroup({
 
   ngOnInit() {
  
-   //get image details
-  // this.service.imageDetailList.snapshotChanges().subscribe(
-  //   list =>{
-  //     this.imageList =list.map(item=> {return item.payload.val();});
-  //     this.rowIndexArray = Array.from(Array(Math.ceil(this.imageList.length/3)).keys());
-  //   }
-  // );
+//    //get image details
+//  this.images =this.imageService.getImages();
  
     // window.document.body.style.backgroundImage='url(https://monodomo.com/free-wallpapers/ayurveda-wallpapers-desktop-background-For-Free-Wallpaper.jpg)';
  

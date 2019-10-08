@@ -41,6 +41,8 @@ import { ReactionComponent } from './doctor/reaction/reaction/reaction.component
 import { from } from 'rxjs';
 
 import{TComponent} from './doctor/t/t.component';
+import{ReplyComponent} from './doctor/commentsection/reply/reply.component'
+import { MynavComponent } from './doctor/mynav/mynav.component';
 
 
 const routes: Routes =[
@@ -86,7 +88,8 @@ const routes: Routes =[
  
  {path:'t',component:TComponent},
  
- 
+ {path:'reply',component: ReplyComponent},
+ {path:'mynav',component:MynavComponent},
 
     ]
 
