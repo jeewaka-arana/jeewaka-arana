@@ -30,6 +30,8 @@ import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
+import { GooglemapComponent } from './patient/googlemap/googlemap.component';
+import { StarreviewComponent } from './patient/starreview/starreview.component';
 
 
 
@@ -64,7 +66,8 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
-    
+    { path: 'googlemap', component:GooglemapComponent},
+    { path: 'star' , component:StarreviewComponent },
     
     
     {path:'image' ,component:ImageComponent,children:[

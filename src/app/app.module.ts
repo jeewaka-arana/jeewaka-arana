@@ -53,6 +53,9 @@ import { ImageListComponent } from './images/image-list/image-list.component';
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
+import { GooglemapComponent } from './patient/googlemap/googlemap.component';
+import { StarreviewComponent } from './patient/starreview/starreview.component';
 
 
 
@@ -83,6 +86,8 @@ import { from } from 'rxjs';
         ImageListComponent,
         DoctorfordComponent,
         ConfirmationComponent,
+        GooglemapComponent,
+        StarreviewComponent,
      
     ],
     imports: [
@@ -99,6 +104,11 @@ import { from } from 'rxjs';
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
       AngularFireDatabaseModule,
+      BrowserModule,
+    AgmCoreModule.forRoot({
+        apiKey: environment.googleMapsKey
+    })
+   
      
     ],
     providers: [CrudService,SearchdoctorService],

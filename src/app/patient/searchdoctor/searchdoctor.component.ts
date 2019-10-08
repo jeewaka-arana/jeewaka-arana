@@ -4,21 +4,13 @@ import { Subject } from 'rxjs/Subject';
 import { Observable} from 'rxjs/Rx'
 import { observable } from 'rxjs';
 import { Doctor } from 'app/core/models/doctor.model';
+import { Star } from 'app/core/models/star.model';
 import * as _ from 'lodash';
+import * as geofirex from "geofirex";
+import * as firebase from 'firebase/app';
+firebase.initializeApp(environment.firebaseConfig);
+import { environment } from 'environments/environment';
 
-// interface example {
-//   // firstname : string;
-//   // lastname : string;
-//   Firstname:string;
-//   Lastname:string;
-//   Email:string;
-//   PhoneNumber:number;
-//   NIC:string;
-//   City:string;
-//   Position:string;
-//   RegistrationNumber:string;
-    
-// }
 
 @Component({
   selector: 'app-searchdoctor',
@@ -28,8 +20,13 @@ import * as _ from 'lodash';
 export class SearchdoctorComponent implements OnInit {
 
   results: any;
-  filteredNames: any;
+  filteredNames: any[] = [];
 
+  patientDoc: AngularFirestoreCollection<any>;
+  doctorDoc: AngularFirestoreCollection<any>;
+  
+  patient: Observable<any>;
+  doctor: Observable<any>; 
   
   Firstname:string;
   Lastname:string;
@@ -41,7 +38,10 @@ export class SearchdoctorComponent implements OnInit {
   RegistrationNumber:string;
   expyear: number;
 
-
+  geo = geofirex.init(firebase);
+  points: Observable<any>;
+  
+  
   filters ={}
 
   constructor(private afs: AngularFirestore){
@@ -53,14 +53,39 @@ export class SearchdoctorComponent implements OnInit {
       this.results = results;
       this.applyFilters()
     })
+
+    this.patientDoc = this.afs.collection('Patients');
+    this.doctorDoc = this.afs.collection('Doctors');
+
+    this.patient = this.patientDoc.valueChanges();
+    this.doctor = this.doctorDoc.valueChanges();
+    
     }
-  
-  // firequery(){
-  //     return this.afs.collection('Doctors', ref => ref.orderBy('expyear'));
-  //   }
-  // loadByName($event){
-  //   this.examplesCol=this.afs.collection ( 'Doctors', ref => ref.orderBy('expyear'))
-  // }
+
+    patientId() {
+        return this.patientDoc.ref.id;
+      }
+
+    doctorId() {
+        return this.doctorDoc.ref.id
+      }
+
+  createPoint() {
+      const cities = this.geo.collection('Location');
+      const point = this.geo.point(40, -119);
+      cities.add({ name: 'Phoenix', position: point.data });
+  }
+
+  createPoint1(lat, lng) {
+    const collection = this.geo.collection('Location')
+
+    // Use the convenience method
+    // collection.setPoint('my-place', lat, lng)
+
+    // Or be a little more explicit 
+    const point = this.geo.point(lat, lng)
+    collection.setDoc('my-place', { position: point.data })
+  }
 
   private applyFilters(){
     this.filteredNames = _.filter(this.results, _.conforms(this.filters))
@@ -84,6 +109,25 @@ export class SearchdoctorComponent implements OnInit {
     this[property] == null
     this.applyFilters()
   }
+
+  send(){
+    this.results=this.results.sort((n1,n2) => {
+      if(n1.expyear > n2.expyear) {return 1}
+      if(n1.expyear < n2.expyear) {return -1}
+      return 0;
+    })
+    this.applyFilters()
+  }
+
+  send2(){
+    this.results=this.results.sort((n1,n2) => {
+      if(n1.expyear < n2.expyear) {return 1}
+      if(n1.expyear > n2.expyear) {return -1}
+      return 0;
+    })
+    this.applyFilters()
+  }
+  
 
   // searchterm: string;
 
