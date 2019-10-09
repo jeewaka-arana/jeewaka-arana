@@ -26,12 +26,12 @@ export class CommentComponent implements OnInit {
 
 
   //
-  clickMessage = '';
+  // clickMessage = '';
 
-  onClickMe() {
-    // this.clickMessage = 'You are my hero!';
+  // onClickMe() {
+  //   // this.clickMessage = 'You are my hero!';
     
-  }
+  // }
 
   //
   postsCol: AngularFirestoreCollection<Post>;
