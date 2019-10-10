@@ -64,6 +64,7 @@ import { VideoComponent } from './doctor/pictures/video/video.component';
 import { UploadVideoComponent } from './doctor/pictures/upload-video/upload-video.component';
 import { ReplyComponent } from './doctor/commentsection/reply/reply.component';
 import { MynavComponent } from './doctor/mynav/mynav.component';
+import { GetComplainAdminComponent } from './doctor/get-complain-admin/get-complain-admin.component';
 
 
 
@@ -126,6 +127,8 @@ import { MynavComponent } from './doctor/mynav/mynav.component';
         ReplyComponent,
        
         MynavComponent,
+       
+        GetComplainAdminComponent,
        
        
     
