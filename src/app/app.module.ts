@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
-import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
+// import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import { AgmCoreModule } from '@agm/core';
 
 
@@ -188,7 +188,7 @@ import { StarreviewComponent } from './patient/starreview/starreview.component';
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
       AngularFireDatabaseModule,
-      NgMultiSelectDropDownModule.forRoot(),
+    //   NgMultiSelectDropDownModule.forRoot(),
      
   
 
