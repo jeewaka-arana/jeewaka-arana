@@ -104,7 +104,7 @@ const routes: Routes =[
 
 // {path:'notepad',component:NotepadComponent},
 {path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent},
-{path:'adsearch',component:AdvancedsearchComponent}
+{path:'adsearch',component:AdvancedsearchComponent},
 
  {path:'reaction',component:ReactionComponent},
  

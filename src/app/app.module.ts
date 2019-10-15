@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
-import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
+// import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import { AgmCoreModule } from '@agm/core';
 
 
@@ -51,11 +51,7 @@ import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
 
-import { ImagesComponent } from './images/images.component';
-import { ImageComponent } from './images/image/image.component';
-import { ImageListComponent } from './images/image-list/image-list.component';
 
-import { NoteditComponent } from './doctor/notedit/notedit.component';
 import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
@@ -86,10 +82,7 @@ import { BothCommentPageComponent } from './doctor/commentsection/both-comment-p
 import{DatePipe} from '@angular/common';
 
 
-import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
-import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
-import { from } from 'rxjs';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { GooglemapComponent } from './patient/googlemap/googlemap.component';
 import { StarreviewComponent } from './patient/starreview/starreview.component';
 
@@ -191,7 +184,7 @@ import { StarreviewComponent } from './patient/starreview/starreview.component';
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
       AngularFireDatabaseModule,
-      NgMultiSelectDropDownModule.forRoot(),
+    //   NgMultiSelectDropDownModule.forRoot(),
      
   
 
