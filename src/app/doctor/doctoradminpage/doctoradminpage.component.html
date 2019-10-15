@@ -1,6 +1,102 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
+  <div class="container">
+    <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+      <div class="navbar-translate">
+          <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+             
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+              <a class="nav-link"   routerLink="/index" >
+                  <i class="now-ui-icons business_bank"></i>
+                  <p>Home</p>
+              </a>
+          </li>
+
+
+              
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/index" >
+                <i class="now-ui-icons business_globe"></i>
+                <p>Change Language</p>
+            </a>
+        </li>
+
+        
+
+            
+      
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/index" >
+                <i class="now-ui-icons ui-1_calendar-60"></i>
+                <p>Appoinments</p>
+            </a>
+        </li>
+                       
+        <li class="nav-item">
+            <a class="nav-link" href="/bothcomment" >
+                <i class="now-ui-icons text_align-center"></i>
+                <p>Comments</p>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+         
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+              <i class="now-ui-icons ui-1_zoom-bold"></i>
+              <p>Search</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item  " href="/doctorview" >Search By Name</a>
+            <a class="dropdown-item" href="/doctoradmin">Search By Diseases</a>
+            
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons users_single-02
+
+              "></i>
+            <p>Profile</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item " href="/doctorview" > View Profile </a>
+            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+            
+          </div>
+        </li>
+
+        
+<!-- 
+            <li class="nav-item">
+              <a class="nav-link btn btn-neutral" routerLink="/signup">
+                  <i class="now-ui-icons arrows-1_share-66"></i>
+                  <p>Sign In</p>
+              </a>
+          </li>
+           -->
+           
+          </ul>
+      </div>
+  </div>
+</nav>
 
 
 
+
+
+<!--  -->
 <div class="page-header page-header-small">
 
     <div class="page-header-image rellax-header" data-rellax-speed="-8" >
@@ -12,12 +108,12 @@
     <div class="container">
 
         
-<!-- <app-navbar></app-navbar> -->
+
 
         <div class="content-center">
 
           
-            <h1 class="title">Edit Your Profile</h1>
+            <h1 style="font-family: cursive;" class="title">Edit Your Profile</h1>
             <div class="text-center">
               
               
@@ -30,7 +126,7 @@
   
   
   
-  
+   
   
   
   
@@ -39,7 +135,7 @@
       <div class="section section-about-us" >
         
  
-<app-viewbutton></app-viewbutton>
+
             
               
 
@@ -52,7 +148,7 @@
   
   
 <div>
- 
+    
 
    <app-profile></app-profile>
 
@@ -69,7 +165,45 @@
 
                                             <label class="col-lg-3 control-label"><b>Specialist:</b></label>
 
-                                            <div class="row">
+
+
+
+                                            <div class="col-md-8">
+                                              <div class="form-group">
+                                                      <select ngModel #Specialist="ngModel" name=" Specialist" type="text" class="form-control" id="Specialist"  class="form-control" >
+                                                          <option class="hidden"  selected disabled>Please select your specialist...</option>
+                                                          <option>Ayurvedic Hospital </option>
+                                                          <option>Arthritis</option>
+                                                          <option>Beauty Spa</option>
+                                                          <option>cancer</option>
+                                                          <option>Chronic Ulcers</option>
+                                                          <option>Cholestrol</option>
+                                                          <option> Diabetic Ulcers</option>
+                                                          <option>Diabetes Mellitus</option>
+                                                          <option>ENT</option>
+                                                          <option>Fistula</option>
+                                                          <option>Gynaecological Disorders</option>
+                                                          <option>Gastritis</option>
+                                                          <option>Hemorrhoids</option>
+                                                          <option>Hypertension</option>
+                                                          <option>Neurological Disorders</option>
+                                                          <option>Orthopedics</option>
+                                                          <option>Obesity</option>
+                                                          <option>Paralysis / Hemiplagia</option>
+                                                          <option>Pediatrics</option>
+                                                          <option>Spinal Disorders</option>
+                                                         <option>Skin Disorders</option>
+                                                          <option>Urinary Calculi</option>
+                                                          <option>Urinary Diseases</option>
+                                                          <option>Varicose Venis</option>
+                                                         
+                                                         
+                              
+                                                      </select>
+                                                  </div>
+                                                  </div>
+
+                                            <!-- <div class="row">
                                                 <div class="column" style="margin-left: 20px;" >
                                                   
                                                   <div class="styled-input-single">
@@ -191,7 +325,7 @@
                                                               </div>
                                             
                                     </div>
-                                    </div>
+                                    </div> -->
 
 
 
@@ -204,12 +338,12 @@
 
 
     
-                                    </div> 
-
+                                    </div>  
+                                   
                                <br><br><br><br><br><br>
                                           
                                 <div  class="form-group" >
-                                    <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                                    <input type="submit" style="width: 15% ;padding: 1%"  class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
                                     </div>
 </form>
               </div>
@@ -222,7 +356,7 @@
               <div class="row">
                   <div class="col col-md-5">
 
-              <div class="card"  style="margin-left:5px;width:77rem;">
+              <div class="card"  style="margin-left:5px;width:32rem;">
                   <div class="card-body"> 
                     
                      
@@ -236,7 +370,7 @@
                        
                                   <label class="col-lg-3 control-label"><b>Address:</b></label>
                                   <div class="col-lg-8">
-                                        <textarea rows="5" cols="75" formControlName="Address" value=""></textarea>
+                                        <textarea rows="5" cols="50" formControlName="Address" value=""></textarea>
                                       
                                       </div>
 
@@ -253,20 +387,20 @@
                                        
     
     
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                   <label class="col-md-5 control-label"><b>Available Dates & Times:</b></label>
                                   <div class="col-lg-8">
                                       <textarea rows="10" cols="75" formControlName="dateTime"></textarea>
                                     
                                     </div>
                                   
-                                </div>
+                                </div> -->
 
                     
                                 <div class="container" class="center">
                                     <label class="col-md-5 control-label"><b>Upload special Note(If any):</b></label>
                           <div class="col-lg-8">
-      <textarea rows="10" cols="70"  formControlName="note" ></textarea>
+      <textarea rows="5" cols="60"  formControlName="note" ></textarea>
   
   
        
@@ -279,33 +413,129 @@
  
 
   </form>
-
+ 
+  </div>
+  
   </div>
   </div>
-  </div>
-
+  <br>
+  <app-video></app-video>
 <!-- video section -->
 
 
 
-<app-video></app-video>
   </div>
 
-<!-- 
-  <div class="col col-md-6">
+
+  <div class="col col-md-4">
 
            
-      <div class="card" style="margin-left:95px">
+      <div class="card" style="margin-left:1px;width:42rem;" >
           <div class="card-body" >
-              -->
+            
+              <div class="formGroup" >
+                      
+                  <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
+
+              <table width="100%" class="table table-bordered table-hover" id="time">
+
+                
+                 
+                  <thead>
+                    <tr>
+                        <th>DATE</th>
+                      <th>TIME SLOT 1</th>
+                      <th>TIME SLOT 2</th>
+                      <th>TIME SLOT 3</th>
+                      
+                    </tr>
+                  </thead>
+
+
+                  <tbody>  
+                      
+                    <tr>
+                        
+                          <td >MONDAY</td>
+                          
+                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="mt1"></textarea></div></td>
+                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="mt2"></textarea></div></td>
+                     <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="mt3"></textarea></div></td>
+                   
+                    </tr>
+                   
+                    <tr>
+                          <td>TUESDAY</td>
+                      <!-- <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      -->
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tt1"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tt2"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tt3"></textarea></div></td>
+          
+                        </tr>
+          
+                        <tr>
+                              <td>WEDNESDAY</td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="wt1"></textarea></div></td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="wt2"></textarea></div></td>
+                         <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="wt3"></textarea></div></td>
+                    
+                            </tr>
+
+                          <tr>
+                         <td>THURSDAY</td>
+                         <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tht1"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tht2"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tht3"></textarea></div></td>
+          
+                      
+                              </tr>
+                              <tr>
+                              <td>FRIDAY</td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="ft1"></textarea></div></td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="ft2"></textarea></div></td>
+                         <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="ft3"></textarea></div></td>
+                    
+                                    </tr>
+                                    <tr>
+                                    <td>SATURDAY</td>
+                                    <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="st1"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="st2"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="st3"></textarea></div></td>
+          
+                                       
+                                  </tr>
+                                  <tr>
+                                          <td>SUNDAY</td>
+                                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="sut1"></textarea></div></td>
+                                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="sut2"></textarea></div></td>
+                                     <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="sut3"></textarea></div></td>
+                                
+                                                </tr>
+                                                
+                                          
+
+                  </tbody>
+
+                
+                  </table>
+                  <div  class="form-group" >
+                      <input type="submit" style="width:15% ;padding: 1%;margin-left:34rem;" class="btnRegister "  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                      </div> 
+            </form>      
+</div>
+</div>
+</div>
+</div>
+              
 <!--       
       
           <h2>Upload photos</h2>
       <br><br>
        -->
     
-     
-      
 <!--             
       <form [formGroup]="formdata" (save)="submitImg1(formdata.value)" >
     
@@ -377,16 +607,11 @@
            
          </div>
           </div>
+ -->
 
-
-</div>
-  </div>
   
   
   
-  
-  
-   -->
   
   
   
@@ -426,9 +651,9 @@
   <!-- </div>
   </div>
   </div> -->
-  </div>
   
-           
+  
+<!--            
    <div class="card" style="width:55rem;margin-left: 10rem;">
     <div class="card-body" >
       
@@ -465,9 +690,15 @@
     </form>
 </div>
 </div>
-</div> 
+</div>  -->
 
 
+
+
+<!-- comment section -->
+
+
+</div>
 
 
       <footer class="footer footer-default">

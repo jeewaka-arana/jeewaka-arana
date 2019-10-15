@@ -44,11 +44,21 @@ export class CrudService {
   //pass dotor comments from doctor profile page
   passData(user:Doctor)
   {
-     return this.afs.collection('DoctorComments').add(user);
+
+
+    // var id=this.AuthService.userId;
+
+    // var doctorRef=this.afs.collection('Doctors');
+    // doctorRef.doc(id).add(user);
+
+
+      return this.afs.collection('DoctorComments').add(user);
   
   }
 
 
+
+  
  
 
 

@@ -1,32 +1,28 @@
 
-           <div class="section section-contact-us text-center">
-            <div class="container">
-
+         
+<div class="card" style="width: 78rem;margin-left: 10px">
               
                   <div class="formGroup" >
                     
-                          <form  class="form-horizontal" role="form" >
-                <h2 class="title">Your thougths are very important ..</h2>
-                <!-- <p class="description">Your thougths are very important ..</p> -->
+                          <form  class="form-horizontal" role="form" style="margin-left: 55px;" >
+               
+
                 <div class="row">
-                    <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
-                      <div class="input-group input-lg">
-                        <div class="input-group-prepend" >
-                          <!-- <span class="input-group-text">
-                              <i class="now-ui-icons users_circle-08"></i>
-                          </span> -->
-                        </div>
-                        <div class="col-lg-8">
-                          <input class="form-control" [(ngModel)]="title" name="title" placeholder="Your name">
+                    <div class="col-lg-6 text-center ">
+                     
+                        <br><br>
+                        <div>
+                          <input class="form-control" [(ngModel)]="title" name="title" placeholder="   Your name">
                       </div>
-                      </div>
-          
-                        <div class="textarea-container">
-                            <textarea class="form-control"  [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
+                     
+          <br>
+                        <div >
+                            <textarea class="form-control"  [(ngModel)]="content" name="content" placeholder="    Your message"></textarea>
                         </div>
-                        <br><br><br>
+                       
+                    <br>
                         <div  class="form-group" >
-                              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Post Comment" (click)="addPost()"/>         
+                              <input type="submit" class="btnRegister   float-right" style="margin-left: 70rem;"  formControlName="submit" value="Post Comment" (click)="addPost()"/>         
                               </div>
                     </div>
                 </div>
@@ -35,36 +31,30 @@
 
                 </form>
             </div>
-        </div>
+          </div>
+        <!-- </div>
 </div> 
+ -->
 
-
-<!-- 
-
-<input type="text" [(ngModel)]="title" name="title" placeholder="Your name">
-<textarea [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
-<input type="submit" value="Add a comment" (click)="addPost()"> -->
-
+<div class="card" style="width:78rem;margin-left: 10px;margin-top: 1px;"> 
 <ul *ngFor="let post of posts | async" id="opening">
   <div (click)="getPost(post.id)">
-    <div class="card" style="width: 55rem;margin-left: 25px;"> 
-      <img src="../../../../assets/img/comment.png" style="height: 90px; width: 90px">
-    <strong >{{ post.data.title }} </strong>
-    <hr class="new4">
+    
+      <img src="../../../../assets/img/pa.jpg" style="height: 90px; width:90px">
+     
+      <strong>Commented on {{today | date}} </strong>  
+      <br>
+      <strong >{{ post.data.title }} </strong>
+  
+     
     {{ post.data.content }}
+    <hr class="new4">
+     
   </div>
   
-</div>
+
 </ul>
+</div>
 
-<!-- 
-   <button type="button" class="reply" (click)="onClickMe()">Reply</button>
-   {{clickMessage}} -->
-  
-
-
-
-
-<!-- 
-<h3>{{ (post | async)?.title }}</h3>
-<p>{{ (post | async)?.content }}</p> -->
+<!-- <h3>{{ (post | async)?.title }}</h3>
+<p>{{ (post | async)?.content }}</p>  -->

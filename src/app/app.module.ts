@@ -58,13 +58,18 @@ import { CommentComponent } from './doctor/commentsection/comment/comment.compon
 import { ProfileComponent } from './doctor/pictures/profile/profile.component';
 
 
-import { ViewbuttonComponent } from './doctor/viewbutton/viewbutton.component';
+
 import { TComponent } from './doctor/t/t.component';
 import { VideoComponent } from './doctor/pictures/video/video.component';
 import { UploadVideoComponent } from './doctor/pictures/upload-video/upload-video.component';
-import { ReplyComponent } from './doctor/commentsection/reply/reply.component';
+
 import { MynavComponent } from './doctor/mynav/mynav.component';
 import { GetComplainAdminComponent } from './doctor/get-complain-admin/get-complain-admin.component';
+import { AddComplainsComponent } from './doctor/add-complains/add-complains.component';
+import { DeleteCommentComponent } from './doctor/commentsection/delete-comment/delete-comment.component';
+import { BothCommentPageComponent } from './doctor/commentsection/both-comment-page/both-comment-page.component';
+
+import{DatePipe} from '@angular/common';
 
 
 
@@ -112,9 +117,6 @@ import { GetComplainAdminComponent } from './doctor/get-complain-admin/get-compl
         ProfileComponent,
        
         
-
-       
-        ViewbuttonComponent,
        
     
        
@@ -124,11 +126,19 @@ import { GetComplainAdminComponent } from './doctor/get-complain-admin/get-compl
        
         UploadVideoComponent,
        
-        ReplyComponent,
+      
        
         MynavComponent,
        
         GetComplainAdminComponent,
+       
+        AddComplainsComponent,
+       
+        DeleteCommentComponent,
+       
+        BothCommentPageComponent,
+       
+     
        
        
     
@@ -160,7 +170,7 @@ import { GetComplainAdminComponent } from './doctor/get-complain-admin/get-compl
       NgMultiSelectDropDownModule.forRoot(),
 
     ],
-    providers: [CrudService,SearchdoctorService,AuthService],
+    providers: [CrudService,SearchdoctorService,AuthService, DatePipe],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

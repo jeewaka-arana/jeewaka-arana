@@ -19,13 +19,13 @@ constructor(private afAuth:AngularFireAuth,private db:AngularFireDatabase){
   })
 
 
-//   getImages(){
+//   getImages():Observable<GalleryImageModule[]>{
 
-//     return this.db.list('files');
+//     return  this.db.list('files'); 
     
 
 //   }
+// }
 }
-
 
 }

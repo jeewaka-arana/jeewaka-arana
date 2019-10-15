@@ -14,26 +14,26 @@ export class UploadVideoComponent implements OnInit {
   task: AngularFireUploadTask;
   percentage: Observable<number>;
   snapshot: Observable<any>;
-  downloadURL: string;
+  videodownloadURL: string;
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
   ngOnInit() {
     this.startUpload();
   }
   startUpload() {
 // The storage path
-    const path = `Videos/${Date.now()}_${this.file.name}`;
+    const pathvideo = `Videos/${Date.now()}_${this.file.name}`;
     // Reference to storage bucket
-    const ref = this.storage.ref(path);
+    const ref = this.storage.ref(pathvideo);
 // The main task
-    this.task = this.storage.upload(path, this.file);
+    this.task = this.storage.upload(pathvideo, this.file);
     // Progress monitoring
     this.percentage = this.task.percentageChanges();
     this.snapshot   = this.task.snapshotChanges().pipe(
       tap(console.log),
       // The file's download URL
       finalize( async() =>  {
-        this.downloadURL = await ref.getDownloadURL().toPromise();
- this.db.collection('videos').add( { downloadURL: this.downloadURL, path });
+        this.videodownloadURL = await ref.getDownloadURL().toPromise();
+ this.db.collection('videos').add( { videodownloadURL: this.videodownloadURL, pathvideo });
       }),
     );
   }

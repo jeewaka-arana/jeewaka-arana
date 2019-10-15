@@ -4,11 +4,15 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import * as firebase from 'firebase';
-
+import{DatePipe} from '@angular/common';
+import{CrudService} from 'app/core/crud.service';
+import { Doctor } from '../../../core/models/doctor.model';
+import {AuthService} from '../../../core/auth.service';
 
 interface Post {
   title: string;
   content: string;
+  todayTime:string;
 }
 interface PostId extends Post {
   id: string;
@@ -22,34 +26,36 @@ interface PostId extends Post {
 
 })
 export class CommentComponent implements OnInit {
+  today: number = Date.now();
 
-
-
-  //
-  // clickMessage = '';
-
-  // onClickMe() {
-  //   // this.clickMessage = 'You are my hero!';
-    
-  // }
-
-  //
   postsCol: AngularFirestoreCollection<Post>;
   posts: any;
 
   title:string;
   content:string;
+ 
 
 
   postDoc: AngularFirestoreDocument<Post>;
   post: Observable<Post>;
-  AuthService: any;
   
   
-  constructor(private afs: AngularFirestore) { }
+
+  
+  
+  constructor(private db: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService,private  afs: AngularFirestore,private datePipe: DatePipe) {
+   
+   }
 
 
   ngOnInit() {
+
+//
+
+// var medium = this.datePipe.transform(new Date(),"MMM d, y, h:mm:ss a");
+// console.log(medium); //output - Feb 14, 2019, 3:45:06 PM
+//
+
     this.postsCol = this.afs.collection('posts');
     //this.posts = this.postsCol.valueChanges();
     this.posts = this.postsCol.snapshotChanges()
@@ -67,13 +73,14 @@ export class CommentComponent implements OnInit {
 
     // var id=this.AuthService.userId;
 
-    // var doctorRef=this.afs.collection('Doctors');
+    // var doctorRef=this.afs.collection('posts');
     
-    // doctorRef.doc(id).update({'title': this.title, 'content': this.content});
+    // doctorRef.doc(id).set({'title': this.title, 'content': this.content});
+
 
 
     // 
-    this.afs.collection('posts').add({'title': this.title, 'content': this.content});
+     this.afs.collection('posts').add({'title': this.title, 'content': this.content});
   }
 
   getPost(postId) {
@@ -86,10 +93,6 @@ export class CommentComponent implements OnInit {
   }
 
 
-
-  // deletePost(postId) {
-  //   this.afs.doc('posts/'+postId).delete();
-  // }
 
   // openCommentText(postId){
     

@@ -1,0 +1,14 @@
+
+#time th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:orangered;
+    color: white;
+  }
+  
+  #time tr:nth-child(even){background-color: #ffd1b3;}
+  #time tr:nth-child(odd){background-color:  #ffeecc;}
+  #time{
+      width: 50rem;
+  }

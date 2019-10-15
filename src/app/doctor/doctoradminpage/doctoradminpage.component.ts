@@ -16,7 +16,6 @@ import { AngularFireDatabase } from '@angular/fire/database';
 
 
 
-
 @Component({
   selector: 'app-doctoradminpage',
   templateUrl: './doctoradminpage.component.html',
@@ -66,24 +65,46 @@ formdata=new FormGroup({
   img3:new FormControl(''),
 
   video:new FormControl(''),
-article:new FormControl(''),
+// article:new FormControl(''),
 
 cname:new FormControl(''),
 cmail:new FormControl(''),
 cmsg:new FormControl(''),
 
+mt1:new FormControl(''),
+mt2:new FormControl(''),
+mt3:new FormControl(''),
+
+tt1:new FormControl(''),
+tt2:new FormControl(''),
+tt3:new FormControl(''),
+
+wt1:new FormControl(''),
+wt2:new FormControl(''),
+wt3:new FormControl(''),
+
+
+tht1:new FormControl(''),
+tht2:new FormControl(''),
+tht3:new FormControl(''),
+
+ft1:new FormControl(''),
+ft2:new FormControl(''),
+ft3:new FormControl(''),
+
+st1:new FormControl(''),
+st2:new FormControl(''),
+st3:new FormControl(''),
 
 
 
+sut1:new FormControl(''),
+sut2:new FormControl(''),
+sut3:new FormControl(''),
  });
   
 
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder) { 
-// this.formdata = fb.group({
-//   'cname':[null,Validators.required],
-//   'cmail':[null,Validators.required],
-//   'cmsg':[null,Validators.required],
-// })
 
   }
 
@@ -103,7 +124,7 @@ cmsg:new FormControl(''),
  
  
  }
-   
+ 
 //  showpreview(event:any){
 //   if(event.target.files && event.target.files[0]){
 //     const reader = new FileReader();
@@ -129,6 +150,7 @@ cmsg:new FormControl(''),
   submitcomplain(data){
     this.CrudService. passData(data);
   }
+// //
 
 
 

@@ -41,8 +41,11 @@ import { ReactionComponent } from './doctor/reaction/reaction/reaction.component
 import { from } from 'rxjs';
 
 import{TComponent} from './doctor/t/t.component';
-import{ReplyComponent} from './doctor/commentsection/reply/reply.component'
+
 import { MynavComponent } from './doctor/mynav/mynav.component';
+import{AddComplainsComponent} from './doctor/add-complains/add-complains.component';
+import{DeleteCommentComponent} from './doctor/commentsection/delete-comment/delete-comment.component';
+import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component'
 
 
 const routes: Routes =[
@@ -88,9 +91,9 @@ const routes: Routes =[
  
  {path:'t',component:TComponent},
  
- {path:'reply',component: ReplyComponent},
- {path:'mynav',component:MynavComponent},
-
+{path:'complain',component:AddComplainsComponent},
+{path:'deletecomment',component:DeleteCommentComponent},
+{path:'bothcomment',component:BothCommentPageComponent},
     ]
 
 

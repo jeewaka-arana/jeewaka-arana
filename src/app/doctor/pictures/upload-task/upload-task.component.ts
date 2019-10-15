@@ -3,6 +3,9 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
+import{CrudService} from 'app/core/crud.service';
+import { Doctor } from '../../../core/models/doctor.model';
+import {AuthService} from '../../../core/auth.service';
 @Component({
   selector: 'upload-task',
   templateUrl: './upload-task.component.html',
@@ -14,7 +17,7 @@ export class UploadTaskComponent implements OnInit {
   percentage: Observable<number>;
   snapshot: Observable<any>;
   downloadURL: string;
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService,private  afs: AngularFirestore) { }
   ngOnInit() {
     this.startUpload();
   }
@@ -32,7 +35,13 @@ export class UploadTaskComponent implements OnInit {
       // The file's download URL
       finalize( async() =>  {
         this.downloadURL = await ref.getDownloadURL().toPromise();
- this.db.collection('files').add( { downloadURL: this.downloadURL, path });
+        
+//  this.db.collection('Doctors').add( { downloadURL: this.downloadURL, path });
+this.db.collection('Doctors');
+var id=this.AuthService.userId;
+
+var doctorRef=this.afs.collection('Doctors');
+doctorRef.doc(id).update({ downloadURL: this.downloadURL, path});
       }),
     );
   }
