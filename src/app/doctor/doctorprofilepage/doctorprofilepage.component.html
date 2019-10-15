@@ -1,102 +1,265 @@
 
+
+
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
+    <div class="container">
+      <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+            <ul class="navbar-nav ml-auto">
+  
+  
+              <li class="nav-item">
+                <a class="nav-link"   routerLink="/index" >
+                    <i class="now-ui-icons business_bank"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+  
+  
+                
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/index" >
+                  <i class="now-ui-icons business_globe"></i>
+                  <p>Change Language</p>
+              </a>
+          </li>
+  
+          
+  
+              
+        
+  
+          
+          <li class="nav-item dropdown">
+                    <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="now-ui-icons ui-1_calendar-60"></i>
+                  <p>Appoinments</p>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item  " href="/doctorview" >Make Appoinment</a>
+                    <a class="dropdown-item" href="/doctoradmin">View Appoinment</a>
+                    
+                  </div>
+          </li>
+                         
+         
+          <li class="nav-item dropdown">
+           
+            <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              
+                <i class="now-ui-icons ui-1_zoom-bold"></i>
+                <p>Search</p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item  " href="/doctorview" >Search By Name</a>
+              <a class="dropdown-item" href="/doctoradmin">Search By Diseases</a>
+              
+            </div>
+          </li>
+  
+          
+  <!-- 
+              <li class="nav-item">
+                <a class="nav-link btn btn-neutral" routerLink="/signup">
+                    <i class="now-ui-icons arrows-1_share-66"></i>
+                    <p>Sign In</p>
+                </a>
+            </li>
+             -->
+             
+            </ul>
+        </div>
+    </div>
+  </nav>
 <div class="wrapper">
         
           <div class="page-header page-header-small">
-              <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://tejashaven.com.au/wp-content/uploads/2016/04/massage-therapy-Australia-03.jpg');">
-              </div>
+              <!-- <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://www.schoolhousehotel.com/upload/slide_images/spa-1.jpg');"> -->
+                <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://lamianow.gr/wp-content/uploads/2018/09/fa776e21bc1a03fee98fb2c8e5f95a17_XL-1280x720.jpg');">  
+            </div>
               <div class="container">
                   <div class="content-center">
-                      <h1 class="title">Welcome to my profile</h1>
+                      <h1 style="font-family: cursive;font-size: 54px;" class="title">Welcome To My Profile</h1>
                       
                   </div>
               </div>
+
+              
           </div>
           <div class="section section-about-us">
-              <div class="container">
-               
-                      <div class="col-md-8 ml-auto mr-auto text-center">
-                          <h2 class="title">My Details</h2>
-                         
-                      </div>
-                      <img  src="../../../assets/img/avatar.png" width="250" height="250" />
-  
+              <!-- <div class="container"> -->
+              
+                    <div class="row">
+                            <div class="col col-md-6">
+                                    <div class="card" >
 
-
-                      <div class="container">
-                        
-                          <hr>
-                        <div class="row">
-                          <!-- left column -->
-                          
-                          <!-- edit form column -->
-                          <div class="col-md-9 personal-info">
-                           
-                            
-                            
-                            <form class="form-horizontal" role="form">
-                              <div class="form-group">
-                                
-
-
-                                <label class="col-lg-5 control-label" ><b><span> Name: </span>Dr.Amarasingha</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b><span>Specialist:</span> Cancers</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b><span>Status:</span>  Generation only</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b><span>Address</span> No:15/A,Kollupitiya,Colombo</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b> <span>Telephone Number:</span>  0777156968</b></label><br><br>
-                                <label class="col-lg-5 control-label"><b> <span>Email Address:</span> amarasingha@gmail.com</b></label><br><br>
-
-
-<!--
-                                
-                              
-                                  <div class="form-group">
-                                        <label class="col-lg-3 control-label"><b>Email Address:</b></label>
-                                        <div class="col-lg-8">
         
-                                          <input class="form-control" type="text" value="amarasingha@gmail.com" disabled>
-                                        </div>
-                                      </div>
-
-
- -->
-</div>
-
-
-<div class="form-group">
-  
-  
-  <!-- <div class="col-lg-8" >
-  <textarea rows="10" cols="150"  placeholder= "Monday-Friday 8 a.m - 3 p.m" disabled></textarea>
-
-</div> -->
-  </div>
-
-
-                              
-                              
-                            </form>
-                          </div>
+                                            <div class="row ">
+                                               
+                                              <div class="column1">
+                                                  <ul *ngFor="let post of posts | async">
+                                               <img  src="../../../assets/img/avatar.png" width="250" height="250" />
+                                               
+                   
+                                              </ul>
+                                              </div>
+                                                
+                                              <div class="vl"></div>
+                                              <div class="column">
+                      
+                                                  <ul *ngFor="let post of posts | async">
+                                                      <label class="col-lg-15 control-label" ><b><span> Name -   </span>  Dr. {{post.Firstname}}   {{post.Lastname}}</b></label><br><br>
+                                                      <label class="col-lg-15 control-label"><b><span>Specialist -  </span>  Cancers</b></label><br><br>
+                                                      <label class="col-lg-15 control-label"><b><span>Status -  </span>  {{post.Position}}</b></label><br><br>
+                                                      <label class="col-lg-15 control-label"><b><span>Address -  </span> {{ post.Address}}</b></label><br><br>
+                                                      <label class="col-lg-15 control-label"><b> <span>Telephone Number -  </span> {{post.Phone}}</b></label><br><br>
+                                                      <label class="col-lg-15 control-label"><b> <span>Email Address -  </span> {{post.Email}}</b></label><br><br>
+                                                   
+                                                  </ul>
+                      
+                                              </div>
+                                            </div>
+                      
+                        
                       </div>
-                    </div>
-                    <hr>
+</div>
+<div class="col col-md-4">
 
-<div>
-
-
-
-
-        <div class="card" style="width:75rem">
-                <div class="card-body" >
-
-      
-    <label class="col-md-9 control-label"><b><span>Available Dates & Times:</span></b></label>
     
+        <ul *ngFor="let post of posts | async"> 
+                <div class="flip" style="margin-left: 10rem;" >
+                    <div class="front" style="background-color:  #ff471a
+                    ">
+                       <h1 class="text-shadow" style="margin-top:5rem;margin-left: 3rem;">TODAY NOTE</h1>
+                       <!-- <img src="../../../assets/img/logo.png" alt="face"> -->
+                    </div>
+                    <div class="back">
+                       <!-- <h2>Angular</h2> -->
+                       <p>{{post.note}}</p>
+                    </div>
+                </div>
+                </ul>
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="card" style="margin-left:15px;width:75rem;" >
+    <div class="card-body" >
+      
+      <ul *ngFor="let post of posts | async"> 
+        <table width="100%" class="table table-bordered table-hover" id="time">
+            <thead>
+              <tr>
+                <th>DATE</th>
+                <th>MONDAY</th>
+                <th>TUESDAY</th>
+                <th>WEDNESDAY</th>
+                <th>THURSDAY</th>
+                <th>FRIDAY</th>
+                <th>SATURDAY</th>
+                <th>SUNDAY</th>
+              
+              </tr>
+            </thead>
+            <tbody>  
+              <tr>
+                <td>TIME SLOT 1</td>
+                <td>{{post.mt1}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+              </tr>
+              <tr>
+                <td>TIME SLOT 2</td>
+                <td>{{post.mt2}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>TIME SLOT 3</td>
+                <td>{{post.mt3}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+            </tbody>
+            </table>
+            
+<!--             
+<table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+  </table>
+            -->
+
+            </ul>
 </div>
 </div>
 
 
 
 
+<br><br><br><br><br><br>
 
 
 
@@ -107,50 +270,29 @@
 
 
 
-
-
-
-
-    <div class="card" style="width:45rem">
-            <div class="card-body" >
-
-<h2>Special Notes For Today</h2>
-
-<div class="col-lg-8" >
-  <textarea rows="5" cols="85" disabled ></textarea>
-
-
-</div>
- 
-</div>
-</div>
 
 
 
                  
-
-                 
-
-
-                  <div class="separator separator-primary"></div>
                   <div class="section-story-overview">
                       <div class="row">
-                          <div class="col-md-6">
-                              <div class="image-container image-left" style="background-image: url('assets/img/ayurveda_medicines_2.jpg')">
+                          <div class="col-md-5">
+                              <div class="image-container image-left" style="background-image: url('assets/img/a1.jpg')">
                                   <!-- First image on the left side -->
                                   
                               </div>
                               <!-- Second image on the left side of the article -->
-                              <div class="image-container" style="background-image: url('assets/img/Ayurveda-101.jpeg')"></div>
+                              <div class="image-container" style="background-image: url('assets/img/a2.jpg')"></div>
                           </div>
+                     
 
-
-
-                          <div class="col-md-5">
+                          <div class="col-md-6">
                               <!-- First image on the right side, above the article -->
-                              <div class="image-container image-right" style="background-image: url('assets/img/Herbal-Medicine-1.jpg')"></div>
-                              <h3>About Our Service</h3>
-                              <p>The Arcticle is for you about our services.We have more treatments to for your diseases...........................................................................................................................
+                              <div class="image-container image-right" style="background-image: url('assets/img/a3.jpg')"></div>
+                             
+                              
+                             <b><h3>About Our Service</h3></b> 
+                              <p style="font-family: cursive;font-size:20px;">Ayurveda, a traditional system of medicine that originated over three millennia ago in the South Asian region, offers extensive insights about food and health based on certain unique conceptual as well as theoretical positions. Health is defined as a state of equilibrium with one’s self (svasthya) but which is inextricably linked to the environment. Ayurvedic principles, such as the tridosa (three humors) theory, provide the relationship between the microcosm and the macrocosm that can be applied in day-to-day practice. Classical Ayurveda texts cover an array of themes on food ranging from diversity of natural sources, their properties in relation to seasons and places and to their specific function both in physiological and pathological states. The epistemic perspective on health and nutrition in Ayurveda is very different from that of biomedicine and modern nutrition. However, contemporary knowledge is reinventing and advancing several of these concepts in an era of systems biology, personalized medicine, and the broader context of a more holistic transition in sciences in general. Trans-disciplinary research could be important not only for pushing the boundaries of food and health sciences but also for providing practical solutions for contemporary health conditions. This article briefly reviews the parallels in Ayurveda and biomedicine and draws attention to the need for a deeper engagement with traditional knowledge systems, such as Ayurveda. It points out that recreation of the methodologies that enabled the holistic view point about health in Ayurveda may unravel some of the complex connections with Nature.
                               </p>
                              
                           </div>
@@ -158,22 +300,26 @@
                   </div>
              
               
-          </div>
+          <!-- </div> -->
+
+          
           <div class="section section-team text-center">
               <div class="container">
-                  <h2 class="title">About Our Place</h2>
+                 
                   <div class="team">
                       <div class="row">
                           <div class="col-md-4">
                               <div class="team-player">
-                                  <img src="assets/img/avatar.jpg" alt="img1" class="rounded-circle img-fluid img-raised">
+                                  <img src="assets/img/b1.jpg" alt="img1" class="rounded-circle img-fluid img-raised">
                                   
                                   
                               </div>
                           </div>
+
+                          
                           <div class="col-md-4">
                               <div class="team-player">
-                                  <img src="assets/img/ryan.jpg" alt="img2" class="rounded-circle img-fluid img-raised">
+                                  <img src="assets/img/b2.jpg" alt="img2" class="rounded-circle img-fluid img-raised">
                                   
                                   
                               </div>
@@ -186,7 +332,7 @@
 
                           <div class="col-md-4">
                               <div class="team-player">
-                                  <img src="assets/img/eva.jpg" alt="img3" class="rounded-circle img-fluid img-raised">
+                                  <img src="assets/img/b3.jpg" alt="img3" class="rounded-circle img-fluid img-raised">
                                   
                               </div>
                           </div>
@@ -195,8 +341,20 @@
                   </div>
               </div>
           </div>
-          <div class="section section-contact-us text-center">
+
+
+
+<iframe src="https://www.youtube.com/watch?v=CpvpZKO0Lmk" allowfullscreen></iframe>
+
+
+<!-- 
+           <div class="section section-contact-us text-center">
               <div class="container">
+
+                
+                    <div class="formGroup" >
+                      
+                            <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
                   <h2 class="title">Send your comments</h2>
                   <p class="description">Your thougths are very important ..</p>
                   <div class="row">
@@ -207,7 +365,7 @@
                                 <i class="now-ui-icons users_circle-08"></i>
                             </span>
                           </div>
-                            <input type="text" class="form-control" placeholder="Your Name" (focus)="focus=true" (blur)="focus=false">
+                            <input type="text" class="form-control" formControlName="name" placeholder="Your Name" (focus)="focus=true" (blur)="focus=false">
                         </div>
                         <div class="input-group input-lg" [ngClass]="{'input-group-focus':focus1===true}">
                           <div class="input-group-prepend" >
@@ -215,36 +373,30 @@
                                   <i class="now-ui-icons ui-1_email-85"></i>
                             </span>
                           </div>
-                            <input type="text" class="form-control" placeholder="Your email address" (focus)="focus1=true" (blur)="focus1=false">
+                            <input type="text" class="form-control" formControlName="email" placeholder="Your email address" (focus)="focus1=true" (blur)="focus1=false">
                         </div>
                           <div class="textarea-container">
-                              <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
+                              <textarea class="form-control" formControlName="msg" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
                           </div>
-                          <div class="send-button">
-                              <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>
-                          </div>
+                          <div  class="form-group" >
+                                <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                                </div>
                       </div>
                   </div>
+
+
+
+                  </form>
               </div>
           </div>
+</div>  -->
 
 
+<hr style=" border: 1.5px solid orangered">
+<h3 style="margin-left: 20rem;">Your Thougths Are Very Important</h3>
+ <app-comment></app-comment> 
 
 
-
-
-
-<div>
-    <ul *ngFor ="let Doctors of Doctorss | async">
-        <li>
-            <strong>
-
-                {{Doctors.Address}}
-            </strong>
-        </li>
-
-    </ul>
-</div>
 
 
 
@@ -264,5 +416,5 @@
                   </div>
               </div>
           </footer>
-      </div>
+      
       

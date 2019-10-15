@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
@@ -24,16 +24,28 @@ import{AdminComponent} from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { ImageComponent } from './images/image/image.component';
-import { ImageListComponent } from './images/image-list/image-list.component';
+
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
-import{NotepadComponent}from './doctor/notepad/notepad.component';
-import{NoteditComponent} from './doctor/notedit/notedit.component';
+
+
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+//
 
+import{CommentComponent} from './doctor/commentsection/comment/comment.component';
+
+import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
+
+import { from } from 'rxjs';
+
+import{TComponent} from './doctor/t/t.component';
+
+import { MynavComponent } from './doctor/mynav/mynav.component';
+import{AddComplainsComponent} from './doctor/add-complains/add-complains.component';
+import{DeleteCommentComponent} from './doctor/commentsection/delete-comment/delete-comment.component';
+import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component'
 
 
 const routes: Routes =[
@@ -68,14 +80,20 @@ const routes: Routes =[
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
-    {path:'image' ,component:ImageComponent,children:[
-    {path:'upload',component:ImageComponent},//image/upload
-    {path:'list',component:ImageListComponent}   
-]},
+   
 
-{path:'notepad',component:NotepadComponent},
-{path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent}
 
+{path:'master',component:DoctorprofilepageComponent},
+
+{path:'comment',component:CommentComponent},
+
+ {path:'reaction',component:ReactionComponent},
+ 
+ {path:'t',component:TComponent},
+ 
+{path:'complain',component:AddComplainsComponent},
+{path:'deletecomment',component:DeleteCommentComponent},
+{path:'bothcomment',component:BothCommentPageComponent},
     ]
 
 

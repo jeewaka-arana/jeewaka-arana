@@ -1,0 +1,22 @@
+
+
+ <div class="card" style="width:32rem;margin-left: 5px;" >
+  <div class="card-body" >
+    <label><b>select a video to upload</b> </label><br>
+    <form [formGroup]="formdata"  >
+  
+          
+  <input  type="file"  accept="video/*" class="form-control"  formControlName="img" (change)="onDrop($event.target.files)">
+ 
+  <br><div  class="form-group" >
+      <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" />         
+     
+    </div>
+</form>
+</div>
+
+<div *ngFor="let file of files">
+  <app-upload-video [file]="file"></app-upload-video>
+</div>
+</div>
+

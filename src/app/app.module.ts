@@ -1,4 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -6,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -34,21 +36,40 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
-import {NotepadComponent} from './doctor/notepad/notepad.component';
+
 import { AdminComponent } from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HomeComponent } from './home/home.component';
-import { ImagesComponent } from './images/images.component';
-import { ImageComponent } from './images/image/image.component';
-import { ImageListComponent } from './images/image-list/image-list.component';
+
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
-import { NoteditComponent } from './doctor/notedit/notedit.component';
+
 import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+
+import { UploadTaskComponent } from './doctor/pictures/upload-task/upload-task.component';
+import { CommentComponent } from './doctor/commentsection/comment/comment.component';
+
+
+ import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
+import { ProfileComponent } from './doctor/pictures/profile/profile.component';
+
+
+
+import { TComponent } from './doctor/t/t.component';
+import { VideoComponent } from './doctor/pictures/video/video.component';
+import { UploadVideoComponent } from './doctor/pictures/upload-video/upload-video.component';
+
+import { MynavComponent } from './doctor/mynav/mynav.component';
+import { GetComplainAdminComponent } from './doctor/get-complain-admin/get-complain-admin.component';
+import { AddComplainsComponent } from './doctor/add-complains/add-complains.component';
+import { DeleteCommentComponent } from './doctor/commentsection/delete-comment/delete-comment.component';
+import { BothCommentPageComponent } from './doctor/commentsection/both-comment-page/both-comment-page.component';
+
+import{DatePipe} from '@angular/common';
 
 
 
@@ -64,7 +85,7 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         SignPatientComponent,
         SignDoctorComponent,
         WaitingComponent,
-        NotepadComponent,
+       
         PatienthomeComponent,
         AppointmentComponent,
         AppStep2Component,
@@ -73,23 +94,67 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         SelectbynameComponent,
         SelectbydiseaseComponent,
         SearchdoctorComponent,
+
  
+
         UserloginComponent,
         AdminComponent,
         HomeComponent,
-        ImagesComponent,
-        ImageComponent,
-        ImageListComponent,
+      
         DoctorfordComponent,
         ConfirmationComponent,
-        NoteditComponent,
+     
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
+        
+        UploadTaskComponent,
+        CommentComponent,
+    
+       
+        ReactionComponent,
+       
+        ProfileComponent,
+       
+        
+       
+    
+       
+        TComponent,
+       
+        VideoComponent,
+       
+        UploadVideoComponent,
+       
+      
+       
+        MynavComponent,
+       
+        GetComplainAdminComponent,
+       
+        AddComplainsComponent,
+       
+        DeleteCommentComponent,
+       
+        BothCommentPageComponent,
+       
+     
+       
+       
+    
+
+      
+     
+       
+       
+     
+       
+    
 
     ],
     imports: [
         BrowserAnimationsModule, 
+        BrowserModule,
         NgbModule.forRoot(),
         FormsModule,
         RouterModule,
@@ -101,10 +166,11 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
-      AngularFireDatabaseModule
+      AngularFireDatabaseModule,
+      NgMultiSelectDropDownModule.forRoot(),
 
     ],
-    providers: [CrudService,SearchdoctorService,AuthService],
+    providers: [CrudService,SearchdoctorService,AuthService, DatePipe],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

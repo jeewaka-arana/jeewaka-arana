@@ -1,0 +1,43 @@
+
+
+
+table{
+
+	margin-left: 875px;
+}
+::-webkit-input-placeholder {
+	font-weight: 1000; 
+	font-size: 18px;
+}
+
+span{
+	color: #cc3300;
+	font-size: 20px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.body{
+	background-color: #ffb366;
+}
+
+
+
+.btnRegister{
+    // float:left;
+    //margin-top: 10%;
+    border: none;
+    border-radius: 1.1rem;
+    padding: 2%;
+    background: #f96332;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+   
+}
+
+
+hr.new4 {
+    border: .5px solid red;
+  }

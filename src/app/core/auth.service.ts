@@ -54,7 +54,7 @@ export class AuthService {
       })
       .then(userCredential => {
         if(userCredential) {
-          this.router.navigate(['/default']);
+          this.router.navigate(['/doctoradmin']);
         }
       })
   }
@@ -87,6 +87,7 @@ export class AuthService {
         console.log(userCredential);
         userCredential.user.updateProfile( {
           displayName: user.firstName + ' ' + user.lastName
+          
         });
 
         this.insertDoctorData(userCredential)
@@ -129,4 +130,13 @@ export class AuthService {
   logout() {
     return this.afAuth.auth.signOut();
   }
+
+
+ get userId() {
+    return this.afAuth.auth.currentUser.uid;
+  }
+
+ 
 }
+
+ 

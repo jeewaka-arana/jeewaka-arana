@@ -1,9 +1,119 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
+  <div class="container">
+    <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+      <div class="navbar-translate">
+          <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+             
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+              <a class="nav-link"   routerLink="/index" >
+                  <i class="now-ui-icons business_bank"></i>
+                  <p>Home</p>
+              </a>
+          </li>
+
+
+              
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/index" >
+                <i class="now-ui-icons business_globe"></i>
+                <p>Change Language</p>
+            </a>
+        </li>
+
+        
+
+            
+      
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/index" >
+                <i class="now-ui-icons ui-1_calendar-60"></i>
+                <p>Appoinments</p>
+            </a>
+        </li>
+                       
+        <li class="nav-item">
+            <a class="nav-link" href="/bothcomment" >
+                <i class="now-ui-icons text_align-center"></i>
+                <p>Comments</p>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+         
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+              <i class="now-ui-icons ui-1_zoom-bold"></i>
+              <p>Search</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item  " href="/doctorview" >Search By Name</a>
+            <a class="dropdown-item" href="/doctoradmin">Search By Diseases</a>
+            
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons users_single-02
+
+              "></i>
+            <p>Profile</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item " href="/doctorview" > View Profile </a>
+            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+            
+          </div>
+        </li>
+
+        
+<!-- 
+            <li class="nav-item">
+              <a class="nav-link btn btn-neutral" routerLink="/signup">
+                  <i class="now-ui-icons arrows-1_share-66"></i>
+                  <p>Sign In</p>
+              </a>
+          </li>
+           -->
+           
+          </ul>
+      </div>
+  </div>
+</nav>
+
+
+
+
+
+<!--  -->
 <div class="page-header page-header-small">
+
     <div class="page-header-image rellax-header" data-rellax-speed="-8" >
+      
+
     </div>
+    
+
     <div class="container">
+
+        
+
+
         <div class="content-center">
-            <h1 class="title">Edit Your Profile</h1>
+
+          
+            <h1 style="font-family: cursive;" class="title">Edit Your Profile</h1>
             <div class="text-center">
               
               
@@ -16,162 +126,489 @@
   
   
   
-  
+   
   
   
   
       
   
       <div class="section section-about-us" >
-        <div class="container" class="center">
-  
+        
+ 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <app-notedit></app-notedit>
-            <div class="card" style="width:45rem">
-                <div class="card-body" >
+            
               
-                  <form [formGroup]="formdata" (save)="onSubmit(formdata.value)" >
-                    <div class="text=center">
-                        <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()">
-                    </div>
-             
-                    <div class="form-group">
-                      <label>select profile picture to upload </label>
-              
-              <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="profilepicurl" (change)="showpreview($event)" >
-              
-                    </div>
-              
-              
-                    <div  class="form-group" >
-                        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="onSubmit()"/>         
-                        </div>
-                  </form>
-                </div>
-  
-  
-  
-              </div>
-  
-  
-  
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-              <div class="card" style="width:70rem">
-                  <div class="card-body" >
                 
-                        <!-- edit form column -->
+  
+  
+              
+  
+  
+<div>
+    
+
+   <app-profile></app-profile>
+
+</div>
+              <div class="card" style="width:75rem;margin-left: 5px;" >
+                <div class="card-body" >
+
                         <div class="formGroup" class="center">
                            
                        
-                            <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
-                               
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label"><b>Specialist:</b></label>
-                                  <div class="col-lg-8">
-                                      <textarea rows="10" cols="75" formControlName="Specialist"></textarea>
+                                <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
+                                   
+                                    <div class="form-group">
+
+                                            <label class="col-lg-3 control-label"><b>Specialist:</b></label>
+
+
+
+
+                                            <div class="col-md-8">
+                                              <div class="form-group">
+                                                      <select ngModel #Specialist="ngModel" name=" Specialist" type="text" class="form-control" id="Specialist"  class="form-control" >
+                                                          <option class="hidden"  selected disabled>Please select your specialist...</option>
+                                                          <option>Ayurvedic Hospital </option>
+                                                          <option>Arthritis</option>
+                                                          <option>Beauty Spa</option>
+                                                          <option>cancer</option>
+                                                          <option>Chronic Ulcers</option>
+                                                          <option>Cholestrol</option>
+                                                          <option> Diabetic Ulcers</option>
+                                                          <option>Diabetes Mellitus</option>
+                                                          <option>ENT</option>
+                                                          <option>Fistula</option>
+                                                          <option>Gynaecological Disorders</option>
+                                                          <option>Gastritis</option>
+                                                          <option>Hemorrhoids</option>
+                                                          <option>Hypertension</option>
+                                                          <option>Neurological Disorders</option>
+                                                          <option>Orthopedics</option>
+                                                          <option>Obesity</option>
+                                                          <option>Paralysis / Hemiplagia</option>
+                                                          <option>Pediatrics</option>
+                                                          <option>Spinal Disorders</option>
+                                                         <option>Skin Disorders</option>
+                                                          <option>Urinary Calculi</option>
+                                                          <option>Urinary Diseases</option>
+                                                          <option>Varicose Venis</option>
+                                                         
+                                                         
+                              
+                                                      </select>
+                                                  </div>
+                                                  </div>
+
+                                            <!-- <div class="row">
+                                                <div class="column" style="margin-left: 20px;" >
+                                                  
+                                                  <div class="styled-input-single">
+                                                    <input type="checkbox" id="id1" value="Orthopedics"  />
+                                                    <label for="id1"> Orthopedics</label>
+                                                  </div>
+                                                  <div class="styled-input-single">
+                                                    <input type="checkbox"  id="id2"value="Arthritis" />
+                                                    <label for="id2">Arthritis</label>
+                                                  </div>
+                                                  <div class="styled-input-single">
+                                                    <input type="checkbox"  id="id3"value="Neurological Disorders"/>
+                                                    <label for="id3">Neurological Disorders</label>
+                                                  </div>
+                                                 
+                                                  <div class="styled-input-single">
+                                                      <input type="checkbox"  id="id4"  value="Spinal Disorders"/>
+                                                      <label for="id4">Spinal Disorders</label>
+                                                    </div>
+                                     
+                                                    <div class="styled-input-single">
+                                                        <input type="checkbox"  id="id5"  value=" Paralysis / Hemiplagia"/>
+                                                        <label for="id5">  Paralysis / Hemiplagia</label>
+                                                      </div>
+                                                       
+                                                  <div class="styled-input-single">
+                                                      <input type="checkbox"  id="id6" value="Gynaecological Disorders"/>
+                                                      <label for="id6">Gynaecological Disorders</label>
+                                                    </div>
+                                    
+                                          
+                                                    <div class="styled-input-single">
+                                                        <input type="checkbox"  id="id7" value="Gastritis"/>
+                                                        <label for="id7">Gastritis</label>
+                                                      </div>
+                                                      <div class="styled-input-single">
+                                                          <input type="checkbox"  id="id8" value="Cancer"/>
+                                                          <label for="id8">cancer</label>
+                                                        </div>
+                                          
+                                    </div>
+                                    
+                                    <div class="column" style="margin-left: 30px" >
+                                    
+                                          <div class="styled-input-single">
+                                            <input type="checkbox" id="id9"  value="Varicose Venis" />
+                                            <label for="id9">Varicose Venis</label>
+                                          </div>
+                                         
+                                         
+                                          <div class="styled-input-single">
+                                              <input type="checkbox" id="id10"value="Chronic Ulcers"  />
+                                              <label for="id10">Chronic Ulcers</label>
+                                            </div>
+                                         
+                                         
+                                              <div class="styled-input-single">
+                                                  <input type="checkbox" id="id11"value="Urinary Calculi"  />
+                                                  <label for="id11">Urinary Calculi</label>
+                                                </div>
+                                         
+                                                <div class="styled-input-single">
+                                                    <input type="checkbox" id="id12"value="Urinary Diseases"  />
+                                                    <label for="id12">Urinary Diseases</label>
+                                                  </div>
+                                         
+                                                  <div class="styled-input-single">
+                                                      <input type="checkbox" id="id13"value="ENT"  />
+                                                      <label for="id13">ENT</label>
+                                                    </div>
+                                         
+                                                    <div class="styled-input-single">
+                                                        <input type="checkbox" id="id14" value="Skin Disorders" />
+                                                        <label for="id14">Skin Disorders</label>
+                                                      </div>
+                                                                                   
+                                    
+                                                      <div class="styled-input-single">
+                                                          <input type="checkbox" id="id15" value=" Diabetic Ulcers"  />
+                                                          <label for="id15"> Diabetic Ulcers</label>
+                                                        </div>
                                     
                                     </div>
-                                </div>
-                                
+                                    
+                                    <div class="column" style="margin-left: 40px" >
+                                    
+                                            
+                                              <div class="styled-input-single">
+                                                  <input type="checkbox" id="id16"  value="Diabetes Mellitus" />
+                                                  <label for="id16">Diabetes Mellitus</label>
+                                                </div>
+                                                <div class="styled-input-single">
+                                                    <input type="checkbox" id="id17" value="Cholestrol" />
+                                                    <label for="id17">Cholestrol</label>
+                                                  </div>
+                                                  <div class="styled-input-single">
+                                                      <input type="checkbox" id="id18"value=" Obesity"  />
+                                                      <label for="id18"> Obesity</label>
+                                                    </div>
+                                                    <div class="styled-input-single">
+                                                        <input type="checkbox" id="id19"value="Pediatrics"  />
+                                                        <label for="id19">Pediatrics</label>
+                                                      </div>
+                                                      <div class="styled-input-single">
+                                                          <input type="checkbox" id="id20"value="Hemorrhoids"  />
+                                                          <label for="id20">Hemorrhoids</label>
+                                                        </div>
+                                                        <div class="styled-input-single">
+                                                            <input type="checkbox" id="id21"value="Fistula"  />
+                                                            <label for="id21">Fistula</label>
+                                                          </div>
+                                                          <div class="styled-input-single">
+                                                              <input type="checkbox" id="id22"value="Hypertension"  />
+                                                              <label for="id22">Hypertension</label>
+                                                            </div>
+                                                            <div class="styled-input-single">
+                                                                <input type="checkbox" id="id23"value="Beauty Spa"  />
+                                                                <label for="id23">Beauty Spa</label>
+                                                              </div>
+                                            
+                                    </div>
+                                    </div> -->
+
+
+
+
+
+
+
+                                      
+
+
+
+    
+                                    </div>  
+                                   
+                               <br><br><br><br><br><br>
+                                          
+                                <div  class="form-group" >
+                                    <input type="submit" style="width: 15% ;padding: 1%"  class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                                    </div>
+</form>
+              </div>
+              </div>
+              </div>
+
+
+
+
+              <div class="row">
+                  <div class="col col-md-5">
+
+              <div class="card"  style="margin-left:5px;width:32rem;">
+                  <div class="card-body"> 
+                    
+                     
+                        <div class="formGroup" >
+                      
+                            <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
                                
                                 <div class="form-group">
+
+                                  
+                       
                                   <label class="col-lg-3 control-label"><b>Address:</b></label>
                                   <div class="col-lg-8">
-                                        <textarea rows="5" cols="75" formControlName="Address"></textarea>
+                                        <textarea rows="5" cols="50" formControlName="Address" value=""></textarea>
                                       
                                       </div>
-                                </div>
-                                <!-- insert data to firebase -->
+
+                                    </div>
                                 <div class="form-group">
-                                      <label class="col-lg-3 control-label"><b>Telephone Number:</b></label>
+                                      <label class="col-lg-5 control-label"><b>Telephone Number:</b></label>
                                       <div class="col-lg-8">
       
-                                        <input class="form-control" formControlName=Phone  type="text" value="aaaa">
+                                        <input class="form-control" formControlName="Phone"  type="text" value="">
+                                        
                                       </div>
                                     </div>
                                     
                                        
     
     
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                   <label class="col-md-5 control-label"><b>Available Dates & Times:</b></label>
                                   <div class="col-lg-8">
                                       <textarea rows="10" cols="75" formControlName="dateTime"></textarea>
                                     
                                     </div>
-                                </div>
-                                          
-                    <div  class="form-group" >
-                        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
-                        </div>
-                              </form>
-                    </div>
-                    </div>
-                    </div>
-  
-  
-                                
-                    <div class="card" style="width:70rem">
-                        <div class="card-body" >
+                                  
+                                </div> -->
 
-                            <!-- edit form column -->
-                        <div class="formGroup" class="center">
-                           
-                       
-                            <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
-                            <div class="section section-about-us" >
+                    
                                 <div class="container" class="center">
-                          <h2>Update Today Special Note</h2>
+                                    <label class="col-md-5 control-label"><b>Upload special Note(If any):</b></label>
                           <div class="col-lg-8">
-      <textarea rows="10" cols="125"  formControlName="note" ></textarea>
+      <textarea rows="5" cols="60"  formControlName="note" ></textarea>
   
   
        
     </div>
     <div  class="form-group" >
-        <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+        <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
         </div> 
   
   </div>
-  </div>
+ 
+
   </form>
+ 
+  </div>
+  
   </div>
   </div>
+  <br>
+  <app-video></app-video>
+<!-- video section -->
+
+
+
+  </div>
+
+
+  <div class="col col-md-4">
+
+           
+      <div class="card" style="margin-left:1px;width:42rem;" >
+          <div class="card-body" >
+            
+              <div class="formGroup" >
+                      
+                  <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
+
+              <table width="100%" class="table table-bordered table-hover" id="time">
+
+                
+                 
+                  <thead>
+                    <tr>
+                        <th>DATE</th>
+                      <th>TIME SLOT 1</th>
+                      <th>TIME SLOT 2</th>
+                      <th>TIME SLOT 3</th>
+                      
+                    </tr>
+                  </thead>
+
+
+                  <tbody>  
+                      
+                    <tr>
+                        
+                          <td >MONDAY</td>
+                          
+                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="mt1"></textarea></div></td>
+                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="mt2"></textarea></div></td>
+                     <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="mt3"></textarea></div></td>
+                   
+                    </tr>
+                   
+                    <tr>
+                          <td>TUESDAY</td>
+                      <!-- <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      -->
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tt1"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tt2"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tt3"></textarea></div></td>
+          
+                        </tr>
+          
+                        <tr>
+                              <td>WEDNESDAY</td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="wt1"></textarea></div></td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="wt2"></textarea></div></td>
+                         <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="wt3"></textarea></div></td>
+                    
+                            </tr>
+
+                          <tr>
+                         <td>THURSDAY</td>
+                         <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tht1"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tht2"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="tht3"></textarea></div></td>
+          
+                      
+                              </tr>
+                              <tr>
+                              <td>FRIDAY</td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="ft1"></textarea></div></td>
+                              <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="ft2"></textarea></div></td>
+                         <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="ft3"></textarea></div></td>
+                    
+                                    </tr>
+                                    <tr>
+                                    <td>SATURDAY</td>
+                                    <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="st1"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="st2"></textarea></div></td>
+                      <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;" formControlName="st3"></textarea></div></td>
+          
+                                       
+                                  </tr>
+                                  <tr>
+                                          <td>SUNDAY</td>
+                                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="sut1"></textarea></div></td>
+                                          <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="sut2"></textarea></div></td>
+                                     <td> <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;" formControlName="sut3"></textarea></div></td>
+                                
+                                                </tr>
+                                                
+                                          
+
+                  </tbody>
+
+                
+                  </table>
+                  <div  class="form-group" >
+                      <input type="submit" style="width:15% ;padding: 1%;margin-left:34rem;" class="btnRegister "  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                      </div> 
+            </form>      
+</div>
+</div>
+</div>
+</div>
+              
+<!--       
+      
+          <h2>Upload photos</h2>
+      <br><br>
+       -->
+    
+<!--             
+      <form [formGroup]="formdata" (save)="submitImg1(formdata.value)" >
+    
+            <div class="text=center">
+                    <img [src]="img1" width="250px" height="250px" (click)="fileUploader.click()">
+                </div>
+         <br>
+                <div class="form-group">
+                
+          
+          <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img1" (change)="showpreview1($event)" >
+        
+                </div>
+              
+              <div  class="form-group" >
+                  <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg1()"/>         
+                 
+                </div>
+            
+        
+    </form> -->
+<!-- <div>
+    <app-img1></app-img1>
+
   </div>
   
-  
-  
-  
+    <br><br><br><br>
+    
+               
+            
+    <form [formGroup]="formdata" (save)="submitImg2(formdata.value)" >
+            <div class="text=center">
+                    <img [src]="img2" width="250px" height="250px" (click)="fileUploader.click()">
+                </div>
+         <br>
+                <div class="form-group">
+                
+          
+          <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img2" (change)="showpreview2($event)" >
+         
+                </div>
+              
+              
+             <div  class="form-group" >
+                  <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg2()"/>         
+                  </div>
+        </form>
+        <br><br><br><br>  
+    
+    
+    
+        <form [formGroup]="formdata" (save)="submitImg3(formdata.value)" >
+                <div class="text=center">
+                        <img [src]="img3" width="250px" height="250px" (click)="fileUploader.click()">
+                    </div>
+             <br>
+                    <div class="form-group">
+                    
+              
+              <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img3" (change)="showpreview3($event)" >
+              
+                    </div>
+                  
+                  <div  class="form-group" >
+                      <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg3()"/>         
+                      </div>
+        </form>
+        <br><br><br><br> 
+           
+         </div>
+          </div>
+ -->
+
   
   
   
@@ -185,88 +622,8 @@
   
   <!-- write another submit function -->
   
-        <div class="section section-about-us" >
+        <!-- <div class="section section-about-us" >
                 <div class="container" class="center">
-            
-  <div class="card" style="width:50rem">
-      <div class="card-body" >
-         
-  
-  
-      <h2>Upload photos</h2>
-  <br><br>
-  
-
- 
-  
-        
-  <form [formGroup]="formdata" (save)="submitImg1(formdata.value)" >
-
-        <div class="text=center">
-                <img [src]="img1" width="250px" height="250px" (click)="fileUploader.click()">
-            </div>
-     <br>
-            <div class="form-group">
-            
-      
-      <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img1" (change)="showpreview1($event)" >
-      
-            </div>
-          
-          <div  class="form-group" >
-              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg1()"/>         
-              </div>
-        
-   
-</form>
-<br><br><br><br>
-
-           
-        
-<form [formGroup]="formdata" (save)="submitImg2(formdata.value)" >
-        <div class="text=center">
-                <img [src]="img2" width="250px" height="250px" (click)="fileUploader.click()">
-            </div>
-     <br>
-            <div class="form-group">
-            
-      
-      <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img2" (change)="showpreview2($event)" >
-      
-            </div>
-          
-          <div  class="form-group" >
-              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg2()"/>         
-              </div>
-        
-    </form>
-    <br><br><br><br>  
-
-
-
-    <form [formGroup]="formdata" (save)="submitImg3(formdata.value)" >
-            <div class="text=center">
-                    <img [src]="img3" width="250px" height="250px" (click)="fileUploader.click()">
-                </div>
-         <br>
-                <div class="form-group">
-                
-          
-          <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="img3" (change)="showpreview3($event)" >
-          
-                </div>
-              
-              <div  class="form-group" >
-                  <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitImg3()"/>         
-                  </div>
-    </form>
-    <br><br><br><br> 
-       
-     </div>
-      </div>
-  
-  
-  
   
   
   
@@ -277,11 +634,11 @@
                       <h2>Upload a video clip</h2>
                       <form [formGroup]="formdata" (save)="submitvideo(formdata.value)" >
                         <div class="form-group">
-                      <input type="file" accept="video/*" class="form-control" #fileUploader formControlName="video"  >
-
+                      <input type="file" accept="video/*" class="form-control" #fileUploader formControlName="video"  (change)="showpreview4($event)" >
+                     
 </div>
 
-                      <!-- <input id="05" type="file" accept="video/*" formControlName="video">  -->
+                      
   <div  class="form-group" >
   <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="submitvideo()"/>         
   </div> 
@@ -289,42 +646,61 @@
   </div>
   </div>
   </div>
-  </div>
-  
-  
-  
-  <div class="card" style="width:70rem">
-      <div class="card-body" >
-
-            <!-- edit form column -->
-            <div class="formGroup" class="center">
-                           
-                       
-                <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
-                <div class="section section-about-us" >
-          <div class="section section-about-us" >
-              <div class="container" class="center">
-                  <h2>Add a article</h2>
-                  <app-notepad></app-notepad> 
-                  <div  class="form-group" >
-                      <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
-                      </div>
-  
-  
-        </div>
-        </div>
-        </div>
-        </form>
-        </div>
-        </div>
-        </div>
-  
-  
-  
  
+   -->
+  <!-- </div>
+  </div>
+  </div> -->
   
   
-        
+<!--            
+   <div class="card" style="width:55rem;margin-left: 10rem;">
+    <div class="card-body" >
+      
+     
+            <div class="formGroup" >
+                    
+              <form  [formGroup]="formdata" (ngSubmit)="submitcomplain(formdata.value)" class="form-horizontal" role="form" autocomplete="on" >
+    <h5 class="title" >If you have any complains or suggetions Send to our team ..</h5>
+    
+            <div  class="form-group" >
+            <div class="col-lg-8">
+              <input class="form-control" style="width: 20rem;" formControlName="cname" name="cname" placeholder="Your name">
+          </div><br>
+        </div>
+
+        <div  class="form-group" >
+          <div class="col-lg-8">
+            <input class="form-control" style="width: 20rem;"   formControlName="cmail" name="cmail" placeholder="Your Email">
+        </div>
+</div>
+          
+          <div  class="form-group" >
+            <div class="textarea-container">
+                <textarea class="form-control"   formControlName="cmsg" name="cmsg" placeholder="Your message"></textarea>
+            </div>
+          </div>
+            <br><br><br>
+            <div  class="form-group" >
+              <input type="submit" class="btnRegister   float-right" style="width: 15rem;" formControlName="submit" value="Send Us" (click)="submitcomplain()"/>         
+              </div> 
+    
+
+
+    </form>
+</div>
+</div>
+</div>  -->
+
+
+
+
+<!-- comment section -->
+
+
+</div>
+
+
       <footer class="footer footer-default">
           <div class="container">
               
@@ -339,3 +715,4 @@
       </footer>
   
       
+

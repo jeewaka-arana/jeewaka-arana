@@ -1,0 +1,25 @@
+
+
+ <div class="card" style="width:45rem;margin-left: 5px;" >
+  <div class="card-body" >
+
+    <form [formGroup]="formdata"  >
+   
+      <label><b>select profile picture to upload</b> </label><br>
+<div>
+      <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()">
+</div>
+          
+  <input  type="file"  accept="image/*" class="form-control" #fileUploader formControlName="img" (change)="showpreview($event);onDrop($event.target.files)">
+  <div  class="form-group" >
+    <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" />         
+   
+  </div>
+</form>
+</div>
+
+<div *ngFor="let file of files">
+  <upload-task [file]="file"></upload-task>
+</div>
+</div>
+
