@@ -6,7 +6,7 @@
         <div class="container">
             <div class="content-center">
                 <h1 class="title">Your home for health.</h1>
-                <div class="text-center">
+                <!-- <div class="text-center">
                   <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                     <i class="fab fa-facebook-square"></i>
                   </a>
@@ -16,7 +16,7 @@
                   <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                     <i class="fab fa-google-plus"></i>
                   </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <div class="section section-team text-center">
+    <div class="section-team text-center">
         <div class="container">
             <h2 class="title">Our Service</h2>
             <div class="team">
@@ -88,9 +88,6 @@
                             <!-- <p class="category text-primary">Model</p> -->
                             <p class="description">We list for free and ensure each doctor profile is verified for medical license, qualification and specialisation.
                                 </p>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-instagram"></i></a>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-facebook-square"></i></a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -101,8 +98,6 @@
                             <!-- <p class="category text-primary">Designer</p> -->
                             <p class="description">We help our patients to check the availability of the doctors registered in the platform making it effective.
                                 </p>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -113,46 +108,74 @@
                             <!-- <p class="category text-primary">Fashion</p> -->
                             <p class="description">We help millions of patients and thousands of doctors with a simpler, easier healthcare experience.
                                 </p>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-google-plus"></i></a>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-youtube"></i></a>
-                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <h1> articles</h1>
+    <div class="section-story-overview">
+      <h2 class="title text-center">Recent Articles</h2>
+      <div class="container">
+    <div class="row">
+        <div class="column">
+        <ul *ngFor="let result of results">
+          <ul class="articles">
+            <li>
+              <article>
+                <div class="article-media"></div>
+                <div class="l-pad-content">
+                  <h1>{{result.title}}</h1>
+                  <p>{{result.description}}... <a class="more" href="#">read more</a></p>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <!-- END articles -->
+        </ul>
+        </div>
+      </div>
+    </div>
+</div>
     
 
     <div class="section section-contact-us text-center">
         <div class="container">
-            <h2 class="title">Send your comments</h2>
-            <p class="description">Your thougths are very important ..</p>
+            <h2 class="title">Report a problem</h2>
+            <p class="description">Let us know of the inconvenience</p>
             <div class="row">
-                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                <div [formGroup]="userForm" *ngIf="newUser"  (ngSubmit)="addIssue()" class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                   <div class="input-group input-lg" [ngClass]="{'input-group-focus':focus===true}">
                     <div class="input-group-prepend" >
                       <span class="input-group-text">
                           <i class="now-ui-icons users_circle-08"></i>
                       </span>
                     </div>
-                      <input type="text" class="form-control" placeholder="Your Name" (focus)="focus=true" (blur)="focus=false">
-                  </div>
+                      <input type="text" [(ngModel)]="name" type="name" formControlName="name" required class="form-control" placeholder="Your Name" (focus)="focus=true" (blur)="focus=false">
+                      <div *ngIf="formErrors.name">
+                        {{ formErrors.name }}
+                      </div>                    
+                    </div>
                   <div class="input-group input-lg" [ngClass]="{'input-group-focus':focus1===true}">
                     <div class="input-group-prepend" >
                       <span class="input-group-text">
                             <i class="now-ui-icons ui-1_email-85"></i>
                       </span>
                     </div>
-                      <input type="text" class="form-control" placeholder="Your email address" (focus)="focus1=true" (blur)="focus1=false">
-                  </div>
+                      <input type="text" [(ngModel)]="email" type="email" formControlName="email" required class="form-control" placeholder="Your email address" (focus)="focus1=true" (blur)="focus1=false">
+                      <div *ngIf="formErrors.email">
+                        {{ formErrors.email }}
+                      </div>
+                    </div>
                     <div class="textarea-container">
-                        <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
+                        <textarea [(ngModel)]="issue" type="issue" formControlName="issue" required class="form-control" name="name" rows="4" cols="80" placeholder="Describe the problem..."></textarea>
+                        <div *ngIf="formErrors.issue">
+                            {{ formErrors.issue }}
+                          </div>
                     </div>
                     <div class="send-button">
-                        <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>
+                        <input type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-round btn-block btn-lg" value="Send Message" (click)="addIssue()">
+                        <span *ngIf="userForm.valid" >Form is valid</span>
                     </div>
                 </div>
             </div>

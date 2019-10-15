@@ -22,8 +22,8 @@ export class SearchdoctorComponent implements OnInit {
   results: any;
   filteredNames: any[] = [];
 
-  patientDoc: AngularFirestoreCollection<any>;
-  doctorDoc: AngularFirestoreCollection<any>;
+  patientDoc: AngularFirestoreDocument<any>;
+  doctorDoc: AngularFirestoreDocument<any>;
   
   patient: Observable<any>;
   doctor: Observable<any>; 
@@ -54,8 +54,8 @@ export class SearchdoctorComponent implements OnInit {
       this.applyFilters()
     })
 
-    this.patientDoc = this.afs.collection('Patients');
-    this.doctorDoc = this.afs.collection('Doctors');
+    this.patientDoc = this.afs.doc('Patients');
+    this.doctorDoc = this.afs.doc('Doctors');
 
     this.patient = this.patientDoc.valueChanges();
     this.doctor = this.doctorDoc.valueChanges();
