@@ -21,6 +21,7 @@ import { SelectbynameComponent } from './patient/appointment/selectbyname/select
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
 import{AdminComponent} from './admin/admin.component';
+
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
@@ -37,6 +38,11 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import{CommentComponent} from './doctor/commentsection/comment/comment.component';
 
 import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
+import { AdvancedsearchComponent } from './patient/searchdoctor/advancedsearch/advancedsearch.component';
+import { GooglemapComponent } from './patient/googlemap/googlemap.component';
+import { StarreviewComponent } from './patient/starreview/starreview.component';
+
+
 
 import { from } from 'rxjs';
 
@@ -86,6 +92,19 @@ const routes: Routes =[
 {path:'master',component:DoctorprofilepageComponent},
 
 {path:'comment',component:CommentComponent},
+    { path: 'googlemap', component:GooglemapComponent},
+    { path: 'star' , component:StarreviewComponent },
+    
+    
+//     {path:'image' ,component:ImageComponent,children:[
+//     {path:'upload',component:ImageComponent},//image/upload
+//     {path:'list',component:ImageListComponent}   ,
+      
+// ]},
+
+// {path:'notepad',component:NotepadComponent},
+{path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent},
+{path:'adsearch',component:AdvancedsearchComponent}
 
  {path:'reaction',component:ReactionComponent},
  

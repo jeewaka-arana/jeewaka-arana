@@ -23,6 +23,11 @@ export class AuthService {
     return this.afAuth.authState;
   }
 
+
+  getUserId(){
+    return this.afAuth.auth.currentUser.uid;
+  }
+
   pat_login( email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {

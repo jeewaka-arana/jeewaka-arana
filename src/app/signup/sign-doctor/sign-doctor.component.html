@@ -24,12 +24,7 @@
                                         <div *ngIf="firstName.errors.required">First Name is required</div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input ngModel #lastName="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" placeholder="Last Name..." [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required>
-                                    <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                                        <div *ngIf="lastName.errors.required">Last Name is required</div>
-                                    </div>
-                                </div>
+                               
                                
                                 <div class="form-group">
                                     <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Your Email..." [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required> 
@@ -37,12 +32,7 @@
                                         <div *ngIf="email.errors.required">Email is required</div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <input ngModel #phone="ngModel" name="phone" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number..." [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required> 
-                                    <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
-                                        <div *ngIf="phone.errors.required">Phone Number is required</div>
-                                    </div>
-                                </div>
+                               
                                 <div class="form-group">
                                     <input ngModel #nic="ngModel" name="nic" type="text" class="form-control" id="nic" value="" placeholder="Your NIC..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" required>
                                     <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
@@ -50,36 +40,66 @@
                                     </div>
                                 </div>
                                
-                              
                                 <div class="form-group">
-                                    <select ngModel #city="ngModel" name="city" type="text" class="form-control" id="city"  class="form-control" >
-                                        <option class="hidden"  selected >Please select your City...</option>
-                                        <option >Colombo</option>
-                                        <option >Galle</option>
-                                        <option >Kandy</option>
-                                    </select>
-                                </div>
-
-                                
+                                    <div class="wrapout">
+                                        Choose your position :
+                                    <div class="wrap">
+                                        
+                                        <label class="container">
+                                                <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Qualified" id="position1" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
+                                                Qualified only
+                                            </label>
+                                            <label class="container">
+                                                <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Generation" id="position2" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
+                                                Generation only
+                                            </label>
+                                            <label class="container">
+                                                <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Both" id="position3" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
+                                                Both
+                                                   
+                                            </label>
+                                        </div>  
+                                    </div>   
+                                        </div>
+                               
+                                        <div class="form-group">
+                                                <div class="slidecontainer">
+                                                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                                                        
+                                                      </div>
+                                            </div>
+                                            <div class="form-group">
+                                                    <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required>
+                                                    <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                                                        <div *ngIf="password.errors.required">Password is required</div>
+                                                    </div>
+                                                </div>
                                 
                             </div>
                             <div class="col-md-6">
-                                  <div class="form-group">
-                                    <label class="container">
-                                            <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Qualified" id="position1" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
-                                            Qualified only
-                                        </label>
-                                        <label class="container">
-                                            <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Generation" id="position2" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
-                                            Generation only
-                                        </label>
-                                        <label class="container">
-                                            <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Both" id="position3" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
-                                            Both
-                                               
-                                        </label>
-                                             
-                                    </div>
+                                    <div class="form-group">
+                                            <input ngModel #lastName="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" placeholder="Last Name..." [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required>
+                                            <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                                                <div *ngIf="lastName.errors.required">Last Name is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                                <input ngModel #phone="ngModel" name="phone" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number..." [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required> 
+                                                <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                                                    <div *ngIf="phone.errors.required">Phone Number is required</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                    <select ngModel #city="ngModel" name="city" type="text" class="form-control" id="city"  class="form-control" >
+                                                        <option class="hidden"  selected >Please select your City...</option>
+                                                        <option >Colombo</option>
+                                                        <option >Galle</option>
+                                                        <option >Kandy</option>
+                                                    </select>
+                                                </div>
+                
+                                
                                 <div  class="form-group" >
                                     <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..."  >
                                     </div>
@@ -92,18 +112,16 @@
                                                   </div>
                                             
                                         </div>
-                                <div class="form-group">
-                                    <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required>
-                                    <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-                                        <div *ngIf="password.errors.required">Password is required</div>
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group"> 
                                     <!-- conf password -->
                                         <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" placeholder="Confirm Password..." >
                                       
     
                                     </div>
+                                    <button class="show-pass" type="button"  (click)="showpassword(password)">
+                                            <img  src="assets/img/visible_30px.png" height="20px" width="20px" >
+                                        </button>
                           
                                 <input type="submit" class="btnRegister"  formControlName="submit" value="Register" />
                             </div>

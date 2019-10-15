@@ -4,7 +4,8 @@
         </div>
         <div class="container">
             <div class="content-center">
-                <h1 class="title">Search for Doctors.</h1>
+                <h1 class="title">Welcome to jeewaka arana</h1>
+              
             </div>
         </div>
     </div>
@@ -61,22 +62,12 @@
                                                         </div> 
                                                         <div class="inline" id="checkRadios">  
                                                           <div class="col-sm-6 col-lg-3">
-                                                            <h6 class="category">Position</h6>
+                                                            <h6 class="category">Consultation Fee</h6>
                                                             <div class="form-check form-check-radio">
                                                                 <label class="form-check-label">
                                                                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
                                                                     <span class="form-check-sign"></span>
-                                                                    Qualified
-                                                                </label>
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                                                                    <span class="form-check-sign"></span>
-                                                                   Generation
-                                                                </label>
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                                                                    <span class="form-check-sign"></span>
-                                                                    both
+                                                                    Radio is on
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -93,11 +84,10 @@
                                               </a>
                                               <div ngbDropdownMenu class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Relevance</a>
-                                                <a class="dropdown-item" target="_blank"  (click)="send()">Price - Low to High</a>
-                                                <a class="dropdown-item" target="_blank"  (click)="send2()">Price - High to Low</a>
+                                                <a class="dropdown-item" href="#">Price - Low to High</a>
+                                                <a class="dropdown-item" href="#">Price - High to Low</a>
                                                 <a class="dropdown-item" href="#">Years of Experience</a>
                                                 <a class="dropdown-item" href="#">Recommendation</a>
-                                                <a class="dropdown-item" href="#">Ratings</a>
                                               </div>
                                           </div>
                                         </li>
@@ -119,113 +109,6 @@
             </div>
         </div>
   
-
-
-
-
-
-        <div class="section section-basic">
-            <div class="container">
-           
-          
-
-<div class="row">
-    <div class="col-sm-6 col-lg-3">
-        <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
-          <div class="input-group-prepend" >
-            <span class="input-group-text">
-                <i class="fa fa-user-circle"></i>
-            </span>
-          </div>
-            <input type="text" [(ngModel)]="Firstname" (keydown)="filterName('Firstname',Firstname)" class="form-control" placeholder="doctor name" (focus)="focus=true" (blur)="focus=false">
-          </div>
-    </div>
-    <div class="col-sm-6 col-lg-3">
-        <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
-          <div class="input-group-prepend" >
-            <span class="input-group-text">
-                <i class="fa fa-user-circle"></i>
-            </span>
-          </div>
-            <input type="text" [(ngModel)]="City" (keydown)="filterArea('City',City)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
-          </div>
-          <div class="row">
-        <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send()"> sort low to high</button>
-        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send2()"> sort high to low</button> -->
-        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="createPoint()">Create Me</button>
-        <button (click)="createPoint1(38, -119)">Create Me 1</button> 
-      </div>
-    </div>
-    <div class="row">
-      <app-starreview [doctorId]="doctorId" [patientId]="patientId"></app-starreview>
-    </div>
-    
-</div>
-
-<!-- <div>
-  <mat-form-field>
-    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-  </mat-form-field>
-  
-  <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let name of names" [value]="option">{{name.Firstname}} {{name.Lastname}}</mat-option>
-  </mat-autocomplete>
-  <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let name of names" [value]="option">
-              {{name.Firstname}} {{name.Lastname}}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-    </form>
-</div> -->
-
-<!-- <div>
-<ul *ngFor = "let name of names" >
-  
-    {{name.Firstname}} {{name.Lastname}}
-  
-</ul>
-<div *ngIf = "names?.length == 0">
-  <p>Sorry, not found</p>
-</div>
-</div> -->
-
-   </div>
-        </div>     
-
-
-        
-        <div class="section section-tabs">
-              <div class="container">                  
-                    <div class="row">
-                            <div class="col-md-20 col-xl-10" >
-<ul *ngFor="let results of filteredNames">
-        <div class="card" >
-            <div class="row">
-                <div class="img-btn">
-                    <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
-                </div>
-                <div class="column">  
-                    <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
-                    <h6>{{results.RegistrationNumber}}</h6>
-                    <p>{{results.Email}}</p>
-                    <p>{{results.expyear}}</p>
-                    <p>Dietitian/Nutritionist, Sports Nutritionist</p>
-                    <p> Years Experience Overall  (34 years as specialist)</p>
-                    <p>Apollo Spectra Hospitals</p>
-                    <button routerLink="/doctorview" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
-                    <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Appointment</button>
-                    </div>
-            </div>
-        </div></ul>
-                            </div>
-                    </div>
-                </div>
-        </div>
-
   <footer class="footer footer-default">
       <div class="container">
           <nav>
@@ -260,4 +143,3 @@
           </div>
       </div>
   </footer>
-</div>
