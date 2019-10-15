@@ -24,7 +24,7 @@ export class SignDoctorComponent implements OnInit {
 
   }
 
-  createUser(frm) {
+   createUser(frm) {
     this.auth.createDoctor(frm.value);
   }
  

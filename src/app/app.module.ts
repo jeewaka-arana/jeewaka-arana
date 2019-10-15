@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 
+
+
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DoctoradminpageComponent } from './doctor/doctoradminpage/doctoradminpage.component';
@@ -49,6 +52,7 @@ import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+import { AdvancedsearchComponent } from './patient/searchdoctor/advancedsearch/advancedsearch.component';
 
 
 
@@ -86,6 +90,7 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
+        AdvancedsearchComponent,
 
     ],
     imports: [
@@ -102,6 +107,8 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
       AngularFireDatabaseModule
+     
+  
 
     ],
     providers: [CrudService,SearchdoctorService,AuthService],

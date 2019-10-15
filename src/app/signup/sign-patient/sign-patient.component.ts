@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/core/auth.service';
+// import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class SignPatientComponent implements OnInit {
     this.auth.eventAuthError$.subscribe( data => {
       this.authError = data;
     })
-    
+    // this.tstr.success("Done");
 
   
   }
@@ -37,15 +38,13 @@ export class SignPatientComponent implements OnInit {
   }
 
   showpassword(passwd){
-    console.log("veliya");
+    
    if(passwd.type==="password"){
      passwd.type="text"
-     console.log("ulla");
      return true;
    }
    else{
      passwd.type="password"
-     console.log("else kulla");
      return false;
    }
   }

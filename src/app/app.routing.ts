@@ -33,6 +33,7 @@ import{NoteditComponent} from './doctor/notedit/notedit.component';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
+import { AdvancedsearchComponent } from './patient/searchdoctor/advancedsearch/advancedsearch.component';
 
 
 
@@ -70,11 +71,13 @@ const routes: Routes =[
     { path: 'plogin', component:PatLoginComponent},
     {path:'image' ,component:ImageComponent,children:[
     {path:'upload',component:ImageComponent},//image/upload
-    {path:'list',component:ImageListComponent}   
+    {path:'list',component:ImageListComponent}   ,
+      
 ]},
 
 {path:'notepad',component:NotepadComponent},
-{path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent}
+{path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent},
+{path:'adsearch',component:AdvancedsearchComponent}
 
     ]
 
