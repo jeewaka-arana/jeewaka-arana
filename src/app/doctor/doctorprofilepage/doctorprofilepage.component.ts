@@ -11,9 +11,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 import { ImageService } from 'app/core/image.service';
 import{GalleryImageModule} from '../../core/models/gallery-image/gallery-image.module';
+
 //retrive  data
 interface Doctors{
-
   DocId:string;
   FirstName:string;
   LastName:string;
@@ -53,6 +53,9 @@ export class DoctorprofilepageComponent implements OnInit  {
 
   postsCol:AngularFirestoreCollection< Doctors>;
   posts:Observable< Doctors[]>;
+  post$:any;
+
+  id=this.AuthService.getUserId();
 
 
   DocId:string;
@@ -150,6 +153,9 @@ formdata=new FormGroup({
  
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
+ this.postsCol.doc(this.id).ref.get().then((doc)=>{
+   this.post$=doc.data();
+ });
  
  
  
