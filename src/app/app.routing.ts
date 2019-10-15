@@ -21,6 +21,7 @@ import { SelectbynameComponent } from './patient/appointment/selectbyname/select
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
 import{AdminComponent} from './admin/admin.component';
+
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
@@ -34,6 +35,10 @@ import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { AdvancedsearchComponent } from './patient/searchdoctor/advancedsearch/advancedsearch.component';
+import { GooglemapComponent } from './patient/googlemap/googlemap.component';
+import { StarreviewComponent } from './patient/starreview/starreview.component';
+
+
 
 
 
@@ -69,6 +74,10 @@ const routes: Routes =[
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
+    { path: 'googlemap', component:GooglemapComponent},
+    { path: 'star' , component:StarreviewComponent },
+    
+    
     {path:'image' ,component:ImageComponent,children:[
     {path:'upload',component:ImageComponent},//image/upload
     {path:'list',component:ImageListComponent}   ,
