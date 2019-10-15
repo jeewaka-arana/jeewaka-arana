@@ -21,6 +21,7 @@ export class AppStep1Component implements OnInit {
 
   firstname:string;
   lastname:string;
+  number:number;
 
 
   constructor(private afs: AngularFirestore) { }
@@ -31,7 +32,7 @@ export class AppStep1Component implements OnInit {
   }
 
   addName(){
-    this.afs.collection('example').add({'firstname':this.firstname, 'lastname':this.lastname});
+    this.afs.collection('example').add({'firstname':this.firstname, 'lastname':this.lastname, 'number':this.number});
   }
 
 }

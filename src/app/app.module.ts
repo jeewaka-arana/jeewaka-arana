@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import { AgmCoreModule } from '@agm/core';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -22,14 +24,15 @@ import { AppStep3Component } from './patient/appointment/app-step3/app-step3.com
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
-import { SearchdoctorService } from './core/searchdoctor.service'
+import { SearchdoctorService } from './core/searchdoctor.service';
 
-
+// import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {CrudService} from './core/crud.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {AngularFirestore } from '@angular/fire/firestore'
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -41,9 +44,7 @@ import { HomeComponent } from './home/home.component';
 import { ImagesComponent } from './images/images.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
-import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
-import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
-import { from } from 'rxjs';
+
 import { NoteditComponent } from './doctor/notedit/notedit.component';
 import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
@@ -51,6 +52,14 @@ import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 
 
+
+
+import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
+import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
+import { from } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
+import { GooglemapComponent } from './patient/googlemap/googlemap.component';
+import { StarreviewComponent } from './patient/starreview/starreview.component';
 
 
 
@@ -87,6 +96,9 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         DocLoginComponent,
         PatLoginComponent,
 
+        GooglemapComponent,
+        StarreviewComponent,
+     
     ],
     imports: [
         BrowserAnimationsModule, 
@@ -101,8 +113,15 @@ import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
-      AngularFireDatabaseModule
+      AngularFireDatabaseModule,
 
+   
+      BrowserModule,
+    AgmCoreModule.forRoot({
+        apiKey: environment.googleMapsKey
+    })
+   
+     
     ],
     providers: [CrudService,SearchdoctorService,AuthService],
     bootstrap: [AppComponent]
