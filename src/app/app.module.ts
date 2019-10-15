@@ -52,6 +52,11 @@ import { ConfirmationComponent } from './patient/appointment/confirmation/confir
 import { from } from 'rxjs';
 
 
+// import { ImagesComponent } from './images/images.component';
+// import { ImageComponent } from './images/image/image.component';
+// import { ImageListComponent } from './images/image-list/image-list.component';
+
+// import { NoteditComponent } from './doctor/notedit/notedit.component';
 import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
