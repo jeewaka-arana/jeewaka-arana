@@ -27,7 +27,7 @@
     "@angular/router": "^7.2.9",
     "@ng-bootstrap/ng-bootstrap": "^4.1.0",
     "@types/jquery": "^3.3.31",
-    "@types/lodash": "^4.14.138",
+    "@types/lodash": "^4.14.144",
     "ajv": "6.10.0",
     "ajv-keywords": "3.4.0",
     "bootstrap": "^4.3.1",

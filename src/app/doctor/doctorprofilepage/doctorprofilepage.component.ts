@@ -55,7 +55,7 @@ export class DoctorprofilepageComponent implements OnInit  {
   posts:Observable< Doctors[]>;
   post$:any;
 
-  id=this.AuthService.getUserId();
+  
 
 
   DocId:string;
@@ -135,7 +135,7 @@ formdata=new FormGroup({
 // imageList: any[];
 // rowIndexArray: any[];
 
-  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private imageService:ImageService ) {
+  constructor(private userCredential: firebase.auth.UserCredential,    private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private imageService:ImageService ) {
   
 
 
@@ -153,7 +153,7 @@ formdata=new FormGroup({
  
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
- this.postsCol.doc(this.id).ref.get().then((doc)=>{
+ this.postsCol.doc(this.userCredential.user.uid).ref.get().then((doc)=>{
    this.post$=doc.data();
  });
  
