@@ -135,7 +135,7 @@ formdata=new FormGroup({
 // imageList: any[];
 // rowIndexArray: any[];
 
-  constructor(private userCredential: firebase.auth.UserCredential,    private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private imageService:ImageService ) {
+  constructor(   private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private imageService:ImageService ) {
   
 
 
