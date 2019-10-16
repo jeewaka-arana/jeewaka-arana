@@ -29,17 +29,21 @@ export class CommentComponent implements OnInit {
   today: number = Date.now();
 
   postsCol: AngularFirestoreCollection<Post>;
-  posts: any;
+  
+  post: Observable<Post[]>;
 
   title:string;
   content:string;
  
 
 
-  postDoc: AngularFirestoreDocument<Post>;
-  post: Observable<Post>;
+  commentCol: AngularFirestoreCollection<Post>;
+   comment: Observable<Post[]>;
+   comment$:any;
+   posts: any;
   
-  
+ 
+ 
 
   
   
@@ -50,14 +54,15 @@ export class CommentComponent implements OnInit {
 
   ngOnInit() {
 
-//
+
 
 // var medium = this.datePipe.transform(new Date(),"MMM d, y, h:mm:ss a");
 // console.log(medium); //output - Feb 14, 2019, 3:45:06 PM
 //
 
-    this.postsCol = this.afs.collection('posts');
-    //this.posts = this.postsCol.valueChanges();
+    this.postsCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
+    this.post = this.postsCol.valueChanges();
+    
     this.posts = this.postsCol.snapshotChanges()
       .map(actions => {
         return actions.map(a => {
@@ -80,12 +85,12 @@ export class CommentComponent implements OnInit {
 
 
     // 
-     this.afs.collection('posts').add({'title': this.title, 'content': this.content});
+     this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts').add({'title': this.title, 'content': this.content});
   }
 
   getPost(postId) {
-    this.postDoc = this.afs.doc('posts/'+postId);
-    this.post = this.postDoc.valueChanges();
+    this.commentCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
+    this.comment = this.commentCol.valueChanges();
 
 
     //

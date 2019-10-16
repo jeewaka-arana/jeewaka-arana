@@ -153,7 +153,7 @@ formdata=new FormGroup({
  
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
- this.postsCol.doc(this.userCredential.user.uid).ref.get().then((doc)=>{
+ this.postsCol.doc('sJ8197FwroSuZepVVnEN4DD9UA13').ref.get().then((doc)=>{
    this.post$=doc.data();
  });
  
