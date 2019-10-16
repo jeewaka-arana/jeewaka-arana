@@ -55,7 +55,7 @@ export class DoctorprofilepageComponent implements OnInit  {
   posts:Observable< Doctors[]>;
   post$:any;
 
-  id=this.AuthService.getUserId();
+  
 
 
   DocId:string;
@@ -153,7 +153,7 @@ formdata=new FormGroup({
  
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
- this.postsCol.doc(this.id).ref.get().then((doc)=>{
+ this.postsCol.doc('sJ8197FwroSuZepVVnEN4DD9UA13').ref.get().then((doc)=>{
    this.post$=doc.data();
  });
  

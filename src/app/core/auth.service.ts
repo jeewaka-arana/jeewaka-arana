@@ -60,6 +60,7 @@ export class AuthService {
       .then(userCredential => {
         if(userCredential) {
           this.router.navigate(['/doctoradmin']);
+          return userCredential.user.uid;
         }
       })
   }
@@ -114,8 +115,8 @@ export class AuthService {
       NIC:this.newUser.nic,
       City:this.newUser.city,
       Position:this.newUser.position,
-      RegistrationNumber:this.newUser.regnumber
-
+      RegistrationNumber:this.newUser.regnumber,
+      Userid:userCredential.user.uid,
     })
   }
 
