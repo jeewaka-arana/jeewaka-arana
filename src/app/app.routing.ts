@@ -72,7 +72,7 @@ const routes: Routes =[
     {path:'image' ,component:ImageComponent,children:[
     {path:'upload',component:ImageComponent},//image/upload
     {path:'list',component:ImageListComponent}, 
-    {path:'admin/editprofile',component:EditprofileComponent}
+    {path:'editprofile',component:EditprofileComponent}
 ]},
 
 {path:'notepad',component:NotepadComponent},
