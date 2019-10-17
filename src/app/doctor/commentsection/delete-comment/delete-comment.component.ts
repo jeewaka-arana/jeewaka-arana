@@ -56,6 +56,10 @@ getPost(postId) {
 }
   
   deletePost(postId) {
-    this.afs.doc('posts/'+postId).delete();
+
+    
+
+    this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts').doc('Posts/'+postId).delete();
+
    }
 }
