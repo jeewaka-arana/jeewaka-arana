@@ -29,10 +29,18 @@ export class CrudService {
     
   }
 
-
+  
+ 
 //update doctor view page according to the doctor admin page
 
- 
+getPeople(){
+  return new Promise<any>((resolve, reject) => {
+    this.afs.collection('Doctors').snapshotChanges()
+    .subscribe(snapshots => {
+      resolve(snapshots)
+    })
+  })
+}
 
 
 }

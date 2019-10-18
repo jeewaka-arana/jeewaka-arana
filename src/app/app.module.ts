@@ -51,15 +51,11 @@ import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { DoclistComponent } from './admin/doclist/doclist.component';
 import { EditprofileComponent } from './admin/editprofile/editprofile.component';
-
-
-
-
-
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
+        
         DoctoradminpageComponent,
         DoctorprofilepageComponent,
         SignupComponent,
@@ -105,7 +101,9 @@ import { EditprofileComponent } from './admin/editprofile/editprofile.component'
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule, // imports firebase/storage only needed for storage features
-      AngularFireDatabaseModule
+      AngularFireDatabaseModule,
+      
+      
 
     ],
     providers: [CrudService,SearchdoctorService,AuthService],
