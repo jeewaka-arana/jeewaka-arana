@@ -12,7 +12,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { validateConfig } from '@angular/router/src/config';
 import { Doctor } from 'app/core/models/doctor.model';
 import { AngularFireDatabase } from '@angular/fire/database';
-
+import{Disease} from  '../../core/models/diseases.module';
+import { of } from 'rxjs';
 
 
 
@@ -22,10 +23,17 @@ import { AngularFireDatabase } from '@angular/fire/database';
   styleUrls: ['./doctoradminpage.component.scss']
 })
 export class DoctoradminpageComponent implements OnInit {
+  orders = [];
+ //for diseases list 
 
- 
+// diseases: Disease[]= [
+//   {id:1,name:'help Desk'},
+//   {id:2,name:'hr'},
+//   {id:3,name:'home'},
+//   ];
 
 
+  //
   
 
 Address:string;
@@ -102,16 +110,31 @@ sut1:new FormControl(''),
 sut2:new FormControl(''),
 sut3:new FormControl(''),
  });
+  form: FormGroup;
+  disease: { id: string; name: string; }[];
+  
   
 
-  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder) { 
+  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
+
+
+
+    this.form = this.formBuilder.group({
+      diseases: ['']
+    });
+
+    // async orders
+    of(this.getOrders()).subscribe(diseases => {
+      this.disease = diseases;
+      this.form.controls.disease.patchValue(this.disease[0].id);
+    });
 
   }
 
   ngOnInit() {
     window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
     this.formdata;
-//
+   
 
 ////
 // this.resetForm();
@@ -145,12 +168,46 @@ sut3:new FormControl(''),
     this.CrudService.updateProfile(data);
    
   }
+  savedisease(data){
+    this.CrudService.updateProfile(data);
+  }
   ///////
  
   submitcomplain(data){
     this.CrudService. passData(data);
   }
 // //
+getOrders() {
+  return [
+  
+    { id: '1', name: 'Ayurvedic Hospital' },
+    { id: '2', name: 'Arthritis' },
+    { id: '3', name: 'Beauty Spa' },
+    { id: '4', name: 'cancer' },
+    { id: '5', name: 'Chronic Ulcers' },
+    { id: '6', name: 'Cholestrol' },
+    { id: '7', name: 'Diabetic Ulcers' },
+    { id: '8', name: 'Diabetes Mellitus' },
+    { id: '9', name: 'ENT' },
+    { id: '10', name: 'Fistula' },
+    { id: '11', name: 'Gynaecological Disorders' },
+    { id: '12', name: 'Gastritis' },
+    { id: '13', name: 'Hemorrhoids' },
+    { id: '14', name: 'Hypertension' },
+    { id: '15', name: 'Neurological Disorders' },
+    { id: '16', name: 'Orthopedics' },
+    { id: '17', name: 'Obesity' },
+    { id: '18', name: 'Paralysis / Hemiplagia' },
+    { id: '19', name: 'Pediatrics' },
+    { id: '20', name: 'Spinal Disorders' },
+    { id: '21', name: 'Skin Disorders' },
+    { id: '22', name: 'Urinary Calculi' },
+    {id:'23',name:'Urinary Disease'},
+    {id:'24',name:'Varicose Venis'},
+    {id:'25',name:'I have a medical hospital for all diseases'}
+
+  ];
+}
 
 
 

@@ -51,6 +51,7 @@ import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
 
+
 // import { ImagesComponent } from './images/images.component';
 // import { ImageComponent } from './images/image/image.component';
 // import { ImageListComponent } from './images/image-list/image-list.component';

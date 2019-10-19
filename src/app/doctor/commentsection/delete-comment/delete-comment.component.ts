@@ -17,35 +17,49 @@ export class DeleteCommentComponent implements OnInit {
 
   postsCol: AngularFirestoreCollection<Post>;
   posts: any;
+  post: Observable<Post[]>;
 
   title:string;
   content:string;
 
 
   postDoc: AngularFirestoreDocument<Post>;
-  post: Observable<Post>;
+  // post: Observable<Post>;
+
+  //comments
+  commentCol: AngularFirestoreCollection<Post>;
+  comment: Observable<Post[]>;
+  comment$:any;
+  
   constructor(private  afs: AngularFirestore) { }
 
   ngOnInit() {
-
-    this.postsCol = this.afs.collection('posts');
-    //this.posts = this.postsCol.valueChanges();
+    this.postsCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
+    this.post = this.postsCol.valueChanges();
     this.posts = this.postsCol.snapshotChanges()
-      .map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data() as Post;
-          const id = a.payload.doc.id;
-          return { id, data };
-        })
+    .map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as Post;
+        const id = a.payload.doc.id;
+        return { id, data };
       })
+    })
   }
 //
 getPost(postId) {
-  this.postDoc = this.afs.doc('posts/'+postId);
-  this.post = this.postDoc.valueChanges();
+  this.commentCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
+  this.comment = this.commentCol.valueChanges();
+
+
+  //
+ 
 }
   
   deletePost(postId) {
-    this.afs.doc('posts/'+postId).delete();
+
+    
+
+    this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts').doc('Posts/'+postId).delete();
+
    }
 }

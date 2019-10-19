@@ -24,9 +24,7 @@ export class AuthService {
   }
 
 
-  getUserId(){
-    return this.afAuth.auth.currentUser.uid;
-  }
+ 
 
   pat_login( email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
@@ -60,6 +58,7 @@ export class AuthService {
       .then(userCredential => {
         if(userCredential) {
           this.router.navigate(['/doctoradmin']);
+          return userCredential.user.uid;
         }
       })
   }
@@ -114,8 +113,8 @@ export class AuthService {
       NIC:this.newUser.nic,
       City:this.newUser.city,
       Position:this.newUser.position,
-      RegistrationNumber:this.newUser.regnumber
-
+      RegistrationNumber:this.newUser.regnumber,
+      Userid:userCredential.user.uid,
     })
   }
 
@@ -127,8 +126,8 @@ export class AuthService {
       PhoneNumber:this.newUser.phone,
       NIC:this.newUser.nic,
       Country:this.newUser.country,
-      City:this.newUser.city
-
+      City:this.newUser.city,
+      Userid:userCredential.user.uid
     })
   }
 
@@ -140,7 +139,10 @@ export class AuthService {
  get userId() {
     return this.afAuth.auth.currentUser.uid;
   }
-
+ 
+  CurrentUser(userCredential: firebase.auth.UserCredential){
+    return userCredential.user.uid;
+  }
  
 }
 
