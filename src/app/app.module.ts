@@ -90,6 +90,8 @@ import{DatePipe} from '@angular/common';
 
 import { GooglemapComponent } from './patient/googlemap/googlemap.component';
 import { StarreviewComponent } from './patient/starreview/starreview.component';
+import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
+import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 
 
 
@@ -172,6 +174,8 @@ import { StarreviewComponent } from './patient/starreview/starreview.component';
 
         GooglemapComponent,
         StarreviewComponent,
+        DocAppoinmentComponent,
+        ViewappoinmentComponent,
      
     ],
     imports: [

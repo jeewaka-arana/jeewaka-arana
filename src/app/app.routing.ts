@@ -52,8 +52,8 @@ import { MynavComponent } from './doctor/mynav/mynav.component';
 import{AddComplainsComponent} from './doctor/add-complains/add-complains.component';
 import{DeleteCommentComponent} from './doctor/commentsection/delete-comment/delete-comment.component';
 import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component'
-
-
+import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
+import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -63,6 +63,7 @@ const routes: Routes =[
     { path: 'examples/profile', component: ProfileComponent },
     { path: 'user', component: LoginComponent },
     { path: 'home', component:HomeComponent },
+    { path: 'doctorview/:id', component: DoctorprofilepageComponent},
     { path: 'doctorview', component: DoctorprofilepageComponent},
     { path: 'doctoradmin', component:DoctoradminpageComponent },
     { path: 'signup/sign-patient', component:SignPatientComponent },
@@ -113,6 +114,8 @@ const routes: Routes =[
 {path:'complain',component:AddComplainsComponent},
 {path:'deletecomment',component:DeleteCommentComponent},
 {path:'bothcomment',component:BothCommentPageComponent},
+{path:'docAppoinment',component:DocAppoinmentComponent},
+{path:'viewappoinment',component:ViewappoinmentComponent}
     ]
 
 
