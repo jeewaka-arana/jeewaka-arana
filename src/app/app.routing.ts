@@ -54,6 +54,9 @@ import{DeleteCommentComponent} from './doctor/commentsection/delete-comment/dele
 import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component'
 import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
+import { HeremapComponent } from './patient/heremap/heremap.component';
+
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -84,6 +87,7 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
+    { path: 'here', component:HeremapComponent},
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},

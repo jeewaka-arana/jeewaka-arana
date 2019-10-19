@@ -27,47 +27,65 @@
       <li><span class="number">03</span> Verify Booking</li>
     </ol>
   </div>
+  <br>
+  <div class="container">
+  <div class="row">
+        <div class="col-sm-6 col-lg-3">
+            <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+              <div class="input-group-prepend" >
+                <span class="input-group-text">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+              </div>
+                <input type="text" [(ngModel)]="Firstname" (keydown)="filterName('Firstname',Firstname)" class="form-control" placeholder="disease" (focus)="focus=true" (blur)="focus=false">
+                <select ngModel #Specialist="ngModel" name=" Specialist" type="text" class="form-control" id="Specialist"  class="form-control" >
+                        <option class="hidden"  selected disabled>Please select your specialist...</option>
+                        <option>Ayurvedic Hospital </option>
+                        <option>Arthritis</option>
+                        <option>Beauty Spa</option>
+                        <option>cancer</option>
+                        <option>Chronic Ulcers</option>
+                        <option>Cholestrol</option>
+                        <option> Diabetic Ulcers</option>
+                        <option>Diabetes Mellitus</option>
+                        <option>ENT</option>
+                        <option>Fistula</option>
+                        <option>Gynaecological Disorders</option>
+                        <option>Gastritis</option>
+                        <option>Hemorrhoids</option>
+                        <option>Hypertension</option>
+                        <option>Neurological Disorders</option>
+                        <option>Orthopedics</option>
+                        <option>Obesity</option>
+                        <option>Paralysis / Hemiplagia</option>
+                        <option>Pediatrics</option>
+                        <option>Spinal Disorders</option>
+                       <option>Skin Disorders</option>
+                        <option>Urinary Calculi</option>
+                        <option>Urinary Diseases</option>
+                        <option>Varicose Venis</option>
+                       
+                       
 
+                    </select>
+            </div>
+        </div>
+    </div>
+  </div>
   <div class="row">
         <div class="col p-3">
-          <div class="byLetter">
-            <a id="A" href="">A</a>
-            <a id="B" href="">B</a>
-            <a id="C" href="">C</a>
-            <a id="D" href="">D</a>
-            <a id="E" href="">E</a>
-            <a id="F" href="">F</a>
-            <a id="G" href="">G</a>
-            <a id="H" href="">H</a>
-            <a id="I" href="">I</a>
-            <a id="J" href="">J</a>
-            <a id="K" href="">K</a>
-            <a id="L" href="">L</a>
-            <a id="M" href="">M</a>
-            <a id="N" href="">N</a>
-            <a id="O" href="">O</a>
-            <a id="P" href="">P</a>
-            <a id="Q" href="">Q</a>
-            <a id="R" href="">R</a>
-            <a id="S" href="">S</a>
-            <a id="T" href="">T</a>
-            <a id="U" href="">U</a>
-            <a id="V" href="">V</a>
-            <a id="W" href="">W</a>
-            <a id="X" href="">X</a>
-            <a id="Y" href="">Y</a>
-            <a id="Z" href="">Z</a>
-          </div> 
+
 <br>
           <div id="container">
                 
                 
                 <ul class="list">
+                    <ul *ngFor="let result of results">
                     <li>
-                            <a href="#">Disease 1</a> 
+                            <a href="#">{{result.Specialist}}</a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
                     </li>
-                    <li>
+                    <!-- <li>
                             <a href="#">Disease 2</a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
                     </li>
@@ -90,8 +108,9 @@
                     <li>
                             <a href="#">Disease 7</a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li>
+                    </li> -->
                 </ul>
+            </ul>
             </div> 
 
            </div>

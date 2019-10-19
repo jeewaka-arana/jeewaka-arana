@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
@@ -92,6 +92,7 @@ import { GooglemapComponent } from './patient/googlemap/googlemap.component';
 import { StarreviewComponent } from './patient/starreview/starreview.component';
 import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
+import { HeremapComponent } from './patient/heremap/heremap.component';
 
 
 
@@ -176,6 +177,7 @@ import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/view
         StarreviewComponent,
         DocAppoinmentComponent,
         ViewappoinmentComponent,
+        HeremapComponent,
      
     ],
     imports: [
