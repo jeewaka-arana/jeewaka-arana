@@ -52,6 +52,7 @@ import { MynavComponent } from './doctor/mynav/mynav.component';
 import{AddComplainsComponent} from './doctor/add-complains/add-complains.component';
 import{DeleteCommentComponent} from './doctor/commentsection/delete-comment/delete-comment.component';
 import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component'
+import { HeremapComponent } from './patient/heremap/heremap.component';
 
 
 const routes: Routes =[
@@ -63,7 +64,7 @@ const routes: Routes =[
     { path: 'examples/profile', component: ProfileComponent },
     { path: 'user', component: LoginComponent },
     { path: 'home', component:HomeComponent },
-    { path: 'doctorview', component: DoctorprofilepageComponent},
+    { path: 'doctorview/:id', component: DoctorprofilepageComponent},
     { path: 'doctoradmin', component:DoctoradminpageComponent },
     { path: 'signup/sign-patient', component:SignPatientComponent },
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
@@ -83,6 +84,7 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
+    { path: 'here', component:HeremapComponent},
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},

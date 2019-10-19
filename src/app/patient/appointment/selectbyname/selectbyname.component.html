@@ -60,14 +60,15 @@
           </div> 
 <br>
           <div id="container">
-                
+             
                 
                 <ul class="list">
+                   <ul *ngFor="let result of results">  
                     <li>
-                            <a href="#">Name 1</a> 
+                            <a href="#">Dr. {{result.Firstname}} {{result.Lastname}} </a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
                     </li>
-                    <li>
+                    <!-- <li>
                             <a href="#">Name 2</a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
                     </li>
@@ -90,8 +91,9 @@
                     <li>
                             <a href="#">Name 7</a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li>
+                    </li> -->
                 </ul>
+                </ul>  
             </div> 
 
            </div>

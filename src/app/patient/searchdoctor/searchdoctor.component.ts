@@ -27,6 +27,9 @@ export class SearchdoctorComponent implements OnInit {
   
   patient: Observable<any>;
   doctor: Observable<any>; 
+
+  lat: number;
+  lng: number;
   
   Firstname:string;
   Lastname:string;
@@ -60,7 +63,18 @@ export class SearchdoctorComponent implements OnInit {
     this.patient = this.patientDoc.valueChanges();
     this.doctor = this.doctorDoc.valueChanges();
     
+    this.getUserLocation();
+
     }
+
+    getUserLocation(){
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat=position.coords.latitude;
+        this.lng=position.coords.longitude;
+      });
+    }
+}
 
     patientId() {
         return this.patientDoc.ref.id;
@@ -75,6 +89,8 @@ export class SearchdoctorComponent implements OnInit {
       const point = this.geo.point(40, -119);
       cities.add({ name: 'Phoenix', position: point.data });
   }
+
+  
 
   createPoint1(lat, lng) {
     const collection = this.geo.collection('Location')
