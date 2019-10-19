@@ -9,8 +9,7 @@ import {AuthService} from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
-import { ImageService } from 'app/core/image.service';
-import{GalleryImageModule} from '../../core/models/gallery-image/gallery-image.module';
+
 import { firestore } from 'firebase';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -141,7 +140,7 @@ formdata=new FormGroup({
 // imageList: any[];
 // rowIndexArray: any[];
 
-  constructor(   private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth,private imageService:ImageService ) {
+  constructor(   private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
   
 //     this.user = this.afAuth.authState.pipe(
 //       switchMap(user => {

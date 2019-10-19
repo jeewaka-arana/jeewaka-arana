@@ -1,0 +1,156 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
+  <div class="container">
+    <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+      <div class="navbar-translate">
+          <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+             
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+              <a class="nav-link"   routerLink="/index" >
+                  <i class="now-ui-icons business_bank"></i>
+                  <p>Home</p>
+              </a>
+          </li>
+
+
+              
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/index" >
+                <i class="now-ui-icons business_globe"></i>
+                <p>Change Language</p>
+            </a>
+        </li>
+
+        
+
+            
+      
+
+          <li class="nav-item">
+            <a class="nav-link" href="/docAppoinment" >
+                <i class="now-ui-icons ui-1_calendar-60"></i>
+                <p>Appoinments</p>
+            </a>
+        </li>
+                       
+        <li class="nav-item">
+            <a class="nav-link" href="/bothcomment" >
+                <i class="now-ui-icons text_align-center"></i>
+                <p>Comments</p>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+         
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+              <i class="now-ui-icons ui-1_zoom-bold"></i>
+              <p>Search</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
+            <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
+            
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons users_single-02
+
+              "></i>
+            <p>Profile</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item " href="/doctorview" > View Profile </a>
+            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+            
+          </div>
+        </li>
+
+        
+<!-- 
+            <li class="nav-item">
+              <a class="nav-link btn btn-neutral" routerLink="/signup">
+                  <i class="now-ui-icons arrows-1_share-66"></i>
+                  <p>Sign In</p>
+              </a>
+          </li>
+           -->
+           
+          </ul>
+      </div>
+  </div>
+</nav>
+<div class="page-header page-header-small">
+
+  <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('http://drfranklin.com/images/banner/ayurveda%20in%20kerala.jpg');" >
+    
+
+  </div>
+  
+
+  <div class="container">
+
+      
+
+
+      <div class="content-center">
+
+        
+          <h1 style="font-family: cursive;" class="title">Your Appoinment List</h1>
+          <div class="text-center">
+            
+            
+          </div>
+      </div>
+  </div>
+</div>
+
+<br><br><br>
+<div>
+
+
+    <ul *ngFor="let app of apps | async"> 
+<div class="card" style="width: 50rem;margin-left: 25px;" >
+<div class="card-body">
+  
+   
+  <div class="row">
+    <div class="col col-md-2">
+        
+            <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised" height="150px;" width="150px">
+    </div>
+     
+        <div class="col col-md-13"> 
+           <h5>Patient Name -{{app.pname}}</h5> 
+           <h5>Telephone Number -{{app.tp}} </h5> 
+           <h5>Disease -{{app.disease}}</h5>
+           <h5>Date - {{app.date}}</h5>
+           <h5>Time - {{app.time}}</h5>
+            
+            <button  class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-2_like" (click)="accept()"></i> Accept</button>
+            <button   class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons shopping_basket" (click)="reject"></i> Reject</button>
+            </div>
+  </div>
+
+    
+
+
+</div>
+
+</div>
+
+</ul>
+
+
+</div>

@@ -37,7 +37,7 @@
       
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="/index" >
+            <a class="nav-link" href="/docAppoinment" >
                 <i class="now-ui-icons ui-1_calendar-60"></i>
                 <p>Appoinments</p>
             </a>
@@ -57,8 +57,8 @@
               <p>Search</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item  " href="/doctorview" >Search By Name</a>
-            <a class="dropdown-item" href="/doctoradmin">Search By Diseases</a>
+            <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
+            <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
             
           </div>
         </li>
@@ -158,19 +158,39 @@
 
                         <div class="formGroup" class="center">
                            
+                            <form [formGroup]="formdata" (ngSubmit) = " savedisease(formdata.value)" >
+
+                                <label for="diseases">Order</label>
+                                <select formControlName="Specialist" id="diseases">
+                                  <option *ngFor="let order of disease; let i = index" [value]="disease[i].name">
+                                    {{disease[i].name}}
+
+                                    
+                                  </option>
+                                </select>
+                                       
+                                <div  class="form-group" >
+                                    <input type="submit" style="width: 15% ;padding: 1%"  class="btnRegister   float-right"  formControlName="submit" value="Save" (click)=" savedisease()"/>         
+                                    </div>
+                               
+                              </form>
                        
-                                <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
+                             
+                                                      <!--   <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form">
                                    
                                     <div class="form-group">
 
-                                            <label class="col-lg-3 control-label"><b>Specialist:</b></label>
+                                            <label class="col-lg-3 control-label"><b>Specialist:</b></label> 
 
 
 
 
                                             <div class="col-md-8">
                                               <div class="form-group">
-                                                      <select ngModel #Specialist="ngModel" name=" Specialist" type="text" class="form-control" id="Specialist"  class="form-control" >
+
+
+
+                                           <select ngModel #Specialist="ngModel" name=" Specialist" type="text" class="form-control" id="Specialist"  class="form-control" >
                                                           <option class="hidden"  selected disabled>Please select your specialist...</option>
                                                           <option>Ayurvedic Hospital </option>
                                                           <option>Arthritis</option>
@@ -199,10 +219,10 @@
                                                          
                                                          
                               
-                                                      </select>
-                                                  </div>
-                                                  </div>
-
+                                                      </select> -->
+                                                  <!-- </div>
+                                                  </div> -->
+                                                
                                             <!-- <div class="row">
                                                 <div class="column" style="margin-left: 20px;" >
                                                   
@@ -338,14 +358,14 @@
 
 
     
-                                    </div>  
                                    
+                                   <!-- morning one -->
                                <br><br><br><br><br><br>
                                           
-                                <div  class="form-group" >
+                                <!-- <div  class="form-group" >
                                     <input type="submit" style="width: 15% ;padding: 1%"  class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
                                     </div>
-</form>
+</form> -->
               </div>
               </div>
               </div>
