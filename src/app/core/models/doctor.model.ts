@@ -1,6 +1,5 @@
 export class Doctor {
-
-    DocId:string;
+    Userid:string;
     FirstName:string;
     LastName:string;
     UserName:string;

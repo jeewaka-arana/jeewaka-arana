@@ -12,68 +12,102 @@
         <div class="col-md-9 register-right">
             
             
-                    <h3 class="register-heading">Register as a Patient</h3>
+                    <h3 class="register-heading">Register as a Doctor</h3>
                     <div class="row" *ngIf="authError">
                             <div class="col-12 alert alert-danger">
                               {{ authError?.message }}
                             </div>
                           </div>
-                    <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+                    <form  #userRegform="ngForm" (ngSubmit)="userRegform.valid && checkpassword(password.value,confpassword.value) && createUser(userRegform) " >
                     <div class="row register-form" >
                         <div class="col-md-6">
                             <div class="form-group">
-                                    <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name..."  />
-                                  <!-- <div class="row" *ngIf="authError">
-                                        <div class="col-12 alert alert-danger">
-                                          {{ authError?.message }}
-                                        </div>
-                                      </div> -->
+                                    <input ngModel #firstName="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name..." [ngClass]="{ 'is-invalid': userRegform.submitted && firstName.invalid }" required/>
+                                    <div *ngIf="userRegform.submitted && firstName.invalid" class="invalid-feedback">
+                                        <div *ngIf="firstName.errors.required">First Name is required</div>
+                                    </div>
                             </div>
-                            <div class="form-group">
-                                    <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" placeholder="Last Name...">
-                            </div>
+                        
+                         
                            
                             <div class="form-group">
-                                    <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Your Email..."> 
-                            </div>
-                            <div class="form-group">
-                                    <input ngModel #phone="ngModel" name="phone" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number...">
-                            </div>
-                            <div class="form-group">
-                                    <input ngModel #nic="ngModel" name="nic" type="text" class="form-control" id="nic" value="" placeholder="Your NIC...">
-                            </div>
-                           
+                                    <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Your Email..." [ngClass]="{ 'is-invalid': userRegform.submitted && email.invalid }" required email/> 
+                                    <div *ngIf="userRegform.submitted && email.invalid" class="invalid-feedback">
+                                        <div *ngIf="email.errors.required">Email is required</div>
+                                        <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                                    </div>
+                                </div>
                             
+                            <div class="form-group">
+                                    <input ngModel  #nic="ngModel" name="nic" type="text" class="form-control" id="nic" value="" placeholder="Your NIC..." [ngClass]="{ 'is-invalid': userRegform.submitted && nic.invalid }" required>
+                                    <div *ngIf="userRegform.submitted && nic.invalid" class="invalid-feedback">
+                                        <div *ngIf="nic.errors.required">NIC Number is required</div>
+                                    </div>
+                                </div>
+                           
+                                <div class="form-group">
+                              
+                                        <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password..." [ngClass]="{ 'is-invalid': userRegform.submitted && password.invalid }" required minlength="6">
+                                        <div *ngIf="userRegform.submitted && password.invalid" class="invalid-feedback">
+                                                <div *ngIf="password.errors.required">Password is required</div>
+                                                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                                            </div>
+                                </div>
                             
                         </div>
                         <div class="col-md-6">
                                 <div class="form-group">
-                                        <select name="country" type="text" class="form-control-select" id="country">
-                                            <option class="hidden" selected disabled>Please select your Country...</option>
-                                            <option>Srilanka</option>
-                                            <option>Norway</option>
-                                            <option>Switzerland</option>
-                                        </select>
+                                        <input ngModel #lastName="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" placeholder="Last Name..." [ngClass]="{ 'is-invalid': userRegform.submitted && lastName.invalid }" required />
+                                        <div *ngIf="userRegform.submitted && lastName.invalid" class="invalid-feedback">
+                                            <div *ngIf="lastName.errors.required">Last Name is required</div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <select ngModel #city="ngModel" name="city" type="text" class="form-control-select" id="city"  >
-                                            <option value="undefined"  >Please select your City...</option>
-                                            <option>Colombo</option>
-                                            <option>Galle</option>
-                                            <option>Kandy</option>
-                                        </select>
-                                    </div>
+                                            <input ngModel #phone="ngModel" name="phone" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number..." [ngClass]="{ 'is-invalid': userRegform.submitted && phone.invalid }" required>
+                                            <div *ngIf="userRegform.submitted && phone.invalid" class="invalid-feedback">
+                                                <div *ngIf="phone.errors.required">Phone Number is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="drop-down">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                        <div class="form-group">
+                                                                <select  ngModel #country="ngModel" name="country" type="text" class="form-control-select" id="country"  >
+                                                                    <option class="hidden" selected disabled>Please select your Country...</option>
+                                                                    <option>Srilanka</option>
+                                                                    <option>Norway</option>
+                                                                    <option>Switzerland</option>
+                                                                </select>
+                                                                
+                                                            </div>
+                                                    </div>
+                                                  
+                                               
+                                                <div class="col-md-3">
+                                                        <div class="form-group">
+                                                                <select ngModel #city="ngModel" name="city" type="text" class="form-control-select2" id="city"  >
+                                                                    <option value="undefined"  >Please select your City...</option>
+                                                                    <option>Colombo</option>
+                                                                    <option>Galle</option>
+                                                                    <option>Kandy</option>
+                                                                </select>
+                                                            </div>
+                                                </div>
+                         </div>
+                                   
+                                </div>
                              
                            
-                            <div class="form-group">
-                                    <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password">
-                                    <!-- <input type="checkbox" onclick="showpass()">Show Password -->
-                            </div>
-                            <div class="form-group">
+                            
+                            <div class="form-group"> 
                                 <!-- conf password -->
-                                    <input name="password" type="password" class="form-control">
-                            </div>
-                         
+                                    <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" placeholder="Confirm Password..." >
+                                  
+
+                                </div>
+                                <button class="show-pass" type="button"  (click)="showpassword(password)">
+                                        <img  src="assets/img/visible_30px.png" height="20px" width="20px" >
+                                    </button>
                             
                             <input type="submit" class="btnRegister"  formControlName="submit" value="Register" />
                         </div>

@@ -51,7 +51,8 @@ import{TComponent} from './doctor/t/t.component';
 import { MynavComponent } from './doctor/mynav/mynav.component';
 import{AddComplainsComponent} from './doctor/add-complains/add-complains.component';
 import{DeleteCommentComponent} from './doctor/commentsection/delete-comment/delete-comment.component';
-import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component'
+import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component';
+import { Test2Component } from './test2/test2.component';
 
 
 const routes: Routes =[
@@ -84,6 +85,7 @@ const routes: Routes =[
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
     { path: 'test', component:TestComponent},
+    { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
    
