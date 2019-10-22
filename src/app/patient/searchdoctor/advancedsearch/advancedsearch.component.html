@@ -1,115 +1,88 @@
 <div class="wrapper">
-    <div class="page-header page-header-small">
-        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Herbal-Medicine-1.jpg');">
+    <div >
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/a2.jpg'); height: 100px;" >
+      <!-- <img src="assets/img/newlogo.png" height="100px" width="100px" > -->
         </div>
-        <div class="container">
-            <div class="content-center">
-                <h1 class="title">Welcome to jeewaka arana</h1>
-              
-            </div>
-        </div>
+        
+        
+        <div class="txt"><h4>Advanced Doctor Search </h4></div>
+        <hr>
+        <div class="txt">Find Doctors With...</div>
+      
     </div>
 
-    <div class="section section-navbars">
-            <div class="container" id="menu-dropdown">
-                <div class="row">
-                    <div class="col-md-10">
-                        <br>
-                        <nav class="navbar navbar-expand-lg bg-primary">
-                            <div class="container">
-                                <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                          <div ngbDropdown class="dropdown">
-                                              <a class="nav-link dropdown-toggle" ngbDropdownToggle>
-                                                <p>
-                                                    Availability
-                                                </p>
-                                              </a>
-                                              <div ngbDropdownMenu class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Available Any Day</a>
-                                                <a class="dropdown-item" href="#">Available Today</a>
-                                                <a class="dropdown-item" href="#">Available in next 3 days</a>
-                                                <a class="dropdown-item" href="#">Available coming weekend</a>
-                                              </div>
-                                          </div>
-                                        </li>
-                                        <li class="nav-item">
-                                          <div ngbDropdown class="dropdown">
-                                              <a class="nav-link dropdown-toggle" ngbDropdownToggle>
-                                                <p>
-                                                    All Filters
-                                                </p>
-                                              </a>
-                                              <div ngbDropdownMenu class="dropdown-menu">
-                                                    <div class="row" id="checkRadios">
-                                                            <div class="col-sm-6 col-lg-3">
-                                                                <h6 class="category">Gender</h6>
-                                                                <div class="form-check">
-                                                                    <label class="form-check-label">
-                                                                        <input class="form-check-input" type="checkbox">
-                                                                        <span class="form-check-sign"></span>
-                                                                        Male
-                                                                    </label>
-                                                                  </div>  
-                                                                  <div class="form-check">
-                                                                    <label class="form-check-label">
-                                                                      <input class="form-check-input" type="checkbox">
-                                                                      <span class="form-check-sign"></span>
-                                                                      Female
-                                                                  </label>
-                                                                </div>
-                                                            </div>
-                                                        </div> 
-                                                        <div class="inline" id="checkRadios">  
-                                                          <div class="col-sm-6 col-lg-3">
-                                                            <h6 class="category">Consultation Fee</h6>
-                                                            <div class="form-check form-check-radio">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                                                                    <span class="form-check-sign"></span>
-                                                                    Radio is on
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                      </div>
-                                              </div>
-                                          </div>
-                                        </li>
-                                        <li class="nav-item">
-                                          <div ngbDropdown class="dropdown">
-                                              <a class="nav-link dropdown-toggle" ngbDropdownToggle>
-                                                <p>
-                                                    Sort By
-                                                </p>
-                                              </a>
-                                              <div ngbDropdownMenu class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Relevance</a>
-                                                <a class="dropdown-item" href="#">Price - Low to High</a>
-                                                <a class="dropdown-item" href="#">Price - High to Low</a>
-                                                <a class="dropdown-item" href="#">Years of Experience</a>
-                                                <a class="dropdown-item" href="#">Recommendation</a>
-                                              </div>
-                                          </div>
-                                        </li>
-                                        <li class="nav-item">
-                                          <div ngbDropdown class="dropdown">
-                                              <a href="#" class="nav-link">
-                                                <p>
-                                                Show doctors near me
-                                            </p>
-                                                <i class="now-ui-icons location_compass-05"></i>
-                                          </a>
-                                          </div>
-                                        </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
+<div class="row">
+<form #searchform=ngForm >
+  <div class="col1">
+<div class="form-group">
+    <input ngModel #spec="ngModel" name="spec1" type="text" class="form-control" placeholder="Specialist" (keyup)="specFilter(spec.value)" list="suggestions">
+<datalist id="suggestions">
+    <option>Cancer</option>
+    <option>Beauty Spa</option>
+    <option>Skin Care</option>
+</datalist>
+</div>
+</div>
+
+
+<div class="col2">
+<div class="form-group">
+    <input ngModel #position name="position" type="text" class="form-control" placeholder="Position" list="pos-list" >
+    <datalist id="pos-list">
+            <option>Generation</option>
+            <option></option>
+            <option></option>
+        </datalist>
+</div>
+
+
+<!-- 
+<div class="form-group">
+    <input ngModel #position name="position" type="radio" class="form-control"  >
+     <input ngModel #position name="position" type="radio" class="form-control"  >
+      <input ngModel #position name="position" type="radio" class="form-control"  >
+    
+</div> -->
+</div>
+
+
+
+<!-- <div class="form-group">
+    Male    <input ngModel #gender type="radio" class="form-control" name="gender" value="male"  (onClick)="checkGender(gender.value)">
+    Female    <input ngModel #gender type="radio" class="form-control" name="gender" value="female" (onClick)="checkGender(gender.value)" >
+        
+    </div> -->
+
+
+
+
+
+</form>
+</div>
+<div *ngFor="let item of Query | async">
+    Name :{{item.Firstname}}{{item.Lastname}} <br>
+    Email : {{item.Email}}<br>
+    NIC :  {{item.NIC}}<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <footer class="footer footer-default">
+  <!-- <footer class="footer footer-default">
       <div class="container">
           <nav>
               <ul>
@@ -142,4 +115,4 @@
               <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
           </div>
       </div>
-  </footer>
+  </footer> -->

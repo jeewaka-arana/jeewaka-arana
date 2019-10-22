@@ -58,7 +58,7 @@ export class DoctorprofilepageComponent implements OnInit  {
   post$:any;
 
 
-id_current=this.afAuth.auth.currentUser.uid;
+
 
 
 
@@ -182,6 +182,7 @@ formdata=new FormGroup({
    this.post$=doc.data();
 });
  
+
  
  
  
