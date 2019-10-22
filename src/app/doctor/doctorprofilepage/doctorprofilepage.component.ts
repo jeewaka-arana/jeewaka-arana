@@ -139,9 +139,9 @@ formdata=new FormGroup({
 // user: Observable<Doctors>;
 // imageList: any[];
 // rowIndexArray: any[];
-
+my_id:string;
   constructor(   private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
-  
+    this.my_id=afAuth.auth.currentUser.uid;
 //     this.user = this.afAuth.authState.pipe(
 //       switchMap(user => {
 //         if (user) {
@@ -178,7 +178,7 @@ formdata=new FormGroup({
  
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
- this.postsCol.doc('sJ8197FwroSuZepVVnEN4DD9UA13').ref.get().then((doc)=>{
+ this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
    this.post$=doc.data();
 });
  
