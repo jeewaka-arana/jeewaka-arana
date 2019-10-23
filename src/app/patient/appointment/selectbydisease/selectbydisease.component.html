@@ -1,164 +1,142 @@
 <div class="wrapper">
-    <div class="page-header page-header-small">
-        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg6.jpg');">
-        </div>
-        <div class="container">
-            <div class="content-center">
-                <h1 class="title">Schedule an Appointment</h1>
-                <div class="text-center">
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-facebook-square"></i>
-                  </a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-google-plus"></i>
-                  </a>
+        <div class="page-header page-header-small">
+            <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg6.jpg');">
+            </div>
+            <div class="container">
+                <div class="content-center">
+                    <h1 class="title">Schedule an Appointment</h1>
+                    <div class="text-center">
+                      <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-facebook-square"></i>
+                      </a>
+                      <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-google-plus"></i>
+                      </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-    <ol class="progress-steps">
-      <li class="active"><span class="number">&#10003;</span> Choose Doctor</li>
-      <li><span class="number">02</span> Choose Date & Time</li>
-      <li><span class="number">03</span> Verify Booking</li>
-    </ol>
-  </div>
-  <br>
-  <div class="container">
-  <div class="row">
-        <div class="col-sm-6 col-lg-3">
-            <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
-              <div class="input-group-prepend" >
-                <span class="input-group-text">
-                    <i class="fa fa-user-circle"></i>
-                </span>
-              </div>
-                <input type="text" [(ngModel)]="Firstname" (keydown)="filterName('Firstname',Firstname)" class="form-control" placeholder="disease" (focus)="focus=true" (blur)="focus=false">
-                <select ngModel #Specialist="ngModel" name=" Specialist" type="text" class="form-control" id="Specialist"  class="form-control" >
-                        <option class="hidden"  selected disabled>Please select your specialist...</option>
-                        <option>Ayurvedic Hospital </option>
-                        <option>Arthritis</option>
-                        <option>Beauty Spa</option>
-                        <option>cancer</option>
-                        <option>Chronic Ulcers</option>
-                        <option>Cholestrol</option>
-                        <option> Diabetic Ulcers</option>
-                        <option>Diabetes Mellitus</option>
-                        <option>ENT</option>
-                        <option>Fistula</option>
-                        <option>Gynaecological Disorders</option>
-                        <option>Gastritis</option>
-                        <option>Hemorrhoids</option>
-                        <option>Hypertension</option>
-                        <option>Neurological Disorders</option>
-                        <option>Orthopedics</option>
-                        <option>Obesity</option>
-                        <option>Paralysis / Hemiplagia</option>
-                        <option>Pediatrics</option>
-                        <option>Spinal Disorders</option>
-                       <option>Skin Disorders</option>
-                        <option>Urinary Calculi</option>
-                        <option>Urinary Diseases</option>
-                        <option>Varicose Venis</option>
-                       
-                       
-
-                    </select>
-            </div>
-        </div>
-    </div>
-  </div>
-  <div class="row">
-        <div class="col p-3">
-
-<br>
-          <div id="container">
-                
-                
-                <ul class="list">
-                    <ul *ngFor="let result of results">
-                    <li>
-                            <a href="#">{{result.Specialist}}</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li>
-                    <!-- <li>
-                            <a href="#">Disease 2</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li>
-                    <li>
-                            <a href="#">Disease 3</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li>
-                    <li>
-                            <a href="#">Disease 4</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li>
-                    <li>
-                            <a href="#">Disease 5</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li>
-                    <li>
-                            <a href="#">Disease 6</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li>
-                    <li>
-                            <a href="#">Disease 7</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                    </li> -->
-                </ul>
-            </ul>
-            </div> 
-
-           </div>
-        </div>
-
-        
-        <div class="col-md-10">
-                          
-             <ngb-pagination [collectionSize]="50" [(page)]="page" aria-label="Default pagination" class="pagination-primary"></ngb-pagination>
-                            
-        </div>
-              
-
-
-  
-  
-    <footer class="footer footer-default">
+    
         <div class="container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/about-us">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                            MIT License
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright">
-                &copy;
-                {{data | date: 'yyyy'}}, Designed by
-                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+        <ol class="progress-steps">
+          <li class="active"><span class="number">&#10003;</span> Choose Doctor</li>
+          <li><span class="number">02</span> Choose Date & Time</li>
+          <li><span class="number">03</span> Verify Booking</li>
+        </ol>
+      </div>
+      <br>
+      <div class="container">
+        <div class="section section-basic">
+                <div class="container">
+        <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                      <div class="input-group-prepend" >
+                        <span class="input-group-text">
+                            <i class="fa fa-user-circle"></i>
+                        </span>
+                      </div>
+                        <input type="text" [(ngModel)]="Specialist" (keydown)="filterName('Specialist',Specialist)" class="form-control" placeholder="doctor name" (focus)="focus=true" (blur)="focus=false">
+                      </div>
+                </div>        
             </div>
+
         </div>
-    </footer>
-</div>
+    </div>     
+
+
+    
+    <div class="section section-tabs">
+          <div class="container">                  
+                <div class="row">
+                        <div class="col-md-20 col-xl-10" >
+<ul *ngFor="let results of filteredNames">
+    <div class="card" >
+        <div class="row">
+            <div class="img-btn">
+                <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
+            </div>
+            <div class="column">  
+                <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
+                <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
+                </div>
+        </div>
+    </div></ul>
+                        </div>
+                </div>
+            </div>
+    </div>
+      </div>
+
+      
+      <!-- <div class="row">
+            <div class="col p-3">
+    
+    <br>
+              <div id="container">
+                    
+                    
+                    <ul class="list">
+                        <ul *ngFor="let result of results">
+                        <li>
+                                <a href="#">{{result.Specialist}}</a> 
+                                <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
+                        </li>
+                     
+                    </ul>
+                </ul>
+                </div> 
+    
+               </div>
+            </div> -->
+    
+            
+            <div class="col-md-10">
+                              
+                 <ngb-pagination [collectionSize]="50" [(page)]="page" aria-label="Default pagination" class="pagination-primary"></ngb-pagination>
+                                
+            </div>
+                  
+    
+    
+      
+      
+        <footer class="footer footer-default">
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="https://www.creative-tim.com">
+                                Creative Tim
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.creative-tim.com/about-us">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://blog.creative-tim.com">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                                MIT License
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright">
+                    &copy;
+                    {{data | date: 'yyyy'}}, Designed by
+                    <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+                </div>
+            </div>
+        </footer>
+    </div>
+    
