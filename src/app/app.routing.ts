@@ -70,6 +70,7 @@ const routes: Routes =[
     { path: 'doctorview/:id', component: DoctorprofilepageComponent},
     { path: 'doctorview', component: DoctorprofilepageComponent},
     { path: 'doctoradmin', component:DoctoradminpageComponent },
+    { path: 'doctoradmin/:id', component:DoctoradminpageComponent },
     { path: 'signup/sign-patient', component:SignPatientComponent },
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
     { path: 'default', component: WaitingComponent},

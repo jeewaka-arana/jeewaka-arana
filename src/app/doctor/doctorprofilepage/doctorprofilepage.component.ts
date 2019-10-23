@@ -14,6 +14,7 @@ import { firestore } from 'firebase';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
+
 //retrive  data
 interface Doctors{
   DocId:string;
@@ -141,7 +142,9 @@ formdata=new FormGroup({
 // rowIndexArray: any[];
 my_id:string;
   constructor(   private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
-    this.my_id=afAuth.auth.currentUser.uid;
+    // this.my_id=afAuth.auth.currentUser.uid;
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+    console.log(this.my_id);
 //     this.user = this.afAuth.authState.pipe(
 //       switchMap(user => {
 //         if (user) {

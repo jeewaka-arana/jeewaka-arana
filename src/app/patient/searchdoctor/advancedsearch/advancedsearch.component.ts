@@ -16,7 +16,9 @@ interface Doctors{
 })
 export class AdvancedsearchComponent implements OnInit {
   my_test:string; 
-  Gender:string;
+  gender:string;
+  specialist:string;
+  position:string;
 
   postsCol:AngularFirestoreCollection< Doctors>;
   posts:Observable< Doctors[]>;
@@ -30,11 +32,9 @@ export class AdvancedsearchComponent implements OnInit {
 
   constructor(private SearchDoctorService:SearchdoctorService,private fauth:AngularFireAuth,private afs:AngularFirestore) {
     
-    this.postsCol=this.afs.collection('Doctors');
-    this.posts=this.postsCol.valueChanges();
-  //   this.postsCol.doc('sJ8197FwroSuZepVVnEN4DD9UA13').ref.get().then((doc)=>{
-  //     this.post$=doc.data();
-  //  });
+    // this.postsCol=this.afs.collection('Doctors');
+    // this.posts=this.postsCol.valueChanges();
+  
     
 
   // this.QueryCol=afs.collection('Doctors', ref => ref.where('Specialist', '==', 'Cancer'));
@@ -45,24 +45,33 @@ export class AdvancedsearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  specFilter(spec:string){
-    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Specialist', '==', spec));
+  specFilter(data:string){
+this.specialist=data;
+    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Specialist', '==', data));
   this.Query=this.QueryCol.valueChanges();
+  // this.applyFilter();
   }
 
+  posFilter(data:string){
+    this.position=data;
+    // this.applyFilter();
+    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Position', '==', data));
+    this.Query=this.QueryCol.valueChanges();
+  }
 
-  // checkGender(gender:string){
-    
-  //   if (gender=="male"){
-  //    console.log("male");
-      
-  //   }
+  genderFilter(data:string){
+    this.gender=data;
+    // this.applyFilter();
+    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Gender', '==',data));
+    this.Query=this.QueryCol.valueChanges();
+  }
 
-  //   else{
-  //     this.Gender="Female";
-      
-  //   }
-  // }
+ applyFilter(){
+   
+  this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Position','==',this.position).where('Gender', '==',this.gender).where('Specialist', '==',this.specialist));
+ 
+  this.Query=this.QueryCol.valueChanges();
+ }
 
 
   test(data:string)

@@ -21,21 +21,40 @@
     <option>Cancer</option>
     <option>Beauty Spa</option>
     <option>Skin Care</option>
+    <option>Obesity</option>
 </datalist>
 </div>
 </div>
 
 
-<div class="col2">
+<div class="col1">
 <div class="form-group">
-    <input ngModel #position name="position" type="text" class="form-control" placeholder="Position" list="pos-list" >
+    <input ngModel #position name="position" type="text" class="form-control" placeholder="Position" (keyup)="posFilter(position.value)" list="pos-list" >
     <datalist id="pos-list">
             <option>Generation</option>
-            <option></option>
-            <option></option>
+            <option>Qualified</option>
+            <option>Both</option>
         </datalist>
 </div>
-
+</div>
+<div class="col1">
+<div class="form-group">
+        <input ngModel #gender name="gender2" type="text" class="form-control" placeholder="Gender" (keyup)="genderFilter(gender.value)" list="gender-list" >
+        <datalist id="gender-list">
+                <option>Male</option>
+                <option>Female</option>
+                
+            </datalist>
+    </div>
+</div>
+<!-- <div class="form-group">
+    <input ngModel #position name="position" type="text" class="form-control" placeholder="Position" (keyup)="posFilter(position.value)" list="pos-list" >
+    <datalist id="pos-list">
+            <option>Generation</option>
+            <option>Qualified</option>
+            <option>Both</option>
+        </datalist>
+</div> -->
 
 <!-- 
 <div class="form-group">
@@ -44,7 +63,7 @@
       <input ngModel #position name="position" type="radio" class="form-control"  >
     
 </div> -->
-</div>
+
 
 
 
@@ -59,12 +78,33 @@
 
 
 </form>
-</div>
-<div *ngFor="let item of Query | async">
-    Name :{{item.Firstname}}{{item.Lastname}} <br>
-    Email : {{item.Email}}<br>
-    NIC :  {{item.NIC}}<br>
 
+</div>
+<br>
+<br>
+<div *ngFor="let item of Query | async">
+        <div class="card">
+            <div class="row">
+                <div class="img">
+                <img src="https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg" alt="Avatar"  class="avatar">
+                </div>
+                <div class="column">
+                <div class="container">
+                  <h4><b>{{item.Firstname}} {{item.Lastname}}</b></h4> 
+                  <p>{{item.Email}}</p> 
+                  <p>Experienced Years: {{item.expyear}}</p> 
+                 
+                </div>
+                <button [routerLink]="['/doctorview',item.Userid]" class="btn btn-primary btn-round ico"><i class="now-ui-icons users_single-02"></i>View Profile</button>
+                <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Appointment</button>
+                <!-- <button [routerLink]="['/doctorview',results.NIC]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
+                <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Appointment</button>
+                 -->
+              </div>
+              
+              </div>
+            </div>
+   
 </div>
 
 
