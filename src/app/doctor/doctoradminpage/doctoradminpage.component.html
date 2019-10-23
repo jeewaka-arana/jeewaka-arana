@@ -37,7 +37,7 @@
       
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="/index" >
+            <a class="nav-link" href="/docAppoinment" >
                 <i class="now-ui-icons ui-1_calendar-60"></i>
                 <p>Appoinments</p>
             </a>
@@ -57,8 +57,8 @@
               <p>Search</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item  " href="/doctorview" >Search By Name</a>
-            <a class="dropdown-item" href="/doctoradmin">Search By Diseases</a>
+            <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
+            <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
             
           </div>
         </li>
@@ -71,7 +71,7 @@
             <p>Profile</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " href="/doctorview" > View Profile </a>
+            <a class="dropdown-item " [routerLink]="['/doctorview',my_id]" > View Profile </a>
             <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
             
           </div>
@@ -387,8 +387,8 @@
                                 <div class="form-group">
 
                                   
-                       
-                                  <label class="col-lg-3 control-label"><b>Address:</b></label>
+                                  <label class="col-lg-3 control-label"><b>UserId is check this: {{my_id}}</b></label>
+                                  <label class="col-lg-3 control-label"><b>Address: </b></label>
                                   <div class="col-lg-8">
                                         <textarea rows="5" cols="50" formControlName="Address" value=""></textarea>
                                       

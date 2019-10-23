@@ -10,6 +10,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 
+import { firestore } from 'firebase';
+import { switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 
 //retrive  data
@@ -55,7 +58,9 @@ export class DoctorprofilepageComponent implements OnInit  {
   posts:Observable< Doctors[]>;
   post$:any;
 
-  
+
+
+
 
 
   DocId:string;
@@ -132,13 +137,36 @@ formdata=new FormGroup({
 
 
 
+// user: Observable<Doctors>;
 // imageList: any[];
 // rowIndexArray: any[];
-
+my_id:string;
   constructor(   private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
-  
+    // this.my_id=afAuth.auth.currentUser.uid;
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+    console.log(this.my_id);
+//     this.user = this.afAuth.authState.pipe(
+//       switchMap(user => {
+//         if (user) {
+//           console.log("hey");
+//           this.posts= this.afs.doc<Doctors[]>(`Doctors/${user.uid}`).valueChanges();
+//           this.postsCol=this.afs.collection('Doctors');
+//           this.posts=this.postsCol.valueChanges();
+//           this.postsCol.doc(user.uid).ref.get().then((doc)=>{
+//           this.post$=doc.data();
+// });
+ 
+         
+//         } else {
+//           return of(null)
+//         }
+//       })
+//     )
 
 
+    // const data=afs.collection('Doctors', ref => ref.where('Userid', '==', this.id_current));
+   
+ 
   }
 
   
@@ -153,10 +181,11 @@ formdata=new FormGroup({
  
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
- this.postsCol.doc('sJ8197FwroSuZepVVnEN4DD9UA13').ref.get().then((doc)=>{
+ this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
    this.post$=doc.data();
- });
+});
  
+
  
  
  

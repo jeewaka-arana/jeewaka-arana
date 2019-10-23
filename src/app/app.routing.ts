@@ -51,7 +51,10 @@ import{TComponent} from './doctor/t/t.component';
 import { MynavComponent } from './doctor/mynav/mynav.component';
 import{AddComplainsComponent} from './doctor/add-complains/add-complains.component';
 import{DeleteCommentComponent} from './doctor/commentsection/delete-comment/delete-comment.component';
+import { Test2Component } from './test2/test2.component';
 import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page/both-comment-page.component'
+import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
+import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
 
 
@@ -65,7 +68,9 @@ const routes: Routes =[
     { path: 'user', component: LoginComponent },
     { path: 'home', component:HomeComponent },
     { path: 'doctorview/:id', component: DoctorprofilepageComponent},
+    { path: 'doctorview', component: DoctorprofilepageComponent},
     { path: 'doctoradmin', component:DoctoradminpageComponent },
+    { path: 'doctoradmin/:id', component:DoctoradminpageComponent },
     { path: 'signup/sign-patient', component:SignPatientComponent },
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
     { path: 'default', component: WaitingComponent},
@@ -86,6 +91,7 @@ const routes: Routes =[
     { path: 'confirmation', component:ConfirmationComponent},
     { path: 'here', component:HeremapComponent},
     { path: 'test', component:TestComponent},
+    { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
    
@@ -115,6 +121,8 @@ const routes: Routes =[
 {path:'complain',component:AddComplainsComponent},
 {path:'deletecomment',component:DeleteCommentComponent},
 {path:'bothcomment',component:BothCommentPageComponent},
+{path:'docAppoinment',component:DocAppoinmentComponent},
+{path:'viewappoinment',component:ViewappoinmentComponent}
     ]
 
 

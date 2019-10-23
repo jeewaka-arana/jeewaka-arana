@@ -45,14 +45,13 @@ export class DeleteCommentComponent implements OnInit {
       })
     })
   }
-//
+
+
+
 getPost(postId) {
   this.commentCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
   this.comment = this.commentCol.valueChanges();
 
-
-  //
- 
 }
   
   deletePost(postId) {

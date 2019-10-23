@@ -62,22 +62,13 @@ import { TestComponent } from './test/test.component';
 import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { AdvancedsearchComponent } from './patient/searchdoctor/advancedsearch/advancedsearch.component';
-
-
-
 import { UploadTaskComponent } from './doctor/pictures/upload-task/upload-task.component';
 import { CommentComponent } from './doctor/commentsection/comment/comment.component';
-
-
- import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
+import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
 import { ProfileComponent } from './doctor/pictures/profile/profile.component';
-
-
-
 import { TComponent } from './doctor/t/t.component';
 import { VideoComponent } from './doctor/pictures/video/video.component';
 import { UploadVideoComponent } from './doctor/pictures/upload-video/upload-video.component';
-
 import { MynavComponent } from './doctor/mynav/mynav.component';
 import { GetComplainAdminComponent } from './doctor/get-complain-admin/get-complain-admin.component';
 import { AddComplainsComponent } from './doctor/add-complains/add-complains.component';
@@ -90,6 +81,9 @@ import{DatePipe} from '@angular/common';
 
 import { GooglemapComponent } from './patient/googlemap/googlemap.component';
 import { StarreviewComponent } from './patient/starreview/starreview.component';
+import { Test2Component } from './test2/test2.component';
+import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
+import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
 
 
@@ -173,6 +167,9 @@ import { HeremapComponent } from './patient/heremap/heremap.component';
 
         GooglemapComponent,
         StarreviewComponent,
+        Test2Component,
+        DocAppoinmentComponent,
+        ViewappoinmentComponent,
         HeremapComponent,
      
     ],
