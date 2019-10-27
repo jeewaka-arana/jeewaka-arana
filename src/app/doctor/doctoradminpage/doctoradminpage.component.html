@@ -146,6 +146,8 @@
   
               
   
+        <div class="row">
+          <div class="col col-md-5">
   
 <div>
     
@@ -153,6 +155,38 @@
    <app-profile></app-profile>
 
 </div>
+</div>
+
+<div class="col col-md-5"> 
+  <div class="card" style="width:25rem;background-color: #ffbb99;margin-right:27rem;">
+      <div class="formGroup" >
+                      
+          <form [formGroup]="formdata" (ngSubmit) = "savenote(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
+             
+              <div class="form-group">
+
+                 
+                      <label class="col-md-9 control-label"><b>Upload special Note(If any)  </b></label>
+            <div class="col-lg-10">
+<textarea rows="15" cols="45"  formControlName="note" ></textarea>
+
+
+
+</div>
+<div  class="form-group" >
+<input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savenote()"/>         
+</div> 
+
+</div> 
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
               <div class="card" style="width:75rem;margin-left: 5px;" >
                 <div class="card-body" >
 
@@ -416,7 +450,7 @@
                                   
                                 </div> -->
 
-                    
+<!--                     
                                 <div class="container" class="center">
                                     <label class="col-md-5 control-label"><b>Upload special Note(If any):</b></label>
                           <div class="col-lg-8">
@@ -424,12 +458,12 @@
   
   
        
-    </div>
+    </div> -->
     <div  class="form-group" >
         <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
         </div> 
   
-  </div>
+  
  
 
   </form>

@@ -175,6 +175,10 @@ sut3:new FormControl(''),
   savedisease(data){
     this.CrudService.updateProfile(data);
   }
+  
+  savenote(data){
+    this.CrudService.updateProfile(data);
+  }
   ///////
  
   submitcomplain(data){
