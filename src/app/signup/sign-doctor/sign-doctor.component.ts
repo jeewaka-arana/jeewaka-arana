@@ -12,7 +12,7 @@ export class SignDoctorComponent implements OnInit {
  
 
 
-
+  City: any = ['Florida', 'South Dakota', 'Tennessee', 'Michigan'];
   authError: any;
   tom=false;
   constructor(private auth: AuthService) { }

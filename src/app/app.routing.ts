@@ -56,6 +56,7 @@ import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page
 import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
+import { TimeComponent } from './test/time/time.component';
 
 
 const routes: Routes =[
@@ -122,7 +123,8 @@ const routes: Routes =[
 {path:'deletecomment',component:DeleteCommentComponent},
 {path:'bothcomment',component:BothCommentPageComponent},
 {path:'docAppoinment',component:DocAppoinmentComponent},
-{path:'viewappoinment',component:ViewappoinmentComponent}
+{path:'viewappoinment',component:ViewappoinmentComponent},
+{path:'timePicker',component:TimeComponent}
     ]
 
 

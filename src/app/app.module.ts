@@ -85,6 +85,9 @@ import { Test2Component } from './test2/test2.component';
 import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
+import { TimePickerDirective } from './core/directives/time-picker.directive';
+import { TimeComponent } from './test/time/time.component';
+import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 
 
 
@@ -171,6 +174,9 @@ import { HeremapComponent } from './patient/heremap/heremap.component';
         DocAppoinmentComponent,
         ViewappoinmentComponent,
         HeremapComponent,
+        TimePickerDirective,
+        TimeComponent,
+        ShowpasswordDirective,
      
     ],
     imports: [
