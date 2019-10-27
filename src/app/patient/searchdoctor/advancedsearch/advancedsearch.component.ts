@@ -47,23 +47,23 @@ export class AdvancedsearchComponent implements OnInit {
 
   specFilter(data:string){
 this.specialist=data;
-    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Specialist', '==', data));
-  this.Query=this.QueryCol.valueChanges();
-  // this.applyFilter();
+  //   this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Specialist', '==', data));
+  // this.Query=this.QueryCol.valueChanges();
+  this.applyFilter();
   }
 
   posFilter(data:string){
     this.position=data;
-    // this.applyFilter();
-    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Position', '==', data));
-    this.Query=this.QueryCol.valueChanges();
+    this.applyFilter();
+    // this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Position', '==', data));
+    // this.Query=this.QueryCol.valueChanges();
   }
 
   genderFilter(data:string){
     this.gender=data;
-    // this.applyFilter();
-    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Gender', '==',data));
-    this.Query=this.QueryCol.valueChanges();
+    this.applyFilter();
+    // this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Gender', '==',data));
+    // this.Query=this.QueryCol.valueChanges();
   }
 
  applyFilter(){

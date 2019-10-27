@@ -101,11 +101,12 @@
                             
                             <div class="form-group"> 
                                 <!-- conf password -->
-                                    <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" placeholder="Confirm Password..." >
+                                    <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" placeholder="Confirm Password..."  appShowpassword>
                                   
 
                                 </div>
-                                <button class="show-pass" type="button"  (click)="showpassword(password)">
+                              
+                                <button class="show-pass" type="button" (click)="setup()"  >
                                         <img  src="assets/img/visible_30px.png" height="20px" width="20px" >
                                     </button>
                             

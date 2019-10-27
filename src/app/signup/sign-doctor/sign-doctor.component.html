@@ -89,6 +89,7 @@
                                                 </div>
 
                                                
+                                                
                             </div>
                             <div class="col-md-6">
                                     <div class="form-group">
@@ -104,15 +105,19 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                    <select ngModel #city="ngModel" name="city" type="text" class="browser-default custom-select" id="city"  >
-                                                        <option class="hidden"  selected >Please select your City...</option>
-                                                        <option >Colombo</option>
-                                                        <option >Galle</option>
-                                                        <option >Kandy</option>
-                                                    </select>
-                                                </div>
-                
+                                            <!-- <div class="form-group">
+                                                    <input ngModel #city2="ngModel" name="city2" type="text" class="browser-default custom-select" placeholder="Select Your City..." list="cities"  >
+                                                       <datalist id="cities">
+                                                           <option>1</option>
+                                                           <option>2</option>
+                                                           <option>3</option>
+                                                       </datalist>
+                                                    
+                                                </div> -->
+                                                <select class="custom-select" (change)="changeCity($event)" formControlName="cityName">
+                                                    <option value="" disabled>Choose your city</option>
+                                                    <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
+                                                 </select>
                                 
                                 <div  class="form-group" >
                                     <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..."  >
