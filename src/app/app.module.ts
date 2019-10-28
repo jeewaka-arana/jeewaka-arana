@@ -85,6 +85,8 @@ import { Test2Component } from './test2/test2.component';
 import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
+import { FlexmonsterPivotModule } from 'ng-flexmonster';
+
 
 
 
@@ -182,6 +184,7 @@ import { HeremapComponent } from './patient/heremap/heremap.component';
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
+        FlexmonsterPivotModule,
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
