@@ -1,13 +1,12 @@
-<div class="form-group">
-    <div class="slidecontainer">
-            <label>Experienced Years</label>
-            <input ngModel #expyears type="range" min="1" max="100" value="" class="slider" (input)="slider(expyears.value)" id="myRange">
-            
-          </div>
+<app-time></app-time>
 
-          
+<button (click)="addNew()">Add </button>
+<div *ngFor="let item of items.slice(0,4);">
+
+
+  <app-time></app-time>
+
 </div>
 
-<input type="range" min="30" max="300" value="30" (input)="valueChanged($event.target.value)">
-
+   
 
