@@ -23,14 +23,14 @@
             "styles": [
               "src/styles.scss",
               "src/assets/sass/now-ui-kit.scss",
-              "src/assets/css/demo.css",
-              "styles.css", 
-	            "/node_modules/flexmonster/flexmonster.min.css" 
+              "src/assets/css/demo.css"
+             
+	           
 
             ],
             "scripts": [
-              "node_modules/rellax/rellax.min.js",
-              "/node_modules/flexmonster/flexmonster.full.js"
+              "node_modules/rellax/rellax.min.js"
+             
             ]
           },
           "configurations": {
