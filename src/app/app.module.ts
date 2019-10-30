@@ -89,6 +89,12 @@ import { TimePickerDirective } from './core/directives/time-picker.directive';
 import { TimeComponent } from './test/time/time.component';
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 import { ReportComponent } from './doctor/report/report.component';
+import { FlexmonsterPivotModule } from 'ng-flexmonster';
+
+import { HeremapComponent } from './patient/heremap/heremap.component';
+import { TimePickerDirective } from './core/directives/time-picker.directive';
+import { TimeComponent } from './test/time/time.component';
+import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 
 
 
@@ -190,6 +196,7 @@ import { ReportComponent } from './doctor/report/report.component';
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
+        FlexmonsterPivotModule,
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features

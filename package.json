@@ -41,6 +41,7 @@
     "jspdf": "^1.5.3",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "lesshat": "^4.1.0",
+    "ng-flexmonster": "^2.7.17",
     "ng-multiselect-dropdown": "^0.2.6",
     "ng2-nouislider": "1.7.13",
     "ngx-toastr": "^11.1.0",
