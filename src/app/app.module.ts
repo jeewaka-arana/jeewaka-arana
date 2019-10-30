@@ -88,6 +88,7 @@ import { HeremapComponent } from './patient/heremap/heremap.component';
 import { TimePickerDirective } from './core/directives/time-picker.directive';
 import { TimeComponent } from './test/time/time.component';
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
+import { ReportComponent } from './doctor/report/report.component';
 
 
 
@@ -177,6 +178,7 @@ import { ShowpasswordDirective } from './core/directives/showpassword.directive'
         TimePickerDirective,
         TimeComponent,
         ShowpasswordDirective,
+        ReportComponent,
      
     ],
     imports: [
