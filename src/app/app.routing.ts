@@ -35,6 +35,9 @@ import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { DoclistComponent } from './admin/doclist/doclist.component';
 import { EditprofileComponent } from './admin/editprofile/editprofile.component';
+import { DocviewComponent } from './admin/doclist/docview/docview.component';
+import { ImagelistComponent } from './admin/imagelist/imagelist.component';
+import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -61,7 +64,14 @@ const routes: Routes =[
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'login', component: UserloginComponent},
-    { path: 'admin', component:AdminComponent },
+    { path: 'admin', component:AdminComponent ,children:[
+        
+        { path: 'imagelist', component:ImageListComponent }
+        // {path:'editprofile',component:EditprofileComponent}
+
+    ]},
+    {path:'admin/editprofile',component:EditprofileComponent},
+    {path:'adminlogin',component:AdminloginComponent},
     { path: 'admin/doclist', component:DoclistComponent },
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
@@ -72,7 +82,8 @@ const routes: Routes =[
     {path:'image' ,component:ImageComponent,children:[
     {path:'upload',component:ImageComponent},//image/upload
     {path:'list',component:ImageListComponent}, 
-    {path:'editprofile',component:EditprofileComponent}
+    
+    {path:'docview',component:DocviewComponent}
 ]},
 
 {path:'notepad',component:NotepadComponent},

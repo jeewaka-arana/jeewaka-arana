@@ -117,5 +117,16 @@ export class AuthService {
   logout() {
     return this.afAuth.auth.signOut();
   }
+  adminlogin( username: string, password: string) {
+    this.afAuth.auth.signInWithEmailAndPassword(username, password)
+      .catch(error => {
+        this.eventAuthError.next(error);
+      })
+      .then(userCredential => {
+        if(userCredential) {
+          this.router.navigate(['/admin']);
+        }
+      })
+  }
  
 }

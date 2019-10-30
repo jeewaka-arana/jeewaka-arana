@@ -1,0 +1,50 @@
+
+<div class="page-header" filter-color="orange">
+  <div class="page-header-image" style="background-image:url(https://monodomo.com/free-wallpapers/ayurveda-wallpapers-desktop-background-For-Free-Wallpaper.jpg)"></div>
+  <div class="container">
+      <div class="col-md-4 content-center">
+          <div class="card card-login card-plain">
+              <form class="form" method="" action="">
+                  <div class="header header-primary text-center">
+                      <!-- <div class="logo-container">
+                          <img src="assets/img/now-logo.png" alt=""  width="100px" height="100px" style="align-content: center">
+                      </div> -->
+                  </div>
+                  <div class="content">
+                    <div class="wrapper">
+                        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">   
+                            
+                         <div class="row" *ngIf="authError">
+                         <div class="col-12 alert alert-danger">username or password is wrong. Try again</div>
+                         </div>
+                          <h3 class="heading">Admin Login</h3>
+                          <div class="inputdiv"> <input ngModel #username="ngModel" name="username" type="username" class="form-control" placeholder="username...">
+                          </div>
+
+                          <div class="inputdiv"><input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password">     
+                          </div>
+
+                          
+                            <label class="checkbox">
+                            <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+                          </label>
+                          <br>
+                          <button class="btn btn-primary" type="submit">Login</button>
+                      
+                        </form>
+                      </div>
+                  </div>
+
+                  
+                  
+                  <div class="pull-left">
+                      <h6>
+                          <a href="#pablo" class="link">Need Help?</a>
+                      </h6>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+ 
+</div>

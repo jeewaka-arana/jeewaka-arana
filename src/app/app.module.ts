@@ -43,7 +43,7 @@ import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
-import { from } from 'rxjs';
+
 import { NoteditComponent } from './doctor/notedit/notedit.component';
 import { AuthService } from './core/auth.service';
 import { TestComponent } from './test/test.component';
@@ -51,6 +51,11 @@ import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { DoclistComponent } from './admin/doclist/doclist.component';
 import { EditprofileComponent } from './admin/editprofile/editprofile.component';
+import { DocviewComponent } from './admin/doclist/docview/docview.component';
+import { ImagelistComponent } from './admin/imagelist/imagelist.component';
+import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -86,6 +91,9 @@ import { EditprofileComponent } from './admin/editprofile/editprofile.component'
         PatLoginComponent,
         DoclistComponent,
         EditprofileComponent,
+        DocviewComponent,
+        ImagelistComponent,
+        AdminloginComponent
 
     ],
     imports: [
