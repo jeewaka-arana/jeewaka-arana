@@ -1,0 +1,33 @@
+
+
+<div id="content" #content>
+
+     <h1 style="margin-left: 23rem;">FULL REPORT</h1>
+     <h3 style="margin-left: 27rem;">{{today | date}}</h3>
+     <br><br><br>
+     <div>
+<h4 style="margin-left: 29rem;font-weight: bolder;;">Your Patients</h4><br><br>
+          <ul *ngFor="let app of apps | async"> 
+              <div class="col col-md-13"> 
+                 <h5>Patient Name -{{app.pname}}</h5> 
+                 <h5>Telephone Number -{{app.tp}} </h5> 
+                 <h5>Disease -{{app.disease}}</h5>
+                 <h5>Date - {{app.date}}</h5>
+                 <h5>Time - {{app.time}}</h5>
+                  <br>
+                  <hr><br>
+                  </div>
+ 
+        </ul>
+        </div>
+     </div>
+
+
+     <!--  -->
+
+     <h4 style="margin-left: 29rem;font-weight: bolder;;">Appoinments Done By You</h4><br><br>
+
+
+
+
+     <button (click)="downloadPDF()">Export  PDF</button>

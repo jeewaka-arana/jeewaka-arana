@@ -57,6 +57,7 @@ import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-app
 import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
 import { TimeComponent } from './test/time/time.component';
+import { ReportComponent } from './doctor/report/report.component';
 
 
 const routes: Routes =[
@@ -124,7 +125,8 @@ const routes: Routes =[
 {path:'bothcomment',component:BothCommentPageComponent},
 {path:'docAppoinment',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
-{path:'timePicker',component:TimeComponent}
+{path:'timePicker',component:TimeComponent},
+{path:'report',component:ReportComponent},
     ]
 
 
