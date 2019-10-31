@@ -92,6 +92,7 @@ import { ReportComponent } from './doctor/report/report.component';
 
 
 
+
 import { DoclistComponent } from '../app/admin/doclist/doclist.component';
 import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
 
