@@ -89,10 +89,15 @@ import { TimePickerDirective } from './core/directives/time-picker.directive';
 import { TimeComponent } from './test/time/time.component';
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 import { ReportComponent } from './doctor/report/report.component';
-import { FlexmonsterPivotModule } from 'ng-flexmonster';
 
 
 
+
+import { DoclistComponent } from '../app/admin/doclist/doclist.component';
+import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
+
+// import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
+import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 
 
 @NgModule({
@@ -171,6 +176,12 @@ import { FlexmonsterPivotModule } from 'ng-flexmonster';
        
     
         AdvancedsearchComponent,
+        DoclistComponent,
+        EditprofileComponent,
+        // DocviewComponent,
+        // ImagelistComponent,
+        // AdminloginComponent,
+        DocacceptComponent,
 
         GooglemapComponent,
         StarreviewComponent,
@@ -193,7 +204,6 @@ import { FlexmonsterPivotModule } from 'ng-flexmonster';
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
-        FlexmonsterPivotModule,
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
         AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
