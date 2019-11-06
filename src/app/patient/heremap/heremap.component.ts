@@ -10,6 +10,9 @@ declare var H: any;
 })
 export class HeremapComponent implements OnInit {
 
+  private ui: any;
+private search: any;
+
   @ViewChild("map")
     public mapElement: ElementRef;
 
@@ -34,7 +37,9 @@ export class HeremapComponent implements OnInit {
     private platform: any;
     private map: any;
 
-    public constructor() { }
+    public constructor() { 
+      
+    }
 
  
     public ngOnInit(){
@@ -42,7 +47,9 @@ export class HeremapComponent implements OnInit {
         "app_id": this.appId,
         "app_code": this.appCode
     });
+    this.search = new H.places.Search(this.platform.getPlacesService());
     // throw new Error("Method not implemented.");
+    this.places("Colombo")
   }
 
   public ngAfterViewInit() {
@@ -55,6 +62,31 @@ export class HeremapComponent implements OnInit {
             center: { lat: this.lat, lng: this.lng }
         }
     );
+    let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
+    this.ui = H.ui.UI.createDefault(this.map, defaultLayers);
+}
+
+public places(query: string) {
+  this.map.removeObjects(this.map.getObjects());
+  this.search.request({ "q": query, "at": this.lat + "," + this.lng }, {}, data => {
+      for(let i = 0; i < data.results.items.length; i++) {
+          this.dropMarker({ "lat": data.results.items[i].position[0], "lng": data.results.items[i].position[1] }, data.results.items[i]);
+      }
+  }, error => {
+      console.error(error);
+  });
+}
+
+private dropMarker(coordinates: any, data: any) {
+  let marker = new H.map.Marker(coordinates);
+  marker.setData("<p>" + data.title + "<br>" + data.vicinity + "</p>");
+  marker.addEventListener('tap', event => {
+      let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
+          content: event.target.getData()
+      });
+      this.ui.addBubble(bubble);
+  }, false);
+  this.map.addObject(marker);
 }
   
 

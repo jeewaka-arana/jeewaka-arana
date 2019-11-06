@@ -91,7 +91,7 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
-    { path: 'here', component:HeremapComponent},
+    { path: 'here/:City', component:HeremapComponent},
     { path: 'test', component:TestComponent},
     { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
@@ -102,7 +102,7 @@ const routes: Routes =[
 {path:'master',component:DoctorprofilepageComponent},
 
 {path:'comment',component:CommentComponent},
-    { path: 'googlemap', component:GooglemapComponent},
+    { path: 'googlemap/:City', component:GooglemapComponent},
     { path: 'star' , component:StarreviewComponent },
     
     

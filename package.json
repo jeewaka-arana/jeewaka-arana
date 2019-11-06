@@ -34,7 +34,6 @@
     "copy-webpack-plugin": "5.0.1",
     "core-js": "2.6.5",
     "firebase": "^6.3.5",
-   
     "font-awesome": "4.7.0",
     "geofire": "^5.0.1",
     "geofirex": "0.0.6",
