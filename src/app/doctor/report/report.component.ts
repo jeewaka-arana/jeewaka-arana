@@ -4,6 +4,13 @@ import { Options } from 'selenium-webdriver/ie';
 import{AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import{Observable} from 'rxjs/Observable';
 
+import 'rxjs/add/operator/map';
+import{CrudService} from 'app/core/crud.service';
+import { Router } from '@angular/router';
+import {AuthService} from '../../core/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+
 interface Order{
   Pname:string;
   date:string;
@@ -45,11 +52,20 @@ export class ReportComponent implements OnInit {
  
  doc.save('Report.pdf');
  }
-  constructor(private afs:AngularFirestore) { }
+
+ my_id:string;
+  constructor(private afs:AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) { 
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(7);
+    console.log(this.my_id);
+  }
 
   ngOnInit() {
-    this.appCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('viewappoinment');
+    this.appCol = this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment');
 this.apps = this.appCol.valueChanges();
+
+//
+
+
   }
 
 }
