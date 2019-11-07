@@ -18,4 +18,5 @@ export class Searchdoctor {
     firstname : string;
     lastname : string;
     number : number;
+    ExpYears : number;
 }

@@ -32,58 +32,7 @@
                                               </div>
                                           </div>
                                         </li>
-                                        <li class="nav-item">
-                                          <div ngbDropdown class="dropdown">
-                                              <a class="nav-link dropdown-toggle" ngbDropdownToggle>
-                                                <p>
-                                                    All Filters
-                                                </p>
-                                              </a>
-                                              <div ngbDropdownMenu class="dropdown-menu">
-                                                    <div class="row" id="checkRadios">
-                                                            <div class="col-sm-6 col-lg-3">
-                                                                <h6 class="category">Gender</h6>
-                                                                <div class="form-check">
-                                                                    <label class="form-check-label">
-                                                                        <input class="form-check-input" type="checkbox">
-                                                                        <span class="form-check-sign"></span>
-                                                                        Male
-                                                                    </label>
-                                                                  </div>  
-                                                                  <div class="form-check">
-                                                                    <label class="form-check-label">
-                                                                      <input class="form-check-input" type="checkbox">
-                                                                      <span class="form-check-sign"></span>
-                                                                      Female
-                                                                  </label>
-                                                                </div>
-                                                            </div>
-                                                        </div> 
-                                                        <div class="inline" id="checkRadios">  
-                                                          <div class="col-sm-6 col-lg-3">
-                                                            <h6 class="category">Position</h6>
-                                                            <div class="form-check form-check-radio">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                                                                    <span class="form-check-sign"></span>
-                                                                    Qualified
-                                                                </label>
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                                                                    <span class="form-check-sign"></span>
-                                                                   Generation
-                                                                </label>
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                                                                    <span class="form-check-sign"></span>
-                                                                    both
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                      </div>
-                                              </div>
-                                          </div>
-                                        </li>
+                                        
                                         <li class="nav-item">
                                           <div ngbDropdown class="dropdown">
                                               <a class="nav-link dropdown-toggle" ngbDropdownToggle>
@@ -93,11 +42,9 @@
                                               </a>
                                               <div ngbDropdownMenu class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Relevance</a>
-                                                <a class="dropdown-item" target="_blank"  (click)="send()">Price - Low to High</a>
-                                                <a class="dropdown-item" target="_blank"  (click)="send2()">Price - High to Low</a>
-                                                <a class="dropdown-item" href="#">Years of Experience</a>
-                                                <a class="dropdown-item" href="#">Recommendation</a>
-                                                <a class="dropdown-item" href="#">Ratings</a>
+                                                <a class="dropdown-item" target="_blank"  (click)="send()">Years of Experience(Low to High)</a>
+                                                <a class="dropdown-item" target="_blank"  (click)="send2()">Years of Experience(High to Low)</a>
+                                                <a class="dropdown-item" target="_blank">Recommendation and Ratings</a>
                                               </div>
                                           </div>
                                         </li>
@@ -149,13 +96,13 @@
           </div>
             <input type="text" [(ngModel)]="City" (keydown)="filterArea('City',City)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
           </div>
-          <div class="row">
-        <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send()"> sort low to high</button>
-        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send2()"> sort high to low</button> -->
-        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="createPoint()">Create Me</button>
+          <!-- <div class="row"> -->
+        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send()"> sort low to high</button>
+        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send2()"> sort high to low</button>
+        <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="createPoint()">Create Me</button> -->
         <button class="btn btn-primary btn-simple btn-round" type="button" routerLink="/adsearch">Advance search</button>
-        <button (click)="createPoint1(38, -119)">Create Me 1</button> 
-       </div>
+        <!-- <button (click)="createPoint1(38, -119)">Create Me 1</button>  -->
+       <!-- </div> -->
     </div>
     <!-- <div class="row">
       <app-starreview [doctorId]="doctorId" [patientId]="patientId"></app-starreview>
@@ -211,15 +158,16 @@
                 </div>
                 <div class="column">  
                     <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
-                    <h6>{{results.RegistrationNumber}}</h6>
+                    <!-- <h6>{{results.RegistrationNumber}}</h6> -->
                     <p>{{results.Email}}</p>
-                    <p>{{results.expyear}}</p>
-                    <p>Dietitian/Nutritionist, Sports Nutritionist</p>
-                    <p> Years Experience Overall  (34 years as specialist)</p>
-                    <p>Apollo Spectra Hospitals</p>
+                    <p>Years as specialist: {{results.ExpYears}} </p>
+                    <p>Address: {{results.City}}</p>
+                    <p> Contact no: {{results.PhoneNumber}}</p>
+                    <p>{{results.position}}</p>
                     <button [routerLink]="['/doctorview',results.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
                     <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Appointment</button>
-                    </div>
+                    <button [routerLink]="['/googlemap',results.City]" class="btn btn-primary btn-round ico" type="button"> View on Map</button> 
+                  </div>
             </div>
         </div></ul>
                             </div>
