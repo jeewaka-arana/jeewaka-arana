@@ -26,7 +26,7 @@ export class AuthService {
 
  
 
-  pat_login( email: string, password: string) {
+  async pat_login( email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {
         this.eventAuthError.next(error);
@@ -38,7 +38,7 @@ export class AuthService {
       })
   }
 
-  admin_login( email: string, password: string) {
+  async admin_login( email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {
         this.eventAuthError.next(error);
@@ -50,7 +50,7 @@ export class AuthService {
       })
   }
 
-  doc_login( email: string, password: string) {
+ async doc_login( email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {
         this.eventAuthError.next(error);
@@ -106,6 +106,9 @@ export class AuthService {
   }
 
   insertDoctorData(userCredential: firebase.auth.UserCredential) {
+    if(!this.newUser.regnumber){
+      this.newUser.regnumber=null;
+    }
     return this.db.doc(`Doctors/${userCredential.user.uid}`).set({
       Email: this.newUser.email,
       Firstname: this.newUser.firstName,
@@ -115,6 +118,7 @@ export class AuthService {
       City:this.newUser.city,
       Position:this.newUser.position,
       RegistrationNumber:this.newUser.regnumber,
+      ExperiencedYears:this.newUser.years,
       Userid:userCredential.user.uid,
     })
   }

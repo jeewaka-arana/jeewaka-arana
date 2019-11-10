@@ -70,19 +70,14 @@
                                                       </div>
                                             </div> -->
                                             <div class="form-group">
-                                                <input ngModel #expyears="ngModel" name="expyears" type="number"  id="expyears" class="browser-default custom-select"  placeholder="Experienced Years..." [ngClass]="{ 'is-invalid': f.submitted && expyears.invalid }" required> 
-                                                <!-- <datalist id="exp">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                </datalist> -->
-                                                
-                                                <div *ngIf="f.submitted && expyears.invalid" class="invalid-feedback">
-                                                    <div *ngIf="expyears.errors.required">Experienced Years is required.</div>
-                                                </div>
+                                                <label>Experienced Years</label><br>
+                                                <input ngModel #years="ngModel" type="range" name="years" min="0" max="20" (click)="exp(years.value)">
                                             </div>
+                                            
+                                            
 
                                             <div class="form-group">
-                                                    <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required>
+                                                    <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required appShowpassword>
                                                     <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
                                                         <div *ngIf="password.errors.required">Password is required</div>
                                                     </div>
@@ -104,6 +99,7 @@
                                                     <div *ngIf="phone.errors.required">Phone Number is required</div>
                                                 </div>
                                             </div>
+                                           
 
                                             <!-- <div class="form-group">
                                                     <input ngModel #city2="ngModel" name="city2" type="text" class="browser-default custom-select" placeholder="Select Your City..." list="cities"  >
@@ -114,35 +110,51 @@
                                                        </datalist>
                                                     
                                                 </div> -->
-                                                <select class="custom-select" (change)="changeCity($event)" formControlName="cityName">
-                                                    <option value="" disabled>Choose your city</option>
+
+                                                <input ngModel #city="ngModel" class="form-control"  name="city"  list="citylist" placeholder="Choose your city...">
+                                                <datalist id="citylist" >
+
+                                                        <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
+
+                                                </datalist>
+                                                <!-- <select ngModel #city="ngModel" class="custom-select" (change)="changeCity($event)" name="city">
+                                                    <option value="" disabled  >Choose your city</option>
                                                     <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
-                                                 </select>
+                                                 </select> -->
                                 
-                                <div  class="form-group" >
-                                    <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..."  >
+                                <div *ngIf="position.value=='Generation'" class="form-group" >
+                                    <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..."  disabled   >
                                     </div>
-                                    <div class="form-group">
+                                    
                                    
+
+                                    <div class="form-group">
+                                            <input ngModel #certificate="ngModel" type="file" name="certificate" >
+                                            
+                                        </div>
+
+
+                                        <div *ngIf="position.value !='Generation'" class="form-group" >
+                                            <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..." >
+                                            </div>
+                                            <div class="form-group">
+<!--                                            
                                             <div class="upload-btn-wrapper">
                                                 <p>If you are registered please upload the certification for verification</p>
                                                 <button class="btn btn-primary btn-simple btn-round" type="button">Upload</button>
-                                                    <input type="file" name="myfile" formControlName="FileUrl"  required/>
-                                                  </div>
+                                                    <input ngModel #certiurl="ngModel" type="file" name="certiurl"  (change)="uploadFile($event)" />
+                                                  </div> -->
                                             
                                         </div>
                                 
                                 <div class="form-group"> 
                                     <!-- conf password -->
-                                        <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" placeholder="Confirm Password..." >
+                                        <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" placeholder="Confirm Password..." appShowpassword>
                                       
     
                                     </div>
-                                    <button class="show-pass" type="button"  (click)="showpassword(password)">
-                                            <img  src="assets/img/visible_30px.png" height="20px" width="20px" >
-                                        </button>
-                          
-                                <input type="submit" class="btnRegister"  formControlName="submit" value="Register" />
+                                  
+                                <input type="submit" class="btnRegister"  value="Register" />
                             </div>
                         </div>
                         </form>

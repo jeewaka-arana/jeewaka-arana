@@ -67,9 +67,13 @@ this.specialist=data;
   }
 
  applyFilter(){
-   
-  this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Position','==',this.position).where('Gender', '==',this.gender).where('Specialist', '==',this.specialist));
+  
+
+  this.QueryCol=this.afs.collection('Doctors', ref => ref
  
+  .where('Position',this.position==null?'>': '==',this.position==null?"":this.position)
+  .where('Gender',this.gender==null?'>': '==',this.gender==null?"":this.gender)
+  );
   this.Query=this.QueryCol.valueChanges();
  }
 

@@ -38,7 +38,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFirestore } from '@angular/fire/firestore'
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
@@ -88,6 +88,8 @@ import { HeremapComponent } from './patient/heremap/heremap.component';
 import { TimePickerDirective } from './core/directives/time-picker.directive';
 import { TimeComponent } from './test/time/time.component';
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
+import { UploadcertificateComponent } from './signup/sign-doctor/uploadcertificate/uploadcertificate.component';
+import { UploadService } from './core/upload.service';
 
 
 
@@ -177,6 +179,7 @@ import { ShowpasswordDirective } from './core/directives/showpassword.directive'
         TimePickerDirective,
         TimeComponent,
         ShowpasswordDirective,
+        UploadcertificateComponent,
      
     ],
     imports: [
@@ -206,7 +209,7 @@ import { ShowpasswordDirective } from './core/directives/showpassword.directive'
    
      
     ],
-    providers: [CrudService,SearchdoctorService,AuthService, DatePipe],
+    providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
