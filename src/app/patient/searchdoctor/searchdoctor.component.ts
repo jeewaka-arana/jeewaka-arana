@@ -39,7 +39,7 @@ export class SearchdoctorComponent implements OnInit {
   City:string;
   Position:string;
   RegistrationNumber:string;
-  expyear: number;
+  ExpYears: number;
 
   geo = geofirex.init(firebase);
   points: Observable<any>;
@@ -52,7 +52,7 @@ export class SearchdoctorComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.afs.collection('Doctors',ref => ref.limit(4).orderBy('Lastname')).valueChanges().subscribe(results => {
+    this.afs.collection('Doctors',ref => ref.orderBy('Lastname')).valueChanges().subscribe(results => {
       this.results = results;
       this.applyFilters()
     })
@@ -64,6 +64,7 @@ export class SearchdoctorComponent implements OnInit {
     this.doctor = this.doctorDoc.valueChanges();
     
     this.getUserLocation();
+
 
     }
 
@@ -128,8 +129,8 @@ export class SearchdoctorComponent implements OnInit {
 
   send(){
     this.results=this.results.sort((n1,n2) => {
-      if(n1.expyear > n2.expyear) {return 1}
-      if(n1.expyear < n2.expyear) {return -1}
+      if(n1.ExpYears > n2.ExpYears) {return 1}
+      if(n1.ExpYears < n2.ExpYears) {return -1}
       return 0;
     })
     this.applyFilters()
@@ -137,8 +138,8 @@ export class SearchdoctorComponent implements OnInit {
 
   send2(){
     this.results=this.results.sort((n1,n2) => {
-      if(n1.expyear < n2.expyear) {return 1}
-      if(n1.expyear > n2.expyear) {return -1}
+      if(n1.ExpYears < n2.ExpYears) {return 1}
+      if(n1.ExpYears > n2.ExpYears) {return -1}
       return 0;
     })
     this.applyFilters()

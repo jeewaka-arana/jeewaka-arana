@@ -8,6 +8,7 @@ import{DatePipe} from '@angular/common';
 import{CrudService} from 'app/core/crud.service';
 import { Doctor } from '../../../core/models/doctor.model';
 import {AuthService} from '../../../core/auth.service';
+import { Router } from '@angular/router';
 
 interface Post {
   title: string;
@@ -46,9 +47,9 @@ export class CommentComponent implements OnInit {
  
 
   
-  
-  constructor(private db: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService,private  afs: AngularFirestore,private datePipe: DatePipe) {
-   
+   my_id:string;
+  constructor(private db: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService,private  afs: AngularFirestore,private datePipe: DatePipe, private router:Router) {
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
    }
 
 
@@ -60,9 +61,9 @@ export class CommentComponent implements OnInit {
 // console.log(medium); //output - Feb 14, 2019, 3:45:06 PM
 //
 
-    this.postsCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
+    this.postsCol = this.afs.collection('Doctors').doc(this.my_id).collection('Posts');
     this.post = this.postsCol.valueChanges();
-    
+  
     this.posts = this.postsCol.snapshotChanges()
       .map(actions => {
         return actions.map(a => {
@@ -83,13 +84,12 @@ export class CommentComponent implements OnInit {
     // doctorRef.doc(id).set({'title': this.title, 'content': this.content});
 
 
-
     // 
-     this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts').add({'title': this.title, 'content': this.content});
+     this.afs.collection('Doctors').doc(this.my_id).collection('Posts').add({'title': this.title, 'content': this.content});
   }
 
   getPost(postId) {
-    this.commentCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
+    this.commentCol = this.afs.collection('Doctors').doc(this.my_id).collection('Posts');
     this.comment = this.commentCol.valueChanges();
 
 

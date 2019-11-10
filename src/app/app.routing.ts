@@ -57,7 +57,14 @@ import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-app
 import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
 import { TimeComponent } from './test/time/time.component';
+import { ReportComponent } from './doctor/report/report.component';
 
+import { DoclistComponent } from './admin/doclist/doclist.component';
+import { EditprofileComponent } from './admin/editprofile/editprofile.component';
+//import { DocviewComponent } from './admin/doclist/docview/docview.component';
+//import { ImagelistComponent } from './admin/imagelist/imagelist.component';
+//import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
+import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -72,6 +79,7 @@ const routes: Routes =[
     { path: 'doctorview', component: DoctorprofilepageComponent},
     { path: 'doctoradmin', component:DoctoradminpageComponent },
     { path: 'doctoradmin/:id', component:DoctoradminpageComponent },
+    {path:'report/:id',component:ReportComponent},
     { path: 'signup/sign-patient', component:SignPatientComponent },
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
     { path: 'default', component: WaitingComponent},
@@ -87,10 +95,20 @@ const routes: Routes =[
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
+    { path: 'admin', component:AdminComponent ,children:[
+        
+     //   { path: 'imagelist', component:ImageListComponent }
+        // {path:'editprofile',component:EditprofileComponent}
+
+    ]},
+    {path:'admin/docaccept',component:DocacceptComponent},
+    {path:'admin/editprofile',component:EditprofileComponent},
+   // {path:'adminlogin',component:AdminloginComponent},
+    { path: 'admin/doclist', component:DoclistComponent },
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
-    { path: 'here', component:HeremapComponent},
+    { path: 'here/:City', component:HeremapComponent},
     { path: 'test', component:TestComponent},
     { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
@@ -101,7 +119,7 @@ const routes: Routes =[
 {path:'master',component:DoctorprofilepageComponent},
 
 {path:'comment',component:CommentComponent},
-    { path: 'googlemap', component:GooglemapComponent},
+    { path: 'googlemap/:City', component:GooglemapComponent},
     { path: 'star' , component:StarreviewComponent },
     
     
@@ -124,7 +142,8 @@ const routes: Routes =[
 {path:'bothcomment',component:BothCommentPageComponent},
 {path:'docAppoinment',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
-{path:'timePicker',component:TimeComponent}
+{path:'timePicker',component:TimeComponent},
+{path:'report',component:ReportComponent},
     ]
 
 

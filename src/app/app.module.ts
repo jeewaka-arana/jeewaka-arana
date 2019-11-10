@@ -90,7 +90,16 @@ import { TimeComponent } from './test/time/time.component';
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 import { UploadcertificateComponent } from './signup/sign-doctor/uploadcertificate/uploadcertificate.component';
 import { UploadService } from './core/upload.service';
+import { ReportComponent } from './doctor/report/report.component';
 
+
+
+
+import { DoclistComponent } from '../app/admin/doclist/doclist.component';
+import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
+
+// import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
+import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 
 
 @NgModule({
@@ -169,6 +178,12 @@ import { UploadService } from './core/upload.service';
        
     
         AdvancedsearchComponent,
+        DoclistComponent,
+        EditprofileComponent,
+        // DocviewComponent,
+        // ImagelistComponent,
+        // AdminloginComponent,
+        DocacceptComponent,
 
         GooglemapComponent,
         StarreviewComponent,
@@ -180,6 +195,7 @@ import { UploadService } from './core/upload.service';
         TimeComponent,
         ShowpasswordDirective,
         UploadcertificateComponent,
+        ReportComponent,
      
     ],
     imports: [

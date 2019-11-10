@@ -53,5 +53,32 @@ export class CrudService {
   
  
 
+//update doctor view page according to the doctor admin page
+
+getPeople(){
+  return new Promise<any>((resolve, reject) => {
+    this.afs.collection('Doctors').snapshotChanges()
+    .subscribe(snapshots => {
+      resolve(snapshots)
+    })
+  })
+}
+getDoctors(){
+  return new Promise<any>((resolve, reject) => {
+    this.afs.collection('Doctors').snapshotChanges()
+    .subscribe(snapshots => {
+      resolve(snapshots)
+    })
+  })
+}
+upload(event) {
+ /* const id = Math.random().toString(36).substring(2);
+  this.ref = this.afStorage.ref(id);
+  this.task = this.ref.put(event.target.files[0]);
+  this.uploadState = this.task.snapshotChanges().pipe(map(s => s.state));
+  this.uploadProgress = this.task.percentageChanges();
+  this.downloadURL = this.task.downloadURL();*/
+  return this.afs.collection('Article').add(event);
+}
 
 }
