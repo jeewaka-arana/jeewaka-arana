@@ -119,7 +119,7 @@ sut3:new FormControl(''),
   
 
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
-//copy
+//uncomment this
     this.my_id=afAuth.auth.currentUser.uid;
    
 //
@@ -136,7 +136,7 @@ sut3:new FormControl(''),
   }
 
   ngOnInit() {
-    window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
+    // window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
     this.formdata;
    
 

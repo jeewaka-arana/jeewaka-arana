@@ -25,7 +25,7 @@ interface Order{
   styleUrls: ['./report.component.scss']
 })
 export class ReportComponent implements OnInit {
-
+   x:any;
   today: number = Date.now();
   //
   appCol:AngularFirestoreCollection<Order>;
@@ -62,6 +62,9 @@ export class ReportComponent implements OnInit {
   ngOnInit() {
     this.appCol = this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment');
 this.apps = this.appCol.valueChanges();
+//this.x=this.apps.subscribe((data)=>console.log(data.length));
+// console.log("Hi");
+this.apps.subscribe((data)=>{this.x = data.length});
 
 //
 
