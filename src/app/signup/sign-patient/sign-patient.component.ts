@@ -10,6 +10,17 @@ import { AuthService } from 'app/core/auth.service';
 })
 export class SignPatientComponent implements OnInit {
 
+  countryList: Array<any> = [
+    { name: 'Afghanistan', cities: ['Kabul', 'Kandahar', 'Herat','Mazar-i-Sharif','Jalalabad','Kunduz','Ghazni','Lashkargah','Taloqan','Puli Khumri','Khost','Charikar','Sheberghan','Sar-e Pol','Maymana','Chaghcharan','Mihtarlam','Farah','Puli Alam'] },
+    { name: 'Albania', cities: ['Tirana','Elbasan','Fier','Berat','Pogradec','Sarandë','Patos','Mamurras','Peshkopi','Burrel','	Milot','Gramsh','	Klos','Ballsh'] },
+    { name: 'Algeria', cities: ['Algiers','Algiers','Constantine','Annaba','Blida','Batna','Djelfa','Biskra','El Oued','Skikda','Tiaret','Tlemcen','Ouargla','Mostaganem','Chlef','Souk Ahras','Touggourt','Ghardaïa','Laghouat','Jijel','Relizane','Guelma','Khenchela','Bousaada','Mascara','Tindouf','Tizi Ouzou'] },
+    { name: 'Mexico', cities: ['Puebla'] },
+    { name: 'China', cities: ['Beijing'] },
+  ];
+
+
+  
+
   private _shown = false;
   authError: any;
 
@@ -50,23 +61,11 @@ checkpassword(password:string,confPassword:string){
 
 }
 
-setup() {
-  const parent = this.el.nativeElement.parentNode;
-  const span = document.createElement('span');
-  span.innerHTML = '<button class="show-pass" type="button"><img  src="assets/img/visible_30px.png" height="20px" width="20px" ></button>';
-  span.addEventListener('click', (event) => {
-    this.toggle(span);
-  });
-  parent.appendChild(span);
+
+cities: Array<any>;
+changeCountry(count) {
+  this.cities = this.countryList.find(con => con.name == count).cities;
 }
-toggle(span: HTMLElement) {
-  this._shown = !this._shown;
-  if (this._shown) {
-    this.el.nativeElement.setAttribute('type', 'text');
-    span.innerHTML = '<button class="show-pass" type="button" style="padding: 2px;,position: absolute;, right: 5px;top:10.5em;,background-color: #ffffff00;,border-color: #ffffff00;,left: 23em;"><img  src="assets/img/visible_30px.png" height="20px" width="20px" ></button>';
-  } else {
-    this.el.nativeElement.setAttribute('type', 'password');
-    span.innerHTML = '<button class="show-pass" type="button"><img  src="assets/img/visible_30px.png" height="20px" width="20px" ></button>';
-  }
-}
+
+
 }

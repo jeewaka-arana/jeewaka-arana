@@ -25,6 +25,8 @@
       <div class="container">
       
         <h3 class="title" aria-placeholder="center">Welcome to admin page</h3>
+
+       
         <div class="row">
           <div class="col">
           <div id ="sidebar" style=" width:300px;height:400px;">
@@ -98,15 +100,36 @@
                       <div class="row">
                          <div class="col col-md-2 image-col">
                               <img class="image" [src]="item.payload.doc.data().img1">
-                          </div>-->
+                          </div>
                           <div class="col col-md-8 text-col">
-                              <h5 class="mb-1">{{item.payload.doc.data().Firstname}} {{item.payload.doc.data().Lastname}}</h5>
-                              <small>City: {{item.payload.doc.data().City}}</small>
+                            
+                            
+                                
+                              <h5 class="mb-1">{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h5>
+                              <small>City: {{item.payload.doc.data().city}}</small>
                           </div>
                           <!--<div class="col col-md-2 actions-col">-->
-                              <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button" ><a routerLink="/admin">view</a>
-                                 <!--<ion-icon class="icon" name="arrow-round-forward"></ion-icon>-->
-                              </button>
+                            <button class="btn btn-primary" (click)="open(classic,'' , '')">
+                                View profile
+                               </button>
+                               <ng-template #classic let-c="close" let-d="dismiss">
+                                   <div class="modal-header justify-content-center">
+                                       <button type="button" class="close" (click)="d('Cross click')">
+                                           <i class="now-ui-icons ui-1_simple-remove"></i>
+                                       </button>
+                                       <h4 class="title title-up">{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h4>
+                                   </div>
+                                   <div class="modal-body">
+                                      
+                                     <p>{{item.payload.doc.data().position}} </p>
+                                     <p>{{item.payload.doc.data().city}} </p>
+                                     <p>{{item.payload.doc.data().years}} </p>
+                                   </div>
+                                   <div class="modal-footer">
+                                       <button type="button" class="btn btn-default" (click)="Createdoc(item.payload.doc.id)" >Accept</button>
+                                       <button type="button" class="btn btn-danger" (click)="c('Close click')">Reject</button>
+                                   </div>
+                               </ng-template>
                            <!--</div>-->
                       </div>
                   </div>

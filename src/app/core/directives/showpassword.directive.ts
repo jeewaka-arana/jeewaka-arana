@@ -13,16 +13,16 @@ export class ShowpasswordDirective {
       this._shown = !this._shown;
       if (this._shown) {
         this.el.nativeElement.setAttribute('type', 'text');
-        span.innerHTML = '<button class="show-pass" type="button" style="padding: 2px;,position: absolute;, right: 5px;top:10.5em;,background-color: #ffffff00;,border-color: #ffffff00;,left: 23em;"><img  src="assets/img/visible_30px.png" height="20px" width="20px" ></button>';
+        span.innerHTML = ' <style>img{margin-right:5px;}  .text{font-family:"Lobster";margin-top:10px;color:#f195769a}</style><div class="text"><img  src="assets/img/visible_30px.png" height="20px" width="20px" >Hide Password</div> ';
       } else {
         this.el.nativeElement.setAttribute('type', 'password');
-        span.innerHTML = '<button class="show-pass" type="button"><img  src="assets/img/visible_30px.png" height="20px" width="20px" ></button>';
+        span.innerHTML = '<style>img{margin-right:5px;} .text{font-family:"Lobster";margin-top:10px;color:#f195769a}</style><div class="text"><img  src="assets/img/hide_24px.png" height="20px" width="20px" >Show Password</div>';
       }
     }
   setup() {
       const parent = this.el.nativeElement.parentNode;
       const span = document.createElement('span');
-      span.innerHTML = '<button class="show-pass" type="button"><img  src="assets/img/visible_30px.png" height="20px" width="20px" ></button>';
+      span.innerHTML = '<style>img{margin-right:5px;} .text{font-family:"Lobster";margin-top:10px;color:#f195769a}</style><div class="text"><img  src="assets/img/hide_24px.png" height="20px" width="20px" >Show Password</div>';
       span.addEventListener('click', (event) => {
         this.toggle(span);
       });
