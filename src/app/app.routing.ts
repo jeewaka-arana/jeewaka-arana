@@ -65,6 +65,7 @@ import { EditprofileComponent } from './admin/editprofile/editprofile.component'
 //import { ImagelistComponent } from './admin/imagelist/imagelist.component';
 //import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
+import{TimepickComponent} from '../app/doctor/timepick/timepick.component'
 
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -143,7 +144,9 @@ const routes: Routes =[
 {path:'docAppoinment',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
 {path:'timePicker',component:TimeComponent},
-{path:'report',component:ReportComponent},
+
+
+{path:'time',component:TimepickComponent},
     ]
 
 
