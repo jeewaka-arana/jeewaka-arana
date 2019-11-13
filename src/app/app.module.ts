@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
@@ -10,9 +10,7 @@ import { ExamplesModule } from './examples/examples.module';
 // import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import { AgmCoreModule } from '@agm/core';
 
-
-
-
+//I keep the new line
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -33,13 +31,13 @@ import { SearchdoctorService } from './core/searchdoctor.service';
 
 // import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import {CrudService} from './core/crud.service';
+import { CrudService } from './core/crud.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import {AngularFirestore } from '@angular/fire/firestore'
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import{AngularFireDatabase, AngularFireDatabaseModule }from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WaitingComponent } from './signup/sign-doctor/waiting/waiting.component';
 
@@ -50,7 +48,6 @@ import { HomeComponent } from './home/home.component';
 import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
 import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
-
 
 // import { ImagesComponent } from './images/images.component';
 // import { ImageComponent } from './images/image/image.component';
@@ -75,10 +72,9 @@ import { AddComplainsComponent } from './doctor/add-complains/add-complains.comp
 import { DeleteCommentComponent } from './doctor/commentsection/delete-comment/delete-comment.component';
 import { BothCommentPageComponent } from './doctor/commentsection/both-comment-page/both-comment-page.component';
 
-import{DatePipe} from '@angular/common';
+import { DatePipe } from '@angular/common';
 
-
-
+//I keep the new line
 import { GooglemapComponent } from './patient/googlemap/googlemap.component';
 import { StarreviewComponent } from './patient/starreview/starreview.component';
 import { Test2Component } from './test2/test2.component';
@@ -90,9 +86,7 @@ import { TimeComponent } from './test/time/time.component';
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 import { ReportComponent } from './doctor/report/report.component';
 
-
-
-
+//I keep the new line
 import { DoclistComponent } from '../app/admin/doclist/doclist.component';
 import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
 
@@ -102,7 +96,10 @@ import {UploadFileService} from 'app/core/upload-file.service';
 import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
 
+import { TimepickComponent } from './doctor/timepick/timepick.component';
 
+import { IgxTimePickerModule } from "igniteui-angular";
+import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
 
 @NgModule({
     declarations: [
@@ -114,7 +111,6 @@ import { NotificationComponent } from './admin/notification/notification.compone
         SignPatientComponent,
         SignDoctorComponent,
         WaitingComponent,
-       
         PatienthomeComponent,
         AppointmentComponent,
         AppStep2Component,
@@ -124,61 +120,28 @@ import { NotificationComponent } from './admin/notification/notification.compone
         SelectbydiseaseComponent,
         SearchdoctorComponent,
 
- 
-
+        //I keep the new line
         UserloginComponent,
         AdminComponent,
         HomeComponent,
-      
         DoctorfordComponent,
         ConfirmationComponent,
-     
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
-        
         UploadTaskComponent,
         CommentComponent,
-    
-       
         ReactionComponent,
-       
         ProfileComponent,
-       
-        
-       
-    
-       
         TComponent,
-       
         VideoComponent,
-       
         UploadVideoComponent,
-       
-      
-       
         MynavComponent,
-       
         GetComplainAdminComponent,
-       
         AddComplainsComponent,
-       
         DeleteCommentComponent,
-       
         BothCommentPageComponent,
-       
-     
-       
-       
-    
 
-      
-     
-       
-       
-     
-       
-    
         AdvancedsearchComponent,
         DoclistComponent,
         EditprofileComponent,
@@ -200,9 +163,13 @@ import { NotificationComponent } from './admin/notification/notification.compone
         ArticlesComponent,
         NotificationComponent,
      
+        TimepickComponent,
+        FirstpageComponent,
     ],
     imports: [
-        BrowserAnimationsModule, 
+
+        IgxTimePickerModule,
+        BrowserAnimationsModule,
         BrowserModule,
         NgbModule.forRoot(),
         FormsModule,
@@ -211,24 +178,21 @@ import { NotificationComponent } from './admin/notification/notification.compone
         ComponentsModule,
         ExamplesModule,
         ReactiveFormsModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
-        AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
-        AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-        AngularFireStorageModule, // imports firebase/storage only needed for storage features
-      AngularFireDatabaseModule,
-    //   NgMultiSelectDropDownModule.forRoot(),
-     
-  
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule.enablePersistence(),
+        AngularFireAuthModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        //   NgMultiSelectDropDownModule.forRoot(),
 
-   
-      BrowserModule,
-    AgmCoreModule.forRoot({
-        apiKey: environment.googleMapsKey
-    })
-   
-     
-    ],
+        BrowserModule,
+        AgmCoreModule.forRoot({
+            apiKey: environment.googleMapsKey
+        })
+    ]
     providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadFileService],
+
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -114,8 +114,8 @@
                                               <!-- </ul> -->
                                               </div>
                                                 
-                                              <div class="vl"></div>
-                                              <div class="column">
+                                              <div class="vl" style="margin-left:2rem;"></div>
+                                              <div class="column" style="margin-left: 2rem;">
                       
                                                   <!-- <ul *ngFor="let post of posts | async"> -->
                                                       <label class="col-lg-15 control-label" ><b><span> Name -   </span>  Dr. {{post$.Firstname}}   {{post$.Lastname}}</b></label><br><br>
@@ -161,7 +161,7 @@
 <div class="card" style="margin-left:15px;width:75rem;" >
     <div class="card-body" >
       
-      <ul *ngFor="let post of posts | async"> 
+      <!-- <ul *ngFor="let post of posts | async">  -->
         <table width="100%" class="table table-bordered table-hover" id="time">
             <thead>
               <tr>
@@ -179,7 +179,7 @@
             <tbody>  
               <tr>
                 <td>TIME SLOT 1</td>
-                <td>{{post.mt1}}</td>
+                <td>{{post$.mt1}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -190,7 +190,7 @@
               </tr>
               <tr>
                 <td>TIME SLOT 2</td>
-                <td>{{post.mt2}}</td>
+                <td>{{post$.mt2}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -200,7 +200,7 @@
               </tr>
               <tr>
                 <td>TIME SLOT 3</td>
-                <td>{{post.mt3}}</td>
+                <td>{{post$.mt3}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -252,7 +252,7 @@
   </table>
             -->
 
-            </ul>
+            
 </div>
 </div>
 

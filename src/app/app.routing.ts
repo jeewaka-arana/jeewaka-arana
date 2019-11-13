@@ -67,6 +67,8 @@ import { EditprofileComponent } from './admin/editprofile/editprofile.component'
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
+import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
+import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
 
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -81,6 +83,7 @@ const routes: Routes =[
     { path: 'doctorview', component: DoctorprofilepageComponent},
     { path: 'doctoradmin', component:DoctoradminpageComponent },
     { path: 'doctoradmin/:id', component:DoctoradminpageComponent },
+    {path:'report/:id',component:ReportComponent},
     { path: 'signup/sign-patient', component:SignPatientComponent },
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
     { path: 'default', component: WaitingComponent},
@@ -109,7 +112,7 @@ const routes: Routes =[
     { path: 'signup', component:SignupComponent },
     { path: 'doctorford', component:DoctorfordComponent},
     { path: 'confirmation', component:ConfirmationComponent},
-    { path: 'here', component:HeremapComponent},
+    { path: 'here/:City', component:HeremapComponent},
     { path: 'test', component:TestComponent},
     { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
@@ -120,7 +123,7 @@ const routes: Routes =[
 {path:'master',component:DoctorprofilepageComponent},
 
 {path:'comment',component:CommentComponent},
-    { path: 'googlemap', component:GooglemapComponent},
+    { path: 'googlemap/:City', component:GooglemapComponent},
     { path: 'star' , component:StarreviewComponent },
     
     
@@ -147,6 +150,10 @@ const routes: Routes =[
 {path:'report',component:ReportComponent},
 {path:'articles',component:ArticlesComponent},
 {path:'admin/notification',component:NotificationComponent},
+
+
+{path:'time',component:TimepickComponent},
+{path:'fpage',component:FirstpageComponent},
     ]
 
 
