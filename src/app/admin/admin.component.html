@@ -1,5 +1,12 @@
 <div class="wrapper">
     <div class="page-header page-header-small" filter-color="orange">
+        <nav> 
+                <li>
+                       <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit">Logout</button>
+                </li>        
+        </nav>
+       
+            <!--Navbar-->
         <div class="page-header-image rellax-header" data-rellax-speed="-8"
             style="background-image: url('assets/img/bg5.jpg') ;">
         </div>
@@ -14,7 +21,7 @@
                 <h3 class="title">Admin name</h3>
                 <p class="category">Ayurvedic Doctor</p>
                 <div class="button-container">
-                    <a routerLink="editprofile" class="btn btn-primary btn-round btn-lg">Edit profile</a>
+                    <a routerLink="/admin/editprofile" class="btn btn-primary btn-round btn-lg">Edit profile</a>
                     <!-- <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
                           <i class="fab fa-twitter"></i>
                         </a>
@@ -22,7 +29,7 @@
                           <i class="fab fa-instagram"></i>
                         </a>-->
                 </div>
-            </div>editprofile
+            </div>
         </div>
     </div>
     <div class="section">
@@ -34,7 +41,7 @@
                     <div id="sidebar" style=" width:300px;height:400px;">
 
 
-                        <ul>
+                        <ul >
                             <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
                     color:white;"> <a routerLink="/admin">Articles</a></li>
                             <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
@@ -42,7 +49,7 @@
                             <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
                     color:white;"><a routerLink="/admin/docaccept">Doctor Confirmation</a></li>
                             <li style=" padding:20px;border-bottom:2px solid grey; background:#c0392b;
-                    color:white;"><a routerLink="/admin/doclist">Notifications</a></li>
+                    color:white;"><a routerLink="notification">Notifications</a></li>
                         </ul>
 
                     </div>
@@ -93,37 +100,129 @@
 
     </div>-->
     <div class="container">
-        <div class="card">
+        <div class="row">
+        <div class="col-md-4">
 
             <div class="card-body">
-                <h5 class="card-title">Select a file for upload:</h5>
-                <input type="file" (change)="upload($event)" accept=".png,.jpg" />
-                <br><br>
-                <div class="progress">
+                <h5 class="title">Upload an article:</h5>
+                <img src="assets/img/ui.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+
+                <a class="category text-primary" href="#">Click Here</a>
+                
+                <!--<div class="progress">
                     <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
                         [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <br>
-                <div class="alert alert-info" role="alert">
-                    <!--*ngIf="downloadURL | async; let downloadSrc"-->
+                <br>-->
+                <!--<div class="alert alert-info" role="alert">
+                    *ngIf="downloadURL | async; let downloadSrc"
                     File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
                 </div>
-                <br>
-                <div class="btn-group" role="group">
-                    <!-- *ngIf="uploadState | async; let state"-->
+                <br>-->
+                <!--<div class="btn-group" role="group">
+                   *ngIf="uploadState | async; let state"
                     <button type="button" class="btn btn-primary" (click)="task.pause()"
                         [disabled]="state === 'paused'">Pause</button>
                     <button type="button" class="btn btn-primary" (click)="task.cancel()"
                         [disabled]="!(state === 'paused' || state === 'running')">Cancel</button>
                     <button type="button" class="btn btn-primary" (click)="task.resume()"
                         [disabled]="state === 'running'">Resume</button>
-                </div>
+                </div>-->
             </div>
         </div>
+        <div class="col-md-8">
+
+            <div class="card-body">
+                <h5 class="title">Upload an image:</h5>
+                <img src="assets/img/uim.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+
+                <!--<a class="category text-primary" href="#">Click Here</a>-->
+                <!--<label for="file">File:</label>
+                    <input type="file" (change)="upload($event)" accept=".png,.jpg" />-->
+                    <div *ngIf="currentFileUpload" class="progress">
+                            <div class="progress-bar progress-bar-info progress-bar-striped"
+                              role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                              aria-valuemin="0" aria-valuemax="100"
+                              [ngStyle]="{width:progress.percentage+'%'}">
+                              {{progress.percentage}}%</div>
+                          </div>
+                           
+                          <label class="btn btn-default"> <input type="file"
+                            (change)="selectFile($event)">
+                          </label>
+                           
+                          <button class="btn btn-success" [disabled]="!selectedFiles"
+                            (click)="upload()">Upload</button>
+                <!--<div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                        [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <br>-->
+                <!--<div class="alert alert-info" role="alert">
+                    *ngIf="downloadURL | async; let downloadSrc"
+                    File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+                </div>
+                <br>-->
+                <!--<div class="btn-group" role="group">
+                   *ngIf="uploadState | async; let state"
+                    <button type="button" class="btn btn-primary" (click)="task.pause()"
+                        [disabled]="state === 'paused'">Pause</button>
+                    <button type="button" class="btn btn-primary" (click)="task.cancel()"
+                        [disabled]="!(state === 'paused' || state === 'running')">Cancel</button>
+                    <button type="button" class="btn btn-primary" (click)="task.resume()"
+                        [disabled]="state === 'running'">Resume</button>
+                </div>-->
+            </div>
+        
     </div>
 
+    <div class="section-story-overview">
+        <h2 class="title text-center">Articles</h2>
+        <div class="container">
+      <div class="row">
+          <div class="column">
+          <ul *ngFor="let result of results">
+            <ul class="articles">
+              <li>
+                <article>
+                  <div class="article-media"></div>
+                  <div class="l-pad-content">
+                    <h1>{{result.title}}</h1>
+                    <p>{{result.description}}... <a class="more" href="#">read more</a></p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+            <!-- END articles -->
+          </ul>
+          </div>
+        </div>
+      </div>
+      
+  </div>
 
+  <!--<div class="section-story-overview">
+        <h2 class="title text-center">Uploaded Images</h2>
+        <div class="container">
+      <div class="row">
+          <div class="column">
+                <!--<div class="panel panel-primary">
+                        <div class="panel-heading">List of Images</div>
+                        <div *ngFor="let file of fileUploads">
+                          <div class="panel-body">
+                            <details-upload [fileUpload]='file'></details-upload>
+                          </div>
+                        </div>
+                      </div>
+              
+          </div>
+        </div>
+      </div>
+      
+  </div>
+  </div>-->
 
     <footer class="footer footer-default">
         <div class="container">
@@ -159,4 +258,4 @@
             </div>
         </div>
     </footer>
-</div>
+

@@ -98,6 +98,10 @@ import { EditprofileComponent } from '../app/admin/editprofile/editprofile.compo
 
 // import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
+import {UploadFileService} from 'app/core/upload-file.service';
+import { ArticlesComponent } from './admin/articles/articles.component';
+import { NotificationComponent } from './admin/notification/notification.component';
+
 
 
 @NgModule({
@@ -193,6 +197,8 @@ import { DocacceptComponent } from './admin/docaccept/docaccept.component';
         TimeComponent,
         ShowpasswordDirective,
         ReportComponent,
+        ArticlesComponent,
+        NotificationComponent,
      
     ],
     imports: [
@@ -222,7 +228,7 @@ import { DocacceptComponent } from './admin/docaccept/docaccept.component';
    
      
     ],
-    providers: [CrudService,SearchdoctorService,AuthService, DatePipe],
+    providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadFileService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
