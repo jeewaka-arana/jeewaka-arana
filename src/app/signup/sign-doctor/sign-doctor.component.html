@@ -71,7 +71,7 @@
                                             </div> -->
                                             <div class="form-group">
                                                 <label>Experienced Years</label><br>
-                                                <input ngModel #years="ngModel" type="range" name="years" min="0" max="20" (click)="exp(years.value)">
+                                                <input ngModel #years="ngModel" type="range" name="years" min="0" max="20" class="slider" (click)="exp(years.value)">
                                             </div>
                                             
                                             
@@ -127,25 +127,86 @@
                                     </div>
                                     
                                    
-
+<!-- 
                                     <div class="form-group">
                                             <input ngModel #certificate="ngModel" type="file" name="certificate" >
                                             
-                                        </div>
+                                        </div> -->
 
 
                                         <div *ngIf="position.value !='Generation'" class="form-group" >
                                             <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..." >
                                             </div>
-                                            <div class="form-group">
-<!--                                            
-                                            <div class="upload-btn-wrapper">
+
+                                          
+                                            
+                                            <!-- <div *ngIf="position.value=='Generation'" class="upload-btn-wrapper" aria-disabled="true">
                                                 <p>If you are registered please upload the certification for verification</p>
                                                 <button class="btn btn-primary btn-simple btn-round" type="button">Upload</button>
                                                     <input ngModel #certiurl="ngModel" type="file" name="certiurl"  (change)="uploadFile($event)" />
-                                                  </div> -->
+                                                  </div> 
                                             
-                                        </div>
+                                                  <div *ngIf="position.value !='Generation'" class="upload-btn-wrapper">
+                                                        <p>If you are registered please upload the certification for verification</p>
+                                                        <button class="btn btn-primary btn-simple btn-round" type="button">Upload</button>
+                                                            <input ngModel #certiurl="ngModel" type="file" name="certiurl"  (change)="uploadFile($event)" />
+                                                          </div>  -->
+                                                          <!-- <div class="dropzone" 
+     dropZone
+     (hovered)="toggleHover($event)"
+     (dropped)="startUpload($event)"
+     [class.hovering]="isHovering"> -->
+
+
+     <div *ngIf="position.value=='Generation'"  class="file">
+        <label class="file-label" disabled>
+
+
+        <input class="file-input" type="file" (change)="startUpload($event.target.files)" disabled>
+
+
+         
+        </label>
+      </div>
+      <div *ngIf="position.value !='Generation'" class="file">
+            <label class="file-label">
+    
+    
+            <input class="file-input" type="file" (change)="startUpload($event.target.files)">
+    
+    
+             
+            </label>
+          </div>
+
+<div *ngIf="percentage | async as pct">
+
+        <progress class="progress is-info" 
+                  [value]="pct" 
+                  max="100">        
+        </progress>
+      
+        {{ pct | number }}%
+      
+      </div>
+      
+      
+      <!-- <div *ngIf="snapshot | async as snap">
+        {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }} 
+      
+        <div *ngIf="downloadURL | async as url">
+          <h3>Results!</h3>
+          <img [src]="url"><br>
+          <a [href]="url" target="_blank" rel="noopener">Download Me!</a>
+        </div> 
+      
+        <button (click)="task.pause()" class="button is-warning" [disabled]="!isActive(snap)">Pause</button>
+        <button (click)="task.cancel()" class="button is-danger" [disabled]="!isActive(snap)">Cancel</button>
+        <button (click)="task.resume()" class="button is-info"   [disabled]="!(snap?.state === 'paused')">Resume</button>
+      
+      </div> -->
+                                                    
+                                     
                                 
                                 <div class="form-group"> 
                                     <!-- conf password -->
@@ -155,7 +216,7 @@
                                     </div>
                                   
                                 <input type="submit" class="btnRegister"  value="Register" />
-                            </div>
+                           </div>
                         </div>
                         </form>
 

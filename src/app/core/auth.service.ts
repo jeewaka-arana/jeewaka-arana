@@ -97,6 +97,7 @@ export class AuthService {
 
         this.insertDoctorData(userCredential)
           .then(() => {
+            this.SendVerificationMail();
             this.router.navigate(['/default']);
           });
       })
@@ -149,6 +150,13 @@ export class AuthService {
     return userCredential.user.uid;
   }
  
+
+  SendVerificationMail() {
+    return this.afAuth.auth.currentUser.sendEmailVerification()
+    .then(() => {
+      // this.router.navigate(['<!-- enter your route name here -->']);
+    })
+  }
 }
 
  

@@ -12,8 +12,6 @@ import { AgmCoreModule } from '@agm/core';
 
 
 
-
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DoctoradminpageComponent } from './doctor/doctoradminpage/doctoradminpage.component';
@@ -100,6 +98,11 @@ import { EditprofileComponent } from '../app/admin/editprofile/editprofile.compo
 
 // import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
+import { PopupComponent } from './core/components/popup/popup.component';
+import { DropZoneDirective } from './core/directives/drop-zone.directive';
+
+
+
 
 
 @NgModule({
@@ -196,6 +199,8 @@ import { DocacceptComponent } from './admin/docaccept/docaccept.component';
         ShowpasswordDirective,
         UploadcertificateComponent,
         ReportComponent,
+        PopupComponent,
+        DropZoneDirective,
      
     ],
     imports: [
@@ -221,9 +226,9 @@ import { DocacceptComponent } from './admin/docaccept/docaccept.component';
       BrowserModule,
     AgmCoreModule.forRoot({
         apiKey: environment.googleMapsKey
-    })
+    }),
    
-     
+    
     ],
     providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadService],
     bootstrap: [AppComponent]

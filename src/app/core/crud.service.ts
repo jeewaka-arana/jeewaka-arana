@@ -22,8 +22,7 @@ export class CrudService {
   }
 
   createDoctor(user:Doctor){
-    return this.afs.collection('Doctors').add(user);
-  }
+    return this.afs.collection('admin').doc('VO23vtfHaiULH2bhwYvZ').collection('Doctors').add(user) }
   
   updateProfile(user:Doctor){
     var id=this.AuthService.userId;
@@ -57,12 +56,15 @@ export class CrudService {
 
 getPeople(){
   return new Promise<any>((resolve, reject) => {
-    this.afs.collection('Doctors').snapshotChanges()
+    this.afs.collection('admin').doc('VO23vtfHaiULH2bhwYvZ').collection('Doctors').snapshotChanges()
     .subscribe(snapshots => {
       resolve(snapshots)
     })
   })
 }
+
+
+
 getDoctors(){
   return new Promise<any>((resolve, reject) => {
     this.afs.collection('Doctors').snapshotChanges()
