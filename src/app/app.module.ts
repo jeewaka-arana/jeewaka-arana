@@ -96,6 +96,13 @@ import { EditprofileComponent } from '../app/admin/editprofile/editprofile.compo
 
 // import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
+import {UploadFileService} from 'app/core/upload-file.service';
+import { ArticlesComponent } from './admin/articles/articles.component';
+import { NotificationComponent } from './admin/notification/notification.component';
+
+
+
+//import { IgxTimePickerModule } from "igniteui-angular";
 import { PopupComponent } from './core/components/popup/popup.component';
 import { DropZoneDirective } from './core/directives/drop-zone.directive';
 
@@ -166,6 +173,8 @@ import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
         ShowpasswordDirective,
         UploadcertificateComponent,
         ReportComponent,
+        ArticlesComponent,
+        NotificationComponent,
         PopupComponent,
         DropZoneDirective,
      
@@ -184,27 +193,20 @@ import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
         ComponentsModule,
         ExamplesModule,
         ReactiveFormsModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig ),//initializing with firebase
-        AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
-        AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-        AngularFireStorageModule, // imports firebase/storage only needed for storage features
-      AngularFireDatabaseModule,
-    //   NgMultiSelectDropDownModule.forRoot(),
-     
-  
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule.enablePersistence(),
+        AngularFireAuthModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        //   NgMultiSelectDropDownModule.forRoot(),
 
-   
-     
-    AgmCoreModule.forRoot({
-        apiKey: environment.googleMapsKey
-    }),
-   
-    
+        BrowserModule,
+        AgmCoreModule.forRoot({
+            apiKey: environment.googleMapsKey
+        })
     ],
-    
-       
+    providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadFileService],
 
-    providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
