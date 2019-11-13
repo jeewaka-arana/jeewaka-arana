@@ -65,7 +65,8 @@ import { EditprofileComponent } from './admin/editprofile/editprofile.component'
 //import { ImagelistComponent } from './admin/imagelist/imagelist.component';
 //import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
-import{TimepickComponent} from '../app/doctor/timepick/timepick.component'
+import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
+import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
 
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -147,6 +148,7 @@ const routes: Routes =[
 
 
 {path:'time',component:TimepickComponent},
+{path:'fpage',component:FirstpageComponent},
     ]
 
 

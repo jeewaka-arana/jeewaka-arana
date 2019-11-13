@@ -95,6 +95,7 @@ import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import { TimepickComponent } from './doctor/timepick/timepick.component';
 
 import { IgxTimePickerModule } from "igniteui-angular";
+import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
 
 @NgModule({
     declarations: [
@@ -156,6 +157,7 @@ import { IgxTimePickerModule } from "igniteui-angular";
         ShowpasswordDirective,
         ReportComponent,
         TimepickComponent,
+        FirstpageComponent,
     ],
     imports: [
 
