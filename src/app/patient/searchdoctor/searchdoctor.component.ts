@@ -45,7 +45,7 @@ export class SearchdoctorComponent implements OnInit {
   points: Observable<any>;
   
   
-  filters ={}
+  filters = {}
 
   constructor(private afs: AngularFirestore){
 
@@ -144,6 +144,8 @@ export class SearchdoctorComponent implements OnInit {
     })
     this.applyFilters()
   }
+
+  
   
 
   // searchterm: string;
