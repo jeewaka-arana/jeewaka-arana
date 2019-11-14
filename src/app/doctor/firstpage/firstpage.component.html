@@ -67,15 +67,23 @@
           </div>
         </li>
 
+
+        <li class="nav-item dropdown">
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons users_single-02
+
+              "></i>
+            <p>Profile</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item " [routerLink]="['/doctorview',my_id]" > View Profile </a>
+            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+            <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
+            
+          </div>
+        </li>
         
-<!-- 
-            <li class="nav-item">
-              <a class="nav-link btn btn-neutral" routerLink="/signup">
-                  <i class="now-ui-icons arrows-1_share-66"></i>
-                  <p>Sign In</p>
-              </a>
-          </li>
-           -->
+
            
           </ul>
       </div>
@@ -136,19 +144,20 @@
 <div class="col col-md-4">
 
   
-      <!-- <ul *ngFor="let post of posts | async">  -->
-              <div class="flip" style="margin-left: 10rem;" >
-                  <div class="front" style="background-color:  #ff471a
-                  ">
+
+               <div class="flip" style="margin-left:6rem;" >
+                  <div class="front">
                      <h1 class="text-shadow" style="margin-top:5rem;margin-left: 3rem;">TODAY NOTE</h1>
-                     <!-- <img src="../../../assets/img/logo.png" alt="face"> -->
+                     
                   </div>
                   <div class="back">
-                     <!-- <h2>Angular</h2> -->
+                     
                      <p>{{post$.note}}</p>
                   </div>
-              </div>
-              <!-- </ul> -->
+              </div> 
+              
+
+              
 
 </div>
 </div>
@@ -212,62 +221,10 @@
           </tbody>
           </table>
           
-<!--             
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-</table>
-          -->
 
           
 </div>
 </div>
-
-
-
-
-<br><br><br><br><br><br>
-
-
-
-
-
-
-
-
 
 
 
@@ -278,16 +235,16 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="image-container image-left" style="background-image: url('assets/img/a1.jpg')">
-                                <!-- First image on the left side -->
+                                
                                 
                             </div>
-                            <!-- Second image on the left side of the article -->
+                            
                             <div class="image-container" style="background-image: url('assets/img/a2.jpg')"></div>
                         </div>
                    
 
                         <div class="col-md-6">
-                            <!-- First image on the right side, above the article -->
+                            
                             <div class="image-container image-right" style="background-image: url('assets/img/a3.jpg')"></div>
                            
                             
@@ -300,10 +257,10 @@
                 </div>
            
             
-        <!-- </div> -->
+        
 
         
-        <div class="section section-team text-center">
+        <!-- <div class="section section-team text-center">
             <div class="container">
                
                 <div class="team">
@@ -340,61 +297,20 @@
 
                 </div>
             </div>
-        </div>
+        </div> 
 
 
 
 <iframe src="https://www.youtube.com/watch?v=CpvpZKO0Lmk" allowfullscreen></iframe>
 
 
-<!-- 
-         <div class="section section-contact-us text-center">
-            <div class="container">
-
-              
-                  <div class="formGroup" >
-                    
-                          <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
-                <h2 class="title">Send your comments</h2>
-                <p class="description">Your thougths are very important ..</p>
-                <div class="row">
-                    <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
-                      <div class="input-group input-lg" [ngClass]="{'input-group-focus':focus===true}">
-                        <div class="input-group-prepend" >
-                          <span class="input-group-text">
-                              <i class="now-ui-icons users_circle-08"></i>
-                          </span>
-                        </div>
-                          <input type="text" class="form-control" formControlName="name" placeholder="Your Name" (focus)="focus=true" (blur)="focus=false">
-                      </div>
-                      <div class="input-group input-lg" [ngClass]="{'input-group-focus':focus1===true}">
-                        <div class="input-group-prepend" >
-                          <span class="input-group-text">
-                                <i class="now-ui-icons ui-1_email-85"></i>
-                          </span>
-                        </div>
-                          <input type="text" class="form-control" formControlName="email" placeholder="Your email address" (focus)="focus1=true" (blur)="focus1=false">
-                      </div>
-                        <div class="textarea-container">
-                            <textarea class="form-control" formControlName="msg" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
-                        </div>
-                        <div  class="form-group" >
-                              <input type="submit" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
-                              </div>
-                    </div>
-                </div>
-
-
-
-                </form>
-            </div>
-        </div>
-</div>  -->
-
+-->
 
 <hr style=" border: 1.5px solid orangered">
-<h3 style="margin-left: 20rem;">Your Thougths Are Very Important</h3>
+<h3 style="margin-left: 20rem;">Your Thougths Are Very Important</h3><br>
 <app-comment></app-comment> 
+
+
 
 
 

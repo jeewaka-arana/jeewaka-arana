@@ -119,9 +119,11 @@ sut3:new FormControl(''),
   
 
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
-//uncomment this
-    this.my_id=afAuth.auth.currentUser.uid;
-   
+
+    // this.my_id=afAuth.auth.currentUser.uid;
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(7);
+    console.log(this.my_id);
+    
 //
     this.form = this.formBuilder.group({
       diseases: ['']

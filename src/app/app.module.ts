@@ -97,6 +97,7 @@ import { TimepickComponent } from './doctor/timepick/timepick.component';
 import { IgxTimePickerModule } from "igniteui-angular";
 import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -158,6 +159,7 @@ import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
         ReportComponent,
         TimepickComponent,
         FirstpageComponent,
+       
     ],
     imports: [
 
