@@ -10,6 +10,7 @@ import { ExamplesModule } from './examples/examples.module';
 // import{NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import { AgmCoreModule } from '@agm/core';
 
+
 //I keep the new line
 
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { CrudService } from './core/crud.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/database';
@@ -84,6 +86,8 @@ import { HeremapComponent } from './patient/heremap/heremap.component';
 import { TimePickerDirective } from './core/directives/time-picker.directive';
 import { TimeComponent } from './test/time/time.component';
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
+import { UploadcertificateComponent } from './signup/sign-doctor/uploadcertificate/uploadcertificate.component';
+import { UploadService } from './core/upload.service';
 import { ReportComponent } from './doctor/report/report.component';
 
 //I keep the new line
@@ -92,9 +96,22 @@ import { EditprofileComponent } from '../app/admin/editprofile/editprofile.compo
 
 // import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
+import {UploadFileService} from 'app/core/upload-file.service';
+import { ArticlesComponent } from './admin/articles/articles.component';
+import { NotificationComponent } from './admin/notification/notification.component';
+
+
+
+//import { IgxTimePickerModule } from "igniteui-angular";
+import { PopupComponent } from './core/components/popup/popup.component';
+import { DropZoneDirective } from './core/directives/drop-zone.directive';
+
+
+
 import { TimepickComponent } from './doctor/timepick/timepick.component';
 
 import { IgxTimePickerModule } from "igniteui-angular";
+// import { IgxTimePickerModule } from "igniteui-angular";
 import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
 
 
@@ -156,14 +173,20 @@ import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
         TimePickerDirective,
         TimeComponent,
         ShowpasswordDirective,
+        UploadcertificateComponent,
         ReportComponent,
+        ArticlesComponent,
+        NotificationComponent,
+        PopupComponent,
+        DropZoneDirective,
+     
         TimepickComponent,
         FirstpageComponent,
        
     ],
     imports: [
 
-        IgxTimePickerModule,
+        // IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,
         NgbModule.forRoot(),
@@ -185,7 +208,8 @@ import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
             apiKey: environment.googleMapsKey
         })
     ],
-    providers: [CrudService, SearchdoctorService, AuthService, DatePipe],
+    providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadFileService],
+
     bootstrap: [AppComponent]
 })
 export class AppModule {

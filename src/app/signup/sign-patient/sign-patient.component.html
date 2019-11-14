@@ -47,7 +47,7 @@
                            
                                 <div class="form-group">
                               
-                                        <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password..." [ngClass]="{ 'is-invalid': userRegform.submitted && password.invalid }" required minlength="6">
+                                        <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password..." [ngClass]="{ 'is-invalid': userRegform.submitted && password.invalid }" required minlength="6" appShowpassword>
                                         <div *ngIf="userRegform.submitted && password.invalid" class="invalid-feedback">
                                                 <div *ngIf="password.errors.required">Password is required</div>
                                                 <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
@@ -68,30 +68,32 @@
                                                 <div *ngIf="phone.errors.required">Phone Number is required</div>
                                             </div>
                                         </div>
+                                      
+
+
                                         <div class="drop-down">
                                             <div class="row">
-                                                <div class="col-md-3">
-                                                        <div class="form-group">
-                                                                <select  ngModel #country="ngModel" name="country" type="text" class="form-control-select" id="country"  >
-                                                                    <option class="hidden" selected disabled>Please select your Country...</option>
-                                                                    <option>Srilanka</option>
-                                                                    <option>Norway</option>
-                                                                    <option>Switzerland</option>
+                                                <div class="col-md-6">
+                                                        
+                                                           
+                                                            <div  title="Please select the country that the customer will primarily be served from">
+                                                                <select placeholder="Phantasyland" (change)="changeCountry($event.target.value)" class="sel">
+                                                                    <option *ngFor ="let count of countryList">{{count.name}} </option>
                                                                 </select>
-                                                                
                                                             </div>
+                                                            
+                                                                
+                                                            
                                                     </div>
                                                   
                                                
-                                                <div class="col-md-3">
-                                                        <div class="form-group">
-                                                                <select ngModel #city="ngModel" name="city" type="text" class="form-control-select2" id="city"  >
-                                                                    <option value="undefined"  >Please select your City...</option>
-                                                                    <option>Colombo</option>
-                                                                    <option>Galle</option>
-                                                                    <option>Kandy</option>
-                                                                </select>
-                                                            </div>
+                                                <div class="col-md-6">
+                                                   
+                                                    <div title="Please select the city that the customer is primarily to be served from.">
+                                                        <select placeholder="Anycity" class="sel">
+                                                            <option *ngFor ="let city of cities">{{city}} </option>
+                                                      </select>
+                                                    </div>
                                                 </div>
                          </div>
                                    
@@ -106,9 +108,7 @@
 
                                 </div>
                               
-                                <button class="show-pass" type="button" (click)="setup()"  >
-                                        <img  src="assets/img/visible_30px.png" height="20px" width="20px" >
-                                    </button>
+                              
                             
                             <input type="submit" class="btnRegister"  formControlName="submit" value="Register" />
                         </div>
