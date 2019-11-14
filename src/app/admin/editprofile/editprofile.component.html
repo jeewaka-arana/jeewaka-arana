@@ -4,7 +4,7 @@
 
       <div class="col-md-12">       
           <div class="form-group">
-              <input ngModel #firstName="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name..." [ngClass]="{ 'is-invalid': userRegform.submitted && firstName.invalid }" required/>
+              <input ngModel #firstName="ngModel" name="Name" type="text" class="form-control" id="firstName" placeholder="First Name..." [ngClass]="{ 'is-invalid': userRegform.submitted && firstName.invalid }" required/>
               <div *ngIf="userRegform.submitted && firstName.invalid" class="invalid-feedback">
                   <div *ngIf="firstName.errors.required">First Name is required</div>
               </div>
