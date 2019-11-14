@@ -110,8 +110,10 @@ import { DropZoneDirective } from './core/directives/drop-zone.directive';
 
 import { TimepickComponent } from './doctor/timepick/timepick.component';
 
+import { IgxTimePickerModule } from "igniteui-angular";
 // import { IgxTimePickerModule } from "igniteui-angular";
 import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
+
 
 @NgModule({
     declarations: [
@@ -180,6 +182,7 @@ import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
      
         TimepickComponent,
         FirstpageComponent,
+       
     ],
     imports: [
 

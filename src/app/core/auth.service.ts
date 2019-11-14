@@ -57,7 +57,7 @@ export class AuthService {
       })
       .then(userCredential => {
         if(userCredential) {
-          this.router.navigate(['/doctoradmin']);
+          this.router.navigate(['/fpage']);
         
           
         }
@@ -76,7 +76,7 @@ export class AuthService {
 
         this.insertPatientData(userCredential)
           .then(() => {
-            this.router.navigate(['/index']);
+            this.router.navigate(['/patienthome']);
           });
       })
       .catch( error => {

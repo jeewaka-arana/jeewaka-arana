@@ -42,7 +42,7 @@
                                               </a>
                                               <div ngbDropdownMenu class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Relevance</a>
-                                                <a class="dropdown-item" target="_blank"  (click)="send()">Years of Experience(Low to High)</a>
+                                                <a class="dropdown-item" target="_blank"  (click)="send()">Years of Experience(Low to0 High)</a>
                                                 <a class="dropdown-item" target="_blank"  (click)="send2()">Years of Experience(High to Low)</a>
                                                 <a class="dropdown-item" target="_blank">Recommendation and Ratings</a>
                                               </div>
@@ -97,8 +97,8 @@
             <input type="text" [(ngModel)]="City" (keydown)="filterArea('City',City)" class="form-control" placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
           </div>
           <!-- <div class="row"> -->
-        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send()"> sort low to high</button>
-        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send2()"> sort high to low</button>
+        <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send()"> sort low to high</button>
+        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send2()"> sort high to low</button> -->
         <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="createPoint()">Create Me</button> -->
         <button class="btn btn-primary btn-simple btn-round" type="button" routerLink="/adsearch">Advance search</button>
         <!-- <button (click)="createPoint1(38, -119)">Create Me 1</button>  -->

@@ -139,11 +139,47 @@ formdata=new FormGroup({
 // rowIndexArray: any[];
 my_id:string;
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
+   
+   //unc
+    // this.my_id=afAuth.auth.currentUser.uid;
+   
 
-    
+
    }
 
   ngOnInit() {
+
+    
+ this.postsCol=this.afs.collection('Doctors');
+ this.posts=this.postsCol.valueChanges();
+ this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
+   this.post$=doc.data();
+  });
+ 
+
+
+
+  
+
   }
+
+  savevalue(data) {
+    this.CrudService.passData(data);
+   
+  }
+
+
+  
+  //popup button for special note
+
+  
+//   openModal(id: string) {
+//     this.modalService.open(id);
+// }
+
+// closeModal(id: string) {
+//     this.modalService.close(id);
+// }
+
 
 }
