@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Test2Component {
 
- 
+ test(data:number){
+   console.log(data);
+ }
 
 }

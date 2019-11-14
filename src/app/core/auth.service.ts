@@ -76,7 +76,7 @@ export class AuthService {
 
         this.insertPatientData(userCredential)
           .then(() => {
-            this.router.navigate(['/index']);
+            this.router.navigate(['/patienthome']);
           });
       })
       .catch( error => {

@@ -21,6 +21,7 @@
                     <form  #userRegform="ngForm" (ngSubmit)="userRegform.valid && checkpassword(password.value,confpassword.value) && createUser(userRegform) " >
                     <div class="row register-form" >
                         <div class="col-md-6">
+                               
                             <div class="form-group">
                                     <input ngModel #firstName="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name..." [ngClass]="{ 'is-invalid': userRegform.submitted && firstName.invalid }" required/>
                                     <div *ngIf="userRegform.submitted && firstName.invalid" class="invalid-feedback">
@@ -76,11 +77,11 @@
                                                 <div class="col-md-6">
                                                         
                                                            
-                                                            <div  title="Please select the country that the customer will primarily be served from">
-                                                                <select placeholder="Phantasyland" (change)="changeCountry($event.target.value)" class="sel">
+                                                            <!-- <div  title="Please select the country that the customer will primarily be served from">
+                                                                <select ngModel  #country="ngModel" placeholder="Phantasyland" (change)="changeCountry($event.target.value)" class="sel">
                                                                     <option *ngFor ="let count of countryList">{{count.name}} </option>
                                                                 </select>
-                                                            </div>
+                                                            </div> -->
                                                             
                                                                 
                                                             
@@ -89,11 +90,11 @@
                                                
                                                 <div class="col-md-6">
                                                    
-                                                    <div title="Please select the city that the customer is primarily to be served from.">
-                                                        <select placeholder="Anycity" class="sel">
+                                                    <!-- <div title="Please select the city that the customer is primarily to be served from.">
+                                                        <select ngModel #city="ngModel" placeholder="Anycity" class="sel">
                                                             <option *ngFor ="let city of cities">{{city}} </option>
                                                       </select>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                          </div>
                                    
@@ -110,7 +111,7 @@
                               
                               
                             
-                            <input type="submit" class="btnRegister"  formControlName="submit" value="Register" />
+                            <input type="submit" class="btnRegister"   value="Register" />
                         </div>
                     </div>
                 </form>
