@@ -6,6 +6,7 @@ import { Observable} from 'rxjs/Rx'
 import { UploadFileService } from '../core/upload-file.service';
  
 interface Post {
+  date: Date;
   description: string;
   img: string;
   newArticle: string;
