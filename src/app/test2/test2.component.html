@@ -1,1 +1,6 @@
-<app-popup></app-popup>
+<div class="form-group">
+        <label>Experienced Years</label><br>
+        <input ngModel #years="ngModel" type="range" name="years" min="0" max="20" class="slider" (click)="test(years.value)" placement="top" ngbTooltip="{{years.value}}" >
+    </div>
+<!-- 
+    <button (click)="test(years.value)">click me pls</button> -->

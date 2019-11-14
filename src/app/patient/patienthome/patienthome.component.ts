@@ -5,6 +5,7 @@ import { Observable} from 'rxjs/Rx'
 import { observable } from 'rxjs';
 import { Article } from 'app/core/models/article.model';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 interface Post {
   description: string;
@@ -32,8 +33,11 @@ export class PatienthomeComponent implements OnInit {
   userForm: FormGroup;
   newUser: boolean = true; // to toggle login or signup form
   passReset: boolean = false;
+my_id:string;
+  constructor(private afs: AngularFirestore,private fb: FormBuilder,private afAuth:AngularFireAuth) { 
 
-  constructor(private afs: AngularFirestore,private fb: FormBuilder) { }
+    this.my_id=afAuth.auth.currentUser.uid;
+  }
 
   ngOnInit() {
     // this.postsCol = this.afs.collection('Article')
