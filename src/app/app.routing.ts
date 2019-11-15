@@ -70,6 +70,8 @@ import { NotificationComponent } from './admin/notification/notification.compone
 import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
 import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
 
+
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -154,6 +156,8 @@ const routes: Routes =[
 
 {path:'time',component:TimepickComponent},
 {path:'fpage',component:FirstpageComponent},
+
+
     ]
 
 
