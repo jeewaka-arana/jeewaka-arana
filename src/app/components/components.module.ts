@@ -14,6 +14,8 @@ import { ComponentsComponent } from './components.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalBasic } from './modal/modal.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UfooterComponent } from './ufooter/ufooter.component';
+
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { NavbarComponent } from './navbar/navbar.component';
         NucleoiconsComponent,
         NotificationComponent,
         NgbdModalBasic,
-        NavbarComponent
+        NavbarComponent,
+        UfooterComponent,
+        
         
     ],
     exports:[ ComponentsComponent ]
