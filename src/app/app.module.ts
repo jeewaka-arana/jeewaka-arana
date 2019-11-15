@@ -115,6 +115,9 @@ import { IgxTimePickerModule } from "igniteui-angular";
 import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
 
 
+
+
+
 @NgModule({
     declarations: [
         AppComponent,

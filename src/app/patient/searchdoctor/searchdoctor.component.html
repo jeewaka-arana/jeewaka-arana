@@ -3,7 +3,7 @@
         <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Herbal-Medicine-1.jpg');">
         </div>
         <div class="container">
-            <div class="content-center">
+            <div data-aos="zoom-in" data-aos-delay="50" ata-aos-duration="1000" data-aos-easing="ease-in-out" class="content-center">
                 <h1 class="title">Search for Doctors.</h1>
             </div>
         </div>
@@ -58,6 +58,12 @@
                                           </a>
                                           </div>
                                         </li>
+                                        <li class="nav-item">
+                                          <a routerLink="/adsearch" class="nav-link"> <p>Advanced Search</p></a>
+                                         
+                                         
+                                          </li>
+                                       
                                 </ul>
                             </div>
                         </nav>
@@ -74,8 +80,8 @@
         <div class="section section-basic">
             <div class="container">
            
-          
-<h4>Looking for a Doctor?</h4>
+        <div data-aos="zoom-in-right" data-aos-delay="50" ata-aos-duration="1000" data-aos-easing="ease-in-out" ><h4>Looking for a Doctor?</h4></div>  
+
 <div class="row">
     <div class="col-sm-6 col-lg-3">
         <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
@@ -100,7 +106,6 @@
         <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send()"> sort low to high</button>
         <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send2()"> sort high to low</button> -->
         <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="createPoint()">Create Me</button> -->
-        <button class="btn btn-primary btn-simple btn-round" type="button" routerLink="/adsearch">Advance search</button>
         <!-- <button (click)="createPoint1(38, -119)">Create Me 1</button>  -->
        <!-- </div> -->
     </div>
@@ -151,11 +156,12 @@
                     <div class="row">
                             <div class="col-md-20 col-xl-10" >
 <ul *ngFor="let results of filteredNames">
-        <div class="card" >
+        <div data-aos="fade-up" data-aos-delay="30" data-aos-duration="1000" data-aos-easing="ease-in-out"  class="card" >
             <div class="row">
-                <div class="img-btn">
-                    <img src="{{results.downloadURL}}" alt="Thumbnail Image" class="img-fluid img-raised">
+                <div  class="img-btn">
+                    <img src="{{results.downloadURL}}" alt="profile photo" class="img-fluid img-raised">
                 </div>
+                
                 <div class="column">  
                     <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
                     <!-- <h6>{{results.RegistrationNumber}}</h6> -->
