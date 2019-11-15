@@ -36,7 +36,7 @@ export class PatienthomeComponent implements OnInit {
 my_id:string;
   constructor(private afs: AngularFirestore,private fb: FormBuilder,private afAuth:AngularFireAuth) { 
 
-    this.my_id=afAuth.auth.currentUser.uid;
+    // this.my_id=afAuth.auth.currentUser.uid;
   }
 
   ngOnInit() {
