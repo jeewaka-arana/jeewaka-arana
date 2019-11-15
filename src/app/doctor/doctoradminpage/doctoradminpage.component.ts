@@ -15,7 +15,9 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import{Disease} from  '../../core/models/diseases.module';
 import { of } from 'rxjs';
 
+export interface Doctors{
 
+}
 
 @Component({
   selector: 'app-doctoradminpage',
@@ -24,6 +26,12 @@ import { of } from 'rxjs';
 })
 export class DoctoradminpageComponent implements OnInit {
   orders = [];
+
+
+  postsCol:AngularFirestoreCollection< Doctors>;
+  posts:Observable< Doctors[]>;
+  post$:any;
+
  //for diseases list 
 
 // diseases: Disease[]= [
@@ -121,7 +129,7 @@ sut3:new FormControl(''),
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
 
     // this.my_id=afAuth.auth.currentUser.uid;
-    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(7);
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(13);
     console.log(this.my_id);
     
 //
@@ -141,6 +149,13 @@ sut3:new FormControl(''),
     // window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
     this.formdata;
    
+
+    //new
+    this.postsCol=this.afs.collection('Doctors');
+ this.posts=this.postsCol.valueChanges();
+ this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
+   this.post$=doc.data();
+});
 
 ////
 // this.resetForm();
