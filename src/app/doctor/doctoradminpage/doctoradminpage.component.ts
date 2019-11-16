@@ -136,7 +136,7 @@ sut3:new FormControl(''),
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
 
     // this.my_id=afAuth.auth.currentUser.uid;
-    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(13);
    
     console.log(this.my_id);
     

@@ -14,7 +14,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class SignDoctorComponent implements OnInit {
  
+Specialist:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic Ulcers','Cholestrol' , 'Diabetic Ulcers','Diabetes Mellitus', 'ENT'
+                  ,'Fistula', 'Gynaecological Disorders' ,'Gastritis' ,'Hemorrhoids' ,'Hypertension', 'Neurological Disorders', 'Orthopedics' 
+                  ,'Obesity','Paralysis / Hemiplagia', 'Pediatrics','Spinal Disorders','Skin Disorders' ,'Urinary Calculi','Urinary Calculi','Urinary Disease'
+                  ,'Varicose Venis','I have a medical hospital for all diseases'
 
+];
 
   City: any = ['Colombo','Dehiwala-Mount Lavinia','Moratuwa','Jaffna', 'Negombo','Pita Kotte',' Sri Jayewardenepura Kotte','Kandy','Trincomalee','Kalmunai','Galle','Point Pedro','Batticaloa','Katunayaka','Valvedditturai'
   ,'Matara','Battaramulla South','Dambulla','Maharagama','Kotikawatta','Anuradhapura','Vavuniya','Kolonnawa','Hendala','Ratnapura','Badulla'	
@@ -97,6 +102,8 @@ export class SignDoctorComponent implements OnInit {
    isActive(snapshot) {
      return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
    }
+
+
 
  
 }
