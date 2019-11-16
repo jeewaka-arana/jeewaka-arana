@@ -147,6 +147,7 @@ my_id:string;
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
    
    
+  
     this.my_id=afAuth.auth.currentUser.uid;
    
 

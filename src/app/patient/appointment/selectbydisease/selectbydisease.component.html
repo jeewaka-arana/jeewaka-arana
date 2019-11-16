@@ -1,5 +1,6 @@
+<app-pnav></app-pnav>
 <div class="wrapper">
-        <div class="page-header page-header-small">
+        <div class="page-header clear-filter"  filter-color="orange">
             <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg6.jpg');">
             </div>
             <div class="container">
@@ -99,12 +100,23 @@
                  <ngb-pagination [collectionSize]="50" [(page)]="page" aria-label="Default pagination" class="pagination-primary"></ngb-pagination>
                                 
             </div>
+            <div class="section section-basic">
+                    <div class="container">
+                    <div id="buttons">
+                      <div class="row" class="text-center" >
+                          <div class="col-md-10" >
+                              <button routerLink="/appstep3" class="btn btn-primary btn-round" type="button">Next</button>
+                          </div> 
+                      </div>
+                    </div>
+                    </div>
+                  </div>
                   
     
     
       
       
-        <footer class="footer footer-default">
+        <!-- <footer class="footer footer-default">
             <div class="container">
                 <nav>
                     <ul>
@@ -137,6 +149,7 @@
                     <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
                 </div>
             </div>
-        </footer>
+        </footer> -->
+        <app-pfooter></app-pfooter>
     </div>
     

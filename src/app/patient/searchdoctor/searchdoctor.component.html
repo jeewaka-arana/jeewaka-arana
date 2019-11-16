@@ -1,10 +1,11 @@
+<app-pnav></app-pnav>
 <div class="wrapper">
-    <div class="page-header page-header-small">
+    <div class="page-header clear-filter"  filter-color="orange">
         <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Herbal-Medicine-1.jpg');">
         </div>
         <div class="container">
-            <div class="content-center">
-                <h1 class="title">Search for Doctors.</h1>
+            <div data-aos="zoom-in" data-aos-delay="50" ata-aos-duration="1000" data-aos-easing="ease-in-out" class="content-center">
+                <h1 class="title">Looking for a doctor?</h1>
             </div>
         </div>
     </div>
@@ -151,7 +152,7 @@
                     <div class="row">
                             <div class="col-md-20 col-xl-10" >
 <ul *ngFor="let results of filteredNames">
-        <div class="card" >
+        <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="card" >
             <div class="row">
                 <div class="img-btn">
                     <img src="{{results.downloadURL}}" alt="Thumbnail Image" class="img-fluid img-raised">
@@ -175,8 +176,8 @@
                 </div>
         </div>
 
-
-  <footer class="footer footer-default">
+<app-pfooter></app-pfooter>
+  <!-- <footer class="footer footer-default">
       <div class="container">
           <nav>
               <ul>
@@ -209,5 +210,5 @@
               <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
           </div>
       </div>
-  </footer>
+  </footer> -->
 </div>

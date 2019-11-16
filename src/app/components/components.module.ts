@@ -16,6 +16,8 @@ import { NgbdModalBasic } from './modal/modal.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { UfooterComponent } from './ufooter/ufooter.component';
+
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
         NavbarComponent,
         AboutUsComponent,
         ContactUsComponent
+        UfooterComponent,
+        
         
     ],
     exports:[ ComponentsComponent ]

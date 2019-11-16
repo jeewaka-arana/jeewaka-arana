@@ -16,6 +16,9 @@ import{Disease} from  '../../core/models/diseases.module';
 import { of } from 'rxjs';
 import * as Rellax from 'rellax';
 
+export interface Doctors{
+
+}
 
 @Component({
   selector: 'app-doctoradminpage',
@@ -30,6 +33,12 @@ import * as Rellax from 'rellax';
 })
 export class DoctoradminpageComponent implements OnInit {
   orders = [];
+
+
+  postsCol:AngularFirestoreCollection< Doctors>;
+  posts:Observable< Doctors[]>;
+  post$:any;
+
  //for diseases list 
 
 // diseases: Disease[]= [
@@ -128,6 +137,7 @@ sut3:new FormControl(''),
 
     // this.my_id=afAuth.auth.currentUser.uid;
     this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+   
     console.log(this.my_id);
     
 //
@@ -148,6 +158,13 @@ sut3:new FormControl(''),
    
     this.formdata;
    
+
+    //new
+    this.postsCol=this.afs.collection('Doctors');
+ this.posts=this.postsCol.valueChanges();
+ this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
+   this.post$=doc.data();
+});
 
 ////
 // this.resetForm();

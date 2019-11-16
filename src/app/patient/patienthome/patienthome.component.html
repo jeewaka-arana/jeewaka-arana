@@ -1,11 +1,19 @@
-
+<app-pnav></app-pnav>
 <div class="wrapper">
-    <div class="page-header page-header-small">
+    
+        
+    <div class="page-header clear-filter"  filter-color="orange">
+           
         <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Herbal-Medicine-1.jpg');">
         </div>
+     
+        
         <div class="container">
-            <div class="content-center">
-                <h1 class="title">Your home for health.</h1>
+                
+            <div  data-aos="zoom-in" data-aos-delay="50" ata-aos-duration="1000" data-aos-easing="ease-in-out" class="content-center">
+                
+                <h1  class="title">Your home for health.</h1>
+                <h3  class="title">All your practitioners in one place</h3>
                 <!-- <div class="text-center">
                   <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                     <i class="fab fa-facebook-square"></i>
@@ -23,8 +31,10 @@
     <div class="section section-about-us">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    {{my_id}}
+                    
+                <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="col-md-8 ml-auto mr-auto text-center">
+                 
+                    <!-- {{my_id}} -->
                     <h2 class="title">Why choose Jeewaka Arana?</h2>
                     <h5 class="description">Jeewaka Arana is Sri Lanka's online ayurvedic website, transforming the way Sri Lankans access 
                         and use healthcare services. We are driven to advance the accessibility of healthcare for all Sri Lankans by improving
@@ -50,24 +60,24 @@
                     </div>
                     <div class="col-md-6">
                         <!-- First image on the right side, above the article -->
-                        <div class="image-container image-right" style="background-image: url('assets/img/ayurveda_medicines_2.jpg')"></div>
-                        <h2>Leading Healthcare Providers. Trust us for Business</h2>
-                        <div class="my-header">
+                        <div class="image-container image-right" style="background-image: url('assets/img/pic2.jpg')"></div>
+                       <div data-aos="fade-right"data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" > <h2>Leading Healthcare Providers. Trust us for Business</h2></div>
+                        <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="my-header">
                             <i class="now-ui-icons ui-1_check"></i>
                             <h5 class="inline"> Instant appointment with doctors. Guaranteed.</h5>
                         </div>
                         <br>
-                        <div class="my-header">
+                        <div data-aos="fade-up" data-aos-delay="52" data-aos-duration="1000" data-aos-easing="ease-in-out" class="my-header">
                                 <i class="now-ui-icons ui-1_check"></i>
                                 <h5 class="inline"> Safety of your data is our top priority.</h5>
                         </div>
                         <br>
-                        <div class="my-header">
+                        <div data-aos="fade-up" data-aos-delay="54" data-aos-duration="1000" data-aos-easing="ease-in-out" class="my-header">
                                 <i class="now-ui-icons ui-1_check"></i>
                                 <h5 class="inline"> All your medical records in one secure app.</h5>
                         </div>
                         <br>
-                        <div class="my-header">
+                        <div data-aos="fade-up" data-aos-delay="56" data-aos-duration="1000" data-aos-easing="ease-in-out" class="my-header">
                                 <i class="now-ui-icons ui-1_check"></i>
                                 <h5 class="inline"> Read health tips.</h5>
                         </div>
@@ -77,7 +87,7 @@
         </div>
     </div>
     <div class="section-team text-center">
-        <div class="container">
+        <div  data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="container">
             <h2 class="title">Our Service</h2>
             <div class="team">
                 <div class="row">
@@ -115,7 +125,7 @@
             </div>
         </div>
     </div>
-    <div class="section-story-overview">
+    <div data-aos="fade-up" data-aos-delay="54" data-aos-duration="1000" data-aos-easing="ease-in-out" class="section-story-overview">
       <h2 class="title text-center">Recent Articles</h2>
       <div class="container">
     <div class="row">
@@ -142,7 +152,7 @@
 </div>
     
 
-    <div class="section section-contact-us text-center">
+    <div data-aos="fade-up" data-aos-delay="58" data-aos-duration="1000" data-aos-easing="ease-in-out" class="section section-contact-us text-center">
         <div class="container">
             <h2 class="title">Report a problem</h2>
             <p class="description">Let us know of the inconvenience</p>
@@ -186,4 +196,39 @@
     </div>
 
    
+    <app-pfooter></app-pfooter>
+    <!-- <footer class="footer footer-default">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/about-us">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                            MIT License
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                &copy;
+                {{data | date: 'yyyy'}}, Designed by
+                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer> -->
 </div>

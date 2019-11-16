@@ -7,6 +7,7 @@ import { Article } from 'app/core/models/article.model';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 
+
 interface Post {
   description: string;
   img: string;
@@ -36,7 +37,7 @@ export class PatienthomeComponent implements OnInit {
 my_id:string;
   constructor(private afs: AngularFirestore,private fb: FormBuilder,private afAuth:AngularFireAuth) { 
 
-    this.my_id=afAuth.auth.currentUser.uid;
+    // this.my_id=afAuth.auth.currentUser.uid;
   }
 
   ngOnInit() {

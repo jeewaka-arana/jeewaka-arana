@@ -32,6 +32,7 @@
     "@types/lodash": "^4.14.144",
     "ajv": "6.10.0",
     "ajv-keywords": "3.4.0",
+    "aos": "^2.3.4",
     "bootstrap": "^4.3.1",
     "copy-webpack-plugin": "5.0.1",
     "core-js": "2.6.5",

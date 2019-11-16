@@ -104,6 +104,19 @@
             <br>
             <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
             <h3>A greatest Ayurvedic platform</h3>
+        
+
+
+        <div class="content-center">
+
+          
+            <h1 style="font-family: cursive;" class="title">Edit Your Profile</h1>
+            {{my_id}}
+            {{post$.Firstname}}
+            <div class="text-center">
+              
+              
+            </div>
         </div>
 
     </div>
@@ -174,9 +187,150 @@
 
 
 
+<!--  -->
+
+
+<div class="container register" >
+ 
+     
+      <div class="col-md-9 register-right">
+          
+                  
+                  <!-- <div class="row" *ngIf="authError">
+                          <div class="col-9 alert alert-danger">
+                            {{ authError?.message }}
+                          </div>
+                        </div> -->
+                  <form #f="ngForm" (ngSubmit)="f.valid && createUser(f)">
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input ngModel #firstName="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name..." [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required>
+                              <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                                  <div *ngIf="firstName.errors.required">First Name is required</div>
+                              </div>
+                          </div>
+                         
+                         
+                          <div class="form-group">
+                              <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Your Email..." [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required> 
+                              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                                  <div *ngIf="email.errors.required">Email is required</div>
+                              </div>
+                          </div>
+                         
+                          <div class="form-group">
+                              <input ngModel #nic="ngModel" name="nic" type="text" class="form-control" id="nic" value="" placeholder="Your NIC..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" required>
+                              <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
+                                  <div *ngIf="nic.errors.required">NIC Number is required</div>
+                              </div>
+                          </div>
+                         
+                          <div class="form-group">
+                              <div class="wrapout">
+                                  Choose your position :
+                              <div class="wrap">
+                                  
+                                  <label class="container">
+                                          <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Qualified" id="position1" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
+                                          Qualified only
+                                      </label>
+                                      <label class="container">
+                                          <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Generation" id="position2" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
+                                          Generation only
+                                      </label>
+                                      <label class="container">
+                                          <input ngModel #position="ngModel" name="position" type="radio" class="form-control-radio" value="Both" id="position3" [ngClass]="{ 'is-invalid': f.submitted && position.invalid }" required>
+                                          Both
+                                             
+                                      </label>
+                                  </div>  
+                              </div>   
+                                  </div>
+                         
+                                  <!-- <div class="form-group">
+                                          <div class="slidecontainer">
+                                                  <label>Experienced Years</label>
+                                                  <input ngModel #expyears type="range" min="1" max="100" value="" class="slider" ondragover="slider(expyears.value)" id="myRange">
+                                                  
+                                                </div>
+                                      </div> -->
+                                      <div class="form-group">
+                                          <label>Experienced Years</label><br>
+                                          <input ngModel #years="ngModel" type="range" name="years" min="0" max="20" class="slider" (click)="exp(years.value)" placement="top" ngbTooltip="Firstname" >
+                                      </div>
+                                      
+                                      
+
+                                   
+
+                                         
+                                          
+                      </div>
+                      <div class="col-md-6">
+                              <div class="form-group">
+                                      <input ngModel #lastName="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" placeholder="Last Name..." [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required>
+                                      <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                                          <div *ngIf="lastName.errors.required">Last Name is required</div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                          <input ngModel #phone="ngModel" name="phone" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number..." [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required> 
+                                          <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                                              <div *ngIf="phone.errors.required">Phone Number is required</div>
+                                          </div>
+                                      </div>
+                                     
+
+                                    
+
+                                          <input ngModel #city="ngModel" class="form-control"  name="city"  list="citylist" placeholder="Choose your city...">
+                                          <datalist id="citylist" >
+
+                                                  <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
+
+                                          </datalist>
+                                        
+                          
+                        
+                              
 
 
 
+
+
+
+     
+
+       
+     
+    </div>
+
+
+
+
+<div class="form-group">
+  <input ngModel #specialist="ngModel" name="specialist" type="text" class="form-control" id="specialist" value="" placeholder="What you are special for..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" required>
+  <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
+      <div *ngIf="nic.errors.required">NIC Number is required</div>
+  </div>
+</div>                      
+                               
+                          
+                         
+                            
+                          <input type="submit" class="btnRegister"  value="Register" />
+                     </div>
+                 
+                  </form>
+
+             
+            
+          
+      </div>
+  
+
+</div>
 
 
 
@@ -441,8 +595,8 @@
  
 
 </div>
-
-
+<app-dfooter></app-dfooter>
+<!-- 
       <footer class="footer footer-default">
           <div class="container">
               
@@ -454,7 +608,7 @@
           </div>
   
   
-      </footer>
+      </footer> -->
   
       
 

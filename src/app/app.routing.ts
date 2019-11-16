@@ -71,6 +71,9 @@ import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
 import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
 import{AboutUsComponent} from '../app/components/about-us/about-us.component';
 import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
+
+
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
