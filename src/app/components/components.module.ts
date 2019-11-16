@@ -39,8 +39,9 @@ import { UfooterComponent } from './ufooter/ufooter.component';
         NgbdModalBasic,
         NavbarComponent,
         AboutUsComponent,
-        ContactUsComponent
+        ContactUsComponent,
         UfooterComponent,
+        
         
         
     ],
