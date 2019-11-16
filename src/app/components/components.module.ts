@@ -14,6 +14,8 @@ import { ComponentsComponent } from './components.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalBasic } from './modal/modal.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { NavbarComponent } from './navbar/navbar.component';
         NucleoiconsComponent,
         NotificationComponent,
         NgbdModalBasic,
-        NavbarComponent
+        NavbarComponent,
+        AboutUsComponent,
+        ContactUsComponent
         
     ],
     exports:[ ComponentsComponent ]

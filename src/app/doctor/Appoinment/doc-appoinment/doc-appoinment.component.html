@@ -1,150 +1,143 @@
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
-  <div class="container">
-    <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
-      <div class="navbar-translate">
-          <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
-             
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
-              <span class="navbar-toggler-bar bar1"></span>
-              <span class="navbar-toggler-bar bar2"></span>
-              <span class="navbar-toggler-bar bar3"></span>
-          </button>
-      </div>
-      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
-          <ul class="navbar-nav ml-auto">
-
-
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top navbar-color "color-on-scroll="500">
+    <div class="container">
+      <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+            <ul class="navbar-nav ml-auto">
+  
+              <li class="nav-item">
+                <a class="nav-link"   routerLink="/index" >
+                    <i class="now-ui-icons business_bank"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+  
+  
+                
             <li class="nav-item">
-              <a class="nav-link"   routerLink="/index" >
-                  <i class="now-ui-icons business_bank"></i>
-                  <p>Home</p>
+              <a class="nav-link" routerLink="/index" >
+                  <i class="now-ui-icons business_globe"></i>
+                  <p>Change Language</p>
               </a>
           </li>
-
-
+  
+          
+  
               
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/index" >
-                <i class="now-ui-icons business_globe"></i>
-                <p>Change Language</p>
-            </a>
-        </li>
-
         
-
-            
-      
-
-          <li class="nav-item">
-            <a class="nav-link" href="/docAppoinment" >
-                <i class="now-ui-icons ui-1_calendar-60"></i>
-                <p>Appoinments</p>
-            </a>
-        </li>
-                       
-        <li class="nav-item">
-            <a class="nav-link" href="/bothcomment" >
-                <i class="now-ui-icons text_align-center"></i>
-                <p>Comments</p>
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-         
-          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            
-              <i class="now-ui-icons ui-1_zoom-bold"></i>
-              <p>Search</p>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
-            <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
-            
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="now-ui-icons users_single-02
-
-              "></i>
-            <p>Profile</p>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " href="/doctorview" > View Profile </a>
-            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
-            
-          </div>
-        </li>
-
-        
-<!-- 
+  
             <li class="nav-item">
-              <a class="nav-link btn btn-neutral" routerLink="/signup">
-                  <i class="now-ui-icons arrows-1_share-66"></i>
-                  <p>Sign In</p>
+              <a class="nav-link" href="/docAppoinment">
+                  <i class="now-ui-icons ui-1_calendar-60"></i>
+                  <p>Appoinments</p>
               </a>
           </li>
-           -->
+                         
+          <li class="nav-item">
+              <a class="nav-link" href="/complain" >
+                  <i class="now-ui-icons text_align-center"></i>
+                  <p>Complains</p>
+              </a>
+          </li>
+          <li class="nav-item dropdown">
            
-          </ul>
+            <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              
+                <i class="now-ui-icons ui-1_zoom-bold"></i>
+                <p>Search</p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
+              <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
+              
+            </div>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="now-ui-icons users_single-02
+  
+                "></i>
+              <p>Profile</p>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item " [routerLink]="['/fpage',my_id]" > View Profile </a>
+              <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+              <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
+              
+            </div>
+          </li>
+  
+  
+             
+            </ul>
+        </div>
+    </div>
+  </nav>
+  
+  
+  
+  
+  <div class="page-header clear-filter" filter-color="orange">
+  
+      <!-- <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://i2.wp.com/balancedachievement.com/wp-content/uploads/2016/08/Ayurveda-101.jpeg?resize=1170%2C731&ssl=1');" > -->
+        <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://w-dog.ru/wallpapers/12/5/377773801052813/parfyum-duxi-flakon-cvetok-orxideya-kamni-chernye-bazaltovye-massazhnye-spa-bambuk.jpg');" >
+  
       </div>
-  </div>
-</nav>
-<div class="page-header page-header-small">
-
-  <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('https://www.tripsavvy.com/thmb/ClRoeV1sLyyd_q69qyCqVaEMSGg%3D/1200x800/filters:no_upscale():max_bytes(150000):strip_icc()/chairs-5ac247b20e23d900368fee73.jpg');" >
+      
+  
+      <div class="container">
+  
+          <div class="content-center brand">
+              <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% >
+              <br>
+              <br>
+              <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
+              <h3>A greatest Ayurvedic platform</h3>
+          </div>
+  
+      </div>
+    </div>
+    
+    
     
 
-  </div>
+<br><br><br>
+<div class="section section-about-us" >
   
-
-  <div class="container">
-
-      
-
-
-      <div class="content-center">
-
-        
-          <h1 style="font-family: cursive;" class="title">Edit Your Profile</h1>
-          <div class="text-center">
-            
-            
-          </div>
-      </div>
-  </div>
-</div>
-
-
-
-<div class="section-team text-center">
-  <div class="container">
-      <h2 class="title">Appointment</h2>
-      <div class="team">
+      <h2 class="title" style="margin-left: 25rem;">Appointment</h2>
+    </div>
           <div class="row">
-              <div class="col-md-5">
-                  <div class="team-player">
+              <div class="col-md-5" style="margin-left:9rem;">
+                 
                       <img src="assets/img/images.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
                       <h4 class="title">Make Appointments</h4>
                       <a class="category text-primary" href="/appstep1">Click Here</a>
-                      <!-- <p class="category text-primary">Model</p> -->
+                      
                       <p class="description">We list for free and ensure each doctor profile is verified for medical license, qualification and specialisation.
                           </p>
-                  </div>
+                  
               </div>
             
               <div class="col-md-5">
-                  <div class="team-player">
+                  
                       <img src="assets/img/appo.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
                       <h4 class="title">View Appointment</h4>
                       <a class="category text-primary" href="/viewappoinment">Click Here</a>
-                      <!-- <p class="category text-primary">Fashion</p> -->
+                    
                       <p class="description">We help millions of patients and thousands of doctors with a simpler, easier healthcare experience.
                           </p>
-                      </div>
+                      
               </div>
           </div>
-      </div>
-  </div>
-</div>
+      
+  

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as Rellax from 'rellax';
+
 @Component({
-  selector: 'app-doc-appoinment',
-  templateUrl: './doc-appoinment.component.html',
-  styleUrls: ['./doc-appoinment.component.scss'],
+  selector: 'app-contact-us',
+  templateUrl: './contact-us.component.html',
+  styleUrls: ['./contact-us.component.scss'],
   styles: [`
     ngb-progressbar {
         margin-top: 5rem;
@@ -11,12 +12,16 @@ import * as Rellax from 'rellax';
     
     `]
 })
-export class DocAppoinmentComponent implements OnInit {
+export class ContactUsComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
     var rellaxHeader = new Rellax('.rellax-header');
+
+    
+
+
   }
 
 }

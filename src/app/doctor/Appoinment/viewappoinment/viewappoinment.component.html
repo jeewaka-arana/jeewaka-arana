@@ -37,16 +37,16 @@
       
 
           <li class="nav-item">
-            <a class="nav-link" href="/docAppoinment" >
+            <a class="nav-link" href="/docAppoinment">
                 <i class="now-ui-icons ui-1_calendar-60"></i>
                 <p>Appoinments</p>
             </a>
         </li>
                        
         <li class="nav-item">
-            <a class="nav-link" href="/bothcomment" >
+            <a class="nav-link" href="/complain" >
                 <i class="now-ui-icons text_align-center"></i>
-                <p>Comments</p>
+                <p>Complains</p>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -71,21 +71,14 @@
             <p>Profile</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " href="/doctorview" > View Profile </a>
+            <a class="dropdown-item " [routerLink]="['/doctorview',my_id]" > View Profile </a>
             <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+            <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
             
           </div>
         </li>
 
-        
-<!-- 
-            <li class="nav-item">
-              <a class="nav-link btn btn-neutral" routerLink="/signup">
-                  <i class="now-ui-icons arrows-1_share-66"></i>
-                  <p>Sign In</p>
-              </a>
-          </li>
-           -->
+
            
           </ul>
       </div>

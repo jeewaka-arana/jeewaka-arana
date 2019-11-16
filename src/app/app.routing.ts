@@ -69,7 +69,8 @@ import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
 import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
 import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
-
+import{AboutUsComponent} from '../app/components/about-us/about-us.component';
+import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -145,6 +146,7 @@ const routes: Routes =[
 {path:'deletecomment',component:DeleteCommentComponent},
 {path:'bothcomment',component:BothCommentPageComponent},
 {path:'docAppoinment',component:DocAppoinmentComponent},
+{path:'docAppoinment/:id',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
 {path:'timePicker',component:TimeComponent},
 {path:'report',component:ReportComponent},
@@ -154,6 +156,10 @@ const routes: Routes =[
 
 {path:'time',component:TimepickComponent},
 {path:'fpage',component:FirstpageComponent},
+
+{path:'aboutUs',component:AboutUsComponent},
+{path:'contactUs',component:ContactUsComponent},
+
     ]
 
 

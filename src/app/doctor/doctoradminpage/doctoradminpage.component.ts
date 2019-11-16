@@ -14,13 +14,19 @@ import { Doctor } from 'app/core/models/doctor.model';
 import { AngularFireDatabase } from '@angular/fire/database';
 import{Disease} from  '../../core/models/diseases.module';
 import { of } from 'rxjs';
-
+import * as Rellax from 'rellax';
 
 
 @Component({
   selector: 'app-doctoradminpage',
   templateUrl: './doctoradminpage.component.html',
-  styleUrls: ['./doctoradminpage.component.scss']
+  styleUrls: ['./doctoradminpage.component.scss'],
+  styles: [`
+    ngb-progressbar {
+        margin-top: 5rem;
+    }
+    
+    `]
 })
 export class DoctoradminpageComponent implements OnInit {
   orders = [];
@@ -121,7 +127,7 @@ sut3:new FormControl(''),
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
 
     // this.my_id=afAuth.auth.currentUser.uid;
-    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(7);
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
     console.log(this.my_id);
     
 //
@@ -138,7 +144,8 @@ sut3:new FormControl(''),
   }
 
   ngOnInit() {
-    // window.document.body.style.backgroundImage='url("../../../assets/img/Ayurveda-101.jpeg")';
+    var rellaxHeader = new Rellax('.rellax-header');
+   
     this.formdata;
    
 

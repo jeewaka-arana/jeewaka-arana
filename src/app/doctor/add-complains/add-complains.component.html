@@ -1,12 +1,4 @@
-        
-
-
-
-
-
-
-
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top navbar-color "color-on-scroll="500">
   <div class="container">
     <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
       <div class="navbar-translate">
@@ -39,53 +31,54 @@
             </a>
         </li>
 
-                       
-        <li class="nav-item">
-          <a class="nav-link" href="/bothcomment" >
-              <i class="now-ui-icons text_align-center"></i>
-              <p>Comments</p>
-          </a>
-      </li>
+        
 
             
       
 
           <li class="nav-item">
-            <a class="nav-link" routerLink="/index" >
+            <a class="nav-link" href="/docAppoinment">
                 <i class="now-ui-icons ui-1_calendar-60"></i>
                 <p>Appoinments</p>
             </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Search
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/doctorview" >Search By Name</a>
-            <a class="dropdown-item" href="/doctoradmin">Search By Diseases</a>
-            
-          </div>
+                       
+        <li class="nav-item">
+            <a class="nav-link" href="/complain" >
+                <i class="now-ui-icons text_align-center"></i>
+                <p>Complains</p>
+            </a>
         </li>
         <li class="nav-item dropdown">
+         
           <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Profile
+            
+              <i class="now-ui-icons ui-1_zoom-bold"></i>
+              <p>Search</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/doctorview" >View Profile </a>
-            <a class="dropdown-item" href="/doctoradmin">Edit Profile</a>
+            <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
+            <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
             
           </div>
         </li>
 
-        
-<!-- 
-            <li class="nav-item">
-              <a class="nav-link btn btn-neutral" routerLink="/signup">
-                  <i class="now-ui-icons arrows-1_share-66"></i>
-                  <p>Sign In</p>
-              </a>
-          </li>
-           -->
+        <li class="nav-item dropdown">
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons users_single-02
+
+              "></i>
+            <p>Profile</p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item " [routerLink]="['/fpage',my_id]" > View Profile </a>
+            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+            <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
+            
+          </div>
+        </li>
+
+
            
           </ul>
       </div>
@@ -95,54 +88,48 @@
 
 
 
-
-<div class="page-header page-header-small">
-
-  <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('../../../assets/img/b3.jpg');">  
+  <!-- <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('../../../assets/img/b3.jpg');">   -->
     
-
-  </div>
+<div class="wrapper">
+    
+    <div class="page-header clear-filter" filter-color="orange">
+      <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('../../../assets/img/b3.jpg');">
   
-  <div class="container">
-
-        
-
-
-    <div class="content-center">
-
-      
-        <h1 style="font-family: cursive;" class="title">We’d love to hear from you</h1>
-        <div class="text-center">
-          
-          
+      </div>
+      <div class="container">
+        <div class="content-center brand">
+            <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% >
+            <br>
+            <br>
+            <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
+            <h3>A greatest Ayurvedic platform</h3>
         </div>
+       
     </div>
-
-
-</div>
-
+  
+  </div>
 </div>
 
 
 
 
 <div class="card">
-    <div class="card-body" >
+    <div class="card-body" style="background-color:#ffe6f2;">
       
         <div class="row">
             <div class="col col-md-6">
-            <img src="../../../assets/img/contact-hero.jpg" alt="contact">
+            <!-- <img src="../../../assets/img/contact-hero.jpg" alt="contact"> -->
 
+
+            <img src="https://vtemu.by/wp-content/uploads/2014/05/08.jpg" alt="contact">
               </div>
-              <div class="vl"></div>
-              <div class="col col-md-5" style="width: 15rem;">
+
+
+              <div class="col col-md-6" style="width: 17rem;">
                 
 
-                       
 
-  <div class="card" style="width:36rem;">
-      <div class="card-body" style="height: 38rem;background-color: rgb(150, 210, 228);" >
-                        
+   
                        
                               <div class="formGroup" >
                                       
@@ -151,18 +138,21 @@
                       
                               <div  class="form-group" >
                               <div class="col-lg-8">
+                                <label for="">Name *</label>
                                 <input class="form-control" style="width: 20rem;" formControlName="cname" name="cname" placeholder="Your name">
                             </div><br>
                           </div>
                   
                           <div  class="form-group" >
                             <div class="col-lg-8">
+                              <label for="">E-mail *</label>
                               <input class="form-control" style="width: 20rem;"   formControlName="cmail" name="cmail" placeholder="Your Email">
                           </div>
                   </div>
                             
                             <div  class="form-group" >
                               <div class="textarea-container">
+                                <label for="">Message *</label>
                                   <textarea class="form-control"   formControlName="cmsg" name="cmsg" placeholder="Your message"></textarea>
                               </div>
                             </div>
@@ -170,16 +160,13 @@
                               <div  class="form-group" >
                                 <input type="submit" class="btnRegister   float-right" style="width: 15rem;" formControlName="submit" value="Send Us" (click)="submitcomplain()"/>         
                                 </div> 
-                      <br><br><br><br><br><br><br><br>
+                      <br><br><br>
                   <p style="margin-left: 15px;"><b>* By clicking on SEND US, you acknowledge having read our Privacy notice</b></p>
    
                   
                       </form>
                   </div>
                   
-                  </div>
-                  </div>
-                
                 
                 
 
@@ -191,7 +178,7 @@
 <!--  -->
 
 
-            <h2 style="margin-left: 13rem;color: #01030e;"> Need to get in touch with the team? We’re all ears.</h2>
+            <!-- <h2 style="margin-left: 13rem;color: #01030e;"> Need to get in touch with the team? We’re all ears.</h2> -->
            
    
 
@@ -246,36 +233,4 @@
 </div> 
  -->
 
- <footer class="footer" data-background-color="black">
-    <div class="container">
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/about-us">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                        MIT License
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright">
-            &copy;
-          {{data | date: 'yyyy'}}, Designed by Jeewaka Arana Team.
-           
-        </div>
-    </div>
-</footer>
+ 

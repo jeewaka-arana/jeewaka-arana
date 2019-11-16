@@ -13,7 +13,7 @@ import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/
 import { firestore } from 'firebase';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-
+import * as Rellax from 'rellax';
 
 //retrive  data
 interface Doctors{
@@ -46,7 +46,13 @@ interface Doctors{
 @Component({
   selector: 'app-firstpage',
   templateUrl: './firstpage.component.html',
-  styleUrls: ['./firstpage.component.scss']
+  styleUrls: ['./firstpage.component.scss'],
+  styles: [`
+    ngb-progressbar {
+        margin-top: 5rem;
+    }
+    
+    `]
 })
 export class FirstpageComponent implements OnInit {
 
@@ -140,15 +146,15 @@ formdata=new FormGroup({
 my_id:string;
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
    
-   //unc
-    // this.my_id=afAuth.auth.currentUser.uid;
+   
+    this.my_id=afAuth.auth.currentUser.uid;
    
 
 
    }
 
   ngOnInit() {
-
+    var rellaxHeader = new Rellax('.rellax-header');
     
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
