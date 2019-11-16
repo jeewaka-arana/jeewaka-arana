@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
 import { Observable} from 'rxjs/Rx'
 
 import { UploadFileService } from '../core/upload-file.service';
+import { AuthService } from 'app/core/auth.service';
  
 interface Post {
   date: Date;
@@ -22,7 +23,7 @@ export class AdminComponent implements OnInit {
   results: any[] = [];
   postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<Post[]>;
-  constructor(private afs: AngularFirestore,private fb: FormBuilder, private uploadService: UploadFileService) { }
+  constructor(private afs: AngularFirestore,private fb: FormBuilder, private uploadService: UploadFileService,private auth:AuthService) { }
 
   ngOnInit() {
     this.afs.collection('Article',ref => ref.limit(4)).valueChanges().subscribe(results => {
@@ -37,5 +38,8 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  login(frm){
+    this.auth.admin_login(frm.value.email, frm.value.password);
+  }
 
 }

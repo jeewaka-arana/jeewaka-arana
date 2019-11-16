@@ -1,10 +1,10 @@
 export class Doctor {
     Userid:string;
-    FirstName:string;
-    LastName:string;
+    Firstname:string;
+    Lastname:string;
     UserName:string;
     Email:string;
-    Phone:number;
+    PhoneNumber:number;
     NIC:string;
     Country:string;
     City:string;

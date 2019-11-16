@@ -201,29 +201,23 @@
                             {{ authError?.message }}
                           </div>
                         </div> -->
-                  <form #f="ngForm" (ngSubmit)="savevalue(f.value)">
+                  <form #f="ngForm" (ngSubmit)="saveform(f.value)">
                   <div class="row register-form">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input ngModel #firstName="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name..." [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" value="{{post$.Firstname}}" required>
-                              <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
-                                  <div *ngIf="firstName.errors.required">First Name is required</div>
-                              </div>
+                              <input ngModel #Firstname="ngModel" name="Firstname" type="text" class="form-control" id="firstName" placeholder="First Name..."  value="{{post$.Firstname}}" required>
+                            
                           </div>
                          
                          
                           <div class="form-group">
-                              <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Your Email..." [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" value="{{post$.Email}}" required> 
-                              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-                                  <div *ngIf="email.errors.required">Email is required</div>
-                              </div>
+                              <input ngModel #Email="ngModel" name="Email" type="email" class="form-control" placeholder="Your Email..."  value="{{post$.Email}}" required> 
+                            
                           </div>
                          
                           <div class="form-group">
-                              <input ngModel #nic="ngModel" name="nic" type="text" class="form-control" id="nic" value="" placeholder="Your NIC..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" value="{{post$.NIC}}" required>
-                              <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
-                                  <div *ngIf="nic.errors.required">NIC Number is required</div>
-                              </div>
+                              <input ngModel #NIC="ngModel" name="NIC" type="text" class="form-control" id="nic" value="" placeholder="Your NIC..."  value="{{post$.NIC}}" required>
+                             
                           </div>
                          
                         
@@ -237,7 +231,7 @@
                                       </div> -->
                                       <div class="form-group">
                                           <label>Experienced Years</label><br>
-                                          <input ngModel #years="ngModel" type="range" name="years" min="0" max="20" class="slider" (click)="exp(years.value)" placement="top" value="{{post$.ExpYears}}"  >
+                                          <input ngModel #ExpYears="ngModel" type="range" name="ExpYears" min="0" max="20" class="slider" (click)="exp(years.value)" placement="top" value="{{post$.ExpYears}}"  >
                                       </div>
                                       
                                       
@@ -249,22 +243,18 @@
                       </div>
                       <div class="col-md-6">
                               <div class="form-group">
-                                      <input ngModel #lastName="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" placeholder="Last Name..." [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" value="{{post$.Lastname}}" required>
-                                      <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                                          <div *ngIf="lastName.errors.required">Last Name is required</div>
-                                      </div>
+                                      <input ngModel #Lastname="ngModel" name="Lastname" type="text" class="form-control" id="lastName" value="" placeholder="Last Name..."  value="{{post$.Lastname}}" required>
+                                     
                                   </div>
                                   <div class="form-group">
-                                          <input ngModel #phone="ngModel" name="phone" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number..." [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" value="{{post$.PhoneNumber}}" required> 
-                                          <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
-                                              <div *ngIf="phone.errors.required">Phone Number is required</div>
-                                          </div>
+                                          <input ngModel #PhoneNumber="ngModel" name="PhoneNumber" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number..."  value="{{post$.PhoneNumber}}" required> 
+                                         
                                       </div>
                                      
 
                                     
 
-                                          <input ngModel #city="ngModel" class="form-control"  name="city"  list="citylist" value="{{post$.City}}" placeholder="Choose your city...">
+                                          <input ngModel #City="ngModel" class="form-control"  name="City"  list="citylist" value="{{post$.City}}" placeholder="Choose your city...">
                                           <datalist id="citylist" >
 
                                                   <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
@@ -278,10 +268,8 @@
 
 
 <div class="form-group">
-  <input ngModel #specialist="ngModel" name="specialist" type="text" class="form-control" id="specialist" value="{{post$.Specialist}}" placeholder="What you are special for..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" required>
-  <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
-      <div *ngIf="nic.errors.required">NIC Number is required</div>
-  </div>
+  <input ngModel #Specialist="ngModel" name="Specialist" type="text" class="form-control" id="specialist" value="{{post$.Specialist}}" placeholder="What you are special for..."  required>
+ 
 </div>                      
                                
                           
