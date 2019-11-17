@@ -76,6 +76,8 @@ formdata=new FormGroup({
   profilepicurl:new FormControl(''),
   Specialist:new FormControl('') ,
  
+  Firstname:new FormControl(''),
+  LastName:new FormControl(''),
   Address:new FormControl(''),
   Phone:new FormControl(''),
  
