@@ -7,6 +7,7 @@ export class Doctor {
     PhoneNumber:number;
     NIC:string;
     Country:string;
+    ExpYears:string;
     City:string;
     Position:string;
     RegistrationNumber:string

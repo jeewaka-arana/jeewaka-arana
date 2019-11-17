@@ -102,7 +102,7 @@ import { NotificationComponent } from './admin/notification/notification.compone
 
 
 
-//import { IgxTimePickerModule } from "igniteui-angular";
+
 import { PopupComponent } from './core/components/popup/popup.component';
 import { DropZoneDirective } from './core/directives/drop-zone.directive';
 
@@ -111,7 +111,6 @@ import { DropZoneDirective } from './core/directives/drop-zone.directive';
 import { TimepickComponent } from './doctor/timepick/timepick.component';
 
 import { IgxTimePickerModule } from "igniteui-angular";
-// import { IgxTimePickerModule } from "igniteui-angular";
 import { FirstpageComponent } from './doctor/firstpage/firstpage.component';
 import { PfooterComponent } from './patient/pfooter/pfooter.component';
 import { DfooterComponent } from './doctor/dfooter/dfooter.component';
@@ -205,7 +204,7 @@ import { PnavComponent } from './patient/pnav/pnav.component';
     ],
     imports: [
 
-        // IgxTimePickerModule,
+         IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,
         NgbModule.forRoot(),

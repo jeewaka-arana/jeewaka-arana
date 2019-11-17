@@ -157,29 +157,33 @@
 </div>
 
 <div class="col col-md-4"> 
-  <div class="card" style="width:45rem;background-color: #ffbb99;margin-left: 5rem;">
-      <div class="formGroup" >
-                      
-          <form [formGroup]="formdata" (ngSubmit) = "savenote(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
-             
-              <div class="form-group">
+  
 
-                 
-                      <label class="col-md-9 control-label"><b>Upload special Note(If any)  </b></label>
-            <div class="col-lg-10">
-<textarea rows="5" cols="68"  formControlName="note" ></textarea>
-
-
-
-</div>
-<div  class="form-group" >
-<input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savenote()"/>         
-</div> 
-
-</div> 
-</form>
-</div>
-</div>
+   
+    <div class="card" style="width:45rem;margin-left:3.3rem;">
+        <div class="formGroup" >
+                        
+            <form [formGroup]="formdata" (ngSubmit) = "savenote(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
+               
+                <div class="form-group">
+  
+                   
+               <label class="col-md-7 control-label" style="color:#f96332;size: 14px;"><b>Upload Special Note</b></label>
+             <br> <div class="col-lg-10">
+  <textarea rows="11" cols="75"  formControlName="note" ></textarea>
+  
+  
+  
+  </div>
+  <div  class="form-group" >
+  <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savenote()"/>         
+  </div> 
+  
+  </div> 
+  </form>
+  </div>
+  </div>
+  
 </div>
 </div>
 
@@ -191,9 +195,9 @@
 
 
 <div class="container register" >
- 
-     
-      <div class="col-md-9 register-right">
+ <div class="card" style="margin-left:2rem;"> 
+<!--      
+      <div class="col-md-9 register-right"> -->
           
                   
                   <!-- <div class="row" *ngIf="authError">
@@ -201,24 +205,34 @@
                             {{ authError?.message }}
                           </div>
                         </div> -->
-                  <form #f="ngForm" (ngSubmit)="saveform(f.value)">
+                  <form #f="ngForm"  [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)">
                   <div class="row register-form">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input ngModel #Firstname="ngModel" name="Firstname" type="text" class="form-control" id="firstName" placeholder="First Name..."  value="{{post$.Firstname}}" required>
-                            
+                              <input ngModel #Firstname="ngModel" name="Firstname" type="text" formControlname="Firstname" class="form-control" id="Firstname" placeholder="First Name..." [ngClass]="{ 'is-invalid': f.submitted && Firstname.invalid }" value="{{post$.Firstname}}" required>
+                              <div *ngIf="f.submitted && Firstname.invalid" class="invalid-feedback">
+                                  <div *ngIf="Firstname.errors.required">First Name is required</div>
+                              </div>
                           </div>
                          
                          
                           <div class="form-group">
+                              <input ngModel #email="ngModel" name="email" type="email" class="form-control" formControlname="Email" placeholder="Your Email..." [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" value="{{post$.Email}}" required> 
+                              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                                  <div *ngIf="email.errors.required">Email is required</div>
+                              </div>
+                          </div>
+                         
+                          <div class="form-group">
+                              <input ngModel #nic="ngModel" name="nic" type="text" class="form-control" formControlname="NIC" id="nic" value="" placeholder="Your NIC..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" value="{{post$.NIC}}" required>
+                              <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
+                                  <div *ngIf="nic.errors.required">NIC Number is required</div>
+                              </div>
                               <input ngModel #Email="ngModel" name="Email" type="email" class="form-control" placeholder="Your Email..."  value="{{post$.Email}}" required> 
                             
                           </div>
                          
-                          <div class="form-group">
-                              <input ngModel #NIC="ngModel" name="NIC" type="text" class="form-control" id="nic" value="" placeholder="Your NIC..."  value="{{post$.NIC}}" required>
-                             
-                          </div>
+                          3
                          
                         
                          
@@ -231,7 +245,7 @@
                                       </div> -->
                                       <div class="form-group">
                                           <label>Experienced Years</label><br>
-                                          <input ngModel #ExpYears="ngModel" type="range" name="ExpYears" min="0" max="20" class="slider" (click)="exp(years.value)" placement="top" value="{{post$.ExpYears}}"  >
+                                          <input ngModel #years="ngModel" type="range"  formControlname="ExpYears" name="years" min="0" max="20" class="slider" (click)="exp(years.value)" placement="top" value="{{post$.ExpYears}}"  >
                                       </div>
                                       
                                       
@@ -243,21 +257,25 @@
                       </div>
                       <div class="col-md-6">
                               <div class="form-group">
-                                      <input ngModel #Lastname="ngModel" name="Lastname" type="text" class="form-control" id="lastName" value="" placeholder="Last Name..."  value="{{post$.Lastname}}" required>
-                                     
+                                      <input ngModel #lastName="ngModel" name="lastName" type="text"  formControlname="Lastname" class="form-control" id="lastName" value="" placeholder="Last Name..." [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" value="{{post$.Lastname}}" required>
+                                      <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                                          <div *ngIf="lastName.errors.required">Last Name is required</div>
+                                      </div>
                                   </div>
                                   <div class="form-group">
-                                          <input ngModel #PhoneNumber="ngModel" name="PhoneNumber" type="number" minlength="10" maxlength="10" id="phone" class="form-control" placeholder="Your Phone Number..."  value="{{post$.PhoneNumber}}" required> 
-                                         
+                                          <input ngModel #phone="ngModel" name="phone" type="number" minlength="10" maxlength="10" id="phone" formControlname="PhoneNumber"  class="form-control" placeholder="Your Phone Number..." [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" value="{{post$.PhoneNumber}}" required> 
+                                          <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                                              <div *ngIf="phone.errors.required">Phone Number is required</div>
+                                          </div>
                                       </div>
                                      
 
                                     
 
-                                          <input ngModel #City="ngModel" class="form-control"  name="City"  list="citylist" value="{{post$.City}}" placeholder="Choose your city...">
+                                          <input ngModel #city="ngModel" class="form-control"  name="city" formControlname="Address" list="citylist" value="{{post$.Address}}" placeholder="Choose your Address...">
                                           <datalist id="citylist" >
 
-                                                  <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
+                                                  <option *ngFor="let city of City" [ngValue]="city">{{Address}}</option>
 
                                           </datalist>
             
@@ -268,14 +286,18 @@
 
 
 <div class="form-group">
-  <input ngModel #Specialist="ngModel" name="Specialist" type="text" class="form-control" id="specialist" value="{{post$.Specialist}}" placeholder="What you are special for..."  required>
- 
+  <input ngModel #specialist="ngModel" name="specialist" type="text" class="form-control" formControlname="Specialist"  id="specialist" value="{{post$.Specialist}}" placeholder="What you are special for..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" required>
+  <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
+      <div *ngIf="nic.errors.required">NIC Number is required</div>
+  </div>
 </div>                      
                                
-                          
+<div  class="form-group" >
+  <input type="submit" style="width: 10rem ;padding: 1.5%;margin-left: 12rem;" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
+  </div>      
                          
                             
-                          <input type="submit" class="btnRegister"  value="Register" />
+                         
                      </div>
                  
                   </form>
@@ -287,8 +309,8 @@
   
 
 </div>
-
-
+<!-- 
+</div> -->
 
 
 
@@ -383,6 +405,8 @@
                        </div>
   </div>
    -->
+
+
 
 
 
