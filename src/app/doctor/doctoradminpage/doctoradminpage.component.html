@@ -228,7 +228,11 @@
                               <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
                                   <div *ngIf="nic.errors.required">NIC Number is required</div>
                               </div>
+                              <input ngModel #Email="ngModel" name="Email" type="email" class="form-control" placeholder="Your Email..."  value="{{post$.Email}}" required> 
+                            
                           </div>
+                         
+                          3
                          
                         
                          

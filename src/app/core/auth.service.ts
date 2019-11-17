@@ -45,7 +45,7 @@ export class AuthService {
       })
       .then(userCredential => {
         if(userCredential) {
-          this.router.navigate(['/patienthome']);
+          this.router.navigate(['/admin']);
         }
       })
   }

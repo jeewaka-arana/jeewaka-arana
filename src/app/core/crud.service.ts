@@ -13,7 +13,7 @@ import { observable } from 'rxjs';
 
 
 export class CrudService {
-  
+   mine:any;
 
   constructor(private afs:AngularFirestore,private AuthService:AuthService) { }
 
@@ -28,6 +28,14 @@ export class CrudService {
     var id=this.AuthService.userId;
     var doctorRef=this.afs.collection('Doctors');
     doctorRef.doc(id).update(user);
+  }
+
+  updateForm(userdoc:Doctor,id:string){
+    var doctorRef=this.afs.collection('Doctors');
+    this.mine=userdoc;
+    doctorRef.doc(id).update({
+      
+    });
   }
 
   getDoctor(){

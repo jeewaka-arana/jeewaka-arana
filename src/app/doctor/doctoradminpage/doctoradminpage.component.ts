@@ -193,7 +193,10 @@ sut3:new FormControl(''),
 //   }
 
 // }
-
+saveform(data){
+  
+  // this.CrudService.updateForm(data,this.my_id)
+}
 
 
   savevalue(data) {
