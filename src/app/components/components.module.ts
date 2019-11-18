@@ -18,6 +18,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UfooterComponent } from './ufooter/ufooter.component';
 import { HereMapComponent } from './here-map/here-map.component';
+// import { PaboutUsComponent } from '../patient/pabout-us/pabout-us.component';
 
 
 
@@ -43,6 +44,7 @@ import { HereMapComponent } from './here-map/here-map.component';
         ContactUsComponent,
         UfooterComponent,
         HereMapComponent,
+        // PaboutUsComponent,
         
         
         

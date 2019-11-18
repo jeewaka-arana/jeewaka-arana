@@ -1,16 +1,96 @@
+
+
+
+
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color"color-on-scroll="500">
+    <div class="container">
+      <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+            <ul class="navbar-nav ml-auto">
+  
+  
+              <li class="nav-item">
+                <a class="nav-link"   routerLink="/index" >
+                    <i class="now-ui-icons business_bank"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+  
+  
+                
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin" >
+                  <i class="now-ui-icons text_align-left"></i>
+                  <p>Articles</p>
+              </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/docaccept" >
+                <i class="now-ui-icons ui-1_email-85"></i>
+                <p>Doctors Confirmation</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/doclist" >
+                <i class="now-ui-icons users_single-02"></i>
+                <p>Doctors List</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="notification" >
+                <i class="now-ui-icons ui-2_time-alarm"></i>
+                <p>Notification</p>
+            </a>
+        </li>
+              
+        
+  
+            <li class="nav-item">
+              <a class="nav-link" href="/docAppoinment">
+                  <i class="now-ui-icons ui-1_calendar-60"></i>
+                  <p>Appoinments</p>
+              </a>
+          </li>
+                         
+         
+  
+         
+          <li class="nav-item">
+              <a class="nav-link" href="/index" >
+                  <i class="now-ui-icons media-1_button-power"></i>
+                  <p>Log Out</p>
+              </a>
+          </li>
+  
+             
+            </ul>
+        </div>
+    </div>
+  </nav>
 <div class="wrapper">
     <div class="page-header page-header-small" filter-color="orange">
-        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('https://www.hotelbarbora.sk/sites/hotelbarbora.sk/files/massage-wallpapers.jpg') ;">
         </div>
         <div class="container">
             <div class="content-center">
                 <div class="photo-container">
                     <img src="assets/img/default-avatar.png" alt="">
                 </div>
-                <h3 class="title">Admin name</h3>
-                <p class="category">Ayurvedic Doctor</p>
+                <h3 class="title">Admin Panel</h3>
+       
                 <div class="button-container">
-                        <a href="/edit" class="btn btn-primary btn-round btn-lg">Edit profile</a>
+                        
                        <!-- <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
                           <i class="fab fa-twitter"></i>
                         </a>

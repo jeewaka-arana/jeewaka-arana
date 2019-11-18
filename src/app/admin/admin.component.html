@@ -1,11 +1,91 @@
 
-<app-navbar></app-navbar>
+
+
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color"color-on-scroll="500">
+    <div class="container">
+      <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+            <ul class="navbar-nav ml-auto">
+  
+  
+              <li class="nav-item">
+                <a class="nav-link"   routerLink="/index" >
+                    <i class="now-ui-icons business_bank"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+  
+  
+                
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin" >
+                  <i class="now-ui-icons text_align-left"></i>
+                  <p>Articles</p>
+              </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/docaccept" >
+                <i class="now-ui-icons ui-1_email-85"></i>
+                <p>Doctors Confirmation</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/doclist" >
+                <i class="now-ui-icons users_single-02"></i>
+                <p>Doctors List</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="notification" >
+                <i class="now-ui-icons ui-2_time-alarm"></i>
+                <p>Notification</p>
+            </a>
+        </li>
+              
+        
+  
+            <li class="nav-item">
+              <a class="nav-link" href="/docAppoinment">
+                  <i class="now-ui-icons ui-1_calendar-60"></i>
+                  <p>Appoinments</p>
+              </a>
+          </li>
+                         
+         
+  
+         
+          <li class="nav-item">
+              <a class="nav-link" href="/index" >
+                  <i class="now-ui-icons media-1_button-power"></i>
+                  <p>Log Out</p>
+              </a>
+          </li>
+  
+             
+            </ul>
+        </div>
+    </div>
+  </nav>
+  
 
 
 <div *ngIf="2==1">
     
 <div class="page-header" filter-color="orange">
-        <div class="page-header-image" style="background-image:url('http://www.ayurvedicpharmacompanies.com/wp-content/uploads/2019/09/Ayurvedic-Medicine-Manufacturers-in-Telangana.jpg')"></div>
+    <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('http://www.lucepulsatabustoarsizio.it/img/slide/2.jpg') ;">
+        
+        </div>
         <div class="container">
             <div class="col-md-4 content-center">
                 <div class="card card-login card-plain">
@@ -66,7 +146,7 @@
        
             <!--Navbar-->
         <div class="page-header-image rellax-header" data-rellax-speed="-8"
-            style="background-image: url('assets/img/bg5.jpg') ;">
+            style="background-image: url('https://content3.jdmagicbox.com/comp/ahmedabad/j6/079pxx79.xx79.151006185327.d4j6/catalogue/k-paradise-spa-ahmedabad-0do7tq87uy.jpg') ;">
         </div>
         <div class="container">
 
@@ -76,24 +156,24 @@
                 <div class="photo-container">
                     <img src="assets/img/default-avatar.png" alt="">
                 </div>
-                <h3 class="title">Admin name</h3>
-                <p class="category">Ayurvedic Doctor</p>
+                <h3 class="title">Admin Panel</h3>
+                <!-- <p class="category">Ayurvedic Doctor</p>
                 <div class="button-container">
-                    <a routerLink="/admin/editprofile" class="btn btn-primary btn-round btn-lg">Edit profile</a>
+                    <a routerLink="/admin/editprofile" class="btn btn-primary btn-round btn-lg">Edit profile</a> -->
                     <!-- <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
                           <i class="fab fa-twitter"></i>
                         </a>
                         <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
                           <i class="fab fa-instagram"></i>
                         </a>-->
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
     <div class="section">
-        <div class="container">
+        <!-- <div class="container">
 
-            <h3 class="title" aria-placeholder="center">Welcome to admin page</h3>
+            <h3 class="title" aria-placeholder="center">Welcome to admin page</h3> -->
             <div class="row">
                 <div class="col">
                     <div id="sidebar" style=" width:300px;height:400px;">
@@ -116,7 +196,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <ngb-carousel>
+                            <!-- <ngb-carousel>
 
                                 <ng-template ngbSlide>
                                     <img class="d-block" src="assets/img/meditrad.jpeg" alt="Third slide">
@@ -144,7 +224,7 @@
                                     </div>
                                 </ng-template>
 
-                            </ngb-carousel>
+                            </ngb-carousel> -->
                         </div>
                     </div>
                 </div>
@@ -163,8 +243,8 @@
 
             <div class="card-body">
                 <h5 class="title">Upload an article:</h5>
-                <img src="assets/img/ui.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-
+                <img src="assets/img/note.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+<br><br><br>
                 <a class="category text-primary" href="#">Click Here</a>
                 
                 <!--<div class="progress">
@@ -193,7 +273,7 @@
 
             <div class="card-body">
                 <h5 class="title">Upload an image:</h5>
-                <img src="assets/img/uim.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                <img src="assets/img/newman.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
 
                 <!--<a class="category text-primary" href="#">Click Here</a>-->
                 <!--<label for="file">File:</label>
@@ -285,6 +365,6 @@
   </div>
   </div>
   <app-afooter></app-afooter>
-</div>
+
  
   

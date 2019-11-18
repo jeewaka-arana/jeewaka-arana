@@ -5,6 +5,7 @@ import { Observable} from 'rxjs/Rx'
 
 import { UploadFileService } from '../core/upload-file.service';
 import { AuthService } from 'app/core/auth.service';
+import * as Rellax from 'rellax';
  
 interface Post {
   date: Date;
@@ -16,7 +17,13 @@ interface Post {
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
+  styles: [`
+    ngb-progressbar {
+        margin-top: 5rem;
+    }
+    
+    `]
 })
 export class AdminComponent implements OnInit {
   fileUploads: any[];
@@ -26,6 +33,7 @@ export class AdminComponent implements OnInit {
   constructor(private afs: AngularFirestore,private fb: FormBuilder, private uploadService: UploadFileService,private auth:AuthService) { }
 
   ngOnInit() {
+    
     this.afs.collection('Article',ref => ref.limit(4)).valueChanges().subscribe(results => {
       this.results = results;
       
