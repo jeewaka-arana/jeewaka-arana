@@ -1,8 +1,6 @@
 
-         
-<div class="card" style="width:45rem;margin-left:18rem">
               
-                  <div class="formGroup" >
+                  <div class="formGroup" style="margin-left: 16rem;" >
                     
                           <form  class="form-horizontal" role="form" style="margin-left: 55px;" >
                
@@ -20,9 +18,9 @@
                             <textarea class="form-control"  [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
                         </div>
                        
-                    <br>
+                    <br><br><br>
                         <div  class="form-group" >
-                              <input type="submit" class="btnRegister   float-right" style="margin-left: 70rem;"  formControlName="submit" value="Post Comment" (click)="addPost()"/>         
+                              <input type="submit" class="btnRegister   float-right" style="margin-left:78rem;"  formControlName="submit" value="Post Comment" (click)="addPost()"/>         
                               </div>
                     </div>
                 </div>
@@ -31,11 +29,8 @@
 
                 </form>
             </div>
-          </div>
-        <!-- </div>
-</div> 
- -->
-
+          
+  
 <div class="card" style="width:78rem;margin-left: 10px;margin-top: 1px;"> 
 <ul *ngFor="let post$ of post | async" id="opening">
   <div (click)="getPost(post.id)">
