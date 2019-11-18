@@ -17,8 +17,11 @@ import { of } from 'rxjs';
 import * as Rellax from 'rellax';
 
 export interface Doctors{
-
+Firstname:string,
+Lastname:string,
+Email:string
 }
+
 
 @Component({
   selector: 'app-doctoradminpage',
@@ -32,13 +35,36 @@ export interface Doctors{
     `]
 })
 export class DoctoradminpageComponent implements OnInit {
-  orders = [];
 
+fn:string;
+ln:string;
+city:string;
+NIC:string;
+Spec:string;
+y:number;
+pn:number;
+
+
+
+  orders = [];
+  Citys: any = ['Colombo','Dehiwala-Mount Lavinia','Moratuwa','Jaffna', 'Negombo','Pita Kotte',' Sri Jayewardenepura Kotte','Kandy','Trincomalee','Kalmunai','Galle','Point Pedro','Batticaloa','Katunayaka','Valvedditturai'
+  ,'Matara','Battaramulla South','Dambulla','Maharagama','Kotikawatta','Anuradhapura','Vavuniya','Kolonnawa','Hendala','Ratnapura','Badulla'	
+  ,'Puttalam','Devinuwara','Welisara','Kalutara','Bentota','Matale','Homagama','Beruwala','Panadura','Mulleriyawa','Kandana','Ja Ela','Wattala'	
+  ,'Peliyagoda','Kelaniya','Kurunegala','Nuwara Eliya','Gampola','Chilaw','Eravur Town','Hanwella Ihala','Weligama','Vakarai','Kataragama'	
+  ,'Ambalangoda','Ampara','Kegalle','Hatton','Polonnaruwa','Kilinochchi','Tangalle','Monaragala','Wellawaya','Gampaha','Horana South'	
+  ,'Wattegama','Minuwangoda','Horawala Junction','Kuliyapitiya'];
+
+  Specialists:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic Ulcers','Cholestrol' , 'Diabetic Ulcers','Diabetes Mellitus', 'ENT'
+  ,'Fistula', 'Gynaecological Disorders' ,'Gastritis' ,'Hemorrhoids' ,'Hypertension', 'Neurological Disorders', 'Orthopedics' 
+  ,'Obesity','Paralysis / Hemiplagia', 'Pediatrics','Spinal Disorders','Skin Disorders' ,'Urinary Calculi','Urinary Calculi','Urinary Disease'
+  ,'Varicose Venis','I have a medical hospital for all diseases'
+
+];
 
   postsCol:AngularFirestoreCollection< Doctors>;
   posts:Observable< Doctors[]>;
-  post$:any;
-
+  post:any;
+  newDoctor:Doctor;
  //for diseases list 
 
 // diseases: Disease[]= [
@@ -70,17 +96,25 @@ Email:string;
 // isSubmitted2:boolean;
 // isSubmitted3:boolean;
 // isSubmitted4:boolean;
+formdoc: FormGroup;
 
 
 formdata=new FormGroup({ 
   profilepicurl:new FormControl(''),
-  Specialist:new FormControl('') ,
- 
+  Specialist:new FormControl(''),
+  NIC:new FormControl(''),
   Firstname:new FormControl(''),
-  LastName:new FormControl(''),
-  Address:new FormControl(''),
-  Phone:new FormControl(''),
- 
+  Lastname:new FormControl(''),
+  City:new FormControl(''),
+  PhoneNumber:new FormControl(''),
+  ExpYears:new FormControl(''),
+  // Specialist:new FormControl(this.post.Specialist) ,
+  // NIC:new FormControl(this.post.NIC),
+  // Firstname:new FormControl(this.post.Firstname),
+  // Lastname:new FormControl(this.post.Lastname),
+  // City:new FormControl(this.post.City),
+  // PhoneNumber:new FormControl(this.post.PhoneNumber),
+  // ExpYears:new FormControl(this.post.ExpYears),
   dateTime:new FormControl(''),
   note:new FormControl(''),
   img:new FormControl(''),
@@ -134,7 +168,6 @@ sut3:new FormControl(''),
   my_id:string;
   
   
-
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
 
     // this.my_id=afAuth.auth.currentUser.uid;
@@ -148,25 +181,56 @@ sut3:new FormControl(''),
     });
 
     // async orders
-    of(this.getOrders()).subscribe(diseases => {
-      this.disease = diseases;
-      this.form.controls.disease.patchValue(this.disease[0].id);
-    });
+    // of(this.getOrders()).subscribe(diseases => {
+    //   this.disease = diseases;
+    //   this.form.controls.disease.patchValue(this.disease[0].id);
+    // });
 
+
+    this.postsCol=this.afs.collection('Doctors');
+    this.posts=this.postsCol.valueChanges();
+    this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
+      this.post=doc.data();
+      this.fn=this.post.Firstname;
+      this.ln=this.post.Lastname;
+   
+   });
+
+  
   }
 
   ngOnInit() {
     var rellaxHeader = new Rellax('.rellax-header');
    
     this.formdata;
+    this.formdoc = this.formBuilder.group({
+      Specialist:[''],
+      NIC:[''],
+      Firstname:[''],
+      Lastname:[''],
+      City:[''],
+      PhoneNumber:[''],
+      ExpYears:['']
+ 
+    });
    
 
     //new
-    this.postsCol=this.afs.collection('Doctors');
- this.posts=this.postsCol.valueChanges();
- this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
-   this.post$=doc.data();
-});
+
+    // this.afs.collection('Doctors',ref => ref.where('Userid','==',this.my_id)).valueChanges().subscribe(val=>{
+    //   this.post = val;
+    
+    // });
+
+//         this.postsCol=this.afs.collection('Doctors');
+//  this.posts=this.postsCol.valueChanges();
+//  this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
+//    this.post=doc.data();
+//    this.fn=this.post.Firstname;
+//    this.ln=this.post.Lastname;
+
+// });
+
 
 ////
 // this.resetForm();
@@ -199,8 +263,12 @@ saveform(data){
 }
 
 
-  savevalue(data) {
-    this.CrudService.updateProfile(data);
+  savevalue() {
+    
+    let data = this.formdoc.value;
+    
+    console.log(this.formdoc.value);
+    this.CrudService.updateForm(data);
    
   }
   savedisease(data){
