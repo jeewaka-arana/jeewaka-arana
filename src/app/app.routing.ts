@@ -71,6 +71,7 @@ import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
 import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
 import{AboutUsComponent} from '../app/components/about-us/about-us.component';
 import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
+import{SecondpageComponent}from './doctor/secondpage/secondpage.component'
 
 
 
@@ -162,7 +163,8 @@ const routes: Routes =[
 
 {path:'aboutUs',component:AboutUsComponent},
 {path:'contactUs',component:ContactUsComponent},
-
+{path:'spage',component:SecondpageComponent},
+{path:'spage/:id',component:SecondpageComponent},
     ]
 
 

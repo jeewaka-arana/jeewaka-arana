@@ -116,6 +116,7 @@ import { PfooterComponent } from './patient/pfooter/pfooter.component';
 import { DfooterComponent } from './doctor/dfooter/dfooter.component';
 import { AfooterComponent } from './admin/afooter/afooter.component';
 import { PnavComponent } from './patient/pnav/pnav.component';
+import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 
 
 
@@ -196,6 +197,7 @@ import { PnavComponent } from './patient/pnav/pnav.component';
         DfooterComponent,
         AfooterComponent,
         PnavComponent,
+        SecondpageComponent,
       
         
         
