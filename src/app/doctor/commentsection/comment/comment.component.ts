@@ -1,5 +1,5 @@
   
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -27,6 +27,9 @@ interface PostId extends Post {
 
 })
 export class CommentComponent implements OnInit {
+  @Input() id:string;
+
+
   today: number = Date.now();
 
   postsCol: AngularFirestoreCollection<Post>;
@@ -49,7 +52,8 @@ export class CommentComponent implements OnInit {
   
    my_id:string;
   constructor(private db: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService,private  afs: AngularFirestore,private datePipe: DatePipe, private router:Router) {
-    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+    // this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+
    }
 
 
@@ -58,7 +62,7 @@ export class CommentComponent implements OnInit {
 
 
 
-    this.postsCol = this.afs.collection('Doctors').doc(this.my_id).collection('Posts');
+    this.postsCol = this.afs.collection('Doctors').doc(this.id).collection('Posts');
     this.post = this.postsCol.valueChanges();
   
     this.posts = this.postsCol.snapshotChanges()
@@ -85,14 +89,14 @@ export class CommentComponent implements OnInit {
      this.afs.collection('Doctors').doc(this.my_id).collection('Posts').add({'title': this.title, 'content': this.content});
   }
 
-  getPost(postId) {
-    this.commentCol = this.afs.collection('Doctors').doc(this.my_id).collection('Posts');
-    this.comment = this.commentCol.valueChanges();
+  // getPost(postId) {
+  //   this.commentCol = this.afs.collection('Doctors').doc(this.my_id).collection('Posts');
+  //   this.comment = this.commentCol.valueChanges();
 
 
-    //
+  //   //
    
-  }
+  // }
 
 
 
