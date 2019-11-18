@@ -87,7 +87,7 @@
 
 
 
-<div class="page-header clear-filter" filter-color="pink">
+<div class="page-header clear-filter" filter-color="orange">
 
   <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://www.setwalls.ru/pic/201504/1920x1080/setwalls.ru-76640.jpg');">  
 
@@ -118,6 +118,7 @@
             
                   <div class="row">
                           <div class="col col-md-6">
+                              <div  data-aos="zoom-in-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="col-md-6">
                                   <div class="card" >
 
       
@@ -134,7 +135,7 @@
                                             <div class="vl" style="margin-left:2rem;"></div>
                                             <div class="column" style="margin-left: 2rem;">
                     
-                                                <!-- <ul *ngFor="let post of posts | async"> -->
+                                               
                                                     <label class="col-lg-15 control-label" ><b><span> Name -   </span>  Dr. {{post$.Firstname}}   {{post$.Lastname}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b><span>Specialist -  </span> {{post$.Specialist}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b><span>Status -  </span>  {{post$.Position}}</b></label><br><br>
@@ -142,31 +143,28 @@
                                                     <label class="col-lg-15 control-label"><b> <span>Telephone Number -  </span> {{post$.Phone}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b> <span>Email Address -  </span> {{post$.Email}}</b></label><br><br>
                                                  
-                                                <!-- </ul> -->
+                                              
                     
                                             </div>
                                           </div>
                     
                       
                     </div>
+                    </div>
 </div>
 <div class="col col-md-4">
 
   
-
-               <div class="flip" style="margin-left:6rem;" >
-                  <div class="front">
-                     <h1 class="text-shadow" style="margin-top:5rem;margin-left: 3rem;">TODAY NOTE</h1>
-                     
-                  </div>
-                  <div class="back">
+    <div  data-aos="zoom-in-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" class="col-md-6">
+              
+                  <div class="card" style="width:30rem;margin-left:7rem;">
+                 <h4>Today Special Note</h4>
                      
                      <p>{{post$.note}}</p>
-                  </div>
-              </div> 
-              
+                 
 
-              
+                    </div>
+                    </div>
 
 </div>
 </div>
@@ -176,164 +174,110 @@
 
 
 
-<div class="card" style="margin-left:15px;width:75rem;" >
-  <div class="card-body" >
-    
-    <!-- <ul *ngFor="let post of posts | async">  -->
-      <table width="100%" class="table table-bordered table-hover" id="time">
-          <thead>
-            <tr>
-              <th>DATE</th>
-              <th>MONDAY</th>
-              <th>TUESDAY</th>
-              <th>WEDNESDAY</th>
-              <th>THURSDAY</th>
-              <th>FRIDAY</th>
-              <th>SATURDAY</th>
-              <th>SUNDAY</th>
+<div data-aos="zoom-out-down">
+      
             
-            </tr>
-          </thead>
-          <tbody>  
-            <tr>
-              <td>TIME SLOT 1</td>
-              <td>{{post$.mt1}}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-
-            </tr>
-            <tr>
-              <td>TIME SLOT 2</td>
-              <td>{{post$.mt2}}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>TIME SLOT 3</td>
-              <td>{{post$.mt3}}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-
-          </tbody>
-          </table>
-          
-
-          
-</div>
-</div>
-
-<!-- 
+            
+              
+              <table  class="table table-bordered table-hover" id="time" style="width: 78.8rem;">
+                
+                 
+                  <thead>
+                    <tr>
+                        <th>DATE</th>
+                      <th>TIME SLOT 1</th>
+                      <th>TIME SLOT 2</th>
+                      <th>TIME SLOT 3</th>
+                      
+                    </tr>
+                  </thead>
 
 
-<div class=" separator-primary"></div> -->
-<div class="section-story-overview">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="image-container image-left" style="background-image: url('https://static.wixstatic.com/media/bc3e6b_7406259457274202aa83acd733815b6d~mv2.jpg/v1/fill/w_672,h_448,al_c,lg_1,q_85/bc3e6b_7406259457274202aa83acd733815b6d~mv2.jpg')"></div>
-            </div>
-        <div class="col-md-6">
-            <div class="image-container image-right" style="background-image: url('https://i.pinimg.com/originals/ee/fd/34/eefd341e3fd1e878edd19eac62c8e8a7.jpg')"></div>
-        </div>   
-    </div>  
-</div>
-</div> 
+                  <tbody>  
+                      
+                    <tr>
+                        
+                          <td >MONDAY</td>
+                          
+                          <td>{{post$.mt1}}</td>
+                          <td> </td>
+                          <td></td>
 
-<h3>About Our Service</h3>
-                            <p style="font-family: cursive;font-size:20px;">Ayurveda, a traditional system of medicine that originated over three millennia ago in the South Asian region, offers extensive insights about food and health based on certain unique conceptual as well as theoretical positions. Health is defined as a state of equilibrium with one’s self (svasthya) but which is inextricably linked to the environment. Ayurvedic principles, such as the tridosa (three humors) theory, provide the relationship between the microcosm and the macrocosm that can be applied in day-to-day practice. Classical Ayurveda texts cover an array of themes on food ranging from diversity of natural sources, their properties in relation to seasons and places and to their specific function both in physiological and pathological states. The epistemic perspective on health and nutrition in Ayurveda is very different from that of biomedicine and modern nutrition. However, contemporary knowledge is reinventing and advancing several of these concepts in an era of systems biology, personalized medicine, and the broader context of a more holistic transition in sciences in general. Trans-disciplinary research could be important not only for pushing the boundaries of food and health sciences but also for providing practical solutions for contemporary health conditions. This article briefly reviews the parallels in Ayurveda and biomedicine and draws attention to the need for a deeper engagement with traditional knowledge systems, such as Ayurveda. It points out that recreation of the methodologies that enabled the holistic view point about health in Ayurveda may unravel some of the complex connections with Nature.
-                            </p>
-<!--  -->
-
-
-               
-                <!-- <div class="section-story-overview">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="image-container image-left" style="background-image: url('assets/img/a1.jpg')">
-                                
-                                
-                            </div>
-                            
-                            <div class="image-container" style="background-image: url('assets/img/a2.jpg')"></div>
-                        </div>
                    
-
-                        <div class="col-md-6">
-                            
-                            <div class="image-container image-right" style="background-image: url('assets/img/a3.jpg')"></div>
-                           
-                            
-                           <b><h3>About Our Service</h3></b> 
-                            <p style="font-family: cursive;font-size:20px;">Ayurveda, a traditional system of medicine that originated over three millennia ago in the South Asian region, offers extensive insights about food and health based on certain unique conceptual as well as theoretical positions. Health is defined as a state of equilibrium with one’s self (svasthya) but which is inextricably linked to the environment. Ayurvedic principles, such as the tridosa (three humors) theory, provide the relationship between the microcosm and the macrocosm that can be applied in day-to-day practice. Classical Ayurveda texts cover an array of themes on food ranging from diversity of natural sources, their properties in relation to seasons and places and to their specific function both in physiological and pathological states. The epistemic perspective on health and nutrition in Ayurveda is very different from that of biomedicine and modern nutrition. However, contemporary knowledge is reinventing and advancing several of these concepts in an era of systems biology, personalized medicine, and the broader context of a more holistic transition in sciences in general. Trans-disciplinary research could be important not only for pushing the boundaries of food and health sciences but also for providing practical solutions for contemporary health conditions. This article briefly reviews the parallels in Ayurveda and biomedicine and draws attention to the need for a deeper engagement with traditional knowledge systems, such as Ayurveda. It points out that recreation of the methodologies that enabled the holistic view point about health in Ayurveda may unravel some of the complex connections with Nature.
-                            </p>
-                           
-                        </div>
-                    </div>
-                </div>
-            -->
+                    </tr>
+                   
+                    <tr>
+                          <td>TUESDAY</td>
+                      
+                          <td>{{post$.mt1}}</td>
+                          <td> </td>
+                          <td></td>
+                     
+          
+                        </tr>
+          
+                        <tr>
+                            <td>WEDNESDAY</td>
+                        
+                            <td>{{post$.mt1}}</td>
+                            <td> </td>
+                            <td></td>
+                       
             
-        <!--  -->
-
-        
-        <!-- <div class="section section-team text-center">
-            <div class="container">
-               
-                <div class="team">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="assets/img/b1.jpg" alt="img1" class="rounded-circle img-fluid img-raised">
+                          </tr>
+                          <tr>
+                              <td>THURSDAY</td>
+                          
+                              <td>{{post$.mt1}}</td>
+                              <td> </td>
+                              <td></td>
+                         
+              
+                            </tr>
+              
+                            <tr>
+                                <td>FRIDAY</td>
+                            
+                                <td>{{post$.mt1}}</td>
+                                <td> </td>
+                                <td></td>
+                           
+                
+                              </tr>
+                              <tr>
+                                  <td>SATURDAY</td>
+                              
+                                  <td>{{post$.mt1}}</td>
+                                  <td> </td>
+                                  <td></td>
+                             
+                  
+                                </tr>
+                                <tr>
+                                    <td>SUNDAY</td>
                                 
-                                
-                            </div>
-                        </div>
+                                    <td>{{post$.mt1}}</td>
+                                    <td> </td>
+                                    <td></td>
+                               
+                    
+                                  </tr>
+                    
+                  
 
-                        
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="assets/img/b2.jpg" alt="img2" class="rounded-circle img-fluid img-raised">
-                                
-                                
-                            </div>
-                        </div>
+                  </tbody>
 
-                        
-
-
-
-
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="assets/img/b3.jpg" alt="img3" class="rounded-circle img-fluid img-raised">
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div> 
+                
+                  </table>
+                
+</div>
 
 
 
-<iframe src="https://www.youtube.com/watch?v=CpvpZKO0Lmk" allowfullscreen></iframe>
 
+            
 
--->
-
-<hr style=" border: 1.5px solid orangered">
+<hr style=" border: 1.5px solid #ff1a1a"><br><br>
 <h3 style="margin-left: 20rem;">Your Thougths Are Very Important</h3><br>
 <app-comment></app-comment> 
 

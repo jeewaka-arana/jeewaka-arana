@@ -13,7 +13,7 @@ import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/
 import { firestore } from 'firebase';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-
+import * as Rellax from 'rellax';
 
 //retrive  data
 interface Doctors{
@@ -46,7 +46,13 @@ interface Doctors{
 @Component({
   selector: 'app-doctorprofilepage',
   templateUrl: './doctorprofilepage.component.html',
-  styleUrls: ['./doctorprofilepage.component.scss']
+  styleUrls: ['./doctorprofilepage.component.scss'],
+  styles: [`
+    ngb-progressbar {
+        margin-top: 5rem;
+    }
+    
+    `]
 })
 
 
@@ -172,12 +178,8 @@ my_id:string;
   
 
   ngOnInit() {
- 
-//    //get image details
-//  this.images =this.imageService.getImages();
- 
-    // window.document.body.style.backgroundImage='url(https://monodomo.com/free-wallpapers/ayurveda-wallpapers-desktop-background-For-Free-Wallpaper.jpg)';
- 
+    var rellaxHeader = new Rellax('.rellax-header');
+
  
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();

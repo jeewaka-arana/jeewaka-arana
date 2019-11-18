@@ -119,7 +119,7 @@ export class AuthService {
       City:this.newUser.city,
       Position:this.newUser.position,
       RegistrationNumber:this.newUser.regnumber,
-      ExperiencedYears:this.newUser.years,
+      ExpYears:this.newUser.years,
       Userid:userCredential.user.uid,
     })
   }
