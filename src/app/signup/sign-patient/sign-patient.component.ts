@@ -11,7 +11,7 @@ import { AuthService } from 'app/core/auth.service';
 export class SignPatientComponent implements OnInit {
 
   countryList: Array<any> = [
-   
+    
     { name: 'Afghanistan', cities: ['Kabul', 'Kandahar', 'Herat','Mazar-i-Sharif','Jalalabad','Kunduz','Ghazni','Lashkargah','Taloqan','Puli Khumri','Khost','Charikar','Sheberghan','Sar-e Pol','Maymana','Chaghcharan','Mihtarlam','Farah','Puli Alam'] },
     { name: 'Albania', cities: ['Tirana','Elbasan','Fier','Berat','Pogradec','Sarandë','Patos','Mamurras','Peshkopi','Burrel','	Milot','Gramsh','	Klos','Ballsh'] },
     { name: 'Algeria', cities: ['Algiers','Algiers','Constantine','Annaba','Blida','Batna','Djelfa','Biskra','El Oued','Skikda','Tiaret','Tlemcen','Ouargla','Mostaganem','Chlef','Souk Ahras','Touggourt','Ghardaïa','Laghouat','Jijel','Relizane','Guelma','Khenchela','Bousaada','Mascara','Tindouf','Tizi Ouzou'] },

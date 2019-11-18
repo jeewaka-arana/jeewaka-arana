@@ -204,13 +204,13 @@ sut3:new FormControl(''),
    
     this.formdata;
     this.formdoc = this.formBuilder.group({
-      Specialist:[''],
-      NIC:[''],
-      Firstname:[''],
-      Lastname:[''],
-      City:[''],
+      Specialist:['ENT'],
+      
+      Firstname:['pruthivika'],
+      Lastname:['yoganathan'],
+      City:['colombo'],
       PhoneNumber:[''],
-      ExpYears:['']
+      ExpYears:['12']
  
     });
    

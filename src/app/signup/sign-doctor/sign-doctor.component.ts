@@ -11,6 +11,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   selector: 'app-sign-doctor',
   templateUrl: './sign-doctor.component.html',
   styleUrls: ['./sign-doctor.component.scss']
+
 })
 export class SignDoctorComponent implements OnInit {
  
@@ -104,6 +105,17 @@ Specialist:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic
      return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
    }
 
+
+   checkpassword(password:string,confPassword:string){
+
+    if(password==confPassword){
+      return true;
+    }
+    else{
+      return false;
+    }
+  
+  }
 
 
  

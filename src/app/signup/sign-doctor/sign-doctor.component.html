@@ -5,17 +5,24 @@
                 <img src="https://www.ummc.edu.my/images/ico/doctor-icon.png" alt=""/>
                 <h3>Welcome</h3>
                 <p>"People will trust you, confide in you, and appreciate your efforts.  You can do amazing things for people if you don’t let the system get you down."</p>
-                <button class="btnLogin"  routerLink="/login">login</button>
+                <button class="btnLogin"  routerLink="/dlogin">login</button>
             </div>
+            
             <div class="col-md-9 register-right">
                 
                         <h3 class="register-heading">Register as a Doctor</h3>
+                        <div *ngIf="!checkpassword(password.value,confpassword.value)">
+                        <ngb-alert type="custom" [dismissible]="false">
+                                <strong>Warning!</strong>Password Mismatches.
+                              </ngb-alert>
+                            </div>
                         <div class="row" *ngIf="authError">
                                 <div class="col-9 alert alert-danger">
                                   {{ authError?.message }}
                                 </div>
                               </div>
-                        <form #f="ngForm" (ngSubmit)="f.valid && createUser(f)">
+                             
+                        <form #f="ngForm" (ngSubmit)="f.valid && checkpassword(password.value,confpassword.value) && createUser(f)">
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -40,9 +47,13 @@
                                     </div>
                                 </div>
                                
-                                <div class="form-group">
+                                <div class="form-group" title="Choose your qualification">
+                                        <div *ngIf="f.submitted && position.invalid" class="invalid-feedback">
+                                                <div *ngIf="position.errors.required">Position is required</div>
+                                                </div>
                                     <div class="wrapout">
-                                        Choose your position :
+                                        Choose your Qualification :
+                                        
                                     <div class="wrap">
                                         
                                         <label class="container">
@@ -59,7 +70,9 @@
                                                    
                                             </label>
                                         </div>  
-                                    </div>   
+                                        
+                                    </div>  
+
                                         </div>
                                
                                         <!-- <div class="form-group">
@@ -70,8 +83,11 @@
                                                       </div>
                                             </div> -->
                                             <div class="form-group">
-                                                <label>Experienced Years</label><br>
-                                                <input ngModel #years="ngModel" type="range" name="years" min="0" max="20" class="slider" (click)="exp(years.value)" placement="top" ngbTooltip="Firstname" >
+                                               
+                                                <input ngModel #years="ngModel" type="number" name="years"  class="form-control" placeholder="Experienced Years.." [ngClass]="{ 'is-invalid': f.submitted && years.invalid }" required >
+                                                <div *ngIf="f.submitted && years.invalid" class="invalid-feedback">
+                                                        <div *ngIf="years.errors.required">Years of Experience is required</div>
+                                                    </div>
                                             </div>
                                             
                                             
@@ -111,7 +127,10 @@
                                                     
                                                 </div> -->
 
-                                                <input ngModel #city="ngModel" class="form-control"  name="city"  list="citylist" placeholder="Choose your city...">
+                                                <input ngModel #city="ngModel" class="form-control"  name="city"  list="citylist" [ngClass]="{ 'is-invalid': f.submitted && city.invalid }" placeholder="Choose your city..." required>
+                                                <div *ngIf="f.submitted && city.invalid" class="invalid-feedback">
+                                                        <div *ngIf="city.errors.required">City is required</div>
+                                                    </div>
                                                 <datalist id="citylist" >
 
                                                         <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
@@ -124,39 +143,21 @@
                                 
                                 <div *ngIf="position.value=='Generation'" class="form-group" >
                                     <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..."  disabled   >
-                                    </div>
                                     
-                                   
-<!-- 
-                                    <div class="form-group">
-                                            <input ngModel #certificate="ngModel" type="file" name="certificate" >
-                                            
-                                        </div> -->
-
+                                </div>
+                                    
+                                          
 
                                         <div *ngIf="position.value !='Generation'" class="form-group" >
-                                            <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber"  placeholder="Your Registration Number..." >
-                                            </div>
+                                            <input ngModel #regnumber="ngModel" name="regnumber" type="text" class="form-control" id="regnumber" [ngClass]="{ 'is-invalid': f.submitted && regnumber.invalid }"  placeholder="Your Registration Number..." required >
+                                            <div *ngIf="f.submitted && regnumber.invalid" class="invalid-feedback">
+                                                    <div *ngIf="regnumber.errors.required">Registration Number</div>
+                                                </div>   
+                                        
+                                        </div>
 
                                           
-                                            
-                                            <!-- <div *ngIf="position.value=='Generation'" class="upload-btn-wrapper" aria-disabled="true">
-                                                <p>If you are registered please upload the certification for verification</p>
-                                                <button class="btn btn-primary btn-simple btn-round" type="button">Upload</button>
-                                                    <input ngModel #certiurl="ngModel" type="file" name="certiurl"  (change)="uploadFile($event)" />
-                                                  </div> 
-                                            
-                                                  <div *ngIf="position.value !='Generation'" class="upload-btn-wrapper">
-                                                        <p>If you are registered please upload the certification for verification</p>
-                                                        <button class="btn btn-primary btn-simple btn-round" type="button">Upload</button>
-                                                            <input ngModel #certiurl="ngModel" type="file" name="certiurl"  (change)="uploadFile($event)" />
-                                                          </div>  -->
-                                                          <!-- <div class="dropzone" 
-     dropZone
-     (hovered)="toggleHover($event)"
-     (dropped)="startUpload($event)"
-     [class.hovering]="isHovering"> -->
-
+                                   
 
      <div *ngIf="position.value=='Generation'"  class="file">
         <label class="file-label" disabled>
@@ -172,13 +173,15 @@
             <label class="file-label">
     
     
-            <input class="file-input" type="file" (change)="startUpload($event.target.files)">
+            <input #file class="file-input" type="file" [ngClass]="{ 'is-invalid': f.submitted && file.invalid }" (change)="startUpload($event.target.files)" required>
     
-    
+            <div *ngIf="f.submitted && file.invalid" class="invalid-feedback">
+                    <div *ngIf="file.errors.required">Certificate is required</div>
+                </div>
              
             </label>
           </div>
-
+<!-- 
 <div *ngIf="percentage | async as pct">
 
         <progress class="progress is-info" 
@@ -188,7 +191,7 @@
       
         {{ pct | number }}%
       
-      </div>
+      </div> -->
       
       
       <!-- <div *ngIf="snapshot | async as snap">
@@ -206,20 +209,22 @@
       
       </div> -->
       <div class="form-group">
-        <input ngModel #specialist="ngModel" name="specialist" type="text" class="form-control" id="specialist" value="" placeholder="What you are special for..." [ngClass]="{ 'is-invalid': f.submitted && nic.invalid }" list="spec" required>
+        <input ngModel #specialist="ngModel" name="specialist" type="text" class="form-control" id="specialist" value="" placeholder="What you are special for..." [ngClass]="{ 'is-invalid': f.submitted && specialist.invalid }" list="spec" required>
         <datalist id="spec">
                 <option *ngFor ="let spec of Specialist" [ngValue]="specialist">{{spec}} </option>
         </datalist>
-        <div *ngIf="f.submitted && nic.invalid" class="invalid-feedback">
-            <div *ngIf="nic.errors.required">NIC Number is required</div>
+        <div *ngIf="f.submitted && specialist.invalid" class="invalid-feedback">
+            <div *ngIf="specialist.errors.required">Area of your study is required</div>
         </div>
     </div>                      
                                      
                                 
                                 <div class="form-group"> 
                                     <!-- conf password -->
-                                        <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" placeholder="Confirm Password..." appShowpassword>
-                                      
+                                        <input ngModel #confpassword="ngModel" name="confpassword" type="password" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && confpassword.invalid }" placeholder="Confirm Password..." required appShowpassword>
+                                        <div *ngIf="f.submitted && confpassword.invalid" class="invalid-feedback">
+                                                <div *ngIf="confpassword.errors.required">Confirm your password</div>
+                                            </div>
     
                                     </div>
                                   
