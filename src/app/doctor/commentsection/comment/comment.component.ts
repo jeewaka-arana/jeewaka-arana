@@ -78,15 +78,8 @@ export class CommentComponent implements OnInit {
 
   addPost() {
 
-    // var id=this.AuthService.userId;
-
-    // var doctorRef=this.afs.collection('posts');
     
-    // doctorRef.doc(id).set({'title': this.title, 'content': this.content});
-
-
-    // 
-     this.afs.collection('Doctors').doc(this.my_id).collection('Posts').add({'title': this.title, 'content': this.content});
+     this.afs.collection('Doctors').doc(this.id).collection('Posts').add({'title': this.title, 'content': this.content});
   }
 
   // getPost(postId) {

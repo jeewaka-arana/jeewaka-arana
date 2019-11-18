@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -14,7 +14,7 @@ interface Post{
   styleUrls: ['./delete-comment.component.scss']
 })
 export class DeleteCommentComponent implements OnInit {
-
+@Input() id:string;
   postsCol: AngularFirestoreCollection<Post>;
   posts: any;
   post: Observable<Post[]>;
@@ -34,13 +34,14 @@ export class DeleteCommentComponent implements OnInit {
   constructor(private  afs: AngularFirestore) { }
 
   ngOnInit() {
-    this.postsCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
+    this.postsCol = this.afs.collection('Doctors').doc(this.id).collection('Posts');
     this.post = this.postsCol.valueChanges();
     this.posts = this.postsCol.snapshotChanges()
     .map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Post;
         const id = a.payload.doc.id;
+       
         return { id, data };
       })
     })
@@ -48,17 +49,12 @@ export class DeleteCommentComponent implements OnInit {
 
 
 
-getPost(postId) {
-  this.commentCol = this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts');
-  this.comment = this.commentCol.valueChanges();
-
-}
   
   deletePost(postId) {
 
     
 
-    this.afs.collection('Doctors').doc('sJ8197FwroSuZepVVnEN4DD9UA13').collection('Posts').doc('Posts/'+postId).delete();
+    this.afs.collection('Doctors').doc(this.id).collection('Posts').doc('Posts/'+postId).delete();
 
    }
 }
