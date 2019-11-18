@@ -30,12 +30,10 @@ export class CrudService {
     doctorRef.doc(id).update(user);
   }
 
-  updateForm(userdoc:Doctor,id:string){
+  updateForm(userdoc){
+    var id=this.AuthService.userId;
     var doctorRef=this.afs.collection('Doctors');
-    this.mine=userdoc;
-    doctorRef.doc(id).update({
-      
-    });
+    doctorRef.doc(id).update(userdoc);
   }
 
   getDoctor(){

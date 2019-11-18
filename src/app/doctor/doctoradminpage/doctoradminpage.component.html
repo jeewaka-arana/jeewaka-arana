@@ -117,7 +117,7 @@
           
             
             
-            {{post$.Firstname}}
+            
             <div class="text-center">
               
               
@@ -183,7 +183,7 @@
   
   </div>
   <div  class="form-group" >
-  <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savenote()"/>         
+  <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"   value="Save" />         
   </div> 
   
   </div> 
@@ -193,6 +193,76 @@
   
 </div>
 </div>
+
+
+
+
+
+<!--  -->
+
+
+    <div class="container register" >
+        <div class="card" style="margin-left:2rem;"> 
+               <form [formGroup]="formdoc"  (ngSubmit)= "savevalue()">
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input  formControlName="Firstname" type="text"  class="form-control" value="{{fn}}" placeholder="First Name..."  required>
+                         </div>
+                         
+                       
+                         
+                          <div class="form-group">
+                              <input formControlName="NIC" name="NIC" type="text" class="form-control"  id="NIC"  placeholder="Your NIC..."  value="{{post.NIC}}" required>
+                          </div>
+                         
+                          <div class="form-group">
+                           <input  formControlName="ExpYears" type="number"   name="ExpYears"  class="form-control" value="{{post.ExpYears}}" placeholder="Experienced Years..."   >
+                            </div>
+                           
+                      </div>
+                      <div class="col-md-6">
+                              <div class="form-group">
+                                      <input  formControlName="Lastname" name="Lastname" type="text"  class="form-control"  placeholder="Last Name..." value="{{post.Lastname}}"   required>
+                                  </div>
+                                  <div class="form-group">
+                                          <input  formControlName="PhoneNumber" name="PhoneNumber" type="number" minlength="10" maxlength="10" value="{{post.PhoneNumber}}"   class="form-control" placeholder="Your Phone Number..."   required> 
+                                     </div>
+                                     <div class="form-group">
+                                      <input  formControlName="City" class="form-control"  name="City" list="citylist" value="{{post.City}}"  placeholder="Choose your City...">
+                                          <datalist id="citylist" >
+                                              <option *ngFor="let City of Citys" [ngValue]="City">{{City}}</option>
+                                          </datalist>
+                                        </div>
+                                      <div class="form-group">
+  <input  formControlName="Specialist" name="Specialist" type="text" class="form-control"  value="{{post?.Specialist}}" placeholder="What you are special for..." list="spec" required>
+  <datalist id="spec">
+      <option *ngFor ="let Specialist of Specialists" >{{Specialist}} </option>
+</datalist>
+</div>  
+            
+     
+                       </div>
+
+
+
+
+                    
+                               
+                       <input type="submit" class="btnRegister"  value="Update" />
+                        
+                            
+                         
+                     </div>
+                 
+                  </form>
+
+             
+            
+          
+      </div>
+  
+
 </div>
 
 
@@ -444,7 +514,7 @@
                   </table>
                 
                   <div  class="form-group" >
-                      <input type="submit" style="width:15% ;padding: 1.5%;margin-left:5rem;margin-top:1rem;" class="btnRegister "  formControlName="submit" value="Save" (click)="savevalue()"/>         
+                      <input type="submit" style="width:15% ;padding: 1%;margin-left:34rem;" class="btnRegister "   value="Save" (click)="savevalue()"/>         
                       </div> 
             </form>      
 </div>
