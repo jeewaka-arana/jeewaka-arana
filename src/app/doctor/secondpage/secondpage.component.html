@@ -70,7 +70,7 @@
             <p>Profile</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " [routerLink]="['/spage',my_id]" > View Profile </a>
+            <a class="dropdown-item " [routerLink]="['/fpage',my_id]" > View Profile </a>
             <a class="dropdown-item " [routerLink]="['/doctoradmin',my_id]"> Edit Profile</a>
             <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
             
@@ -144,7 +144,7 @@
                                                     <label class="col-lg-15 control-label" ><b><span> Name -   </span>  Dr. {{post$.Firstname}}   {{post$.Lastname}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b><span>Specialist -  </span> {{post$.Specialist}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b><span>Status -  </span>  {{post$.Position}}</b></label><br><br>
-                                                    <label class="col-lg-15 control-label"><b><span>Address -  </span> {{ post$.City}}</b></label><br><br>
+                                                    <label class="col-lg-15 control-label"><b><span>Address -  </span> {{ post$.Address}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b> <span>Telephone Number -  </span> {{post$.Phone}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b> <span>Email Address -  </span> {{post$.Email}}</b></label><br><br>
                                                  

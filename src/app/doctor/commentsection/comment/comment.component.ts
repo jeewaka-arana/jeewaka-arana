@@ -57,9 +57,6 @@ export class CommentComponent implements OnInit {
 
 
 
-// var medium = this.datePipe.transform(new Date(),"MMM d, y, h:mm:ss a");
-// console.log(medium); //output - Feb 14, 2019, 3:45:06 PM
-//
 
     this.postsCol = this.afs.collection('Doctors').doc(this.my_id).collection('Posts');
     this.post = this.postsCol.valueChanges();

@@ -11,14 +11,14 @@
           </a>
            <div ngbDropdownMenu>
               <a class="dropdown-header">Welcome to Jeewaka Arana</a>
-              <a class="dropdown-item" href="/patienthome">Home</a>
+              <!-- <a class="dropdown-item" href="/patienthome">Home</a> -->
               <a class="dropdown-item" href="/searchdoctor">Doctors</a>
               <a class="dropdown-item" href="/adsearch">Diseases</a>
               <a class="dropdown-item" href="/appstep1">Appointments</a>
               <a class="dropdown-item" href="#">History</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">About us</a>
-             <a class="dropdown-item" href="#">Contact us</a>
+             <a class="dropdown-item" href="/aboutUs">About us</a>
+             <a class="dropdown-item" href="/contactUs">Contact us</a>
              <!-- <div class="dropdown-divider"></div> -->
              <!-- <a class="dropdown-item" href="#">Change Language</a> -->
            </div>
@@ -43,7 +43,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link"   routerLink="/home" >
+                    <a class="nav-link"   routerLink="/patienthome" >
                         <i class="now-ui-icons business_bank"></i>
                         <p>Home</p>
                     </a>
@@ -53,7 +53,7 @@
 
                 
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/user" >
+                  <a class="nav-link" routerLink="#" >
                       <i class="now-ui-icons business_globe"></i>
                       <p>Change Language</p>
                   </a>
@@ -64,7 +64,7 @@
 
 
                 <li class="nav-item">
-                  <a class="nav-link btn btn-neutral" routerLink="/user">
+                  <a class="nav-link btn btn-neutral" routerLink="/login">
                       <i class="now-ui-icons arrows-1_share-66"></i>
                       <p>Log Out</p>
                   </a>

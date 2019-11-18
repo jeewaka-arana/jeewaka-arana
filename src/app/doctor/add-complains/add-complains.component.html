@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-secondary fixed-top navbar-color "color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top navbar-color"color-on-scroll="500">
   <div class="container">
     <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
       <div class="navbar-translate">
@@ -71,13 +71,18 @@
             <p>Profile</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " [routerLink]="['/fpage',my_id]" > View Profile </a>
+            <a class="dropdown-item " [routerLink]="['/spage',my_id]" > View Profile </a>
             <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
             <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
             
           </div>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="/index" >
+                <i class="now-ui-icons media-1_button-power"></i>
+                <p>Log Out</p>
+            </a>
+        </li>
 
            
           </ul>
@@ -88,8 +93,7 @@
 
 
 
-  <!-- <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('../../../assets/img/b3.jpg');">   -->
-    
+ 
 <div class="wrapper">
     
     <div class="page-header clear-filter" filter-color="orange">
@@ -114,11 +118,11 @@
 
 
 <div class="card">
-    <div class="card-body" style="background-color:#ffe6f2;">
+    <div class="card-body" style="background-color:#929191;">
       
         <div class="row">
             <div class="col col-md-6">
-            <!-- <img src="../../../assets/img/contact-hero.jpg" alt="contact"> -->
+           
 
 
             <img src="https://vtemu.by/wp-content/uploads/2014/05/08.jpg" alt="contact">
@@ -126,50 +130,38 @@
 
 
               <div class="col col-md-6" style="width: 17rem;">
-                
-
-
-   
-                       
-                              <div class="formGroup" >
-                                      
-                                <form  [formGroup]="formdata" (ngSubmit)="submitcomplain(formdata.value)" class="form-horizontal" role="form" autocomplete="on" >
-                      <h5 class="title" >Get in touch with us</h5>
-                      
-                              <div  class="form-group" >
-                              <div class="col-lg-8">
-                                <label for="">Name *</label>
-                                <input class="form-control" style="width: 20rem;" formControlName="cname" name="cname" placeholder="Your name">
-                            </div><br>
-                          </div>
-                  
-                          <div  class="form-group" >
-                            <div class="col-lg-8">
-                              <label for="">E-mail *</label>
-                              <input class="form-control" style="width: 20rem;"   formControlName="cmail" name="cmail" placeholder="Your Email">
-                          </div>
-                  </div>
-                            
-                            <div  class="form-group" >
-                              <div class="textarea-container">
-                                <label for="">Message *</label>
-                                  <textarea class="form-control"   formControlName="cmsg" name="cmsg" placeholder="Your message"></textarea>
-                              </div>
-                            </div>
-                              <br><br><br>
-                              <div  class="form-group" >
-                                <input type="submit" class="btnRegister   float-right" style="width: 15rem;" formControlName="submit" value="Send Us" (click)="submitcomplain()"/>         
-                                </div> 
-                      <br><br><br>
-                  <p style="margin-left: 15px;"><b>* By clicking on SEND US, you acknowledge having read our Privacy notice</b></p>
-   
-                  
-                      </form>
-                  </div>
-                  
-                
-                
-
+                                <div class="container">
+                                    <h2 class="title">Report a problem</h2>
+                                    <h5>Let us know of the inconvenience</h5>
+                                    <div class="row">
+                                        <div [formGroup]="userForm"  (ngSubmit)="addIssue()" class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                                            <div class="form-group">
+                                                <input type="text" [(ngModel)]="name" value="name" formControlName="name" placeholder="name" class="form-control" />
+                                                <div *ngIf="formErrors.name">
+                                                    {{ formErrors.name }}
+                                                  </div>   
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" [(ngModel)]="email" value="email" formControlName="email" placeholder="email" class="form-control" />
+                                                <div *ngIf="formErrors.email">
+                                                    {{ formErrors.email }}
+                                                  </div>   
+                                            </div>
+                                            <div class="textarea-container">
+                                                <textarea [(ngModel)]="issue" type="issue" formControlName="issue" required class="form-control" name="name" rows="4" cols="80" placeholder="Describe the problem..."></textarea>
+                                                <div *ngIf="formErrors.issue">
+                                                    {{ formErrors.issue }}
+                                                  </div>   
+                                            </div>
+                                            <div class="send-button">
+                                                <input type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-round btn-block btn-lg" value="Send Message" (click)="addIssue()">
+                                                <span *ngIf="userForm.valid" >Form is valid</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <h6>*By clicking on SEND US, you acknowledge having read our Privacy notice</h6>
+                                </div>
                   </div>
                   </div>
     </div>
@@ -179,59 +171,6 @@
 
 
             <!-- <h2 style="margin-left: 13rem;color: #01030e;"> Need to get in touch with the team? We’re all ears.</h2> -->
-           
-   
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--  -->
-   <!-- <div class="card" style="width:55rem;margin-left: 10rem;">
-    <div class="card-body" >
-      
-     
-            <div class="formGroup" >
-                    
-              <form  [formGroup]="formdata" (ngSubmit)="submitcomplain(formdata.value)" class="form-horizontal" role="form" autocomplete="on" >
-    <h5 class="title" >If you have any complains or suggetions Send to our team ..</h5>
-    
-            <div  class="form-group" >
-            <div class="col-lg-8">
-              <input class="form-control" style="width: 20rem;" formControlName="cname" name="cname" placeholder="Your name">
-          </div><br>
-        </div>
-
-        <div  class="form-group" >
-          <div class="col-lg-8">
-            <input class="form-control" style="width: 20rem;"   formControlName="cmail" name="cmail" placeholder="Your Email">
-        </div>
-</div>
-          
-          <div  class="form-group" >
-            <div class="textarea-container">
-                <textarea class="form-control"   formControlName="cmsg" name="cmsg" placeholder="Your message"></textarea>
-            </div>
-          </div>
-            <br><br><br>
-            <div  class="form-group" >
-              <input type="submit" class="btnRegister   float-right" style="width: 15rem;" formControlName="submit" value="Send Us" (click)="submitcomplain()"/>         
-              </div> 
-    
-
-
-    </form>
-</div>
-</div>
-</div> 
- -->
 
  
  <!-- <footer class="footer" data-background-color="black">
