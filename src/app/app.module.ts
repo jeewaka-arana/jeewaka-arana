@@ -116,6 +116,9 @@ import { PfooterComponent } from './patient/pfooter/pfooter.component';
 import { DfooterComponent } from './doctor/dfooter/dfooter.component';
 import { AfooterComponent } from './admin/afooter/afooter.component';
 import { PnavComponent } from './patient/pnav/pnav.component';
+import { DocpnavComponent } from './doctor/docpnav/docpnav.component';
+import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
+import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 
 
 
@@ -196,6 +199,9 @@ import { PnavComponent } from './patient/pnav/pnav.component';
         DfooterComponent,
         AfooterComponent,
         PnavComponent,
+        DocpnavComponent,
+        PcontactUsComponent,
+        PaboutUsComponent,
       
         
         
