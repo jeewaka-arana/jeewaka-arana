@@ -17,6 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UfooterComponent } from './ufooter/ufooter.component';
+import { HereMapComponent } from './here-map/here-map.component';
 
 
 
@@ -41,6 +42,7 @@ import { UfooterComponent } from './ufooter/ufooter.component';
         AboutUsComponent,
         ContactUsComponent,
         UfooterComponent,
+        HereMapComponent,
         
         
         
