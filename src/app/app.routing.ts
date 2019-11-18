@@ -73,6 +73,7 @@ import{AboutUsComponent} from '../app/components/about-us/about-us.component';
 import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
 import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
+import{SecondpageComponent}from './doctor/secondpage/secondpage.component'
 
 
 
@@ -166,6 +167,8 @@ const routes: Routes =[
 {path:'contactUs',component:ContactUsComponent},
 {path:'pcontactUs',component:PcontactUsComponent},
 {path:'paboutUs',component:PaboutUsComponent},
+{path:'spage',component:SecondpageComponent},
+{path:'spage/:id',component:SecondpageComponent},
     ]
 
 

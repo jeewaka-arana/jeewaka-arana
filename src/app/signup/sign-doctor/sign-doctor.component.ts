@@ -59,6 +59,7 @@ Specialist:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic
    createUser(frm) {
    //this.crud.createDoctor(frm.value);
    this.auth.createDoctor(frm.value);
+   this.crud.createDoctor(frm.value);
   }
  
 
