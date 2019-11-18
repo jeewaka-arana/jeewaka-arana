@@ -148,7 +148,7 @@ my_id:string;
    
    
   
-    this.my_id=afAuth.auth.currentUser.uid;
+    // this.my_id=afAuth.auth.currentUser.uid;
    
 
 

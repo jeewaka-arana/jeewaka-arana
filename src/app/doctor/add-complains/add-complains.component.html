@@ -77,7 +77,12 @@
             
           </div>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="/index" >
+                <i class="now-ui-icons media-1_button-power"></i>
+                <p>Log Out</p>
+            </a>
+        </li>
 
            
           </ul>
@@ -88,8 +93,7 @@
 
 
 
-  <!-- <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('../../../assets/img/b3.jpg');">   -->
-    
+ 
 <div class="wrapper">
     
     <div class="page-header clear-filter" filter-color="orange">
@@ -118,7 +122,7 @@
       
         <div class="row">
             <div class="col col-md-6">
-            <!-- <img src="../../../assets/img/contact-hero.jpg" alt="contact"> -->
+           
 
 
             <img src="https://vtemu.by/wp-content/uploads/2014/05/08.jpg" alt="contact">
@@ -131,41 +135,7 @@
 
    
                        
-                              <div class="formGroup" >
-                                      
-                                <form  [formGroup]="formdata" (ngSubmit)="submitcomplain(formdata.value)" class="form-horizontal" role="form" autocomplete="on" >
-                      <h5 class="title" >Get in touch with us</h5>
-                      
-                              <div  class="form-group" >
-                              <div class="col-lg-8">
-                                <label for="">Name *</label>
-                                <input class="form-control" style="width: 20rem;" formControlName="cname" name="cname" placeholder="Your name">
-                            </div><br>
-                          </div>
-                  
-                          <div  class="form-group" >
-                            <div class="col-lg-8">
-                              <label for="">E-mail *</label>
-                              <input class="form-control" style="width: 20rem;"   formControlName="cmail" name="cmail" placeholder="Your Email">
-                          </div>
-                  </div>
-                            
-                            <div  class="form-group" >
-                              <div class="textarea-container">
-                                <label for="">Message *</label>
-                                  <textarea class="form-control"   formControlName="cmsg" name="cmsg" placeholder="Your message"></textarea>
-                              </div>
-                            </div>
-                              <br><br><br>
-                              <div  class="form-group" >
-                                <input type="submit" class="btnRegister   float-right" style="width: 15rem;" formControlName="submit" value="Send Us" (click)="submitcomplain()"/>         
-                                </div> 
-                      <br><br><br>
-                  <p style="margin-left: 15px;"><b>* By clicking on SEND US, you acknowledge having read our Privacy notice</b></p>
-   
-                  
-                      </form>
-                  </div>
+                              
                   
                 
                 
@@ -175,96 +145,9 @@
     </div>
   </div>
 
-<!--  -->
-
-
-            <!-- <h2 style="margin-left: 13rem;color: #01030e;"> Need to get in touch with the team? We’re all ears.</h2> -->
-           
    
 
 
 
 
-
-
-
-
-
-
-
-
-        <!--  -->
-   <!-- <div class="card" style="width:55rem;margin-left: 10rem;">
-    <div class="card-body" >
-      
-     
-            <div class="formGroup" >
-                    
-              <form  [formGroup]="formdata" (ngSubmit)="submitcomplain(formdata.value)" class="form-horizontal" role="form" autocomplete="on" >
-    <h5 class="title" >If you have any complains or suggetions Send to our team ..</h5>
-    
-            <div  class="form-group" >
-            <div class="col-lg-8">
-              <input class="form-control" style="width: 20rem;" formControlName="cname" name="cname" placeholder="Your name">
-          </div><br>
-        </div>
-
-        <div  class="form-group" >
-          <div class="col-lg-8">
-            <input class="form-control" style="width: 20rem;"   formControlName="cmail" name="cmail" placeholder="Your Email">
-        </div>
-</div>
-          
-          <div  class="form-group" >
-            <div class="textarea-container">
-                <textarea class="form-control"   formControlName="cmsg" name="cmsg" placeholder="Your message"></textarea>
-            </div>
-          </div>
-            <br><br><br>
-            <div  class="form-group" >
-              <input type="submit" class="btnRegister   float-right" style="width: 15rem;" formControlName="submit" value="Send Us" (click)="submitcomplain()"/>         
-              </div> 
-    
-
-
-    </form>
-</div>
-</div>
-</div> 
- -->
-
- 
- <!-- <footer class="footer" data-background-color="black">
-    <div class="container">
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/about-us">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                        MIT License
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright">
-            &copy;
-          {{data | date: 'yyyy'}}, Designed by Jeewaka Arana Team.
-           
-        </div>
-    </div>
-</footer> -->
 <app-dfooter></app-dfooter>
