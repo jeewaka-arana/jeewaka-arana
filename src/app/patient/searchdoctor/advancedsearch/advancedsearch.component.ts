@@ -28,7 +28,12 @@ export class AdvancedsearchComponent implements OnInit {
   QueryCol:AngularFirestoreCollection<Doctors>;
   Query:Observable<Doctors[]>
 
+  Specialist:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic Ulcers','Cholestrol' , 'Diabetic Ulcers','Diabetes Mellitus', 'ENT'
+  ,'Fistula', 'Gynaecological Disorders' ,'Gastritis' ,'Hemorrhoids' ,'Hypertension', 'Neurological Disorders', 'Orthopedics' 
+  ,'Obesity','Paralysis / Hemiplagia', 'Pediatrics','Spinal Disorders','Skin Disorders' ,'Urinary Calculi','Urinary Calculi','Urinary Disease'
+  ,'Varicose Venis','I have a medical hospital for all diseases'
 
+];
 
   constructor(private SearchDoctorService:SearchdoctorService,private fauth:AngularFireAuth,private afs:AngularFirestore) {
     
@@ -46,24 +51,24 @@ export class AdvancedsearchComponent implements OnInit {
   }
 
   specFilter(data:string){
-this.specialist=data;
-  //   this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Specialist', '==', data));
-  // this.Query=this.QueryCol.valueChanges();
-  this.applyFilter();
+// this.specialist=data;
+    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Specialist', '==', data));
+  this.Query=this.QueryCol.valueChanges();
+  // this.applyFilter();
   }
 
   posFilter(data:string){
-    this.position=data;
-    this.applyFilter();
-    // this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Position', '==', data));
-    // this.Query=this.QueryCol.valueChanges();
+    // this.position=data;
+    // this.applyFilter();
+    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Position', '==', data));
+    this.Query=this.QueryCol.valueChanges();
   }
 
   genderFilter(data:string){
-    this.gender=data;
-    this.applyFilter();
-    // this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Gender', '==',data));
-    // this.Query=this.QueryCol.valueChanges();
+    // this.gender=data;
+    // this.applyFilter();
+    this.QueryCol=this.afs.collection('Doctors', ref => ref.where('Gender', '==',data));
+    this.Query=this.QueryCol.valueChanges();
   }
 
  applyFilter(){

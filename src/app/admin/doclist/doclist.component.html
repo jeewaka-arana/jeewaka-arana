@@ -179,7 +179,7 @@
                   <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
                       <div class="row">
                          <div class="col col-md-2 image-col">
-                              <img class="image" [src]="item.payload.doc.data().img1">
+                              <img class="image" src="https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg">
                           </div>
                           <div class="col col-md-8 text-col">
                             
@@ -197,17 +197,24 @@
                                        <button type="button" class="close" (click)="d('Cross click')">
                                            <i class="now-ui-icons ui-1_simple-remove"></i>
                                        </button>
-                                       <h4 class="title title-up">{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h4>
+                                       <h4 class="title title-up">Dr.{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h4>
                                    </div>
                                    <div class="modal-body">
                                       
-                                     <p>{{item.payload.doc.data().position}} </p>
-                                     <p>{{item.payload.doc.data().city}} </p>
-                                     <p>{{item.payload.doc.data().years}} </p>
-                                   </div>
+                                     <p><b>Position : </b>{{item.payload.doc.data().position}} </p>
+                                     <p><b>City : </b>{{item.payload.doc.data().city}} </p>
+                                     <p><b>Experienced Years : </b>{{item.payload.doc.data().years}} </p>
+                                     <p><b>Email : </b>{{item.payload.doc.data().email}}</p>
+                                     <p><b>Certification : <a href="https://firebasestorage.googleapis.com/v0/b/jeevaka-arana.appspot.com/o/Certificates%2F1573625998831_Web_Authoring_HTML_notes.pdf?alt=media&token=6386b77d-82a8-4a27-a03a-29a46b5786db" download="Certification">click here to download</a></b></p>
+                                     <p><b>Registration Number: </b>{{item.payload.doc.data().regnumber}}</p>
+                                     <p><b>Specialist : </b>{{item.payload.doc.data().specialist}}</p>
+                                     <p><b>Phone Number : </b>{{item.payload.doc.data().phone}}</p>
+                   
+
+                                    </div>
                                    <div class="modal-footer">
-                                       <button type="button" class="btn btn-default" (click)="Createdoc(item.payload.doc.id)" >Accept</button>
-                                       <button type="button" class="btn btn-danger" (click)="c('Close click')">Reject</button>
+                                       <button type="button" class="btn btn-danger"  (click)="accept(item.payload.doc.id)" >Reject</button>
+                                       <button type="button" class="btn btn-default" (click)="c('Close click')">Accept</button>
                                    </div>
                                </ng-template>
                            <!--</div>-->

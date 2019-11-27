@@ -120,6 +120,7 @@ export class AuthService {
       Position:this.newUser.position,
       RegistrationNumber:this.newUser.regnumber,
       ExpYears:this.newUser.years,
+      Specialist:this.newUser.specialist,
       Userid:userCredential.user.uid,
     })
   }

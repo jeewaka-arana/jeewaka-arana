@@ -178,14 +178,13 @@
                       <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
                           <div class="row">
                              <div class="col col-md-2 image-col">
-                                  <!-- <img class="image" [src]="item.payload.doc.data().img1"> -->
-                                  <img class="image" src="assets/img/logo.png" >
+                                  <img class="image" src="https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg">
                               </div>
                               <div class="col col-md-8 text-col">
                                   <h5 class="mb-1">{{item.payload.doc.data().Firstname}} {{item.payload.doc.data().Lastname}}</h5>
                                   <small>City: {{item.payload.doc.data().City}}</small>
                               </div>
-                              <!--<div class="col col-md-2 actions-col">-->
+                            <!--<div class="col col-md-2 actions-col">-->
                                   <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button" ><a routerLink="/admin">view</a>
                                      <!--<ion-icon class="icon" name="arrow-round-forward"></ion-icon>-->
                                   </button>

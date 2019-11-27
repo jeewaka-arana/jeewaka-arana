@@ -7,7 +7,7 @@
             <img src="https://vegfund.org/wp-content/uploads/VegFund_Logo_Icon_White.png" alt=""/>
             <h3>Welcome</h3>
             <p>The utility of Ayurveda is to maintain the health of a healthy individual and heal the disease of the sick.</p>
-            <button class="btnLogin"  routerLink="/login">login</button>
+            <button class="btnLogin"  routerLink="/plogin">login</button>
         </div>
         <div class="col-md-9 register-right">
             
@@ -93,7 +93,7 @@
                                                            
                                                             <div >
                                                              
-                                                                <select ngModel #country="ngModel"  (change)="changeCountry($event.target.value)" name="country" id="country" class="sel">
+                                                                <select   (change)="changeCountry($event.target.value)" name="country" id="country" class="sel">
                                                                         <option hidden [value]=""  selected>Country</option>
                                                                     <option *ngFor ="let count of countryList">{{count.name}} </option>
                                                                 </select>
@@ -107,7 +107,7 @@
                                                 <div class="col-md-6">
                                                    
                                                     <div >
-                                                        <select ngModel #city="ngModel"  name="city" id="city"    class="sel">
+                                                        <select  name="city" id="city"    class="sel">
                                                                 <option hidden [value]=""  selected>City</option>
                                                             <option *ngFor ="let city of cities">{{city}} </option>
                                                       </select>

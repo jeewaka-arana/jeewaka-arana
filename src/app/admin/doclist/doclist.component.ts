@@ -4,6 +4,7 @@ import {CrudService} from 'app/core/crud.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 export interface doctor{
@@ -35,17 +36,21 @@ export class DoclistComponent implements OnInit {
   doctors:Observable< doctor[]>;
   doct$:any;
 
-  constructor(private auth: CrudService,private modalService: NgbModal,private afs:AngularFirestore) {
+  constructor(private auth: CrudService,private modalService: NgbModal,private afs:AngularFirestore,private router: Router) {
     
    }
 
   ngOnInit() {
+
+    
     this.auth.getPeople().then(result =>{
       this.items=result;
     })
     // .then(result => {
     //   this.items = result;
     // })
+
+    
   }
 
   open(content, type, modalDimension) {
@@ -93,6 +98,18 @@ Createdoc(id:string){
 //        this.doct$=doc.data();
 //    })
     
+}
+
+
+accept(id:string){
+console.log(id);
+ this.afs.collection('admin').doc('VO23vtfHaiULH2bhwYvZ').collection('Doctors').doc(id).delete();
+ this.router.navigate(['/admin/doclist']); 
+
+
+
+
+
 }
  
 }

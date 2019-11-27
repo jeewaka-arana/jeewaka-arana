@@ -131,7 +131,7 @@
                                              
                                             <div class="column1">
                                                 <!-- <ul *ngFor="let post of posts | async"> -->
-                                             <img  src="{{post$.downloadURL}}" width="250" height="250" />
+                                             <img  src="{{post$?.downloadURL}}" width="250" height="250" />
                                              
                  
                                             <!-- </ul> -->
@@ -145,7 +145,7 @@
                                                     <label class="col-lg-15 control-label"><b><span>Specialist -  </span> {{post$.Specialist}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b><span>Status -  </span>  {{post$.Position}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b><span>Address -  </span> {{ post$.City}}</b></label><br><br>
-                                                    <label class="col-lg-15 control-label"><b> <span>Telephone Number -  </span> {{post$.Phone}}</b></label><br><br>
+                                                    <label class="col-lg-15 control-label"><b> <span>Telephone Number -  </span> {{post$.PhoneNumber}}</b></label><br><br>
                                                     <label class="col-lg-15 control-label"><b> <span>Email Address -  </span> {{post$.Email}}</b></label><br><br>
                                                  
                                               

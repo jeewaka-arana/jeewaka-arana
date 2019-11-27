@@ -19,10 +19,7 @@
 <div class="form-group">
     <input ngModel #spec="ngModel" name="spec1" type="text" class="form-control" placeholder="Specialist" (keyup)="specFilter(spec.value)" list="suggestions">
 <datalist id="suggestions">
-    <option>Cancer</option>
-    <option>Beauty Spa</option>
-    <option>Skin Care</option>
-    <option>Obesity</option>
+        <option *ngFor ="let spec of Specialist" [ngValue]="specialist">{{spec}} </option>
 </datalist>
 </div>
 </div>

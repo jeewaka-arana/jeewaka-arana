@@ -71,6 +71,9 @@ getPeople(){
 
 
 
+
+
+
 getDoctors(){
   return new Promise<any>((resolve, reject) => {
     this.afs.collection('Doctors').snapshotChanges()
