@@ -36,14 +36,6 @@ Email:string
 })
 export class DoctoradminpageComponent implements OnInit {
 
-fn:string;
-ln:string;
-city:string;
-NIC:string;
-Spec:string;
-y:number;
-pn:number;
-
 
 
   orders = [];
@@ -65,17 +57,7 @@ pn:number;
   posts:Observable< Doctors[]>;
   post:any;
   newDoctor:Doctor;
- //for diseases list 
-
-// diseases: Disease[]= [
-//   {id:1,name:'help Desk'},
-//   {id:2,name:'hr'},
-//   {id:3,name:'home'},
-//   ];
-
-
-  //
-  
+ 
 
 Address:string;
 Email:string;
@@ -108,13 +90,7 @@ formdata=new FormGroup({
   City:new FormControl(''),
   PhoneNumber:new FormControl(''),
   ExpYears:new FormControl(''),
-  // Specialist:new FormControl(this.post.Specialist) ,
-  // NIC:new FormControl(this.post.NIC),
-  // Firstname:new FormControl(this.post.Firstname),
-  // Lastname:new FormControl(this.post.Lastname),
-  // City:new FormControl(this.post.City),
-  // PhoneNumber:new FormControl(this.post.PhoneNumber),
-  // ExpYears:new FormControl(this.post.ExpYears),
+  
   dateTime:new FormControl(''),
   note:new FormControl(''),
   img:new FormControl(''),
@@ -124,7 +100,7 @@ formdata=new FormGroup({
   img3:new FormControl(''),
 
   video:new FormControl(''),
-// article:new FormControl(''),
+
 
 cname:new FormControl(''),
 cmail:new FormControl(''),
@@ -170,7 +146,7 @@ sut3:new FormControl(''),
   
   constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private storage:AngularFireStorage,private afAuth:AngularFireAuth, private db: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) { 
 
-    // this.my_id=afAuth.auth.currentUser.uid;
+    
     this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(13);
    
     console.log(this.my_id);
@@ -180,21 +156,10 @@ sut3:new FormControl(''),
       diseases: ['']
     });
 
-    // async orders
-    // of(this.getOrders()).subscribe(diseases => {
-    //   this.disease = diseases;
-    //   this.form.controls.disease.patchValue(this.disease[0].id);
-    // });
+    
 
 
-    this.postsCol=this.afs.collection('Doctors');
-    this.posts=this.postsCol.valueChanges();
-    this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
-      this.post=doc.data();
-      this.fn=this.post.Firstname;
-      this.ln=this.post.Lastname;
    
-   });
 
   
   }
@@ -202,35 +167,8 @@ sut3:new FormControl(''),
   ngOnInit() {
     var rellaxHeader = new Rellax('.rellax-header');
    
-    this.formdata;
-    this.formdoc = this.formBuilder.group({
-      Specialist:['ENT'],
-      
-      Firstname:['pruthivika'],
-      Lastname:['yoganathan'],
-      City:['colombo'],
-      PhoneNumber:[''],
-      ExpYears:['12']
+     this.formdata;
  
-    });
-   
-
-    //new
-
-    // this.afs.collection('Doctors',ref => ref.where('Userid','==',this.my_id)).valueChanges().subscribe(val=>{
-    //   this.post = val;
-    
-    // });
-
-//         this.postsCol=this.afs.collection('Doctors');
-//  this.posts=this.postsCol.valueChanges();
-//  this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
-//    this.post=doc.data();
-//    this.fn=this.post.Firstname;
-//    this.ln=this.post.Lastname;
-
-// });
-
 
 ////
 // this.resetForm();
@@ -317,23 +255,17 @@ getOrders() {
 }
 
 
-
-  // get formControls(){
-
-  //   return this.formdata['controls'];
-  // }
-
-
-
   
+
+
+
+
+
+
+
+
+
   // profile picture
-
-
-
-
-
-
-
 
 
 
@@ -382,11 +314,6 @@ getOrders() {
 
   
 
-
-  //newly added functions for 3 photo upload
-
-
-  //
 
 
 //image1 all function
@@ -449,109 +376,7 @@ getOrders() {
 //end of image1 function
 
 
-//image 2 all function
 
-// showpreview2(event:any){
-//   if(event.target.files && event.target.files[0]){
-//     const reader = new FileReader();
-//     reader.onload=(e:any)=> this.img2 = e.target.result;
-//     reader.readAsDataURL(event.target.files[0]);
-//     this.image2 =event.target.files[0];
-//   }
-//   else{
-//     this.img2 ='../../../assets/img/avatar.png';
-//     this.image2 = null;
-//   }
-
-// }
-// resetForm2(){
-
-
-//   this.formdata.reset();
-// this.formdata.setValue({
-// img2:''
-// });
-// this.img2='../../../assets/img/avatar.png';
-// this.image2=null;
-
-// this.isSubmitted2=false;
-// }
-
-
-
-//submit img2
-// submitImg2(formValue){
-
-
-//   this.isSubmitted2=true;
-//   if(this.formdata.valid){
-//     var filePath = `Img2/${this.image2.name}_${new Date().getTime()}`;
-//   const fileRef= this.storage.ref(filePath);
-//     this.storage.upload(filePath,this.image2).snapshotChanges().pipe(
-//     finalize(()=>{
-//       fileRef.getDownloadURL().subscribe((url)=>{
-//   formValue['img2']=url;
-//   this.resetForm2();
-//       })
-//     })
-//   ).subscribe();
-  
-//   }
-// }
-
-
-
-//all functions for image 3
-
-
-  
-// showpreview3(event:any){
-//   if(event.target.files && event.target.files[0]){
-//     const reader = new FileReader();
-//     reader.onload=(e:any)=> this.img3 = e.target.result;
-//     reader.readAsDataURL(event.target.files[0]);
-//     this.image3 =event.target.files[0];
-//   }
-//   else{
-//     this.img3 ='../../../assets/img/avatar.png';
-//     this.image3 = null;
-//   }
-
-// }
-// resetForm3(){
-
-
-//   this.formdata.reset();
-// this.formdata.setValue({
-// img3:''
-// });
-// this.img3='../../../assets/img/avatar.png';
-// this.image3=null;
-
-// this.isSubmitted3=false;
-// }
-
-
-
-//submit img3
-// submitImg3(formValue){
-
-
-//   this.isSubmitted3=true;
-//   if(this.formdata.valid){
-//     var filePath = `Img3/${this.image3.name}_${new Date().getTime()}`;
-//   const fileRef= this.storage.ref(filePath);
-//     this.storage.upload(filePath,this.image3).snapshotChanges().pipe(
-//     finalize(()=>{
-//       fileRef.getDownloadURL().subscribe((url)=>{
-//   formValue['img3']=url;
-//   this.resetForm3();
-//       })
-//     })
-//   ).subscribe();
-  
-//   }
-// }
 
 //upload video
 
