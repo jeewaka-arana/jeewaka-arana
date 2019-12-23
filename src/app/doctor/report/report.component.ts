@@ -55,7 +55,7 @@ export class ReportComponent implements OnInit {
 
  my_id:string;
   constructor(private afs:AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) { 
-    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(7);
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(8);
     console.log(this.my_id);
   }
 
