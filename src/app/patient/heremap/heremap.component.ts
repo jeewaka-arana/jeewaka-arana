@@ -13,7 +13,7 @@ export class HeremapComponent implements OnInit {
   private ui: any;
 private search: any;
 
-  @ViewChild("map")
+  @ViewChild("map",{ read: true, static: false })
     public mapElement: ElementRef;
 
     @Input()

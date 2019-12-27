@@ -32,7 +32,33 @@
   <div class="row">
         <div class="col p-3">
           <div class="byLetter">
-            <a id="A" href="">A</a>
+            <input [(ngModel)]="letter" type="radio" (keydown)="filterArea('Firstname',City)" name="letter" value="A"> A
+            <input [(ngModel)]="letter" type="radio" name="letter" value="B"> B
+            <input [(ngModel)]="letter" type="radio" name="letter" value="C"> C
+            <input [(ngModel)]="letter" type="radio" name="letter" value="D"> D
+            <input [(ngModel)]="letter" type="radio" name="letter" value="E"> E
+            <input [(ngModel)]="letter" type="radio" name="letter" value="F"> F
+            <input [(ngModel)]="letter" type="radio" name="letter" value="G"> G
+            <input [(ngModel)]="letter" type="radio" name="letter" value="H"> H
+            <input [(ngModel)]="letter" type="radio" name="letter" value="I"> I
+            <input [(ngModel)]="letter" type="radio" name="letter" value="J"> J
+            <input [(ngModel)]="letter" type="radio" name="letter" value="K"> K
+            <input [(ngModel)]="letter" type="radio" name="letter" value="L"> L
+            <input [(ngModel)]="letter" type="radio" name="letter" value="M"> M
+            <input [(ngModel)]="letter" type="radio" name="letter" value="N"> N
+            <input [(ngModel)]="letter" type="radio" name="letter" value="O"> O
+            <input [(ngModel)]="letter" type="radio" name="letter" value="P"> P
+            <input [(ngModel)]="letter" type="radio" name="letter" value="Q"> Q
+            <input [(ngModel)]="letter" type="radio" name="letter" value="R"> R
+            <input [(ngModel)]="letter" type="radio" name="letter" value="S"> S
+            <input [(ngModel)]="letter" type="radio" name="letter" value="T"> T
+            <input [(ngModel)]="letter" type="radio" name="letter" value="U"> U
+            <input [(ngModel)]="letter" type="radio" name="letter" value="V"> V
+            <input [(ngModel)]="letter" type="radio" name="letter" value="W"> W
+            <input [(ngModel)]="letter" type="radio" name="letter" value="X"> X
+            <input [(ngModel)]="letter" type="radio" name="letter" value="Y"> Y
+            <input [(ngModel)]="letter" type="radio" name="letter" value="Z"> Z
+            <!-- <a id="A" href="">A</a>
             <a id="B" href="">B</a>
             <a id="C" href="">C</a>
             <a id="D" href="">D</a>
@@ -57,18 +83,23 @@
             <a id="W" href="">W</a>
             <a id="X" href="">X</a>
             <a id="Y" href="">Y</a>
-            <a id="Z" href="">Z</a>
-          </div> 
+            <a id="Z" href="">Z</a> -->
+          </div>
 <br>
           <div id="container">
-             
+            <table style="width:80%">
+                <tr *ngFor="let result of results | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                    <td><a [routerLink]="['/doctorview',result.Userid]">Dr. {{result.Firstname}} {{result.Lastname}} </a></td> 
+                    <td><button routerLink="/appstep2" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button></td>
+                </tr>
+              </table>
                 
-                <ul class="list">
+                <!-- <ul class="list">
                    <ul *ngFor="let result of results">  
                     <li>
                             <a href="#">Dr. {{result.Firstname}} {{result.Lastname}} </a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li>
+                    </li> -->
                     <!-- <li>
                             <a href="#">Name 2</a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
@@ -93,8 +124,8 @@
                             <a href="#">Name 7</a> 
                             <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
                     </li> -->
-                </ul>
-                </ul>  
+                <!-- </ul>
+                </ul>   -->
             </div> 
 
            </div>
@@ -103,7 +134,7 @@
         
         <div class="col-md-10">
                           
-             <ngb-pagination [collectionSize]="50" [(page)]="page" aria-label="Default pagination" class="pagination-primary"></ngb-pagination>
+            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length"></ngb-pagination>
                             
         </div>
            <div class="section section-basic">
@@ -111,7 +142,7 @@
                 <div id="buttons">
                   <div class="row" class="text-center" >
                       <div class="col-md-10" >
-                          <button routerLink="/appstep3" class="btn btn-primary btn-round" type="button">Next</button>
+                          <button routerLink="/appstep1" class="btn btn-primary btn-round" type="button">Back</button>
                       </div> 
                   </div>
                 </div>

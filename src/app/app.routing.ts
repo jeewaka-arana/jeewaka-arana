@@ -74,7 +74,7 @@ import{ ContactUsComponent} from '../app/components/contact-us/contact-us.compon
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
 import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 import{SecondpageComponent}from './doctor/secondpage/secondpage.component';
-import{ChartsComponent} from'./doctor/charts/charts.component';
+// import{ChartsComponent} from'./doctor/charts/charts.component';
 
 
 
@@ -170,7 +170,7 @@ const routes: Routes =[
 {path:'paboutUs',component:PaboutUsComponent},
 {path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
-{path:'chart',component:ChartsComponent},
+// {path:'chart',component:ChartsComponent},
     ]
 
 

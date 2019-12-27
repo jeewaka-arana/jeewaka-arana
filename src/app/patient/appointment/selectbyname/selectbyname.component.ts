@@ -3,6 +3,7 @@ import { AngularFirestore,  AngularFirestoreCollection, AngularFirestoreDocument
 import { Subject } from 'rxjs/Subject';
 import { Observable} from 'rxjs/Rx'
 import { observable } from 'rxjs';
+import * as _ from 'lodash';
 import { Doctor } from 'app/core/models/doctor.model';
 
 interface Post {
@@ -27,15 +28,42 @@ export class SelectbynameComponent implements OnInit {
   results: any[] = [];
   postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<Post[]>;
-
+  page = 1;
+  pageSize = 3;
+  filteredNames: any[] = [];
+  filters = {}
 
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
-    this.afs.collection('Doctors',ref => ref.limit(4)).valueChanges().subscribe(results => {
+    this.afs.collection('Doctors',ref => ref.orderBy('Firstname')).valueChanges().subscribe(results => {
       this.results = results;
       
     })
+  }
+
+  
+  private applyFilters(){
+    this.filteredNames = _.filter(this.results, _.conforms(this.filters))
+  }
+
+  filterName(property: string, rule: string){
+    this.filters[property] = val => val.toLowerCase().includes(rule.toLowerCase())
+    this.applyFilters()
+  }
+
+  filterArea(property: string, rule: string){
+    if(!rule) this.removeFilter(property)
+    else{
+      this.filters[property] = val => val.toLowerCase().includes(rule.toLowerCase())
+      this.applyFilters()
+    }
+  }
+
+  removeFilter(property: string){
+    delete this.filters[property]
+    this[property] == null
+    this.applyFilters()
   }
 
 }

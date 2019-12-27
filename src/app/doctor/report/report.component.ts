@@ -32,7 +32,7 @@ export class ReportComponent implements OnInit {
   apps:Observable<Order[]>;
   
   
- @ViewChild('content') content :ElementRef;
+ @ViewChild('content',{ read: true, static: false }) content :ElementRef;
 
 
  public downloadPDF(){

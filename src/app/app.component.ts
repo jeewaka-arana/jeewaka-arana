@@ -2,7 +2,7 @@ import { Component, OnInit, Inject, Renderer, ElementRef, ViewChild } from '@ang
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
@@ -20,7 +20,7 @@ AOS.init();
 })
 export class AppComponent implements OnInit {
     private _router: Subscription;
-    @ViewChild(NavbarComponent) navbar: NavbarComponent;
+    @ViewChild(NavbarComponent,{ read: true, static: false }) navbar: NavbarComponent;
 
     constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
     ngOnInit() {
