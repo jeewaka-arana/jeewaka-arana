@@ -94,7 +94,7 @@ val ;
 //   this.Query.subscribe((data)=>{this.y = data.length});
 
 // }
- 
+
  
 
 
@@ -111,9 +111,9 @@ val ;
     
     //newwwwwwwwwwwwwww
     
-    this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2')
-    .collection('viewappoinment',ref=>ref.where('year','==',data))
-    .valueChanges().subscribe( values =>{ this.val = values; console.log(this.val)});
+    // this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2')
+    // .collection('viewappoinment',ref=>ref.where('year','==',data))
+    // .valueChanges().subscribe( values =>{ this.val = values; console.log(this.val)});
 
 //this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2').collection('viewappoinment',ref=>ref.where('year','==',data));
 
@@ -128,15 +128,15 @@ val ;
 //newwwwwwwwwwwwwwwwwwwww
 
 
-  //   console.log(data);
-  //   console.log("hi");
+  console.log(data);
+    console.log("hi");
  
-  //  this.QueryCol =this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2')
-  //  .collection('viewappoinment',ref=>ref.where('year','==',data));
-  // console.log(this.QueryCol);
-  //  this.Query=this.QueryCol.valueChanges();
-  //  console.log(this.Query);
-
+   this.QueryCol =this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2').collection('viewappoinment',ref=>ref.where('year','==',data));
+  console.log(this.QueryCol);
+  this.Query=this.QueryCol.valueChanges();
+  console.log(this.Query);
+  this.Query.subscribe((data)=>{ this.y = data.length});
+  console.log(this.y)
   //  this.counter=this.QueryCol.get();
   //  console.log(this.counter);
 
