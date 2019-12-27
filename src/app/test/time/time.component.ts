@@ -13,12 +13,20 @@ t:string;
   constructor(private afs:AngularFirestore){
 
   }
-  savetime(data:any){
-   
-    this.t ="Time".concat(this.index)
-    this.afs.collection('example').doc('Nx69wcHk2Rlnt7lF9V3J').update({[this.t]:{hour:data.hour,minute:data.minute}});
-  }
 
+
+  // savetime(data:any){
+   
+  //   // this.t ="Time".concat(this.index)
+  //   // this.afs.collection('example').add({[this.t]:{hour:data.hour,minute:data.minute}});
+
+  //   this.afs.collection('example').add({hour:data.hour,minute:data.minute});
+  // }
+
+// savetime(from:any,to:any){
+//   this.afs.collection('example').add({"from":[]});
+// }
+  
 }
 
 

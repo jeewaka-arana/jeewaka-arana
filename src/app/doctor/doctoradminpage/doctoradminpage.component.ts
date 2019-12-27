@@ -209,8 +209,8 @@ sut3:new FormControl(''),
       Firstname:['pruthivika'],
       Lastname:['yoganathan'],
       City:['colombo'],
-      PhoneNumber:[''],
-      ExpYears:['12']
+      PhoneNumber:['0777552489'],
+      ExpYears:['']
  
     });
    

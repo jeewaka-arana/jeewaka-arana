@@ -73,7 +73,8 @@ import{AboutUsComponent} from '../app/components/about-us/about-us.component';
 import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
 import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
-import{SecondpageComponent}from './doctor/secondpage/secondpage.component'
+import{SecondpageComponent}from './doctor/secondpage/secondpage.component';
+import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 
 
 
@@ -106,6 +107,7 @@ const routes: Routes =[
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
+    { path: 'alogin', component:AdminLoginComponent },
     { path: 'admin', component:AdminComponent ,children:[
         
      //   { path: 'imagelist', component:ImageListComponent }
@@ -166,7 +168,7 @@ const routes: Routes =[
 {path:'aboutUs',component:AboutUsComponent},
 {path:'contactUs',component:ContactUsComponent},
 {path:'pcontactUs',component:PcontactUsComponent},
-{path:'paboutUs',component:PaboutUsComponent},
+// {path:'paboutUs',component:PaboutUsComponent},
 {path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
     ]

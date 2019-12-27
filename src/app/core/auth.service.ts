@@ -19,12 +19,22 @@ export class AuthService {
     private db: AngularFirestore,
     private router: Router) { }
 
-  getUserState() {
+  get UserState() {
     return this.afAuth.authState;
   }
 
+test(){
 
- 
+   const user = this.afAuth.auth.currentUser;
+
+if (user) {
+ return true;
+} else {
+  return false;
+}
+}
+  
+
 
   async pat_login( email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)

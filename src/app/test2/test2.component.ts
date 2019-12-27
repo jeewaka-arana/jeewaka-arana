@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { firestore } from 'firebase';
 
 
 @Component({
@@ -8,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Test2Component {
 
- test(data:number){
-   console.log(data);
- }
+  constructor(ts:firestore.Timestamp){
 
+    
+  }
+
+test(){
+    console.log("hi pruthi");
+    
+
+  }
 }

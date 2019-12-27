@@ -30,7 +30,10 @@ export class AdminComponent implements OnInit {
   results: any[] = [];
   postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<Post[]>;
-  constructor(private afs: AngularFirestore,private fb: FormBuilder, private uploadService: UploadFileService,private auth:AuthService) { }
+  constructor(private afs: AngularFirestore,private fb: FormBuilder, private uploadService: UploadFileService,private auth:AuthService) { 
+this.auth.test();
+
+  }
 
   ngOnInit() {
     
