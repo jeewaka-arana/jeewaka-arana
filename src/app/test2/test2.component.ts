@@ -11,7 +11,7 @@ export class Test2Component {
 
   constructor(ts:firestore.Timestamp){
 
-    
+
   }
 
 test(){
