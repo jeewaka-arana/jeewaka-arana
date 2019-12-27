@@ -118,7 +118,7 @@ import { AfooterComponent } from './admin/afooter/afooter.component';
 import { PnavComponent } from './patient/pnav/pnav.component';
 import { DocpnavComponent } from './doctor/docpnav/docpnav.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
-import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
+// import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
@@ -204,7 +204,7 @@ import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
         PnavComponent,
         DocpnavComponent,
         PcontactUsComponent,
-        PaboutUsComponent,
+        // PaboutUsComponent,
         SecondpageComponent,
         // ChartsComponent,
       
