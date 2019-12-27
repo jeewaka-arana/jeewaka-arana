@@ -4,7 +4,7 @@ interface NodeModule {
   id: string;
 }
 
-// declare var Plotly: any;
+declare var Plotly: any;
 
 
 
