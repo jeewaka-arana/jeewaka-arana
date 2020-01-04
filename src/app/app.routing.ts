@@ -56,7 +56,7 @@ import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page
 import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
-import { TimeComponent } from './test/time/time.component';
+
 import { ReportComponent } from './doctor/report/report.component';
 
 import { DoclistComponent } from './admin/doclist/doclist.component';
@@ -77,6 +77,9 @@ import{SecondpageComponent}from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import {AdmindashboardComponent} from '../app/admindashboard/admindashboard.component';
 
+
+import{AnimalComponent} from './doctor/animal/animal.component';
+import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
 
 const routes: Routes =[
@@ -157,7 +160,6 @@ const routes: Routes =[
 {path:'docAppoinment',component:DocAppoinmentComponent},
 {path:'docAppoinment/:id',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
-{path:'timePicker',component:TimeComponent},
 {path:'report',component:ReportComponent},
 {path:'articles',component:ArticlesComponent},
 {path:'admin/notification',component:NotificationComponent},

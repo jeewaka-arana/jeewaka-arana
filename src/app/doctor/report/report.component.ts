@@ -50,7 +50,7 @@ export class ReportComponent implements OnInit {
 
 
 
-  @ViewChild('content', { read: true, static: false }) content: ElementRef;
+  @ViewChild('content', { read: true }) content: ElementRef;
 
 
   public downloadPDF() {

@@ -1,0 +1,19 @@
+<input ngModel #position name="position" type="text" class="form-control" placeholder="Position" (keyup)="test(position.value)" list="pos-list" >
+<datalist id="pos-list">
+        <option>2019</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+    </datalist>
+
+{{position.value}}
+
+
+<br>
+
+<ul>
+  <li *ngFor="let q of Query | async">
+    {{ q.name}}
+  </li>
+</ul>

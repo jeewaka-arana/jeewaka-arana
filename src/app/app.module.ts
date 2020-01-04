@@ -84,7 +84,7 @@ import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-a
 import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
 import { TimePickerDirective } from './core/directives/time-picker.directive';
-import { TimeComponent } from './test/time/time.component';
+
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 import { UploadcertificateComponent } from './signup/sign-doctor/uploadcertificate/uploadcertificate.component';
 import { UploadService } from './core/upload.service';
@@ -94,7 +94,6 @@ import { ReportComponent } from './doctor/report/report.component';
 import { DoclistComponent } from '../app/admin/doclist/doclist.component';
 import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
 
-import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import {UploadFileService} from 'app/core/upload-file.service';
 import { ArticlesComponent } from './admin/articles/articles.component';
@@ -119,7 +118,7 @@ import { PnavComponent } from './patient/pnav/pnav.component';
 import { DocpnavComponent } from './doctor/docpnav/docpnav.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
 // import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
-
+import {AdminLoginComponent} from './userlogin/admin-login/admin-login.component'
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
@@ -188,7 +187,6 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
         ViewappoinmentComponent,
         HeremapComponent,
         TimePickerDirective,
-        TimeComponent,
         ShowpasswordDirective,
         UploadcertificateComponent,
         ReportComponent,

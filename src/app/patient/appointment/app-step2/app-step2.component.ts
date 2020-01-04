@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore,  AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Subject } from 'rxjs/Subject';
+import { FormControl } from '@angular/forms';
+import { Observable} from 'rxjs/Rx'
+import { observable } from 'rxjs';
+import * as _ from 'lodash';
+import { Doctor } from 'app/core/models/doctor.model';
 
 @Component({
   selector: 'app-app-step2',
@@ -6,10 +13,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-step2.component.scss']
 })
 export class AppStep2Component implements OnInit {
-
+x: any;
+y: any;
+m: any;
+d: any;
+p: any;
+today: number = Date.now();
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

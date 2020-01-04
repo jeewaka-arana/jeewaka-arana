@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore,  AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Subject } from 'rxjs/Subject';
+import {SearchdoctorService} from '../../../core/searchdoctor.service';
 import { Observable} from 'rxjs/Rx'
 import { observable, of } from 'rxjs';
 import { Doctor } from 'app/core/models/doctor.model';
+import { AngularFireAuth } from '@angular/fire/auth';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 import * as _ from 'lodash';
 
-
+interface Doctors{
+  
+}
 
 @Component({
   selector: 'app-selectbydisease',
@@ -16,14 +20,7 @@ import * as _ from 'lodash';
 })
 export class SelectbydiseaseComponent implements OnInit {
 
-  // results: any[] = [];
-  // postsCol: AngularFirestoreCollection<Post>;
-  // posts: Observable<Post[]>;
-
-  orders = [];
-  form: FormGroup;
-  disease: { id: string; name: string; }[];
-  // formBuilder: any;
+  specialist:string;
 
   Firstname:string;
   Lastname:string;
@@ -35,25 +32,27 @@ export class SelectbydiseaseComponent implements OnInit {
   RegistrationNumber:string;
   expyear: number;
 
+  QueryCol:AngularFirestoreCollection<Doctors>;
+  Query:Observable<Doctors[]>
+  Specialist:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic Ulcers','Cholestrol' , 'Diabetic Ulcers','Diabetes Mellitus', 'ENT'
+  ,'Fistula', 'Gynaecological Disorders' ,'Gastritis' ,'Hemorrhoids' ,'Hypertension', 'Neurological Disorders', 'Orthopedics' 
+  ,'Obesity','Paralysis / Hemiplagia', 'Pediatrics','Spinal Disorders','Skin Disorders' ,'Urinary Calculi','Urinary Calculi','Urinary Disease'
+  ,'Varicose Venis','I have a medical hospital for all diseases'
+
+];
+
   filters ={};
   results: any;
   filteredNames: any[] = [];
+  page = 1;
+  pageSize = 3;
 
 
-  constructor(private afs: AngularFirestore,private fb:FormBuilder,private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      diseases: ['']
-    });
-
-    // async orders
-    of(this.getOrders()).subscribe(diseases => {
-      this.disease = diseases;
-      this.form.controls.disease.patchValue(this.disease[0].id);
-    });
+  constructor(private SearchDoctorService:SearchdoctorService,private fauth:AngularFireAuth,private afs:AngularFirestore) {
    }
 
   ngOnInit() {
-    this.afs.collection('Doctors',ref => ref.limit(4).orderBy('Lastname')).valueChanges().subscribe(results => {
+    this.afs.collection('Doctors',ref => ref.orderBy('Firstname')).valueChanges().subscribe(results => {
       this.results = results;
       this.applyFilters()
     })
@@ -65,54 +64,15 @@ export class SelectbydiseaseComponent implements OnInit {
   }
 
   filterName(property: string, rule: string){
+    if(!rule) this.removeFilter(property)
     this.filters[property] = val => val.toLowerCase().includes(rule.toLowerCase())
     this.applyFilters()
-  }
-
-  filterArea(property: string, rule: string){
-    if(!rule) this.removeFilter(property)
-    else{
-      this.filters[property] = val => val.toLowerCase().includes(rule.toLowerCase())
-      this.applyFilters()
-    }
   }
 
   removeFilter(property: string){
     delete this.filters[property]
     this[property] == null
     this.applyFilters()
-  }
-
-  getOrders() {
-    return [
-    
-      { id: '1', name: 'Ayurvedic Hospital' },
-      { id: '2', name: 'Arthritis' },
-      { id: '3', name: 'Beauty Spa' },
-      { id: '4', name: 'cancer' },
-      { id: '5', name: 'Chronic Ulcers' },
-      { id: '6', name: 'Cholestrol' },
-      { id: '7', name: 'Diabetic Ulcers' },
-      { id: '8', name: 'Diabetes Mellitus' },
-      { id: '9', name: 'ENT' },
-      { id: '10', name: 'Fistula' },
-      { id: '11', name: 'Gynaecological Disorders' },
-      { id: '12', name: 'Gastritis' },
-      { id: '13', name: 'Hemorrhoids' },
-      { id: '14', name: 'Hypertension' },
-      { id: '15', name: 'Neurological Disorders' },
-      { id: '16', name: 'Orthopedics' },
-      { id: '17', name: 'Obesity' },
-      { id: '18', name: 'Paralysis / Hemiplagia' },
-      { id: '19', name: 'Pediatrics' },
-      { id: '20', name: 'Spinal Disorders' },
-      { id: '21', name: 'Skin Disorders' },
-      { id: '22', name: 'Urinary Calculi' },
-      {id:'23',name:'Urinary Disease'},
-      {id:'24',name:'Varicose Venis'},
-      {id:'25',name:'I have a medical hospital for all diseases'}
-  
-    ];
   }
 
 }

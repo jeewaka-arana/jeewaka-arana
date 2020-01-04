@@ -18,9 +18,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UfooterComponent } from './ufooter/ufooter.component';
 import { HereMapComponent } from './here-map/here-map.component';
+
 // import { PaboutUsComponent } from '../patient/pabout-us/pabout-us.component';
 
-
+import {AptableComponent} from './aptable/aptable.component';
+import { TimeComponent } from './time/time.component';
 
 @NgModule({
     imports: [
@@ -44,6 +46,9 @@ import { HereMapComponent } from './here-map/here-map.component';
         ContactUsComponent,
         UfooterComponent,
         HereMapComponent,
+        AptableComponent,
+        TimeComponent
+       
         // PaboutUsComponent,
         
         
