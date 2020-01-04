@@ -100,8 +100,6 @@ import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
 
 
-
-
 import { PopupComponent } from './core/components/popup/popup.component';
 import { DropZoneDirective } from './core/directives/drop-zone.directive';
 
@@ -123,6 +121,7 @@ import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import { AnimalComponent } from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
+import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 
 
 
@@ -166,7 +165,6 @@ import { FirebasetestComponent } from './firebasetest/firebasetest.component';
         AddComplainsComponent,
         DeleteCommentComponent,
         BothCommentPageComponent,
-
         AdvancedsearchComponent,
         DoclistComponent,
         EditprofileComponent,
@@ -174,7 +172,6 @@ import { FirebasetestComponent } from './firebasetest/firebasetest.component';
         // ImagelistComponent,
         AdminLoginComponent,
         DocacceptComponent,
-
         GooglemapComponent,
         StarreviewComponent,
         Test2Component,
@@ -204,6 +201,7 @@ import { FirebasetestComponent } from './firebasetest/firebasetest.component';
     
         AnimalComponent,
         FirebasetestComponent,
+        TimepickerComponent,
        
 
 

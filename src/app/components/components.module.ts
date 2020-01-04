@@ -21,8 +21,7 @@ import { HereMapComponent } from './here-map/here-map.component';
 
 // import { PaboutUsComponent } from '../patient/pabout-us/pabout-us.component';
 
-import {AptableComponent} from './aptable/aptable.component';
-import { TimeComponent } from './time/time.component';
+
 
 @NgModule({
     imports: [
@@ -46,8 +45,7 @@ import { TimeComponent } from './time/time.component';
         ContactUsComponent,
         UfooterComponent,
         HereMapComponent,
-        AptableComponent,
-        TimeComponent
+        
        
         // PaboutUsComponent,
         
