@@ -84,7 +84,7 @@ import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-a
 import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
 import { TimePickerDirective } from './core/directives/time-picker.directive';
-import { TimeComponent } from './test/time/time.component';
+
 import { ShowpasswordDirective } from './core/directives/showpassword.directive';
 import { UploadcertificateComponent } from './signup/sign-doctor/uploadcertificate/uploadcertificate.component';
 import { UploadService } from './core/upload.service';
@@ -94,7 +94,6 @@ import { ReportComponent } from './doctor/report/report.component';
 import { DoclistComponent } from '../app/admin/doclist/doclist.component';
 import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
 
-import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import {UploadFileService} from 'app/core/upload-file.service';
 import { ArticlesComponent } from './admin/articles/articles.component';
@@ -121,13 +120,9 @@ import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component
 // import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
-// import { ChartsComponent } from './doctor/charts/charts.component';
-
-
-
-
-
-
+import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
+import { AnimalComponent } from './doctor/animal/animal.component';
+import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
 
 
@@ -187,7 +182,6 @@ import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
         ViewappoinmentComponent,
         HeremapComponent,
         TimePickerDirective,
-        TimeComponent,
         ShowpasswordDirective,
         UploadcertificateComponent,
         ReportComponent,
@@ -206,7 +200,13 @@ import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
         PcontactUsComponent,
         // PaboutUsComponent,
         SecondpageComponent,
-        // ChartsComponent,
+        AdminLoginComponent,
+    
+        AnimalComponent,
+        FirebasetestComponent,
+       
+
+
       
         
         
