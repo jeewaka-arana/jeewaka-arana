@@ -56,7 +56,7 @@ import{BothCommentPageComponent} from './doctor/commentsection/both-comment-page
 import{DocAppoinmentComponent}  from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import{ViewappoinmentComponent} from './doctor/Appoinment/viewappoinment/viewappoinment.component';
 import { HeremapComponent } from './patient/heremap/heremap.component';
-import { TimeComponent } from './test/time/time.component';
+
 import { ReportComponent } from './doctor/report/report.component';
 
 import { DoclistComponent } from './admin/doclist/doclist.component';
@@ -78,6 +78,7 @@ import { AdminLoginComponent } from './userlogin/admin-login/admin-login.compone
 
 import{ChartsComponent} from'./doctor/charts/charts.component';
 import{AnimalComponent} from './doctor/animal/animal.component';
+import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
 
 const routes: Routes =[
@@ -158,7 +159,6 @@ const routes: Routes =[
 {path:'docAppoinment',component:DocAppoinmentComponent},
 {path:'docAppoinment/:id',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
-{path:'timePicker',component:TimeComponent},
 {path:'report',component:ReportComponent},
 {path:'articles',component:ArticlesComponent},
 {path:'admin/notification',component:NotificationComponent},
@@ -174,7 +174,8 @@ const routes: Routes =[
 {path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
 {path:'chart',component:ChartsComponent},
-{path:'animal',component:AnimalComponent}
+{path:'animal',component:AnimalComponent},
+{path:'ft',component:FirebasetestComponent}
     ]
 
 

@@ -20,7 +20,7 @@ AOS.init();
 })
 export class AppComponent implements OnInit {
     private _router: Subscription;
-    @ViewChild(NavbarComponent,{static: false}) navbar: NavbarComponent;
+    @ViewChild(NavbarComponent) navbar: NavbarComponent;
   
 
     constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}

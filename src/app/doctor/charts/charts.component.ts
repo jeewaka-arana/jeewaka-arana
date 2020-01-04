@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class ChartsComponent implements OnInit {
 @Input() id:string;
  
-  @ViewChild('chart',{static: false}) el: ElementRef;
+  @ViewChild('chart') el: ElementRef;
   //
  
   Years:any=[2019,2020,2021,2022,2023,2024];

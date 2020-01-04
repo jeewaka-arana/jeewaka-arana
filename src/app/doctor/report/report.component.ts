@@ -46,7 +46,7 @@ val ;
 //a:Observable<any>
 
 
- @ViewChild('content',{static: false}) content :ElementRef;
+ @ViewChild('content') content :ElementRef;
 
 
  public downloadPDF(){
