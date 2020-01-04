@@ -29,114 +29,175 @@
     </ol>
   </div>
 
-  <div class="row">
-        <div class="col p-3">
-          <div class="byLetter">
-            <input [(ngModel)]="letter" type="radio" (keydown)="filterArea('Firstname',City)" name="letter" value="A"> A
-            <input [(ngModel)]="letter" type="radio" name="letter" value="B"> B
-            <input [(ngModel)]="letter" type="radio" name="letter" value="C"> C
-            <input [(ngModel)]="letter" type="radio" name="letter" value="D"> D
-            <input [(ngModel)]="letter" type="radio" name="letter" value="E"> E
-            <input [(ngModel)]="letter" type="radio" name="letter" value="F"> F
-            <input [(ngModel)]="letter" type="radio" name="letter" value="G"> G
-            <input [(ngModel)]="letter" type="radio" name="letter" value="H"> H
-            <input [(ngModel)]="letter" type="radio" name="letter" value="I"> I
-            <input [(ngModel)]="letter" type="radio" name="letter" value="J"> J
-            <input [(ngModel)]="letter" type="radio" name="letter" value="K"> K
-            <input [(ngModel)]="letter" type="radio" name="letter" value="L"> L
-            <input [(ngModel)]="letter" type="radio" name="letter" value="M"> M
-            <input [(ngModel)]="letter" type="radio" name="letter" value="N"> N
-            <input [(ngModel)]="letter" type="radio" name="letter" value="O"> O
-            <input [(ngModel)]="letter" type="radio" name="letter" value="P"> P
-            <input [(ngModel)]="letter" type="radio" name="letter" value="Q"> Q
-            <input [(ngModel)]="letter" type="radio" name="letter" value="R"> R
-            <input [(ngModel)]="letter" type="radio" name="letter" value="S"> S
-            <input [(ngModel)]="letter" type="radio" name="letter" value="T"> T
-            <input [(ngModel)]="letter" type="radio" name="letter" value="U"> U
-            <input [(ngModel)]="letter" type="radio" name="letter" value="V"> V
-            <input [(ngModel)]="letter" type="radio" name="letter" value="W"> W
-            <input [(ngModel)]="letter" type="radio" name="letter" value="X"> X
-            <input [(ngModel)]="letter" type="radio" name="letter" value="Y"> Y
-            <input [(ngModel)]="letter" type="radio" name="letter" value="Z"> Z
-            <!-- <a id="A" href="">A</a>
-            <a id="B" href="">B</a>
-            <a id="C" href="">C</a>
-            <a id="D" href="">D</a>
-            <a id="E" href="">E</a>
-            <a id="F" href="">F</a>
-            <a id="G" href="">G</a>
-            <a id="H" href="">H</a>
-            <a id="I" href="">I</a>
-            <a id="J" href="">J</a>
-            <a id="K" href="">K</a>
-            <a id="L" href="">L</a>
-            <a id="M" href="">M</a>
-            <a id="N" href="">N</a>
-            <a id="O" href="">O</a>
-            <a id="P" href="">P</a>
-            <a id="Q" href="">Q</a>
-            <a id="R" href="">R</a>
-            <a id="S" href="">S</a>
-            <a id="T" href="">T</a>
-            <a id="U" href="">U</a>
-            <a id="V" href="">V</a>
-            <a id="W" href="">W</a>
-            <a id="X" href="">X</a>
-            <a id="Y" href="">Y</a>
-            <a id="Z" href="">Z</a> -->
-          </div>
-<br>
-          <div id="container">
-            <table style="width:80%">
-                <tr *ngFor="let result of results | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-                    <td><a [routerLink]="['/doctorview',result.Userid]">Dr. {{result.Firstname}} {{result.Lastname}} </a></td> 
-                    <td><button routerLink="/appstep2" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button></td>
-                </tr>
-              </table>
-                
-                <!-- <ul class="list">
-                   <ul *ngFor="let result of results">  
-                    <li>
-                            <a href="#">Dr. {{result.Firstname}} {{result.Lastname}} </a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li> -->
-                    <!-- <li>
-                            <a href="#">Name 2</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li>
-                    <li>
-                            <a href="#">Name 3</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li>
-                    <li>
-                            <a href="#">Name 4</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li>
-                    <li>
-                            <a href="#">Name 5</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li>
-                    <li>
-                            <a href="#">Name 6</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li>
-                    <li>
-                            <a href="#">Name 7</a> 
-                            <button routerLink="#" class="btn btn-primary btn-round " type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
-                    </li> -->
-                <!-- </ul>
-                </ul>   -->
-            </div> 
 
-           </div>
+  <div class="container">    
+    <div class="section section-basic">
+        <div class="container">
+
+</div>
+</div> 
+
+<div class="form-check form-check-radio row">
+        <div class="byLetter">
+            <!-- <div class="form-check form-check-radio">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                    <span class="form-check-sign"></span>
+                    Radio is off
+                </label>
+            </div>
+            <div class="form-check form-check-radio">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                    <span class="form-check-sign"></span>
+                    Radio is off
+                </label>
+            </div> -->
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="selectAll()" [formControl]="letter" value="ALL" [checked]="true"> 
+                <span class="form-check-sign"></span>ALL
+            </label>
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="A"> 
+                <span class="form-check-sign"></span>A
+            </label>
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="B"> 
+                <span class="form-check-sign"></span>B
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="C"> 
+                <span class="form-check-sign"></span>C
+            </label> 
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="D"> 
+                <span class="form-check-sign"></span>D
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="E"> 
+                <span class="form-check-sign"></span>E
+            </label>     
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="F"> 
+                <span class="form-check-sign"></span>F
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="G"> 
+                <span class="form-check-sign"></span>G
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="H"> 
+                <span class="form-check-sign"></span>H
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="I"> 
+                <span class="form-check-sign"></span>I
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="J"> 
+                <span class="form-check-sign"></span>J
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="K"> 
+                <span class="form-check-sign"></span>K
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="L"> 
+                <span class="form-check-sign"></span>L
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="M"> 
+                <span class="form-check-sign"></span>M
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="N"> 
+                <span class="form-check-sign"></span>N
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="O"> 
+                <span class="form-check-sign"></span>O
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="P"> 
+                <span class="form-check-sign"></span>P
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="Q"> 
+                <span class="form-check-sign"></span>Q
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="R"> 
+                <span class="form-check-sign"></span>R
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="S"> 
+                <span class="form-check-sign"></span>S
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="T"> 
+                <span class="form-check-sign"></span>T
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="U"> 
+                <span class="form-check-sign"></span>U
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="V"> 
+                <span class="form-check-sign"></span>V
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="W"> 
+                <span class="form-check-sign"></span>W
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="X"> 
+                <span class="form-check-sign"></span>X
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="Y"> 
+                <span class="form-check-sign"></span>Y
+            </label>   
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="Z"> 
+                <span class="form-check-sign"></span>Z
+            </label>   
+            <!-- <input type="radio" (change)="fname('Firstname',letter)" [formControl]="letter" value="A"> A -->
+         <!-- <a id="A" href="">A</a> -->
+          </div>
+</div>   
+
+
+<div class="section section-tabs">
+      <div class="container">                  
+            <div class="row">
+                    <div class="col-md-20 col-xl-10" >
+
+<ul *ngFor="let result of farray  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+<div class="card" >
+    <div class="row">
+        <div class="img-btn">
+            <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
         </div>
-        
+        <div class="column">  
+            <h4 [routerLink]="['/doctorview',result.Userid]">Dr. {{result.Firstname}} {{result.Lastname}}</h4>
+            <button [routerLink]="['/doctorview',result.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
+            <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
+            </div>
+    </div>
+</div></ul>
+                    </div>
+            </div>
+        </div>
+</div>
+  </div>
+
+
         
         <div class="col-md-10">
                           
-            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length"></ngb-pagination>
-                            
-        </div>
+                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length" class="pagination-primary"></ngb-pagination>
+                                
+            </div>
            <div class="section section-basic">
                 <div class="container">
                 <div id="buttons">

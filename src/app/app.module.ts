@@ -94,7 +94,7 @@ import { ReportComponent } from './doctor/report/report.component';
 import { DoclistComponent } from '../app/admin/doclist/doclist.component';
 import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
 
-// import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
+import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import {UploadFileService} from 'app/core/upload-file.service';
 import { ArticlesComponent } from './admin/articles/articles.component';
@@ -177,7 +177,7 @@ import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
         EditprofileComponent,
         // DocviewComponent,
         // ImagelistComponent,
-        // AdminloginComponent,
+        AdminLoginComponent,
         DocacceptComponent,
 
         GooglemapComponent,

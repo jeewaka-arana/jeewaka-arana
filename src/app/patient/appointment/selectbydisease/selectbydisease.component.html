@@ -32,29 +32,29 @@
       <div class="container">
         <div class="section section-basic">
                 <div class="container">
-        <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
-                      <div class="input-group-prepend" >
-                        <span class="input-group-text">
-                            <i class="fa fa-user-circle"></i>
-                        </span>
-                      </div>
-                        <input type="text" [(ngModel)]="Specialist" (keydown)="filterName('Specialist',Specialist)" class="form-control" placeholder="doctor name" (focus)="focus=true" (blur)="focus=false">
-                      </div>
-                </div>        
-            </div>
 
         </div>
     </div>     
 
+    <div class="row">
+        <!-- <form #searchform=ngForm > -->
+          <div class="col1">
+        <div class="form-group">
+            <input ngModel #spec="ngModel" name="spec1" type="text" class="form-control" placeholder="Specialist" (keyup)="filterName('Specialist',spec.value)" list="suggestions">
+        <datalist id="suggestions">
+                <option *ngFor ="let spec of Specialist" [ngValue]="specialist"> {{spec}} </option>
+        </datalist>
+        </div>
+        </div>
+     <!-- </form> -->
+    </div>   
 
     
     <div class="section section-tabs">
           <div class="container">                  
                 <div class="row">
                         <div class="col-md-20 col-xl-10" >
-<ul *ngFor="let results of filteredNames">
+<ul *ngFor="let results of filteredNames  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
     <div class="card" >
         <div class="row">
             <div class="img-btn">
@@ -62,6 +62,7 @@
             </div>
             <div class="column">  
                 <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
+                <button [routerLink]="['/doctorview',results.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
                 <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
                 </div>
         </div>
@@ -96,11 +97,11 @@
     
             
             <div class="col-md-10">
-                              
-                 <ngb-pagination [collectionSize]="50" [(page)]="page" aria-label="Default pagination" class="pagination-primary"></ngb-pagination>
+                          
+                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length" class="pagination-primary"></ngb-pagination>
                                 
             </div>
-            <div class="section section-basic">
+            <!-- <div class="section section-basic">
                     <div class="container">
                     <div id="buttons">
                       <div class="row" class="text-center" >
@@ -110,7 +111,7 @@
                       </div>
                     </div>
                     </div>
-                  </div>
+                  </div> -->
                   
     
     
