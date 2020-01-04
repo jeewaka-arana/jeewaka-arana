@@ -1,0 +1,535 @@
+
+<div class="card1">
+    <div class="card-body" style="background-color: black;"> 
+       <img class="logo" src="assets/img/newlogo.png" alt="logo" height=19% width=19% style="margin-left: 14rem;"> 
+       <h4 style="margin-left:22rem;font-weight: bold;color: white;" >{{today | date:'fullDate'}}</h4>
+    
+    </div>
+ 
+ </div> 
+ 
+ 
+ 
+ <div class="sidenav">
+ 
+   <img src="https://www.sitegiant.my/wp-content/uploads/2015/10/admin9.png" alt="Avatar">
+   <br><br>
+     <a href="#about" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons design_palette"></i>  Dashboard</a><br>
+    <a href="#services" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons ui-2_time-alarm"></i>  Confirmation</a><br>
+    <a href="#clients" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons education_paper"></i>  Complains</a><br>
+    <a href="#contact" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons ui-1_settings-gear-63"></i>  Handle Account</a><br>
+
+
+    <a href="#contact" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons gestures_tap-01"></i>  Sign Out</a><br>
+    
+  </div>
+  
+<div class="main">
+    <h4 style="font-weight: bold;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Doctor SignIn Count </h4><br>
+    <div class="row">
+        
+       <div class="column">
+         
+         
+         <div class="card" style="width:19rem;background-color:#ff5733;">
+          
+          <h5 style="font-weight: bold;">Select Year</h5>
+          <div class="col1">
+             <div class="form-group">
+                 <input ngModel #position name="position" type="text" class="form-control" placeholder="Year" (keyup)="posFilter($event.target.value)" list="pos-list" >
+                 <datalist id="pos-list">
+                         <option>2019</option>
+                         <option>2020</option>
+                         <option>2021</option>
+                         <option>2022</option>
+                         <option>2023</option>
+                         <option>2024</option>
+                         <option>2025</option>
+                         <option>2026</option>
+                         <option>2027</option>
+                         <option>2028</option>
+                         <option>2029</option>
+                         <option>2030</option>
+                         <option>2031</option>
+                     </datalist>
+             </div>
+             </div><br><br>
+       
+             Count   :   {{y}} 
+ 
+         </div>
+       </div>
+       <div class="column">
+         
+         <div class="card" style="width:19rem;margin-left:5rem;background-color:  #fda215
+         ;">
+          <h5 style="font-weight: bold;">Select Month</h5>
+          <div class="col1">
+             <div class="form-group">
+                 <input ngModel #month name="month" type="text" class="form-control" placeholder="Month" (keyup)="monthFilter(month.value)" list="pos-mnth" >
+                 <datalist id="pos-mnth">
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         <option>5</option>
+                         <option>6</option>
+                         <option>7</option>
+                         <option>8</option>
+                         <option>9</option>
+                         <option>10</option>
+                         <option>11</option>
+                         <option>12</option>
+                         
+                       
+ 
+ 
+                     </datalist>
+             </div>
+             </div><br><br>
+      
+             <!-- <i class="now-ui-icons emoticons_satisfied"> {{m}} </i>  -->
+             Count   :  {{m}}
+        
+       </div>
+       </div>
+       <div class="column">
+         
+         <div class="card" style="width:19rem;margin-left:10rem;background-color:  #ffff1a
+         ;">
+          <h5 style="font-weight: bold;">Select Day</h5>
+          <div class="col1">
+             <div class="form-group">
+                 <input ngModel #day name="day" type="text" class="form-control" placeholder="Day" (keyup)="dayFilter(day.value)" list="day-list" >
+                 <datalist id="day-list">
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         <option>5</option>
+                         <option>6</option>
+                         <option>7</option>
+                         <option>8</option>
+                         <option>9</option>
+                         <option>10</option>
+                         <option>11</option>
+                         <option>12</option>
+                         <option>13</option>
+                         <option>14</option>
+                         <option>15</option>
+                         <option>16</option>
+                         <option>17</option>
+                         <option>18</option>
+                         <option>19</option>
+                         <option>20</option>
+                         <option>21</option>
+                         <option>22</option>
+                         <option>23</option>
+                         <option>24</option>
+                         <option>25</option>
+                         <option>26</option>
+                         <option>27</option>
+                         <option>28</option>
+                         <option>29</option>
+                         <option>30</option>
+                         <option>31</option>
+                     </datalist>
+             </div>
+             </div><br><br>
+       
+             Count   : {{d}} 
+        
+       </div>
+       </div>
+
+       
+       <!-- <div class="column">
+         <div class="card">..</div>
+       </div> -->
+     </div>
+ 
+<!--  -->
+<div class="row">
+        
+    <div class="column">
+      
+      
+      <div class="card" style="width:19rem;margin-left:10rem;">
+       
+       <h5 style="font-weight: bold;">Bar Chart</h5>
+       <div class="col1">
+          <div class="form-group">
+              
+          </div>
+          </div><br><br>
+      </div>
+    </div>
+
+
+          
+    <div class="column">
+      
+      
+        <div class="card" style="width:19rem;">
+         
+         <h5 style="font-weight: bold;">Pie Chart</h5>
+         <div class="col1">
+            <div class="form-group">
+                
+            </div>
+            </div><br><br>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+     <!--  -->
+
+
+    <h4 style="font-weight: bold;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Patient SignIn Count </h4><br>
+    <div class="row">
+        
+       <div class="column">
+         
+         
+         <div class="card" style="width:19rem;background-color:#ffff1a
+         ;">
+          
+          <h5 style="font-weight: bold;">Select Year</h5>
+          <div class="col1">
+             <div class="form-group">
+                 <input ngModel #position name="position" type="text" class="form-control" placeholder="Year" (keyup)="posFilter($event.target.value)" list="pos-list" >
+                 <datalist id="pos-list">
+                         <option>2019</option>
+                         <option>2020</option>
+                         <option>2021</option>
+                         <option>2022</option>
+                         <option>2023</option>
+                         <option>2024</option>
+                         <option>2025</option>
+                         <option>2026</option>
+                         <option>2027</option>
+                         <option>2028</option>
+                         <option>2029</option>
+                         <option>2030</option>
+                         <option>2031</option>
+                     </datalist>
+             </div>
+             </div><br><br>
+       
+             Count   :   {{y}} 
+ 
+         </div>
+       </div>
+       <div class="column">
+         
+         <div class="card" style="width:19rem;margin-left:5rem;background-color:  #ff5733
+         ;">
+          <h5 style="font-weight: bold;">Select Month</h5>
+          <div class="col1">
+             <div class="form-group">
+                 <input ngModel #month name="month" type="text" class="form-control" placeholder="Month" (keyup)="monthFilter(month.value)" list="pos-mnth" >
+                 <datalist id="pos-mnth">
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         <option>5</option>
+                         <option>6</option>
+                         <option>7</option>
+                         <option>8</option>
+                         <option>9</option>
+                         <option>10</option>
+                         <option>11</option>
+                         <option>12</option>
+                         
+                       
+ 
+ 
+                     </datalist>
+             </div>
+             </div><br><br>
+      
+             <!-- <i class="now-ui-icons emoticons_satisfied"> {{m}} </i>  -->
+             Count   :  {{m}}
+        
+       </div>
+       </div>
+       <div class="column">
+         
+         <div class="card" style="width:19rem;margin-left:10rem;background-color: #fda215 
+         ;">
+          <h5 style="font-weight: bold;">Select Day</h5>
+          <div class="col1">
+             <div class="form-group">
+                 <input ngModel #day name="day" type="text" class="form-control" placeholder="Day" (keyup)="dayFilter(day.value)" list="day-list" >
+                 <datalist id="day-list">
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         <option>5</option>
+                         <option>6</option>
+                         <option>7</option>
+                         <option>8</option>
+                         <option>9</option>
+                         <option>10</option>
+                         <option>11</option>
+                         <option>12</option>
+                         <option>13</option>
+                         <option>14</option>
+                         <option>15</option>
+                         <option>16</option>
+                         <option>17</option>
+                         <option>18</option>
+                         <option>19</option>
+                         <option>20</option>
+                         <option>21</option>
+                         <option>22</option>
+                         <option>23</option>
+                         <option>24</option>
+                         <option>25</option>
+                         <option>26</option>
+                         <option>27</option>
+                         <option>28</option>
+                         <option>29</option>
+                         <option>30</option>
+                         <option>31</option>
+                     </datalist>
+             </div>
+             </div><br><br>
+       
+             Count   : {{d}} 
+        
+       </div>
+       </div>
+
+       
+       <!-- <div class="column">
+         <div class="card">..</div>
+       </div> -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--  -->
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+ 
+ <br><br><br><br><br><br><br>
+     <!-- <div class="column">
+       <div class="card" style="width:60rem;"> -->
+ 
+ 
+ 
+ 
+          <!-- <div>
+ 
+             <h4 style="margin-left: 29rem;font-weight: bolder;;">Your Patients</h4><br><br>
+                       <ul *ngFor="let app of apps | async"> 
+                           <div class="col col-md-13"> 
+                              <h5>Patient Name -{{app.pname}}</h5> 
+                              <h5>Telephone Number -{{app.tp}} </h5> 
+                              <h5>Disease -{{app.disease}}</h5>
+                              <h5>Date - {{app.date}}</h5>
+                              <h5>Time - {{app.time}}</h5>
+                               <br>
+                               <hr><br>
+                               </div>
+              
+                     </ul>
+                     </div> -->
+ 
+<!--  
+ 
+       </div>
+     </div> -->
+    
+ 
+     <!--  -->
+<!--  
+     <div *ngFor="let item of Query | async">
+       <div class="card">
+           <div class="row">
+               <div class="img">
+               <img src="https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg" alt="Avatar"  class="avatar">
+               </div>
+               <div class="column">
+               <div class="container">
+                 <h4><b>{{item.Pname}} {{item.time}}</b></h4> 
+                 <p>{{item.year}}</p> 
+                 <p>{{item.name}}</p>
+                 
+                
+               </div>
+               </div>
+               </div>
+               </div>
+               </div> -->
+ 
+ 
+ 
+ 
+ <!--  -->
+ 
+ <!--  -->
+ 
+ 
+ 
+ 
+  </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+          <!-- 
+ 
+      -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--     
+      <h3 style="margin-left: 27rem;">{{today | date:'fullDate'}}</h3>
+      <br><br><br>
+ 
+      <div class="card">
+ 
+      </div>
+ 
+      <div id="content" #content>
+      <div>
+ 
+ <h4 style="margin-left: 29rem;font-weight: bolder;;">Your Patients</h4><br><br>
+           <ul *ngFor="let app of apps | async"> 
+               <div class="col col-md-13"> 
+                  <h5>Patient Name -{{app.pname}}</h5> 
+                  <h5>Telephone Number -{{app.tp}} </h5> 
+                  <h5>Disease -{{app.disease}}</h5>
+                  <h5>Date - {{app.date}}</h5>
+                  <h5>Time - {{app.time}}</h5>
+                   <br>
+                   <hr><br>
+                   </div>
+  
+         </ul>
+         </div>
+         <div>
+          <h3>Number of total Patients :  {{x}} </h3>
+         
+    
+       </div>
+    
+        
+ 
+ 
+         
+      </div>
+ 
+ 
+ 
+ 
+ 
+ 
+    
+ 
+ 
+ 
+ 
+      <button (click)="downloadPDF()">Export  PDF</button>
+ -->
+ 
+ 
+ <br><br>
+      <!-- <app-charts id={{my_id}}></app-charts>  -->

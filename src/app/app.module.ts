@@ -121,6 +121,7 @@ import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component
 // import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
 
 
@@ -206,6 +207,7 @@ import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
         PcontactUsComponent,
         // PaboutUsComponent,
         SecondpageComponent,
+        AdmindashboardComponent,
         // ChartsComponent,
       
         
