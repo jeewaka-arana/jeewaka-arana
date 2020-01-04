@@ -49,7 +49,7 @@ private search: any;
     });
     this.search = new H.places.Search(this.platform.getPlacesService());
     // throw new Error("Method not implemented.");
-    this.places("Colombo")
+    // this.places("Colombo")
   }
 
   public ngAfterViewInit() {

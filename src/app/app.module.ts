@@ -116,12 +116,13 @@ import { PnavComponent } from './patient/pnav/pnav.component';
 import { DocpnavComponent } from './doctor/docpnav/docpnav.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
 // import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
-
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import { AnimalComponent } from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+// import { ChartsComponent } from './doctor/charts/charts.component';
 
 
 
@@ -205,6 +206,8 @@ import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
        
 
 
+        AdmindashboardComponent,
+        // ChartsComponent,
       
         
         
