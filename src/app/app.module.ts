@@ -94,7 +94,6 @@ import { ReportComponent } from './doctor/report/report.component';
 import { DoclistComponent } from '../app/admin/doclist/doclist.component';
 import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
 
-// import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import {UploadFileService} from 'app/core/upload-file.service';
 import { ArticlesComponent } from './admin/articles/articles.component';
@@ -122,7 +121,6 @@ import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component
 
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
-import { ChartsComponent } from './doctor/charts/charts.component';
 import { AnimalComponent } from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
@@ -174,7 +172,7 @@ import { FirebasetestComponent } from './firebasetest/firebasetest.component';
         EditprofileComponent,
         // DocviewComponent,
         // ImagelistComponent,
-        // AdminloginComponent,
+        AdminLoginComponent,
         DocacceptComponent,
 
         GooglemapComponent,
@@ -203,7 +201,7 @@ import { FirebasetestComponent } from './firebasetest/firebasetest.component';
         // PaboutUsComponent,
         SecondpageComponent,
         AdminLoginComponent,
-        ChartsComponent,
+    
         AnimalComponent,
         FirebasetestComponent,
        

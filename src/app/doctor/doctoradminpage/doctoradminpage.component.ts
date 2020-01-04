@@ -9,6 +9,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { finalize, tap } from 'rxjs/operators';
 import { AuthService } from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+// import { validateConfig } from '@angular/router/src/config';
 import { Doctor } from 'app/core/models/doctor.model';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Disease } from '../../core/models/diseases.module';

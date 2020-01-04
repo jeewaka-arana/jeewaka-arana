@@ -54,7 +54,7 @@ export class SearchdoctorComponent implements OnInit {
   ngOnInit(){
     this.afs.collection('Doctors',ref => ref.orderBy('Lastname')).valueChanges().subscribe(results => {
       this.results = results;
-      this.applyFilters()
+      this.applyFilters();
     })
 
     this.patientDoc = this.afs.doc('Patients');
@@ -147,29 +147,6 @@ export class SearchdoctorComponent implements OnInit {
 
   
   
-
-  // searchterm: string;
-
-  // startAt = new Subject();
-  // endAt = new Subject();
-
-  // names;
-  // start;
-  // end;
-
-  // startobs = this.startAt.asObservable();
-  // endobs = this.endAt.asObservable();
-
-  // examplesCol: AngularFirestoreCollection<Doctor>;
-  // examples: Observable<Doctor[]>;
-
-  // firstname:string;
-  // lastname:string;
-  // number:number;
-  
-  
-  // constructor(private afs: AngularFirestore) { }
-
   // ngOnInit() {
     
 
