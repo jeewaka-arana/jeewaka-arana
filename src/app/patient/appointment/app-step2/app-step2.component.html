@@ -31,40 +31,40 @@
 
   <div class="container">
   <div class="time-picker-container">
-      <h4 class="text-center">June 2019</h4>
-      <h4 class="text-center">{{today}}</h4>
+      <h4 class="text-center">{{today | date}}</h4>
+      <!-- <h4 class="text-center">{{tomorrow | date: 'MMMM'}}</h4> -->
       <div class="time-picker">
         <div class="row time-picker-header">
           <button href="#" class="arrow left inactive"></button>
           <ul class="date-slot">
             <li class="date-slot-wrapper">
               <div class="date-slot-item">
-                <span class="date-slot-day">Monday</span>
-                <span class="date-slot-date">11</span>
+                <span class="date-slot-day">{{tomorrow | date: 'EEEE'}}</span>
+                <span class="date-slot-date">{{tomorrow | date: 'dd'}}</span>
               </div>
             </li>
             <li class="date-slot-wrapper">
               <div class="date-slot-item">
-                <span class="date-slot-day">Tuesday</span>
-                <span class="date-slot-date">12</span>
+                <span class="date-slot-day">{{tomorrow1 | date: 'EEEE'}}</span>
+                <span class="date-slot-date">{{tomorrow1 | date: 'dd'}}</span>
               </div>
             </li>
             <li class="date-slot-wrapper">
               <div class="date-slot-item">
-                <span class="date-slot-day">Wednesday</span>
-                <span class="date-slot-date">13</span>
+                <span class="date-slot-day">{{day2 | date: 'EEEE'}}</span>
+                <span class="date-slot-date">{{day2 | date: 'dd'}}</span>
               </div>
             </li>
             <li class="date-slot-wrapper">
               <div class="date-slot-item">
-                <span class="date-slot-day">Thursday</span>
-                <span class="date-slot-date">14</span>
+                <span class="date-slot-day">{{day2 | date: 'EEEE'}}</span>
+                <span class="date-slot-date">{{day2 | date: 'dd'}}</span>
               </div>
             </li>
             <li class="date-slot-wrapper">
               <div class="date-slot-item no-free-slot">
-                <span class="date-slot-day">Friday</span>
-                <span class="date-slot-date">15</span>
+                <span class="date-slot-day">{{day2 | date: 'EEEE'}}</span>
+                <span class="date-slot-date">{{day2 | date: 'dd'}}</span>
               </div>
             </li>
           </ul>

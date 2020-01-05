@@ -19,10 +19,15 @@ m: any;
 d: any;
 p: any;
 today: number = Date.now();
+tomorrow:any = new Date();
+tomorrow1:any = new Date();
+
   constructor() { }
 
   ngOnInit() {
+    this.tomorrow.setDate(new Date().getDate()+1);
+    this.tomorrow1.setDate(new Date().getDate()+2);
+  }
     
   }
 
-}
