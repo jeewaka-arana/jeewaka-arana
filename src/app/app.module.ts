@@ -121,10 +121,12 @@ import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component
 import {AdminLoginComponent} from './userlogin/admin-login/admin-login.component'
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { DbarchartComponent } from './doctor/dbarchart/dbarchart.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
 
 
-
+import { ChartsModule } from 'ng2-charts';
+import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 
 
 
@@ -206,6 +208,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
         // PaboutUsComponent,
         SecondpageComponent,
         AdmindashboardComponent,
+        DbarchartComponent,
+        DlinechartComponent,
         // ChartsComponent,
       
         
@@ -214,7 +218,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
        
     ],
     imports: [
-
+        ChartsModule,
          IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,

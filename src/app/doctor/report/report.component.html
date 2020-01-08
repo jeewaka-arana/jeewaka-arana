@@ -39,7 +39,7 @@
          <h5 style="font-weight: bold;">Select Year</h5>
          <div class="col1">
             <div class="form-group">
-                <input ngModel #position name="position" type="text" class="form-control" placeholder="Year" (keyup)="posFilter($event.target.value)" list="pos-list" >
+                <input ngModel #position name="position" type="text" class="form-control" placeholder="Year" (change)="posFilter($event.target.value)" list="pos-list" >
                 <datalist id="pos-list">
                         <option>2019</option>
                         <option>2020</option>
@@ -56,7 +56,8 @@
                         <option>2031</option>
                     </datalist>
             </div>
-            </div><br><br>
+            </div>
+            <br><br><br>
       
             Count   :   {{y}} 
 
@@ -89,7 +90,7 @@
 
                     </datalist>
             </div>
-            </div><br><br>
+            </div><br><br><br>
      
             <!-- <i class="now-ui-icons emoticons_satisfied"> {{m}} </i>  -->
             Count   :  {{m}}
@@ -138,7 +139,8 @@
                         <option>31</option>
                     </datalist>
             </div>
-            </div><br><br>
+            </div>
+            <br><br><br>
       
             Count   : {{d}} 
        
@@ -151,39 +153,103 @@
 
 <!--  -->
 
-
-    <div class="column">
-      <div class="card" style="width:30rem;">
-
-         <h5 style="font-weight: bold;">Year Analytistic</h5><hr style="background-color: black;">
-<h6>{{year}}</h6>
-         
+<div class="column">
+  <div class="card" style="width:63rem;margin-left:0.1rem;">
+  
 
 
-      </div>
+      <!-- <h4>qqqq</h4> -->
+
+    <table  style="width: 100%;">
+      
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+        <!-- <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th> -->
+      </tr>
+     
+      <!-- <div *ngFor="let item of Query | async"> -->
+
+      <tr *ngFor="let item of Query | async">
+
+        
+        
+        <td>{{item.pname}}</td>
+        <td>{{item.day}}/{{item.month}}/{{item.year}}</td>
+        <td>{{item.time}}</td>
+        <td>{{item.tp}}</td>
+     </tr>
+
+    <!-- </div> -->
+    </table>
+
+
+
+
+    <!--  -->
+<!-- 
+      <h4><b>{{item.pname}} </b></h4>
+      <h4><b>{{item.year}} </b></h4>
+  <h4><b>{{item.time}} </b></h4> -->
+
+
     </div>
-
-
-
-
-
-
-    <div class="column">
-      <div class="card" style="width:20rem;margin-left:15rem;">
-
-         <h5>Pie chart</h5>
-            
-            <br><br>
-      </div>
     </div>
+<br><br>
+
+</div>
+
+
+
+<!--  -->
+<!-- <div class="column"> -->
+  <div class="card" style="width:60rem;margin-left:14rem;">
+
+     <h5 style="font-weight: bold;"> Statistic</h5><hr style="background-color: black;">
+
+        
+         <!-- <app-dlinechart year="{{year}}  " userid="{{my_id}}" ></app-dlinechart>  -->
+         <app-dlinechart  userid="{{my_id}}" ></app-dlinechart> 
+  </div>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 <br><br><br><br><br><br><br>
-    <div class="column">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="column">
       <div class="card" style="width:60rem;">
 
 
 
+      </div>
+    </div> -->
+   
 
          <!-- <div>
 
@@ -204,13 +270,10 @@
 
 
 
-      </div>
-    </div>
-   
 
     <!--  -->
 
-    <div *ngFor="let item of Query | async">
+    <!-- <div *ngFor="let item of Query | async">
       <div class="card">
           <div class="row">
               <div class="img">
@@ -227,7 +290,7 @@
               </div>
               </div>
               </div>
-              </div>
+              </div> -->
 
 
 
@@ -239,7 +302,7 @@
 
 
 
- </div>
+ 
 
 
 

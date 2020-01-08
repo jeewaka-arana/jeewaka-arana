@@ -80,6 +80,8 @@ import {AdmindashboardComponent} from '../app/admindashboard/admindashboard.comp
 
 import{AnimalComponent} from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
+import{DbarchartComponent} from './doctor/dbarchart/dbarchart.component';
+import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
 
 
 const routes: Routes =[
@@ -175,6 +177,8 @@ const routes: Routes =[
 {path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
 {path:'admindash',component:AdmindashboardComponent},
+{path:'dbarchart' ,component:DbarchartComponent},
+{path:'dlinechart' ,component:DlinechartComponent}
     ]
 
 

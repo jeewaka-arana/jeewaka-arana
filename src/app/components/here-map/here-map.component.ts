@@ -11,7 +11,7 @@ export class HereMapComponent implements OnInit {
 
   private ui: any;
   private search: any;
-  @ViewChild("map")
+  @ViewChild("map",{static:false})
   public mapElement: ElementRef;
 
   @Input()
