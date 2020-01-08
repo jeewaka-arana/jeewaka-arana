@@ -122,6 +122,7 @@ import { AnimalComponent } from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { SlotsComponent } from './patient/appointment/slots/slots.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
 
 
@@ -207,6 +208,10 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 
 
         AdmindashboardComponent,
+       
+
+
+        SlotsComponent,
         // ChartsComponent,
       
         

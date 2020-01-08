@@ -82,6 +82,9 @@ import{AnimalComponent} from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
 
+import { SlotsComponent } from './patient/appointment/slots/slots.component';
+
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -112,6 +115,9 @@ const routes: Routes =[
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
     { path: 'alogin', component:AdminLoginComponent },
+    {path:'timeslot',component: SlotsComponent},
+    { path: 'appstep3/:id/:date/:time', component:AppStep3Component },
+    { path: 'appstep2/:id', component:AppStep2Component },
     { path: 'admin', component:AdminComponent ,children:[
         
      //   { path: 'imagelist', component:ImageListComponent }
@@ -130,6 +136,7 @@ const routes: Routes =[
     { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
+    {path:'report/:id',component:ReportComponent},
    
 
 

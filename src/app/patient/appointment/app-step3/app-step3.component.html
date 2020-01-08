@@ -59,7 +59,7 @@
         <body> 
             <div class="reservation">
               <header>
-                <a href="#">
+                <a routerLink="/appstep2/{{my_id}}">
                   <i class="fa fa-angle-left fa-2x" aria-hidden="true"> Change Date & Time</i>
                 </a>
                 <!-- <picture>
@@ -72,18 +72,18 @@
               </header>
               <br>
               <section class="date_time">
-                <p><i class="now-ui-icons ui-1_calendar-60"></i>  On <b>Aug 19,2019</b></p>
-                <p><i class="now-ui-icons ui-2_time-alarm"></i>  At <b>05:30 PM</b></p>
+                <p><i class="now-ui-icons ui-1_calendar-60"></i>  On <b>{{apDate}}</b></p>
+                <p><i class="now-ui-icons ui-2_time-alarm"></i>  At <b>{{Time}}</b></p>
               </section>
               <hr>
               <header>
                     
                     <picture>
-                        <img src="assets/img/logo.png" alt="Water Clube"/>
+                        <img src="{{profile}}" alt="Profile photo"/>
                         
                     </picture>
-                    <p class="info" >Dr. Roshan Madola</p>
-                        <p class="info">Dietitian/Nutritionist, Sports Nutritionist</p>
+                    <p class="info" >{{Doctor}}</p>
+                        <p class="info">{{specialist}}</p>
                 </header>
                 <hr>
               <section class="date_time">
@@ -96,17 +96,17 @@
                     <div class="profile-details">
                             <div class="user-details">
                                 <p class="header-user-detail"><b>Confirm Appoinment</b></p>
-                                    <form method="post" id="user-profile" class="user-form">
+                                    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="user-form">
                                                             
-                                        <p>Patient/Visitor Name*</p><input type="text" id="firstName" name="update-field" placeholder="Patient/Visitor Name" required/>
-                                        <p>Email*</p><input type="email" id="email" name="update-field" placeholder="Email" required/>
-                                        <p>Mobile number*</p><input type="number" id="PhoneNumber" name="update-field" placeholder="Mobile number" required/>
-                                        <p>You will receive an SMS with a verification code on this telephone number.</p>
+                                        <p>Patient/Visitor Name*</p><input type="text" id="firstName"  formControlName="PatientName" placeholder="Patient/Visitor Name" required/>
+                                        <p>Email*</p><input type="email" id="email" formControlName="Email" placeholder="Email" required/>
+                                        <p>Mobile number*</p><input type="number" id="PhoneNumber" formControlName="PhoneNumber"   placeholder="Mobile number" required/>
+                                       
+                                        <button class="btn btn-primary btn-round ico" type="submit" >Confirm</button>
+                                      
                                     </form>    
-                                        <button routerLink="/doctorview" class="btn btn-primary btn-round ico" type="button">Confirm</button>
-                                        <button class="btn btn-primary btn-round ico" type="button">Cancel</button>
-                                        <p>By requesting the appointment, you agree to Jeewaka Arana's <a href="#">Terms and Conditions.</a> </p>
-                                    
+                                    <button class="btn btn-primary btn-simple btn-round" type="button" routerLink="/">Cancel</button>
+                                      
                             </div>  
                   </div>
             </div>

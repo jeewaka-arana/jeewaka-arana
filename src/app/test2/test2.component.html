@@ -9,3 +9,8 @@
   </div>
  
 <app-aptable></app-aptable> -->
+<ul>
+  <div *ngFor="let time of times | async">
+{{time.from.hour}}
+  </div>
+</ul>

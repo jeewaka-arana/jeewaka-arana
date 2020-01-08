@@ -181,7 +181,7 @@
         <div class="column">  
             <h4 [routerLink]="['/doctorview',result.Userid]">Dr. {{result.Firstname}} {{result.Lastname}}</h4>
             <button [routerLink]="['/doctorview',result.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
-            <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
+            <button  [routerLink]="['/appstep2',results.Userid]"  class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Now</button>
             </div>
     </div>
 </div></ul>
