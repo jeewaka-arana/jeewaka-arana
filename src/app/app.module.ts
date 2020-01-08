@@ -100,8 +100,6 @@ import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
 
 
-
-
 import { PopupComponent } from './core/components/popup/popup.component';
 import { DropZoneDirective } from './core/directives/drop-zone.directive';
 
@@ -118,8 +116,11 @@ import { PnavComponent } from './patient/pnav/pnav.component';
 import { DocpnavComponent } from './doctor/docpnav/docpnav.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
 // import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
-import {AdminLoginComponent} from './userlogin/admin-login/admin-login.component'
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
+import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
+import { AnimalComponent } from './doctor/animal/animal.component';
+import { FirebasetestComponent } from './firebasetest/firebasetest.component';
+import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { DbarchartComponent } from './doctor/dbarchart/dbarchart.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
@@ -173,7 +174,6 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
         AddComplainsComponent,
         DeleteCommentComponent,
         BothCommentPageComponent,
-
         AdvancedsearchComponent,
         DoclistComponent,
         EditprofileComponent,
@@ -181,7 +181,6 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
         // ImagelistComponent,
         AdminLoginComponent,
         DocacceptComponent,
-
         GooglemapComponent,
         StarreviewComponent,
         Test2Component,
@@ -207,6 +206,14 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
         PcontactUsComponent,
         // PaboutUsComponent,
         SecondpageComponent,
+        AdminLoginComponent,
+    
+        AnimalComponent,
+        FirebasetestComponent,
+        TimepickerComponent,
+       
+
+
         AdmindashboardComponent,
         DbarchartComponent,
         DlinechartComponent,
