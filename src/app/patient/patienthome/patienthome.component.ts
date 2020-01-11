@@ -6,6 +6,7 @@ import { observable } from 'rxjs';
 import { Article } from 'app/core/models/article.model';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { DatePipe } from '@angular/common';
 
 
 interface Post {
@@ -22,8 +23,13 @@ interface Post {
 })
 export class PatienthomeComponent implements OnInit {
 
+currentmonth=parseInt(this.datePipe.transform(new Date(),"MM"));
+currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
+currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
+
   // results: any;
   results: any[] = [];
+  issues: any[] = [];
   postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<Post[]>;
 
@@ -35,7 +41,7 @@ export class PatienthomeComponent implements OnInit {
   newUser: boolean = true; // to toggle login or signup form
   passReset: boolean = false;
 my_id:string;
-  constructor(private afs: AngularFirestore,private fb: FormBuilder,private afAuth:AngularFireAuth) { 
+  constructor(private afs: AngularFirestore,private datePipe: DatePipe,private fb: FormBuilder,private afAuth:AngularFireAuth) { 
 
     this.my_id=afAuth.auth.currentUser.uid;
   }
@@ -45,6 +51,10 @@ my_id:string;
     // this.posts = this.postsCol.valueChanges();
     this.afs.collection('Article',ref => ref.limit(4)).valueChanges().subscribe(results => {
       this.results = results;
+      
+    })
+    this.afs.collection('Issues',ref => ref.limit(4)).valueChanges().subscribe(issues => {
+      this.issues = issues;
       
     })
     this.buildForm();
@@ -108,7 +118,7 @@ my_id:string;
   };
 
   addIssue(){
-    this.afs.collection('Issues').add({'name': this.name, 'email': this.email, 'issue': this.issue});
+    this.afs.collection('Issues').add({'name': this.name, 'email': this.email, 'issue': this.issue, 'Day': this.currentday, 'Month': this.currentmonth, 'Year': this.currentyear});
   }
 
 }

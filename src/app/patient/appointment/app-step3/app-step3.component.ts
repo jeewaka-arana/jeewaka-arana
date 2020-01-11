@@ -47,8 +47,29 @@ form;
 
   }
 
-  ngOnInit() {
-  }
+  // ngOnInit() {
+  //   this.buildForm();
+  // }
+  // buildForm(): void {
+  //   this.userForm = this.fb.group({
+  //     'email': ['', [
+  //         Validators.required,
+  //         Validators.email
+  //       ]
+  //     ],
+  //     'name': ['', [
+  //       Validators.required,
+  //     ]
+  //   ],
+  //   'issue': ['', [
+  //     Validators.required,
+  //   ]
+  // ],
+  //   });
+
+  //   this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
+  //   this.onValueChanged(); // reset validation messages
+  // }
   onSubmit(data) {
 
     // Process checkout data here
