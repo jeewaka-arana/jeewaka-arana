@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore,  AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
-import { Observable} from 'rxjs/Rx'
+import { Observable } from 'rxjs/Rx'
 import { observable } from 'rxjs';
 import * as _ from 'lodash';
 import { Doctor } from 'app/core/models/doctor.model';
 
 interface Post {
-  Firstname:string;
-  Lastname:string;
-  Email:string;
-  PhoneNumber:number;
-  NIC:string;
-  City:string;
-  Position:string;
-  RegistrationNumber:string;
+  Firstname: string;
+  Lastname: string;
+  Email: string;
+  PhoneNumber: number;
+  NIC: string;
+  City: string;
+  Position: string;
+  RegistrationNumber: string;
   expyear: number;
 }
 
@@ -35,12 +35,12 @@ export class SelectbynameComponent implements OnInit {
   filteredNames: any[] = [];
   filters = {}
   letter = new FormControl('');
-  farray: any[] =[];
+  farray: any[] = [];
 
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
-    this.afs.collection('Doctors',ref => ref.orderBy('Firstname')).valueChanges().subscribe(results => {
+    this.afs.collection('Doctors', ref => ref.orderBy('Firstname')).valueChanges().subscribe(results => {
       this.results = results;
       this.applyFilters();
     })
@@ -48,34 +48,31 @@ export class SelectbynameComponent implements OnInit {
   applyFilters() {
     this.filteredNames = _.filter(this.results, _.conforms(this.filters));
   }
-  // filterName(property: string, letter: any){
-  //   this.filters[property] = val => val.toLowerCase().includes(letter.toLowerCase())
-  //   this.applyFilters();
-  // }
 
-  fname(property: string, letter){
-    this.farray=[];
-    for(var i = 0;i<this.filteredNames.length;i++) { 
-          var v:string = this.filteredNames[i].Firstname ;
-          var x:string = v.charAt(0);
-          if (letter.value == x) { 
-            console.log("yes") ;
-            this.farray.push(this.filteredNames[i]);
-         } 
-         else {
-          console.log("no"); 
-       }
-       }
-   }
-   selectAll(){
-     this.farray=[];
-     for(var i = 0;i<this.filteredNames.length;i++) { 
-             this.farray.push(this.filteredNames[i]);
-          } 
-        }
-   
-   
+
+  fname(property: string, letter) {
+    this.farray = [];
+    for (var i = 0; i < this.filteredNames.length; i++) {
+      var v: string = this.filteredNames[i].Firstname;
+      var x: string = v.charAt(0);
+      if (letter.value == x) {
+        console.log("yes");
+        this.farray.push(this.filteredNames[i]);
+      }
+      else {
+        console.log("no");
+      }
+    }
+  }
+  selectAll() {
+    this.farray = [];
+    for (var i = 0; i < this.filteredNames.length; i++) {
+      this.farray.push(this.filteredNames[i]);
+    }
+  }
+
+
 }
 
-   
-  
+
+
