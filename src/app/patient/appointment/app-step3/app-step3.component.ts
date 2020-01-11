@@ -86,6 +86,13 @@ form;
      this.profile=value.downloadURL;
   });
 
+
+  
+}
+
+
+ngOnInit(){
+  
 }
 
 }

@@ -124,11 +124,11 @@ import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { SlotsComponent } from './patient/appointment/slots/slots.component';
 import { ApplistComponent } from './patient/applist/applist.component';
-import { DbarchartComponent } from './doctor/dbarchart/dbarchart.component';
-// import { ChartsComponent } from './doctor/charts/charts.component';
 
 
-// import { ChartsModule } from 'ng2-charts';
+
+
+import { ChartsModule } from 'ng2-charts';
 import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 
 
@@ -222,9 +222,9 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 
         SlotsComponent,
         ApplistComponent,
-        DbarchartComponent,
+        
         DlinechartComponent,
-        // ChartsComponent,
+       
       
         
         
@@ -232,7 +232,7 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
        
     ],
     imports: [
-        // ChartsModule,
+       
          IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,

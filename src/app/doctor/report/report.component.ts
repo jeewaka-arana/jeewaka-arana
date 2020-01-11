@@ -58,7 +58,7 @@ export class ReportComponent implements OnInit {
 
 
 
-  @ViewChild('content', { static:false }) content: ElementRef;
+  @ViewChild('content',{static:false}) content: ElementRef;
 
 
   public downloadPDF() {
