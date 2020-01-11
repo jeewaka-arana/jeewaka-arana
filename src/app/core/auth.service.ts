@@ -3,11 +3,16 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+currentmonth=parseInt(this.datePipe.transform(new Date(),"MM" ));
+currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
+currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
 
   private eventAuthError = new BehaviorSubject<string>("");
   eventAuthError$ = this.eventAuthError.asObservable();
@@ -17,7 +22,7 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFirestore,
-    private router: Router) { }
+    private router: Router,private datePipe: DatePipe) { }
 
   get UserState() {
     return this.afAuth.authState;
@@ -132,6 +137,10 @@ if (user) {
       ExpYears:this.newUser.years,
       Specialist:this.newUser.specialist,
       Userid:userCredential.user.uid,
+      Day:this.currentday,
+      Month:this.currentmonth,
+      Year:this.currentyear
+
     })
   }
 
@@ -144,7 +153,10 @@ if (user) {
       NIC:this.newUser.nic,
       Country:this.newUser.country,
       City:this.newUser.city,
-      Userid:userCredential.user.uid
+      Userid:userCredential.user.uid,
+      Day:this.currentday,
+      Month:this.currentmonth,
+      Year:this.currentyear
     })
   }
 

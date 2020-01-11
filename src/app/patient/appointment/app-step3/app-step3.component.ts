@@ -52,10 +52,8 @@ form;
   onSubmit(data) {
 
     // Process checkout data here
-  
     this.afs.collection('Doctors').doc(this.my_id).collection('Appointments').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Date:this.apDate,Time:this.Time});
     this.afs.collection('Patients').doc('dskyLFWguNTM7sRAiQ3tAQJ7L1u2').collection('Appointments').add({Date:this.apDate,Time:this.Time,Doctor:this.Doctor});
-
     this.router.navigate(['/patienthome']);
   }
 

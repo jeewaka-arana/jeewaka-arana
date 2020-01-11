@@ -44,9 +44,11 @@ date:string;
 timeslot=[];
 
 //availability
-avail_slots=[];
-booked_slots=[];
 avail=[];
+myslots=[];
+
+
+
 
 
 
@@ -84,10 +86,6 @@ slotdata:any;
     console.log(this.year);
   }
 
-  test(){
-    console.log("hi");
-  }
-
   increase()
   {
     this.day=this.day+1;
@@ -120,9 +118,11 @@ slotdata:any;
         this.message="";
         this.timeslot=value.Time;
         this.avail=value.avail;
-
-        
-
+       
+        this.myslots=this.timeslot.map(function(x,i){
+          return {"time":x,"avail":this.avail[i]}
+            }.bind(this));
+            console.log(this.myslots);
       }
 
       else{
@@ -139,7 +139,7 @@ slotdata:any;
   clickTime(time:string,month:string,year:string,day:string)
   {
     this.clicktime=time;
-    this.mydate=month+"-"+day+"-"+year;
+    // this.mydate=month+"-"+day+"-"+year;
     console.log(this.mydate);
   }
 
@@ -157,12 +157,23 @@ slotdata:any;
   }
 
 
-checkSlots(){
+// checkSlots(){
     
-  for(let i of this.avail){
-    console.log(i);
-  }
+//   for(let i of this.avail){
+//     console.log(i);
+//   }
 
+//}
+
+test(){
+  this.myslots=this.timeslot.map(function(x,i){
+return {"time":x,"avail":this.avail[i]}
+  }.bind(this));
+
+
+  console.log(this.myslots);
 }
+
+
 
 }

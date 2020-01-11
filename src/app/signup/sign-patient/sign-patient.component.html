@@ -93,7 +93,7 @@
                                                            
                                                             <div >
                                                              
-                                                                <select   (change)="changeCountry($event.target.value)" name="country" id="country" class="sel">
+                                                                <select ngModel #country="ngModel"  (change)="changeCountry($event.target.value)" name="country" id="country" class="sel">
                                                                         <option hidden [value]=""  selected>Country</option>
                                                                     <option *ngFor ="let count of countryList">{{count.name}} </option>
                                                                 </select>
@@ -107,7 +107,7 @@
                                                 <div class="col-md-6">
                                                    
                                                     <div >
-                                                        <select  name="city" id="city"    class="sel">
+                                                        <select ngModel #City="ngModel"  name="city" id="city"    class="sel">
                                                                 <option hidden [value]=""  selected>City</option>
                                                             <option *ngFor ="let city of cities">{{city}} </option>
                                                       </select>

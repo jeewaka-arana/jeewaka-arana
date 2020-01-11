@@ -49,13 +49,29 @@
     <p class="message">{{message}}</p>
 
     <div class="row1">
-      <div *ngFor="let slot of timeslot" >
+      
+      <!-- <div *ngFor="let slot of timeslot" >
+        
       
 <ul>
   <li class="myslot"><button class="btn btn-primary btn-simple btn-round" (click)="clickTime(slot,month,year,day)">{{slot}}</button></li>
 </ul>
 
+</div> -->
+
+<div *ngFor="let mapEntry of myslots | keyvalue">
+ 
+  <ul>
+    <div *ngIf="mapEntry.value.avail==true">
+    <li class="myslot"><button class="btn btn-primary btn-simple btn-round" (click)="clickTime(mapEntry.value.time,month,year,day)"> {{mapEntry.value.time}}</button></li>
+  </div>
+
+  <div *ngIf="mapEntry.value.avail==false">
+    <li class="myslot"><button class="btn btn-primary btn-simple btn-round"   disabled> {{mapEntry.value.time}}</button></li>
+  </div>
+  </ul>
 </div>
+
 
 </div>
 
@@ -100,7 +116,10 @@
           <button  style="margin-left: 80em;" class="btn btn-primary btn-round" type="button" (click)="next()">Next</button>
       </div> 
   </div>
-    
+
+  <button (click)="test()">click test</button>
+  
+
   
     <!-- <footer class="footer footer-default">
         <div class="container">
