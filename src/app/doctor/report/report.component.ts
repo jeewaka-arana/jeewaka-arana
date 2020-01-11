@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
+//line chart
+
+import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Color, Label } from 'ng2-charts';
+
+
 
 
 interface Order {
@@ -33,9 +39,11 @@ export class ReportComponent implements OnInit {
   p: any;
   today: number = Date.now();
 
+  headElements = ['Patient Name', 'Date', 'Time','Telephone No'];
 
 
-  //
+
+
 
   appCol: AngularFirestoreCollection<Order>;
   apps: Observable<Order[]>;
@@ -50,7 +58,7 @@ export class ReportComponent implements OnInit {
 
 
 
-  @ViewChild('content', { read: true }) content: ElementRef;
+  @ViewChild('content', { static:false }) content: ElementRef;
 
 
   public downloadPDF() {
@@ -84,6 +92,8 @@ export class ReportComponent implements OnInit {
 
   ngOnInit() {
 
+    // console.log("eeeee");
+    // console.log(this.year);
     // this.appCol = this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment');
     // this.apps = this.appCol.valueChanges();
     // this.apps.subscribe((data)=>{this.x = data.length});
@@ -93,8 +103,7 @@ export class ReportComponent implements OnInit {
     //To show data in console
     //this.x=this.apps.subscribe((data)=>console.log(data.length));
     // console.log("Hi");
-    //correct code
-    // 
+    
 
     
 
@@ -114,19 +123,21 @@ export class ReportComponent implements OnInit {
     // console.log(data);
     // console.log("hi");
 
-    this.QueryCol = this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2').collection('viewappoinment', ref => ref.where('year', '==', +data));
+    this.QueryCol = this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('year', '==', +data));
     console.log(this.QueryCol);
     this.Query = this.QueryCol.valueChanges();
     console.log(this.Query);
     this.Query.subscribe((data) => { this.y = data.length });
-    console.log(this.y);
+   // console.log(this.y);
   this.year=data;
+  // console.log(this.year)
+
   }
 
 
   monthFilter(dmonth){
 
-    this.QueryCol=this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2').collection('viewappoinment', ref => ref.where('month','==',+dmonth).where('year','==',+this.year));
+    this.QueryCol=this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('month','==',+dmonth).where('year','==',+this.year));
     this.Query = this.QueryCol.valueChanges();
     this.Query.subscribe((data) => { this.m = data.length });
     console.log(this.m);
@@ -134,7 +145,7 @@ export class ReportComponent implements OnInit {
 
   }
   dayFilter(day){
-    this.QueryCol=this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2').collection('viewappoinment', ref => ref.where('month','==',+this.month).where('year','==',+this.year).where('day','==',+day));
+    this.QueryCol=this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('month','==',+this.month).where('year','==',+this.year).where('day','==',+day));
     this.Query = this.QueryCol.valueChanges();
     this.Query.subscribe((data) => { this.d = data.length });
   }

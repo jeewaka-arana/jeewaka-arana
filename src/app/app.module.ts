@@ -123,7 +123,15 @@ import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { ApplistComponent } from './patient/applist/applist.component';
+import { DbarchartComponent } from './doctor/dbarchart/dbarchart.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
+
+
+// import { ChartsModule } from 'ng2-charts';
+import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+
+
+
 
 
 
@@ -212,6 +220,8 @@ import { ApplistComponent } from './patient/applist/applist.component';
 
 
         ApplistComponent,
+        DbarchartComponent,
+        DlinechartComponent,
         // ChartsComponent,
       
         
@@ -220,7 +230,7 @@ import { ApplistComponent } from './patient/applist/applist.component';
        
     ],
     imports: [
-
+        // ChartsModule,
          IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,
