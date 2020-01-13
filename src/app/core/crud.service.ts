@@ -92,4 +92,7 @@ upload(event) {
   return this.afs.collection('Article').add(event);
 }
 
+
+
+
 }

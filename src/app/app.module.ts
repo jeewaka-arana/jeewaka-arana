@@ -122,12 +122,15 @@ import { AnimalComponent } from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { DbarchartComponent } from './doctor/dbarchart/dbarchart.component';
-// import { ChartsComponent } from './doctor/charts/charts.component';
+
 
 
 import { ChartsModule } from 'ng2-charts';
 import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+import { PatientchartComponent } from './admindashboard/patientchart/patientchart.component';
+import { DoctorchartComponent } from './admindashboard/doctorchart/doctorchart.component';
+import { ComplainsComponent } from './admindashboard/complains/complains.component';
+import { HandleaccountsComponent } from './admindashboard/handleaccounts/handleaccounts.component';
 
 
 
@@ -215,8 +218,12 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 
 
         AdmindashboardComponent,
-        DbarchartComponent,
+        
         DlinechartComponent,
+        PatientchartComponent,
+        DoctorchartComponent,
+        ComplainsComponent,
+        HandleaccountsComponent,
         // ChartsComponent,
       
         

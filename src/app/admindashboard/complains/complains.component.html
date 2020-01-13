@@ -1,0 +1,109 @@
+
+<div class="card1">
+    <div class="card-body" style="background-color: black;"> 
+       <img class="logo" src="assets/img/newlogo.png" alt="logo" height=19% width=19% style="margin-left: 14rem;"> 
+       <h4 style="margin-left:22rem;font-weight: bold;color: white;" >{{today | date:'fullDate'}}</h4>
+    
+    </div>
+ 
+ </div> 
+ 
+ 
+ 
+ <div class="sidenav">
+ 
+   <img src="https://www.sitegiant.my/wp-content/uploads/2015/10/admin9.png" alt="Avatar">
+   <br><br>
+     <a  style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons design_palette"></i>  Dashboard</a><br>
+    <a href="#services" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons ui-2_time-alarm"></i>  Confirmation</a><br>
+    <a routerLink="/admincomplain" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons education_paper"></i>  Complains</a><br>
+    <a href="#contact" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons ui-1_settings-gear-63"></i>  Handle Account</a><br>
+
+
+    <a href="#contact" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons gestures_tap-01"></i>  Sign Out</a><br>
+    
+  </div>
+  
+<div class="main">
+
+
+
+  <div class="col-md-4 content-center">
+    
+    <button class="btn btn-primary btn-round" type="button"  (click)="docComFunc() ">
+        <i class="now-ui-icons users_single-02"></i>  Doctor Complains
+    </button>
+    <button class="btn btn-primary btn-round" type="button"  (click)="patComFunc() ">
+        <i class="now-ui-icons users_single-02"></i>  Patient Complains
+     </button>
+</div>
+
+<div class="card">
+ <div *ngIf="click==true">
+ 
+
+<table  style="width: 100%;" >
+      
+  <tr>
+    <th *ngFor="let dhead of docheadElements" scope="col">{{dhead}} </th>
+    
+  </tr>
+ 
+
+
+  <tr *ngFor="let d of doc | async">
+
+    
+    
+    <td>{{d.cname}}</td>
+    <td>{{d.cmail}}</td>
+    <td>{{d.cmsg}}</td>
+    
+ </tr>
+
+
+</table>
+
+
+
+</div>
+<div *ngIf="click==false">
+
+ 
+
+    
+<table  style="width: 100%;" >
+      
+  <tr>
+    <th *ngFor="let phead of patheadElements" scope="col">{{phead}} </th>
+    
+  </tr>
+ 
+
+
+  <tr *ngFor="let p of pat | async">
+
+    
+    
+    <td>{{p.name}}</td>
+    <td>{{p.email}}</td>
+    <td>{{p.issue}}</td>
+    
+ </tr>
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
