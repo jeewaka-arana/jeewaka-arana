@@ -17,6 +17,7 @@ import { AppointmentComponent } from './patient/appointment/appointment.componen
 import { AppStep1Component } from './patient/appointment/app-step1/app-step1.component';
 import { AppStep2Component } from './patient/appointment/app-step2/app-step2.component';
 import { AppStep3Component } from './patient/appointment/app-step3/app-step3.component';
+import { ApplistComponent } from './patient/applist/applist.component';
 import { SelectbynameComponent } from './patient/appointment/selectbyname/selectbyname.component';
 import { SelectbydiseaseComponent } from './patient/appointment/selectbydisease/selectbydisease.component';
 import { SearchdoctorComponent } from './patient/searchdoctor/searchdoctor.component';
@@ -86,6 +87,9 @@ import{ComplainsComponent} from '../app/admindashboard/complains/complains.compo
 import{HandleaccountsComponent} from '../app/admindashboard/handleaccounts/handleaccounts.component';
 
 
+import { SlotsComponent } from './patient/appointment/slots/slots.component';
+
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -108,14 +112,19 @@ const routes: Routes =[
     { path: 'appstep1', component:AppStep1Component },
     { path: 'appstep2', component:AppStep2Component },
     { path: 'appstep3', component:AppStep3Component },
+    { path: 'applist/:id', component:ApplistComponent },
     { path: 'byname', component:SelectbynameComponent },
     { path: 'bydisease', component:SelectbydiseaseComponent },
     { path: 'doctorname', component:SelectbynameComponent },
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
+    { path: 'searchdoctor/:id', component:SearchdoctorComponent },
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
     { path: 'alogin', component:AdminLoginComponent },
+    {path:'timeslot',component: SlotsComponent},
+    { path: 'appstep3/:id/:date/:time', component:AppStep3Component },
+    { path: 'appstep2/:id', component:AppStep2Component },
     { path: 'admin', component:AdminComponent ,children:[
         
      //   { path: 'imagelist', component:ImageListComponent }
@@ -134,6 +143,7 @@ const routes: Routes =[
     { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
+    {path:'report/:id',component:ReportComponent},
    
 
 

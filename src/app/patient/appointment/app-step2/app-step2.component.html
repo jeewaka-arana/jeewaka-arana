@@ -31,96 +31,95 @@
 
   <div class="container">
   <div class="time-picker-container">
-      <h4 class="text-center">{{today | date}}</h4>
-      <!-- <h4 class="text-center">{{tomorrow | date: 'MMMM'}}</h4> -->
-      <div class="time-picker">
-        <div class="row time-picker-header">
-          <button href="#" class="arrow left inactive"></button>
-          <ul class="date-slot">
-            <li class="date-slot-wrapper">
-              <div class="date-slot-item">
-                <span class="date-slot-day">{{tomorrow | date: 'EEEE'}}</span>
-                <span class="date-slot-date">{{tomorrow | date: 'dd'}}</span>
-              </div>
-            </li>
-            <li class="date-slot-wrapper">
-              <div class="date-slot-item">
-                <span class="date-slot-day">{{tomorrow1 | date: 'EEEE'}}</span>
-                <span class="date-slot-date">{{tomorrow1 | date: 'dd'}}</span>
-              </div>
-            </li>
-            <li class="date-slot-wrapper">
-              <div class="date-slot-item">
-                <span class="date-slot-day">{{day2 | date: 'EEEE'}}</span>
-                <span class="date-slot-date">{{day2 | date: 'dd'}}</span>
-              </div>
-            </li>
-            <li class="date-slot-wrapper">
-              <div class="date-slot-item">
-                <span class="date-slot-day">{{day2 | date: 'EEEE'}}</span>
-                <span class="date-slot-date">{{day2 | date: 'dd'}}</span>
-              </div>
-            </li>
-            <li class="date-slot-wrapper">
-              <div class="date-slot-item no-free-slot">
-                <span class="date-slot-day">{{day2 | date: 'EEEE'}}</span>
-                <span class="date-slot-date">{{day2 | date: 'dd'}}</span>
-              </div>
-            </li>
-          </ul>
-          <button href="#" class="arrow right"></button>
-    
-        </div>
-    
-        <div class="row">
-    
-          <ul class="time-slot">
-            <li class="time-slot-item">9:00 - 9:30</li>
-            <li class="time-slot-item">10:00 - 10:30</li>
-            <li class="time-slot-item">11:00 - 11:30</li>
-            <li class="time-slot-item">11:30 - 12:00</li>
-          </ul>
-          <ul class="time-slot">
-            <li class="time-slot-item">8:00 - 8:30</li>
-            <li class="time-slot-item">10:00 - 10:30</li>
-            <li class="time-slot-item">11:00 - 11:30</li>
-          </ul>
-          <ul class="time-slot">
-            <li class="time-slot-item">9:00 - 9:30</li>
-            <li class="time-slot-item">10:00 - 10:30</li>
-            <li class="time-slot-item">11:00 - 11:30</li>
-            <li class="time-slot-item">12:00 - 12:30</li>
-            <li class="time-slot-item">13:00 - 13:30</li>
-          </ul>
-          <ul class="time-slot">
-            <li class="time-slot-item">9:00 - 9:30</li>
-            <li class="time-slot-item">10:00 - 10:30</li>
-            <li class="time-slot-item">11:00 - 11:30</li>
-            <li class="time-slot-item">12:00 - 12:30</li>
-          </ul>
-          <ul class="time-slot">
-            <li class="time-slot-item">9:00 - 9:30</li>
-            <li class="time-slot-item">10:00 - 10:30</li>
-            <li class="time-slot-item">11:00 - 11:30</li>
-          </ul>
-        </div>
+    <div class="col">
+      <div class="row" style="margin-left:12em;">
+        <button class="btn btn-primary btn-icon btn-round" style="margin-left:12em; margin-right:20px;" (click)="decrease()"  type="button">
+          <i class="now-ui-icons arrows-1_minimal-left"></i>
+      </button>
+
+      
+          <h4 class="text-center" style="margin-top: 15px;">{{month}}-{{day}}-{{year}}</h4>
+          <button class="btn btn-primary btn-icon btn-round" style="margin-left: 20px; " (click)="increase()" type="button">
+            <i class="now-ui-icons arrows-1_minimal-right"></i>
+        </button>
+        <!-- <app-slots></app-slots> -->
       </div>
+      <!-- payload.doc.data().Firstname -->
     
-    </div>
-    
-        <div class="section section-basic">
-            <div class="container">
-            <div id="buttons">
-              <div class="row" class="text-center" >
-                  <div class="col-md-10" >
-                      <button routerLink="/appstep3" class="btn btn-primary btn-round" type="button">Next</button>
-                  </div> 
-              </div>
-            </div>
-            </div>
+    <p class="message">{{message}}</p>
+
+    <div class="row1">
+      
+      <!-- <div *ngFor="let slot of timeslot" >
+        
+      
+<ul>
+  <li class="myslot"><button class="btn btn-primary btn-simple btn-round" (click)="clickTime(slot,month,year,day)">{{slot}}</button></li>
+</ul>
+
+</div> -->
+
+<div *ngFor="let mapEntry of myslots | keyvalue">
+ 
+  <ul>
+    <div *ngIf="mapEntry.value.avail==true">
+    <li class="myslot"><button class="btn btn-primary btn-simple btn-round" (click)="clickTime(mapEntry.value.time,month,year,day)"> {{mapEntry.value.time}}</button></li>
+  </div>
+
+  <div *ngIf="mapEntry.value.avail==false">
+    <li class="myslot"><button class="btn btn-primary btn-simple btn-round"   disabled> {{mapEntry.value.time}}</button></li>
+  </div>
+  </ul>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+      <!-- <ul>
+        <li *ngFor="let slot of slotdoc | async">
+        {{slot.payload.doc.id}} {{slot.payload.doc.data().Time[0]}}
+        </li>
+      </ul> -->
+
+      <!-- <div class="time-picker"  >
+        <div class="row time-picker-header">
+          
+          <div class="row">
+         <div class="col" *ngFor="let slot of slotdoc | async">
+                <span class="date-slot-day">Monday</span>
+                <span class="date-slot-date">{{slot.payload.doc.id}}</span>
+                <ul class="time-slot">
+                  <li class="time-slot-item"  (click)="test()">{{slot.payload.doc.data().Time[0]}}</li>
+                  <li class="time-slot-item" (click)="test()">{{slot.payload.doc.data().Time[1]}}</li>
+                  <li class="time-slot-item">{{slot.payload.doc.data().Time[2]}}</li>
+                  <li class="time-slot-item">{{slot.payload.doc.data().Time[3]}}</li>
+                </ul>
+                
+              </div> 
           </div>
          
+
+        </div>
+      </div>
+     -->
+    </div>
     
+    <div class="row" class="text-center" >
+      <div class="col-md-10" >
+          <button  style="margin-left: 80em;" class="btn btn-primary btn-round" type="button" (click)="next()">Next</button>
+      </div> 
+  </div>
+
+  <button (click)="test()">click test</button>
+  
+
   
     <!-- <footer class="footer footer-default">
         <div class="container">

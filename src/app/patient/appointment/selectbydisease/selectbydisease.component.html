@@ -63,7 +63,7 @@
             <div class="column">  
                 <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
                 <button [routerLink]="['/doctorview',results.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
-                <button  routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
+                <button  [routerLink]="['/appstep2',results.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
                 </div>
         </div>
     </div></ul>

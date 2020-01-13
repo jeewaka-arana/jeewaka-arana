@@ -122,6 +122,9 @@ import { AnimalComponent } from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { SlotsComponent } from './patient/appointment/slots/slots.component';
+import { ApplistComponent } from './patient/applist/applist.component';
+
 
 
 
@@ -232,7 +235,7 @@ import { HandleaccountsComponent } from './admindashboard/handleaccounts/handlea
        
     ],
     imports: [
-        ChartsModule,
+       
          IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,

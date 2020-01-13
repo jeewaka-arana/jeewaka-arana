@@ -63,7 +63,7 @@ countPatFor:Observable<any>;
 
 
 
-  @ViewChild('content', { static:false }) content: ElementRef;
+  @ViewChild('content',{static:false}) content: ElementRef;
 
 
   // public downloadPDF() {
