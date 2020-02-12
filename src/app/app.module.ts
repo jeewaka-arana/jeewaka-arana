@@ -129,6 +129,7 @@ import { ApplistComponent } from './patient/applist/applist.component';
 
 
 import { ChartsModule } from 'ng2-charts';
+//import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 import { PatientchartComponent } from './admindashboard/patientchart/patientchart.component';
 import { DoctorchartComponent } from './admindashboard/doctorchart/doctorchart.component';
@@ -226,6 +227,8 @@ import { DoctorbarchartComponent } from './admindashboard/allBarcharts/doctorbar
 
         AdmindashboardComponent,
         
+        //DlinechartComponent,
+       
         DlinechartComponent,
         PatientchartComponent,
         DoctorchartComponent,

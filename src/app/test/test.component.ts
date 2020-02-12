@@ -4,6 +4,11 @@ import {User} from 'firebase';
 import { TestService } from 'app/core/test.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 
+export interface test{
+  name:string;
+  age:number;
+  
+}
 
 @Component({
   selector: 'app-test',
@@ -18,15 +23,7 @@ constructor(private afs:AngularFirestore){
 
 
 
- 
-//  timeArray:Array<any>;
 
-// time = {hour: 13, minute: 30};
-//   meridian = true;
-
-  // toggleMeridian() {
-  //     this.meridian = !this.meridian;
-  // }
 
 
 
@@ -35,6 +32,11 @@ constructor(private afs:AngularFirestore){
   addNew(){
     this.items.push(1);
 
+  }
+
+
+  test(time:any){
+    console.log(time.hour);
   }
 
   }

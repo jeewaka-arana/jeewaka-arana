@@ -68,7 +68,7 @@ import { EditprofileComponent } from './admin/editprofile/editprofile.component'
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
-import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
+import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
 import{AboutUsComponent} from '../app/components/about-us/about-us.component';
 import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
@@ -82,12 +82,14 @@ import {AdmindashboardComponent} from '../app/admindashboard/admindashboard.comp
 import{AnimalComponent} from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
+//import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
 import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
 import{ComplainsComponent} from '../app/admindashboard/complains/complains.component';
 import{HandleaccountsComponent} from '../app/admindashboard/handleaccounts/handleaccounts.component';
 
 
 import { SlotsComponent } from './patient/appointment/slots/slots.component';
+import { TimepickComponent } from './doctor/timepick/timepick.component';
 
 
 const routes: Routes =[
@@ -179,7 +181,9 @@ const routes: Routes =[
 {path:'admin/notification',component:NotificationComponent},
 
 
-{path:'time',component:TimepickComponent},
+{path:'time',component:TimepickerComponent},
+
+{path:'timetest',component:TimepickComponent},
 {path:'fpage',component:FirstpageComponent},
 
 {path:'aboutUs',component:AboutUsComponent},
@@ -190,6 +194,7 @@ const routes: Routes =[
 {path:'spage/:id',component:SecondpageComponent},
 {path:'admindash',component:AdmindashboardComponent},
 
+//{path:'dlinechart' ,component:DlinechartComponent}
 {path:'dlinechart' ,component:DlinechartComponent},
 {path:'admincomplain',component:ComplainsComponent},
 {path:'handleAccount',component:HandleaccountsComponent}

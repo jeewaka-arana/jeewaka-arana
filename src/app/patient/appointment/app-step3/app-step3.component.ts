@@ -3,6 +3,10 @@ import { FormBuilder } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
+export enum month{
+  Jan =1,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec
+}
+
 @Component({
   selector: 'app-app-step3',
   templateUrl: './app-step3.component.html',
@@ -22,6 +26,12 @@ Doc:AngularFirestoreDocument;
 
 sliced:string;
 slice_id;
+mydate;
+Day:number;
+Month:string;
+Year:number;
+
+emonth:any;
 
 form;
 
@@ -41,6 +51,18 @@ form;
     this.Time = this.slice_id[1];
     this.apDate = this.slice_id[2];
     this.my_id = this.slice_id[0];
+  
+
+    this.mydate=this.apDate.split('-');
+    this.Day=parseInt(this.mydate[1]);
+    this.Month=this.mydate[0];
+    this.Year=parseInt(this.mydate[2]);
+
+    this.emonth=month[this.Month];
+    
+    
+
+
     
 
    this.getDoctor();
@@ -74,7 +96,7 @@ form;
 
     // Process checkout data here
     this.afs.collection('Doctors').doc(this.my_id).collection('Appointments').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Date:this.apDate,Time:this.Time});
-    this.afs.collection('Patients').doc('dskyLFWguNTM7sRAiQ3tAQJ7L1u2').collection('Appointments').add({Date:this.apDate,Time:this.Time,Doctor:this.Doctor});
+    this.afs.collection('Patients').doc('dskyLFWguNTM7sRAiQ3tAQJ7L1u2').collection('Appointments').add({Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,Doctor:this.Doctor});
     this.router.navigate(['/patienthome']);
   }
 
