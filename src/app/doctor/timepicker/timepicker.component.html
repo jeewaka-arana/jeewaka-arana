@@ -1,18 +1,63 @@
+<p>
+  dhudschuhrdufdhckveuhksuchukeffhkuhvc
+</p>
 
 
- <div class="row">
+<button (click)="addNew()">Add</button>
+<button (click)="test()">click for test</button>
 
-  <div class="col">
-     <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+<div *ngFor="let item of addingtime.slice(0,5);">
+  
+
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+  
+    <div class="col">
+   
+       <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+    </div>
+    <div class="col">
+     
+  <ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+    </div>
   </div>
-  <div class="col">
-      
-<ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+  <div class="weekdays">
+   
+      <input type="checkbox" id="M" class="c1" value="M"/>
+      M
+  
+  
+      <input type="checkbox" id="Tu" class="c1" value="Tu"/>
+     T
+   
+  
+      <input type="checkbox" id="W" class="c1" value="W"/>
+     W
+  
+      <input type="checkbox" id="Th" class="c1" value="Th"/>
+     T
+   
+  
+      <input type="checkbox" id="F" class="c1" value="F"/>
+     F
+
+      <input type="checkbox" id="Sa" class="c1" value="Sa"/>
+     S
+  
+   
+      <input type="checkbox" id="Su" class="c1" value="Su"/>
+     S
+    
   </div>
-</div>
+  
+  <hr>
+  
+  
+  <button (click)="dividetime(from,to)">Save</button> 
+  
+    </div>
+  </div>
+  
+  </div>
 
-
-<hr>
-<!-- <pre>Selected time: {{ time | json }}</pre> -->
-
-<button (click)="savetime(from,to)">Save</button>

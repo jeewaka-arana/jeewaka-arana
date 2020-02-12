@@ -9,12 +9,24 @@ import { Doctor } from 'app/core/models/doctor.model';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 
+export enum WeekDays {
+  Sunday = 1,
+  Monday=2,
+  Tuesday=3,
+  Wednesday=4,
+  Thursday=5,
+  Friday=6,
+  Saturday=7
+}
+ 
 @Component({
   selector: 'app-app-step2',
   templateUrl: './app-step2.component.html',
   styleUrls: ['./app-step2.component.scss'],
   providers:[DatePipe]
 })
+
+
 export class AppStep2Component implements OnInit {
 x: any;
 y: any;
@@ -24,14 +36,19 @@ p: any;
 today: number = Date.now();
 
 
+
 //to increace and decrese date
 currentmonth=this.datePipe.transform(new Date(),"MMM" );
 currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
+currentdayname =this.datePipe.transform(new Date(),"EEEE");
 currentyear=this.datePipe.transform(new Date(),"yyyy");
 
 day=this.currentday;
 month=this.currentmonth;
 year=this.currentyear;
+dayname =this.currentdayname;
+daynum=WeekDays[this.dayname];
+
 
 message:string;
 
@@ -40,6 +57,7 @@ message:string;
 clicktime:string;
 
 date:string;
+docid:string;
 
 timeslot=[];
 
@@ -67,13 +85,14 @@ slotdata:any;
 
   constructor(private afs:AngularFirestore,private datePipe: DatePipe,private router: Router) {
 
+
     this.myid = router.getCurrentNavigation().finalUrl.toString().slice(10);
     console.log(this.myid);
 
     this.slotCol = afs.collection('Doctors').doc('1QA7Ebss0wU28EJEzg9pGPjJF8L2').collection('Timeslots');
 
-    this.slotdoc=this.slotCol.snapshotChanges();
-   
+    this.slotdoc=this.slotCol.valueChanges();
+  
 
     this.getSlot();
     
@@ -84,11 +103,15 @@ slotdata:any;
     console.log(this.month);
     console.log(this.day);
     console.log(this.year);
+    console.log(this.daynum);
   }
 
   increase()
   {
     this.day=this.day+1;
+    this.daynum=this.daynum+1;
+    this.dayname=WeekDays[this.daynum];
+    console.log(this.dayname);
    
     this.getSlot();
   }
@@ -97,8 +120,12 @@ slotdata:any;
   {
     if(this.day>this.currentday)
     {
+
+      //need to loop between days....not yet done
       this.day=this.day-1;
-     
+      this.daynum=this.daynum-1;
+      this.dayname=WeekDays[this.daynum];
+      console.log(this.dayname);
       this.getSlot();
 
     }
@@ -111,11 +138,13 @@ slotdata:any;
 
   getSlot()
   {
-    this.date=this.month+" "+this.day+","+this.year;
-    this.slotDoc = this.afs.collection('Doctors').doc('1QA7Ebss0wU28EJEzg9pGPjJF8L2').collection('Timeslots').doc(this.date);
+    // this.date=this.month+" "+this.day+","+this.year;
+    this.docid=this.dayname;
+    this.slotDoc = this.afs.collection('Doctors').doc('1QA7Ebss0wU28EJEzg9pGPjJF8L2').collection('Timeslots').doc(this.docid);
     this.slotDoc.valueChanges().subscribe(value=>{
       if(value){
         this.message="";
+        this.myslots =[];
         this.timeslot=value.Time;
         this.avail=value.avail;
        
@@ -127,6 +156,7 @@ slotdata:any;
 
       else{
         this.timeslot=[];
+        this.myslots =[];
         this.message="No slots available";
       }
     
@@ -139,7 +169,8 @@ slotdata:any;
   clickTime(time:string,month:string,year:string,day:string)
   {
     this.clicktime=time;
-    // this.mydate=month+"-"+day+"-"+year;
+    this.mydate=month+"-"+day+"-"+year;
+    console.log(this.clicktime);
     console.log(this.mydate);
   }
 
@@ -165,14 +196,14 @@ slotdata:any;
 
 //}
 
-test(){
-  this.myslots=this.timeslot.map(function(x,i){
-return {"time":x,"avail":this.avail[i]}
-  }.bind(this));
+// test(){
+//   this.myslots=this.timeslot.map(function(x,i){
+// return {"time":x,"avail":this.avail[i]}
+//   }.bind(this));
 
 
-  console.log(this.myslots);
-}
+//   console.log(this.myslots);
+// }
 
 
 
