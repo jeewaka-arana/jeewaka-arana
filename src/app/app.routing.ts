@@ -83,6 +83,9 @@ import{AnimalComponent} from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
 //import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
+import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
+import{ComplainsComponent} from '../app/admindashboard/complains/complains.component';
+import{HandleaccountsComponent} from '../app/admindashboard/handleaccounts/handleaccounts.component';
 
 
 import { SlotsComponent } from './patient/appointment/slots/slots.component';
@@ -192,6 +195,9 @@ const routes: Routes =[
 {path:'admindash',component:AdmindashboardComponent},
 
 //{path:'dlinechart' ,component:DlinechartComponent}
+{path:'dlinechart' ,component:DlinechartComponent},
+{path:'admincomplain',component:ComplainsComponent},
+{path:'handleAccount',component:HandleaccountsComponent}
     ]
 
 

@@ -1,5 +1,5 @@
 
-<div class="card1">
+<div class="card0">
    <div class="card-body" style="background-color: black;"> 
       <img class="logo" src="assets/img/newlogo.png" alt="logo" height=19% width=19% style="margin-left: 14rem;"> 
       <h4 style="margin-left:22rem;font-weight: bold;color: white;" >{{today | date:'fullDate'}}</h4>
@@ -9,32 +9,34 @@
 
 
 
-<div class="sidenav">
+<div class="sidenav" style="background-color: black;">
 
   <img src="https://www.remove.bg/assets/start_remove-79a4598a05a77ca999df1dcb434160994b6fde2c3e9101984fb1be0f16d0a74e.png" alt="Avatar">
   <br><br>
-  <a href="#about">Home</a>
-   <a href="#services">Services</a>
-   <a href="#clients">Clients</a>
-   <a href="#contact">Contact</a>
-   <button class="dropdown-btn">Dropdown 
-     <i class="fa fa-caret-down"></i>
-   </button>
-   <div class="dropdown-container">
+  <a routerLink="/spage" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons business_bank"></i>   Home</a>
+
+  <a routerLink="/spage" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons business_briefcase-24"></i>   Appoinments</a>
+
+  <a routerLink="/index" style="font-size: 17px; font-weight:bold;"><i class="now-ui-icons gestures_tap-01"></i>   Sign Out</a>
+   <!-- <button class="dropdown-btn">Dropdown 
+     <i class="fa fa-caret-down">ffff</i>
+   </button> -->
+   <!-- <div class="dropdown-container">
      <a href="#">Link 1</a>
      <a href="#">Link 2</a>
      <a href="#">Link 3</a>
    </div>
-   <a href="#contact">Search</a>
-   <a href="/login">Sign Out</a>
+   -->
+
+
  </div>
  
- <div class="main">
+ <div class="main" >
   
    <div class="row">
       <div class="column">
         <br>
-        <div class="card" style="width:20rem;background-color:#ff0066;">
+        <div class="card1" style="width:20rem;">
          
          <h5 style="font-weight: bold;">Select Year</h5>
          <div class="col1">
@@ -65,8 +67,8 @@
       </div>
       <div class="column">
         <br>
-        <div class="card" style="width:20rem;margin-left:5rem;background-color:  #e60000
-        ;">
+        
+        <div class="card2" style="width:20rem;margin-left:5rem;">
          <h5 style="font-weight: bold;">Select Month</h5>
          <div class="col1">
             <div class="form-group">
@@ -99,8 +101,7 @@
       </div>
       <div class="column">
         <br>
-        <div class="card" style="width:20rem;margin-left:10rem;background-color:  #ffff1a
-        ;">
+        <div class="card3" style="width:20rem;margin-left:10rem;">
          <h5 style="font-weight: bold;">Select Day</h5>
          <div class="col1">
             <div class="form-group">
@@ -153,32 +154,35 @@
 
 <!--  -->
 
-<div class="column">
-  <div class="card" style="width:63rem;margin-left:0.1rem;">
+<div class="column" >
+  <br>
+  <div class="card4" style="width:63rem;margin-left:0.1rem;">
   
 
 
-      <!-- <h4>qqqq</h4> -->
+      
 
     <table  style="width: 100%;">
       
       <tr>
         <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+        
         <!-- <th>Firstname</th>
         <th>Lastname</th>
         <th>Age</th> -->
       </tr>
      
       <!-- <div *ngFor="let item of Query | async"> -->
-
+<br>
       <tr *ngFor="let item of Query | async">
 
         
         
-        <td>{{item.pname}}</td>
-        <td>{{item.day}}/{{item.month}}/{{item.year}}</td>
-        <td>{{item.time}}</td>
-        <td>{{item.tp}}</td>
+        <td style="font-family:Georgia, 'Times New Roman', Times, serif;">{{item.pname}}</td>
+        
+        <td style="font-family:Georgia, 'Times New Roman', Times, serif;">{{item.day}}/{{item.month}}/{{item.year}}</td>
+        <td style="font-family:Georgia, 'Times New Roman', Times, serif;">{{item.time}}</td>
+        <td style="font-family:Georgia, 'Times New Roman', Times, serif;">{{item.tp}}</td>
      </tr>
 
     <!-- </div> -->
@@ -198,13 +202,13 @@
     </div>
 <br><br>
 
-</div>
 
 
 
+<br><br><br>
 <!--  -->
 <!-- <div class="column"> -->
-  <div class="card" style="width:60rem;margin-left:14rem;">
+  <div class="card" style="width:60rem;margin-left:1rem;">
 
      <h5 style="font-weight: bold;"> Statistic</h5><hr style="background-color: black;">
 
@@ -218,6 +222,8 @@
 
  
 
+
+</div>
 
 
 

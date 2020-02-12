@@ -1,18 +1,31 @@
 
 
-            
- <br><br><br>
-<ul *ngFor="let post$ of post | async">
-        <strong (click)="getPost(post.id)"></strong> 
-      <div class="card" style="width: 55rem;margin-left:10rem;"> 
-        <img src="../../../../assets/img/pa.jpg" style="height: 150px; width: 190px">
-     
-          <b> <strong >{{ post$.title }} </strong></b>
-      <hr >
-      <h4>{{ post$.content }}</h4>
+   <div>      
 
-      <button type="button"  class="btnRegister " (click)="deletePost(post$.id)">Delete</button>
-    </div>
+<ul >
+     
+<div class="card">
+ <table  style="width: 100%;" >
+        <tr>
+           <th *ngFor="let comment of commentElements" scope="col">{{comment}} </th>
+           
+         </tr>
         
+         <tr *ngFor="let c of post | async">
+          
+           <td>{{c.content}}</td>
+           <td>{{c.title}}</td>
+           <td><button  class="btn btn-primary btn-round" type="button" (click)="deletePost(d.Userid) ">Delete</button></td>
+       
+        </tr>
+       
+       
+       </table>
+</div>
+
+
 </ul>
-  
+
+   
+</div>   
+

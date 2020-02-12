@@ -130,6 +130,11 @@ import { ApplistComponent } from './patient/applist/applist.component';
 
 import { ChartsModule } from 'ng2-charts';
 //import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+import { PatientchartComponent } from './admindashboard/patientchart/patientchart.component';
+import { DoctorchartComponent } from './admindashboard/doctorchart/doctorchart.component';
+import { ComplainsComponent } from './admindashboard/complains/complains.component';
+import { HandleaccountsComponent } from './admindashboard/handleaccounts/handleaccounts.component';
 
 
 
@@ -217,14 +222,15 @@ import { ChartsModule } from 'ng2-charts';
 
 
         AdmindashboardComponent,
-       
-
-
-        SlotsComponent,
-        ApplistComponent,
         
         //DlinechartComponent,
        
+        DlinechartComponent,
+        PatientchartComponent,
+        DoctorchartComponent,
+        ComplainsComponent,
+        HandleaccountsComponent,
+        // ChartsComponent,
       
         
         

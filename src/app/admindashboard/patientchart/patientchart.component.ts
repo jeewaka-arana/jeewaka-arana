@@ -5,15 +5,13 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-dlinechart',
-  templateUrl: './dlinechart.component.html',
-  styleUrls: ['./dlinechart.component.scss']
+  selector: 'app-patientchart',
+  templateUrl: './patientchart.component.html',
+  styleUrls: ['./patientchart.component.scss']
 })
-export class DlinechartComponent implements OnInit {
-  @Input() userid: string;
-  // @Input('year') year:any;
+export class PatientchartComponent implements OnInit {
 
-
+  
   myyear: any;
   jan: any;
   feb: any;
@@ -31,23 +29,23 @@ export class DlinechartComponent implements OnInit {
   Query: Observable<any>;
   lineChartData: ChartDataSets[] = [
     {
-      data: [
-        this.jan,
-        this.feb, 
-        this.mar, 
-        this.apr, 
-        this.may, 
-        this.jun, 
-        this.jul,
-        this.aug, 
-        this.sep,
-        this.oct,
-        this.nov,
-        this.dec
+      // data: [
+      //   this.jan,
+      //   this.feb, 
+      //   this.mar, 
+      //   this.apr, 
+      //   this.may, 
+      //   this.jun, 
+      //   this.jul,
+      //   this.aug, 
+      //   this.sep,
+      //   this.oct,
+      //   this.nov,
+      //   this.dec
 
         
-      ],
-      label: 'Number Of Patient'
+      // ],
+      // label: 'Number Of Patient'
     },
   ];
 
@@ -60,8 +58,8 @@ export class DlinechartComponent implements OnInit {
 
   lineChartColors: Color[] = [
     {
-      borderColor: '#800000',
-      backgroundColor: '#ff6600',
+      borderColor: 'black',
+      backgroundColor: 'lightblue',
     },
   ];
 
@@ -92,32 +90,6 @@ export class DlinechartComponent implements OnInit {
   ngOnInit() {
 
 
-    // console.log(this.year);
-    // this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +this.year));
-    // await this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', 2019)).valueChanges().subscribe(result=>{
-    //  var sum=0;
-    //   result.forEach(element => {
-    //     if(element['month']==1){
-    //       sum=sum+1;
-    //     }
-    //   });
-    //  this.jan=sum;
-
-    // });
-
-    // if(this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==', 1)))
-    // {
-
-    //   this.Query = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',1 )).valueChanges();
-    //   this.Query.subscribe((data) => { this.jan = data.length });
-
-    // }
-    // else if(this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',2 )))
-    // {
-    //   this.Query = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',2 )).valueChanges();
-    //   this.Query.subscribe((data) => { this.feb = data.length });
-    // }
-
 
 
   }
@@ -129,8 +101,8 @@ export class DlinechartComponent implements OnInit {
 
 
 
-    this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data));
-    this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
+    this.QueryCol = this.afs.collection('Patients', ref => ref.where('year', '==', +data));
+    this.afs.collection('Patients', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
 
 
       this.jan=0;
@@ -174,7 +146,14 @@ export class DlinechartComponent implements OnInit {
             this.feb,
             this.mar,
             this.apr,
-
+            this.may,
+            this.jun,
+            this.jul,
+            this.aug,
+            this.sep,
+            this.oct,
+            this.nov,
+            this.dec,
           ],
           label: 'Number Of Patient'
         },
@@ -182,7 +161,7 @@ export class DlinechartComponent implements OnInit {
 
 
       console.log("yyy");
-      
+      //console.log(this.data);
       console.log(this.jan);
       console.log(this.feb);
       console.log(this.mar);
@@ -196,3 +175,4 @@ export class DlinechartComponent implements OnInit {
 
 
 }
+
