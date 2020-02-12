@@ -35,7 +35,11 @@ export class CrudService {
     var doctorRef=this.afs.collection('Doctors');
     doctorRef.doc(id).update(userdoc);
   }
-
+  updateNote(user){
+    var id=this.AuthService.userId;
+    var doctorRef=this.afs.collection('Doctors');
+    doctorRef.doc(id).update(user);
+  }
   getDoctor(){
     var id=this.AuthService.userId;
     var doctorRef=this.afs.collection('Doctors');

@@ -15,7 +15,7 @@ export class Doctor {
     Password:string;
    profilepicurl:string;
     Specialist:string;
-   Address:string;
+  
    dateTime:string;
    note:string;
    img1:string;
@@ -23,6 +23,12 @@ export class Doctor {
    img3:string;
    video:string;
    area:string;
+
+   //address
+   No:string;
+   Lane1:string;
+   Lane2:string;
+   
 //comment section
 cname:string;
 cmail:string;

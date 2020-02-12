@@ -88,6 +88,9 @@ export class SecondpageComponent implements OnInit {
  img3:string;
  video:string;
  
+ No:string;
+ Lane1:string;
+ Lane2:string;
  
 
 
@@ -174,7 +177,7 @@ my_id:string;
   
 
   ngOnInit() {
-    var rellaxHeader = new Rellax('.rellax-header');
+    // var rellaxHeader = new Rellax('.rellax-header');
 
  
  this.postsCol=this.afs.collection('Doctors');

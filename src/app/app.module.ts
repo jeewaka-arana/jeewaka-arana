@@ -134,6 +134,9 @@ import { PatientchartComponent } from './admindashboard/patientchart/patientchar
 import { DoctorchartComponent } from './admindashboard/doctorchart/doctorchart.component';
 import { ComplainsComponent } from './admindashboard/complains/complains.component';
 import { HandleaccountsComponent } from './admindashboard/handleaccounts/handleaccounts.component';
+import { BarchartComponent } from './doctor/barchart/barchart.component';
+import { PatientbarchartComponent } from './admindashboard/allBarcharts/patientbarchart/patientbarchart.component';
+import { DoctorbarchartComponent } from './admindashboard/allBarcharts/doctorbarchart/doctorbarchart.component';
 
 
 
@@ -217,7 +220,8 @@ import { HandleaccountsComponent } from './admindashboard/handleaccounts/handlea
         AnimalComponent,
         FirebasetestComponent,
         TimepickerComponent,
-       
+        ApplistComponent,
+        SlotsComponent ,
 
 
         AdmindashboardComponent,
@@ -227,6 +231,9 @@ import { HandleaccountsComponent } from './admindashboard/handleaccounts/handlea
         DoctorchartComponent,
         ComplainsComponent,
         HandleaccountsComponent,
+        BarchartComponent,
+        PatientbarchartComponent,
+        DoctorbarchartComponent,
         // ChartsComponent,
       
         
@@ -252,7 +259,7 @@ import { HandleaccountsComponent } from './admindashboard/handleaccounts/handlea
         AngularFireStorageModule,
         AngularFireDatabaseModule,
         //   NgMultiSelectDropDownModule.forRoot(),
-
+        ChartsModule,
         BrowserModule,
         AgmCoreModule.forRoot({
             apiKey: environment.googleMapsKey

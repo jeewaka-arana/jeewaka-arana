@@ -19,7 +19,11 @@ import * as Rellax from 'rellax';
 export interface Doctors {
   Firstname: string,
   Lastname: string,
-  Email: string
+  Email: string,
+  No:string;
+   Lane1:string;
+   Lane2:string;
+   note:string;
 }
 
 
@@ -59,8 +63,6 @@ export class DoctoradminpageComponent implements OnInit {
   newDoctor: Doctor;
 
 
-  Address: string;
-  Email: string;
 
 
   // img : string;
@@ -92,7 +94,7 @@ export class DoctoradminpageComponent implements OnInit {
     ExpYears: new FormControl(''),
 
     dateTime: new FormControl(''),
-    note: new FormControl(''),
+    
     img: new FormControl(''),
     img1: new FormControl(''),
     img2: new FormControl(''),
@@ -136,6 +138,14 @@ export class DoctoradminpageComponent implements OnInit {
     sut1: new FormControl(''),
     sut2: new FormControl(''),
     sut3: new FormControl(''),
+
+    No:new FormControl(''),
+   Lane1:new FormControl(''),
+   Lane2:new FormControl(''),
+  });
+
+  formnote = new FormGroup({
+    note: new FormControl(''),
   });
   form: FormGroup;
   disease: { id: string; name: string; }[];
@@ -147,6 +157,10 @@ export class DoctoradminpageComponent implements OnInit {
   PhoneNumber:string;
   ExpYears:string;
   Specialist:string;
+  No:string;
+  Lane1:string;
+  Lane2:string;
+  note:string;
   constructor(private afs: AngularFirestore, private CrudService: CrudService, private AuthService: AuthService, private router: Router, private storage: AngularFireStorage, private afAuth: AngularFireAuth, private db: AngularFirestore, private fb: FormBuilder, private formBuilder: FormBuilder) {
 
 
@@ -160,14 +174,33 @@ export class DoctoradminpageComponent implements OnInit {
 
     this.afs.collection('Doctors').doc(this.my_id).valueChanges().subscribe(result => {
       this.post = result;
+      
        this.Firstname = result["Firstname"];
      this.Lastname = result["Lastname"];
+
+    //  this.PhoneNumber = result["Lastname"];
+    //  this.Lastname = result["Lastname"];
+    //  this.Lastname = result["Lastname"];
+    //  this.Lastname = result["Lastname"];
+    //  this.Lastname = result["Lastname"];
+
       this.formdata.patchValue({
         Firstname: result["Firstname"],
         Lastname: result["Lastname"],
         PhoneNumber:result["PhoneNumber"],
         ExpYears:result["ExpYears"],
         Specialist:result["Specialist"],
+        City:result["City"],
+        No:result["No"],
+        Lane1:result["Lane1"],
+        Lane2:result["Lane2"],
+        
+        
+
+      });
+      this.formnote.patchValue({
+        note:result["note"],
+
       });
 
       // console.log(this.Firstname)
@@ -230,8 +263,9 @@ export class DoctoradminpageComponent implements OnInit {
     this.CrudService.updateProfile(data);
   }
 
-  savenote(data) {
-    this.CrudService.updateProfile(data);
+  savenote() {
+    let data = this.formnote.value;
+    this.CrudService.updateNote(data);
   }
   ///////
 

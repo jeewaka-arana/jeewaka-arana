@@ -97,13 +97,9 @@
 
 
 
+<br><br><br>
 
 
-<div class="page-header clear-filter" filter-color="orange">
-  
-  <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('https://v03.scentmarketing.cz/wp-content/uploads/2017/11/spa-vune.jpg');">
-
-  </div>
 
 
   <div class="container">
@@ -111,12 +107,10 @@
     <div class="content-center brand">
       <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27%>
       <br>
-      <br>
-      <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
-      <h3>A greatest Ayurvedic platform</h3>
+      
 </div>
 </div>
-</div>
+<br><br><br>
 
 
 
@@ -145,7 +139,7 @@
 
 
 
-    <h2 style="margin-left: 25rem;color:#f96332;font-weight: bold;">Edit Your Profile</h2><br><br>
+    
 
 
 
@@ -170,30 +164,44 @@
         <div data-aos="zoom-in-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
           data-aos-easing="ease-in-out" class="col-md-6">
 
-          <div class="card" style="width:45rem;margin-left:3.3rem;">
+          <div class="card" style="width:30rem;margin-left: 10.8rem;" >
             <div class="formGroup">
 
-              <form [formGroup]="formdata" (ngSubmit)="savenote(formdata.value)" class="form-horizontal" role="form"
+              <form [formGroup]="formnote" (ngSubmit)="savenote(formnote.value)" class="form-horizontal" role="form"
                 autocomplete="on">
 
                 <div class="form-group">
 
 
-                  <label class="col-md-7 control-label" style="color:#f96332;size: 14px;"><b>Upload Special
-                      Note</b></label>
+                  <label class="col-md-15 control-label" style="font-size:1.5rem;margin-left: 1.5rem;
+                  "><b>Upload Special Note</b></label>
                   <br>
-                  <div class="col-lg-10">
-                    <textarea rows="11" cols="75" formControlName="note"></textarea>
-
-
-
+                  <div class="col-lg-8">
+                    <textarea rows="12" cols="58" formControlName="note" 
+                    [placeholder]="note">
+                  
+                  
+                  </textarea>
+                  </div><br>
+                  <div  class="form-group" >
+                   
+                    <input type="submit" 
+                    
+                    style="margin-right:2rem; 
+                    border: none;
+                    border-radius: 1.2rem;
+                    padding: 3%;
+                    background: #f96332;
+                    color: #fff;
+                    font-weight: 600;
+                    width: 30%;
+                    "     
+                    
+                    value="Save" />         
                   </div>
-                  <div class="form-group">
-                    <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"
-                      value="Save" />
-                  </div>
-
+                  <br><br><br>
                 </div>
+                
               </form>
             </div>
           </div>
@@ -209,36 +217,26 @@
             <div class="row register-form">
              
               <div class="col-md-6">
+
+                <label style="font-weight: bold;font-size: 1.2rem;">First Name</label>
                 <div class="form-group">
                   <input formControlName="Firstname" type="text" class="form-control" 
                     [placeholder]="Firstname" required>
                 </div>
+                <label style="font-weight: bold;font-size: 1.2rem;">Last Name</label>
                 <div class="form-group">
                   <input formControlName="Lastname" name="Lastname" type="text" class="form-control"
                     [placeholder]="Lastname"  required>
                 </div>
 
 
-
+                <label style="font-weight: bold;font-size: 1.2rem;">Experince Year</label>
                 <div class="form-group">
                   <input formControlName="ExpYears" type="number" name="ExpYears" class="form-control"
                      [placeholder]="ExpYears">
                 </div>
 
-              </div>
-              <div class="col-md-6">
-
-                <div class="form-group">
-                  <input formControlName="PhoneNumber" name="PhoneNumber" type="number" minlength="10" maxlength="10"
-                    class="form-control" [placeholder]="PhoneNumber" required>
-                </div>
-                <div class="form-group">
-                  <input formControlName="City" class="form-control" name="City" list="citylist" value="{{post.City}}"
-                    placeholder="Choose your City...">
-                  <datalist id="citylist">
-                    <option *ngFor="let City of Citys" [ngValue]="City">{{City}}</option>
-                  </datalist>
-                </div>
+                <label style="font-weight: bold;font-size: 1.2rem;">Specialist</label>
                 <div class="form-group">
                   <input formControlName="Specialist" name="Specialist" type="text" class="form-control"
                      placeholder="Specialist" list="spec" required>
@@ -246,6 +244,51 @@
                     <option *ngFor="let Specialist of Specialists">{{Specialist}} </option>
                   </datalist>
                 </div>
+
+
+
+
+
+              </div>
+
+              <div class="col-md-6">
+                <label style="font-weight: bold;font-size: 1.2rem;">Phone Number</label>
+                <div class="form-group">
+                  <input formControlName="PhoneNumber" name="PhoneNumber" type="number" minlength="10" maxlength="10"
+                    class="form-control" [placeholder]="PhoneNumber" required>
+                </div>
+
+               
+
+                <label style="font-weight: bold;font-size: 1.2rem;">Address</label>
+
+
+                <div class="form-group">
+                  <input formControlName="No" name="No" type="text" class="form-control"
+                  [placeholder]="No"  required>
+
+                </div>
+                <div class="form-group">
+                  <input formControlName="Lane1" name="Lane1" type="text" class="form-control"
+                  [placeholder]="Lane1"  required>
+
+                </div>
+                <div class="form-group">
+                  <input formControlName="Lane2" name="Lane2" type="text" class="form-control"
+                  [placeholder]="Lane2"  required>
+
+                </div> 
+
+                <div class="form-group">
+                  <input formControlName="City" class="form-control" name="City" list="citylist" value="{{post.City}}"
+                    placeholder="City" required>
+                  <datalist id="citylist">
+                    <option *ngFor="let City of Citys" >{{City}}</option>
+                  </datalist>
+                </div>
+
+
+                
 
 
               </div>
@@ -277,15 +320,4 @@
 
 <br>
 
-
-<app-delete-comment id={{my_id}}></app-delete-comment>
-
-
-
-
-    
-    <!-- <app-dfooter></app-dfooter> -->
-
-
-    <!-- footer -->
 
