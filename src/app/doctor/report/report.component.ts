@@ -14,6 +14,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
+import { Doctors } from '../doctoradminpage/doctoradminpage.component';
 
 
 
@@ -41,7 +42,8 @@ export class ReportComponent implements OnInit {
 
   headElements = ['Patient Name', 'Appoinment Date', 'Appoinment Time','Telephone No'];
 
-
+  postsCol:AngularFirestoreCollection< Doctors>;
+  post$:any;
 
 
 
@@ -100,8 +102,11 @@ countPatFor:Observable<any>;
     //To show data in console
     //this.x=this.apps.subscribe((data)=>console.log(data.length));
     // console.log("Hi");
+    this.postsCol=this.afs.collection('Doctors');
+    this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
+      this.post$=doc.data();
+   });
     
-
     
 
 

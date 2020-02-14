@@ -29,10 +29,9 @@ export class Doctor {
    Lane1:string;
    Lane2:string;
    
-//comment section
-cname:string;
-cmail:string;
-cmsg:string;
+//complain section
+msg:string;
+
 //time slot
 mt1:string;
 mt2:string;

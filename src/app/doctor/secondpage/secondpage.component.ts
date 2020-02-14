@@ -194,10 +194,10 @@ my_id:string;
   
 
 //pass patients comments from doctor view page
-  savevalue(data) {
-    this.CrudService.passData(data);
+  // savevalue(data) {
+  //   this.CrudService.passData(data);
    
-  }
+  // }
 
 
 

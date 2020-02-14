@@ -213,7 +213,7 @@ export class DoctoradminpageComponent implements OnInit {
   }
 
   ngOnInit() {
-    var rellaxHeader = new Rellax('.rellax-header');
+    //var rellaxHeader = new Rellax('.rellax-header');
 
     this.formdata;
 
@@ -269,9 +269,9 @@ export class DoctoradminpageComponent implements OnInit {
   }
   ///////
 
-  submitcomplain(data) {
-    this.CrudService.passData(data);
-  }
+  // submitcomplain(data) {
+  //   this.CrudService.passData(data);
+  // }
   // //
   getOrders() {
     return [

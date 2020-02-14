@@ -61,7 +61,7 @@ export class BarchartComponent implements OnInit {
   barChartColors: Color[] = [
     {
       borderColor: '#800000',
-      backgroundColor: '#ff6600',
+      backgroundColor: '#505050',
     },
   ];
 

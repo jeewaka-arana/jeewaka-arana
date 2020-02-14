@@ -170,10 +170,10 @@ my_id:string;
 
   }
 
-  savevalue(data) {
-    this.CrudService.passData(data);
+  // savevalue(data) {
+  //   this.CrudService.passData(data);
    
-  }
+  // }
 
 
   

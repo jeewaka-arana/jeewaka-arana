@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-secondary fixed-top navbar-color"color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color"color-on-scroll="500">
   <div class="container">
     <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
       <div class="navbar-translate">
@@ -24,12 +24,12 @@
 
 
               
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="/index" >
                 <i class="now-ui-icons business_globe"></i>
                 <p>Change Language</p>
             </a>
-        </li>
+        </li> -->
 
         
 
@@ -90,120 +90,123 @@
   </div>
 </nav>
 
+<div class="container">
 
-
-
- 
-<div class="wrapper">
+  <div class="content-center brand">
+    <img class="center" src="assets/img/new2logo.png" alt="logo" >
     
-    <div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('../../../assets/img/b3.jpg');">
-  
-      </div>
-      <div class="container">
-        <div class="content-center brand">
-            <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% >
-            <br>
-            <br>
-            <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
-            <h3>A greatest Ayurvedic platform</h3>
-        </div>
-       
-    </div>
-  
-  </div>
+</div>
+</div> 
+
+
+
+<div>
+
+  <div data-aos="zoom-in-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
+data-aos-easing="ease-in-out" >
+  <span style="font-size: 2rem;font-weight: bold;margin-left:20rem;font-family: 'Times New Roman', Times, serif;"> Our team is happy to help your questions</span>
+
 </div>
 
+<div data-aos="zoom-in-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
+data-aos-easing="ease-in-out" >
 
+  <br><br> <span style="font-size: 2rem;font-weight: bold;margin-left:15rem;font-family: 'Times New Roman', Times, serif;">Fill out the form and we'll be in touch as soon as possible</span>
+</div>
 
+</div>
+<div class="section section-tabs" style="background-color: white;">
+    <div class="container col-lg-12">
+      <div class="row">
+        <div class="col-md-20 col-xl-10">
+        
+                                    <span style="font-weight: bold;margin-left:32rem;font-size:2rem;">- Contact Us -</span>
+                                    <br><br><br><br>
+                                    <div class="row" >
+                                        <form [formGroup]="userForm"  (ngSubmit)="addIssue()" >
 
-<div class="card">
-    <div class="card-body" style="background-color:#929191;">
-      
-        <div class="row">
-            <div class="col col-md-6">
-           
-
-
-            <img src="https://vtemu.by/wp-content/uploads/2014/05/08.jpg" alt="contact">
-              </div>
-
-
-              <div class="col col-md-6" style="width: 17rem;">
-                                <div class="container">
-                                    <h2 class="title">Report a problem</h2>
-                                    <h5>Let us know of the inconvenience</h5>
-                                    <div class="row">
-                                        <div [formGroup]="userForm"  (ngSubmit)="addIssue()" class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                                             <div class="form-group">
-                                                <input type="text" [(ngModel)]="name" value="name" formControlName="name" placeholder="name" class="form-control" />
-                                                <div *ngIf="formErrors.name">
-                                                    {{ formErrors.name }}
-                                                  </div>   
+
+                                              <div data-aos="fade-up"
+                                              data-aos-anchor-placement="center-center">
+                                         
+                                              
+                                              
+                                              <label style="margin-left:37rem;font-weight: bold;font-size: 1rem;">First Name</label>
+                                              <br> <br>
+                                              <input style="margin-left: 28rem;width:27rem;" type="text"   formControlName=" Firstname"  class="form-control" />
+                                                 
                                             </div>
+                                            </div>
+                                            <br>
                                             <div class="form-group">
-                                                <input type="text" [(ngModel)]="email" value="email" formControlName="email" placeholder="email" class="form-control" />
-                                                <div *ngIf="formErrors.email">
-                                                    {{ formErrors.email }}
-                                                  </div>   
+
+                                              <div data-aos="fade-up"
+                                              data-aos-anchor-placement="center-center">
+                                              <label style="margin-left: 37rem;font-weight: bold;font-size: 1rem;">Last Name</label>
+                                                
+                                              <br> <br>
+                                              <input style="margin-left: 28rem;width:27rem;" type="text"   formControlName="Lastname"  class="form-control" />
+                                                </div> 
                                             </div>
-                                            <div class="textarea-container">
-                                                <textarea [(ngModel)]="issue" type="issue" formControlName="issue" required class="form-control" name="name" rows="4" cols="80" placeholder="Describe the problem..."></textarea>
-                                                <div *ngIf="formErrors.issue">
-                                                    {{ formErrors.issue }}
-                                                  </div>   
+                                            <br>
+                                            <div class="form-group">
+
+                                              <div data-aos="fade-up"
+                                              data-aos-anchor-placement="center-center">
+                                              <label style="margin-left:  37rem;font-weight: bold;font-size: 1rem;" >Your Email</label>
+                                              <br> <br>  
+                                              <input style="margin-left:28rem;width:27rem;"  type="text"   formControlName="Email"  class="form-control" />
+                                                 </div> 
                                             </div>
-                                            <div class="send-button">
-                                                <input type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-round btn-block btn-lg" value="Send Message" (click)="addIssue()">
-                                                <span *ngIf="userForm.valid" >Form is valid</span>
+                                            <br>
+                                            <div class="form-group">
+
+
+                                              <div data-aos="fade-up"
+                                              data-aos-anchor-placement="center-center">
+                                              <label style="margin-left:  37rem;font-weight: bold;font-size: 1rem;" >Your Message</label>
+                                              <br> <br> 
+                                              <textarea style="margin-left: 28rem;width:27rem;"  type="text" formControlName="msg"  class="form-control" rows="4" cols="80"></textarea>
+                                                </div> 
                                             </div>
-                                        </div>
+                                                   <br><br>
+                                            <div class="form-group">
+                                              <div data-aos="fade-up"
+                                              data-aos-anchor-placement="center-center">
+                                                <input style="margin-left: 34rem; " type="submit"  class="btnRegister" value="Submit" >
+                                            </div>
+                                          </div>
+                                          </form>
+
+
+
                                     </div>
                                     <br>
-                                    <h6>*By clicking on SEND US, you acknowledge having read our Privacy notice</h6>
-                                </div>
-                  </div>
-                  </div>
-    </div>
+                                   
+                                    <br><br><br><br><br>
+                               
+                  
+
+         
+
+
+
+
+
+
+              
+
+
+
+
+
+
+  </div>
+  </div>
+  </div>
   </div>
 
-<!--  -->
-
-
-            <!-- <h2 style="margin-left: 13rem;color: #01030e;"> Need to get in touch with the team? We’re all ears.</h2> -->
 
  
- <!-- <footer class="footer" data-background-color="black">
-    <div class="container">
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/about-us">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                        MIT License
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright">
-            &copy;
-          {{data | date: 'yyyy'}}, Designed by Jeewaka Arana Team.
-           
-        </div>
-    </div>
-</footer> -->
 <app-dfooter></app-dfooter>

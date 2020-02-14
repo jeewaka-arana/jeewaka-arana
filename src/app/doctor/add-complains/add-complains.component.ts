@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore,  AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable} from 'rxjs/Rx'
-// import{CrudService} from 'app/core/crud.service';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as Rellax from 'rellax';
+import { CrudService } from 'app/core/crud.service';
+import { AuthService } from '../../core/auth.service';
 @Component({
   selector: 'app-add-complains',
   templateUrl: './add-complains.component.html',
@@ -18,83 +20,40 @@ import * as Rellax from 'rellax';
 })
 export class AddComplainsComponent implements OnInit {
 
-  name: string;
-  email: string;
-  issue: string;
-  userForm: FormGroup;
-// formdata=new FormGroup({ 
-//   cname:new FormControl(''),
-//   cmail:new FormControl('') ,
-//   cmsg:new FormControl('') ,
-// });
-  constructor(private afs: AngularFirestore,private fb: FormBuilder,private afAuth:AngularFireAuth) { }
+  Firstname: string;
+  Lastname: string;
+  Email: string;
+  msg: string;
+  
+
+  
+  userForm = new FormGroup({
+
+    Firstname:new FormControl(''),
+    Lastname:new FormControl(''),
+    Email: new FormControl(''),
+    msg:new FormControl(''),
+
+  });
+
+  constructor(private afs: AngularFirestore, private CrudService: CrudService, private AuthService: AuthService, private router: Router, private afAuth: AngularFireAuth, private db: AngularFirestore, private fb: FormBuilder, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    var rellaxHeader = new Rellax('.rellax-header');
-    this.buildForm();
-  }
-  buildForm(): void {
-    this.userForm = this.fb.group({
-      'email': ['', [
-          Validators.required,
-          Validators.email
-        ]
-      ],
-      'name': ['', [
-        Validators.required,
-      ]
-    ],
-    'issue': ['', [
-      Validators.required,
-    ]
-  ],
-    });
-
-    this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
-    this.onValueChanged(); // reset validation messages
+    this.userForm;
   }
 
-  // Updates validation state on form changes.
-  onValueChanged(data?: any) {
-    if (!this.userForm) { return; }
-    const form = this.userForm;
-    for (const field in this.formErrors) {
-      // clear previous error message (if any)
-      this.formErrors[field] = '';
-      const control = form.get(field);
-      if (control && control.dirty && !control.valid) {
-        const messages = this.validationMessages[field];
-        for (const key in control.errors) {
-          this.formErrors[field] += messages[key] + ' ';
-        }
-      }
-    }
+  
+ 
+  addIssue(data){
+
+    this.CrudService.passDoctorIssues(data);
+    
   }
+  
 
- formErrors = {
-    'email': '',
-    'name': '',
-    'issue': ''
-  };
 
-  validationMessages = {
-    'email': {
-      'required':      'Email is required.',
-      'email':         'Email must be a valid email'
-    },
-    'name': {
-      'required':      'Name is required.'
-    },
-    'issue': {
-      'required':      'Description is required.',
-    }
-  };
 
-  addIssue(){
-    this.afs.collection('DoctorIssues').add({'name': this.name, 'email': this.email, 'issue': this.issue});
-  }
-  // submitcomplain(data){
-  //   this.CrudService. passData(data);
-  // }
+
+
 
 }
