@@ -1,20 +1,23 @@
 
 
- <div class="card" style="width:30rem;" >
+ <div class="card" style="width:30rem;margin-left: 3rem;" >
   <div class="card-body" >
 
     <form [formGroup]="formdata"  >
    
-      <label><b>select profile picture to upload</b> </label><br>
+      <label style="font-size:1.5rem; "><b>select profile picture to upload</b> </label><br>
 <div>
-      <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()">
+      <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()" >
 </div>
+<br>
           
   <input  type="file"  accept="image/*" class="form-control" #fileUploader formControlName="img" (change)="showpreview($event);onDrop($event.target.files)">
+  <br>
   <div  class="form-group" >
-    <input type="submit" class="btnRegister   float-right"   value="Save" />         
+    <input type="submit" style="margin-right:10rem;" class="btnRegister   float-right"     value="Save" />         
    
   </div>
+  <br><br>
 </form>
 </div>
 

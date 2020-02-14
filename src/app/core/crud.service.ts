@@ -35,7 +35,11 @@ export class CrudService {
     var doctorRef=this.afs.collection('Doctors');
     doctorRef.doc(id).update(userdoc);
   }
-
+  updateNote(user){
+    var id=this.AuthService.userId;
+    var doctorRef=this.afs.collection('Doctors');
+    doctorRef.doc(id).update(user);
+  }
   getDoctor(){
     var id=this.AuthService.userId;
     var doctorRef=this.afs.collection('Doctors');
@@ -43,20 +47,20 @@ export class CrudService {
 
   }
   //pass dotor comments from doctor profile page
-  passData(user:Doctor)
+  // passData(user:Doctor)
+  // {
+    
+  //     return this.afs.collection('DoctorComments').add(user);
+  
+  // }
+
+
+  passDoctorIssues(user:Doctor)
   {
-    // var id=this.AuthService.userId;
+    
+    return this.afs.collection('DoctorIssues').add(user);
 
-    // var doctorRef=this.afs.collection('Doctors');
-    // doctorRef.doc(id).add(user);
-      return this.afs.collection('DoctorComments').add(user);
-  
-  }
-
-
-
-  
- 
+}
 
 //update doctor view page according to the doctor admin page
 

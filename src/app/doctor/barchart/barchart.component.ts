@@ -1,17 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { ChartDataSets, ChartOptions,ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-patientchart',
-  templateUrl: './patientchart.component.html',
-  styleUrls: ['./patientchart.component.scss']
+  selector: 'app-barchart',
+  templateUrl: './barchart.component.html',
+  styleUrls: ['./barchart.component.scss']
 })
-export class PatientchartComponent implements OnInit {
+export class BarchartComponent implements OnInit {
+  @Input() userid: string;
+  // @Input('year') year:any;
 
-  
+
   myyear: any;
   jan: any;
   feb: any;
@@ -29,37 +31,41 @@ export class PatientchartComponent implements OnInit {
   Query: Observable<any>;
   barChartData: ChartDataSets[] = [
     {
-      // data: [
-      //   this.jan,
-      //   this.feb, 
-      //   this.mar, 
-      //   this.apr, 
-      //   this.may, 
-      //   this.jun, 
-      //   this.jul,
-      //   this.aug, 
-      //   this.sep,
-      //   this.oct,
-      //   this.nov,
-      //   this.dec
+      data: [
+        this.jan,
+        this.feb, 
+        this.mar, 
+        this.apr, 
+        this.may, 
+        this.jun, 
+        this.jul,
+        this.aug, 
+        this.sep,
+        this.oct,
+        this.nov,
+        this.dec
 
         
-      // ],
-      // label: 'Number Of Patient'
+      ],
+      label: 'Number Of Patient'
     },
   ];
 
 
+
+
+
+  
   barChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  barChartOptions = {
+  barChartOptions: ChartOptions = {
     responsive: true,
   };
 
   barChartColors: Color[] = [
     {
-      borderColor: 'black',
-      backgroundColor: '#191919',
+      borderColor: '#800000',
+      backgroundColor: '#505050',
     },
   ];
 
@@ -69,6 +75,7 @@ export class PatientchartComponent implements OnInit {
   barChartPlugins = [];
 
   constructor(private afs: AngularFirestore) {
+
     this.jan = 0;
     this.feb = 0;
     this.mar = 0;
@@ -90,6 +97,32 @@ export class PatientchartComponent implements OnInit {
   ngOnInit() {
 
 
+    // console.log(this.year);
+    // this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +this.year));
+    // await this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', 2019)).valueChanges().subscribe(result=>{
+    //  var sum=0;
+    //   result.forEach(element => {
+    //     if(element['month']==1){
+    //       sum=sum+1;
+    //     }
+    //   });
+    //  this.jan=sum;
+
+    // });
+
+    // if(this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==', 1)))
+    // {
+
+    //   this.Query = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',1 )).valueChanges();
+    //   this.Query.subscribe((data) => { this.jan = data.length });
+
+    // }
+    // else if(this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',2 )))
+    // {
+    //   this.Query = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',2 )).valueChanges();
+    //   this.Query.subscribe((data) => { this.feb = data.length });
+    // }
+
 
 
   }
@@ -101,8 +134,8 @@ export class PatientchartComponent implements OnInit {
 
 
 
-    this.QueryCol = this.afs.collection('Patients', ref => ref.where('year', '==', +data));
-    this.afs.collection('Patients', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
+    this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data));
+    this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
 
 
       this.jan=0;
@@ -132,6 +165,7 @@ export class PatientchartComponent implements OnInit {
         else if (element['month'] == 4) {
           this.apr = this.apr + 1;
         }
+
         else if (element['month'] == 5) {
           this.may = this.may + 1;
         }
@@ -157,6 +191,8 @@ export class PatientchartComponent implements OnInit {
         else if (element['month'] == 12) {
           this.dec = this.dec + 1;
         }
+        
+
 
       });
       //  this.jan=this.jan;
@@ -170,14 +206,14 @@ export class PatientchartComponent implements OnInit {
             this.feb,
             this.mar,
             this.apr,
-            this.may,
-            this.jun,
+            this.may, 
+            this.jun, 
             this.jul,
-            this.aug,
+            this.aug, 
             this.sep,
             this.oct,
             this.nov,
-            this.dec,
+            this.dec
           ],
           label: 'Number Of Patient'
         },
@@ -185,7 +221,7 @@ export class PatientchartComponent implements OnInit {
 
 
       console.log("yyy");
-      //console.log(this.data);
+      
       console.log(this.jan);
       console.log(this.feb);
       console.log(this.mar);
@@ -199,4 +235,3 @@ export class PatientchartComponent implements OnInit {
 
 
 }
-

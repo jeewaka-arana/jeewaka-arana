@@ -106,6 +106,9 @@ export class SecondpageComponent implements OnInit {
  img3:string;
  video:string;
  
+ No:string;
+ Lane1:string;
+ Lane2:string;
  
 
 
@@ -205,7 +208,7 @@ return { ap_id, ...ap_data };
   
 
   ngOnInit() {
-    var rellaxHeader = new Rellax('.rellax-header');
+    // var rellaxHeader = new Rellax('.rellax-header');
 
  
  this.postsCol=this.afs.collection('Doctors');
@@ -226,10 +229,10 @@ return { ap_id, ...ap_data };
   
 
 //pass patients comments from doctor view page
-  savevalue(data) {
-    this.CrudService.passData(data);
+  // savevalue(data) {
+  //   this.CrudService.passData(data);
    
-  }
+  // }
 
 
 

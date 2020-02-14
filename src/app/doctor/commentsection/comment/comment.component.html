@@ -1,8 +1,10 @@
 
-              
+              <div class="container2">
+
+                <h3 style="margin-left: 20rem;font-weight: bold ;">Your Thougths Are Very Important</h3><br>
                   <div class="formGroup" style="margin-left: 16rem;" >
                     
-                          <form  class="form-horizontal" role="form" style="margin-left: 55px;" >
+                          <form  class="form-horizontal" role="form" style="margin-left:50px;" >
                
 
                 <div class="row">
@@ -31,25 +33,25 @@
             </div>
           
   <br><br><br><br>
-<div class="card" style="width:78rem;margin-left: 10px;margin-top: 1px;"> 
+
+ 
 <ul *ngFor="let post$ of post | async" id="opening">
+  <!-- <div class="card" style="width:50rem;margin-left:4px;margin-top: 1px;;">  -->
   <div (click)="getPost(post.id)">
-    
-      <img src="../../../../assets/img/pa.jpg" style="height: 90px; width:90px">
-     
-      <strong>Commented on {{today | date}} </strong>  
+    <strong>Commented on {{today | date}}  - {{ post$.title }}  </strong> <br> 
+      <img src="https://www.pngkit.com/png/detail/115-1150342_user-avatar-icon-iconos-de-mujeres-a-color.png" style="height:8rem; width:8rem">
+      <span style="margin-left: 5rem;">{{ post$.content }}</span>
       <br>
-      <strong >{{ post$.title }} </strong>
-  
+      <br>
+      
     
-    {{ post$.content }}
-    <hr class="new4">
+    
+   
+    
      
   </div>
   
-
+<!-- </div> -->
 </ul>
-</div>
 
-<!-- <h3>{{ (post | async)?.title }}</h3>
-<p>{{ (post | async)?.content }}</p>  -->
+</div>

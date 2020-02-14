@@ -119,7 +119,7 @@ import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component
 // import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
-import { AnimalComponent } from './doctor/animal/animal.component';
+
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
@@ -136,6 +136,8 @@ import { PatientchartComponent } from './admindashboard/patientchart/patientchar
 import { DoctorchartComponent } from './admindashboard/doctorchart/doctorchart.component';
 import { ComplainsComponent } from './admindashboard/complains/complains.component';
 import { HandleaccountsComponent } from './admindashboard/handleaccounts/handleaccounts.component';
+import { BarchartComponent } from './doctor/barchart/barchart.component';
+import { DoctorConfirmComponent } from './admindashboard/doctor-confirm/doctor-confirm.component';
 
 
 //firestore functions
@@ -217,10 +219,11 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
         SecondpageComponent,
         AdminLoginComponent,
     
-        AnimalComponent,
+    
         FirebasetestComponent,
         TimepickerComponent,
-       
+        ApplistComponent,
+        SlotsComponent ,
 
 
         AdmindashboardComponent,
@@ -232,6 +235,9 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
         DoctorchartComponent,
         ComplainsComponent,
         HandleaccountsComponent,
+        BarchartComponent,
+        DoctorConfirmComponent,
+       
         // ChartsComponent,
       
         ApplistComponent ,
@@ -260,7 +266,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
         ChartsModule ,
         AngularFireFunctionsModule ,
         //   NgMultiSelectDropDownModule.forRoot(),
-
+        ChartsModule,
         BrowserModule,
         AgmCoreModule.forRoot({
             apiKey: environment.googleMapsKey

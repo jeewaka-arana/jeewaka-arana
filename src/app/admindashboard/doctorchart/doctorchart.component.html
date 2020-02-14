@@ -1,5 +1,5 @@
 
-<div class="chart-wrapper">
+<div class="chart-wrapper" >
     <h5 style="font-weight:bold;">{{year}}</h5>
 
 
@@ -30,14 +30,15 @@
     <!--  -->
 
     <canvas baseChart 
-        [datasets]="lineChartData" 
-        [labels]="lineChartLabels" 
-        [options]="lineChartOptions"
-        [colors]="lineChartColors" 
-        [legend]="lineChartLegend" 
-        [chartType]="lineChartType" 
-        [plugins]="lineChartPlugins">
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [colors]="barChartColors"
+    [chartType]="barChartType">
     </canvas>
+
 
  
 

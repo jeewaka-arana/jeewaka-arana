@@ -78,8 +78,6 @@ import{SecondpageComponent}from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import {AdmindashboardComponent} from '../app/admindashboard/admindashboard.component';
 
-
-import{AnimalComponent} from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
 //import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
@@ -90,7 +88,7 @@ import{HandleaccountsComponent} from '../app/admindashboard/handleaccounts/handl
 
 import { SlotsComponent } from './patient/appointment/slots/slots.component';
 import { TimepickComponent } from './doctor/timepick/timepick.component';
-
+import {DoctorConfirmComponent} from './admindashboard/doctor-confirm/doctor-confirm.component'
 
 //notification testing
 import {PnavComponent} from './patient/pnav/pnav.component';
@@ -177,7 +175,8 @@ const routes: Routes =[
  
  {path:'t',component:TComponent},
  
-{path:'complain',component:AddComplainsComponent},
+//{path:'complain',component:AddComplainsComponent},
+{path:'complain/:id',component:AddComplainsComponent},
 {path:'deletecomment',component:DeleteCommentComponent},
 {path:'bothcomment',component:BothCommentPageComponent},
 {path:'docAppoinment',component:DocAppoinmentComponent},
@@ -204,7 +203,8 @@ const routes: Routes =[
 //{path:'dlinechart' ,component:DlinechartComponent}
 {path:'dlinechart' ,component:DlinechartComponent},
 {path:'admincomplain',component:ComplainsComponent},
-{path:'handleAccount',component:HandleaccountsComponent}
+{path:'handleAccount',component:HandleaccountsComponent},
+{path:'confirmdoc',component:DoctorConfirmComponent}
     ]
 
 
