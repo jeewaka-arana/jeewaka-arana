@@ -23,14 +23,14 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="/docAppoinment">
+            <a class="nav-link"  [routerLink]="['/docAppoinment',my_id]">
                 <i class="now-ui-icons ui-1_calendar-60"></i>
                 <p>Appoinments</p>
             </a>
         </li>
                        
         <li class="nav-item">
-            <a class="nav-link" href="/complain" >
+            <a class="nav-link"  [routerLink]="['/complain',my_id]">
                 <i class="now-ui-icons text_align-center"></i>
                 <p>Complains</p>
             </a>
@@ -57,7 +57,7 @@
             <p>Profile</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " [routerLink]="['/fpage',my_id]" > View Profile </a>
+            <a class="dropdown-item " [routerLink]="['/spage',my_id]" > View Profile </a>
             <a class="dropdown-item " [routerLink]="['/doctoradmin',my_id]"> Edit Profile</a>
             <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
            
@@ -184,7 +184,7 @@
 
 
 
-<div data-aos="zoom-out-down">
+<!-- <div data-aos="zoom-out-down">
       
             
             
@@ -280,20 +280,22 @@
     
       </table>
     
-</div>
+</div> -->
 
 
 
 
 <br><br>
-<!-- <hr style=" border: 1.5px solid #ff1a1a;"><br><br> -->
-<!-- <h3 style="margin-left: 20rem;font-weight: bold;">Your Thougths Are Very Important</h3><br> -->
+
+<div data-aos="fade-up"
+     data-aos-duration="3000">
+
 <div >
 <app-comment id="{{my_id}}"></app-comment> 
 
 </div>
 
-
+</div>
 
 
 

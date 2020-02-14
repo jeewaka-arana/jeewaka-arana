@@ -1,88 +1,78 @@
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color " color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
   <div class="container">
-    <img src="assets/img/herbalicon.png" height="30px" width="30px" />
-    <div class="navbar-translate">
-      <a class="navbar-brand" [routerLink]="['/home']" placement="bottom">
-
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
-        (click)="sidebarToggle()">
-        <span class="navbar-toggler-bar bar1"></span>
-        <span class="navbar-toggler-bar bar2"></span>
-        <span class="navbar-toggler-bar bar3"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
-      <ul class="navbar-nav ml-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/index">
-            <i class="now-ui-icons business_bank"></i>
-            <p>Home</p>
+    <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+      <div class="navbar-translate">
+          <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+             
           </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link"   routerLink="/index" >
+                  <i class="now-ui-icons business_bank"></i>
+                  <p>Home</p>
+              </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/docAppoinment',my_id]">
+                <i class="now-ui-icons ui-1_calendar-60"></i>
+                <p>Appoinments</p>
+            </a>
         </li>
-
-
-
-
-
-
-
-
+                       
         <li class="nav-item">
-          <a class="nav-link" href="/docAppoinment">
-            <i class="now-ui-icons ui-1_calendar-60"></i>
-            <p>Appoinments</p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="/complain">
-            <i class="now-ui-icons text_align-center"></i>
-            <p>Complains</p>
-          </a>
+            <a class="nav-link"  [routerLink]="['/complain',my_id]">
+                <i class="now-ui-icons text_align-center"></i>
+                <p>Complains</p>
+            </a>
         </li>
         <li class="nav-item dropdown">
-
-          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-
-            <i class="now-ui-icons ui-1_zoom-bold"></i>
-            <p>Search</p>
+         
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+              <i class="now-ui-icons ui-1_zoom-bold"></i>
+              <p>Search</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item  " href="/doctorname">Search By Name</a>
+            <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
             <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
-
+            
           </div>
         </li>
 
         <li class="nav-item dropdown">
-          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="now-ui-icons users_single-02
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons users_single-02
 
               "></i>
             <p>Profile</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " [routerLink]="['/spage',my_id]"> View Profile </a>
-            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
-            <a class="dropdown-item " [routerLink]="['/report',my_id]"> View Report </a>
-
+            <a class="dropdown-item " [routerLink]="['/spage',my_id]" > View Profile </a>
+            <a class="dropdown-item " [routerLink]="['/doctoradmin',my_id]"> Edit Profile</a>
+            <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
+           
           </div>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/index">
-            <i class="now-ui-icons media-1_button-power"></i>
-            <p>Log Out</p>
+          <a class="nav-link" href="/index" >
+              <i class="now-ui-icons media-1_button-power"></i>
+              <p>Log Out</p>
           </a>
-        </li>
-
-      </ul>
-    </div>
+      </li>
+           
+          </ul>
+      </div>
   </div>
 </nav>
 
@@ -115,7 +105,7 @@
 
   <div class="row">
 
-    <div class="col col-md-4">
+    <div class="col col-md-4" style="margin-left:1rem;">
       <div data-aos="zoom-in-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
         data-aos-easing="ease-in-out" class="col-md-6">
         
@@ -128,7 +118,7 @@
 
   
 
-    <div class="col col-md-4">
+    <div class="col col-md-4" style="margin-left:3rem;">
 
       <div data-aos="zoom-in-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
         data-aos-easing="ease-in-out" class="col-md-6">
@@ -141,32 +131,19 @@
 
               <div class="form-group">
 
-
+<br>
                 <label class="col-md-15 control-label" style="font-size:1.5rem;margin-left: 1.5rem;
                 "><b>Upload Special Note</b></label>
                 <br>
                 <div class="col-lg-8">
-                  <textarea rows="12" cols="58" formControlName="note" 
+                  <textarea rows="11" cols="58" formControlName="note" 
                   [placeholder]="note">
                 
-                
                 </textarea>
-                </div><br>
+                </div>
                 <div  class="form-group" >
-                 
-                  <input type="submit" 
-                  
-                  style="margin-right:2rem; 
-                  border: none;
-                  border-radius: 1.2rem;
-                  padding: 3%;
-                  background: #f96332;
-                  color: #fff;
-                  font-weight: 600;
-                  width: 30%;
-                  "     
-                  
-                  value="Save" />         
+                 <br>
+                  <input type="submit"   value="Save" class=btnRegister1 />         
                 </div>
                 <br><br><br>
               </div>

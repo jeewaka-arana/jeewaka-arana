@@ -35,8 +35,11 @@ export class AddComplainsComponent implements OnInit {
     msg:new FormControl(''),
 
   });
+  my_id: string;
+  constructor(private afs: AngularFirestore, private CrudService: CrudService, private AuthService: AuthService, private router: Router, private afAuth: AngularFireAuth, private db: AngularFirestore, private fb: FormBuilder, private formBuilder: FormBuilder) {
 
-  constructor(private afs: AngularFirestore, private CrudService: CrudService, private AuthService: AuthService, private router: Router, private afAuth: AngularFireAuth, private db: AngularFirestore, private fb: FormBuilder, private formBuilder: FormBuilder) { }
+    this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(10);
+   }
 
   ngOnInit() {
     this.userForm;

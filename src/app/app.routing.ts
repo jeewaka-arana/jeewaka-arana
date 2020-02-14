@@ -168,7 +168,8 @@ const routes: Routes =[
  
  {path:'t',component:TComponent},
  
-{path:'complain',component:AddComplainsComponent},
+//{path:'complain',component:AddComplainsComponent},
+{path:'complain/:id',component:AddComplainsComponent},
 {path:'deletecomment',component:DeleteCommentComponent},
 {path:'bothcomment',component:BothCommentPageComponent},
 {path:'docAppoinment',component:DocAppoinmentComponent},

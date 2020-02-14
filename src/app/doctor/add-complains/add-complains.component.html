@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color"color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
   <div class="container">
     <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
       <div class="navbar-translate">
@@ -14,7 +14,6 @@
       <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
           <ul class="navbar-nav ml-auto">
 
-
             <li class="nav-item">
               <a class="nav-link"   routerLink="/index" >
                   <i class="now-ui-icons business_bank"></i>
@@ -23,28 +22,15 @@
           </li>
 
 
-              
-          <!-- <li class="nav-item">
-            <a class="nav-link" routerLink="/index" >
-                <i class="now-ui-icons business_globe"></i>
-                <p>Change Language</p>
-            </a>
-        </li> -->
-
-        
-
-            
-      
-
           <li class="nav-item">
-            <a class="nav-link" href="/docAppoinment">
+            <a class="nav-link"  [routerLink]="['/docAppoinment',my_id]">
                 <i class="now-ui-icons ui-1_calendar-60"></i>
                 <p>Appoinments</p>
             </a>
         </li>
                        
         <li class="nav-item">
-            <a class="nav-link" href="/complain" >
+            <a class="nav-link"  [routerLink]="['/complain',my_id]">
                 <i class="now-ui-icons text_align-center"></i>
                 <p>Complains</p>
             </a>
@@ -72,18 +58,18 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item " [routerLink]="['/spage',my_id]" > View Profile </a>
-            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
+            <a class="dropdown-item " [routerLink]="['/doctoradmin',my_id]"> Edit Profile</a>
             <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
-            
+           
           </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/index" >
-                <i class="now-ui-icons media-1_button-power"></i>
-                <p>Log Out</p>
-            </a>
-        </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href="/index" >
+              <i class="now-ui-icons media-1_button-power"></i>
+              <p>Log Out</p>
+          </a>
+      </li>
            
           </ul>
       </div>
