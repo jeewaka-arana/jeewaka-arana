@@ -23,7 +23,7 @@ export class ComplainsComponent implements OnInit {
 
   docComFunc(){
     this.click=true;
-    this.docCol=this.afs.collection('DoctorComments');
+    this.docCol=this.afs.collection('DoctorIssues');
 this.doc=this.docCol.valueChanges();
   }
 

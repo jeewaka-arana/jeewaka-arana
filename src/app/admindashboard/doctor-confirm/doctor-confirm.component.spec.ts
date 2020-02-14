@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PatientbarchartComponent } from './patientbarchart.component';
+import { DoctorConfirmComponent } from './doctor-confirm.component';
 
-describe('PatientbarchartComponent', () => {
-  let component: PatientbarchartComponent;
-  let fixture: ComponentFixture<PatientbarchartComponent>;
+describe('DoctorConfirmComponent', () => {
+  let component: DoctorConfirmComponent;
+  let fixture: ComponentFixture<DoctorConfirmComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PatientbarchartComponent ]
+      declarations: [ DoctorConfirmComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PatientbarchartComponent);
+    fixture = TestBed.createComponent(DoctorConfirmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

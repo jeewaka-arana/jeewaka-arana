@@ -118,7 +118,7 @@ import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component
 // import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
-import { AnimalComponent } from './doctor/animal/animal.component';
+
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
@@ -136,8 +136,7 @@ import { DoctorchartComponent } from './admindashboard/doctorchart/doctorchart.c
 import { ComplainsComponent } from './admindashboard/complains/complains.component';
 import { HandleaccountsComponent } from './admindashboard/handleaccounts/handleaccounts.component';
 import { BarchartComponent } from './doctor/barchart/barchart.component';
-import { PatientbarchartComponent } from './admindashboard/allBarcharts/patientbarchart/patientbarchart.component';
-import { DoctorbarchartComponent } from './admindashboard/allBarcharts/doctorbarchart/doctorbarchart.component';
+import { DoctorConfirmComponent } from './admindashboard/doctor-confirm/doctor-confirm.component';
 
 
 
@@ -218,7 +217,7 @@ import { DoctorbarchartComponent } from './admindashboard/allBarcharts/doctorbar
         SecondpageComponent,
         AdminLoginComponent,
     
-        AnimalComponent,
+    
         FirebasetestComponent,
         TimepickerComponent,
         ApplistComponent,
@@ -235,8 +234,8 @@ import { DoctorbarchartComponent } from './admindashboard/allBarcharts/doctorbar
         ComplainsComponent,
         HandleaccountsComponent,
         BarchartComponent,
-        PatientbarchartComponent,
-        DoctorbarchartComponent,
+        DoctorConfirmComponent,
+       
         // ChartsComponent,
       
         

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ChartDataSets, ChartOptions } from 'chart.js';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -26,7 +26,7 @@ export class DoctorchartComponent implements OnInit {
   dec: any;
   QueryCol: AngularFirestoreCollection;
   Query: Observable<any>;
-  lineChartData: ChartDataSets[] = [
+  barChartData: ChartDataSets[] = [
     {
       data: [
         this.jan,
@@ -49,22 +49,23 @@ export class DoctorchartComponent implements OnInit {
   ];
 
 
-  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  barChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  lineChartOptions = {
+  barChartOptions = {
     responsive: true,
   };
 
-  lineChartColors: Color[] = [
+ barChartColors: Color[] = [
     {
       borderColor: 'black',
       backgroundColor: '#191919',
     },
   ];
 
-  lineChartLegend = true;
-  lineChartPlugins = [];
-  lineChartType = 'line';
+  barChartLegend = true;
+  //barChartPlugins = [];
+  barChartType : ChartType = 'bar';
+  barChartPlugins = [];
 
 
   constructor(private afs: AngularFirestore) {
@@ -130,21 +131,55 @@ export class DoctorchartComponent implements OnInit {
         else if (element['month'] == 4) {
           this.apr = this.apr + 1;
         }
+        
+        else if (element['month'] == 5) {
+          this.may = this.may + 1;
+        }
+        else if (element['month'] == 6) {
+          this.jun = this.jun + 1;
+        }
+        else if (element['month'] == 7) {
+          this.jul = this.jul + 1;
+        }
+        else if (element['month'] == 8) {
+          this.aug = this.aug + 1;
+        }
+        else if (element['month'] == 9) {
+          this.sep = this.sep + 1;
+        }
+
+        else if (element['month'] == 10) {
+          this.oct = this.oct + 1;
+        }
+        else if (element['month'] == 11) {
+          this.nov = this.nov + 1;
+        }
+        else if (element['month'] == 12) {
+          this.dec = this.dec + 1;
+        }
 
 
       });
       //  this.jan=this.jan;
       //  this.feb=this
-      this.lineChartData = [
+      this.barChartData = [
         {
           data: [
             this.jan,
             this.feb,
             this.mar,
             this.apr,
+            this.may,
+      this.jun,
+      this.jul,
+      this.aug,
+      this.sep,
+      this.oct,
+      this.nov,
+      this.dec,
 
           ],
-          label: 'Number Of Patient'
+          label: 'Number Of Doctors'
         },
       ];
 
