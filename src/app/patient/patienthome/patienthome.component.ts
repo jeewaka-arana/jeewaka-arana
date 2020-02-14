@@ -41,9 +41,11 @@ currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
   newUser: boolean = true; // to toggle login or signup form
   passReset: boolean = false;
 my_id:string;
+sessionid:string;
   constructor(private afs: AngularFirestore,private datePipe: DatePipe,private fb: FormBuilder,private afAuth:AngularFireAuth) { 
 
-    this.my_id=afAuth.auth.currentUser.uid;
+    
+    sessionStorage.setItem(afAuth.auth.currentUser.uid,this.sessionid);
   }
 
   ngOnInit() {

@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
+//to change month to number
 export enum month{
   Jan =1,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec
 }
@@ -19,6 +20,7 @@ Doctor:string;
 my_id:string;
 profile:any;
 specialist:string;
+Doctorid:string;
 
 
 Doc:AngularFirestoreDocument;
@@ -38,13 +40,15 @@ form;
 
 
   constructor( private formBuilder: FormBuilder,private afs:AngularFirestore, private router: Router) { 
+    
+    //creating acceptance form
     this.form = this.formBuilder.group({
       PatientName: '',
       Email: '',
       PhoneNumber:''
     });
 
-
+//slice all datas from url
     this.sliced = router.getCurrentNavigation().finalUrl.toString().slice(10);
     this.slice_id = this.sliced.split('/');
 
@@ -94,17 +98,19 @@ form;
   // }
   onSubmit(data) {
 
-    // Process checkout data here
-    this.afs.collection('Doctors').doc(this.my_id).collection('Appointments').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Date:this.apDate,Time:this.Time});
-    this.afs.collection('Patients').doc('dskyLFWguNTM7sRAiQ3tAQJ7L1u2').collection('Appointments').add({Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,Doctor:this.Doctor});
+    //adding to cache database
+ this.afs.collection('AppointmentCache').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,DoctorName:this.Doctor,DoctorId:this.Doctorid});
     this.router.navigate(['/patienthome']);
+   
   }
 
   getDoctor(){
+    //querying doctor using the extracted doctor id
     this.Doc = this.afs.collection('Doctors').doc(this.my_id);
     this.Doc.valueChanges().subscribe(value=>{
      this.Doctor = value.Firstname + " " + value.Lastname ;
-     this.specialist=value.Specialist;
+     this.specialist =value.Specialist;
+     this.Doctorid = value.Userid;
      this.profile=value.downloadURL;
   });
 

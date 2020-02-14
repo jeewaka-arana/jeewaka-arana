@@ -8,23 +8,32 @@ ngb-timepicker {
   transition: 0.3s;
 }
 
-.btn.btn-primary.btn-icon.btn-round{
-   background-color: white;
-   border-style:solid;
-   border-color:#f96332;
-   color: #9b7c72;
+// .btn.btn-primary.btn-icon.btn-round{
+//    background-color: white;
+//    border-style:solid;
+//    border-color:#f96332;
+//    color: #9b7c72;
  
- }
+//  }
  
- .btn.btn-primary.btn-icon.btn-round:focus{
-   background-color: #f96332;
-   color: white;
- }
+//  .btn.btn-primary.btn-icon.btn-round:focus{
+//    background-color: #f96332;
+//    color: white;
+//  }
  
- .btn.btn-primary.btn-icon.btn-round:disabled:hover{
+//  .btn.btn-primary.btn-icon.btn-round:disabled:hover{
  
-   background-color: transparent;
+//    background-color: transparent;
        
-   }
+//    }
  
+   .form-check-label{
+     margin-left: 10px;
+   }
+
+
+  .btn.btn-primary.btn-round {
+   margin-left: 20px;
+    
+  }
  

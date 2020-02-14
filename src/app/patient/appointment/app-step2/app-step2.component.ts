@@ -37,7 +37,7 @@ today: number = Date.now();
 
 
 
-//to increace and decrese date
+//to increase and decrease date
 currentmonth=this.datePipe.transform(new Date(),"MMM" );
 currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
 currentdayname =this.datePipe.transform(new Date(),"EEEE");
@@ -81,6 +81,7 @@ mydate:string;
 mytime:string;
 myid:string;
 
+
 slotdata:any;
 
   constructor(private afs:AngularFirestore,private datePipe: DatePipe,private router: Router) {
@@ -108,8 +109,13 @@ slotdata:any;
 
   increase()
   {
+
+    //small correction,it is not working or monday
     this.day=this.day+1;
     this.daynum=this.daynum+1;
+    if(this.daynum>7){
+      this.daynum=1;
+    }
     this.dayname=WeekDays[this.daynum];
     console.log(this.dayname);
    
@@ -121,9 +127,12 @@ slotdata:any;
     if(this.day>this.currentday)
     {
 
-      //need to loop between days....not yet done
+     
       this.day=this.day-1;
       this.daynum=this.daynum-1;
+      if(this.daynum <1){
+        this.daynum=7;
+      }
       this.dayname=WeekDays[this.daynum];
       console.log(this.dayname);
       this.getSlot();
@@ -145,6 +154,7 @@ slotdata:any;
       if(value){
         this.message="";
         this.myslots =[];
+       
         this.timeslot=value.Time;
         this.avail=value.avail;
        
@@ -205,6 +215,8 @@ slotdata:any;
 //   console.log(this.myslots);
 // }
 
-
+setavail(){
+  //set to false
+}
 
 }

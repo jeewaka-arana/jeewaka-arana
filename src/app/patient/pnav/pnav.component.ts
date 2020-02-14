@@ -1,6 +1,19 @@
 
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { AngularFirestoreCollection, AngularFirestoreDocument, AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export interface Appointment {
+    Day:number,
+    Year:number,
+    Month:number,
+    Time:string,
+    Doctor:string,
+    flag:boolean
+ }
+export interface Appointmentid extends Appointment { id: string; }
 
 @Component({
   selector: 'app-pnav',
@@ -10,9 +23,59 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class PnavComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
+  
+ count:number=0;
+ notifications=[];
 
-  constructor(public location: Location, private element : ElementRef) {
+
+ 
+notifyCol: AngularFirestoreCollection<Appointment>;
+notifyDoc:AngularFirestoreDocument;
+notify: Observable<Appointmentid[]>;
+
+id:any;
+
+
+  constructor(public location: Location, private element : ElementRef,private afs:AngularFirestore) {
       this.sidebarVisible = false;
+
+
+
+      this.notifyCol = afs.collection<Appointment>('Patients').doc('dskyLFWguNTM7sRAiQ3tAQJ7L1u2').collection('Appointments');
+
+     
+     
+      this.notify=this.notifyCol.snapshotChanges()
+      .pipe(
+        map(actions => actions.map(a => {
+            const id =a.payload.doc.id;
+            const data = a.payload.doc.data() as Appointment;
+            
+        return { id, ...data };
+
+        }))
+      );
+   
+
+      
+
+    
+    //   this.noti.subscribe(value=>{
+    //   if(value.flag==1){
+
+    //     this.notifications.push(value);
+    //     this.count +=1;
+        
+    //   }
+    //   });
+
+    
+
+
+
+
+
+
   }
 
   ngOnInit() {
@@ -55,4 +118,10 @@ export class PnavComponent implements OnInit {
           return false;
       }
   }
+
+test(){
+    console.log("hi");
+}
+
+
 }

@@ -11,7 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 
 import { firestore } from 'firebase';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as Rellax from 'rellax';
 
@@ -43,6 +43,24 @@ interface Doctors{
 
 
 }
+
+//appointment related interfaces
+export interface Time{
+ 
+  time:string
+}
+
+export interface avail{
+
+  avail:boolean
+}
+export interface timeslots{
+  Time:Time[],
+  avail:avail[]
+
+}
+
+export interface timeslotid extends timeslots { ap_id: string; }
 @Component({
   selector: 'app-secondpage',
   templateUrl: './secondpage.component.html',
@@ -143,6 +161,9 @@ formdata=new FormGroup({
 // imageList: any[];
 // rowIndexArray: any[];
 my_id:string;
+
+ap:Observable<timeslotid[]>;
+
   constructor( private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
     
     this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(7);
@@ -169,6 +190,16 @@ my_id:string;
     // const data=afs.collection('Doctors', ref => ref.where('Userid', '==', this.id_current));
    
  
+    this.ap=this.afs.collection<timeslots>('Doctors').doc(this.my_id).collection('Appointments').snapshotChanges()
+.pipe(
+  map(actions => actions.map(a => {
+    const ap_id =a.payload.doc.id;
+    const ap_data = a.payload.doc.data() as timeslots;
+    
+return { ap_id, ...ap_data };
+
+}))
+);
   }
 
   
@@ -184,7 +215,11 @@ my_id:string;
 });
  
 
+
  
+
+
+
  
  
   }

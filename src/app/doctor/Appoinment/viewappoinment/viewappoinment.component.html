@@ -109,42 +109,74 @@
   </div>
 </div>
 
+<!-- notification toast -->
+<ngb-toast *ngIf="show" header="Success" [autohide]="false" (hide)="close()">
+  Appointment is accepted.
+</ngb-toast>
+
 <br><br><br>
-<div>
-
-
-    <ul *ngFor="let app of apps | async"> 
-<div class="card" style="width: 50rem;margin-left: 25px;" >
-<div class="card-body">
-  
-   
-  <div class="row">
-    <div class="col col-md-2">
-        
-            <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised" height="150px;" width="150px">
-    </div>
-     
-        <div class="col col-md-13"> 
-           <h5>Patient Name -{{app.pname}}</h5> 
-           <h5>Telephone Number -{{app.tp}} </h5> 
-           <h5>Disease -{{app.disease}}</h5>
-           <h5>Date - {{app.date}}</h5>
-           <h5>Time - {{app.time}}</h5>
-            
-            <button  class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-2_like" (click)="accept()"></i> Accept</button>
-            <button   class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons shopping_basket" (click)="reject"></i> Reject</button>
-            </div>
-  </div>
-
+<div class="mytab">
+<ngb-tabset [destroyOnHide]="false" >
+  <ngb-tab title="New Appointments">
     
+    <ng-template ngbTabContent>
+      <div class="tabcontainer">
+      <br><br>
+      <ul *ngFor="let p of pat_verify | async"> 
+        <div class="card" style="width: 50rem;margin-left: 25px;" >
+        <div class="card-body">
+          
+           
+          <div class="row">
+          
+             
+                <div class="col col-md-13"> 
+                  <h5>Date - {{p.Day}}/{{p.Month}}/{{p.Year}}</h5>
+                  <h5>Time - {{p.Time}}</h5>
+                  <h5>Patient Name :{{p.PatientName}}</h5> 
+                  <h5>Telephone Number -{{p.PhoneNumber}} </h5> 
+                  
+                    
+                    <button  class="btn btn-primary btn-round ico" type="button" (click)="accept(p.id,p)"><i class="now-ui-icons ui-2_like" ></i> Accept</button>
+                    <button   class="btn btn-primary btn-round ico" type="button" (click)="reject()"><i class="now-ui-icons shopping_basket" ></i> Reject</button>
+                    </div>
+          </div>
+        
+            
+        
+        
+        </div>
+        
+        </div>
+        
+        </ul>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Verified">
+    
+    <ng-template ngbTabContent>
+      <div class="tabcontainer">
+        <ul *ngFor="let p of patObserve | async">
+               <div>
+                Date - {{p.Date}}<br>
+                Time - {{p.Time}}<br>
+                Patient Name :{{p.PatientName}}<br>
+                Telephone Number -{{p.PhoneNumber}}<br>
+                <hr>
+                
+               </div>
+          </ul>
+       
+      </div>
 
-
+     
+    </ng-template>
+  </ngb-tab>
+  
+</ngb-tabset>
 </div>
 
-</div>
-
-</ul>
 
 
-</div>
 <app-dfooter></app-dfooter>

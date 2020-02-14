@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -137,7 +138,8 @@ import { ComplainsComponent } from './admindashboard/complains/complains.compone
 import { HandleaccountsComponent } from './admindashboard/handleaccounts/handleaccounts.component';
 
 
-
+//firestore functions
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 
 
@@ -232,17 +234,18 @@ import { HandleaccountsComponent } from './admindashboard/handleaccounts/handlea
         HandleaccountsComponent,
         // ChartsComponent,
       
-        
+        ApplistComponent ,
+        SlotsComponent
         
        
        
     ],
     imports: [
        
-         IgxTimePickerModule,
+        IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,
-        NgbModule.forRoot(),
+        NgbModule,
         FormsModule,
         RouterModule,
         AppRoutingModule,
@@ -254,6 +257,8 @@ import { HandleaccountsComponent } from './admindashboard/handleaccounts/handlea
         AngularFireAuthModule,
         AngularFireStorageModule,
         AngularFireDatabaseModule,
+        ChartsModule ,
+        AngularFireFunctionsModule ,
         //   NgMultiSelectDropDownModule.forRoot(),
 
         BrowserModule,

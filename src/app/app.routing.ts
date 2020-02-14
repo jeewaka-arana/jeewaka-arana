@@ -92,6 +92,10 @@ import { SlotsComponent } from './patient/appointment/slots/slots.component';
 import { TimepickComponent } from './doctor/timepick/timepick.component';
 
 
+//notification testing
+import {PnavComponent} from './patient/pnav/pnav.component';
+
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -146,6 +150,9 @@ const routes: Routes =[
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
     {path:'report/:id',component:ReportComponent},
+
+    //testing
+    {path:'nav',component:PnavComponent},
    
 
 

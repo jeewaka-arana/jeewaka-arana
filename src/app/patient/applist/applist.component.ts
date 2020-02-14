@@ -44,6 +44,7 @@ export class ApplistComponent implements OnInit {
     // console.log(this.atDoc);
     this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Month')).valueChanges().subscribe(results => {
       this.results = results;
+      console.log(this.results);
       this.applyFilters();
     })
   }
