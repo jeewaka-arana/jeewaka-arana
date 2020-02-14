@@ -52,6 +52,10 @@ export class BarchartComponent implements OnInit {
   ];
 
 
+
+
+
+  
   barChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   barChartOptions: ChartOptions = {

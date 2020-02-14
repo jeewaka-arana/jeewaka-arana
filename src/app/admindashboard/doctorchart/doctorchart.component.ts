@@ -44,7 +44,7 @@ export class DoctorchartComponent implements OnInit {
 
         
       ],
-      label: 'Number Of Patient'
+      label: 'Number Of Doctors'
     },
   ];
 
@@ -58,7 +58,7 @@ export class DoctorchartComponent implements OnInit {
   lineChartColors: Color[] = [
     {
       borderColor: 'black',
-      backgroundColor: 'lightblue',
+      backgroundColor: '#191919',
     },
   ];
 
@@ -134,9 +134,7 @@ export class DoctorchartComponent implements OnInit {
 
       });
       //  this.jan=this.jan;
-      //  this.feb=this.feb;
-      //  this.mar=this.mar;
-      //  this.apr=this.apr;
+      //  this.feb=this
       this.lineChartData = [
         {
           data: [
