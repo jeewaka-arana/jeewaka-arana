@@ -61,7 +61,8 @@
     <td>Dr.{{d.Firstname}} {{d.Lastname}}</td>
     
     <td>{{d.Email}}</td>
-    <td>{{d.msg}}</td>
+    <td><textarea  cols="30" rows="3">{{d.msg}}</textarea></td>
+    <!-- <td>{{d.msg}}</td> -->
     <td><button  class="btn btn-primary btn-round" type="button" (click)="deleteDoctorcomplains(d.Userid) ">Delete</button></td>
  </tr>
 
@@ -91,7 +92,8 @@
     
     <td>{{p.name}}</td>
     <td>{{p.email}}</td>
-    <td>{{p.issue}}</td>
+    <td><textarea  cols="30" rows="3">{{p.issue}}</textarea></td>
+    <td><button  class="btn btn-primary btn-round" type="button" (click)="deletePatientcomplains(d.Userid) ">Delete</button></td>
     
  </tr>
 

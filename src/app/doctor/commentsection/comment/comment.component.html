@@ -34,24 +34,41 @@
           
   <br><br><br><br>
 
- 
+  {{x}}
 <ul *ngFor="let post$ of post | async" id="opening">
-  <!-- <div class="card" style="width:50rem;margin-left:4px;margin-top: 1px;;">  -->
-  <div (click)="getPost(post.id)">
+  <!-- <div *ngIf="post$.content"> -->
+  
+  <!-- <div (click)="getPost(post.id)"> -->
     <strong>Commented on {{today | date}}  - {{ post$.title }}  </strong> <br> 
       <img src="https://www.pngkit.com/png/detail/115-1150342_user-avatar-icon-iconos-de-mujeres-a-color.png" style="height:8rem; width:8rem">
       <span style="margin-left: 5rem;">{{ post$.content }}</span>
       <br>
       <br>
-      
-    
-    
-   
-    
-     
-  </div>
-  
-<!-- </div> -->
+    <!-- </div>   -->
+
+
+  <!-- <h5>jhdhjfjfj</h5> -->
+<!-- <div *ngIf="x==0">
+  <span style="margin-left: 7rem;">No Comments Yet</span>
+
+</div> -->
+<!-- <h3>qqqqqq</h3> -->
+
+
+
+
+
+
+
 </ul>
+
+
+
+
+
+
+
+
+
 
 </div>
