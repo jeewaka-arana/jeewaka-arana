@@ -1,19 +1,8 @@
 <app-pnav></app-pnav>
 <div class="wrapper">
-  <div class="page-header clear-filter" filter-color="orange">
-    <div class="page-header-image rellax-header" data-rellax-speed="-8"
-      style="background-image: url('assets/img/Herbal-Medicine-1.jpg');">
-    </div>
-    <div class="container">
-      <div data-aos="zoom-in" data-aos-delay="50" ata-aos-duration="1000" data-aos-easing="ease-in-out"
-        class="content-center">
-        <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27%>
-        <br>
-        <br>
+  
         <h1 class="title">Looking for a doctor?</h1>
-      </div>
-    </div>
-  </div>
+     
 
   <div class="section section-navbars">
     <div class="container" id="menu-dropdown">
@@ -25,17 +14,12 @@
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <div ngbDropdown class="dropdown">
-                    <a class="nav-link dropdown-toggle" ngbDropdownToggle>
+                    <a (click)="getToday()" class="nav-link">
                       <p>
-                        Availability
+                        Doctors Available Today
                       </p>
+                      <i class="now-ui-icons users_single-02"></i>
                     </a>
-                    <div ngbDropdownMenu class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Available Any Day</a>
-                      <a class="dropdown-item" href="#">Available Today</a>
-                      <a class="dropdown-item" href="#">Available in next 3 days</a>
-                      <a class="dropdown-item" href="#">Available coming weekend</a>
-                    </div>
                   </div>
                 </li>
 
@@ -104,51 +88,9 @@
             <input type="text" [(ngModel)]="City" (keydown)="filterArea('City',City)" class="form-control"
               placeholder="zip code or city" (focus)="focus=true" (blur)="focus=false">
           </div>
-          <!-- <div class="row"> -->
-          <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send()"> sort low to high</button>
-        <button class="btn btn-primary btn-simple btn-round" type="button" (click)="send2()"> sort high to low</button> -->
-          <!-- <button class="btn btn-primary btn-simple btn-round" type="button" (click)="createPoint()">Create Me</button> -->
-          <button class="btn btn-primary btn-simple btn-round" type="button" routerLink="/adsearch">Advance
-            search</button>
-          <!-- <button (click)="createPoint1(38, -119)">Create Me 1</button>  -->
-          <!-- </div> -->
         </div>
-        <!-- <div class="row">
-      <app-starreview [doctorId]="doctorId" [patientId]="patientId"></app-starreview>
-    </div> -->
 
       </div>
-
-      <!-- <div>
-  <mat-form-field>
-    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-  </mat-form-field>
-  
-  <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let name of names" [value]="option">{{name.Firstname}} {{name.Lastname}}</mat-option>
-  </mat-autocomplete>
-  <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let name of names" [value]="option">
-              {{name.Firstname}} {{name.Lastname}}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-    </form>
-</div> -->
-
-      <!-- <div>
-<ul *ngFor = "let name of names" >
-  
-    {{name.Firstname}} {{name.Lastname}}
-  
-</ul>
-<div *ngIf = "names?.length == 0">
-  <p>Sorry, not found</p>
-</div>
-</div> -->
 
     </div>
   </div>
@@ -162,7 +104,7 @@
           <ul *ngFor="let results of filteredNames | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
             <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
               class="card">
-              <div class="row">
+              <div class="row col-lg-12">
                 <div class="img-btn">
                   <img src="{{results.downloadURL}}" alt="Profile Image" class="img-fluid img-raised">
                 </div>
@@ -172,8 +114,10 @@
                   <p>{{results.Email}}</p>
                   <p>Years as specialist: {{results.ExpYears}} </p>
                   <p>Address: {{results.City}}</p>
-                  <p> Contact no: {{results.PhoneNumber}}</p>
-                  <p>{{results.position}}</p>
+                  <p>Contact no: {{results.PhoneNumber}}</p>
+                  <p>Position: {{results.Position}}</p>
+                 </div> 
+                 <div class="row col-lg-12">
                   <button [routerLink]="['/doctorview',results.Userid]" class="btn btn-primary btn-round ico"
                     type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
                   <button routerLink="/appstep2" class="btn btn-primary btn-round ico" type="button"><i

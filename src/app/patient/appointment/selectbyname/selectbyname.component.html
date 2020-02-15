@@ -1,5 +1,26 @@
 <app-pnav></app-pnav>
 <div class="wrapper">
+    <!-- <div class="page-header clear-filter" filter-color="orange">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8"
+            style="background-image: url('assets/img/bg6.jpg');">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <h1 class="title">Schedule an Appointment</h1>
+                <div class="text-center">
+                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
     
 
     <div class="container">
@@ -34,7 +55,7 @@
                     Radio is off
                 </label>
             </div> -->
-                <label class="form-check-label">
+                Firstname: <label class="form-check-label">
                     <input class="form-check-input" type="radio" (change)="selectAll()" [formControl]="letter"
                         value="ALL" [checked]="true">
                     <span class="form-check-sign"></span>ALL
@@ -179,11 +200,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-20 col-xl-10">
-
+<!-- <div *ngIf="letter=='ALL'"> -->
                         <ul
-                            *ngFor="let result of farray  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                            *ngFor="let result of filteredNames  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                             <div class="card">
-                                <div class="row">
+                             <div class="row">
                                     <div class="img-btn">
                                         <img src="assets/img/logo.png" alt="Thumbnail Image"
                                             class="img-fluid img-raised">
@@ -201,6 +222,30 @@
                                 </div>
                             </div>
                         </ul>
+                    <!-- </div> -->
+                    <!-- <div  *ngIf="letter!='ALL'">
+                    <ul
+                    *ngFor="let result of farray  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                    <div class="card">
+                     <div class="row">
+                            <div class="img-btn">
+                                <img src="assets/img/logo.png" alt="Thumbnail Image"
+                                    class="img-fluid img-raised">
+                            </div>
+                            <div class="column">
+                                <h4 [routerLink]="['/doctorview',result.Userid]">Dr. {{result.Firstname}}
+                                    {{result.Lastname}}</h4>
+                                <button [routerLink]="['/doctorview',result.Userid]"
+                                    class="btn btn-primary btn-round ico" type="button"><i
+                                        class="now-ui-icons users_single-02"></i> View Profile</button>
+                                <button routerLink="/appstep2" class="btn btn-primary btn-round ico"
+                                    type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div> -->
                     </div>
                 </div>
             </div>

@@ -116,7 +116,7 @@ import { AfooterComponent } from './admin/afooter/afooter.component';
 import { PnavComponent } from './patient/pnav/pnav.component';
 import { DocpnavComponent } from './doctor/docpnav/docpnav.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
-// import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
+import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 
@@ -127,6 +127,9 @@ import { SlotsComponent } from './patient/appointment/slots/slots.component';
 import { ApplistComponent } from './patient/applist/applist.component';
 
 
+import { ChartsModule } from 'ng2-charts';
+import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+import { AvailComponent } from './patient/avail/avail.component';
 
 
 import { ChartsModule } from 'ng2-charts';
@@ -215,7 +218,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
         PnavComponent,
         DocpnavComponent,
         PcontactUsComponent,
-        // PaboutUsComponent,
+        PaboutUsComponent,
         SecondpageComponent,
         AdminLoginComponent,
     
@@ -231,6 +234,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
         //DlinechartComponent,
        
         DlinechartComponent,
+        AvailComponent,
         PatientchartComponent,
         DoctorchartComponent,
         ComplainsComponent,
@@ -247,8 +251,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
        
     ],
     imports: [
-       
-        IgxTimePickerModule,
+        ChartsModule,
+         IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,
         NgbModule,

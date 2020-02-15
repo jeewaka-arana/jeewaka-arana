@@ -9,6 +9,7 @@ import * as firebase from 'firebase/app';
 import { FormControl } from '@angular/forms';
 import { environment } from 'environments/environment';
 import { Router } from '@angular/router';
+import { DatePipe, formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-applist',
@@ -17,23 +18,48 @@ import { Router } from '@angular/router';
 })
 export class ApplistComponent implements OnInit {
 
+  currentmonth=parseInt(this.datePipe.transform(new Date(),"MM"));
+  currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
+  currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
+
   results: any;
   filteredNames: any[] = [];
+  applist=[];
 
   page = 1;
-  pageSize = 2;
+  pageSize = 5;
 
   my_id;
   patDoc: AngularFirestoreCollection;
   atDoc: AngularFirestoreDocument;
   pat: any;
-
+  
   filters = {}
 
 
-  constructor(private afs: AngularFirestore, private router: Router) { 
+  mineDoc:Observable<any>;
+
+  constructor(private afs: AngularFirestore, private router: Router, private datePipe: DatePipe) { 
     this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(9);
     console.log(this.my_id);
+
+
+
+ this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Day').where('Day',">=",this.currentday)).valueChanges().subscribe(results => {
+      this.results = results;
+      console.log(results);
+      results.forEach(element => {
+       if(element.Month >= this.currentmonth)
+       {
+         if(element.Year >= this.currentyear){
+          this.applist.push(element);
+         }
+       }
+      });
+      this.applyFilters();
+    
+    })
+    console.log(this.applist);
   }
 
   ngOnInit() {
@@ -42,6 +68,11 @@ export class ApplistComponent implements OnInit {
     // console.log(this.patDoc);
     // this.atDoc = this.afs.collection('Patients').doc(this.my_id);
     // console.log(this.atDoc);
+    // this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.where('Year',">=",this.currentyear)).valueChanges().subscribe(results => {
+    //   this.results = results;
+    //   this.applyFilters();
+    
+    // })
     this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Month')).valueChanges().subscribe(results => {
       this.results = results;
       console.log(this.results);

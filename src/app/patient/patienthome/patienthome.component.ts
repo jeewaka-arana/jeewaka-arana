@@ -7,6 +7,7 @@ import { Article } from 'app/core/models/article.model';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { DatePipe } from '@angular/common';
+import * as firebase from 'firebase';
 
 
 interface Post {
@@ -26,12 +27,18 @@ export class PatienthomeComponent implements OnInit {
 currentmonth=parseInt(this.datePipe.transform(new Date(),"MM"));
 currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
 currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
+currenthour=parseInt(this.datePipe.transform(new Date(),"HH"));
+currentminute=parseInt(this.datePipe.transform(new Date(),"mm"));
+currentsecond=parseInt(this.datePipe.transform(new Date(),"ss"));
 
   // results: any;
   results: any[] = [];
   issues: any[] = [];
   postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<Post[]>;
+
+  page = 1;
+  pageSize = 2;
 
   name: string;
   email: string;
@@ -51,14 +58,18 @@ sessionid:string;
   ngOnInit() {
     // this.postsCol = this.afs.collection('Article')
     // this.posts = this.postsCol.valueChanges();
-    this.afs.collection('Article',ref => ref.limit(4)).valueChanges().subscribe(results => {
+    this.afs.collection('Article',ref => ref.limit(20)).valueChanges().subscribe(results => {
       this.results = results;
       
     })
-    this.afs.collection('Issues',ref => ref.limit(4)).valueChanges().subscribe(issues => {
-      this.issues = issues;
+    // this.afs.collection('Article',ref => ref.orderBy("time", "desc")).valueChanges().subscribe(results => {
+    //   this.results = results;
       
-    })
+    // })
+    // this.afs.collection('Issues',ref => ref.orderBy("time", "desc")).valueChanges().subscribe(issues => {
+    //   this.issues = issues;
+      
+    // })
     this.buildForm();
   }
  
@@ -120,7 +131,17 @@ sessionid:string;
   };
 
   addIssue(){
-    this.afs.collection('Issues').add({'name': this.name, 'email': this.email, 'issue': this.issue, 'Day': this.currentday, 'Month': this.currentmonth, 'Year': this.currentyear});
+    this.afs.collection('Issues').add({
+      time: firebase.firestore.FieldValue.serverTimestamp(),
+      'name': this.name,
+       'email': this.email, 
+       'issue': this.issue,
+        'Day': this.currentday, 
+        'Month': this.currentmonth,
+         'Year': this.currentyear, 
+         'Hour': this.currenthour,
+          'Minute': this.currentminute,
+           'Second': this.currentsecond});
   }
 
 }

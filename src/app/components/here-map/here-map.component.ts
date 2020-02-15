@@ -74,7 +74,7 @@ public ngAfterViewInit() {
 // }
 
 private dropMarker() {
-let marker = new H.map.Marker({ "lat": "6.646072", "lng":"80.076523" });
+let marker = new H.map.Marker({ "lat": "6.6447002621030515", "lng":"80.07340432967197" });
 marker.setData("<p>" + "horana" + "</p>");
 marker.addEventListener('tap', event => {
   let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {

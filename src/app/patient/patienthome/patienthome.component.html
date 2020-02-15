@@ -166,8 +166,8 @@
         <h2 class="title text-center">Recent Articles</h2>
         <div class="container">
             <div class="row">
-                <div class="column">
-                    <ul *ngFor="let result of results">
+                <div class="col-lg-12 text-center col-md-8 ml-auto mr-auto">
+                    <ul *ngFor="let result of results  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                         <ul class="articles">
                             <li>
                                 <article>
@@ -186,6 +186,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-12">
+
+            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length" class="pagination-primary">
+            </ngb-pagination>
+        
+          </div>
     </div>
     <!-- <div data-aos="fade-up" data-aos-delay="54" data-aos-duration="1000" data-aos-easing="ease-in-out"
         class="section-story-overview">
@@ -201,6 +207,7 @@
                                     <div class="l-pad-content">
                                         <h4>{{issue.name}}</h4>
                                         <p>{{issue.Day}} / {{issue.Month}} / {{issue.Year}}</p>
+                                        <p>{{issue.Hour}} : {{issue.Minute}} : {{issue.Second}}</p>
                                     </div>
                                 </article>
                             </li>
