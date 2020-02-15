@@ -183,6 +183,7 @@ const routes: Routes =[
 {path:'docAppoinment',component:DocAppoinmentComponent},
 {path:'docAppoinment/:id',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
+{path:'viewappoinment/:id',component:ViewappoinmentComponent},
 {path:'report',component:ReportComponent},
 {path:'articles',component:ArticlesComponent},
 {path:'admin/notification',component:NotificationComponent},

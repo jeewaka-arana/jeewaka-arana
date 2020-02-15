@@ -1,29 +1,26 @@
 
 <div class="card0">
-   <div class="card-body" style="background-color: #505050;"> 
-      <img class="logo" src="assets/img/newlogo.png" alt="logo" height=19% width=19% style="margin-left: 14rem;"> 
-      <h4 style="margin-left:22rem;font-weight: bold;color: white;" >{{today | date:'fullDate'}}</h4>
+   <div class="card-body" style="background-color: white;"> 
+      <img class="logo" src="assets/img/new3logo.png" alt="logo" height=22% width=22% style="margin-left:28rem;margin-top:1rem;"> 
+      <h4 style="margin-left:28rem;font-weight: bold;color: #f96332;" >{{today | date:'fullDate'}}</h4>
    </div>
 
 </div> 
 
 
 
-<div class="sidenav" style="background-color: #505050;">
+<div class="sidenav" style="background-color: #f96332;">
 
-  <img src="{{post$.downloadURL}}" alt="Image">
+  <img src="{{post$.downloadURL}}" alt="Image" style="width: 11rem;height: 12rem;">
   <br><br>
-  <a routerLink="/index" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons business_bank"></i>   Home</a>
+  <a routerLink="/index" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons business_bank"></i>   Home</a><br>
 
-  <a routerLink="/spage" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons business_briefcase-24"></i>   Appoinments</a>
-  <a [routerLink]="['/complain',my_id]" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons text_align-center"></i>   Complains</a>
+  <a routerLink="/spage" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons business_briefcase-24"></i>   Appoinments</a><br>
+  <a [routerLink]="['/complain',my_id]" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons text_align-center"></i>   Complains</a><br>
 
-  <a  [routerLink]="['/spage',my_id]" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons users_circle-08"></i>  Profile</a>
+  <a  [routerLink]="['/spage',my_id]" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons users_circle-08"></i>  Profile</a><br>
 
-
-
-
-  <a routerLink="/index" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons gestures_tap-01"></i>   Sign Out</a>
+ <a routerLink="/index" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons gestures_tap-01"></i>   Sign Out</a><br>
    <!-- <button class="dropdown-btn">Dropdown 
      <i class="fa fa-caret-down">ffff</i>
    </button> -->

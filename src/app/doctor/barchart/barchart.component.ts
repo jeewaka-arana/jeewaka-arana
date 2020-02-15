@@ -65,7 +65,7 @@ export class BarchartComponent implements OnInit {
   barChartColors: Color[] = [
     {
       borderColor: '#800000',
-      backgroundColor: '#505050',
+      backgroundColor: '#f96332',
     },
   ];
 
@@ -134,8 +134,8 @@ export class BarchartComponent implements OnInit {
 
 
 
-    this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data));
-    this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
+    this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('Appointments', ref => ref.where('year', '==', +data));
+    this.afs.collection('Doctors').doc(this.userid).collection('Appointments', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
 
 
       this.jan=0;

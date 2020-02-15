@@ -97,7 +97,8 @@ doctorcount:Observable<any>;
 
 
     
-    this.countPatForCol=this.afs.collection('Patients', ref => ref.where('Country','<','Srilanka').where('Country','>','Srilanka'));
+     this.countPatForCol=this.afs.collection('Patients', ref => ref.where('Country','<','Srilanka'));
+   // this.countPatForCol=this.afs.collection('Patients', ref => ref.where('Country','','Srilanka'));
     this.countPatFor=this.countPatForCol.valueChanges();
     this.countPatFor.subscribe((datacount) => { this.cf = datacount.length });
 
