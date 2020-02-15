@@ -57,8 +57,8 @@ export class DoctorchartComponent implements OnInit {
 
  barChartColors: Color[] = [
     {
-      borderColor: 'black',
-      backgroundColor: '#191919',
+      borderColor: '#d6f5f5',
+      backgroundColor: '#f96332',
     },
   ];
 

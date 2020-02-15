@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
   <div class="container">
-    <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+    <!-- <img src="assets/img/herbalicon.png" height="30px" width="30px"  /> -->
       <div class="navbar-translate">
           <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
              
@@ -80,7 +80,7 @@
 <div class="container">
 
   <div class="content-center brand">
-    <img class="center" src="assets/img/new2logo.png" alt="logo" >
+    <img class="logo" src="assets/img/new3logo.png" alt="logo" height=22% width=22% style="margin-left:27rem;margin-top:5rem;"> 
     
 </div>
 </div> 
@@ -91,14 +91,6 @@
     <div class="row">
       <div class="col-md-20 col-xl-10">
 
-<!-- 
-        <div class="container">
-
-          <div class="content-center brand">
-            <img class="center" src="assets/img/new2logo.png" alt="logo" >
-            
-        </div>
-        </div>  -->
 
 
         <div class="row ">
@@ -125,11 +117,11 @@
               
 
                  </div>
-                 </div>
+                  </div>
         </div>
                 
           </div>
-   
+    
         
 
         
@@ -148,7 +140,7 @@
                  <span style="font-size: 1.5rem;"> {{post$.Specialist}}</span><br><br>
                 </div>
 
-</div>
+
 
             
 
@@ -163,7 +155,7 @@
                  <span style="font-size: 1.5rem;margin-left: 25rem;">{{ post$.No}},</span><br>
                  <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.Lane1}},</span><br>
                  <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.Lane2}},</span><br>
-                 <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.City}},</span><br>
+                 <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.City}}</span><br>
                  
                 </div>
                 <br>
@@ -179,42 +171,28 @@
                 </div>
                  
                 
+                <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                  <label class="col-lg-6 control-label"><span style="font-size: 1.5rem;font-weight: bold; ">Available Hours  </span> </label>
+                  <!-- <span style="font-size: 1.5rem;"> {{post$.}}</span><br><br> -->
+                 </div>
+
+
+
 
 </div>
 
-<!-- <div  class="mytimetb">
-  <div *ngFor="let n of ap|async">
-{{n.ap_id}}
 
-  </div>
+    
+
+ 
+<!--                 
+</div>
+
+
+
+
+
 </div> -->
-
-</div>
-
-<div data-aos="zoom-out-down">
-    <div class="avail">
-      Available hours:<br>
-      Monday: 8 - 12<br>
-      Wednesday: 9 - 12<br>
-      Friday: 9 - 12<br>
-      Sunday: 8 - 5<br>
-    </div>
-    
-
-           
-<!--             
-  <div *ngFor="let n of ap|async">
-    {{n.ap_id}}
-    
-      </div>    -->
-                
-</div>
-
-
-
-
-
-</div>
 
 
 
@@ -224,15 +202,24 @@
 
 <!-- <h4>gggggggg</h4> -->
 
+<div>
+
+  <app-comment id="{{my_id}}"></app-comment> 
+</div>
+
       </div>
     </div>
 
   </div>
 </div>
+
+
 <div class="col-md-10">
 
   
 
 </div>
+
+
 
 <app-pfooter></app-pfooter>
