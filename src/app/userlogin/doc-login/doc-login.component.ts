@@ -11,7 +11,7 @@ export class DocLoginComponent implements OnInit {
 
   authError: any;
 
-  constructor(private auth: AuthService,private afAuth:AngularFireAuth) { }
+  constructor(public auth: AuthService,private afAuth:AngularFireAuth) { }
   uidmy:string;
   ngOnInit() {
     this.auth.eventAuthError$.subscribe( data => {

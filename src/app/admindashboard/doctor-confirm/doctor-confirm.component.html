@@ -25,5 +25,57 @@
   </div>
   
 <div class="main">
+   <div class="list-group users-list">
+      <div *ngFor="let doc of doc_verify | async" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="row">
+             <div class="col col-md-2 image-col">
+                  <img class="image" src="https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg">
+              </div>
+              <div class="col col-md-8 text-col">
+                 <h5 class="mb-1"> {{doc.firstName}} {{doc.lastName}}</h5>
+                  <small>City: {{doc.city}}</small>
+                  <small>Position: {{doc.position}}</small>
+             
+              </div>
+              <button  class="btn btn-primary btn-round ico" type="button" (click)="accept(doc)"><i class="now-ui-icons ui-2_like" ></i> Accept</button>
+              <button   class="btn btn-primary btn-round ico" type="button" (click)="reject()"><i class="now-ui-icons shopping_basket" ></i> Reject</button>
+             
+              <!--<div class="col col-md-2 actions-col">-->
 
+               <!-- modal pop up -->
+                <!-- <button class="btn btn-primary" (click)="open(classic,'' , '')">
+                    View profile
+                   </button>
+                   <ng-template #classic let-c="close" let-d="dismiss">
+                       <div class="modal-header justify-content-center">
+                           <button type="button" class="close" (click)="d('Cross click')">
+                               <i class="now-ui-icons ui-1_simple-remove"></i>
+                           </button>
+                           <h4 class="title title-up">Dr.{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h4>
+                       </div>
+                       <div class="modal-body">
+                          
+                         <p><b>Position : </b>{{item.payload.doc.data().position}} </p>
+                         <p><b>City : </b>{{item.payload.doc.data().city}} </p>
+                         <p><b>Experienced Years : </b>{{item.payload.doc.data().years}} </p>
+                         <p><b>Email : </b>{{item.payload.doc.data().email}}</p>
+                         <p><b>Certification : <a href="https://firebasestorage.googleapis.com/v0/b/jeevaka-arana.appspot.com/o/Certificates%2F1573625998831_Web_Authoring_HTML_notes.pdf?alt=media&token=6386b77d-82a8-4a27-a03a-29a46b5786db" download="Certification">click here to download</a></b></p>
+                         <p><b>Registration Number: </b>{{item.payload.doc.data().regnumber}}</p>
+                         <p><b>Specialist : </b>{{item.payload.doc.data().specialist}}</p>
+                         <p><b>Phone Number : </b>{{item.payload.doc.data().phone}}</p>
+       
+
+                        </div>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-danger"  (click)="accept(item.payload.doc.id)" >Reject</button>
+                           <button type="button" class="btn btn-default" (click)="c('Close click')">Accept</button>
+                       </div>
+                   </ng-template> -->
+               <!--</div>-->
+          </div>
+      </div>
+  </div>
+
+   
+</div>
 

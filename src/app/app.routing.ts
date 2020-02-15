@@ -92,6 +92,7 @@ import {DoctorConfirmComponent} from './admindashboard/doctor-confirm/doctor-con
 
 //notification testing
 import {PnavComponent} from './patient/pnav/pnav.component';
+import { AuthGuard } from './core/auth.guard';
 
 
 const routes: Routes =[
@@ -105,7 +106,7 @@ const routes: Routes =[
     { path: 'home', component:HomeComponent },
     { path: 'doctorview/:id', component: DoctorprofilepageComponent},
     { path: 'doctorview', component: DoctorprofilepageComponent},
-    { path: 'doctoradmin', component:DoctoradminpageComponent },
+    { path: 'doctoradmin', component:DoctoradminpageComponent  },
     { path: 'doctoradmin/:id', component:DoctoradminpageComponent },
     {path:'report/:id',component:ReportComponent},
     { path: 'signup/sign-patient', component:SignPatientComponent },

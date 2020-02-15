@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 //to change month to number
 export enum month{
@@ -37,7 +38,7 @@ emonth:any;
 
 form;
 
-
+Fulldate:any;
 
   constructor( private formBuilder: FormBuilder,private afs:AngularFirestore, private router: Router) { 
     
@@ -63,8 +64,10 @@ form;
     this.Year=parseInt(this.mydate[2]);
 
     this.emonth=month[this.Month];
-    
-    
+    this.Fulldate=this.Year+"/"+this.Month+"/"+this.Day;
+
+    //this.Fulldate.setFullYear(this.Year,parseInt(this.Month),this.Day);
+   
 
 
     
@@ -99,7 +102,7 @@ form;
   onSubmit(data) {
 
     //adding to cache database
- this.afs.collection('AppointmentCache').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,DoctorName:this.Doctor,DoctorId:this.Doctorid});
+ this.afs.collection('AppointmentCache').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,DoctorName:this.Doctor,DoctorId:this.Doctorid,Fulldate:this.Fulldate});
     this.router.navigate(['/patienthome']);
    
   }

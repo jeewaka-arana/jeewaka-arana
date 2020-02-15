@@ -5,6 +5,13 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { DatePipe } from '@angular/common';
 
+//session
+
+
+import { auth } from 'firebase/app';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,15 +21,35 @@ currentmonth=parseInt(this.datePipe.transform(new Date(),"MM" ));
 currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
 currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
 
-  private eventAuthError = new BehaviorSubject<string>("");
-  eventAuthError$ = this.eventAuthError.asObservable();
+private eventAuthError = new BehaviorSubject<string>("");
+eventAuthError$ = this.eventAuthError.asObservable();
 
-  newUser: any;
+newUser: any;
+user$: Observable<any>;
 
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFirestore,
-    private router: Router,private datePipe: DatePipe) { }
+    private router: Router,private datePipe: DatePipe) { 
+
+
+ // Get the auth state, then fetch the Firestore user document or return null
+ this.user$ = this.afAuth.authState.pipe(
+  switchMap(user => {
+      // Logged in
+    if (user) {
+      return this.db.doc<any>('Doctors/${user.uid}').valueChanges();
+    } else {
+      // Logged out
+      return of(null);
+    }
+  })
+)
+
+
+
+      
+    }
 
   get UserState() {
     return this.afAuth.authState;
@@ -62,6 +89,7 @@ if (user) {
         if(userCredential) {
           this.router.navigate(['/admin']);
         }
+      
       })
   }
 
@@ -113,7 +141,7 @@ if (user) {
         this.insertDoctorData(userCredential)
           .then(() => {
             this.SendVerificationMail();
-            this.router.navigate(['/default']);
+            
           });
       })
       .catch( error => {
@@ -164,6 +192,10 @@ if (user) {
     return this.afAuth.auth.signOut();
   }
 
+  async signOut() {
+    await this.afAuth.auth.signOut();
+    this.router.navigate(['/']);
+  }
 
  get userId() {
     return this.afAuth.auth.currentUser.uid;

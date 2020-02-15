@@ -1,14 +1,15 @@
 export class Patient {
     
-    PatId:String;
-    FirstName:String;
-    LastName:String;
-    UserName:String;
-    Email:String;
-    Phone:Number;
-    NIC:String;
-    Country:String;
-    City:String;
-    Password:String;
+    Userid:string;
+    FirstName:string;
+    LastName:string;
+    Email:string;
+    PhoneNumber:number;
+    NIC:string;
+    Country:string;
+    City:string;
+    Day:number;
+    Month:number;
+    Year:number;
 
 }

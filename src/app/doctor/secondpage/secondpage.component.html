@@ -148,9 +148,7 @@
                  <span style="font-size: 1.5rem;"> {{post$.Specialist}}</span><br><br>
                 </div>
 
-</div>
-
-            
+                
 
                <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                  <label class="col-lg-6 control-label"><span style="font-size: 1.5rem;font-weight: bold; ">Status  </span> </label>
@@ -178,7 +176,14 @@
                  <span style="font-size: 1.5rem;"> {{post$.Email}}</span><br><br>
                 </div>
                  
+                <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                  <label class="col-lg-6 control-label"><span style="font-size: 1.5rem;font-weight: bold; ">Available Hours</span> </label>
+                  <div *ngFor="let slot of ap |async">
+                  <span style="font-size: 1.5rem;"> {{slot.ap_id}}:{{slot.Time[0]}}-{{slot.Time[slot.n-1]}}</span><br><br>
+                  </div>
+                 </div>
                 
+               
 
 </div>
 
@@ -192,14 +197,14 @@
 </div>
 
 <div data-aos="zoom-out-down">
-    <div class="avail">
+    <!-- <div class="avail">
       Available hours:<br>
       Monday: 8 - 12<br>
       Wednesday: 9 - 12<br>
       Friday: 9 - 12<br>
       Sunday: 8 - 5<br>
     </div>
-    
+     -->
 
            
 <!--             
@@ -227,8 +232,8 @@
       </div>
     </div>
 
-  </div>
-</div>
+ 
+
 <div class="col-md-10">
 
   

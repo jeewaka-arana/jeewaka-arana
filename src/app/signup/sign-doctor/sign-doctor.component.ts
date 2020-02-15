@@ -4,6 +4,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { CrudService } from 'app/core/crud.service';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 
 
@@ -48,7 +49,7 @@ Specialist:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic
    // State for dropzone CSS toggling
    isHovering: boolean;
 
-  constructor(private auth: AuthService,private storage: AngularFireStorage,private crud:CrudService,private db: AngularFirestore) { }
+  constructor(private auth: AuthService,private storage: AngularFireStorage,private crud:CrudService,private db: AngularFirestore,private router: Router) { }
 
   ngOnInit() {
     this.auth.eventAuthError$.subscribe( data => {
@@ -58,9 +59,10 @@ Specialist:any=['Ayurvedic Hospital','Arthritis','Beauty Spa' ,'cancer','Chronic
   }
 
    createUser(frm) {
-   //this.crud.createDoctor(frm.value);
-   this.auth.createDoctor(frm.value);
    this.crud.createDoctor(frm.value);
+   this.router.navigate(['/default']);
+  //  this.auth.createDoctor(frm.value);
+  //  this.crud.createDoctor(frm.value);
   }
  
 

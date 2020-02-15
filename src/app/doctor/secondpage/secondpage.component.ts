@@ -165,6 +165,7 @@ formdata=new FormGroup({
 // rowIndexArray: any[];
 my_id:string;
 
+
 ap:Observable<timeslotid[]>;
 
   constructor( private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
@@ -193,13 +194,14 @@ ap:Observable<timeslotid[]>;
     // const data=afs.collection('Doctors', ref => ref.where('Userid', '==', this.id_current));
    
  
-    this.ap=this.afs.collection<timeslots>('Doctors').doc(this.my_id).collection('Appointments').snapshotChanges()
+    this.ap=this.afs.collection<timeslots>('Doctors').doc(this.my_id).collection('Timeslots').snapshotChanges()
 .pipe(
   map(actions => actions.map(a => {
     const ap_id =a.payload.doc.id;
     const ap_data = a.payload.doc.data() as timeslots;
-    
-return { ap_id, ...ap_data };
+    const n =a.payload.doc.data().Time.length; 
+
+    return { ap_id, ...ap_data,n };
 
 }))
 );

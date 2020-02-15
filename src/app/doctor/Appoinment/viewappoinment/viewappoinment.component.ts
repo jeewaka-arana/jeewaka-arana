@@ -71,8 +71,8 @@ this.patObserve=this.ap_patientCol.valueChanges();
   accept(id:any,data:any){
     console.log(id);
     
-    this.ap_patientCol.doc(id).set({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time});
-    this.afs.collection('Patients').doc('xfRi7PVladPoWuypNlMoGAGWRW93').collection('Appointments').doc(id).set({Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time,DoctorName:data.DoctorName,DoctorId:data.DoctorId})
+    this.ap_patientCol.doc(id).set({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time,Fulldate:data.Fulldate});
+    this.afs.collection('Patients').doc('xfRi7PVladPoWuypNlMoGAGWRW93').collection('Appointments').doc(id).set({Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time,DoctorName:data.DoctorName,DoctorId:data.DoctorId,Fulldate:data.Fulldate})
     this.show=true;
    
     this.verifyCol.doc(id).delete();

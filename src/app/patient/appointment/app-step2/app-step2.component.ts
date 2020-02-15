@@ -90,7 +90,7 @@ slotdata:any;
     this.myid = router.getCurrentNavigation().finalUrl.toString().slice(10);
     console.log(this.myid);
 
-    this.slotCol = afs.collection('Doctors').doc('1QA7Ebss0wU28EJEzg9pGPjJF8L2').collection('Timeslots');
+    this.slotCol = afs.collection('Doctors').doc(this.myid).collection('Timeslots');
 
     this.slotdoc=this.slotCol.valueChanges();
   
@@ -149,7 +149,7 @@ slotdata:any;
   {
     // this.date=this.month+" "+this.day+","+this.year;
     this.docid=this.dayname;
-    this.slotDoc = this.afs.collection('Doctors').doc('1QA7Ebss0wU28EJEzg9pGPjJF8L2').collection('Timeslots').doc(this.docid);
+    this.slotDoc = this.afs.collection('Doctors').doc(this.myid).collection('Timeslots').doc(this.docid);
     this.slotDoc.valueChanges().subscribe(value=>{
       if(value){
         this.message="";
