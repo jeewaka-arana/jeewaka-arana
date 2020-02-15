@@ -191,13 +191,29 @@ $progress-number-space: 6px;
         text-align: center;
         cursor: pointer;
         &:hover,
-        &.picked {
+        &.picked,&:focus{
             background: #0279b3;
             border-color: #0279b3;
             color: #FFF;
+            
         }
+
+       
+        
+
+        
     }
 }
+
+
+
+
+.time-slot-item:visited{
+    background: rgb(69, 85, 95)
+}
+
+
+
 
 // miscellaneous styling
 body {
@@ -221,3 +237,48 @@ h4 {
     margin-bottom: 40px;
     font-weight: 700;
 }
+
+
+.btn.btn-primary.btn-simple.btn-round:hover{
+ 
+    background-color:#f96332;
+    color: white;
+        
+    }
+    
+    .btn.btn-primary.btn-simple.btn-round:focus{
+        background-color: #f96332;
+        color: white;
+    }
+
+    .btn.btn-primary.btn-simple.btn-round:disabled:hover{
+ 
+        background-color: transparent;
+            
+        }
+
+
+        
+
+
+.myslot{
+    float: left;
+    margin-left: 10px;
+
+}
+
+ul{
+    list-style: none;
+}
+
+.row{
+    margin-left: 25em;
+}
+
+.row1{
+    margin-left: 10em;
+}
+
+.container{
+    margin-top:150px;
+  }

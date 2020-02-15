@@ -1,25 +1,6 @@
 <app-pnav></app-pnav>
 <div class="wrapper">
-    <div class="page-header clear-filter"  filter-color="orange">
-        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg6.jpg');">
-        </div>
-        <div class="container">
-            <div class="content-center">
-                <h1 class="title">Confirmation</h1>
-                <div class="text-center">
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-facebook-square"></i>
-                  </a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-google-plus"></i>
-                  </a>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 
 
 
@@ -59,31 +40,25 @@
         <body> 
             <div class="reservation">
               <header>
-                <a href="#">
+                <a routerLink="/appstep2/{{my_id}}">
                   <i class="fa fa-angle-left fa-2x" aria-hidden="true"> Change Date & Time</i>
                 </a>
-                <!-- <picture>
-                    <img src="http://www.wheretraveler.com/sites/default/files/water_club.jpg" alt="Water Clube"/>
-                    <p class="title">The Water Club</p>
-                </picture> -->
-                <!-- <a href="#">
-                  <b>Change Date & Time</b> 
-                </a> -->
+             
               </header>
               <br>
               <section class="date_time">
-                <p><i class="now-ui-icons ui-1_calendar-60"></i>  On <b>Aug 19,2019</b></p>
-                <p><i class="now-ui-icons ui-2_time-alarm"></i>  At <b>05:30 PM</b></p>
+                <p><i class="now-ui-icons ui-1_calendar-60"></i>  On <b>{{mydate}}</b></p>
+                <p><i class="now-ui-icons ui-2_time-alarm"></i>  At <b>{{Time}}</b></p>
               </section>
               <hr>
               <header>
                     
                     <picture>
-                        <img src="assets/img/logo.png" alt="Water Clube"/>
+                        <img src="{{profile}}" alt="Profile photo"/>
                         
                     </picture>
-                    <p class="info" >Dr. Roshan Madola</p>
-                        <p class="info">Dietitian/Nutritionist, Sports Nutritionist</p>
+                    <p class="info" >{{Doctor}}</p>
+                        <p class="info">{{specialist}}</p>
                 </header>
                 <hr>
               <section class="date_time">
@@ -96,17 +71,17 @@
                     <div class="profile-details">
                             <div class="user-details">
                                 <p class="header-user-detail"><b>Confirm Appoinment</b></p>
-                                    <form method="post" id="user-profile" class="user-form">
+                                    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="user-form">
                                                             
-                                        <p>Patient/Visitor Name*</p><input type="text" id="firstName" name="update-field" placeholder="Patient/Visitor Name" required/>
-                                        <p>Email*</p><input type="email" id="email" name="update-field" placeholder="Email" required/>
-                                        <p>Mobile number*</p><input type="number" id="PhoneNumber" name="update-field" placeholder="Mobile number" required/>
-                                        <p>You will receive an SMS with a verification code on this telephone number.</p>
+                                        <p>Patient/Visitor Name*</p><input type="text" id="firstName"  formControlName="PatientName" placeholder="Patient/Visitor Name" required/>
+                                        <p>Email*</p><input type="email" id="email" formControlName="Email" placeholder="Email" required/>
+                                        <p>Mobile number*</p><input type="number" id="PhoneNumber" formControlName="PhoneNumber"   placeholder="Mobile number" required/>
+                                       
+                                        <button class="btn btn-primary btn-round ico" type="submit" >Confirm</button>
+                                      
                                     </form>    
-                                        <button routerLink="/doctorview" class="btn btn-primary btn-round ico" type="button">Confirm</button>
-                                        <button class="btn btn-primary btn-round ico" type="button">Cancel</button>
-                                        <p>By requesting the appointment, you agree to Jeewaka Arana's <a href="#">Terms and Conditions.</a> </p>
-                                    
+                                 
+                                      
                             </div>  
                   </div>
             </div>
@@ -118,38 +93,5 @@
 
 
     <app-pfooter></app-pfooter>
-    <!-- <footer class="footer footer-default">
-        <div class="container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/about-us">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                            MIT License
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright">
-                &copy;
-                {{data | date: 'yyyy'}}, Designed by
-                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-            </div>
-        </div>
-    </footer> -->
+    
 </div>

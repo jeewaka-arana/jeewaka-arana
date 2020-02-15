@@ -15,15 +15,15 @@ interface Post{
 })
 export class DeleteCommentComponent implements OnInit {
 @Input() id:string;
-  postsCol: AngularFirestoreCollection<Post>;
-  posts: any;
-  post: Observable<Post[]>;
+  postsCol: AngularFirestoreCollection;
+  //posts: any;
+  post: Observable<any>;
 
   title:string;
   content:string;
 
-
-  postDoc: AngularFirestoreDocument<Post>;
+  commentElements = ['content', 'title',' '];
+  
   // post: Observable<Post>;
 
   //comments
@@ -31,20 +31,23 @@ export class DeleteCommentComponent implements OnInit {
   comment: Observable<Post[]>;
   comment$:any;
   
-  constructor(private  afs: AngularFirestore) { }
+  constructor(private  afs: AngularFirestore) { 
+    this.postsCol = this.afs.collection('Doctors').doc('Z0t2apggeUgPaBKoYFSrkd3bjlc2').collection('Posts');
+    this.post = this.postsCol.valueChanges();
+  }
 
   ngOnInit() {
-    this.postsCol = this.afs.collection('Doctors').doc(this.id).collection('Posts');
-    this.post = this.postsCol.valueChanges();
-    this.posts = this.postsCol.snapshotChanges()
-    .map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data() as Post;
-        const id = a.payload.doc.id;
+  
+
+    // this.posts = this.postsCol.snapshotChanges()
+    // .map(actions => {
+    //   return actions.map(a => {
+    //     const data = a.payload.doc.data() as Post;
+    //     const id = a.payload.doc.id;
        
-        return { id, data };
-      })
-    })
+    //     return { id, data };
+    //   })
+    // })
   }
 
 
@@ -54,7 +57,7 @@ export class DeleteCommentComponent implements OnInit {
 
     
 
-    this.afs.collection('Doctors').doc(this.id).collection('Posts').doc('Posts/'+postId).delete();
+  //   this.afs.collection('Doctors').doc(this.id).collection('Posts').doc('Posts/'+postId).delete();
 
    }
 }

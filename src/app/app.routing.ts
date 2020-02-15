@@ -68,7 +68,7 @@ import { EditprofileComponent } from './admin/editprofile/editprofile.component'
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
 import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
-import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
+import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
 import{AboutUsComponent} from '../app/components/about-us/about-us.component';
 import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
@@ -78,12 +78,22 @@ import{SecondpageComponent}from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import {AdmindashboardComponent} from '../app/admindashboard/admindashboard.component';
 
-
-import{AnimalComponent} from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
-import{DbarchartComponent} from './doctor/dbarchart/dbarchart.component';
+
+//import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
 import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
 import { AvailComponent } from './patient/avail/avail.component';
+import{ComplainsComponent} from '../app/admindashboard/complains/complains.component';
+import{HandleaccountsComponent} from '../app/admindashboard/handleaccounts/handleaccounts.component';
+
+
+import { SlotsComponent } from './patient/appointment/slots/slots.component';
+import { TimepickComponent } from './doctor/timepick/timepick.component';
+import {DoctorConfirmComponent} from './admindashboard/doctor-confirm/doctor-confirm.component'
+
+//notification testing
+import {PnavComponent} from './patient/pnav/pnav.component';
+import { AuthGuard } from './core/auth.guard';
 
 
 const routes: Routes =[
@@ -97,7 +107,7 @@ const routes: Routes =[
     { path: 'home', component:HomeComponent },
     { path: 'doctorview/:id', component: DoctorprofilepageComponent},
     { path: 'doctorview', component: DoctorprofilepageComponent},
-    { path: 'doctoradmin', component:DoctoradminpageComponent },
+    { path: 'doctoradmin', component:DoctoradminpageComponent  },
     { path: 'doctoradmin/:id', component:DoctoradminpageComponent },
     {path:'report/:id',component:ReportComponent},
     { path: 'signup/sign-patient', component:SignPatientComponent },
@@ -119,6 +129,9 @@ const routes: Routes =[
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
     { path: 'alogin', component:AdminLoginComponent },
+    {path:'timeslot',component: SlotsComponent},
+    { path: 'appstep3/:id/:date/:time', component:AppStep3Component },
+    { path: 'appstep2/:id', component:AppStep2Component },
     { path: 'admin', component:AdminComponent ,children:[
         
      //   { path: 'imagelist', component:ImageListComponent }
@@ -137,6 +150,10 @@ const routes: Routes =[
     { path: 'test2', component:Test2Component},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
+    {path:'report/:id',component:ReportComponent},
+
+    //testing
+    {path:'nav',component:PnavComponent},
    
 
 
@@ -161,18 +178,22 @@ const routes: Routes =[
  
  {path:'t',component:TComponent},
  
-{path:'complain',component:AddComplainsComponent},
+//{path:'complain',component:AddComplainsComponent},
+{path:'complain/:id',component:AddComplainsComponent},
 {path:'deletecomment',component:DeleteCommentComponent},
 {path:'bothcomment',component:BothCommentPageComponent},
 {path:'docAppoinment',component:DocAppoinmentComponent},
 {path:'docAppoinment/:id',component:DocAppoinmentComponent},
 {path:'viewappoinment',component:ViewappoinmentComponent},
+{path:'viewappoinment/:id',component:ViewappoinmentComponent},
 {path:'report',component:ReportComponent},
 {path:'articles',component:ArticlesComponent},
 {path:'admin/notification',component:NotificationComponent},
 
 
-{path:'time',component:TimepickComponent},
+{path:'time',component:TimepickerComponent},
+
+{path:'timetest',component:TimepickComponent},
 {path:'fpage',component:FirstpageComponent},
 
 {path:'aboutUs',component:AboutUsComponent},
@@ -182,8 +203,12 @@ const routes: Routes =[
 {path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
 {path:'admindash',component:AdmindashboardComponent},
-{path:'dbarchart' ,component:DbarchartComponent},
-{path:'dlinechart' ,component:DlinechartComponent}
+
+//{path:'dlinechart' ,component:DlinechartComponent}
+{path:'dlinechart' ,component:DlinechartComponent},
+{path:'admincomplain',component:ComplainsComponent},
+{path:'handleAccount',component:HandleaccountsComponent},
+{path:'confirmdoc',component:DoctorConfirmComponent}
     ]
 
 

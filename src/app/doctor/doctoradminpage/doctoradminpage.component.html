@@ -1,95 +1,78 @@
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color " color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
   <div class="container">
-    <img src="assets/img/herbalicon.png" height="30px" width="30px" />
-    <div class="navbar-translate">
-      <a class="navbar-brand" [routerLink]="['/home']" placement="bottom">
-
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
-        (click)="sidebarToggle()">
-        <span class="navbar-toggler-bar bar1"></span>
-        <span class="navbar-toggler-bar bar2"></span>
-        <span class="navbar-toggler-bar bar3"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
-      <ul class="navbar-nav ml-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/index">
-            <i class="now-ui-icons business_bank"></i>
-            <p>Home</p>
+    <!-- <img src="assets/img/herbalicon.png" height="30px" width="30px"  /> -->
+      <div class="navbar-translate">
+          <a class="navbar-brand" [routerLink]="['/home']" placement="bottom" >
+             
           </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link"   routerLink="/index" >
+                  <i class="now-ui-icons business_bank"></i>
+                  <p>Home</p>
+              </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/docAppoinment',my_id]">
+                <i class="now-ui-icons ui-1_calendar-60"></i>
+                <p>Appoinments</p>
+            </a>
         </li>
-
-
-
+                       
         <li class="nav-item">
-          <a class="nav-link" routerLink="/index">
-            <i class="now-ui-icons business_globe"></i>
-            <p>Change Language</p>
-          </a>
-        </li>
-
-
-
-
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/docAppoinment">
-            <i class="now-ui-icons ui-1_calendar-60"></i>
-            <p>Appoinments</p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="/complain">
-            <i class="now-ui-icons text_align-center"></i>
-            <p>Complains</p>
-          </a>
+            <a class="nav-link"  [routerLink]="['/complain',my_id]">
+                <i class="now-ui-icons text_align-center"></i>
+                <p>Complains</p>
+            </a>
         </li>
         <li class="nav-item dropdown">
-
-          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-
-            <i class="now-ui-icons ui-1_zoom-bold"></i>
-            <p>Search</p>
+         
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+              <i class="now-ui-icons ui-1_zoom-bold"></i>
+              <p>Search</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item  " href="/doctorname">Search By Name</a>
+            <a class="dropdown-item  " href="/doctorname" >Search By Name</a>
             <a class="dropdown-item" href="/diseasename">Search By Diseases</a>
-
+            
           </div>
         </li>
 
         <li class="nav-item dropdown">
-          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="now-ui-icons users_single-02
+          <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons users_single-02
 
               "></i>
             <p>Profile</p>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item " [routerLink]="['/spage',my_id]"> View Profile </a>
-            <a class="dropdown-item " href="/doctoradmin"> Edit Profile</a>
-            <a class="dropdown-item " [routerLink]="['/report',my_id]"> View Report </a>
-
+            <a class="dropdown-item " [routerLink]="['/spage',my_id]" > View Profile </a>
+            <a class="dropdown-item " [routerLink]="['/doctoradmin',my_id]"> Edit Profile</a>
+            <a class="dropdown-item " [routerLink]="['/report',my_id]" > View Report </a>
+           
           </div>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/index">
-            <i class="now-ui-icons media-1_button-power"></i>
-            <p>Log Out</p>
+          <a class="nav-link" href="/index" >
+              <i class="now-ui-icons media-1_button-power"></i>
+              <p>Log Out</p>
           </a>
-        </li>
-
-      </ul>
-    </div>
+      </li>
+           
+          </ul>
+      </div>
   </div>
 </nav>
 
@@ -97,517 +80,223 @@
 
 
 
-<!-- <div class="page-header page-header-small"> -->
-<div class="page-header clear-filter" filter-color="orange">
-  <!-- <div class="page-header-image rellax-header" data-rellax-speed="-8"style="background-image: url('https://i2.wp.com/balancedachievement.com/wp-content/uploads/2016/08/Ayurveda-101.jpeg?resize=1170%2C731&ssl=1');" > -->
-  <div class="page-header-image rellax-header" data-rellax-speed="-8"
-    style="background-image: url('https://v03.scentmarketing.cz/wp-content/uploads/2017/11/spa-vune.jpg');">
+<!-- 
+<div class="wrapper"> -->
+  
 
-  </div>
 
 
-  <div class="container">
+  
+  
+  <div class="section section-tabs" style="background-color: white;">
+    <div class="container col-lg-12">
+      <div class="row">
+        <div class="col-md-20 col-xl-10">
 
-    <div class="content-center brand">
-      <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27%>
-      <br>
-      <br>
-      <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
-      <h3>A greatest Ayurvedic platform</h3>
 
+          <div class="container">
 
-
-      <div class="content-center">
-
-
-
-
-
-        <div class="text-center">
-
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-  <div class="section section-about-us">
-
-
-
-
-
-
-    <h2 style="margin-left: 25rem;color:#f96332;font-weight: bold;">Edit Your Profile</h2><br><br>
-
-
-
-
-
-
-    <div class="row">
-
-      <div class="col col-md-4">
-        <div data-aos="zoom-in-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
-          data-aos-easing="ease-in-out" class="col-md-6">
-          <div>
-
-            <app-profile></app-profile>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col col-md-4">
-
-        <div data-aos="zoom-in-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
-          data-aos-easing="ease-in-out" class="col-md-6">
-
-          <div class="card" style="width:45rem;margin-left:3.3rem;">
-            <div class="formGroup">
-
-              <form [formGroup]="formdata" (ngSubmit)="savenote(formdata.value)" class="form-horizontal" role="form"
-                autocomplete="on">
-
-                <div class="form-group">
-
-
-                  <label class="col-md-7 control-label" style="color:#f96332;size: 14px;"><b>Upload Special
-                      Note</b></label>
-                  <br>
-                  <div class="col-lg-10">
-                    <textarea rows="11" cols="75" formControlName="note"></textarea>
-
-
-
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"
-                      value="Save" />
-                  </div>
-
-                </div>
-              </form>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-
-
-
-      <!--  -->
-
-
-      <div class="container register">
-        <div class="card" style="margin-left:2rem;">
-          <form [formGroup]="formdata" (ngSubmit)="savevalue()">
-            <div class="row register-form">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input formControlName="Firstname" type="text" class="form-control" 
-                    [placeholder]="Firstname" required>
-                </div>
-                <div class="form-group">
-                  <input formControlName="Lastname" name="Lastname" type="text" class="form-control"
-                    [placeholder]="Lastname"  required>
-                </div>
-
-
-
-                <div class="form-group">
-                  <input formControlName="ExpYears" type="number" name="ExpYears" class="form-control"
-                     [placeholder]="ExpYears">
-                </div>
-
-              </div>
-              <div class="col-md-6">
-
-                <div class="form-group">
-                  <input formControlName="PhoneNumber" name="PhoneNumber" type="number" minlength="10" maxlength="10"
-                    class="form-control" [placeholder]="PhoneNumber" required>
-                </div>
-                <div class="form-group">
-                  <input formControlName="City" class="form-control" name="City" list="citylist" value="{{post.City}}"
-                    placeholder="Choose your City...">
-                  <datalist id="citylist">
-                    <option *ngFor="let City of Citys" [ngValue]="City">{{City}}</option>
-                  </datalist>
-                </div>
-                <div class="form-group">
-                  <input formControlName="Specialist" name="Specialist" type="text" class="form-control"
-                     placeholder="Specialist" list="spec" required>
-                  <datalist id="spec">
-                    <option *ngFor="let Specialist of Specialists">{{Specialist}} </option>
-                  </datalist>
-                </div>
-
-
-              </div>
-
-
-
-
-
-
-              <input type="submit" class="btnRegister" value="Update" />
-
-
-
-            </div>
-
-          </form>
-
-
-
-
-        </div>
-
-
-      </div>
-
-
-
-
-      <!--  -->
-
-
-
-
-
-
-
-
-
-      <!-- 
-<div class="row">
-  <div class="col col-md-4">
-
-              <div class="card" style="width:30rem;margin-left: 2px;" >
-                <div class="card-body" >
-
-                        <div class="formGroup" class="center">
-                           
-                            <form [formGroup]="formdata" (ngSubmit) = " savedisease(formdata.value)" >
-
-                                <label for="diseases">Disease</label>
-                                <select formControlName="Specialist" id="diseases">
-                                  <option *ngFor="let order of disease; let i = index" [value]="disease[i].name">
-                                    {{disease[i].name}}
-
-                                    
-                                  </option>
-                                </select>
-                                       <br><br><br><br><br>
-                                <div  class="form-group" >
-                                    <input type="submit" style="width: 15% ;padding: 1%"  class="btnRegister   float-right"  formControlName="submit" value="Save" (click)=" savedisease()"/>         
-                                    </div>
-                               
-                              </form>
-                       </div>
-                       </div>
-              </div>
-              </div>
-                       <div class="col col-md-4">
-
-
-                        <div class="card"  style="margin-left:5rem;width:45rem;">
-                          <div class="card-body"> 
-                            
-                             
-                                <div class="formGroup" >
-                              
-                                    <form [formGroup]="formdata" (ngSubmit) = "savevalue(formdata.value)" class="form-horizontal" role="form" autocomplete="on">
-                                       
-                                        <div class="form-group">
-        
-                                          
-                                         
-                                          <label class="col-lg-3 control-label"><b>Address: </b></label>
-                                          <div class="col-lg-8">
-                                                <textarea rows="2" cols="65" formControlName="Address" value=""></textarea>
-                                              
-                                              </div>
-        
-                                            </div>
-                                        <div class="form-group">
-                                              <label class="col-lg-5 control-label"><b>Telephone Number:</b></label>
-                                              <div class="col-lg-8">
+            <div class="content-center brand">
+              <img class="logo" src="assets/img/new3logo.png" alt="logo" height=22% width=22% style="margin-left:27rem;margin-top:5rem;">
               
-                                                <input class="form-control" formControlName="Phone"  type="text" value="">
-                                                
-                                              </div>
-                                            </div>
-                                            
-                       
-        
-            <div  class="form-group" >
-                <input type="submit" style="width: 15% ;padding: 1%" class="btnRegister   float-right"  formControlName="submit" value="Save" (click)="savevalue()"/>         
-                </div> 
-          
-          
-         
-        
-          </form>
-         
           </div>
-          
-          </div>
-          </div>
+          </div> 
 
-                       </div>
-  </div>
-   -->
+          <br><br>
+  <div class="row">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- 
-                  
-  <app-video></app-video>
-
-
-
-
--->
-
-
-
-      <!-- <div class="card" style="margin-left:0px;width:79rem;" >
-          <div class="card-body" > -->
+    <div class="col col-md-4" style="margin-left:1rem;">
       <div data-aos="zoom-in-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
         data-aos-easing="ease-in-out" class="col-md-6">
-        <div class="formGroup">
+        
 
-          <form [formGroup]="formdata" (ngSubmit)="savevalue(formdata.value)" class="form-horizontal" role="form"
-            autocomplete="on">
+          <app-profile></app-profile>
 
-            <table class="table table-bordered table-hover" id="time" style="width: 78.8rem;">
-
-
-              <thead>
-                <tr>
-                  <th>DATE</th>
-                  <th>TIME SLOT 1</th>
-                  <th>TIME SLOT 2</th>
-                  <th>TIME SLOT 3</th>
-
-                </tr>
-              </thead>
-
-
-              <tbody>
-
-                <tr>
-
-                  <td>MONDAY</td>
-
-                  <td>
-                    <div class="form-group"><app-timepicker index="1"></app-timepicker> </div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tt2"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tt3"></textarea></div>
-                  </td>
-
-                </tr>
-
-                <tr>
-                  <td>TUESDAY</td>
-
-
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tt1"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tt2"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tt3"></textarea></div>
-                  </td>
-
-                </tr>
-
-                <tr>
-                  <td>WEDNESDAY</td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="wt1"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="wt2"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="wt3"></textarea></div>
-                  </td>
-
-                </tr>
-
-                <tr>
-                  <td>THURSDAY</td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tht1"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tht2"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="tht3"></textarea></div>
-                  </td>
-
-
-                </tr>
-                <tr>
-                  <td>FRIDAY</td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="ft1"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="ft2"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="ft3"></textarea></div>
-                  </td>
-
-                </tr>
-                <tr>
-                  <td>SATURDAY</td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="st1"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="st2"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffd1b3;"
-                        formControlName="st3"></textarea></div>
-                  </td>
-
-
-                </tr>
-                <tr>
-                  <td>SUNDAY</td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="sut1"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="sut2"></textarea></div>
-                  </td>
-                  <td>
-                    <div class="form-group"><textarea style="width: 125px;background-color:  #ffeecc;"
-                        formControlName="sut3"></textarea></div>
-                  </td>
-
-                </tr>
-
-
-
-              </tbody>
-
-
-            </table>
-
-            <div class="form-group">
-              <input type="submit" style="width:15% ;padding: 1%;margin-left:34rem;" class="btnRegister " value="Save"
-                (click)="savevalue()" />
-            </div>
-          </form>
         </div>
       </div>
-      <!-- </div>
-</div> -->
+    
+
+  
+
+    <div class="col col-md-4" style="margin-left:3rem;">
+
+      <div data-aos="zoom-in-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
+        data-aos-easing="ease-in-out" class="col-md-6">
+
+        <div class="card" style="width:30rem;margin-left: 15rem;" >
+          <div class="formGroup">
+
+            <form [formGroup]="formnote" (ngSubmit)="savenote(formnote.value)" class="form-horizontal" role="form"
+              autocomplete="on">
+
+              <div class="form-group">
+
+<br>
+                <label class="col-md-15 control-label" style="font-size:1.5rem;margin-left: 1.5rem;
+                "><b>Upload Special Note</b></label>
+                <br>
+                <div class="col-lg-8">
+                  <textarea rows="11" cols="58" formControlName="note" 
+                  [placeholder]="note">
+                
+                </textarea>
+                </div>
+                <div  class="form-group" >
+                 <br>
+                  <input type="submit"   value="Save" class=btnRegister1 />         
+                </div>
+                <br><br><br>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
 
 
 
 
 
+
+
+    <div class="container register">
+      <div class="card" style="margin-left:7rem;">
+        <form [formGroup]="formdata" (ngSubmit)="savevalue()">
+          <div class="row register-form">
+           
+            <div class="col-md-6">
+
+              <label style="font-weight: bold;font-size: 1.2rem;">First Name</label>
+              <div class="form-group">
+                <input formControlName="Firstname" type="text" class="form-control" 
+                  [placeholder]="Firstname" required>
+              </div>
+              <label style="font-weight: bold;font-size: 1.2rem;">Last Name</label>
+              <div class="form-group">
+                <input formControlName="Lastname" name="Lastname" type="text" class="form-control"
+                  [placeholder]="Lastname"  required>
+              </div>
+
+
+              <label style="font-weight: bold;font-size: 1.2rem;">Experince Year</label>
+              <div class="form-group">
+                <input formControlName="ExpYears" type="number" name="ExpYears" class="form-control"
+                   [placeholder]="ExpYears">
+              </div>
+
+              <label style="font-weight: bold;font-size: 1.2rem;">Specialist</label>
+              <div class="form-group">
+                <input formControlName="Specialist" name="Specialist" type="text" class="form-control"
+                   placeholder="Specialist" list="spec" required>
+                <datalist id="spec">
+                  <option *ngFor="let Specialist of Specialists">{{Specialist}} </option>
+                </datalist>
+              </div>
+
+
+
+
+
+            </div>
+
+            <div class="col-md-6">
+              <label style="font-weight: bold;font-size: 1.2rem;">Phone Number</label>
+              <div class="form-group">
+                <input formControlName="PhoneNumber" name="PhoneNumber" type="number" minlength="10" maxlength="10"
+                  class="form-control" [placeholder]="PhoneNumber" required>
+              </div>
+
+             
+
+              <label style="font-weight: bold;font-size: 1.2rem;">Address</label>
+
+
+              <div class="form-group">
+                <input formControlName="No" name="No" type="text" class="form-control"
+                [placeholder]="No"  required>
+
+              </div>
+              <div class="form-group">
+                <input formControlName="Lane1" name="Lane1" type="text" class="form-control"
+                [placeholder]="Lane1"  required>
+
+              </div>
+              <div class="form-group">
+                <input formControlName="Lane2" name="Lane2" type="text" class="form-control"
+                [placeholder]="Lane2"  required>
+
+              </div> 
+
+              <div class="form-group">
+                <input formControlName="City" class="form-control" name="City" list="citylist" value="{{post.City}}"
+                  placeholder="City" required>
+                <datalist id="citylist">
+                  <option *ngFor="let City of Citys" >{{City}}</option>
+                </datalist>
+              </div>
+
+
+              
+
+
+            </div>
+
+
+
+
+
+
+            <input type="submit" class="btnRegister" value="Update" />
+
+
+
+          </div>
+
+        </form>
+
+
+
+
+      </div>
 
 
     </div>
-    <!-- <app-dfooter></app-dfooter> -->
+
+<!-- 
+<h5>rfghjk</h5> -->
+
+<!--  -->
+        </div>
+      </div>
+
+    </div>
+  </div> 
+  
+
+  
+<!-- </div> -->
+<app-pfooter></app-pfooter>
 
 
-    <!-- footer -->
+
+
+<!-- adding timeslot -->
+<br>
+<!-- <div class="timepick">
+<app-timepicker></app-timepicker>
+</div> -->
+<br>
+
+
+
+
+
+
+
+
+
+ 

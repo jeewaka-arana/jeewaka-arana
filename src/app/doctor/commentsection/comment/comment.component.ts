@@ -65,14 +65,14 @@ export class CommentComponent implements OnInit {
     this.postsCol = this.afs.collection('Doctors').doc(this.id).collection('Posts');
     this.post = this.postsCol.valueChanges();
   
-    this.posts = this.postsCol.snapshotChanges()
-      .map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data() as Post;
-          const id = a.payload.doc.id;
-          return { id, data };
-        })
-      })
+    // this.posts = this.postsCol.snapshotChanges()
+    //   .map(actions => {
+    //     return actions.map(a => {
+    //       const data = a.payload.doc.data() as Post;
+    //       const id = a.payload.doc.id;
+    //       return { id, data };
+    //     })
+    //   })
   }
   
 

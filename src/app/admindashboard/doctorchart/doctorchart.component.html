@@ -1,0 +1,46 @@
+
+<div class="chart-wrapper" >
+    <h5 style="font-weight:bold;">{{year}}</h5>
+
+
+
+    <!--  -->
+    <div class="col1">
+        <div class="form-group">
+            <input ngModel #position name="position" type="text" class="form-control" placeholder="Enter the Year" (change)="yearFilter($event.target.value)" list="year-list" >
+            <datalist id="year-list">
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                    <option>2030</option>
+                    <option>2031</option>
+                </datalist>
+        </div>
+        </div>
+
+
+    <!--  -->
+
+    <canvas baseChart style="background-color: white;"
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [colors]="barChartColors"
+    [chartType]="barChartType"
+    >
+    </canvas>
+
+
+ 
+
+</div>

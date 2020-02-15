@@ -14,6 +14,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
+import { Doctors } from '../doctoradminpage/doctoradminpage.component';
 
 
 
@@ -39,9 +40,10 @@ export class ReportComponent implements OnInit {
   p: any;
   today: number = Date.now();
 
-  headElements = ['Patient Name', 'Date', 'Time','Telephone No'];
+  headElements = ['Patient Name', 'Appoinment Date', 'Appoinment Time','Telephone No'];
 
-
+  postsCol:AngularFirestoreCollection< Doctors>;
+  post$:any;
 
 
 
@@ -52,32 +54,37 @@ export class ReportComponent implements OnInit {
   QueryCol: AngularFirestoreCollection;
   Query: Observable<any>;
 
+countPatSriCol:AngularFirestoreCollection;
+countPatSri:Observable<any>;
+
+countPatForCol:AngularFirestoreCollection;
+countPatFor:Observable<any>;
 
   a: AngularFirestoreCollection;
   //a:Observable<any>
 
 
 
-  @ViewChild('content', { static:false }) content: ElementRef;
+  @ViewChild('content',{static:false}) content: ElementRef;
 
 
-  public downloadPDF() {
-    let doc = new jsPDF();
-    let specialElementHandlers = {
-      '#editor': function (element, renderer) {
-        return true;
+  // public downloadPDF() {
+  //   let doc = new jsPDF();
+  //   let specialElementHandlers = {
+  //     '#editor': function (element, renderer) {
+  //       return true;
 
-      }
-    };
-    let content = this.content.nativeElement;
-    doc.fromHTML(content.innerHTML, 15, 15, {
-      'width': 190,
-      'elementHAndlers': specialElementHandlers
-    });
+  //     }
+  //   };
+  //   let content = this.content.nativeElement;
+  //   doc.fromHTML(content.innerHTML, 15, 15, {
+  //     'width': 190,
+  //     'elementHAndlers': specialElementHandlers
+  //   });
 
 
-    doc.save('Report.pdf');
-  }
+  //   doc.save('Report.pdf');
+  //}
 
   my_id: string;
   counter: any = 0;
@@ -92,19 +99,14 @@ export class ReportComponent implements OnInit {
 
   ngOnInit() {
 
-    // console.log("eeeee");
-    // console.log(this.year);
-    // this.appCol = this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment');
-    // this.apps = this.appCol.valueChanges();
-    // this.apps.subscribe((data)=>{this.x = data.length});
-
-
-
     //To show data in console
     //this.x=this.apps.subscribe((data)=>console.log(data.length));
     // console.log("Hi");
+    this.postsCol=this.afs.collection('Doctors');
+    this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
+      this.post$=doc.data();
+   });
     
-
     
 
 

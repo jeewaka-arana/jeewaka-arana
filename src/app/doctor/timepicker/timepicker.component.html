@@ -1,18 +1,217 @@
+<div>
+<p>
+ <b>Choose your working hours.</b>
+</p>
+
+<b><i>MONDAY</i></b>
+<button class="btn btn-primary btn-round"  (click)="mon_addNew()">+</button>
 
 
- <div class="row">
+<div *ngFor="let item of monaddingtime.slice(0,5);let i = index">
+  
 
-  <div class="col">
-     <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+ 
+
+    <div class="col-md-3">
+      <div class="col-md-3">
+        From:
+      </div>
+       <ngb-timepicker   [(ngModel)]="mon_from" ></ngb-timepicker>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="col-md-3">
+        To:
+      </div>
+  <ngb-timepicker   [(ngModel)]="mon_to"></ngb-timepicker>
+    </div>
   </div>
-  <div class="col">
-      
-<ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+ 
+  <button class="btn btn-primary btn-simple btn-round" (click)="savetimeslots(mon_from,mon_to,'Monday')">Save</button> 
+  
+    
   </div>
+  
+  </div>
+
 </div>
 
+<hr>
+<b>TUESDAY</b>
+<button class="btn btn-primary btn-round"  (click)="tue_addNew()">+</button>
+
+
+<div *ngFor="let item of tueaddingtime.slice(0,5);">
+  
+
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+  
+    <div class="col">
+   
+       <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+    </div>
+    <div class="col">
+     
+  <ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+    </div>
+  </div>
+ 
+  <button class="btn btn-primary btn-simple btn-round" (click)="savetimeslots(from,to,'Tuesday')">Save</button> 
+  
+    
+  </div>
+  
+  </div>
+
+</div>
 
 <hr>
-<!-- <pre>Selected time: {{ time | json }}</pre> -->
+<b>WEDNESDAY</b>
+<button  class="btn btn-primary btn-round" (click)="wed_addNew()">+</button>
+<div *ngFor="let item of wedaddingtime.slice(0,5);">
+  
 
-<button (click)="savetime(from,to)">Save</button>
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+  
+    <div class="col">
+   
+       <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+    </div>
+    <div class="col">
+     
+  <ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+    </div>
+  </div>
+ 
+  <button class="btn btn-primary btn-simple btn-round" (click)="savetimeslots(from,to,'Tuesday')">Save</button> 
+  
+    
+  </div>
+  
+  </div>
+
+</div>
+
+<hr>
+<b>THURSDAY</b>
+<button class="btn btn-primary btn-round"  (click)="thu_addNew()">+</button>
+<div *ngFor="let item of thuaddingtime.slice(0,5);">
+  
+
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+  
+    <div class="col">
+   
+       <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+    </div>
+    <div class="col">
+     
+  <ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+    </div>
+  </div>
+ 
+  <button class="btn btn-primary btn-simple btn-round" (click)="savetimeslots(from,to,'Tuesday')">Save</button> 
+  
+    
+  </div>
+  
+  </div>
+
+</div>
+
+<hr>
+<b>FRIDAY</b>
+<button  class="btn btn-primary btn-round" (click)="fri_addNew()">+</button>
+<div *ngFor="let item of friaddingtime.slice(0,5);">
+  
+
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+  
+    <div class="col">
+   
+       <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+    </div>
+    <div class="col">
+     
+  <ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+    </div>
+  </div>
+ 
+  <button class="btn btn-primary btn-simple btn-round" (click)="savetimeslots(from,to,'Tuesday')">Save</button> 
+  
+    
+  </div>
+  
+  </div>
+
+</div>
+
+<hr>
+<b>SATURDAY</b>
+<button  class="btn btn-primary btn-round"  (click)="sat_addNew()">+</button>
+<div *ngFor="let item of sataddingtime.slice(0,5);">
+  
+
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+  
+    <div class="col">
+   
+       <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+    </div>
+    <div class="col">
+     
+  <ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+    </div>
+  </div>
+ 
+  <button class="btn btn-primary btn-simple btn-round" (click)="savetimeslots(from,to,'Tuesday')">Save</button> 
+  
+    
+  </div>
+  
+  </div>
+
+</div>
+
+<hr>
+<b>SUNDAY</b>
+<button class="btn btn-primary btn-round"  (click)="sun_addNew()">+</button>
+<div *ngFor="let item of sunaddingtime.slice(0,5);">
+  
+
+  <div class="card">
+    <div class="cardbody">
+       <div class="row">
+  
+    <div class="col">
+   
+       <ngb-timepicker  [(ngModel)]="from"  ></ngb-timepicker>
+    </div>
+    <div class="col">
+     
+  <ngb-timepicker [(ngModel)]="to"></ngb-timepicker>
+    </div>
+  </div>
+ 
+  <button class="btn btn-primary btn-simple btn-round" (click)="savetimeslots(from,to,'Tuesday')">Save</button> 
+  
+    
+  </div>
+  
+  </div>
+
+</div>
+</div>

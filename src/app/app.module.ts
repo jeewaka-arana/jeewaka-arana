@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -118,13 +119,12 @@ import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component
 import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
-import { AnimalComponent } from './doctor/animal/animal.component';
+
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import { TimepickerComponent } from './doctor/timepicker/timepicker.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { SlotsComponent } from './patient/appointment/slots/slots.component';
 import { ApplistComponent } from './patient/applist/applist.component';
-import { DbarchartComponent } from './doctor/dbarchart/dbarchart.component';
-// import { ChartsComponent } from './doctor/charts/charts.component';
 
 
 import { ChartsModule } from 'ng2-charts';
@@ -132,7 +132,19 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 import { AvailComponent } from './patient/avail/avail.component';
 
 
+import { ChartsModule } from 'ng2-charts';
+//import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+import { PatientchartComponent } from './admindashboard/patientchart/patientchart.component';
+import { DoctorchartComponent } from './admindashboard/doctorchart/doctorchart.component';
+import { ComplainsComponent } from './admindashboard/complains/complains.component';
+import { HandleaccountsComponent } from './admindashboard/handleaccounts/handleaccounts.component';
+import { BarchartComponent } from './doctor/barchart/barchart.component';
+import { DoctorConfirmComponent } from './admindashboard/doctor-confirm/doctor-confirm.component';
 
+
+//firestore functions
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 
 
@@ -210,23 +222,30 @@ import { AvailComponent } from './patient/avail/avail.component';
         SecondpageComponent,
         AdminLoginComponent,
     
-        AnimalComponent,
+    
         FirebasetestComponent,
         TimepickerComponent,
-       
+        ApplistComponent,
+        SlotsComponent ,
 
 
         AdmindashboardComponent,
+        
+        //DlinechartComponent,
        
-
-
-        ApplistComponent,
-        DbarchartComponent,
         DlinechartComponent,
         AvailComponent,
+        PatientchartComponent,
+        DoctorchartComponent,
+        ComplainsComponent,
+        HandleaccountsComponent,
+        BarchartComponent,
+        DoctorConfirmComponent,
+       
         // ChartsComponent,
       
-        
+        ApplistComponent ,
+        SlotsComponent
         
        
        
@@ -236,7 +255,7 @@ import { AvailComponent } from './patient/avail/avail.component';
          IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,
-        NgbModule.forRoot(),
+        NgbModule,
         FormsModule,
         RouterModule,
         AppRoutingModule,
@@ -248,8 +267,10 @@ import { AvailComponent } from './patient/avail/avail.component';
         AngularFireAuthModule,
         AngularFireStorageModule,
         AngularFireDatabaseModule,
+        ChartsModule ,
+        AngularFireFunctionsModule ,
         //   NgMultiSelectDropDownModule.forRoot(),
-
+        ChartsModule,
         BrowserModule,
         AgmCoreModule.forRoot({
             apiKey: environment.googleMapsKey

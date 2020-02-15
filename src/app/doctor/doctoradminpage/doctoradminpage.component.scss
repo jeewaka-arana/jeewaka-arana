@@ -1,16 +1,37 @@
 .btnRegister{
-    float:left;
-    //margin-top: 10%;
-    border: none;
-    border-radius: 1.5rem;
-    padding: 2%;
-    background: #f96332;
-    color: #fff;
-    font-weight: 600;
-    width: 20%;
-    cursor: pointer;
+  // float:center;
+  //margin-top: 10%;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 3%;
+  background: #f96332;
+  color: #fff;
+  font-weight: 600;
+  width: 2%;
+  cursor: pointer;
 }
+.btnRegister1{
 
+  border: none;
+  border-radius: 1.2rem;
+  padding: 3%;
+  background: #f96332;
+  color: #fff;
+  font-weight: 650;
+  width: 26%;
+  cursor: pointer;
+  margin-left:12rem;
+ 
+
+
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:32%;
+  
+}
 .uploadpreview{
     width:150px;
     height:150px;
@@ -96,21 +117,6 @@ option{
   color:green;
 }
 
-//time slot
-
-#time th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color:#f96332;
-  color: white;
-}
-
-#time tr:nth-child(even){background-color: #ffd1b3;}
-#time tr:nth-child(odd){background-color:  #ffeecc;}
-#time{
-    width: 40rem;
-}
 
 
 //new style
@@ -334,4 +340,16 @@ progress::-webkit-progress-value {
   background:#cf7f4a;
   cursor: pointer;
 }
+
+
+//timepikcer
+.timepick{
+ padding-left:50px;
+ padding-right:70px;
+}
+
+// app-timepicker{
+//   margin-left: 20px;
+//   margin
+// }
 

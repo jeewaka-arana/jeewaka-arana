@@ -1,4 +1,15 @@
-   
-  <div>
-      <igx-time-picker id="time-picker" ></igx-time-picker>
-  </div>
+<div *ngFor="let data of weekdays" class="weekdays">
+    
+  <div class="form-check">
+    <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" (change)="onChange(data, $event.target.checked)">
+        <span class="form-check-sign"></span>
+        {{data}}
+    </label>
+    
+  
+</div>
+
+
+
+</div>

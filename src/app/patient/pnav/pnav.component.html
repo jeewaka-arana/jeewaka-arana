@@ -58,6 +58,31 @@
             <p>Change Language</p>
           </a>
         </li>
+              <li class="nav-item">
+                <ng-template #popContent>
+                  
+                  <div *ngFor="let n of notify |async">
+                   <div *ngIf="n.flag ==true" class="dropap" (click)="test()">
+                   Date : {{n.Day}}-{{n.Month}}-{{n.Year}}<br>
+                   Time : {{n.Time}}<br>
+                 
+                   <hr>
+                   
+
+                  </div>
+                </div>
+
+                </ng-template>
+                <a class="nav-link" ngbPopover="" popoverTitle="Recent Notifications" placement="bottom" [ngbPopover]="popContent"  routerLink="#" >
+                    <i class="now-ui-icons ui-1_bell-53"></i>
+            
+                    <span *ngIf="popContent" class="dot"></span>
+                  
+                   
+                </a>
+              
+            </li>
+
 
 
 

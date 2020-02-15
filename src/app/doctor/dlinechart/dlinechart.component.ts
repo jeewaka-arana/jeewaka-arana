@@ -10,33 +10,49 @@ import { Observable } from 'rxjs';
   styleUrls: ['./dlinechart.component.scss']
 })
 export class DlinechartComponent implements OnInit {
-  @Input() userid:string;
+  @Input() userid: string;
   // @Input('year') year:any;
-  
-  
-  myyear:any;
-  jan:any ;
-  feb:any;
-  mar:any;
-  apr:any;
-  may:any;
-  jun:any;
-  jul:any;
-  aug:any;
-  sep:any;
-  oct:any;
-  nov:any;
-  dec:any;
+
+
+  myyear: any;
+  jan: any;
+  feb: any;
+  mar: any;
+  apr: any;
+  may: any;
+  jun: any;
+  jul: any;
+  aug: any;
+  sep: any;
+  oct: any;
+  nov: any;
+  dec: any;
   QueryCol: AngularFirestoreCollection;
   Query: Observable<any>;
   lineChartData: ChartDataSets[] = [
-    { data: [
-      this.jan,
-      this.feb, 78, 75, 77, 75,0,1,3], 
-      label: 'Number Of Patient' },
+    {
+      data: [
+        this.jan,
+        this.feb, 
+        this.mar, 
+        this.apr, 
+        this.may, 
+        this.jun, 
+        this.jul,
+        this.aug, 
+        this.sep,
+        this.oct,
+        this.nov,
+        this.dec
+
+        
+      ],
+      label: 'Number Of Patient'
+    },
   ];
 
-  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'];
+
+  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   lineChartOptions = {
     responsive: true,
@@ -44,8 +60,8 @@ export class DlinechartComponent implements OnInit {
 
   lineChartColors: Color[] = [
     {
-      borderColor: 'black',
-      backgroundColor: 'lightblue',
+      borderColor: '#800000',
+      backgroundColor: '#ff6600',
     },
   ];
 
@@ -53,13 +69,29 @@ export class DlinechartComponent implements OnInit {
   lineChartPlugins = [];
   lineChartType = 'line';
 
-  constructor(private afs: AngularFirestore){
-    //this.myyear=this.year;
+
+  constructor(private afs: AngularFirestore) {
+    this.jan = 0;
+    this.feb = 0;
+    this.mar = 0;
+    this.apr = 0;
+    this.may = 0;
+    this.jun = 0;
+    this.jul = 0;
+    this.aug = 0;
+    this.sep = 0;
+    this.oct = 0;
+    this.nov = 0;
+    this.dec = 0;
+
   }
 
- 
 
-   ngOnInit(){
+
+
+  ngOnInit() {
+
+
     // console.log(this.year);
     // this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +this.year));
     // await this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', 2019)).valueChanges().subscribe(result=>{
@@ -70,9 +102,9 @@ export class DlinechartComponent implements OnInit {
     //     }
     //   });
     //  this.jan=sum;
-     
+
     // });
-   
+
     // if(this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==', 1)))
     // {
 
@@ -85,63 +117,78 @@ export class DlinechartComponent implements OnInit {
     //   this.Query = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',2 )).valueChanges();
     //   this.Query.subscribe((data) => { this.feb = data.length });
     // }
-    // else if(this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',3 )))
-    // {
-    //   this.Query = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',3 )).valueChanges();
-    //   this.Query.subscribe((data) => { this.mar = data.length });
-    // }
-    // else if(this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',4 )))
-    // {
-    //   this.Query = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('month', '==',4 )).valueChanges();
-    //   this.Query.subscribe((data) => { this.apr = data.length });
-    // }
+
+
 
   }
 
 
-  
-  yearFilter(data) {
-    this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data));
-   this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result=>{
-     var jan=0;
-     var feb=0;
-     var mar=0;
-     var apr=0;
-     var may=0;
-     var jun=0;
-     var jul=0;
-     var aug=0;
-     var sep=0;
-     var oct=0;
-     var nov=0;
-     var dec=0;
-      result.forEach(element => {
-        if(element['month']==1){
-          jan=jan+1;
-        }
-        else if(element['month']==2){
-          feb=feb+1;
-        }
-        else if(element['month']==3){
-          mar=mar+1;
-        }
-        else if(element['month']==4){
-          apr=apr+1;
-        }
 
+  yearFilter(data) {
+
+
+
+
+    this.QueryCol = this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data));
+    this.afs.collection('Doctors').doc(this.userid).collection('viewappoinment', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
+
+
+      this.jan=0;
+      this.feb=0;
+      this.mar=0;
+      this.apr=0;
+      this.may=0;
+      this.jun=0;
+      this.jul=0;
+      this.aug=0;
+      this.sep=0;
+      this.oct=0;
+      this.nov=0;
+      this.dec=0;
+      
+
+      result.forEach(element => {
+        if (element['month'] == 1) {
+          this.jan = this.jan + 1;
+        }
+        else if (element['month'] == 2) {
+          this.feb = this.feb + 1;
+        }
+        else if (element['month'] == 3) {
+          this.mar = this.mar + 1;
+        }
+        else if (element['month'] == 4) {
+          this.apr = this.apr + 1;
+        }
 
 
       });
-     this.jan=jan;
-     this.feb=feb;
-     this.mar=mar;
-     this.apr=apr;
+      //  this.jan=this.jan;
+      //  this.feb=this.feb;
+      //  this.mar=this.mar;
+      //  this.apr=this.apr;
+      this.lineChartData = [
+        {
+          data: [
+            this.jan,
+            this.feb,
+            this.mar,
+            this.apr,
+
+          ],
+          label: 'Number Of Patient'
+        },
+      ];
 
 
-     
-     console.log("yyy");
-     console.log(this.jan);
-     console.log(this.feb);
+      console.log("yyy");
+      
+      console.log(this.jan);
+      console.log(this.feb);
+      console.log(this.mar);
+
+
+
     });
 
 
