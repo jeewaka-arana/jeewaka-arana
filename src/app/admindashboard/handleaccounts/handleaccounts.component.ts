@@ -62,8 +62,12 @@ this.doc=this.docCol.valueChanges();
 
 
   }
-  deletePatient(){
+  deletePatient(id:any){
 
+    if (confirm("Are you sure to delete this record?")) {
+     
 
+      this.afs.collection('Patients').doc(id).delete();
   }
+}
 }

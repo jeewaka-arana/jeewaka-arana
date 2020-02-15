@@ -33,4 +33,20 @@ this.doc=this.docCol.valueChanges();
     this.pat=this.patCol.valueChanges();
 
   }
+
+
+
+  
+  deleteDoctorcomplains(mail:any)
+  {
+
+    if (confirm("Are you sure to delete this record?")) {
+     
+
+      // this.afs.collection('DoctorIssues', ref => ref.where('Email','==',mail)).get().then
+    }
+
+
+
+  }
 }
