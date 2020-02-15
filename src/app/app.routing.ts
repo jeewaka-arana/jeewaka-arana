@@ -83,6 +83,7 @@ import{AnimalComponent} from './doctor/animal/animal.component';
 import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 import{DbarchartComponent} from './doctor/dbarchart/dbarchart.component';
 import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
+import { AvailComponent } from './patient/avail/avail.component';
 
 
 const routes: Routes =[
@@ -114,6 +115,7 @@ const routes: Routes =[
     { path: 'diseasename', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'searchdoctor/:id', component:SearchdoctorComponent },
+    { path: 'avail', component:AvailComponent },
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
     { path: 'alogin', component:AdminLoginComponent },
@@ -176,7 +178,7 @@ const routes: Routes =[
 {path:'aboutUs',component:AboutUsComponent},
 {path:'contactUs',component:ContactUsComponent},
 {path:'pcontactUs',component:PcontactUsComponent},
-// {path:'paboutUs',component:PaboutUsComponent},
+{path:'paboutUs',component:PaboutUsComponent},
 {path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
 {path:'admindash',component:AdmindashboardComponent},

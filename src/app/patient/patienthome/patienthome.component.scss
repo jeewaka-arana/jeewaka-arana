@@ -445,8 +445,8 @@ article {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 12em; // fallback
-    height: 25vh;
+    height: 10em; // fallback
+    // height: 25vh;
     flex: 0 1 30%;
     min-width: 10em;
     position: relative;

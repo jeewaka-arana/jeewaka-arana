@@ -115,7 +115,7 @@ import { AfooterComponent } from './admin/afooter/afooter.component';
 import { PnavComponent } from './patient/pnav/pnav.component';
 import { DocpnavComponent } from './doctor/docpnav/docpnav.component';
 import { PcontactUsComponent } from './patient/pcontact-us/pcontact-us.component';
-// import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
+import { PaboutUsComponent } from './patient/pabout-us/pabout-us.component';
 import { SecondpageComponent } from './doctor/secondpage/secondpage.component';
 import { AdminLoginComponent } from './userlogin/admin-login/admin-login.component';
 import { AnimalComponent } from './doctor/animal/animal.component';
@@ -127,8 +127,9 @@ import { DbarchartComponent } from './doctor/dbarchart/dbarchart.component';
 // import { ChartsComponent } from './doctor/charts/charts.component';
 
 
-// import { ChartsModule } from 'ng2-charts';
+import { ChartsModule } from 'ng2-charts';
 import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+import { AvailComponent } from './patient/avail/avail.component';
 
 
 
@@ -205,7 +206,7 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
         PnavComponent,
         DocpnavComponent,
         PcontactUsComponent,
-        // PaboutUsComponent,
+        PaboutUsComponent,
         SecondpageComponent,
         AdminLoginComponent,
     
@@ -222,6 +223,7 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
         ApplistComponent,
         DbarchartComponent,
         DlinechartComponent,
+        AvailComponent,
         // ChartsComponent,
       
         
@@ -230,7 +232,7 @@ import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
        
     ],
     imports: [
-        // ChartsModule,
+        ChartsModule,
          IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,

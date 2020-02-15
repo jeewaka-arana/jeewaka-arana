@@ -1,27 +1,19 @@
 <app-pnav></app-pnav>
 <div class="wrapper">
-  <div class="page-header clear-filter" filter-color="orange">
-    <div class="page-header-image rellax-header" data-rellax-speed="-8"
-      style="background-image: url('assets/img/Herbal-Medicine-1.jpg');">
-    </div>
-    <div class="container">
-      <div data-aos="zoom-in" data-aos-delay="50" ata-aos-duration="1000" data-aos-easing="ease-in-out"
-        class="content-center">
-        <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27%>
-        <br>
-        <br>
+  
+    <!-- <div class="container">
         <h1 class="title">Your Appointment Details</h1>
-      </div>
-    </div>
-  </div>
+     </div> -->
+    
+     <h1 class="title">Your Appointment Details</h1>
 
 
-
-  <div class="section section-tabs">
+<div class="mycontainer">
+  <!-- <div class="section section-tabs"> -->
     <div class="container col-lg-12">
       <div class="row">
         <div class="col-md-20 col-xl-10">
-          <ul *ngFor="let results of filteredNames | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ">
+          <ul *ngFor="let results of applist | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ">
             <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
               class="card">
               <div class="row">
@@ -29,7 +21,7 @@
                     <img src="assets/img/appointment-confirm-icon-clipart.png" alt="Image" class="img-fluid img-raised">
                   </div>
                 <div class="column col-lg-6">
-                  <h4>Doctor Name:   Dr. {{results.Doctor}}</h4>
+                  <h4>Doctor Name:   Dr. {{results.DoctorName}}</h4>
                   <h6>Appointment Date:   {{results.Day}}/{{results.Month}}/{{results.Year}}</h6>
                   <p>Appoitment Time:   {{results.Time}}</p>
                 </div>
@@ -41,10 +33,11 @@
       </div>
 
     </div>
-  </div>
+  <!-- </div> -->
+</div>
   <div class="col-md-10">
 
-    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length" class="pagination-primary">
+    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="applist.length" class="pagination-primary">
     </ngb-pagination>
 
   </div>
