@@ -75,7 +75,7 @@ if (user) {
       })
       .then(userCredential => {
         if(userCredential) {
-          this.router.navigate(['/patienthome']);
+          this.router.navigate(['/patienthome',userCredential.user.uid]);
         }
       })
   }
@@ -87,7 +87,7 @@ if (user) {
       })
       .then(userCredential => {
         if(userCredential) {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/admindash',userCredential.user.uid]);
         }
       
       })
@@ -100,7 +100,7 @@ if (user) {
       })
       .then(userCredential => {
         if(userCredential) {
-          this.router.navigate(['/fpage']);
+          this.router.navigate(['/fpage',userCredential.user.uid]);
         
           
         }

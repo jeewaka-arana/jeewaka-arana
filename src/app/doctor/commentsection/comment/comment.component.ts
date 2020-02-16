@@ -28,7 +28,7 @@ interface PostId extends Post {
 })
 export class CommentComponent implements OnInit {
   @Input() id:string;
-
+  x:any;
 
   today: number = Date.now();
 
@@ -64,6 +64,10 @@ export class CommentComponent implements OnInit {
 
     this.postsCol = this.afs.collection('Doctors').doc(this.id).collection('Posts');
     this.post = this.postsCol.valueChanges();
+
+    // this.post.subscribe((data) => { this.x = data.length });
+    
+    // console.log(this.x);
   
     // this.posts = this.postsCol.snapshotChanges()
     //   .map(actions => {
@@ -73,6 +77,14 @@ export class CommentComponent implements OnInit {
     //       return { id, data };
     //     })
     //   })
+
+
+
+ 
+
+
+
+
   }
   
 

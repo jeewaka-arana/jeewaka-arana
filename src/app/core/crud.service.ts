@@ -22,7 +22,7 @@ export class CrudService {
   }
 
   createDoctor(user:Doctor){
-    return this.afs.collection('admin').doc('4yFC0nyrxZZLyef0RXnmCJtRNr73').collection('DoctorsConf').add(user) 
+    return this.afs.collection('admin').doc('Ef5vRYcXM4Rhmc3kvXaJLFN8q9v1').collection('DoctorsConf').add(user) 
   }
     
   

@@ -62,7 +62,7 @@
                 <ng-template #popContent>
                   
                   <div *ngFor="let n of notify |async">
-                   <div *ngIf="n.flag ==true" class="dropap" (click)="test()">
+                   <div *ngIf="n.Status == 'Deleted'" class="dropap" (click)="test()">
                    Date : {{n.Day}}-{{n.Month}}-{{n.Year}}<br>
                    Time : {{n.Time}}<br>
                  

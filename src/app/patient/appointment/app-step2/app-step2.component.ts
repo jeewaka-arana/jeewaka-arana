@@ -81,14 +81,22 @@ mydate:string;
 mytime:string;
 myid:string;
 
-
+sliced;
+slice_id;
+patid;
 slotdata:any;
 
   constructor(private afs:AngularFirestore,private datePipe: DatePipe,private router: Router) {
 
+    this.sliced = router.getCurrentNavigation().finalUrl.toString().slice(10);
+    this.slice_id = this.sliced.split('/');
 
-    this.myid = router.getCurrentNavigation().finalUrl.toString().slice(10);
-    console.log(this.myid);
+    this.myid = this.slice_id[1];
+    this.patid=this.slice_id[0]
+ 
+  
+
+ 
 
     this.slotCol = afs.collection('Doctors').doc(this.myid).collection('Timeslots');
 
@@ -188,7 +196,7 @@ slotdata:any;
   {
     if(this.clicktime)
     {
-      this.router.navigate(['/appstep3',this.myid,this.clicktime,this.mydate]);
+      this.router.navigate(['/appstep3',this.myid,this.clicktime,this.mydate,this.patid]);
       
     }
 

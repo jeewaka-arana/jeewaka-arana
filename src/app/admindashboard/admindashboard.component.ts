@@ -77,7 +77,7 @@ doctorcount:Observable<any>;
   pyear:any;
   pmonth:any;
   constructor(private afs: AngularFirestore, private CrudService: CrudService, private AuthService: AuthService, private router: Router, private afAuth: AngularFireAuth) {
-    this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(8);
+    this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(11);
     console.log(this.my_id);
 
 

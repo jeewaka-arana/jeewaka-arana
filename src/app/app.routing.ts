@@ -114,15 +114,18 @@ const routes: Routes =[
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
     { path: 'default', component: WaitingComponent},
     { path: 'patienthome', component:PatienthomeComponent },
+    { path: 'patienthome/:id', component:PatienthomeComponent },
     { path: 'appointment', component:AppointmentComponent },
+    // { path: 'appstep1', component:AppStep1Component },
     { path: 'appstep1/:id', component:AppStep1Component },
-    { path: 'appstep2', component:AppStep2Component },
-    { path: 'appstep3', component:AppStep3Component },
+    // { path: 'appstep2', component:AppStep2Component },
+    { path: 'appstep2/:id/:uid', component:AppStep2Component },
+    // { path: 'appstep3', component:AppStep3Component },
     { path: 'applist/:id', component:ApplistComponent },
     { path: 'byname', component:SelectbynameComponent },
     { path: 'bydisease', component:SelectbydiseaseComponent },
-    { path: 'doctorname', component:SelectbynameComponent },
-    { path: 'diseasename', component:SelectbydiseaseComponent },
+    { path: 'doctorname/:id', component:SelectbynameComponent },
+    { path: 'diseasename/:id', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'searchdoctor/:id', component:SearchdoctorComponent },
     { path: 'avail', component:AvailComponent },
@@ -130,8 +133,8 @@ const routes: Routes =[
     { path: 'admin', component:AdminComponent },
     { path: 'alogin', component:AdminLoginComponent },
     {path:'timeslot',component: SlotsComponent},
-    { path: 'appstep3/:id/:date/:time', component:AppStep3Component },
-    { path: 'appstep2/:id', component:AppStep2Component },
+    { path: 'appstep3/:id/:date/:time/:pid', component:AppStep3Component },
+    // { path: 'appstep2/:id', component:AppStep2Component },
     { path: 'admin', component:AdminComponent ,children:[
         
      //   { path: 'imagelist', component:ImageListComponent }
@@ -195,6 +198,7 @@ const routes: Routes =[
 
 {path:'timetest',component:TimepickComponent},
 {path:'fpage',component:FirstpageComponent},
+{path:'fpage/:',component:FirstpageComponent},
 
 {path:'aboutUs',component:AboutUsComponent},
 {path:'contactUs',component:ContactUsComponent},
@@ -203,7 +207,7 @@ const routes: Routes =[
 {path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
 {path:'admindash',component:AdmindashboardComponent},
-
+{path:'admindash/:id',component:AdmindashboardComponent},
 //{path:'dlinechart' ,component:DlinechartComponent}
 {path:'dlinechart' ,component:DlinechartComponent},
 {path:'admincomplain',component:ComplainsComponent},

@@ -12,7 +12,6 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
 
-
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -20,8 +19,7 @@ AOS.init();
 })
 export class AppComponent implements OnInit {
     private _router: Subscription;
-    @ViewChild(NavbarComponent,{static:false }) navbar: NavbarComponent;
-  
+    @ViewChild(NavbarComponent,{static:false}) navbar: NavbarComponent;
 
     constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
     ngOnInit() {
@@ -32,7 +30,7 @@ export class AppComponent implements OnInit {
             }else{
                 window.document.activeElement.scrollTop = 0;
             }
-            //  this.navbar.sidebarClose();
+            //this.navbar.sidebarClose();
 
             this.renderer.listenGlobal('window', 'scroll', (event) => {
                 const number = window.scrollY;
@@ -48,19 +46,4 @@ export class AppComponent implements OnInit {
             });
         });
     }
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
 }

@@ -35,7 +35,7 @@ Month:string;
 Year:number;
 
 emonth:any;
-
+patid;
 form;
 
 Fulldate:any;
@@ -56,7 +56,7 @@ Fulldate:any;
     this.Time = this.slice_id[1];
     this.apDate = this.slice_id[2];
     this.my_id = this.slice_id[0];
-  
+    this.patid=this.slice_id[3];
 
     this.mydate=this.apDate.split('-');
     this.Day=parseInt(this.mydate[1]);
@@ -101,9 +101,31 @@ Fulldate:any;
   // }
   onSubmit(data) {
 
+
+
+    //adding data to appointment collection
+    this.afs.collection('Appointments')
+    .add({
+      PatientName:data.PatientName,
+      Email:data.Email,
+      PhoneNumber:data.PhoneNumber,
+      Day:this.Day,
+      Month:this.emonth,
+      Year:this.Year,
+      Time:this.Time,
+      Fulldate:this.Fulldate,
+      PatientID:this.patid,
+      DoctorName:this.Doctor,
+      DoctorId:this.Doctorid});
+
+
     //adding to cache database
- this.afs.collection('AppointmentCache').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,DoctorName:this.Doctor,DoctorId:this.Doctorid,Fulldate:this.Fulldate});
-    this.router.navigate(['/patienthome']);
+   // this.afs.collection('Doctors').doc(this.my_id).collection('Appointments').add({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,Fulldate:this.Fulldate,PatientID:this.patid});
+    
+    //here need to add patient id by storing it in local storage
+    //this.afs.collection('Patients').doc(this.patid).collection('Appointments').add({Day:this.Day,Month:this.emonth,Year:this.Year,Time:this.Time,DoctorName:this.Doctor,DoctorId:this.Doctorid,Fulldate:this.Fulldate})
+    this.router.navigate(['/patienthome',this.patid]);
+    alert("Appointed Doctor "+this.Doctor);
    
   }
 

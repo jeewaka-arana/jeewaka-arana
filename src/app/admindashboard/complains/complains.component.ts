@@ -37,7 +37,7 @@ this.doc=this.docCol.valueChanges();
 
 
   
-  deleteDoctorcomplains(mail:any)
+  deleteDoctorcomplains(data:any)
   {
 
     if (confirm("Are you sure to delete this record?")) {
@@ -46,6 +46,20 @@ this.doc=this.docCol.valueChanges();
       // this.afs.collection('DoctorIssues', ref => ref.where('Email','==',mail)).get().then
     }
 
+
+
+  }
+
+
+
+  deletePatientcomplains(data:any)
+  {
+
+    if (confirm("Are you sure to delete this record?")) {
+     
+
+      // this.afs.collection('DoctorIssues', ref => ref.where('Email','==',mail)).get().then
+    }
 
 
   }
