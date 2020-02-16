@@ -14,12 +14,13 @@
 
  <img src="https://www.sitegiant.my/wp-content/uploads/2015/10/admin9.png" alt="Avatar">
  <br><br>
-   <a  href="/admindash" style="font-size: 17px; font-weight:bold; color: white;"><i class="now-ui-icons design_palette"></i>  Dashboard</a><br>
-  <a href="/confirmdoc" style="font-size: 17px; font-weight:bold; color:white ;"><i class="now-ui-icons ui-2_time-alarm"></i>  Confirmation</a><br>
-  <a routerLink="/admincomplain" style="font-size: 17px; font-weight:bold; color: white;"><i class="now-ui-icons education_paper"></i>  Complains</a><br>
-  <a href="/handleAccount" style="font-size: 17px; font-weight:bold;color:white;"><i class="now-ui-icons ui-1_settings-gear-63"></i>  Handle Account</a><br>
-<a href="#contact" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons gestures_tap-01"></i>  Sign Out</a><br>
-  
+ <a  [routerLink]="['/admindash',my_id]" style="font-size: 17px; font-weight:bold; color: white;"><i class="now-ui-icons design_palette"></i>  Dashboard</a><br>
+    <a [routerLink]="['/confirmdoc',my_id]" style="font-size: 17px; font-weight:bold; color:white ;"><i class="now-ui-icons ui-2_time-alarm"></i>  Confirmation</a><br>
+    <a [routerLink]="['/admincomplain',my_id]" style="font-size: 17px; font-weight:bold; color: white;"><i class="now-ui-icons education_paper"></i>  Complains</a><br>
+    <a [routerLink]="['/handleAccount',my_id]" style="font-size: 17px; font-weight:bold;color:white;"><i class="now-ui-icons ui-1_settings-gear-63"></i>  Handle Account</a><br>
+    <a [routerLink]="['/viewdaccount',my_id]" style="font-size: 17px; font-weight:bold;color:white;"><i class="now-ui-icons ui-2_settings-90"></i>  Removed Accounts</a><br>
+    <a href="#contact" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons gestures_tap-01"></i>  Sign Out</a><br>
+    
 </div>
   
 <div class="main">
@@ -42,7 +43,7 @@
 
 
 <br><br>
-<div style="margin-left: 7rem;">
+<div style="margin-left:0.5rem;">
  <div *ngIf="click==true">
  
    
@@ -59,10 +60,12 @@
            
           
           
-          <td>{{d.Firstname}}</td>
+          <td>{{d.Firstname}} {{d.Lastname}}</td>
+          <td>{{d.Email}}</td>
+          <td>{{d.Position}}</td>
           <td>{{d.City}}</td>
-          <td>{{d.Lastname}}</td>
-          <td><button  class="btn btn-primary btn-round" type="button" (click)="deleteDoctor(d.Userid) ">Delete</button></td>
+          <td>{{d.PhoneNumber}}</td>
+          <td><button  class="btn btn-primary btn-round" type="button" (click)="deleteDoctor(d.id,d) ">Delete</button></td>
       
        </tr>
       
@@ -89,10 +92,11 @@
   
       
       
-      <td>{{p.Firstname}}</td>
-      <td>{{p.Lastname}}</td>
+      <td>{{p.Firstname}} {{p.Lastname}}</td>
+      <td>{{p.Email}}</td>
       <td>{{p.City}}</td>
-      <td><button  class="btn btn-primary btn-round" type="button" (click)="deletePatient(p.Userid) ">Delete</button></td>
+      <td>{{p.PhoneNumber}}</td>
+      <td><button  class="btn btn-primary btn-round" type="button" (click)="deletePatient(p.id,p) ">Delete</button></td>
       
    </tr>
   

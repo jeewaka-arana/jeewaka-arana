@@ -1,0 +1,115 @@
+
+<div class="card1">
+    <!-- <div class="card-body" style="background-color: #505050;">  -->
+      <div class="card-body" style="background-color: white;"> 
+        <img class="logo" src="assets/img/new3logo.png" alt="logo" height=22% width=22% style="margin-left:28rem;margin-top:1rem;"> 
+        <h4 style="margin-left:28rem;font-weight: bold;color: black;" >{{today | date:'fullDate'}}</h4>
+    </div>
+  
+  </div> 
+  
+  
+  
+  <div class="sidenav" style="background-color: #f96332;">
+  
+   <img src="https://www.sitegiant.my/wp-content/uploads/2015/10/admin9.png" alt="Avatar">
+   <br><br>
+   <a  [routerLink]="['/admindash',my_id]" style="font-size: 17px; font-weight:bold; color: white;"><i class="now-ui-icons design_palette"></i>  Dashboard</a><br>
+    <a [routerLink]="['/confirmdoc',my_id]" style="font-size: 17px; font-weight:bold; color:white ;"><i class="now-ui-icons ui-2_time-alarm"></i>  Confirmation</a><br>
+    <a [routerLink]="['/admincomplain',my_id]" style="font-size: 17px; font-weight:bold; color: white;"><i class="now-ui-icons education_paper"></i>  Complains</a><br>
+    <a [routerLink]="['/handleAccount',my_id]" style="font-size: 17px; font-weight:bold;color:white;"><i class="now-ui-icons ui-1_settings-gear-63"></i>  Handle Account</a><br>
+    <a [routerLink]="['/viewdaccount',my_id]" style="font-size: 17px; font-weight:bold;color:white;"><i class="now-ui-icons ui-2_settings-90"></i>  Removed Accounts</a><br>
+    <a href="#contact" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons gestures_tap-01"></i>  Sign Out</a><br>
+    
+  </div>
+    
+  <div class="main">
+  
+  <div class="row">
+  <div class="column col-md-4">
+    
+      
+      <button style="margin-left: 10rem;" class="btn btn-primary btn-round" type="button"  (click)="docComFunc() ">
+          <i class="now-ui-icons users_single-02"></i>  Doctors List
+      </button>
+    </div>
+    <div class="column col-md-4">
+      <button style="margin-left: 7rem;" class="btn btn-primary btn-round" type="button"  (click)="patComFunc() ">
+          <i class="now-ui-icons users_single-02"></i>  Patients List
+       </button>
+      </div>
+  
+  </div>
+  
+  
+  <br><br>
+  <div style="margin-left: 0.5rem;">
+   <div *ngIf="click==true">
+   
+     
+      <table  style="width: 100%;" >
+        
+          <tr>
+            <th *ngFor="let dhead of docheadElements" scope="col">{{dhead}} </th>
+            
+          </tr>
+         
+        
+        
+          <tr *ngFor="let d of doc | async">
+             
+            
+            
+            <td>{{d.Firstname}}  {{d.Lastname}}</td>
+            <td>{{d.Email}}</td>
+            <td>{{d.Position}}</td>
+
+            <td>{{d.City}}</td>
+            <td>{{d.PhoneNumber}}</td>
+
+            
+        
+         </tr>
+        
+        
+        </table>
+        
+  
+  
+  </div>
+  
+  <div *ngIf="click==false">
+  
+      
+  <table  style="width: 100%;" >
+        
+      <tr>
+        <th *ngFor="let phead of patheadElements" scope="col">{{phead}} </th>
+        
+      </tr>
+     
+    
+    
+      <tr *ngFor="let p of pat | async">
+    
+        
+        
+        <td>{{p.Firstname}}  {{p.Lastname}}</td>
+        <td>{{p.Email}}</td>
+        <td>{{p.City}}</td>
+        <td>{{p.PhoneNumber}}</td>
+
+        
+     </tr>
+    
+    
+    </table>
+    
+  
+  
+  </div>
+  
+  
+  
+  
+  </div>

@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {AuthService } from 'app/core/auth.service';
+import { Router } from '@angular/router';
 
 export interface Doctor{
   Userid:string,
@@ -31,8 +32,11 @@ export interface Doctorid extends Doctor{
 export class DoctorConfirmComponent implements OnInit {
   verifyCol:AngularFirestoreCollection<Doctor>;
   doc_verify:Observable<Doctorid[]>;
+my_id:string;
+  constructor(private afs:AngularFirestore,private auth:AuthService,private router:Router) {
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
 
-  constructor(private afs:AngularFirestore,private auth:AuthService) {
+
     this.verifyCol = this.afs.collection<Doctor>('admin').doc('Ef5vRYcXM4Rhmc3kvXaJLFN8q9v1').collection('DoctorsConf');
     this.doc_verify = this.verifyCol.snapshotChanges().pipe(
       map(actions => actions.map(a=>{
