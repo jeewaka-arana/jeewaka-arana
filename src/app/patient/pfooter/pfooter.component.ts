@@ -20,7 +20,9 @@ export class PfooterComponent implements OnInit {
   my_id:string;
 
   constructor(private afs: AngularFirestore,private datePipe: DatePipe,private fb: FormBuilder,private afAuth:AngularFireAuth,private router: Router) {
-    this.my_id=afAuth.auth.currentUser.uid;
+    //this.my_id=afAuth.auth.currentUser.uid;
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(13);
+    
    }
 
   ngOnInit() {
