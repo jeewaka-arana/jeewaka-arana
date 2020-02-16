@@ -10,13 +10,13 @@
         <div ngbDropdownMenu>
           <a class="dropdown-header">Welcome to Jeewaka Arana</a>
           <!-- <a class="dropdown-item" href="/patienthome">Home</a> -->
-          <a class="dropdown-item" href="/searchdoctor">Doctors</a>
-          <a class="dropdown-item" href="/adsearch">Diseases</a>
-          <a class="dropdown-item" href="/appstep1">Make Appointment</a>
+          <a class="dropdown-item" [routerLink]="['/searchdoctor',passid]">Doctors</a>
+          <a class="dropdown-item" [routerLink]="['/adsearch',passid]">Doctors</a>
+          <a class="dropdown-item" [routerLink]="['/appstep1',passid]">Make Appointment</a>
           <!-- <a class="dropdown-item" [routerLink]="['/applist',my_id]">History</a> -->
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/paboutUs">About us</a>
-          <a class="dropdown-item" href="/pcontactUs">Contact us</a>
+          <a class="dropdown-item" [routerLink]="['/paboutUs',passid]">About us</a>
+          <a class="dropdown-item" [routerLink]="['/pcontactUs',passid]">Contact us</a>
           <!-- <div class="dropdown-divider"></div> -->
           <!-- <a class="dropdown-item" href="#">Change Language</a> -->
         </div>
@@ -43,7 +43,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/patienthome">
+          <a class="nav-link" routerLink="['/patienthome',passid]">
             <i class="now-ui-icons business_bank"></i>
             <p>Home</p>
           </a>
@@ -52,12 +52,12 @@
 
 
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLink="#">
             <i class="now-ui-icons business_globe"></i>
             <p>Change Language</p>
           </a>
-        </li>
+        </li> -->
               <li class="nav-item">
                 <ng-template #popContent>
                   
@@ -73,7 +73,7 @@
                 </div>
 
                 </ng-template>
-                <a class="nav-link" ngbPopover="" popoverTitle="Recent Notifications" placement="bottom" [ngbPopover]="popContent"  routerLink="#" >
+                <a class="nav-link" ngbPopover="" popoverTitle="Recent Notifications" placement="bottom" [ngbPopover]="popContent"  >
                     <i class="now-ui-icons ui-1_bell-53"></i>
             
                     <span *ngIf="popContent" class="dot"></span>
@@ -89,7 +89,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link btn btn-neutral" routerLink="/index">
+          <a class="nav-link btn btn-neutral" [routerLink]="['/index']">
             <i class="now-ui-icons arrows-1_share-66"></i>
             <p>Log Out</p>
           </a>

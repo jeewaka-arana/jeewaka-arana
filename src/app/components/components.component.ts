@@ -11,6 +11,7 @@ import * as Rellax from 'rellax';
         margin-top: 5rem;
     }
     
+    
     `]
 })
 
@@ -47,7 +48,7 @@ export class ComponentsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-      var rellaxHeader = new Rellax('.rellax-header');
+    //   var rellaxHeader = new Rellax('.rellax-header');
 
         // var navbar = document.getElementsByTagName('nav')[0];
         // navbar.classList.add('navbar-transparent');

@@ -39,12 +39,12 @@ notify: Observable<Appointmentid[]>;
 
 id:any;
 
-
+my_id;
   constructor(public location: Location, private element : ElementRef,private afs:AngularFirestore) {
       this.sidebarVisible = false;
  
 
-
+this.my_id=this.passid;
       
 
     
