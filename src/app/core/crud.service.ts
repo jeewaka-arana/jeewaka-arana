@@ -64,6 +64,9 @@ export class CrudService {
 
 }
 
+
+
+
 //update doctor view page according to the doctor admin page
 
 getPeople(){
