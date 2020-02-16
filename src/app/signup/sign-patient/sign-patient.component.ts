@@ -127,7 +127,7 @@ export class SignPatientComponent implements OnInit {
     { name: 'South Africa', cities: [''] },
     { name: 'South Sudan', cities: [''] },
     { name: 'Spain', cities: [''] },
-    { name: 'Sri Lanka', cities: ['Colombo','Dehiwala-Mount Lavinia','Moratuwa','Jaffna', 'Negombo','Pita Kotte',' Sri Jayewardenepura Kotte','Kandy','Trincomalee','Kalmunai','Galle','Point Pedro','Batticaloa','Katunayaka','Valvedditturai'
+    { name: 'SriLanka', cities: ['Colombo','Dehiwala-Mount Lavinia','Moratuwa','Jaffna', 'Negombo','Pita Kotte',' Sri Jayewardenepura Kotte','Kandy','Trincomalee','Kalmunai','Galle','Point Pedro','Batticaloa','Katunayaka','Valvedditturai'
     ,'Matara','Battaramulla South','Dambulla','Maharagama','Kotikawatta','Anuradhapura','Vavuniya','Kolonnawa','Hendala','Ratnapura','Badulla'	
     ,'Puttalam','Devinuwara','Welisara','Kalutara','Bentota','Matale','Homagama','Beruwala','Panadura','Mulleriyawa','Kandana','Ja Ela','Wattala'	
     ,'Peliyagoda','Kelaniya','Kurunegala','Nuwara Eliya','Gampola','Chilaw','Eravur Town','Hanwella Ihala','Weligama','Vakarai','Kataragama'	
