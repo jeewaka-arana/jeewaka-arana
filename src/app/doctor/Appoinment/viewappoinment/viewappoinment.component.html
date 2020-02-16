@@ -77,43 +77,22 @@
 </nav>
 
 
-
-
-
-<div class="page-header page-header-small">
-
-  <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('http://drfranklin.com/images/banner/ayurveda%20in%20kerala.jpg');" >
-    
-
-  </div>
-  
-
-  <div class="container">
-
-      
-
-
-      <div class="content-center">
-
-        
-          <h1 style="font-family: cursive;" class="title">Your Appoinment List</h1>
-          <div class="text-center">
-            
-            
-          </div>
-      </div>
-  </div>
+<div class="head">
+  <h1 class="title">Your Appointment List</h1>
 </div>
 
+
+
+
 <!-- notification toast -->
-<ngb-toast *ngIf="show" header="Success" [autohide]="false" (hide)="close()">
-  Appointment is accepted.
+<ngb-toast *ngIf="show" header="" [autohide]="false" (hide)="close()">
+  Cancelled Appointment
 </ngb-toast>
 
 <br><br><br>
 <div class="mytab">
 <ngb-tabset [destroyOnHide]="false" >
-  <ngb-tab title="New Appointments">
+  <ngb-tab title="Appointments">
     
     <ng-template ngbTabContent>
       <div class="tabcontainer">
@@ -133,8 +112,8 @@
                   <h5>Telephone Number -{{p.PhoneNumber}} </h5> 
                   
                     
-                    <button  class="btn btn-primary btn-round ico" type="button" (click)="accept(p.id,p)"><i class="now-ui-icons ui-2_like" ></i> Accept</button>
-                    <button   class="btn btn-primary btn-round ico" type="button" (click)="reject()"><i class="now-ui-icons shopping_basket" ></i> Reject</button>
+                    
+                    <button   class="btn btn-primary btn-round ico" type="button" (click)="cancel(p.id)"><i class="now-ui-icons shopping_basket" ></i> Cancel Appointment</button>
                     </div>
           </div>
         
@@ -149,21 +128,12 @@
       </div>
     </ng-template>
   </ngb-tab>
-  <ngb-tab title="Verified">
+  <ngb-tab title="Add Timeslots">
     
     <ng-template ngbTabContent>
       <div class="tabcontainer">
-        <ul *ngFor="let p of patObserve | async">
-               <div>
-                Date - {{p.Date}}<br>
-                Time - {{p.Time}}<br>
-                Patient Name :{{p.PatientName}}<br>
-                Telephone Number -{{p.PhoneNumber}}<br>
-                <hr>
-                
-               </div>
-          </ul>
        
+       <app-timepicker></app-timepicker>
       </div>
 
      

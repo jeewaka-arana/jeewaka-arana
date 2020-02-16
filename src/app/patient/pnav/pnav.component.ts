@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { AngularFirestoreCollection, AngularFirestoreDocument, AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -10,8 +10,10 @@ export interface Appointment {
     Year:number,
     Month:number,
     Time:string,
-    Doctor:string,
-    flag:boolean
+    DoctorName:string,
+    Status?:string,
+    DoctorId:string,
+    Fulldate:string
  }
 export interface Appointmentid extends Appointment { id: string; }
 
@@ -21,6 +23,8 @@ export interface Appointmentid extends Appointment { id: string; }
   styleUrls: ['./pnav.component.scss']
 })
 export class PnavComponent implements OnInit {
+
+  @Input() passid: string;
   private toggleButton: any;
   private sidebarVisible: boolean;
   
@@ -38,24 +42,8 @@ id:any;
 
   constructor(public location: Location, private element : ElementRef,private afs:AngularFirestore) {
       this.sidebarVisible = false;
+ 
 
-
-
-      this.notifyCol = afs.collection<Appointment>('Patients').doc('dskyLFWguNTM7sRAiQ3tAQJ7L1u2').collection('Appointments');
-
-     
-     
-      this.notify=this.notifyCol.snapshotChanges()
-      .pipe(
-        map(actions => actions.map(a => {
-            const id =a.payload.doc.id;
-            const data = a.payload.doc.data() as Appointment;
-            
-        return { id, ...data };
-
-        }))
-      );
-   
 
       
 
@@ -81,6 +69,26 @@ id:any;
   ngOnInit() {
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+
+
+      //firebase 
+      
+      this.notifyCol = this.afs.collection<Appointment>('Patients').doc(this.passid).collection('Appointments');
+
+     
+     
+      this.notify=this.notifyCol.snapshotChanges()
+      .pipe(
+        map(actions => actions.map(a => {
+            const id =a.payload.doc.id;
+            const data = a.payload.doc.data() as Appointment;
+            
+        return { id, ...data };
+
+        }))
+      );
+   
+      console.log(this.passid);
   }
   sidebarOpen() {
       const toggleButton = this.toggleButton;

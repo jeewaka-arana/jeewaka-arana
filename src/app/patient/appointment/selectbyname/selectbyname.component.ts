@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Rx'
 import { observable } from 'rxjs';
 import * as _ from 'lodash';
 import { Doctor } from 'app/core/models/doctor.model';
+import { Router } from '@angular/router';
 
 interface Post {
   Firstname: string;
@@ -38,8 +39,12 @@ export class SelectbynameComponent implements OnInit {
   filters = {}
   letter = new FormControl('');
   farray: any[] = [];
+my_id;
+  constructor(private afs: AngularFirestore,private router:Router) {
 
-  constructor(private afs: AngularFirestore) {
+
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+    console.log(this.my_id);
     this.afs.collection('Doctors', ref => ref.orderBy('Firstname')).valueChanges().subscribe(results => {
     this.results = results;
     // this.farray=this.results;

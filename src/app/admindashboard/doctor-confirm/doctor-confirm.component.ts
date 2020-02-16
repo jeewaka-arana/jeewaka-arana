@@ -33,7 +33,7 @@ export class DoctorConfirmComponent implements OnInit {
   doc_verify:Observable<Doctorid[]>;
 
   constructor(private afs:AngularFirestore,private auth:AuthService) {
-    this.verifyCol = this.afs.collection<Doctor>('admin').doc('4yFC0nyrxZZLyef0RXnmCJtRNr73').collection('DoctorsConf');
+    this.verifyCol = this.afs.collection<Doctor>('admin').doc('Ef5vRYcXM4Rhmc3kvXaJLFN8q9v1').collection('DoctorsConf');
     this.doc_verify = this.verifyCol.snapshotChanges().pipe(
       map(actions => actions.map(a=>{
         const id = a.payload.doc.id;
@@ -50,11 +50,10 @@ export class DoctorConfirmComponent implements OnInit {
   ngOnInit() {
   }
 
-  accept(data:any){
+  accept(data:any,id:any){
+  
     this.auth.createDoctor(data);
-     
-   
-   // this.verifyCol.doc(id).delete();
+    this.verifyCol.doc(id).delete();
 
   }
 

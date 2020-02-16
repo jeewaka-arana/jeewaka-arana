@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import{AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import{Observable} from 'rxjs/Observable';
 import { map, delay } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 //creating a interface to retrieve appointment details as a unit
 export interface Appointment{
@@ -38,16 +41,16 @@ patdoc:AngularFirestoreDocument<Appointment>;
 
 test:any;
 show = false;
+my_id;
 
 
+  constructor(private afs:AngularFirestore,private router:Router) {
 
-  constructor(private afs:AngularFirestore) {
-
-
+    this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(16);
    }
 
   ngOnInit() {
-this.verifyCol = this.afs.collection<Appointment>('AppointmentCache');
+    this.verifyCol = this.afs.collection<Appointment>('Doctors').doc(this.my_id).collection('Appointments');
 
 
 this.pat_verify = this.verifyCol.snapshotChanges().pipe(
@@ -61,22 +64,31 @@ this.pat_verify = this.verifyCol.snapshotChanges().pipe(
 )
 
 
-this.ap_patientCol=this.afs.collection<Appointment>('Doctors').doc('1QA7Ebss0wU28EJEzg9pGPjJF8L2').collection('Appointments');
+this.ap_patientCol=this.afs.collection<Appointment>('Doctors').doc(this.my_id).collection('Appointments');
 this.patObserve=this.ap_patientCol.valueChanges();
 
 
   }
 
 
-  accept(id:any,data:any){
-    console.log(id);
-    
-    this.ap_patientCol.doc(id).set({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time,Fulldate:data.Fulldate});
-    this.afs.collection('Patients').doc('xfRi7PVladPoWuypNlMoGAGWRW93').collection('Appointments').doc(id).set({Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time,DoctorName:data.DoctorName,DoctorId:data.DoctorId,Fulldate:data.Fulldate})
-    this.show=true;
-   
-    this.verifyCol.doc(id).delete();
 
+
+  // accept(id:any,data:any){
+  //   console.log(id);
+    
+  //   this.ap_patientCol.doc(id).set({PatientName:data.PatientName,Email:data.Email,PhoneNumber:data.PhoneNumber,Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time,Fulldate:data.Fulldate});
+  //   this.afs.collection('Patients').doc('xfRi7PVladPoWuypNlMoGAGWRW93').collection('Appointments').doc(id).set({Day:data.Day,Month:data.Month,Year:data.Year,Time:data.Time,DoctorName:data.DoctorName,DoctorId:data.DoctorId,Fulldate:data.Fulldate})
+  //   this.show=true;
+   
+  //   this.verifyCol.doc(id).delete();
+
+  // }
+
+  cancel(id:any){
+    console.log(id);
+    alert("Are you sure to cancel this appointment");
+    this.afs.collection('Doctors').doc(this.my_id).collection('Appointments').doc(id).delete();
+    this.show=true;
   }
 
   close() {
