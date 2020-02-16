@@ -125,7 +125,7 @@ countPatFor:Observable<any>;
     // console.log(data);
     // console.log("hi");
 
-    this.QueryCol = this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('year', '==', +data));
+    this.QueryCol = this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('Year', '==', +data));
     console.log(this.QueryCol);
     this.Query = this.QueryCol.valueChanges();
     console.log(this.Query);
@@ -139,7 +139,7 @@ countPatFor:Observable<any>;
 
   monthFilter(dmonth){
 
-    this.QueryCol=this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('month','==',+dmonth).where('year','==',+this.year));
+    this.QueryCol=this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('Month','==',+dmonth).where('Year','==',+this.year));
     this.Query = this.QueryCol.valueChanges();
     this.Query.subscribe((data) => { this.m = data.length });
     console.log(this.m);
@@ -147,7 +147,7 @@ countPatFor:Observable<any>;
 
   }
   dayFilter(day){
-    this.QueryCol=this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('month','==',+this.month).where('year','==',+this.year).where('day','==',+day));
+    this.QueryCol=this.afs.collection('Doctors').doc(this.my_id).collection('viewappoinment', ref => ref.where('Month','==',+this.month).where('Year','==',+this.year).where('Day','==',+day));
     this.Query = this.QueryCol.valueChanges();
     this.Query.subscribe((data) => { this.d = data.length });
   }

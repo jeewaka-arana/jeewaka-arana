@@ -119,7 +119,7 @@ const routes: Routes =[
     { path: 'appointment', component:AppointmentComponent },
     { path: 'appstep1', component:AppStep1Component },
     { path: 'appstep1/:id', component:AppStep1Component },
-    { path: 'appstep2', component:AppStep2Component },
+     { path: 'appstep2', component:AppStep2Component },
     { path: 'appstep2/:id/:uid', component:AppStep2Component },
     { path: 'appstep3', component:AppStep3Component },
     { path: 'applist/:id', component:ApplistComponent },
@@ -135,7 +135,7 @@ const routes: Routes =[
     { path: 'alogin', component:AdminLoginComponent },
     {path:'timeslot',component: SlotsComponent},
     { path: 'appstep3/:id/:date/:time/:pid', component:AppStep3Component },
-    { path: 'appstep2/:id', component:AppStep2Component },
+     { path: 'appstep2/:id', component:AppStep2Component },
     { path: 'admin', component:AdminComponent ,children:[
         
      //   { path: 'imagelist', component:ImageListComponent }

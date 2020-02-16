@@ -128,7 +128,7 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
   docYearFilter(data) {
 
 
-    this.dQueryCol = this.afs.collection('Doctors', ref => ref.where('year', '==', +data));
+    this.dQueryCol = this.afs.collection('Doctors', ref => ref.where('Year', '==', +data));
     console.log(this.dQueryCol);
     this.dQuery = this.dQueryCol.valueChanges();
     console.log(this.dQuery);
@@ -142,7 +142,7 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
 
   docMonthFilter(dmonth){
 
-    this.dQueryCol=this.afs.collection('Doctors', ref => ref.where('month','==',+dmonth).where('year','==',+this.dyear));
+    this.dQueryCol=this.afs.collection('Doctors', ref => ref.where('Month','==',+dmonth).where('Year','==',+this.dyear));
     this.dQuery = this.dQueryCol.valueChanges();
     this.dQuery.subscribe((data) => { this.dm = data.length });
     //console.log(this.m);
@@ -151,7 +151,7 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
     
   }
   docDayFilter(day){
-    this.dQueryCol=this.afs.collection('Doctors', ref => ref.where('month','==',+this.dmonth).where('year','==',+this.dyear).where('day','==',+day));
+    this.dQueryCol=this.afs.collection('Doctors', ref => ref.where('Month','==',+this.dmonth).where('Year','==',+this.dyear).where('Day','==',+day));
     this.dQuery = this.dQueryCol.valueChanges();
     this.dQuery.subscribe((data) => { this.dd = data.length });
   }
@@ -162,7 +162,7 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
   patYearFilter(data) {
 
 
-    this.pQueryCol = this.afs.collection('Patients', ref => ref.where('year', '==', +data));
+    this.pQueryCol = this.afs.collection('Patients', ref => ref.where('Year', '==', +data));
     console.log(this.pQueryCol);
     this.pQuery = this.pQueryCol.valueChanges();
     console.log(this.pQuery);
@@ -174,7 +174,7 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
 }
   patMonthFilter(pmonth){
 
-    this.pQueryCol=this.afs.collection('Patients', ref => ref.where('month','==',+pmonth).where('year','==',+this.pyear));
+    this.pQueryCol=this.afs.collection('Patients', ref => ref.where('Month','==',+pmonth).where('Year','==',+this.pyear));
     this.pQuery = this.pQueryCol.valueChanges();
     this.pQuery.subscribe((data) => { this.pm = data.length });
     //console.log(this.m);
@@ -183,7 +183,7 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
     
   }
   patDayDayFilter(pday){
-    this.pQueryCol=this.afs.collection('Patients', ref => ref.where('month','==',+this.pmonth).where('year','==',+this.pyear).where('day','==',+pday));
+    this.pQueryCol=this.afs.collection('Patients', ref => ref.where('Month','==',+this.pmonth).where('Year','==',+this.pyear).where('Day','==',+pday));
     this.pQuery = this.pQueryCol.valueChanges();
     this.pQuery.subscribe((data) => { this.cs = data.length });
   }

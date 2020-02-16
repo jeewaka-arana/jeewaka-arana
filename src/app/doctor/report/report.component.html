@@ -15,7 +15,7 @@
   <br><br>
   <a routerLink="/index" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons business_bank"></i>   Home</a><br>
 
-  <a routerLink="/spage" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons business_briefcase-24"></i>   Appoinments</a><br>
+  <a [routerLink]="['/viewappoinment',my_id]"  style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons business_briefcase-24"></i>   Appoinments</a><br>
   <a [routerLink]="['/complain',my_id]" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons text_align-center"></i>   Complains</a><br>
 
   <a  [routerLink]="['/spage',my_id]" style="font-size: 17px; font-weight:bold;color: white;"><i class="now-ui-icons users_circle-08"></i>  Profile</a><br>
