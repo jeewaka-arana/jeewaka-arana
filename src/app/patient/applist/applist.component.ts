@@ -27,7 +27,7 @@ export class ApplistComponent implements OnInit {
   applist=[];
 
   page = 1;
-  pageSize = 5;
+  pageSize = 4;
 
   my_id;
   patDoc: AngularFirestoreCollection;
@@ -48,6 +48,7 @@ export class ApplistComponent implements OnInit {
  this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Day').where('Day',">=",this.currentday)).valueChanges().subscribe(results => {
       this.results = results;
       console.log(results);
+      console.log("hi");
       results.forEach(element => {
        if(element.Month >= this.currentmonth)
        {
@@ -63,16 +64,6 @@ export class ApplistComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    // this.patDoc = this.afs.collection('Patients').doc(this.my_id).collection('Appointments');
-    // console.log(this.patDoc);
-    // this.atDoc = this.afs.collection('Patients').doc(this.my_id);
-    // console.log(this.atDoc);
-    // this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.where('Year',">=",this.currentyear)).valueChanges().subscribe(results => {
-    //   this.results = results;
-    //   this.applyFilters();
-    
-    // })
     this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Month')).valueChanges().subscribe(results => {
       this.results = results;
       console.log(this.results);

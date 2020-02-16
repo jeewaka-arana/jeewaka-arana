@@ -8,6 +8,7 @@ import { Doctor } from 'app/core/models/doctor.model';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 interface Doctors{
   
@@ -46,9 +47,12 @@ export class SelectbydiseaseComponent implements OnInit {
   filteredNames: any[] = [];
   page = 1;
   pageSize = 3;
+my_id;
 
+  constructor(private SearchDoctorService:SearchdoctorService,private fauth:AngularFireAuth,private afs:AngularFirestore,private router:Router) {
 
-  constructor(private SearchDoctorService:SearchdoctorService,private fauth:AngularFireAuth,private afs:AngularFirestore) {
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(13);
+    console.log(this.my_id);
    }
 
   ngOnInit() {

@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/map'
 import { AppStep1 } from '../../../core/models/app-step1.model';
+import { Router } from '@angular/router';
 
 interface example {
   firstname : string;
@@ -22,9 +23,12 @@ export class AppStep1Component implements OnInit {
   firstname:string;
   lastname:string;
   number:number;
+my_id:string;
 
-
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore,private router:Router) {
+    this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(10);
+    console.log(this.my_id);
+   }
 
   ngOnInit() {
     this.examplesCol=this.afs.collection('example');

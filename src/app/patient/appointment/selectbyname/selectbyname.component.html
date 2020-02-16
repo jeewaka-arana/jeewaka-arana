@@ -33,28 +33,8 @@
 
 
     <div class="container">
-        <div class="section section-basic">
-            <div class="container">
-
-            </div>
-        </div>
-
         <div class="form-check form-check-radio row">
-            <div class="byLetter">
-                <!-- <div class="form-check form-check-radio">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <span class="form-check-sign"></span>
-                    Radio is off
-                </label>
-            </div>
-            <div class="form-check form-check-radio">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <span class="form-check-sign"></span>
-                    Radio is off
-                </label>
-            </div> -->
+            <div class="byFLetter">
                 Firstname: <label class="form-check-label">
                     <input class="form-check-input" type="radio" (change)="selectAll()" [formControl]="letter"
                         value="ALL" [checked]="true">
@@ -194,10 +174,153 @@
                 <!-- <a id="A" href="">A</a> -->
             </div>
         </div>
+<!-- <hr>
+        <div class="form-check form-check-radio row">
+            <div class="byLLetter">
+                Lastname: <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="selectAll()" [formControl]="letter"
+                        value="ALL" [checked]="true">
+                    <span class="form-check-sign"></span>ALL
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="A">
+                    <span class="form-check-sign"></span>A
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="B">
+                    <span class="form-check-sign"></span>B
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="C">
+                    <span class="form-check-sign"></span>C
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="D">
+                    <span class="form-check-sign"></span>D
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="E">
+                    <span class="form-check-sign"></span>E
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="F">
+                    <span class="form-check-sign"></span>F
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="G">
+                    <span class="form-check-sign"></span>G
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="H">
+                    <span class="form-check-sign"></span>H
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="I">
+                    <span class="form-check-sign"></span>I
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="J">
+                    <span class="form-check-sign"></span>J
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="K">
+                    <span class="form-check-sign"></span>K
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="L">
+                    <span class="form-check-sign"></span>L
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="M">
+                    <span class="form-check-sign"></span>M
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="N">
+                    <span class="form-check-sign"></span>N
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="O">
+                    <span class="form-check-sign"></span>O
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="P">
+                    <span class="form-check-sign"></span>P
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="Q">
+                    <span class="form-check-sign"></span>Q
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="R">
+                    <span class="form-check-sign"></span>R
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="S">
+                    <span class="form-check-sign"></span>S
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="T">
+                    <span class="form-check-sign"></span>T
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="U">
+                    <span class="form-check-sign"></span>U
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="V">
+                    <span class="form-check-sign"></span>V
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="W">
+                    <span class="form-check-sign"></span>W
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="X">
+                    <span class="form-check-sign"></span>X
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="Y">
+                    <span class="form-check-sign"></span>Y
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" (change)="lname('Lastname',letter)"
+                        [formControl]="letter" value="Z">
+                    <span class="form-check-sign"></span>Z
+                </label>
+            </div>
+        </div> -->
+
+
+
 
 
         <div class="section section-tabs">
-            <div class="container">
+            <div class="container1">
                 <div class="row">
                     <div class="col-md-20 col-xl-10">
 <!-- <div *ngIf="letter=='ALL'"> -->
@@ -206,16 +329,15 @@
                             <div class="card">
                              <div class="row">
                                     <div class="img-btn">
-                                        <img src="assets/img/logo.png" alt="Thumbnail Image"
-                                            class="img-fluid img-raised">
-                                    </div>
+                                        <img src="{{result.downloadURL}}" alt="Profile Image" class="img-fluid img-raised">
+                                      </div>
                                     <div class="column">
                                         <h4 [routerLink]="['/doctorview',result.Userid]">Dr. {{result.Firstname}}
                                             {{result.Lastname}}</h4>
                                         <button [routerLink]="['/doctorview',result.Userid]"
                                             class="btn btn-primary btn-round ico" type="button"><i
                                                 class="now-ui-icons users_single-02"></i> View Profile</button>
-                                        <button [routerLink]="['/appstep2',result.Userid]" class="btn btn-primary btn-round ico"
+                                        <button [routerLink]="['/appstep2',my_id,result.Userid]" class="btn btn-primary btn-round ico"
                                             type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book
                                             Now</button>
                                     </div>
@@ -259,17 +381,6 @@
         <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length"
             class="pagination-primary"></ngb-pagination>
 
-    </div>
-    <div class="section section-basic">
-        <div class="container">
-            <div id="buttons">
-                <div class="row" class="text-center">
-                    <div class="col-md-10">
-                        <button routerLink="/appstep1" class="btn btn-primary btn-round" type="button">Back</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- <footer class="footer footer-default">

@@ -7,7 +7,9 @@ import { Article } from 'app/core/models/article.model';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { DatePipe } from '@angular/common';
+// import { Router } from '@angular/router';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 
 
 interface Post {
@@ -49,16 +51,17 @@ currentsecond=parseInt(this.datePipe.transform(new Date(),"ss"));
   passReset: boolean = false;
 my_id:string;
 sessionid:string;
-  constructor(private afs: AngularFirestore,private datePipe: DatePipe,private fb: FormBuilder,private afAuth:AngularFireAuth) { 
+  constructor(private afs: AngularFirestore,private datePipe: DatePipe,private fb: FormBuilder,private afAuth:AngularFireAuth,private router:Router) { 
 
-    
-    sessionStorage.setItem(afAuth.auth.currentUser.uid,this.sessionid);
-  }
+   // this.my_id=afAuth.auth.currentUser.uid;
+   this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(13);
+    console.log(this.my_id);
+  } 
 
   ngOnInit() {
     // this.postsCol = this.afs.collection('Article')
     // this.posts = this.postsCol.valueChanges();
-    this.afs.collection('Article',ref => ref.limit(20)).valueChanges().subscribe(results => {
+    this.afs.collection('Article',ref => ref.limit(20).orderBy('date')).valueChanges().subscribe(results => {
       this.results = results;
       
     })
