@@ -48,8 +48,6 @@ import { AdminComponent } from './admin/admin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HomeComponent } from './home/home.component';
 
-import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
-import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 import { from } from 'rxjs';
 
 // import { ImagesComponent } from './images/images.component';
@@ -79,7 +77,6 @@ import { DatePipe } from '@angular/common';
 
 //I keep the new line
 import { GooglemapComponent } from './patient/googlemap/googlemap.component';
-import { StarreviewComponent } from './patient/starreview/starreview.component';
 import { Test2Component } from './test2/test2.component';
 import { DocAppoinmentComponent } from './doctor/Appoinment/doc-appoinment/doc-appoinment.component';
 import { ViewappoinmentComponent } from './doctor/Appoinment/viewappoinment/viewappoinment.component';
@@ -129,7 +126,6 @@ import { ApplistComponent } from './patient/applist/applist.component';
 
 // import { ChartsModule } from 'ng2-charts';
 // import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
-import { AvailComponent } from './patient/avail/avail.component';
 
 
 import { ChartsModule } from 'ng2-charts';
@@ -172,8 +168,6 @@ import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account
         UserloginComponent,
         AdminComponent,
         HomeComponent,
-        DoctorfordComponent,
-        ConfirmationComponent,
         TestComponent,
         DocLoginComponent,
         PatLoginComponent,
@@ -197,7 +191,6 @@ import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account
         AdminLoginComponent,
         DocacceptComponent,
         GooglemapComponent,
-        StarreviewComponent,
         Test2Component,
         DocAppoinmentComponent,
         ViewappoinmentComponent,
@@ -235,7 +228,6 @@ import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account
         //DlinechartComponent,
        
         DlinechartComponent,
-        AvailComponent,
         PatientchartComponent,
         DoctorchartComponent,
         ComplainsComponent,

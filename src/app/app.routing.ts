@@ -27,8 +27,6 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 
-import { DoctorfordComponent } from './patient/appointment/doctorford/doctorford.component';
-import { ConfirmationComponent } from './patient/appointment/confirmation/confirmation.component';
 
 
 import { TestComponent } from './test/test.component';
@@ -41,7 +39,6 @@ import{CommentComponent} from './doctor/commentsection/comment/comment.component
 import { ReactionComponent } from './doctor/reaction/reaction/reaction.component';
 import { AdvancedsearchComponent } from './patient/searchdoctor/advancedsearch/advancedsearch.component';
 import { GooglemapComponent } from './patient/googlemap/googlemap.component';
-import { StarreviewComponent } from './patient/starreview/starreview.component';
 
 
 
@@ -82,7 +79,6 @@ import { FirebasetestComponent } from './firebasetest/firebasetest.component';
 
 //import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
 import{DlinechartComponent}from './doctor/dlinechart/dlinechart.component';
-import { AvailComponent } from './patient/avail/avail.component';
 import{ComplainsComponent} from '../app/admindashboard/complains/complains.component';
 import{HandleaccountsComponent} from '../app/admindashboard/handleaccounts/handleaccounts.component';
 
@@ -129,7 +125,6 @@ const routes: Routes =[
     { path: 'diseasename/:id', component:SelectbydiseaseComponent },
     { path: 'searchdoctor', component:SearchdoctorComponent },
     { path: 'searchdoctor/:id', component:SearchdoctorComponent },
-    { path: 'avail', component:AvailComponent },
     { path: 'login', component: UserloginComponent},
     { path: 'admin', component:AdminComponent },
     { path: 'alogin', component:AdminLoginComponent },
@@ -147,8 +142,6 @@ const routes: Routes =[
    // {path:'adminlogin',component:AdminloginComponent},
     { path: 'admin/doclist', component:DoclistComponent },
     { path: 'signup', component:SignupComponent },
-    { path: 'doctorford', component:DoctorfordComponent},
-    { path: 'confirmation', component:ConfirmationComponent},
     { path: 'here/:City', component:HeremapComponent},
     { path: 'test', component:TestComponent},
     { path: 'test2', component:Test2Component},
@@ -165,7 +158,6 @@ const routes: Routes =[
 
 {path:'comment',component:CommentComponent},
     { path: 'googlemap/:City', component:GooglemapComponent},
-    { path: 'star' , component:StarreviewComponent },
     
     
 //     {path:'image' ,component:ImageComponent,children:[

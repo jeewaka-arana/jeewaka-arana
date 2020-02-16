@@ -5,6 +5,7 @@ import { FirebaseAuth } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 interface Doctors{
   
@@ -34,9 +35,12 @@ export class AdvancedsearchComponent implements OnInit {
   ,'Varicose Venis','I have a medical hospital for all diseases'
 
 ];
+ my_id;
 
-  constructor(private SearchDoctorService:SearchdoctorService,private fauth:AngularFireAuth,private afs:AngularFirestore) {
+  constructor(private SearchDoctorService:SearchdoctorService,private fauth:AngularFireAuth,private afs:AngularFirestore,private router:Router) {
     
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(10);
+  console.log(this.my_id);
     // this.postsCol=this.afs.collection('Doctors');
     // this.posts=this.postsCol.valueChanges();
   
