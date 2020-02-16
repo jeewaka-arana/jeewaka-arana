@@ -21,6 +21,8 @@ Doctor:string;
 my_id:string;
 profile:any;
 specialist:string;
+ClinicAddress;
+
 Doctorid:string;
 
 
@@ -33,6 +35,8 @@ mydate;
 Day:number;
 Month:string;
 Year:number;
+
+
 
 emonth:any;
 patid;
@@ -57,7 +61,7 @@ Fulldate:any;
     this.apDate = this.slice_id[2];
     this.my_id = this.slice_id[0];
     this.patid=this.slice_id[3];
-
+   
     this.mydate=this.apDate.split('-');
     this.Day=parseInt(this.mydate[1]);
     this.Month=this.mydate[0];
@@ -137,6 +141,7 @@ Fulldate:any;
      this.specialist =value.Specialist;
      this.Doctorid = value.Userid;
      this.profile=value.downloadURL;
+     this.ClinicAddress=value.No +","+ value.Lane1 +","+value.Lane2;
   });
 
 

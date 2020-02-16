@@ -40,7 +40,7 @@
         <body> 
             <div class="reservation">
               <header>
-                <a routerLink="/appstep2/{{my_id}}">
+                <a [routerLink]="['/appstep2',patid,my_id]">
                   <i class="fa fa-angle-left fa-2x" aria-hidden="true"> Change Date & Time</i>
                 </a>
              
@@ -62,9 +62,9 @@
                 </header>
                 <hr>
               <section class="date_time">
-                <p class="info">(Clinic Name)</p>
-                <p class="info">(Clinic Address)</p>
-                <a href="#"> Get Directions</a>
+                
+                <p class="info">{{ClinicAddress}}</p>
+               
                 </section>
             </div>
             <div class="reservation">
