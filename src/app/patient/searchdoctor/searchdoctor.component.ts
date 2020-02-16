@@ -170,9 +170,12 @@ export class SearchdoctorComponent implements OnInit {
 
   getCity() {
     this.results = [];
+    // console.log("hi");
     this.patDoc = this.afs.collection('Patients').doc(this.my_id);
+    // console.log("hi");
     this.patDoc.valueChanges().subscribe(doc => {
       this.myCity = doc.City;
+      // console.log("hi");
       console.log(this.myCity);
       this.afs.collection('Doctors', ref => ref.where("City", "==", this.myCity)).valueChanges().subscribe(results => {
         this.results = results;
@@ -234,6 +237,7 @@ export class SearchdoctorComponent implements OnInit {
                    this.filteredNames.push(element);
                    break;
                  }
+
                  }
                 
                  

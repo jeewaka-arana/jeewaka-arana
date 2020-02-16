@@ -80,6 +80,23 @@ my_id;
     console.log(this.farray);
     this.applyFilters();
   }
+  
+  lname(property: string, letter) {
+    this.farray = [];
+    for (var i = 0; i < this.results.length; i++) {
+      var v: string = this.results[i].Lastname;
+      var x: string = v.charAt(0);
+      if (letter.value == x) {
+        console.log("yes");
+        this.farray.push(this.results[i]);
+      }
+      else {
+        console.log("no");
+      }
+    }
+    console.log(this.farray);
+    this.applyFilters();
+  }
   selectAll() {
     this.farray = [];
     for (var i = 0; i < this.results.length; i++) {

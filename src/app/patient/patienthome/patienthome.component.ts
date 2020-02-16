@@ -7,6 +7,7 @@ import { Article } from 'app/core/models/article.model';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { DatePipe } from '@angular/common';
+// import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 
@@ -60,7 +61,7 @@ sessionid:string;
   ngOnInit() {
     // this.postsCol = this.afs.collection('Article')
     // this.posts = this.postsCol.valueChanges();
-    this.afs.collection('Article',ref => ref.limit(20)).valueChanges().subscribe(results => {
+    this.afs.collection('Article',ref => ref.limit(20).orderBy('date')).valueChanges().subscribe(results => {
       this.results = results;
       
     })
