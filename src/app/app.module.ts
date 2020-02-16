@@ -127,8 +127,8 @@ import { SlotsComponent } from './patient/appointment/slots/slots.component';
 import { ApplistComponent } from './patient/applist/applist.component';
 
 
-import { ChartsModule } from 'ng2-charts';
-import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+// import { ChartsModule } from 'ng2-charts';
+// import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 import { AvailComponent } from './patient/avail/avail.component';
 
 
@@ -145,6 +145,7 @@ import { DoctorConfirmComponent } from './admindashboard/doctor-confirm/doctor-c
 
 //firestore functions
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account/view-delete-account.component';
 
 
 
@@ -245,7 +246,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
         // ChartsComponent,
       
         ApplistComponent ,
-        SlotsComponent
+        SlotsComponent,
+        ViewDeleteAccountComponent
         
        
        

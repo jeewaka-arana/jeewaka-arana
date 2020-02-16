@@ -94,6 +94,7 @@ import {DoctorConfirmComponent} from './admindashboard/doctor-confirm/doctor-con
 //notification testing
 import {PnavComponent} from './patient/pnav/pnav.component';
 import { AuthGuard } from './core/auth.guard';
+import{ViewDeleteAccountComponent} from './admindashboard/view-delete-account/view-delete-account.component';
 
 
 const routes: Routes =[
@@ -200,15 +201,18 @@ const routes: Routes =[
 {path:'contactUs',component:ContactUsComponent},
 {path:'pcontactUs',component:PcontactUsComponent},
 {path:'paboutUs',component:PaboutUsComponent},
-{path:'spage',component:SecondpageComponent},
+//{path:'spage',component:SecondpageComponent},
 {path:'spage/:id',component:SecondpageComponent},
-{path:'admindash',component:AdmindashboardComponent},
+//{path:'admindash',component:AdmindashboardComponent},
+{path:'admindash/:id',component:AdmindashboardComponent},
+
 
 //{path:'dlinechart' ,component:DlinechartComponent}
 {path:'dlinechart' ,component:DlinechartComponent},
-{path:'admincomplain',component:ComplainsComponent},
-{path:'handleAccount',component:HandleaccountsComponent},
-{path:'confirmdoc',component:DoctorConfirmComponent}
+{path:'admincomplain/:id',component:ComplainsComponent},
+{path:'handleAccount/:id',component:HandleaccountsComponent},
+{path:'confirmdoc/:id',component:DoctorConfirmComponent},
+{path:'viewdaccount/:id',component:ViewDeleteAccountComponent}
     ]
 
 

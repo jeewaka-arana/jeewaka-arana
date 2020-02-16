@@ -48,6 +48,9 @@ export class CommentComponent implements OnInit {
   
  
  
+currentmonth=parseInt(this.datePipe.transform(new Date(),"MM" ));
+currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
+currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
 
   
    my_id:string;
@@ -91,7 +94,7 @@ export class CommentComponent implements OnInit {
   addPost() {
 
     
-     this.afs.collection('Doctors').doc(this.id).collection('Posts').add({'title': this.title, 'content': this.content});
+     this.afs.collection('Doctors').doc(this.id).collection('Posts').add({'title': this.title, 'content': this.content,'Year':this.currentyear,'Month':this.currentmonth,'Day':this.currentday});
   }
 
   // getPost(postId) {

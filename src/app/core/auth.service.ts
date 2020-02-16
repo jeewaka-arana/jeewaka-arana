@@ -87,7 +87,7 @@ if (user) {
       })
       .then(userCredential => {
         if(userCredential) {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/admindash','Ef5vRYcXM4Rhmc3kvXaJLFN8q9v1']);
         }
       
       })
