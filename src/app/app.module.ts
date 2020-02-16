@@ -127,8 +127,8 @@ import { SlotsComponent } from './patient/appointment/slots/slots.component';
 import { ApplistComponent } from './patient/applist/applist.component';
 
 
-import { ChartsModule } from 'ng2-charts';
-import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
+// import { ChartsModule } from 'ng2-charts';
+// import { DlinechartComponent } from './doctor/dlinechart/dlinechart.component';
 import { AvailComponent } from './patient/avail/avail.component';
 
 

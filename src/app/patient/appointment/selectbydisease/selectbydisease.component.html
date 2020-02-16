@@ -11,11 +11,11 @@
       </div>
       <br>
       <div class="container">
-        <div class="section section-basic">
+        <!-- <div class="section section-basic">
                 <div class="container">
 
         </div>
-    </div>     
+    </div>      -->
 
     <div class="row">
         <!-- <form #searchform=ngForm > -->
@@ -32,15 +32,15 @@
 
     
     <div class="section section-tabs">
-          <div class="container">                  
+          <div class="container1">                  
                 <div class="row">
                         <div class="col-md-20 col-xl-10" >
 <ul *ngFor="let results of filteredNames  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
     <div class="card" >
         <div class="row">
             <div class="img-btn">
-                <img src="assets/img/logo.png" alt="Thumbnail Image" class="img-fluid img-raised">
-            </div>
+                <img src="{{results.downloadURL}}" alt="Profile Image" class="img-fluid img-raised">
+              </div>
             <div class="column">  
                 <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
                 <button [routerLink]="['/doctorview',results.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
