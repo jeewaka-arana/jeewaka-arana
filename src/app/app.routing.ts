@@ -113,7 +113,7 @@ const routes: Routes =[
     { path: 'signup/sign-patient', component:SignPatientComponent },
     { path: 'signup/sign-doctor', component: SignDoctorComponent},
     { path: 'default', component: WaitingComponent},
-    { path: 'patienthome', component:PatienthomeComponent },
+     { path: 'patienthome', component:PatienthomeComponent },
     { path: 'patienthome/:id', component:PatienthomeComponent },
     { path: 'appointment', component:AppointmentComponent },
     // { path: 'appstep1', component:AppStep1Component },
