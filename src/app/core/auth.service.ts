@@ -119,7 +119,7 @@ if (user) {
 
         this.insertPatientData(userCredential)
           .then(() => {
-            this.router.navigate(['/patienthome']);
+            this.router.navigate(['/']);
           });
       })
       .catch( error => {
