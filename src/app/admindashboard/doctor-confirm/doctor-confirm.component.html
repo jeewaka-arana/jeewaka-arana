@@ -25,19 +25,29 @@
   
 <div class="main">
    <div class="list-group users-list">
-      <div *ngFor="let doc of doc_verify | async" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="row">
+
+      
+      <div  *ngFor="let doc of doc_verify | async" class="list-group-item list-group-item-action flex-column align-items-start">
+        
+        <div  class="row">
              <div class="col col-md-2 image-col">
                   <img class="image" src="https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg">
               </div>
-              <div class="col col-md-8 text-col">
+              <div class="col col-md-9 text-col">
                  <h5 class="mb-1"> {{doc.firstName}} {{doc.lastName}}</h5>
-                  <small>City: {{doc.city}}</small>
-                  <small>Position: {{doc.position}}</small>
+                  <small>Specialist: {{doc.specialist}}</small><br>
+                  <small>Experienced Years: {{doc.years}}</small><br>               
+                  <small>Position: {{doc.position}}</small> <br>
+                  <small>City: {{doc.city}}</small> <br>
+                  <small>Registration Number: {{doc.regnumber}}</small><br>
+                  <small>Certification URL:<b><a href="https://firebasestorage.googleapis.com/v0/b/jeevaka-arana.appspot.com/o/Certificates%2F1573625998831_Web_Authoring_HTML_notes.pdf?alt=media&token=6386b77d-82a8-4a27-a03a-29a46b5786db" download="Certification">click here</a></b></small><br>
+                  <small>NIC: {{doc.nic}}</small><br>
+                  <small>Email: {{doc.email}}</small><br>
+                  <small>Phone Number: {{doc.phone}}</small><br>
              
               </div>
               <button  class="btn btn-primary btn-round ico" type="button" (click)="accept(doc,doc.id)"><i class="now-ui-icons ui-2_like" ></i> Accept</button>
-              <button   class="btn btn-primary btn-round ico" type="button" (click)="reject()"><i class="now-ui-icons shopping_basket" ></i> Reject</button>
+              <button   class="btn btn-primary btn-round ico" type="button" (click)="reject(doc,doc.id)"><i class="now-ui-icons shopping_basket" ></i> Reject</button>
              
               <!--<div class="col col-md-2 actions-col">-->
 
@@ -72,8 +82,11 @@
                    </ng-template> -->
                <!--</div>-->
           </div>
+         
       </div>
-  </div>
+  
 
+ 
+</div>
    
 </div>
