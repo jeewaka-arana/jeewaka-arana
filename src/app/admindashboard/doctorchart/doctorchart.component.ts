@@ -100,8 +100,8 @@ export class DoctorchartComponent implements OnInit {
 
 
 
-    this.QueryCol = this.afs.collection('Doctors', ref => ref.where('year', '==', +data));
-    this.afs.collection('Doctors', ref => ref.where('year', '==', +data)).valueChanges().subscribe(result => {
+    this.QueryCol = this.afs.collection('Doctors', ref => ref.where('Year', '==', +data));
+    this.afs.collection('Doctors', ref => ref.where('Year', '==', +data)).valueChanges().subscribe(result => {
 
 
       this.jan=0;
@@ -119,42 +119,42 @@ export class DoctorchartComponent implements OnInit {
       
 
       result.forEach(element => {
-        if (element['month'] == 1) {
+        if (element['Month'] == 1) {
           this.jan = this.jan + 1;
         }
-        else if (element['month'] == 2) {
+        else if (element['Month'] == 2) {
           this.feb = this.feb + 1;
         }
-        else if (element['month'] == 3) {
+        else if (element['Month'] == 3) {
           this.mar = this.mar + 1;
         }
-        else if (element['month'] == 4) {
+        else if (element['Month'] == 4) {
           this.apr = this.apr + 1;
         }
         
-        else if (element['month'] == 5) {
+        else if (element['Month'] == 5) {
           this.may = this.may + 1;
         }
-        else if (element['month'] == 6) {
+        else if (element['Month'] == 6) {
           this.jun = this.jun + 1;
         }
-        else if (element['month'] == 7) {
+        else if (element['Month'] == 7) {
           this.jul = this.jul + 1;
         }
-        else if (element['month'] == 8) {
+        else if (element['Month'] == 8) {
           this.aug = this.aug + 1;
         }
-        else if (element['month'] == 9) {
+        else if (element['Month'] == 9) {
           this.sep = this.sep + 1;
         }
 
-        else if (element['month'] == 10) {
+        else if (element['Month'] == 10) {
           this.oct = this.oct + 1;
         }
-        else if (element['month'] == 11) {
+        else if (element['Month'] == 11) {
           this.nov = this.nov + 1;
         }
-        else if (element['month'] == 12) {
+        else if (element['Month'] == 12) {
           this.dec = this.dec + 1;
         }
 
