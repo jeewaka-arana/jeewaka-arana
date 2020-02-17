@@ -92,7 +92,7 @@ import {PnavComponent} from './patient/pnav/pnav.component';
 import { AuthGuard } from './core/auth.guard';
 import{ViewDeleteAccountComponent} from './admindashboard/view-delete-account/view-delete-account.component';
 
-
+import {ViewCommentPartComponent} from './doctor/commentsection/view-comment-part/view-comment-part.component'
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -215,7 +215,8 @@ const routes: Routes =[
 {path:'admincomplain/:id',component:ComplainsComponent},
 {path:'handleAccount/:id',component:HandleaccountsComponent},
 {path:'confirmdoc/:id',component:DoctorConfirmComponent},
-{path:'viewdaccount/:id',component:ViewDeleteAccountComponent}
+{path:'viewdaccount/:id',component:ViewDeleteAccountComponent},
+{path:'viewComment',component:ViewCommentPartComponent}
     ]
 
 

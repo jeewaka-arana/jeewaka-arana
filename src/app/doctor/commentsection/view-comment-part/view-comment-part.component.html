@@ -1,0 +1,67 @@
+<div class="container2">
+    <h3 style="margin-left: 25rem;font-weight: bold ;">Patients Comments</h3>
+<!-- 
+    <h3 style="margin-left: 20rem;font-weight: bold ;">Your Thougths Are Very Important</h3><br>
+    <div class="formGroup" style="margin-left: 16rem;">
+  
+      <form class="form-horizontal" role="form" style="margin-left:50px;">
+  
+  
+        <div class="row">
+          <div class="col-lg-6 text-center ">
+  
+            <br><br>
+            <div>
+              <input class="form-control" [(ngModel)]="title" name="title" placeholder="   Your name">
+            </div>
+  
+            <br>
+            <div>
+              <textarea class="form-control" [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
+            </div>
+  
+            <br><br><br>
+            <div class="form-group">
+              <input type="submit" class="btnRegister   float-right" style="margin-left:78rem;" formControlName="submit"
+                value="Post Comment" (click)="addPost()" />
+            </div>
+          </div>
+        </div>
+  
+  
+  
+      </form>
+    </div> -->
+  
+    <br>
+    <div class="section section-tabs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul *ngFor="let post$ of post | async" id="opening">
+              <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                class="card">
+                
+                <div class="row col-lg-12">
+                  <div class="img-btn">
+                    <img src="https://www.pngkit.com/png/detail/115-1150342_user-avatar-icon-iconos-de-mujeres-a-color.png" alt="Profile Image" class="img-fluid img-raised">
+                  </div>
+                  <div class="column col-lg-4">
+                    <h4>{{ post$.title }}</h4>
+                    <h6>Commented on {{post$.Day}} -{{post$.Month}}- {{post$.Year}}</h6>
+                    <p>{{ post$.content }}</p>
+          
+                   </div> 
+  
+                </div>
+              </div>
+            </ul>
+          </div>
+          
+        </div>
+  
+      </div>
+    </div>
+  
+  
+  </div>

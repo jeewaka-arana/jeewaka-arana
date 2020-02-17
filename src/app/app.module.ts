@@ -142,6 +142,7 @@ import { DoctorConfirmComponent } from './admindashboard/doctor-confirm/doctor-c
 //firestore functions
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account/view-delete-account.component';
+import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-part/view-comment-part.component';
 
 
 
@@ -239,7 +240,8 @@ import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account
       
         ApplistComponent ,
         SlotsComponent,
-        ViewDeleteAccountComponent
+        ViewDeleteAccountComponent,
+        ViewCommentPartComponent
         
        
        

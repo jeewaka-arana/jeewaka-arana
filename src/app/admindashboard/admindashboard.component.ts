@@ -27,7 +27,7 @@ export class AdmindashboardComponent implements OnInit {
   pd:any;
   cs:any;
   cf:any;
-
+  m:any;
   srilanka:any;
   foreign:any;
 
@@ -69,6 +69,11 @@ doctorcount:Observable<any>;
 
   // 
 
+
+  QueryCol: AngularFirestoreCollection;
+  Query: Observable<any>;
+
+  // 
   my_id: string;
   counter: any = 0;
   value: any;
@@ -89,19 +94,27 @@ doctorcount:Observable<any>;
   ngOnInit() {
 
    
-    this.countPatSriCol=this.afs.collection('Patients', ref => ref.where('Country', '==', 'Srilanka'));
+    this.countPatSriCol=this.afs.collection('Patients', ref => ref.where('Country', '==', 'SriLanka'));
     this.countPatSri=this.countPatSriCol.valueChanges();
     this.countPatSri.subscribe((data) => { this.cs = data.length });
 
-  console.log(this.countPatSri);
+  // console.log(this.countPatSri);
 
 
     
-     this.countPatForCol=this.afs.collection('Patients', ref => ref.where('Country','<','Srilanka'));
-   // this.countPatForCol=this.afs.collection('Patients', ref => ref.where('Country','','Srilanka'));
+     this.countPatForCol=this.afs.collection('Patients', ref => ref.where('Country','<','SriLanka'));
+   
     this.countPatFor=this.countPatForCol.valueChanges();
     this.countPatFor.subscribe((datacount) => { this.cf = datacount.length });
 
+    // foreign user count
+
+    // this.QueryCol=this.afs.collection('Doctors');
+    // this.Query = this.QueryCol.valueChanges();
+    // this.Query.subscribe((data) => { this.m = data.length });
+    // this.cf=this.m - this.cs;
+
+    // 
 
     console.log(this.countPatFor);
     console.log("hai");
@@ -178,14 +191,14 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
     this.pQuery = this.pQueryCol.valueChanges();
     this.pQuery.subscribe((data) => { this.pm = data.length });
     //console.log(this.m);
-    this.dmonth=pmonth;
+    this.pmonth=pmonth;
     console.log(this.pmonth);
     
   }
-  patDayDayFilter(pday){
+  patDayFilter(pday){
     this.pQueryCol=this.afs.collection('Patients', ref => ref.where('Month','==',+this.pmonth).where('Year','==',+this.pyear).where('Day','==',+pday));
     this.pQuery = this.pQueryCol.valueChanges();
-    this.pQuery.subscribe((data) => { this.cs = data.length });
+    this.pQuery.subscribe((data) => { this.pd = data.length });
   }
   
 
