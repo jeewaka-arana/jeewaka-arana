@@ -61,4 +61,13 @@ my_id:string;
 
   }
 
+  reject(data:any,id:any){
+     if(confirm("Are you sure you want to reject")){
+this.afs.collection('admin').doc('Ef5vRYcXM4Rhmc3kvXaJLFN8q9v1').collection('RejectedDoctors').add(data);
+this.verifyCol.doc(id).delete();
+     // this.verifyCol.doc(id).set({tag:"Rejected"},{merge:true});
+     }
+    
+  }
+
 }
