@@ -11,7 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 
 import { firestore } from 'firebase';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as Rellax from 'rellax';
 
@@ -43,6 +43,26 @@ interface Doctors{
 
 
 }
+
+//appointment related interfaces
+export interface Time{
+ 
+  time:string
+}
+
+export interface avail{
+
+  avail:boolean
+}
+export interface timeslots{
+  Time:Time[],
+  avail:avail[]
+
+}
+
+
+export interface timeslotid extends timeslots { ap_id: string; }
+
 @Component({
   selector: 'app-doctorprofilepage',
   templateUrl: './doctorprofilepage.component.html',
@@ -60,6 +80,8 @@ interface Doctors{
 export class DoctorprofilepageComponent implements OnInit  {
 
 
+
+  
   postsCol:AngularFirestoreCollection< Doctors>;
   posts:Observable< Doctors[]>;
   post$:any;
@@ -92,6 +114,9 @@ export class DoctorprofilepageComponent implements OnInit  {
  img3:string;
  video:string;
  
+ No:string;
+ Lane1:string;
+ Lane2:string;
  
 
 
@@ -147,8 +172,12 @@ formdata=new FormGroup({
 // imageList: any[];
 // rowIndexArray: any[];
 my_id:string;
+
+
+ap:Observable<timeslotid[]>;
+
   constructor( private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
-    // this.my_id=afAuth.auth.currentUser.uid;
+    
     this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
     console.log(this.my_id);
 //     this.user = this.afAuth.authState.pipe(
@@ -173,12 +202,23 @@ my_id:string;
     // const data=afs.collection('Doctors', ref => ref.where('Userid', '==', this.id_current));
    
  
+    this.ap=this.afs.collection<timeslots>('Doctors').doc(this.my_id).collection('Timeslots').snapshotChanges()
+.pipe(
+  map(actions => actions.map(a => {
+    const ap_id =a.payload.doc.id;
+    const ap_data = a.payload.doc.data() as timeslots;
+    const n =a.payload.doc.data().Time.length; 
+
+    return { ap_id, ...ap_data,n };
+
+}))
+);
   }
 
   
 
   ngOnInit() {
-    var rellaxHeader = new Rellax('.rellax-header');
+    // var rellaxHeader = new Rellax('.rellax-header');
 
  
  this.postsCol=this.afs.collection('Doctors');
@@ -188,7 +228,11 @@ my_id:string;
 });
  
 
+
  
+
+
+
  
  
   }

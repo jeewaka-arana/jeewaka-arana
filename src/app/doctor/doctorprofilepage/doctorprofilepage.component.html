@@ -80,7 +80,7 @@
 <div class="container">
 
   <div class="content-center brand">
-    <img class="center" src="assets/img/new2logo.png" alt="logo" >
+    <img class="logo" src="assets/img/new3logo.png" alt="logo" height=22% width=22% style="margin-left:27rem;margin-top:5rem;"> 
     
 </div>
 </div> 
@@ -91,14 +91,6 @@
     <div class="row">
       <div class="col-md-20 col-xl-10">
 
-<!-- 
-        <div class="container">
-
-          <div class="content-center brand">
-            <img class="center" src="assets/img/new2logo.png" alt="logo" >
-            
-        </div>
-        </div>  -->
 
 
         <div class="row ">
@@ -108,7 +100,7 @@
               data-aos-easing="ease-in-out" >                                    
           
              
-           <img  src="{{post$.downloadURL}}" width="280" height="280"  style="border-radius: 16px;margin-left:9rem;"/>
+           <img class="img1" src="{{post$.downloadURL}}" width="280" height="280"  style="margin-left:9rem;"/>
           
           </div>
           </div>
@@ -117,19 +109,24 @@
             <div data-aos="zoom-in-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
             data-aos-easing="ease-in-out" >
 
-            <div class="card" style="width:35rem;height:17rem;">
-              <b><span style="margin-left:7rem;font-size: 2rem;"> Today Special Note   </span></b>
+            <div class="card1" style="width:35rem;height:17rem;">
+              <b><span  style="margin-left:7rem;font-size: 2rem;"> Today Special Note   </span></b>
                   <br><br><br>
-                  
+                  <div *ngIf="post$.note">
                   <p style="font-weight: bold;font-size: 1.5rem;margin-left: 2rem;">{{post$.note}}</p>
               
+                </div >
 
+
+                <div  *ngIf ="!post$.note">
+                  <p style="font-weight: bold;font-size: 1.5rem;margin-left: 2rem;"> No special notes for today!</p>
+                </div>
                  </div>
-                 </div>
+                  </div>
         </div>
                 
           </div>
-   
+    
         
 
         
@@ -148,7 +145,9 @@
                  <span style="font-size: 1.5rem;"> {{post$.Specialist}}</span><br><br>
                 </div>
 
-                
+
+
+            
 
                <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                  <label class="col-lg-6 control-label"><span style="font-size: 1.5rem;font-weight: bold; ">Status  </span> </label>
@@ -161,7 +160,7 @@
                  <span style="font-size: 1.5rem;margin-left: 25rem;">{{ post$.No}},</span><br>
                  <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.Lane1}},</span><br>
                  <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.Lane2}},</span><br>
-                 <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.City}},</span><br>
+                 <span style="font-size: 1.5rem;margin-left: 25rem;">{{post$.City}}</span><br>
                  
                 </div>
                 <br>
@@ -176,144 +175,68 @@
                  <span style="font-size: 1.5rem;"> {{post$.Email}}</span><br><br>
                 </div>
                  
+                <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                  <label class="col-lg-6 control-label"><span style="font-size: 1.5rem;font-weight: bold; ">Available Hours</span> </label>
+                  <div *ngFor="let slot of ap |async">
+                  <span style="font-size: 1.5rem;margin-left:25rem;"> {{slot.ap_id}}:{{slot.Time[0]}}-{{slot.Time[slot.n-1]}}</span><br>
+                  </div>
+                 </div>
                 
+               
+
+
+
 
 </div>
 
-           
-
-
-
-<!-- <div data-aos="zoom-out-down">
-      
-            
-            
-              
-  <table  class="table table-bordered table-hover" id="time" style="width: 40rem;margin-left: 3rem;">
-    
-     
-      <thead>
-        <tr>
-            <th>DATE</th>
-          <th>TIME SLOT 1</th>
-          <th>TIME SLOT 2</th>
-          <th>TIME SLOT 3</th>
-          
-        </tr>
-      </thead>
-
-
-      <tbody>  
-          
-        <tr>
-            
-              <td >MONDAY</td>
-              
-              <td>{{post$.mt1}}</td>
-              <td> </td>
-              <td></td>
-
-       
-        </tr>
-       
-        <tr>
-              <td>TUESDAY</td>
-          
-              <td>{{post$.mt1}}</td>
-              <td> </td>
-              <td></td>
-         
-
-            </tr>
-
-            <tr>
-                <td>WEDNESDAY</td>
-            
-                <td>{{post$.mt1}}</td>
-                <td> </td>
-                <td></td>
-           
-
-              </tr>
-              <tr>
-                  <td>THURSDAY</td>
-              
-                  <td>{{post$.mt1}}</td>
-                  <td> </td>
-                  <td></td>
-             
-  
-                </tr>
-  
-                <tr>
-                    <td>FRIDAY</td>
-                
-                    <td>{{post$.mt1}}</td>
-                    <td> </td>
-                    <td></td>
-               
-    
-                  </tr>
-                  <tr>
-                      <td>SATURDAY</td>
-                  
-                      <td>{{post$.mt1}}</td>
-                      <td> </td>
-                      <td></td>
-                 
-      
-                    </tr>
-                    <tr>
-                        <td>SUNDAY</td>
-                    
-                        <td>{{post$.mt1}}</td>
-                        <td> </td>
-                        <td></td>
-                   
-        
-                      </tr>
-        
-      
-
-      </tbody>
 
     
-      </table>
-    
+
+ 
+<!--                 
+</div>
+
+
+
+
+
 </div> -->
 
 
 
 
-<br><br>
 
-<div data-aos="fade-up"
-     data-aos-duration="3000">
+<!-- 
 
-<div >
-<app-comment id="{{my_id}}"></app-comment> 
+<h4>gggggggg</h4> -->
 
+<div>
+<br><br><br><br>
+  <app-comment id="{{my_id}}"></app-comment> 
 </div>
 
-</div>
+
+
+<!-- 
+<h4>gggggggg</h4> -->
 
 
 
-
-
-
-
-<!-- <h4>gggggggg</h4> -->
 
       </div>
     </div>
 
   </div>
 </div>
-<div class="col-md-10">
 
-  
 
-</div>
+<!-- <div class="col-md-10">
 
-<app-pfooter></app-pfooter>
+  <div class="card" style="background-color: black;">jjjjj</div>
+  <h6>fggysysususiisisiss</h6>
+
+</div> -->
+
+
+
+<app-dfooter></app-dfooter>

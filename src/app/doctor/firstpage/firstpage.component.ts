@@ -11,7 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import {FormGroup,FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
 
 import { firestore } from 'firebase';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as Rellax from 'rellax';
 
@@ -43,6 +43,24 @@ interface Doctors{
 
 
 }
+
+//appointment related interfaces
+export interface Time{
+ 
+  time:string
+}
+
+export interface avail{
+
+  avail:boolean
+}
+export interface timeslots{
+  Time:Time[],
+  avail:avail[]
+
+}
+
+export interface timeslotid extends timeslots { ap_id: string; }
 @Component({
   selector: 'app-firstpage',
   templateUrl: './firstpage.component.html',
@@ -55,7 +73,6 @@ interface Doctors{
     `]
 })
 export class FirstpageComponent implements OnInit {
-
 
   postsCol:AngularFirestoreCollection< Doctors>;
   posts:Observable< Doctors[]>;
@@ -89,6 +106,9 @@ export class FirstpageComponent implements OnInit {
  img3:string;
  video:string;
  
+ No:string;
+ Lane1:string;
+ Lane2:string;
  
 
 
@@ -145,51 +165,77 @@ formdata=new FormGroup({
 // rowIndexArray: any[];
 my_id:string;
 
-  constructor(private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
+
+ap:Observable<timeslotid[]>;
+
+  constructor( private  afs: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService, private router:Router,private afAuth:AngularFireAuth ) {
+    
+    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(7);
+    console.log(this.my_id);
+//     this.user = this.afAuth.authState.pipe(
+//       switchMap(user => {
+//         if (user) {
+//           console.log("hey");
+//           this.posts= this.afs.doc<Doctors[]>(`Doctors/${user.uid}`).valueChanges();
+//           this.postsCol=this.afs.collection('Doctors');
+//           this.posts=this.postsCol.valueChanges();
+//           this.postsCol.doc(user.uid).ref.get().then((doc)=>{
+//           this.post$=doc.data();
+// });
+ 
+         
+//         } else {
+//           return of(null)
+//         }
+//       })
+//     )
+
+
+    // const data=afs.collection('Doctors', ref => ref.where('Userid', '==', this.id_current));
    
-    this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(7);
+ 
+    this.ap=this.afs.collection<timeslots>('Doctors').doc(this.my_id).collection('Timeslots').snapshotChanges()
+.pipe(
+  map(actions => actions.map(a => {
+    const ap_id =a.payload.doc.id;
+    const ap_data = a.payload.doc.data() as timeslots;
+    const n =a.payload.doc.data().Time.length; 
+
+    return { ap_id, ...ap_data,n };
+
+}))
+);
+  }
+
   
-   // this.my_id=afAuth.auth.currentUser.uid;
-   // localStorage.setItem('userid',this.my_id);
-    
-    
-
-
-   }
 
   ngOnInit() {
-    var rellaxHeader = new Rellax('.rellax-header');
-    const userid = localStorage.getItem('userid');
+    // var rellaxHeader = new Rellax('.rellax-header');
+
+ 
  this.postsCol=this.afs.collection('Doctors');
  this.posts=this.postsCol.valueChanges();
- this.postsCol.doc(userid).ref.get().then((doc)=>{
+ this.postsCol.doc(this.my_id).ref.get().then((doc)=>{
    this.post$=doc.data();
-  });
+});
+ 
+
+
  
 
 
 
+ 
+ 
+  }
   
 
-  }
-
+//pass patients comments from doctor view page
   // savevalue(data) {
   //   this.CrudService.passData(data);
    
   // }
 
-
-  
-  //popup button for special note
-
-  
-//   openModal(id: string) {
-//     this.modalService.open(id);
-// }
-
-// closeModal(id: string) {
-//     this.modalService.close(id);
-// }
 
 
 }
