@@ -192,7 +192,8 @@ const routes: Routes =[
 {path:'timetest',component:TimepickComponent},
 {path:'fpage',component:FirstpageComponent},
 {path:'fpage/:',component:FirstpageComponent},
-
+{path:'aboutUs',component:AboutUsComponent},
+{path:'contactUs',component:ContactUsComponent},
 {path:'aboutUs/:id',component:AboutUsComponent},
 {path:'contactUs/:id',component:ContactUsComponent},
 // {path:'pcontactUs',component:PcontactUsComponent},
