@@ -143,6 +143,14 @@ import { DoctorConfirmComponent } from './admindashboard/doctor-confirm/doctor-c
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account/view-delete-account.component';
 import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-part/view-comment-part.component';
+import { AddingComponent } from './Piyumi/adding/adding.component';
+import { RetrivingComponent } from './Piyumi/retriving/retriving.component';
+import { DeletingComponent } from './Piyumi/deleting/deleting.component';
+import { UpdatingComponent } from './Piyumi/updating/updating.component';
+import { ImageuploadComponent } from './Piyumi/Images/imageupload/imageupload.component';
+import { UploadComponent } from './Piyumi/pictures/upload/upload.component';
+import { ImagelistComponent } from './Piyumi/pictures/imagelist/imagelist.component';
+import { ValidationComponent } from './Piyumi/validation/validation.component';
 
 
 
@@ -241,7 +249,15 @@ import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-p
         ApplistComponent ,
         SlotsComponent,
         ViewDeleteAccountComponent,
-        ViewCommentPartComponent
+        ViewCommentPartComponent,
+        AddingComponent,
+        RetrivingComponent,
+        DeletingComponent,
+        UpdatingComponent,
+        ImageuploadComponent,
+        UploadComponent,
+        ImagelistComponent,
+        ValidationComponent
         
        
        

@@ -93,6 +93,18 @@ import { AuthGuard } from './core/auth.guard';
 import{ViewDeleteAccountComponent} from './admindashboard/view-delete-account/view-delete-account.component';
 
 import {ViewCommentPartComponent} from './doctor/commentsection/view-comment-part/view-comment-part.component'
+
+// new teting piyumi
+
+import{AddingComponent} from './Piyumi/adding/adding.component';
+import{RetrivingComponent} from './Piyumi/retriving/retriving.component';
+import{UpdatingComponent} from './Piyumi/updating/updating.component';
+import{DeletingComponent} from './Piyumi/deleting/deleting.component';
+import{UploadComponent} from './Piyumi/pictures/upload/upload.component';
+import{ValidationComponent} from './Piyumi/validation/validation.component'
+
+
+
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component:   ComponentsComponent},
@@ -133,8 +145,7 @@ const routes: Routes =[
      { path: 'appstep2/:id', component:AppStep2Component },
     { path: 'admin', component:AdminComponent ,children:[
         
-     //   { path: 'imagelist', component:ImageListComponent }
-        // {path:'editprofile',component:EditprofileComponent}
+   
 
     ]},
     {path:'admin/docaccept',component:DocacceptComponent},
@@ -159,14 +170,7 @@ const routes: Routes =[
 {path:'comment',component:CommentComponent},
     { path: 'googlemap/:City', component:GooglemapComponent},
     
-    
-//     {path:'image' ,component:ImageComponent,children:[
-//     {path:'upload',component:ImageComponent},//image/upload
-//     {path:'list',component:ImageListComponent}   ,
-      
-// ]},
 
-// {path:'notepad',component:NotepadComponent},
 {path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent},
 {path:'adsearch/:id',component:AdvancedsearchComponent},
 
@@ -216,7 +220,19 @@ const routes: Routes =[
 {path:'handleAccount/:id',component:HandleaccountsComponent},
 {path:'confirmdoc/:id',component:DoctorConfirmComponent},
 {path:'viewdaccount/:id',component:ViewDeleteAccountComponent},
-{path:'viewComment',component:ViewCommentPartComponent}
+{path:'viewComment',component:ViewCommentPartComponent},
+
+
+// testing piyumi
+
+{path:'add',component:AddingComponent},
+{path:'delete',component:DeletingComponent},
+{path:'view',component:RetrivingComponent},
+{path:'update',component:UpdatingComponent},
+{path:'upload',component:UploadComponent},
+{path:'validation',component:ValidationComponent},
+
+
     ]
 
 

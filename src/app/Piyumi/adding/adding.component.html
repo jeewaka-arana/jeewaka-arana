@@ -1,0 +1,61 @@
+
+
+<!-- formcontrol-reactive forms -->
+<div class="card">
+
+    <form [formGroup]="userForm"  (ngSubmit)="add(userForm.value)" >
+
+        <div class="form-group">
+
+          <label  style="margin-left:37rem;font-weight: bold;font-size: 1rem;">First Name</label>
+      
+          <input id="Firstname" style="margin-left: 28rem;width:27rem;" type="text"   formControlName="Firstname"  class="form-control" >
+             <!--  -->
+          <div *ngIf="Firstname.invalid && (Firstname.dirty || Firstname.touched)"
+          class="alert alert-danger">
+      
+        <div *ngIf="Firstname.errors.required">
+          Name is required.
+        </div>
+        </div>
+        </div>
+        <!--  -->
+
+        <br>
+        <div class="form-group">
+
+          <label style="margin-left: 37rem;font-weight: bold;font-size: 1rem;">Last Name</label>
+            
+          
+          <input style="margin-left: 28rem;width:27rem;" type="text"   formControlName="Lastname"  class="form-control" >
+           
+        </div>
+        <br>
+
+<!--  -->
+<!--  -->
+
+        <!--  -->
+        <div class="form-group">
+
+         
+          <label style="margin-left:  37rem;font-weight: bold;font-size: 1rem;" >Your Email</label>
+        
+          <input style="margin-left:28rem;width:27rem;"  type="text"   formControlName="Email"  class="form-control"  >
+            
+        </div>
+        <br>
+        
+        
+               
+        <div class="form-group">
+         
+            <input style="margin-left: 34rem; " type="submit"  class="btnRegister" value="Submit" >
+       
+      </div>
+      </form>
+
+
+
+
+</div>

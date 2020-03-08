@@ -153,6 +153,7 @@ if (user) {
     if(!this.newUser.regnumber){
       this.newUser.regnumber=null;
     }
+    
     return this.db.doc(`Doctors/${userCredential.user.uid}`).set({
       Email: this.newUser.email,
       Firstname: this.newUser.firstName,

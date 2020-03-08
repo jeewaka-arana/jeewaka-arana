@@ -1,0 +1,15 @@
+
+
+
+
+<div *ngFor="let p of posts|async">
+
+  
+    <span>{{ p.name}},</span><br>
+    <span >{{p.age}},</span><br>
+    <button  (click)="delete(p.id)">delete</button> 
+    <!-- <button  (click)="delete(p.id,p)">delete</button>  -->
+    <!-- only delete ,then pass only id -->
+    <!-- pass and save data in another the id and p -->
+   </div>
+

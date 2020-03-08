@@ -127,10 +127,12 @@ this.docCol = this.afs.collection('Doctors');
 
    
     
+    
     if (confirm("Are you sure to delete this record?")) {
       
      this.afs.collection('admin').doc('Ef5vRYcXM4Rhmc3kvXaJLFN8q9v1').collection('DeleteDocAccount').add({'Firstname':data.Firstname,'Lastname':data.Lastname,'Email':data.Email,'Position':data.Position,'City':data.City,'PhoneNumber':data.PhoneNumber});
-      this.afs.collection('Doctors').doc(id).delete();
+     console.log(data);
+     this.afs.collection('Doctors').doc(id).delete();
     }
 
 

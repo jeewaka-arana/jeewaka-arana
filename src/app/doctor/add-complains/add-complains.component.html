@@ -97,6 +97,7 @@
                                     <span style="font-weight: bold;margin-left:32rem;font-size:2rem;">- Contact Us -</span>
                                     <br><br><br><br>
                                     <div class="row" >
+                                      <!-- reactive form -->
                                         <form [formGroup]="userForm"  (ngSubmit)="addIssue(userForm.value)" >
 
                                             <div class="form-group">
@@ -104,11 +105,16 @@
                                               <div data-aos="fade-up" data-aos-delay="54" data-aos-duration="1000" data-aos-easing="ease-in-out" >
                                          
                                               
+
                                               
                                               <label style="margin-left:37rem;font-weight: bold;font-size: 1rem;">First Name</label>
                                               <br> <br>
-                                              <input style="margin-left: 28rem;width:27rem;" type="text"   formControlName="Firstname"  class="form-control" />
-                                                 
+                                              <input style="margin-left: 28rem;width:27rem;" type="text"   formControlName="Firstname"  class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.Firstname.errors }"/>
+                                               <!--  -->
+                                               <div *ngIf="submitted && f.Firstname.errors" class="invalid-feedback">
+                                                <div *ngIf="f.Firstname.errors.required"> First Name is required</div>
+                                            </div>
+                                              <!--  -->
                                             </div>
                                             </div>
                                             <br>
@@ -119,8 +125,12 @@
                                               <label style="margin-left: 37rem;font-weight: bold;font-size: 1rem;">Last Name</label>
                                                 
                                               <br> <br>
-                                              <input style="margin-left: 28rem;width:27rem;" type="text"   formControlName="Lastname"  class="form-control" />
-                                                </div> 
+                                              <input style="margin-left: 28rem;width:27rem;" type="text"   formControlName="Lastname"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Lastname.errors }"/>
+                                              <div *ngIf="submitted && f.Lastname.errors" class="invalid-feedback">
+                                                <div *ngIf="f.Lastname.errors.required"> Last Name is required</div>
+                                            </div>
+                                            
+                                            </div> 
                                             </div>
                                             <br>
                                             <div class="form-group">
@@ -129,8 +139,12 @@
                                               >
                                               <label style="margin-left:  37rem;font-weight: bold;font-size: 1rem;" >Your Email</label>
                                               <br> <br>  
-                                              <input style="margin-left:28rem;width:27rem;"  type="text"   formControlName="Email"  class="form-control" />
-                                                 </div> 
+                                              <input style="margin-left:28rem;width:27rem;"  type="text"   formControlName="Email"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+                                              <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                                                <div *ngIf="f.Email.errors.required">Email is required</div>
+                                            </div>    
+                                            
+                                            </div> 
                                             </div>
                                             <br>
                                             <div class="form-group">
@@ -140,8 +154,12 @@
                                               >
                                               <label style="margin-left:  37rem;font-weight: bold;font-size: 1rem;" >Your Message</label>
                                               <br> <br> 
-                                              <textarea style="margin-left: 28rem;width:27rem;"  type="text" formControlName="msg"  class="form-control" rows="4" cols="80"></textarea>
-                                                </div> 
+                                              <textarea style="margin-left: 28rem;width:27rem;"  type="text" formControlName="msg"  class="form-control" rows="4" cols="80" [ngClass]="{ 'is-invalid': submitted && f.msg.errors }"></textarea>
+                                                
+                                              <div *ngIf="submitted && f.msg.errors" class="invalid-feedback">
+                                                <div *ngIf="f.msg.errors.required">Message is required</div>
+                                            </div>
+                                            </div> 
                                             </div>
                                                    <br><br>
                                             <div class="form-group">
