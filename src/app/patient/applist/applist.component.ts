@@ -43,12 +43,12 @@ export class ApplistComponent implements OnInit {
     this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(9);
     console.log(this.my_id);
 
-
+// getting the future appointmnets by day, month and year
 
  this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Day').where('Day',">=",this.currentday)).valueChanges().subscribe(results => {
       this.results = results;
       console.log(results);
-      console.log("hi");
+      // console.log("hi");
       results.forEach(element => {
        if(element.Month >= this.currentmonth)
        {
@@ -64,15 +64,28 @@ export class ApplistComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Month')).valueChanges().subscribe(results => {
-      this.results = results;
-      console.log(this.results);
-      this.applyFilters();
-    })
+    // this.afs.collection('Patients').doc(this.my_id).collection('Appointments', ref => ref.orderBy('Month')).valueChanges().subscribe(results => {
+    //   this.results = results;
+    //   console.log(this.results);
+    //   this.applyFilters();
+    // })
   }
 
   private applyFilters() {
     this.filteredNames = _.filter(this.results, _.conforms(this.filters))
   }
+  // filter-->_.filter(list, predicate, [context]) Alias: select
+// Looks through each value in the list, returning an array of all the values that pass a truth test (predicate). predicate is transformed through iteratee to facilitate shorthand syntaxes.
+
+//Creates a function that invokes the predicate properties of source with the corresponding property values of a given object, returning true if all predicates return truthy, else false.
+//var objects = [
+  //{ 'a': 2, 'b': 1 },
+  // { 'a': 1, 'b': 2 }
+// ];
+ 
+// _.filter(objects, _.conforms({ 'b': function(n) { return n > 1; } }));
+// => [{ 'a': 1, 'b': 2 }]
+
+
 
 }

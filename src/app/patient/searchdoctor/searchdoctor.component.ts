@@ -14,14 +14,14 @@ import { environment } from 'environments/environment';
 import { Router } from '@angular/router';
 import { DatePipe, formatDate } from '@angular/common';
 
-export enum Weekdays{
-  Sunday=1,
-  Monday=2,
-  Tuesday=3,
-  Wednesday=4,
-  Thursday=5,
-  Friday=6,
-  Saturday=7,
+export enum Weekdays {
+  Sunday = 1,
+  Monday = 2,
+  Tuesday = 3,
+  Wednesday = 4,
+  Thursday = 5,
+  Friday = 6,
+  Saturday = 7,
 }
 
 
@@ -31,14 +31,14 @@ export enum Weekdays{
   styleUrls: ['./searchdoctor.component.scss']
 })
 export class SearchdoctorComponent implements OnInit {
-  
-  currentmonth=parseInt(this.datePipe.transform(new Date(),"MM"));
-  currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
-  currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
-  currentdayname=(this.datePipe.transform(new Date(),"EEEE"));
-  dayname=this.currentdayname;
-  daynum=Weekdays[this.dayname];
-  
+
+  currentmonth = parseInt(this.datePipe.transform(new Date(), "MM"));
+  currentday = parseInt(this.datePipe.transform(new Date(), "dd"));
+  currentyear = parseInt(this.datePipe.transform(new Date(), "yyyy"));
+  currentdayname = (this.datePipe.transform(new Date(), "EEEE"));
+  dayname = this.currentdayname;
+  daynum = Weekdays[this.dayname];
+
   results: any;
   filteredNames: any[] = [];
 
@@ -71,22 +71,22 @@ export class SearchdoctorComponent implements OnInit {
   farray: any[] = [];
   ans: string;
 
-  timeslots=[];
+  timeslots = [];
   all: any;
   availarray: any[] = [];
-  avail=[];
-  myslots=[];
-  aslots=[];
-  docid:string;
-  allDoc:AngularFirestoreDocument;
+  avail = [];
+  myslots = [];
+  aslots = [];
+  docid: string;
+  allDoc: AngularFirestoreDocument;
   allCol: AngularFirestoreCollection<any>;
   allslots: Observable<any[]>;
-  alldoc:Observable<any[]>;
+  alldoc: Observable<any[]>;
   slotCol: AngularFirestoreCollection<any>;
   slotDoc: AngularFirestoreDocument;
   slots: Observable<any[]>;
-  slotdoc:Observable<any[]>;
- message:string;
+  slotdoc: Observable<any[]>;
+  message: string;
 
   constructor(private afs: AngularFirestore, private router: Router, private datePipe: DatePipe) {
     this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(14);
@@ -98,22 +98,9 @@ export class SearchdoctorComponent implements OnInit {
       this.results = results;
       this.applyFilters();
     })
-
-    this.getUserLocation();
-
-
   }
 
-  getUserLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-      });
-    }
-  }
 
-  
   private applyFilters() {
     this.filteredNames = _.filter(this.results, _.conforms(this.filters))
   }
@@ -168,6 +155,7 @@ export class SearchdoctorComponent implements OnInit {
 
   //}
 
+  //showing doctors near patient's area
   getCity() {
     this.results = [];
     // console.log("hi");
@@ -205,50 +193,50 @@ export class SearchdoctorComponent implements OnInit {
 
   }
 
-  getToday(){
+  //filter doctors available today
+  getToday() {
     this.filteredNames = [];
-    this.docid=this.dayname;//current day
+    this.docid = this.dayname;//current day
 
-    this.allCol= this.afs.collection('Doctors', ref => ref.orderBy('Firstname'));
+    this.allCol = this.afs.collection('Doctors', ref => ref.orderBy('Firstname'));
     this.allCol.valueChanges().subscribe(all => {
-    this.all = all;
-    
-    // console.log(this.all);
-    
-    this.all.forEach(element => {
-      const id=element.Userid;
-      // console.log(id);
-      this.slotDoc = this.afs.collection('Doctors').doc(id).collection('Timeslots').doc(this.docid);
-      // console.log(this.slotDoc);
-      this.slotDoc.valueChanges().subscribe(value=>{
-             if(value){
-               this.myslots=[];
-               this.timeslots=value.Time;
-               this.avail=value.avail;
-               this.myslots=this.timeslots.map(function(x,i){
-                 return {"time":x,"avail":this.avail[i]}
-               }.bind(this));
-             }
-                
-                //  console.log(this.myslots);
-                 for (let x = 0; x < this.myslots.length; x++) {
-                    if(this.myslots[x].avail==true)
-                 {
-                   this.filteredNames.push(element);
-                   break;
-                 }
+      this.all = all;
 
-                 }
-                
-                 
-               })
-               console.log(this.filteredNames);
-               
+      // console.log(this.all);
+
+      this.all.forEach(element => {
+        const id = element.Userid;
+        // console.log(id);
+        this.slotDoc = this.afs.collection('Doctors').doc(id).collection('Timeslots').doc(this.docid);
+        // console.log(this.slotDoc);
+        this.slotDoc.valueChanges().subscribe(value => {
+          if (value) {
+            this.myslots = [];
+            this.timeslots = value.Time;
+            this.avail = value.avail;
+            this.myslots = this.timeslots.map(function (x, i) {
+              return { "time": x, "avail": this.avail[i] }
+            }.bind(this));
+          }
+
+          //  console.log(this.myslots);
+          for (let x = 0; x < this.myslots.length; x++) {
+            if (this.myslots[x].avail == true) {
+              this.filteredNames.push(element);
+              break;
+            }
+          }
+
+
+        })
+        // console.log(this.filteredNames);
+
+      })
+      console.log(this.filteredNames);
+      // this.applyFilters();
     })
-    // this.applyFilters();
-  })
 
-}
+  }
 
 
 

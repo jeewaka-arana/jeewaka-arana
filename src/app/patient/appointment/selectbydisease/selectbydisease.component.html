@@ -1,61 +1,69 @@
-<app-pnav  passid={{my_id}}></app-pnav>
+<app-pnav passid={{my_id}}></app-pnav>
 <div class="wrapper">
-       
-    
-        <div class="container">
+
+
+    <div class="container">
         <ol class="progress-steps">
-          <li class="active"><span class="number">&#10003;</span> Choose Doctor</li>
-          <li><span class="number">02</span> Choose Date & Time</li>
-          <li><span class="number">03</span> Verify Booking</li>
+            <li class="active"><span class="number">&#10003;</span> Choose Doctor</li>
+            <li><span class="number">02</span> Choose Date & Time</li>
+            <li><span class="number">03</span> Verify Booking</li>
         </ol>
-      </div>
-      <br>
-      <div class="container">
+    </div>
+    <br>
+    <div class="container">
         <!-- <div class="section section-basic">
                 <div class="container">
 
         </div>
     </div>      -->
 
-    <div class="row">
-        <!-- <form #searchform=ngForm > -->
-          <div class="col1">
-        <div class="form-group">
-            <input ngModel #spec="ngModel" name="spec1" type="text" class="form-control" placeholder="Specialist" (keyup)="filterName('Specialist',spec.value)" list="suggestions">
-        <datalist id="suggestions">
-                <option *ngFor ="let spec of Specialist" [ngValue]="specialist"> {{spec}} </option>
-        </datalist>
-        </div>
-        </div>
-     <!-- </form> -->
-    </div>   
-
-    
-    <div class="section section-tabs">
-          <div class="container1">                  
-                <div class="row">
-                        <div class="col-md-20 col-xl-10" >
-<ul *ngFor="let results of filteredNames  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-    <div class="card" >
         <div class="row">
-            <div class="img-btn">
-                <img src="{{results.downloadURL}}" alt="Profile Image" class="img-fluid img-raised">
-              </div>
-            <div class="column">  
-                <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
-                <button [routerLink]="['/doctorview',results.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
-                <button  [routerLink]="['/appstep2',my_id,results.Userid]" class="btn btn-primary btn-round ico" type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Select</button>
-                </div>
-        </div>
-    </div></ul>
-                        </div>
+            <!-- <form #searchform=ngForm > -->
+            <div class="col1">
+                <div class="form-group">
+                    <input ngModel #spec="ngModel" name="spec1" type="text" class="form-control"
+                        placeholder="Specialist" (keyup)="filterName('Specialist',spec.value)" list="suggestions">
+                    <datalist id="suggestions">
+                        <option *ngFor="let spec of Specialist" [ngValue]="specialist"> {{spec}} </option>
+                    </datalist>
                 </div>
             </div>
-    </div>
-      </div>
+            <!-- </form> -->
+        </div>
 
-      
-      <!-- <div class="row">
+
+        <div class="section section-tabs">
+            <div class="container1">
+                <div class="row">
+                    <div class="col-md-20 col-xl-10">
+                        <ul
+                            *ngFor="let results of filteredNames  | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="img-btn">
+                                        <img src="{{results.downloadURL}}" alt="Profile Image"
+                                            class="img-fluid img-raised">
+                                    </div>
+                                    <div class="column">
+                                        <h4>Dr. {{results.Firstname}} {{results.Lastname}}</h4>
+                                        <button [routerLink]="['/doctorview',results.Userid]"
+                                            class="btn btn-primary btn-round ico" type="button"><i
+                                                class="now-ui-icons users_single-02"></i> View Profile</button>
+                                        <button [routerLink]="['/appstep2',my_id,results.Userid]"
+                                            class="btn btn-primary btn-round ico" type="button"><i
+                                                class="now-ui-icons ui-1_calendar-60"></i> Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="row">
             <div class="col p-3">
     
     <br>
@@ -75,14 +83,15 @@
     
                </div>
             </div> -->
-    
-            
-            <div class="col-md-10">
-                          
-                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length" class="pagination-primary"></ngb-pagination>
-                                
-            </div>
-            <!-- <div class="section section-basic">
+
+
+    <div class="col-md-10">
+
+        <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="results.length"
+            class="pagination-primary"></ngb-pagination>
+
+    </div>
+    <!-- <div class="section section-basic">
                     <div class="container">
                     <div id="buttons">
                       <div class="row" class="text-center" >
@@ -93,12 +102,12 @@
                     </div>
                     </div>
                   </div> -->
-                  
-    
-    
-      
-      
-        <!-- <footer class="footer footer-default">
+
+
+
+
+
+    <!-- <footer class="footer footer-default">
             <div class="container">
                 <nav>
                     <ul>
@@ -132,6 +141,5 @@
                 </div>
             </div>
         </footer> -->
-        <app-pfooter></app-pfooter>
-    </div>
-    
+    <app-pfooter></app-pfooter>
+</div>

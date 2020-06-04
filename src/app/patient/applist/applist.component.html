@@ -1,15 +1,10 @@
 <app-pnav passid={{my_id}}></app-pnav>
 <div class="wrapper">
-  
-    <!-- <div class="container">
-        <h1 class="title">Your Appointment Details</h1>
-     </div> -->
-    
-     <h1 class="title">Your Appointment Details</h1>
+  <h1 class="title">Your Appointment Details</h1>
 
 
-<div class="mycontainer">
-  <!-- <div class="section section-tabs"> -->
+  <div class="mycontainer">
+    <!-- <div class="section section-tabs"> -->
     <div class="container col-lg-12">
       <div class="row">
         <div class="col-md-20 col-xl-10">
@@ -18,16 +13,16 @@
               class="card">
               <div class="row">
                 <div class="img-btn">
-                    <img src="assets/img/appointment-confirm-icon-clipart.png" alt="Image" class="img-fluid img-raised">
-                  </div>
-                <div class="column col-lg-6">
-                  <h4>Doctor Name:   Dr. {{results.DoctorName}}</h4>
-                  <h6>Appointment Date:   {{results.Day}}/{{results.Month}}/{{results.Year}}</h6>
-                  <p>Appoitment Time:   {{results.Time}}</p>
+                  <img src="assets/img/appointment-confirm-icon-clipart.png" alt="Image" class="img-fluid img-raised">
                 </div>
                 <div class="column col-lg-6">
-                  <button class="btn btn-primary btn-round ico"
-                    type="button"><i class="now-ui-icons users_single-02"></i> Cancel & Notify </button>
+                  <h4>Doctor Name: Dr. {{results.DoctorName}}</h4>
+                  <h6>Appointment Date: {{results.Day}}/{{results.Month}}/{{results.Year}}</h6>
+                  <p>Appoitment Time: {{results.Time}}</p>
+                </div>
+                <div class="column col-lg-6">
+                  <button class="btn btn-primary btn-round ico" type="button"><i
+                      class="now-ui-icons users_single-02"></i> Cancel & Notify </button>
                 </div>
 
               </div>
@@ -37,8 +32,8 @@
       </div>
 
     </div>
-  <!-- </div> -->
-</div>
+    <!-- </div> -->
+  </div>
   <div class="col-md-10">
 
     <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="applist.length" class="pagination-primary">
@@ -47,38 +42,5 @@
   </div>
 
   <app-pfooter></app-pfooter>
-  <!-- <footer class="footer footer-default">
-      <div class="container">
-          <nav>
-              <ul>
-                  <li>
-                      <a href="https://www.creative-tim.com">
-                          Creative Tim
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.creative-tim.com/about-us">
-                          About Us
-                      </a>
-                  </li>
-                  <li>
-                      <a href="http://blog.creative-tim.com">
-                          Blog
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                          MIT License
-                      </a>
-                  </li>
-              </ul>
-          </nav>
-          <div class="copyright">
-              &copy;
-              {{data | date: 'yyyy'}}, Designed by
-              <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-          </div>
-      </div>
-  </footer> -->
+ 
 </div>

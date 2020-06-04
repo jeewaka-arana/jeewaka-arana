@@ -5,8 +5,8 @@
         </div>
         <div class="container">
             <div class="content-center"> -->
-               
-                <!-- <div class="text-center">
+
+    <!-- <div class="text-center">
                   <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                     <i class="fab fa-facebook-square"></i>
                   </a>
@@ -20,38 +20,41 @@
             </div>
         </div>
     </div> -->
-    
-
-    <div class="container"> <h1 class="title">Schedule an Appointment</h1>
-    <ol class="progress-steps">
-      <li class="active"><span class="number">&#10003;</span> Choose Doctor</li>
-      <li><span class="number">02</span> Choose Date & Time</li>
-      <li><span class="number">03</span> Verify Booking</li>
-    </ol>
-  </div>
 
 
-  
-  <div class="section section-basic">
-    <div class="container1">
-    <div id="buttons">
-      <br>
-      <br>
-      <div class="row" class="text-center" >
-          <div class="col-md-20" >
-              <button [routerLink]="['/doctorname',my_id]" class="btn btn-primary btn-round" type="button" >Select By Doctor Name</button>
-          </div> 
-      </div>
-      <div class="row" class="text-center" >
-          <div class="col-md-20" >
-              <button [routerLink]="['/diseasename',my_id]" class="btn btn-primary btn-round" type="button">Select By Disease Name</button>
-          </div> 
-      </div>
+    <div class="container">
+        <h1 class="title">Schedule an Appointment</h1>
+        <ol class="progress-steps">
+            <li class="active"><span class="number">&#10003;</span> Choose Doctor</li>
+            <li><span class="number">02</span> Choose Date & Time</li>
+            <li><span class="number">03</span> Verify Booking</li>
+        </ol>
     </div>
-    </div>
-  </div>
 
-  <!-- <div>
+
+
+    <div class="section section-basic">
+        <div class="container1">
+            <div id="buttons">
+                <br>
+                <br>
+                <div class="row" class="text-center">
+                    <div class="col-md-20">
+                        <button [routerLink]="['/doctorname',my_id]" class="btn btn-primary btn-round"
+                            type="button">Select By Doctor Name</button>
+                    </div>
+                </div>
+                <div class="row" class="text-center">
+                    <div class="col-md-20">
+                        <button [routerLink]="['/diseasename',my_id]" class="btn btn-primary btn-round"
+                            type="button">Select By Disease Name</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div>
         <form action="/action_page.php">
             First name:<br>
             <input type="text" [(ngModel)]="firstname" name="firstname" value="Mickey">
@@ -72,8 +75,8 @@
           </li>
           </ul>
   </div> -->
- <app-pfooter></app-pfooter>
-<!--   
+    <app-pfooter></app-pfooter>
+    <!--   
     <footer class="footer footer-default">
         <div class="container">
             <nav>

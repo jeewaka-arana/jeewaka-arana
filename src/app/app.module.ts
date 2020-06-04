@@ -93,7 +93,7 @@ import { DoclistComponent } from '../app/admin/doclist/doclist.component';
 import { EditprofileComponent } from '../app/admin/editprofile/editprofile.component';
 
 import { DocacceptComponent } from './admin/docaccept/docaccept.component';
-import {UploadFileService} from 'app/core/upload-file.service';
+import { UploadFileService } from 'app/core/upload-file.service';
 import { ArticlesComponent } from './admin/articles/articles.component';
 import { NotificationComponent } from './admin/notification/notification.component';
 
@@ -204,7 +204,7 @@ import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-p
         NotificationComponent,
         PopupComponent,
         DropZoneDirective,
-     
+
         TimepickComponent,
         FirstpageComponent,
         PfooterComponent,
@@ -216,18 +216,18 @@ import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-p
         PaboutUsComponent,
         SecondpageComponent,
         AdminLoginComponent,
-    
-    
+
+
         FirebasetestComponent,
         TimepickerComponent,
         ApplistComponent,
-        SlotsComponent ,
+        SlotsComponent,
 
 
         AdmindashboardComponent,
-        
+
         //DlinechartComponent,
-       
+
         DlinechartComponent,
         PatientchartComponent,
         DoctorchartComponent,
@@ -235,20 +235,20 @@ import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-p
         HandleaccountsComponent,
         BarchartComponent,
         DoctorConfirmComponent,
-       
+
         // ChartsComponent,
-      
-        ApplistComponent ,
+
+        ApplistComponent,
         SlotsComponent,
         ViewDeleteAccountComponent,
         ViewCommentPartComponent
-        
-       
-       
+
+
+
     ],
     imports: [
         ChartsModule,
-         IgxTimePickerModule,
+        IgxTimePickerModule,
         BrowserAnimationsModule,
         BrowserModule,
         NgbModule,
@@ -263,8 +263,8 @@ import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-p
         AngularFireAuthModule,
         AngularFireStorageModule,
         AngularFireDatabaseModule,
-        ChartsModule ,
-        AngularFireFunctionsModule ,
+        ChartsModule,
+        AngularFireFunctionsModule,
         //   NgMultiSelectDropDownModule.forRoot(),
         ChartsModule,
         BrowserModule,
@@ -272,7 +272,7 @@ import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-p
             apiKey: environment.googleMapsKey
         })
     ],
-    providers: [CrudService,SearchdoctorService,AuthService, DatePipe,UploadFileService],
+    providers: [CrudService, SearchdoctorService, AuthService, DatePipe, UploadFileService],
 
     bootstrap: [AppComponent]
 })

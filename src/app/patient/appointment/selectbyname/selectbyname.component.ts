@@ -32,29 +32,29 @@ export class SelectbynameComponent implements OnInit {
   postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<Post[]>;
   str: any;
-  // selectletter="ALL";
+
   page = 1;
   pageSize = 4;
   filteredNames: any[] = [];
   filters = {}
   letter = new FormControl('');
   farray: any[] = [];
-my_id;
-  constructor(private afs: AngularFirestore,private router:Router) {
+  my_id;
+  constructor(private afs: AngularFirestore, private router: Router) {
 
 
-    this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
+    this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(12);
     console.log(this.my_id);
     this.afs.collection('Doctors', ref => ref.orderBy('Firstname')).valueChanges().subscribe(results => {
-    this.results = results;
-    // this.farray=this.results;
-    this.applyFilters1();
-  }) }
+      this.results = results;
+      this.applyFilters1();
+    })
+  }
 
   ngOnInit() {
-   
+
   }
-  
+
   applyFilters1() {
     this.filteredNames = _.filter(this.results, _.conforms(this.filters));
   }
@@ -63,7 +63,7 @@ my_id;
     this.filteredNames = _.filter(this.farray, _.conforms(this.filters));
   }
 
-
+  //retrieving data by the firstname of the doctor
   fname(property: string, letter) {
     this.farray = [];
     for (var i = 0; i < this.results.length; i++) {
@@ -80,23 +80,23 @@ my_id;
     console.log(this.farray);
     this.applyFilters();
   }
-  
-  lname(property: string, letter) {
-    this.farray = [];
-    for (var i = 0; i < this.results.length; i++) {
-      var v: string = this.results[i].Lastname;
-      var x: string = v.charAt(0);
-      if (letter.value == x) {
-        console.log("yes");
-        this.farray.push(this.results[i]);
-      }
-      else {
-        console.log("no");
-      }
-    }
-    console.log(this.farray);
-    this.applyFilters();
-  }
+
+  // lname(property: string, letter) {
+  //   this.farray = [];
+  //   for (var i = 0; i < this.results.length; i++) {
+  //     var v: string = this.results[i].Lastname;
+  //     var x: string = v.charAt(0);
+  //     if (letter.value == x) {
+  //       console.log("yes");
+  //       this.farray.push(this.results[i]);
+  //     }
+  //     else {
+  //       console.log("no");
+  //     }
+  //   }
+  //   console.log(this.farray);
+  //   this.applyFilters();
+  // }
   selectAll() {
     this.farray = [];
     for (var i = 0; i < this.results.length; i++) {

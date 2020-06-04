@@ -1,8 +1,8 @@
 <app-pnav passid={{my_id}}></app-pnav>
 <div class="wrapper">
-  
-        <h1 class="title">Looking for a doctor?</h1>
-     
+
+  <h1 class="title">Looking for a doctor?</h1>
+
 
   <div class="section section-navbars">
     <div class="container" id="menu-dropdown">
@@ -115,12 +115,12 @@
                   <p>Address: {{results.City}}</p>
                   <p>Contact no: {{results.PhoneNumber}}</p>
                   <p>Position: {{results.Position}}</p>
-                 </div> 
-                 <div class="row col-lg-12">
+                </div>
+                <div class="row col-lg-12">
                   <button [routerLink]="['/doctorview',results.Userid]" class="btn btn-primary btn-round ico"
                     type="button"><i class="now-ui-icons users_single-02"></i> View Profile</button>
-                  <button [routerLink]="['/appstep2',my_id,results.Userid]" class="btn btn-primary btn-round ico" type="button"><i
-                      class="now-ui-icons ui-1_calendar-60"></i> Book Appointment</button>
+                  <button [routerLink]="['/appstep2',my_id,results.Userid]" class="btn btn-primary btn-round ico"
+                    type="button"><i class="now-ui-icons ui-1_calendar-60"></i> Book Appointment</button>
                   <button (click)="map.places(results.City)" class="btn btn-primary btn-round ico" type="button"> View
                     on Map</button>
                 </div>
