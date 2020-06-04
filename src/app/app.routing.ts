@@ -92,8 +92,20 @@ import { PnavComponent } from './patient/pnav/pnav.component';
 import { AuthGuard } from './core/auth.guard';
 import { ViewDeleteAccountComponent } from './admindashboard/view-delete-account/view-delete-account.component';
 
-import { ViewCommentPartComponent } from './doctor/commentsection/view-comment-part/view-comment-part.component'
-const routes: Routes = [
+import {ViewCommentPartComponent} from './doctor/commentsection/view-comment-part/view-comment-part.component'
+
+// new teting piyumi
+
+import{AddingComponent} from './Piyumi/adding/adding.component';
+import{RetrivingComponent} from './Piyumi/retriving/retriving.component';
+import{UpdatingComponent} from './Piyumi/updating/updating.component';
+import{DeletingComponent} from './Piyumi/deleting/deleting.component';
+import{UploadComponent} from './Piyumi/pictures/upload/upload.component';
+import{ValidationComponent} from './Piyumi/validation/validation.component'
+
+
+
+const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component: ComponentsComponent },
     { path: 'nucleoicons', component: NucleoiconsComponent },
@@ -101,125 +113,127 @@ const routes: Routes = [
     { path: 'examples/login', component: LoginComponent },
     { path: 'examples/profile', component: ProfileComponent },
     { path: 'user', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'doctorview/:id', component: DoctorprofilepageComponent },
-    { path: 'doctorview', component: DoctorprofilepageComponent },
-    { path: 'doctoradmin', component: DoctoradminpageComponent },
-    { path: 'doctoradmin/:id', component: DoctoradminpageComponent },
-    { path: 'report/:id', component: ReportComponent },
-    { path: 'signup/sign-patient', component: SignPatientComponent },
-    { path: 'signup/sign-doctor', component: SignDoctorComponent },
-    { path: 'default', component: WaitingComponent },
-    { path: 'patienthome', component: PatienthomeComponent },
-    { path: 'patienthome/:id', component: PatienthomeComponent },
-    { path: 'appointment', component: AppointmentComponent },
-    { path: 'appstep1', component: AppStep1Component },
-    { path: 'appstep1/:id', component: AppStep1Component },
-    { path: 'appstep2', component: AppStep2Component },
-    { path: 'appstep2/:id/:uid', component: AppStep2Component },
-    { path: 'appstep3', component: AppStep3Component },
-    { path: 'applist/:id', component: ApplistComponent },
-    { path: 'byname', component: SelectbynameComponent },
-    { path: 'bydisease', component: SelectbydiseaseComponent },
-    { path: 'doctorname/:id', component: SelectbynameComponent },
-    { path: 'diseasename/:id', component: SelectbydiseaseComponent },
-    { path: 'searchdoctor', component: SearchdoctorComponent },
-    { path: 'searchdoctor/:id', component: SearchdoctorComponent },
-    { path: 'login', component: UserloginComponent },
-    { path: 'admin', component: AdminComponent },
-    { path: 'alogin', component: AdminLoginComponent },
-    { path: 'timeslot', component: SlotsComponent },
-    { path: 'appstep3/:id/:date/:time/:pid', component: AppStep3Component },
-    { path: 'appstep2/:id', component: AppStep2Component },
-    {
-        path: 'admin', component: AdminComponent, children: [
+    { path: 'home', component:HomeComponent },
+    { path: 'doctorview/:id', component: DoctorprofilepageComponent},
+    { path: 'doctorview', component: DoctorprofilepageComponent},
+    { path: 'doctoradmin', component:DoctoradminpageComponent  },
+    { path: 'doctoradmin/:id', component:DoctoradminpageComponent },
+    {path:'report/:id',component:ReportComponent},
+    { path: 'signup/sign-patient', component:SignPatientComponent },
+    { path: 'signup/sign-doctor', component: SignDoctorComponent},
+    { path: 'default', component: WaitingComponent},
+    { path: 'patienthome', component:PatienthomeComponent },
+    { path: 'patienthome/:id', component:PatienthomeComponent },
+    { path: 'appointment', component:AppointmentComponent },
+    { path: 'appstep1', component:AppStep1Component },
+    { path: 'appstep1/:id', component:AppStep1Component },
+     { path: 'appstep2', component:AppStep2Component },
+    { path: 'appstep2/:id/:uid', component:AppStep2Component },
+    { path: 'appstep3', component:AppStep3Component },
+    { path: 'applist/:id', component:ApplistComponent },
+    { path: 'byname', component:SelectbynameComponent },
+    { path: 'bydisease', component:SelectbydiseaseComponent },
+    { path: 'doctorname/:id', component:SelectbynameComponent },
+    { path: 'diseasename/:id', component:SelectbydiseaseComponent },
+    { path: 'searchdoctor', component:SearchdoctorComponent },
+    { path: 'searchdoctor/:id', component:SearchdoctorComponent },
+    { path: 'login', component: UserloginComponent},
+    { path: 'admin', component:AdminComponent },
+    { path: 'alogin', component:AdminLoginComponent },
+    {path:'timeslot',component: SlotsComponent},
+    { path: 'appstep3/:id/:date/:time/:pid', component:AppStep3Component },
+     { path: 'appstep2/:id', component:AppStep2Component },
+    { path: 'admin', component:AdminComponent ,children:[
+        
+   
 
-            //   { path: 'imagelist', component:ImageListComponent }
-            // {path:'editprofile',component:EditprofileComponent}
-
-        ]
-    },
-    { path: 'admin/docaccept', component: DocacceptComponent },
-    { path: 'admin/editprofile', component: EditprofileComponent },
-    // {path:'adminlogin',component:AdminloginComponent},
-    { path: 'admin/doclist', component: DoclistComponent },
-    { path: 'signup', component: SignupComponent },
-    { path: 'here/:City', component: HeremapComponent },
-    { path: 'test', component: TestComponent },
-    { path: 'test2', component: Test2Component },
-    { path: 'dlogin', component: DocLoginComponent },
-    { path: 'plogin', component: PatLoginComponent },
-    { path: 'report/:id', component: ReportComponent },
+    ]},
+    {path:'admin/docaccept',component:DocacceptComponent},
+    {path:'admin/editprofile',component:EditprofileComponent},
+   // {path:'adminlogin',component:AdminloginComponent},
+    { path: 'admin/doclist', component:DoclistComponent },
+    { path: 'signup', component:SignupComponent },
+    { path: 'here/:City', component:HeremapComponent},
+    { path: 'test', component:TestComponent},
+    { path: 'test2', component:Test2Component},
+    { path: 'dlogin', component:DocLoginComponent},
+    { path: 'plogin', component:PatLoginComponent},
+    {path:'report/:id',component:ReportComponent},
 
     //testing
-    { path: 'nav', component: PnavComponent },
+    {path:'nav',component:PnavComponent},
+   
 
 
+{path:'master',component:DoctorprofilepageComponent},
 
-    { path: 'master', component: DoctorprofilepageComponent },
+{path:'comment',component:CommentComponent},
+    { path: 'googlemap/:City', component:GooglemapComponent},
+    
 
-    { path: 'comment', component: CommentComponent },
-    { path: 'googlemap/:City', component: GooglemapComponent },
+{path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent},
+{path:'adsearch/:id',component:AdvancedsearchComponent},
 
-
-    //     {path:'image' ,component:ImageComponent,children:[
-    //     {path:'upload',component:ImageComponent},//image/upload
-    //     {path:'list',component:ImageListComponent}   ,
-
-    // ]},
-
-    // {path:'notepad',component:NotepadComponent},
-    { path: 'doctor/doctorprofilepage', component: DoctorprofilepageComponent },
-    { path: 'adsearch/:id', component: AdvancedsearchComponent },
-
-    { path: 'reaction', component: ReactionComponent },
-
-    { path: 't', component: TComponent },
-
-    //{path:'complain',component:AddComplainsComponent},
-    { path: 'complain/:id', component: AddComplainsComponent },
-    { path: 'deletecomment', component: DeleteCommentComponent },
-    { path: 'bothcomment', component: BothCommentPageComponent },
-    { path: 'docAppoinment', component: DocAppoinmentComponent },
-    { path: 'docAppoinment/:id', component: DocAppoinmentComponent },
-    { path: 'viewappoinment', component: ViewappoinmentComponent },
-    { path: 'viewappoinment/:id', component: ViewappoinmentComponent },
-    { path: 'report', component: ReportComponent },
-    { path: 'articles', component: ArticlesComponent },
-    { path: 'admin/notification', component: NotificationComponent },
+ {path:'reaction',component:ReactionComponent},
+ 
+ {path:'t',component:TComponent},
+ 
+//{path:'complain',component:AddComplainsComponent},
+{path:'complain/:id',component:AddComplainsComponent},
+{path:'deletecomment',component:DeleteCommentComponent},
+{path:'bothcomment',component:BothCommentPageComponent},
+{path:'docAppoinment',component:DocAppoinmentComponent},
+{path:'docAppoinment/:id',component:DocAppoinmentComponent},
+{path:'viewappoinment',component:ViewappoinmentComponent},
+{path:'viewappoinment/:id',component:ViewappoinmentComponent},
+{path:'report',component:ReportComponent},
+{path:'articles',component:ArticlesComponent},
+{path:'admin/notification',component:NotificationComponent},
 
 
-    { path: 'time', component: TimepickerComponent },
+{path:'time',component:TimepickerComponent},
 
-    { path: 'timetest', component: TimepickComponent },
-    { path: 'fpage', component: FirstpageComponent },
-    { path: 'fpage/:', component: FirstpageComponent },
-    { path: 'aboutUs', component: AboutUsComponent },
-    { path: 'contactUs', component: ContactUsComponent },
-    { path: 'aboutUs/:id', component: AboutUsComponent },
-    { path: 'contactUs/:id', component: ContactUsComponent },
-    // {path:'pcontactUs',component:PcontactUsComponent},
-    // {path:'paboutUs',component:PaboutUsComponent},
-    // //{path:'spage',component:SecondpageComponent},
-    // {path:'spage/:id',component:SecondpageComponent},
-    // //{path:'admindash',component:AdmindashboardComponent},
-    { path: 'admindash/:id', component: AdmindashboardComponent },
+{path:'timetest',component:TimepickComponent},
+{path:'fpage',component:FirstpageComponent},
+{path:'fpage/:',component:FirstpageComponent},
+{path:'aboutUs',component:AboutUsComponent},
+{path:'contactUs',component:ContactUsComponent},
+{path:'aboutUs/:id',component:AboutUsComponent},
+{path:'contactUs/:id',component:ContactUsComponent},
+// {path:'pcontactUs',component:PcontactUsComponent},
+// {path:'paboutUs',component:PaboutUsComponent},
+// //{path:'spage',component:SecondpageComponent},
+// {path:'spage/:id',component:SecondpageComponent},
+// //{path:'admindash',component:AdmindashboardComponent},
+{path:'admindash/:id',component:AdmindashboardComponent},
 
 
-    { path: 'pcontactUs/:id', component: PcontactUsComponent },
-    { path: 'paboutUs/:id', component: PaboutUsComponent },
-    // {path:'spage',component:SecondpageComponent},
-    { path: 'spage/:id', component: SecondpageComponent },
-    // {path:'admindash',component:AdmindashboardComponent},
-    { path: 'admindash/:id', component: AdmindashboardComponent },
-    //{path:'dlinechart' ,component:DlinechartComponent}
-    { path: 'dlinechart', component: DlinechartComponent },
-    { path: 'admincomplain/:id', component: ComplainsComponent },
-    { path: 'handleAccount/:id', component: HandleaccountsComponent },
-    { path: 'confirmdoc/:id', component: DoctorConfirmComponent },
-    { path: 'viewdaccount/:id', component: ViewDeleteAccountComponent },
-    { path: 'viewComment', component: ViewCommentPartComponent }
-]
+{path:'pcontactUs/:id',component:PcontactUsComponent},
+{path:'paboutUs/:id',component:PaboutUsComponent},
+// {path:'spage',component:SecondpageComponent},
+{path:'spage/:id',component:SecondpageComponent},
+// {path:'admindash',component:AdmindashboardComponent},
+{path:'admindash/:id',component:AdmindashboardComponent},
+//{path:'dlinechart' ,component:DlinechartComponent}
+{path:'dlinechart' ,component:DlinechartComponent},
+{path:'admincomplain/:id',component:ComplainsComponent},
+{path:'handleAccount/:id',component:HandleaccountsComponent},
+{path:'confirmdoc/:id',component:DoctorConfirmComponent},
+{path:'viewdaccount/:id',component:ViewDeleteAccountComponent},
+{path:'viewComment',component:ViewCommentPartComponent},
+
+
+// testing piyumi
+
+{path:'add',component:AddingComponent},
+{path:'delete',component:DeletingComponent},
+{path:'view',component:RetrivingComponent},
+{path:'update',component:UpdatingComponent},
+{path:'upload',component:UploadComponent},
+{path:'validation',component:ValidationComponent},
+
+
+    ]
 
 
 @NgModule({

@@ -1,0 +1,9 @@
+<div>
+    <img [src]="img" width="250px" height="250px" (click)="fileUploader.click()" >
+</div>
+
+        
+<input  type="file"  accept="image/*" class="form-control" #fileUploader formControlName="img" (change)="showpreview($event);onDrop($event.target.files)">
+<br>
+  
+  

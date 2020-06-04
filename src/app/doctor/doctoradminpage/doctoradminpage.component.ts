@@ -64,22 +64,6 @@ export class DoctoradminpageComponent implements OnInit {
 
 
 
-
-  // img : string;
-  // img1:string;
-  // img2:string;
-  // img3:string;
-  // video:string;
-  // selectedImage:any;
-  // image1:any;
-  // image2:any;
-  // image3:any;
-  // videoclip:any;
-  // isSubmitted:boolean;
-  // isSubmitted1:boolean;
-  // isSubmitted2:boolean;
-  // isSubmitted3:boolean;
-  // isSubmitted4:boolean;
   formdoc: FormGroup;
 
 
@@ -108,36 +92,36 @@ export class DoctoradminpageComponent implements OnInit {
     cmail: new FormControl(''),
     cmsg: new FormControl(''),
 
-    mt1: new FormControl(''),
-    mt2: new FormControl(''),
-    mt3: new FormControl(''),
+    // mt1: new FormControl(''),
+    // mt2: new FormControl(''),
+    // mt3: new FormControl(''),
 
-    tt1: new FormControl(''),
-    tt2: new FormControl(''),
-    tt3: new FormControl(''),
+    // tt1: new FormControl(''),
+    // tt2: new FormControl(''),
+    // tt3: new FormControl(''),
 
-    wt1: new FormControl(''),
-    wt2: new FormControl(''),
-    wt3: new FormControl(''),
-
-
-    tht1: new FormControl(''),
-    tht2: new FormControl(''),
-    tht3: new FormControl(''),
-
-    ft1: new FormControl(''),
-    ft2: new FormControl(''),
-    ft3: new FormControl(''),
-
-    st1: new FormControl(''),
-    st2: new FormControl(''),
-    st3: new FormControl(''),
+    // wt1: new FormControl(''),
+    // wt2: new FormControl(''),
+    // wt3: new FormControl(''),
 
 
+    // tht1: new FormControl(''),
+    // tht2: new FormControl(''),
+    // tht3: new FormControl(''),
 
-    sut1: new FormControl(''),
-    sut2: new FormControl(''),
-    sut3: new FormControl(''),
+    // ft1: new FormControl(''),
+    // ft2: new FormControl(''),
+    // ft3: new FormControl(''),
+
+    // st1: new FormControl(''),
+    // st2: new FormControl(''),
+    // st3: new FormControl(''),
+
+
+
+    // sut1: new FormControl(''),
+    // sut2: new FormControl(''),
+    // sut3: new FormControl(''),
 
     No:new FormControl(''),
    Lane1:new FormControl(''),
@@ -167,6 +151,7 @@ export class DoctoradminpageComponent implements OnInit {
     this.my_id = router.getCurrentNavigation().finalUrl.toString().slice(13);
      console.log(this.my_id);
 
+
     //
     this.form = this.formBuilder.group({
       diseases: ['']
@@ -175,14 +160,9 @@ export class DoctoradminpageComponent implements OnInit {
     this.afs.collection('Doctors').doc(this.my_id).valueChanges().subscribe(result => {
       this.post = result;
       
-       this.Firstname = result["Firstname"];
-     this.Lastname = result["Lastname"];
+    //    this.Firstname = result["Firstname"];
+    //  this.Lastname = result["Lastname"];
 
-    //  this.PhoneNumber = result["Lastname"];
-    //  this.Lastname = result["Lastname"];
-    //  this.Lastname = result["Lastname"];
-    //  this.Lastname = result["Lastname"];
-    //  this.Lastname = result["Lastname"];
 
       this.formdata.patchValue({
         Firstname: result["Firstname"],
@@ -198,6 +178,7 @@ export class DoctoradminpageComponent implements OnInit {
         
 
       });
+
       this.formnote.patchValue({
         note:result["note"],
 
@@ -218,47 +199,30 @@ export class DoctoradminpageComponent implements OnInit {
     this.formdata;
 
 
-   
-
-
-    // this.postsCol = this.afs.collection('Doctors');
-    // this.posts = this.postsCol.valueChanges();
-    // this.postsCol.doc(this.my_id).ref.get().then((doc) => {
-    //   this.post = doc.data();
-    // });
 
 
 
 
   }
 
-  //  showpreview(event:any){
-  //   if(event.target.files && event.target.files[0]){
-  //     const reader = new FileReader();
-  //     reader.onload=(e:any)=> this.img = e.target.result;
-  //     reader.readAsDataURL(event.target.files[0]);
-  //     this.selectedImage =event.target.files[0];
-  //   }
-  //   else{
-  //     this.img ='../../../assets/img/avatar.png';
-  //     this.selectedImage = null;
-  //   }
-
-  // }
+  
   saveform(data) {
 
     // this.CrudService.updateForm(data,this.my_id)
   }
 
+savevalue(data){
 
-  savevalue() {
+this.afs.collection('Doctors').doc(this.my_id).update(data);
+}
+  // savevalue() {
 
-    let data = this.formdata.value;
+  //   let data = this.formdata.value;
 
-    console.log(this.formdata.value);
-    this.CrudService.updateForm(data);
+  //   console.log(this.formdata.value);
+  //   this.CrudService.updateForm(data);
 
-  }
+  // }
   savedisease(data) {
     this.CrudService.updateProfile(data);
   }
@@ -269,10 +233,6 @@ export class DoctoradminpageComponent implements OnInit {
   }
   ///////
 
-  // submitcomplain(data) {
-  //   this.CrudService.passData(data);
-  // }
-  // //
   getOrders() {
     return [
 
@@ -304,184 +264,5 @@ export class DoctoradminpageComponent implements OnInit {
 
     ];
   }
-
-
-
-
-
-
-
-
-
-
-
-
-  // profile picture
-
-
-
-  //   onSubmit(formValue){
-  // this.isSubmitted=true;
-  // if(this.formdata.valid){
-  //   var filePath = `ProfilePictures/${this.selectedImage.name}_${new Date().getTime()}`;
-  // const fileRef= this.storage.ref(filePath);
-  //   this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
-  //   finalize(async()=>{
-  //     fileRef.getDownloadURL().subscribe(async (url)=>{
-  // formValue['profilepicurl']=url;
-
-  // get url from storage
-  //  this.service.insertImageDetails(formValue);
-
-
-
-  // this.resetForm();
-  //     })
-  //   })
-  // ).subscribe();
-
-
-  // }
-
-
-
-  //   }
-
-
-  //   resetForm(){
-
-
-  //     this.formdata.reset();
-  // this.formdata.setValue({
-  //   profilepicurl:''
-  // });
-  // this.img='../../../assets/img/avatar.png';
-  // this.selectedImage=null;
-
-  // this.isSubmitted=false;
-  //   }
-
-
-
-
-
-
-
-  //image1 all function
-  //   showpreview1(event:any){
-  //     if(event.target.files && event.target.files[0]){
-  //       const reader = new FileReader();
-  //       reader.onload=(e:any)=> this.img1 = e.target.result;
-  //       reader.readAsDataURL(event.target.files[0]);
-  //       this.image1 =event.target.files[0];
-  //     }
-  //     else{
-  //       this.img1 ='../../../assets/img/avatar.png';
-  //       this.image1 = null;
-  //     }
-
-  //   }
-  //   resetForm1(){
-
-
-  //     this.formdata.reset();
-  // this.formdata.setValue({
-  //   img1:''
-  // });
-  // this.img1='../../../assets/img/avatar.png';
-  // this.image1=null;
-
-  // this.isSubmitted1=false;
-  //   }
-
-
-
-
-
-
-
-
-
-  //submit img1 pictures to firebase
-  // submitImg1(formValue){
-
-
-  // this.isSubmitted1=true;
-  // if(this.formdata.valid){
-  //   var filePath = `Img1/${this.image1.name}_${new Date().getTime()}`;
-  // const fileRef= this.storage.ref(filePath);
-  //   this.storage.upload(filePath,this.image1).snapshotChanges().pipe(
-  //   finalize(()=>{
-  //     fileRef.getDownloadURL().subscribe((url)=>{
-  // formValue['img1']=url;
-  //
-  // this.service.insertImageDetails(formValue);
-  //
-  //   this.resetForm1();
-  //       })
-  //     })
-  //   ).subscribe();
-
-  //   }
-  // }
-  //end of image1 function
-
-
-
-
-  //upload video
-
-
-
-  // showpreview4(event:any){
-  //   if(event.target.files && event.target.files[0]){
-  //     const reader = new FileReader();
-  //     reader.onload=(e:any)=> this.video = e.target.result;
-  //     reader.readAsDataURL(event.target.files[0]);
-  //     this.videoclip =event.target.files[0];
-  //   }
-  //   else{
-  //     this.video ='../../../assets/img/avatar.png';
-  //     this.videoclip= null;
-  //   }
-
-  // }
-  // resetFormvideo(){
-
-
-  //   this.formdata.reset();
-  // this.formdata.setValue({
-  //   video:''
-  // });
-  // this.video='../../../assets/img/avatar.png';
-  // this.videoclip=null;
-
-  // this.isSubmitted4=false;
-  // }
-
-
-
-  //submit 
-  // submitvideo(formValue){
-
-
-  //   this.isSubmitted4=true;
-  //   if(this.formdata.valid){
-  //     var filePath = `video/${this.videoclip.name}_${new Date().getTime()}`;
-  //   const fileRef= this.storage.ref(filePath);
-  //     this.storage.upload(filePath,this.videoclip).snapshotChanges().pipe(
-  //     finalize(()=>{
-  //       fileRef.getDownloadURL().subscribe((url)=>{
-  //   formValue['video']=url;
-  //   this.resetFormvideo();
-  //       })
-  //     })
-  //   ).subscribe();
-
-  //   }
-  // }
-
-
-
 
 }

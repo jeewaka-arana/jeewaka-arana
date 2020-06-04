@@ -48,13 +48,7 @@ export class CrudService {
     doctorRef.doc(id)
 
   }
-  //pass dotor comments from doctor profile page
-  // passData(user:Doctor)
-  // {
-    
-  //     return this.afs.collection('DoctorComments').add(user);
-  
-  // }
+
 
 
   passDoctorIssues(user:Doctor)

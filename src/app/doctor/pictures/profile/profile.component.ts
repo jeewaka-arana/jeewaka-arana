@@ -38,10 +38,10 @@ formdata=new FormGroup({
       reader.readAsDataURL(event.target.files[0]);
       this.selectedImage =event.target.files[0];
     }
-    else{
-      this.img ='../../../assets/img/avatar.png';
-      this.selectedImage = null;
-    }
+    // else{
+    //   this.img ='../../../assets/img/avatar.png';
+    //   this.selectedImage = null;
+    // }
  
   }
 

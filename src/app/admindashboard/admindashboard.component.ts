@@ -142,9 +142,9 @@ this.docCity.subscribe((c)=>{this.cityCount=c.length});
 
 
     this.dQueryCol = this.afs.collection('Doctors', ref => ref.where('Year', '==', +data));
-    console.log(this.dQueryCol);
+    // console.log(this.dQueryCol);
     this.dQuery = this.dQueryCol.valueChanges();
-    console.log(this.dQuery);
+    // console.log(this.dQuery);
     this.dQuery.subscribe((data) => { this.dy = data.length });
    // console.log(this.y);
   this.dyear=data;

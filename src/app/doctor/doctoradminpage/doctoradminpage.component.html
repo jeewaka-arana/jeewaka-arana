@@ -120,6 +120,7 @@
               <div class="form-group">
 
 <br>
+
                 <label class="col-md-15 control-label" style="font-size:1.5rem;margin-left: 1.5rem;
                 "><b>Upload Special Note</b></label>
                 <br>
@@ -153,7 +154,8 @@
 
     <div class="container register">
       <div class="card" style="margin-left:7rem;">
-        <form [formGroup]="formdata" (ngSubmit)="savevalue()">
+        <!-- <form [formGroup]="formdata" (ngSubmit)="savevalue()"> -->
+        <form [formGroup]="formdata" (ngSubmit)="savevalue(formdata.value)">
           <div class="row register-form">
            
             <div class="col-md-6">

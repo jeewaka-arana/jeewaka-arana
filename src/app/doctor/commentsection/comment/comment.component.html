@@ -3,7 +3,7 @@
   <h3 style="margin-left: 20rem;font-weight: bold ;">Your Thougths Are Very Important</h3><br>
   <div class="formGroup" style="margin-left: 16rem;">
 
-    <form class="form-horizontal" role="form" style="margin-left:50px;">
+    <form [formGroup]="form" class="form-horizontal" (ngSubmit)="addPost(form.value)" style="margin-left:50px;">
 
 
       <div class="row">
@@ -11,18 +11,26 @@
 
           <br><br>
           <div>
-            <input class="form-control" [(ngModel)]="title" name="title" placeholder="   Your name">
+            <input class="form-control" formControlName="title" placeholder="   Your name" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" >
+          
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+              <div *ngIf="f.title.errors.required">Name is required</div>
+          </div>
           </div>
 
           <br>
           <div>
-            <textarea class="form-control" [(ngModel)]="content" name="content" placeholder="Your message"></textarea>
+            <textarea class="form-control" formControlName="content"  placeholder="Your message" [ngClass]="{ 'is-invalid': submitted && f.content.errors }" ></textarea>
+          
+            <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
+              <div *ngIf="f.content.errors.required">Msg is required</div>
+          </div>
           </div>
 
           <br><br><br>
           <div class="form-group">
-            <input type="submit" class="btnRegister   float-right" style="margin-left:78rem;" formControlName="submit"
-              value="Post Comment" (click)="addPost()" />
+            <input type="submit" class="btnRegister   float-right" style="margin-left:78rem;" 
+              value="Post Comment"  />
           </div>
         </div>
       </div>
@@ -49,6 +57,7 @@
                   <h4>{{ post$.title }}</h4>
                   <h6>Commented on {{post$.Day}} -{{post$.Month}}- {{post$.Year}}</h6>
                   <p>{{ post$.content }}</p>
+                  
         
                  </div> 
 

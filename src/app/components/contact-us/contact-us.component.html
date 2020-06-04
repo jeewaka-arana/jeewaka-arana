@@ -21,23 +21,7 @@
   </div>
 </div>
 
-  <!-- <div class="separator separator-primary">
-    earlier map
-  <div class="section-story-overview">
-
-      <app-here-map
-      #map
-      appId="oSLwpHRqPiRJAmmiHaTo"
-      appCode="65rk36fLF2krVcVC8rmHYQ"
-      lat="37.7397"
-      lng="-121.4252"
-      width="75%"
-      height="530px">
-  </app-here-map>
-
-    </div>
-    </div> -->
-
+ 
 
 
 
@@ -49,7 +33,7 @@
           
             <div class="row">
 
-                <div class="col col-md-5">
+                <div class="col col-md-8">
 
 
                
@@ -78,66 +62,87 @@
                  
                   <div class="col col-md-6" style="width: 17rem;">
                     
- 
-                            
-                           
-                                  <div class="formGroup" >
-                                          
-                                    <form   class="form-horizontal" role="form" autocomplete="on" >
-                          
-                          
-                                  <div  class="form-group" >
-                                  <div class="col-lg-8">
-                                    <label for="" style="color: #f96332;">Name *</label>
-                                    <input class="form-control" style="width: 20rem;"  name="cname" >
-                                </div><br>
-                              </div>
-                              <div  class="form-group" >
-                                  <div class="col-lg-8">
-                                      <label for="" style="color: #f96332;">Country *</label>
-                                    <input class="form-control" style="width: 20rem;"  name="cname">
-                                </div><br>
-                              </div>
-                              <div  class="form-group" >
-                                  <div class="col-lg-8">
-                                      <label for="" style="color: #f96332;">Address *</label>
-                                    <input class="form-control" style="width: 20rem;"  name="cname" >
-                                </div><br>
-                              </div>
-                              <div  class="form-group" >
-                                  <div class="col-lg-8">
-                                      <label for="" style="color: #f96332;">Telephone Number *</label>
-                                    <input class="form-control" style="width: 20rem;"  name="cname" >
-                                </div><br>
-                              </div>
 
-                              <div  class="form-group" >
-                                <div class="col-lg-8">
-                                    <label for="" style="color: #f96332;">Email *</label>
-                                  <input class="form-control" style="width: 20rem;"    name="cmail" >
-                              </div>
-                      </div>
-                                
-                                <div  class="form-group" >
-                                    <div class="col-lg-8">
-                                  <div class="textarea-container">
-                                      <label for="" style="color: #f96332;">Message *</label>
-                                      <textarea class="form-control"    name="cmsg" ></textarea>
-                                  </div>
-                                  </div>
-                                </div>
-                                  <br><br><br>
-                                  <div  class="form-group" >
-                                    <input type="submit" class="btnRegister   float-right" style="width: 15rem;"  value="SEND" />         
-                                    </div> 
-                          <br><br>
-                      <p style="margin-left: 15px;color: #f96332;"><b>* By clicking on SEND US, you acknowledge having read our Privacy notice</b></p>
-       
-                      
-                          </form>
-                      </div>
-                   
-    
+<!--  -->
+
+
+
+                                          
+  <!-- <form [formGroup]="form" (ngSubmit)="submit(form.value)"  class="form-horizontal"  >
+
+
+<div  class="form-group" >
+<div class="col-lg-8">
+  <label for="" style="color: #f96332;">Name *</label>
+  <input class="form-control" style="width: 20rem;" formControlName="Name" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" >
+  <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+    <div *ngIf="f.Name.errors.required">Name is required</div>
+</div>
+</div><br>
+</div>
+<div  class="form-group" >
+<div class="col-lg-8">
+    <label for="" style="color: #f96332;">Country *</label>
+  <input class="form-control" style="width: 20rem;"  formControlName="Country" [ngClass]="{ 'is-invalid': submitted && f.Country.errors }">
+  <div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
+    <div *ngIf="f.Country.errors.required">Country is required</div>
+</div>
+</div><br>
+</div>
+<div  class="form-group" >
+<div class="col-lg-8">
+    <label for="" style="color: #f96332;">Address *</label>
+  <input class="form-control" style="width: 20rem;"   formControlName="Address" [ngClass]="{ 'is-invalid': submitted && f.Address.errors }" >
+  <div *ngIf="submitted && f.Address.errors" class="invalid-feedback">
+    <div *ngIf="f.Address.errors.required">Address is required</div>
+</div>
+</div><br>
+</div>
+<div  class="form-group" >
+<div class="col-lg-8">
+    <label for="" style="color: #f96332;">Telephone Number *</label>
+  <input class="form-control" style="width: 20rem;" formControlName="Number" [ngClass]="{ 'is-invalid': submitted && f.Number.errors }" >
+  <div *ngIf="submitted && f.Number.errors" class="invalid-feedback">
+    <div *ngIf="f.Number.errors.required">Phone Number is required</div>
+</div>
+</div><br>
+</div>
+
+<div  class="form-group" >
+<div class="col-lg-8">
+  <label for="" style="color: #f96332;">Email *</label>
+<input class="form-control" style="width: 20rem;"    formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" >
+<div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+  <div *ngIf="f.Email.errors.required">Email is required</div>
+</div>
+</div>
+</div>
+
+<div  class="form-group" >
+  <div class="col-lg-8">
+<div class="textarea-container">
+    <label for="" style="color: #f96332;">Message *</label>
+    <textarea class="form-control"  formControlName="Message" [ngClass]="{ 'is-invalid': submitted && f.Message.errors }" ></textarea>
+    <div *ngIf="submitted && f.Message.errors" class="invalid-feedback">
+      <div *ngIf="f.Message.errors.required">Message is required</div>
+  </div>
+  </div>
+</div>
+</div>
+<br><br><br>
+<div  class="form-group" >
+  <input type="submit" class="btnRegister   float-right" style="width: 15rem;"  value="SEND" />         
+  </div> 
+<br><br>
+<p style="margin-left: 15px;color: #f96332;"><b>* By clicking on SEND US, you acknowledge having read our Privacy notice</b></p>
+
+
+</form> -->
+
+
+
+<!--  -->
+
                       </div>
     
       </div>

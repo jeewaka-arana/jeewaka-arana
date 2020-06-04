@@ -9,6 +9,7 @@ import{CrudService} from 'app/core/crud.service';
 import { Doctor } from '../../../core/models/doctor.model';
 import {AuthService} from '../../../core/auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 interface Post {
   title: string;
@@ -52,9 +53,10 @@ currentmonth=parseInt(this.datePipe.transform(new Date(),"MM" ));
 currentday=parseInt(this.datePipe.transform(new Date(),"dd"));
 currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
 
-  
+ form:FormGroup; 
    my_id:string;
-  constructor(private db: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService,private  afs: AngularFirestore,private datePipe: DatePipe, private router:Router) {
+  submitted: boolean;
+  constructor(private db: AngularFirestore,private CrudService:CrudService,private AuthService:AuthService,private  afs: AngularFirestore,private datePipe: DatePipe, private router:Router,private fb:FormBuilder) {
     // this.my_id=router.getCurrentNavigation().finalUrl.toString().slice(12);
 
    }
@@ -82,7 +84,10 @@ currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
     //   })
 
 
-
+this.form=this.fb.group({
+  title: ['', Validators.required],
+    content: ['', Validators.required],
+})
  
 
 
@@ -90,11 +95,18 @@ currentyear=parseInt(this.datePipe.transform(new Date(),"yyyy"));
 
   }
   
+  get f() { return this.form.controls; }
 
-  addPost() {
+  addPost(data:any) {
 
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.form.invalid) {
+        return;
+    }
     
-     this.afs.collection('Doctors').doc(this.id).collection('Posts').add({'title': this.title, 'content': this.content,'Year':this.currentyear,'Month':this.currentmonth,'Day':this.currentday});
+     this.afs.collection('Doctors').doc(this.id).collection('Posts').add({'title': data.title, 'content': data.content,'Year':this.currentyear,'Month':this.currentmonth,'Day':this.currentday});
   }
 
   // getPost(postId) {

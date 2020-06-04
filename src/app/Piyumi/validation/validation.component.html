@@ -1,0 +1,23 @@
+
+
+<div class="cont">
+    <form [formGroup]="myform" (ngSubmit)="test(myform.value)">
+      Name
+      <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" ><br>
+      <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+        <div *ngIf="f.Name.errors.required">Name is required</div>
+    </div>
+  
+      Age
+      <input type="text" formControlName="Age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Age.errors }" ><br>
+      <div *ngIf="submitted && f.Age.errors" class="invalid-feedback">
+        <div *ngIf="f.Age.errors.required">Age is required</div>
+    </div>
+      Email
+      <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" ><br>
+      <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+        <div *ngIf="f.Email.errors.required">Email is required</div>
+    </div>
+  <button type="submit" >Submit</button>
+    </form>
+  </div>
