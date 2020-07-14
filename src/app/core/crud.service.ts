@@ -10,8 +10,13 @@ import { Doctor } from './models/doctor.model';
 export class CrudService {
   
 
+<<<<<<< Updated upstream
   constructor(private afs:AngularFirestore) { }
 
+=======
+  constructor(private afs:AngularFirestore,private AuthService:AuthService) { }
+getpeop
+>>>>>>> Stashed changes
   createPatient(user:Patient){
     return this.afs.collection('Patients').add(user);
   }
@@ -31,11 +36,30 @@ export class CrudService {
 
   
  
+<<<<<<< Updated upstream
 //update doctor view page according to the doctor admin page
 
 getPeople(){
   return new Promise<any>((resolve, reject) => {
     this.afs.collection('Doctors').snapshotChanges()
+=======
+
+//doclist
+
+getPeople(){
+  return new Promise<any>((resolve, reject) => {
+    this.afs.collection('admin').doc('VO23vtfHaiULH2bhwYvZ').collection('Doctors', ref => ref.where('state', '==', 0)).snapshotChanges()
+    .subscribe(snapshots => {
+      resolve(snapshots)
+    })
+  })
+}
+
+//docaccept
+getDoctors(){
+  return new Promise<any>((resolve, reject) => {
+    this.afs.collection('admin').doc('VO23vtfHaiULH2bhwYvZ').collection('Doctors', ref => ref.where('state', '==', 1)).snapshotChanges()
+>>>>>>> Stashed changes
     .subscribe(snapshots => {
       resolve(snapshots)
     })

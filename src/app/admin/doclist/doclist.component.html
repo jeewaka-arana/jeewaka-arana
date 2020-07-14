@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="wrapper">
   <div class="page-header page-header-small" filter-color="orange">
       <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
@@ -67,6 +68,142 @@
                                                 <h5>Ayurveda in SriLanka</h5>
                                             </div>
                                           </ng-template>
+=======
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
+    <div class="container">
+      <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+        <div class="navbar-translate">
+            <a class="navbar-brand"  placement="bottom" >
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+            <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link"   routerLink="/admin" >
+                <i class="now-ui-icons business_badge"></i>
+                <p>Articles</p>
+            </a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link"   routerLink="notification" >
+                    <i class="now-ui-icons business_badge"></i>
+                    <p>Notification</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link"   routerLink="/admin/docaccept" >
+                        <i class="now-ui-icons business_badge"></i>
+                        <p>Doctor list</p>
+                    </a>
+            </li>
+            <li class="nav-item">
+                        <a class="nav-link"   routerLink="/admin/doclist" >
+                            <i class="now-ui-icons business_badge"></i>
+                            <p>Doctors Request</p>
+                        </a>
+            </li>
+
+
+
+
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin" >
+                <i class="now-ui-icons business_globe"></i>
+                <p>Change Language</p>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link btn btn-neutral" routerLink="/signup">
+              <i class="now-ui-icons arrows-1_share-66"></i>
+              <p>LogOut</p>
+          </a>
+      </li>
+      
+       
+      </ul>
+  </div>
+</div>
+</nav>
+<div class="wrapper">
+    <div class="page-header clear-filter" filter-color="orange">
+            <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('https://www.setwalls.ru/large/201305/52796.jpg');">
+        
+            </div>
+            
+            <div class="container">
+              <div class="content-center brand">
+                  <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% >
+                  <br>
+                  <br>
+                  <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
+                  <h3>Admin Page</h3>
+                  
+              </div>
+             
+          </div>
+          </div>
+</div>    
+      
+<div class="section">    
+    <div id="data" style="height:700px;
+            
+            background-size: cover; 
+            background-position: top center; 
+            min-height: 700px;
+            color:white;
+            font-family:Helvetica;
+            font-size:25px;
+            ">
+              
+               <div class="list-group users-list">
+                  <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="row">
+                         <div class="col col-md-2 image-col">
+                              <img class="image" [src]="item.payload.doc.data().img1">
+                          </div>
+                          <div class="col col-md-8 text-col">
+                            
+                            
+                                
+                              <h5 class="mb-1">{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h5>
+                              <small>City: {{item.payload.doc.data().city}}</small>
+                          </div>
+                          <!--<div class="col col-md-2 actions-col">-->
+                            <button class="btn btn-primary" (click)="open(classic,'' , '')">
+                                View profile
+                               </button>
+                               <ng-template #classic let-c="close" let-d="dismiss">
+                                   <div class="modal-header justify-content-center">
+                                       <button type="button" class="close" (click)="d('Cross click')">
+                                           <i class="now-ui-icons ui-1_simple-remove"></i>
+                                       </button>
+                                       <h4 class="title title-up">{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h4>
+                                   </div>
+                                   <div class="modal-body">
+                                      
+                                     <p>{{item.payload.doc.data().position}} </p>
+                                     <p>{{item.payload.doc.data().city}} </p>
+                                     <p>{{item.payload.doc.data().years}} </p>
+                                   </div>
+                                   <div class="modal-footer">
+                                       <button type="button" class="btn btn-default" (click)="Createdoc(item.payload.doc.id)" >Accept</button>
+                                       <button type="button" class="btn btn-danger" (click)="c('Close click')">Reject</button>
+                                   </div>
+                               </ng-template>
+                           <!--</div>-->
+                      </div>
+                  </div>
+              </div>
+>>>>>>> Stashed changes
   
                                           <ng-template ngbSlide>
                                                   <img class="d-block" src="assets/img/header.jpg" alt="Fifth slide">
@@ -80,6 +217,7 @@
                     </div>    
                 </div>        
             </div>
+<<<<<<< Updated upstream
    
 
 
@@ -153,3 +291,46 @@
   </footer>
 </div>
 
+=======
+                    
+</div>
+   
+<app-afooter></app-afooter>
+    <!-- <footer class="footer footer-default">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/about-us">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                            MIT License
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                &copy;
+                {{data | date: 'yyyy'}}, Designed by
+                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer> -->
+ 
+  
+  
+>>>>>>> Stashed changes

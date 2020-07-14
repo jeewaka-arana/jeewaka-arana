@@ -1,0 +1,391 @@
+
+<div class="wrapper">
+  <div class="page-header clear-filter" filter-color="orange">
+      <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('https://www.setwalls.ru/large/201502/74966.jpg');">
+      
+      </div>
+          
+      <div class="container">
+        <div class="content-center brand">
+                <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% ><br><br>
+                <h1 class="h1-seo">Welcome to Blog Page</h1>
+                <h3>Home page</h3>                
+        </div>
+           
+      </div>
+  </div>
+</div>  
+<div class="section-story-overview"> 
+  <h1 class="title text-center">Articles & Photos</h1>
+ 
+   
+  <div class="row">
+
+    <div class="col-4">
+    <table *ngIf="a" >
+      <tr *ngFor="let i of row">
+          <td *ngIf="a[2*i]">
+              <div class="imagebox" width="100%" height="100">
+               <h3  class="title">{{a[2*i].title}}</h3>
+                  <img [src]="a[2*i].imageUrl" class="img-fluid">
+                  
+              </div>
+          </td>
+          <td *ngIf="a[2*i+1]">
+              <div class="imagebox" width="100%" height="100">
+                <h3 class="title">{{a[2*i+1].title}}</h3>
+                  <img [src]="a[2*i+1].imageUrl" class="img-fluid">
+                 
+              </div>
+          </td>       
+      </tr>
+    </table>
+    </div>
+
+    <div class="col-8">
+   
+      <div *ngIf="results" >
+    <ul *ngFor="let rowa of rowa">
+      <div class="row">
+        <div class="col-6"  *ngIf="results[rowa*2]" >
+          <ul  class="articles">
+            <li>
+              <article>
+                <div class="article-media"></div>
+                <div class="l-pad-content">
+                  <div class="font-weight-bolder">
+                  <h3 class="title">{{results[rowa*2].title}}</h3>
+                  </div>
+            
+                 
+                </div>
+              </article>
+            </li>
+        
+       
+      <button class="button button1" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;color: white; padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;" (click)="open(classic,'' , '')">View</button>   
+  <ng-template #classic let-c="close" let-d="dismiss">
+    <div class="modal-header justify-content-center">
+        <button type="button" class="close" (click)="d('Cross click')">
+            <i class="now-ui-icons ui-1_simple-remove"></i>
+        </button>
+       
+              <h4 class="title title-up">{{results[rowa*2].title}}</h4>
+          </div>
+          <div class="modal-body">
+            <img [src]="results[rowa*2].imageUrl" class="img-fluid">    
+            <p>{{results[rowa*2].description}} </p>
+          
+        </div>
+        <div class="modal-footer">
+       
+          <button type="button" class="btn btn-primary" (click)="c('Close click')">close</button>
+      </div>
+      </ng-template>
+    
+   
+         </ul>
+  </div> 
+  <div class="col-6"  *ngIf="results[rowa*2+1]" >
+    <ul  class="articles">
+      <li>
+        <article>
+          <div class="article-media"></div>
+          <div class="l-pad-content">
+            <div class="font-weight-bolder">
+            <h3 class="title">{{results[rowa*2+1].title}}</h3>
+            </div>
+      
+           
+          </div>
+        </article>
+      </li>
+  
+ 
+<button class="button button1" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;color: white; padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;" (click)="open(classic,'' , '')">View</button>   
+  
+    <ng-template #classic let-c="close" let-d="dismiss">
+        <div class="modal-header justify-content-center">
+          <button type="button" class="close" (click)="d('Cross click')">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+          </button>
+        
+              <h4 class="title title-up">{{results[rowa*2+1].title}}</h4>
+        </div>
+        <div class="modal-body">
+              <img [src]="results[rowa*2+1].imageUrl" class="img-fluid">    
+              <p>{{results[rowa*2+1].description}} </p>
+        </div>
+        <div class="modal-footer">
+        
+            <button type="button" class="btn btn-primary" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+
+
+   </ul>
+</div> 
+</div>  
+</ul>
+
+</div>
+
+    </div> 
+  </div>
+</div>
+<div class="section">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <p>we will reply to your questions that have about the ayurveda </p>
+      <button class="btn btn-primary btn-round btn-block btn-lg" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      background-color: rgb(240, 127, 22);
+      color: white; padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;" (click)="open(classic,'' , '')">Add Your Question Here</button>  
+       <button class="btn btn-primary btn-round btn-block btn-lg" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+       background-color: rgb(240, 127, 22);
+       color: white; padding: 15px 32px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       font-size: 16px;
+       margin: 4px 2px;
+       cursor: pointer;
+       -webkit-transition-duration: 0.4s; /* Safari */
+       transition-duration: 0.4s;" (click)="toggleDisplay()">View all the question</button>  
+     
+   
+      <ng-template #classic let-c="close" let-d="dismiss">  
+          <div class="modal-header justify-content-center">
+            <button type="button" class="close" (click)="d('Cross click')">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+          </button>
+            <h4 class="title title-up" >Add yor question here</h4>
+          </div>
+          <div class="modal-body" >
+            <input type="text" name="name"  class="form-control" #fullName="ngModel" [(ngModel)]="name" placeholder="name" required><!--#fullName="ngModel" [(ngModel)]="arti.title"-->
+        
+            <textarea type="text" name="comment"  rows="10" cols="100" class="form-control" #fullName="ngModel" [(ngModel)]="comm" placeholder="comment" ></textarea><!--#fullName="ngModel"  [(ngModel)]="arti.description"-->
+                              
+                          
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" (click)="Comment()" >Save</button><!--(click)="" Createdoc(item.payload.doc.id)-->
+              <button type="button" class="btn btn-primary" (click)="c('Close click')">close</button>
+          </div>
+      </ng-template>
+
+    </div>
+  </div>
+</div>
+<div *ngIf="isShow" class="myDiv" >
+  <div class="section">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+      <ul *ngFor="let res of res">
+        <ul class="articles">
+          <li>       
+            <article>
+              <div class="article-media"></div>
+              <div class="text-center border border-light p-5">
+                <div class="row">
+                  
+                  <div class="col-4">
+                    <p class="title">{{res.name}}</p>
+                  </div>
+                  <div class="col-4">
+                <p class="title">{{res.comment}} </p>
+                  </div>
+                  <div class="col-4" *ngIf="res.replycomment">
+                    <p class="title" style="color: red;">reply:</p>
+                    <p class="title">{{res.replycomment}} </p> 
+                  
+                  </div>
+                </div>
+              </div>
+              
+            </article>
+          </li>
+        </ul>
+      
+        <!-- END articles -->
+      </ul>
+    </div>
+      
+    </div>
+  </div>
+</div>
+
+<footer style="background-color: #E8E0D4 ;" class="page-footer font-small stylish-color-dark pt-4">
+  <!-- #FFFCCF #cfcfc5 #E5D0C2 #E8E0D4  -->
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Jeewaka Arana</h5>
+        <p>Jeewaka Arana is a platform committed to delivering exceptional
+           services of traditional medicine in Sri Lanka across a range of specialties.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">For Patients</h5>
+
+        <ul class="list-unstyled">
+          <li>
+             <a href="/signup/sign-patient">Find a Doctor</a>
+          </li>
+          <li>
+            <a href="/signup/sign-patient">Book appointment</a>
+          </li>
+          <li>
+            <a href="/signup/sign-patient">List appointments</a>
+          </li>
+          <li>
+            <a href="/signup/sign-patient">Cancel appointment</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">For Doctors</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/signup/sign-doctor">Doctor Profile</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">More</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">About Us</a>
+          </li>
+          <li>
+            <a href="#!">Contact Us</a>
+          </li>
+          <li>
+            <a href="#!">Blog</a>
+          </li>
+          <li>
+            <a href="#!">Help Center</a>
+          </li>
+          <li>
+              <a href="#!">Terms & Conditions</a>
+            </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- <hr> -->
+
+  <!-- Call to action -->
+  <!-- <ul class="list-unstyled list-inline text-center py-2">
+    <li class="list-inline-item">
+      <h5 class="mb-1">Register for free</h5>
+    </li>
+    <li class="list-inline-item">
+      <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+    </li>
+  </ul> -->
+  <!-- Call to action -->
+
+  <hr>
+
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center">
+    <li class="list-inline-item">
+      <a class="btn-floating btn-fb mx-1">
+        <i class="fab fa-facebook-f"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-tw mx-1">
+        <i class="fab fa-twitter"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-gplus mx-1">
+        <i class="fab fa-google-plus-g"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-li mx-1">
+        <i class="fab fa-linkedin-in"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-dribbble mx-1">
+        <i class="fab fa-dribbble"> </i>
+      </a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="#"> JeewakaArana.lk</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>

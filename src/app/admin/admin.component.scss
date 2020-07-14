@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 .ul li{
     padding:20px;
     border-bottom:2px solid grey;
@@ -7,3 +8,159 @@
     background:#c0392b;
     color:white;
 }
+=======
+
+.form-signin {
+    max-width: 380px;
+    padding: 5px 35px 30px;
+    margin: 0 auto;
+   
+  
+    .form-signin-heading,
+      .checkbox {
+        margin-bottom: 30px;
+      }
+  
+      .checkbox {
+        font-weight: normal;
+      }
+  
+      .form-control {
+        position: relative;
+        font-size: 13px;
+        height: auto;
+        padding: 15px;
+       
+  
+        
+  
+          
+  
+          &:focus {
+            z-index: 2;
+            background-color: #ffffff31
+          }
+      }
+  
+      
+            
+  
+      
+  }
+  
+  .inputdiv{
+   padding-bottom: 20px;
+  }
+  
+  input.form-control{
+      width: 24.9em;
+      margin-left: 32%;
+      padding:20px;
+      border-radius: 5px;
+      
+  }
+  nb-sidebar {
+    width: 500px;
+  }
+  nb-card {
+    width: 1100px;
+  }
+  nb-card nb-icon {
+    float: right;
+    font-size: 2rem;
+    margin-left: 50px;
+  }
+  nb-list {
+    width: 600px;
+  }
+  button-filled-basic-background-color {
+    background-color: #edf1f7;
+  }
+  nb-list nb-list-item {
+    width: 600px;
+  }
+  ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: baseline;
+  }
+  ul li {
+    width: 100%;
+    padding: 10px;
+    color: #0b0c0e;
+    align-items: baseline;
+  }
+  #sid {
+    margin-top: auto;
+    margin-left: 10px;
+    text-align: right;
+    border-radius: 25px;
+    width: 600px;
+    float: right;
+    padding: 10px 10px;
+  }
+  #rid {
+    margin-top: auto;
+    margin-left: 10px;
+    border-radius: 25px;
+    width: 600px;
+    padding: 10px 10px;
+  }
+  #rcontent {
+    margin-top: auto;
+    margin-left: 10px;
+    border-radius: 25px;
+    padding: 10px 10px;
+    max-width: 300px;
+    word-break: break-all;
+    text-align: left;
+  }
+  #scontent {
+    margin-top: auto;
+    margin-left: 10px;
+    border-radius: 25px;
+    padding: 10px 10px;
+    max-width: 300px;
+    word-break: break-all;
+    text-align: left;
+  }
+  #stime {
+    text-align: left;
+  }
+  #rtime {
+    text-align: right;
+  }
+  #image {
+    border-radius: 5%;
+  }
+  #avatar {
+    float: left;
+    max-width: 40px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  .msg_card_body {
+    width: 1100px;
+    height: 600px;
+    overflow-y: auto;
+  }
+  .type_msg {
+    border-top: 1px solid #c4c4c4;
+    position: relative;
+  }
+  
+  #A {
+    position: fixed;
+  }
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+>>>>>>> Stashed changes

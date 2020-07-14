@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="wrapper">
     <div class="page-header page-header-small" filter-color="orange">
         <div class="page-header-image rellax-header" data-rellax-speed="-8"
@@ -160,3 +161,153 @@
         </div>
     </footer>
 </div>
+=======
+
+<div *ngIf="2>1">
+  <!--bck image-->
+<div class="wrapper">
+        <div class="page-header clear-filter" filter-color="orange">
+                <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('https://www.setwalls.ru/large/201306/57759.jpg');">
+            
+                </div>
+                
+                <div class="container">
+                  <div class="content-center brand">
+                      <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% >
+                      <br>
+                      <br>
+                      <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
+                      <h3>Admin Page</h3>
+                      
+                  </div>
+                 
+              </div>
+              </div>
+              </div>
+  </div>
+  <!--adding articles part-->
+<div class="col text-center">
+    <h3 class="title">To Upload articles </h3>
+    
+<button class="button button1" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;color: white; padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;"><a routerLink="/articles">Upload articles</a></button>                    
+    </div>
+
+  
+    <div class="section-story-overview">
+        <h2 class="title text-center">Articles</h2>
+        <div class="container">
+      <div class="row">
+          <div class="column">
+          <ul *ngFor="let results of results">
+            <ul class="articles">
+              <li>
+                <article>
+                  <div class="article-media"></div>
+                  <div class="l-pad-content">
+                    
+                    <h1>{{results.title}}</h1>
+                
+                   
+                  </div>
+                </article>
+              </li>
+            </ul>
+            
+            <button class="button button1" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;color: white; padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;" (click)="open(classic,'' , '')">View</button>   
+        <ng-template #classic let-c="close" let-d="dismiss">
+          <div class="modal-header justify-content-center">
+              <button type="button" class="close" (click)="d('Cross click')">
+                  <i class="now-ui-icons ui-1_simple-remove"></i>
+              </button>
+              <!-- <div class="article-media"></div>
+                <div class="l-pad-content">
+                  <div class="panel-heading"><h5 class="title">{{results.title}}</h5>
+                  </div>
+                  <div class="panel-body">
+                  <p>{{results.description}} </p>
+                  </div>-->
+                    <h4 class="title title-up">{{results.title}}</h4>
+                </div>
+                <div class="modal-body">
+                  <img [src]="results.imageUrl" class="img-fluid">    
+                  <p>{{results.description}} </p>
+                 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="open(classic,'' , '')">Update</button><!--(click)="" Createdoc(item.payload.doc.id)-->
+                    <ng-template #classic let-c="close" let-d="dismiss">
+                      <div class="modal-header justify-content-center">
+                          <button type="button" class="close" (click)="d('Cross click')">
+                              <i class="now-ui-icons ui-1_simple-remove"></i>
+                          </button>
+                                <h4 class="title title-up" name="tit" contenteditable="true"  #fullName="ngModel" [(ngModel)]="tit" >{{results.title}}</h4>
+                            </div>
+                            <div class="modal-body" >
+                                
+                                 <p contenteditable="true" name="descript" #fullName="ngModel" [(ngModel)]="descript">{{results.description}}</p>    
+                                 <img [src]="results.imageUrl" class="img-fluid">                     
+                                            
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" (click)="Createdoc(results.id)">Save</button><!--(click)="" Createdoc(item.payload.doc.id)-->
+                                
+                                <button type="button" class="btn btn-primary" (click)="c('Close click')">Cancel</button>
+                            </div>
+                        </ng-template>
+                    <button type="button" class="btn btn-danger" (click)="Delete()">Delete </button>
+                    <button type="button" class="btn btn-primary" (click)="c('Close click')">Cancel</button>
+                </div>
+            </ng-template>
+          
+            <!-- <ng-template #classic let-c="close" let-d="dismiss">
+                                   <div class="modal-header justify-content-center">
+                                       <button type="button" class="close" (click)="d('Cross click')">
+                                           <i class="now-ui-icons ui-1_simple-remove"></i>
+                                       </button>
+                                       <h4 class="title title-up">{{item.payload.doc.data().firstName}} {{item.payload.doc.data().lastName}}</h4>
+                                   </div>
+                                   <div class="modal-body">
+                                      
+                                     <p>{{item.payload.doc.data().position}} </p>
+                                     <p>{{item.payload.doc.data().city}} </p>
+                                     <p>{{item.payload.doc.data().years}} </p>
+                                   </div>
+                                   <div class="modal-footer">
+                                       <button type="button" class="btn btn-default" (click)="Createdoc(item.payload.doc.id)" >Accept</button>
+                                       <button type="button" class="btn btn-danger" (click)="c('Close click')">Reject</button>
+                                   </div>
+                               </ng-template>-->
+         
+    
+       
+            <!-- END articles -->
+          </ul>
+
+          </div>
+        </div>
+      </div>
+      
+  </div>
+  
+
+ <!-- <app-afooter></app-afooter>-->
+
+ 
+  
+>>>>>>> Stashed changes

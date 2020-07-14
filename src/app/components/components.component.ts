@@ -1,8 +1,20 @@
 import { Component, OnInit, Renderer, OnDestroy } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFirestore,  AngularFirestoreCollection} from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+import { Observable} from 'rxjs/Rx';
 import * as Rellax from 'rellax';
+export interface articleif{
+    title:String;
+    description:String;
+    Doctorname:String;
+    imageUrl:String;
+    date:Date;
+    category:String;
+    comment:String;
 
+}
 @Component({
     selector: 'app-components',
     templateUrl: './components.component.html',
@@ -14,15 +26,22 @@ import * as Rellax from 'rellax';
     `]
 })
 
+   
+  
 export class ComponentsComponent implements OnInit, OnDestroy {
     data : Date = new Date();
-
+    private ArticleImg:AngularFirestoreCollection<articleif>;
+    artclesimg:Observable<articleif[]>;
     page = 4;
     page1 = 5;
     page2 = 3;
     focus;
     focus1;
     focus2;
+    results:any[]=[];
+    row:any[];
+    a:any[]=[];
+    r:any[];
 
     date: {year: number, month: number};
     model: NgbDateStruct;
@@ -33,7 +52,7 @@ export class ComponentsComponent implements OnInit, OnDestroy {
 
     state_icon_primary = true;
 
-    constructor( private renderer : Renderer, config: NgbAccordionConfig) {
+    constructor( private renderer : Renderer,private afs: AngularFirestore, config: NgbAccordionConfig) {
         config.closeOthers = true;
         config.type = 'info';
     }
@@ -47,12 +66,24 @@ export class ComponentsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+<<<<<<< Updated upstream
       var rellaxHeader = new Rellax('.rellax-header');
 
         var navbar = document.getElementsByTagName('nav')[0];
         navbar.classList.add('navbar-transparent');
         var body = document.getElementsByTagName('body')[0];
         body.classList.add('index-page');
+=======
+        this.afs.collection("Article",ref => ref.where('selectAs','==','Article').limit(2)).valueChanges().subscribe(results => {
+            this.results = results;
+            this.row= Array.from(Array(Math.ceil(this.results.length/2)).keys());
+          })
+     
+          this.afs.collection("Article",ref => ref.where('selectAs','==','Photo')).valueChanges().subscribe(a=> {
+            this.a = a.map(item=>{return item;});
+            this.r= Array.from(Array(Math.ceil(this.a.length/2)).keys());    
+          })
+>>>>>>> Stashed changes
     }
     ngOnDestroy(){
         var navbar = document.getElementsByTagName('nav')[0];

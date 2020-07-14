@@ -1,0 +1,185 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-color "color-on-scroll="500">
+  <div class="container">
+    <img src="assets/img/herbalicon.png" height="30px" width="30px"  />
+      <div class="navbar-translate">
+          <a class="navbar-brand"  placement="bottom" >
+             
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+          <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link"   routerLink="/admin" >
+              <i class="now-ui-icons business_badge"></i>
+              <p>Articles</p>
+          </a>
+      </li>
+      <li class="nav-item">
+              <a class="nav-link"   routerLink="notification" >
+                  <i class="now-ui-icons business_badge"></i>
+                  <p>Notification</p>
+              </a>
+          </li>
+          <li class="nav-item">
+                  <a class="nav-link"   routerLink="/admin/docaccept" >
+                      <i class="now-ui-icons business_badge"></i>
+                      <p>Doctor Request</p>
+                  </a>
+          </li>
+          <li class="nav-item">
+                      <a class="nav-link"   routerLink="/admin/doclist" >
+                          <i class="now-ui-icons business_badge"></i>
+                          <p>Doctors List</p>
+                      </a>
+          </li>
+
+
+
+
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" >
+              <i class="now-ui-icons business_globe"></i>
+              <p>Change Language</p>
+          </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link btn btn-neutral" routerLink="/signup">
+            <i class="now-ui-icons arrows-1_share-66"></i>
+            <p>LogOut</p>
+        </a>
+    </li>
+    
+     
+    </ul>
+</div>
+</div>
+</nav>
+
+  <!--bck image-->
+<div class="wrapper">
+        <div class="page-header clear-filter" filter-color="orange">
+                <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('https://www.setwalls.ru/large/201305/34997.jpg');">
+                  
+                </div>
+                
+
+             <div class="container">
+              <div class="content-center brand">
+                <div class="card">
+                  <div class="card-content">
+                    <span class="card-title">
+                      Add your articles
+                    </span>
+                     <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">  
+                    <!--<form (ngSubmit)="onSubmit()" class="col s6">-->
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input type="text" name="title" #fullName="ngModel" [(ngModel)]="title" class="form-control" placeholder="title" required>
+                            <label>
+                              Title
+                            </label>
+
+                        </div>
+
+                        <div class="input-field col s6">
+                          <textarea type="text" name="description" #fullName="ngModel" [(ngModel)]="description" rows="10" cols="100" class="form-control" placeholder="description" ></textarea>
+                            <label>
+                              description
+                            </label>
+                        </div>
+                         
+                            <input type="submit" value="Submit" class="btn btn-primary btn-round btn-block btn-lg" (click)="onSubmit()">
+                          
+                       <!-- <input type="submit" value="Submit" class="btn">
+                      <input type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-round btn-block btn-lg" value="Send Message" (click)="addIssue()">-->
+                      </div>                     
+                    </form>                      
+                  </div>
+                </div>
+                
+             
+              
+            </div> 
+          </div>
+               <!-- <div class="container">
+                  <div class="content-center brand">
+                    <h2 class="title">Add your articles</h2>
+                          
+                    <div class="row">
+                        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">  
+                            <div class="form-group">
+                            <input name="title" #fullName="ngModel" [(ngModel)]="arti.title" class="form-control" placeholder="title" required>
+                            <div *ngIf="title.invalid && title.touched" class="validation-error">This field is required.</div>
+                          </div>
+                          <textarea name="description"[(ngModel)]="arti.title"  rows="10" cols="100">Add your description here.....</textarea>
+                          <br>
+                          <div class="form-group">
+                            <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+                          </div>
+                        </form>
+                      
+                </div> -->
+              
+                <!--<div class="content-center brand">
+                      <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% >
+                      <br>
+                      <br>
+                      <h1 class="h1-seo">Welcome to Jeewaka Arana</h1>
+                      <h3>Admin Page</h3>
+                      
+                  </div>-->
+                  <div class="col text-center">
+                    <h3 class="title">View Articles </h3>
+                    
+                <button class="button button1" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;color: white; padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        -webkit-transition-duration: 0.4s; /* Safari */
+                        transition-duration: 0.4s;"><a href="admin">view articles</a></button>                    
+                    </div> 
+                    <!--upload images-->
+                  <section>
+                  <!--<mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      crete post
+                    </mat-panel-title>
+                    <mat-expansion-panel-header>
+                  -->
+                  <div>
+                    <input type="file" name="file" id="file" (change)="uploadImage($event)">
+                    <!--<mat-progress-bar></mat-progress-ba>-->
+                    <!--<mat-progress-bar mode="determinate" value="40"></mat-progress-bar>-->
+                  </div>
+                    <!--<mat-form-field>-->
+                    <form>
+
+                      <input placeholder="Post Title" [(ngModel)]="Title"> 
+                    
+                    <br>
+                      <textarea placeholder="Post Content" [(ngModel)]="Content"> </textarea>
+                    </form>
+                    <br>
+                    <button  color="orange" (click)="createPost()" [disabled]="!Title||!Content">Create Post</button>
+                    
+
+
+
+                  </section>
+                </div> 
+              </div>
+
+  
+  

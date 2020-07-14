@@ -1,0 +1,213 @@
+<div class="wrapper">
+  <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('https://www.setwalls.ru/large/201305/52796.jpg');">
+      
+    </div>
+          
+    <div class="container">
+      <div class="content-center brand">
+          <img class="logo" src="assets/img/newlogo.png" alt="logo" height=27% width=27% >
+          <br>
+          <br>
+          <h1 class="h1-seo">Welcome to Admin Blog page</h1>
+          <h3>Admin Page</h3>
+                
+      </div>
+           
+    </div>
+  </div>
+</div>  
+
+<div class="section-story-overview">
+  <h1 class="title text-center"><br/>Articles & Photos</h1>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <button class="btn btn-primary btn-round btn-block btn-lg" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: rgb(248, 156, 9);
+      color: white; padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;" (click)="change()" > Upload your photos and articles here</button>   <!--<a href="/blogc">-->
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-4">
+      <h2 class="title text-center"><br/>Photos</h2>
+      <div class="section-story-overview">
+    
+      <ul *ngFor="let r of artclesimg|async">
+        <ul class="articles">
+          <div class="imagebox" width="100%" height="100">
+            <img [src]="r.imageUrl" class="img-fluid" (click)="open(classic,'' , '')">
+          </div>
+        </ul>
+            <ng-template #classic let-c="close" let-d="dismiss">
+              <div class="modal-header justify-content-center">
+                  <button type="button" class="close" (click)="d('Cross click')">
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                  </button>
+                       
+              </div>
+              <div class="modal-body">
+                      <div *ngIf="r.title"><h3 class="title">{{r.title}}</h3></div>
+                      <img [src]="r.imageUrl" class="img-fluid">         
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" (click)="Delete(r.id)">Delete</button>
+                     
+                  <button type="button" class="btn btn-primary" (click)="c('Close click')">Cancel</button>
+              </div>
+            </ng-template>
+    
+      </ul>
+      </div>
+    </div>
+    <div class="col-8">
+      <h2 class="title text-center"><br/>Articles</h2>
+      <div class="container">
+        
+        <ul *ngFor="let results of artcles|async">
+          <div class="row">
+            <div class="col-9">
+
+              <ul class="articles">
+                <li>
+                  <article>
+                    <div class="article-media"></div>
+                    <div class="l-pad-content">
+                      <h3 class="title">{{results.title}}</h3> 
+                    </div>
+                  </article>
+                </li>
+              </ul>
+              </div>
+              <div class="col-3">
+                <button class="btn btn-primary btn-block float-right" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;color: white; padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;" (click)="open(classic,'' , '')">View</button>   
+                <ng-template #classic let-c="close" let-d="dismiss">
+                  <div class="modal-header justify-content-center">
+                    <button type="button" class="close" (click)="d('Cross click')">
+                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                    </button>
+             
+                    <h4 class="title title-up" >{{results.title}}</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img [src]="results.imageUrl" class="img-fluid">    
+                    <p>{{results.description}} </p>
+                  
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" (click)="open(classic,'' , '')">Update</button>
+
+                      <!--*****update Section****-->
+                      <ng-template #classic let-c="close" let-d="dismiss">
+                        <div class="modal-header justify-content-center">
+                            <button type="button" class="close" (click)="d('Cross click')">
+                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                            </button>
+                            <div class="input-field col s6">
+                                <input type="text" placeholder="Edit title" [(ngModel)]="results.title" name="title">
+                            </div>
+                        </div>
+                        <div class="modal-body" >                         
+                              <textarea type="text"   rows="10" cols="50 "  [(ngModel)]="results.description" placeholder="Edit Description" ></textarea>                  
+                            
+                              
+                            <img [src]="results.imageUrl" class="img-fluid">                     
+                                              
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" (click)="Createdoc(results.id,results.title,results.description)">Save</button><!--(click)="" Createdoc(item.payload.doc.id)-->
+                                  
+                              <button type="button" class="btn btn-primary" (click)="c('Close click')">Cancel</button>
+                          </div>
+                      </ng-template>
+                      <button type="button" class="btn btn-danger" (click)="Delete(results.id)">Delete </button><!--results/${results.id}-->
+                      <button type="button" class="btn btn-primary" (click)="c('Close click')">Close</button>
+                  </div>
+                </ng-template>
+              </div>
+          </div>
+        </ul>
+    
+       
+      </div>
+    
+    </div>
+   
+  </div>
+  
+</div>
+
+
+<div class="row">
+  <div class="col-4">
+  </div>
+  <div class="col-4">
+    <button class="btn btn-primary btn-round btn-block btn-lg" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;
+    color: white; padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;" (click)="toggleDisplay()">View questions</button>  
+  </div>
+</div>
+
+
+<div *ngIf="isShow" class="myDiv" >
+  <div class="section">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+  
+      <ul *ngFor="let res of com|async" >
+        <div *ngIf="res.state=='0'">
+          <ul class="articles">
+            <li>          
+              <article>
+                <div class="article-media"></div><!--<div class="l-pad-content"></div>-->
+                
+                <div class="text-center border border-light p-5">
+                  <div class="row">                   
+                    <div class="col-4">
+                      <p class="title">{{res.name}}</p>
+                    </div>
+                    <div class="col-4">
+                  <p class="title">{{res.comment}} </p>
+                    </div>
+                    <div class="col-4">
+                          
+                        <button type="button" style="background-color: rgb(248, 125, 24)" (click)="displaysession()">reply</button>
+                        
+                      
+                    </div>
+                    <div *ngIf="isDisplay" class="myDiv" >
+                    
+                      <textarea type="text" name="comment"  rows="2" cols="100" class="form-control" #fullName="ngModel" [(ngModel)]="comm" placeholder="comment" ></textarea>
+                      <button type="button" class="btn btn-default" (click)="add(res.id)">Save</button>  
+                    </div> 
+                  </div>
+                </div>
+              </article>          
+            </li>
+          </ul>        
+        </div>
+        <!-- END articles -->
+      </ul>
+      
+      </div>
+      
+    </div>
+  </div>
+</div>

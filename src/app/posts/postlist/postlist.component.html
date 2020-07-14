@@ -1,0 +1,24 @@
+<!--post details are here-->
+<table *ngIf="imageList" >
+    <tr *ngFor="let i of rowIndexArray">
+        <td *ngIf="imageList[3*i]">
+            <div class="imagebox" width="100%" height="100">
+                <img [src]="imageList[3*i].imageUrl" class="img-fluid">
+                
+            </div>
+        </td>
+        <td *ngIf="imageList[3*i+1]">
+            <div class="imagebox" width="100%" height="100">
+                <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
+               
+            </div>
+        </td>
+        <td *ngIf="imageList[3*i+2]">
+            <div class="imagebox" width="100%" height="100">
+                <img [src]="imageList[3*i+2].imageUrl" class="img-fluid">
+               
+            </div>
+        </td>
+      
+    </tr>
+</table>

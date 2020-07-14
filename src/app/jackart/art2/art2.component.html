@@ -1,0 +1,124 @@
+<div class="container">
+    
+<div class="section-story-overview">
+      <h2 class="title text-center">Articles</h2>
+      <div class="container">
+    <div class="row">
+        <div class="column">
+          
+        <ul *ngFor="let results of results">
+          <ul class="articles">
+            <li>
+             
+              <article>
+                <div class="article-media"></div>
+                <div class="l-pad-content">
+                  <div class="panel-heading"><h5 class="title">{{results.title}}</h5>
+                  </div>
+                  <div class="panel-body">
+                  <p>{{results.description}} </p>
+                  </div>
+             
+                </div>
+              </article>
+            </li>
+          </ul>
+         
+          <!-- END articles -->
+        </ul>
+
+        </div>
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <button class="button button1" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color: orange;color: white; padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;" (click)="open(classic,'' , '')">Comments</button>  
+           
+          </div>
+        </div>
+       
+        <ng-template #classic let-c="close" let-d="dismiss">
+                      <div class="modal-header justify-content-center">
+                          <button type="button" class="close" (click)="d('Cross click')">
+                              <i class="now-ui-icons ui-1_simple-remove"></i>
+                          </button>
+                                <h4 class="title title-up" >Add yor comment here</h4>
+                            </div>
+                            <div class="modal-body" >
+                              <input type="text" name="name"  class="form-control" placeholder="name" required><!--#fullName="ngModel" [(ngModel)]="arti.title"-->
+                          <label>
+                            Title
+                          </label>
+                              <textarea type="text" name="comment"  rows="10" cols="100" class="form-control" placeholder="comment" ></textarea><!--#fullName="ngModel"  [(ngModel)]="arti.description"-->
+                                                 
+                                            
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" (click)="Comment(name,comment)" >Save</button><!--(click)="" Createdoc(item.payload.doc.id)-->
+                                
+                                <button type="button" class="btn btn-primary" (click)="c('Close click')">Cancel</button>
+                            </div>
+        </ng-template>
+       
+      </div>
+    </div>
+    
+</div>
+
+      
+  
+</div>
+
+<div class="section">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+    <ul *ngFor="let res of res">
+      <ul class="articles">
+        <li>
+      
+          <article>
+            <div class="article-media"></div>
+            <div class="l-pad-content">
+            </div>
+            <div class="text-center border border-light p-5">
+              <div class="row">
+                
+                <div class="col-4">
+                  <p>{{res.name}}</p>
+                </div>
+                <div class="col-4">
+              <p>{{res.comment}} </p>
+            </div>
+            <div class="col-4">
+                
+              <button type="button" style="background-color: rgb(248, 24, 24)" (click)="toggleDisplay()">reply</button>
+              <div *ngIf="isShow">
+                <div class="modal-body" >
+                  <input type="text" name="replycomment"  class="form-control" placeholder="replycomment" required><!--#fullName="ngModel" [(ngModel)]="arti.title"-->
+              
+          </div>
+            </div>
+          </div>
+            </div>
+         </div>
+            
+          </article>
+        </li>
+      </ul>
+     
+      <!-- END articles -->
+    </ul>
+  </div>
+    
+    </div>
+
+</div>

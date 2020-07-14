@@ -14,6 +14,12 @@ import { ComponentsComponent } from './components.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalBasic } from './modal/modal.component';
 import { NavbarComponent } from './navbar/navbar.component';
+<<<<<<< Updated upstream
+=======
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { UfooterComponent } from './ufooter/ufooter.component';
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -23,8 +29,8 @@ import { NavbarComponent } from './navbar/navbar.component';
         NgbModule,
         NouisliderModule,
         RouterModule,
-        JwBootstrapSwitchNg2Module
-      ],
+        JwBootstrapSwitchNg2Module,
+     ],
     declarations: [
         ComponentsComponent,
         BasicelementsComponent,
@@ -33,7 +39,17 @@ import { NavbarComponent } from './navbar/navbar.component';
         NucleoiconsComponent,
         NotificationComponent,
         NgbdModalBasic,
+<<<<<<< Updated upstream
         NavbarComponent
+=======
+        NavbarComponent,
+        AboutUsComponent,
+        ContactUsComponent,
+        UfooterComponent,
+      
+        
+        
+>>>>>>> Stashed changes
         
     ],
     exports:[ ComponentsComponent ]

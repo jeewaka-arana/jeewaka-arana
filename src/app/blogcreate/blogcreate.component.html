@@ -1,0 +1,76 @@
+<div  style="background-color: peachpuff;">
+  
+  <div class="container" style="background-color: peachpuff;">
+    <div class="row">
+      <div class="col-20"></div>
+      
+      <div class="col-50">
+        <h2 class="title text-center"><br/>Upload Your Article Or Photo Here</h2>
+        <div class="card" style="border: orangered;" >
+          <div class="card-body">
+           
+            <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+              <div class="text-center">
+                 
+                <img [src]="imgSrc" width="750px" height="500px" (click)="fileUploader.click()">
+              </div>
+              <div class="form-group">
+                <label>Select image to upload</label>
+                <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageURL" (change)="showPreview($event)">
+                <div class="text-danger" *ngIf="isSubmitted && formControls.imageURL.errors?.required">This fiels is required</div>
+                  
+              </div>
+                
+              
+              <div class="form-group">
+                <input class="form-control"   formControlName="title" placeholder="Title">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <div class="input-field col s6">
+                    <textarea type="text"   rows="10" cols="100 " class="form-control" formControlName="description" placeholder="Description" ></textarea>                  
+                  </div>  
+                </div>
+              </div>
+          
+              <div class="form-group">
+                <select class="form-control" formControlName="selectAs" placeholder="Article/Photo">
+                  <option value="Article" selected>Article</option>
+                 
+                  <option value="Photo" selected>Photo</option>
+                </select>
+                
+              </div>
+              <div class="form-group">
+                
+                  <select class="form-control" formControlName="category" placeholder="category">
+                    
+                    <option value="Ayurvedic-nature" selected>Ayurvedic-nature</option>
+                    <option value="Diseases" selected>Diseases</option>
+                    <option value="Other" selected>Other</option>
+                    
+                  </select>
+                  
+              </div>
+            
+              <div class="form-row">
+                
+                <div class="form-group">
+                  <a href="/blog2c" class="btn btn-primary btn-block float-right">Go to gallery</a>
+                </div>
+                <div class="form-group">
+                  <button  type="submit" class="btn btn-success btn-block float-right">Submit</button>
+                </div>
+            
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+  </div>
+</div>
+    
+

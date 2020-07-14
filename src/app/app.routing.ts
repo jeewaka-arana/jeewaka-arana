@@ -35,9 +35,29 @@ import { DocLoginComponent } from './userlogin/doc-login/doc-login.component';
 import { PatLoginComponent } from './userlogin/pat-login/pat-login.component';
 import { DoclistComponent } from './admin/doclist/doclist.component';
 import { EditprofileComponent } from './admin/editprofile/editprofile.component';
+<<<<<<< Updated upstream
 import { DocviewComponent } from './admin/doclist/docview/docview.component';
 import { ImagelistComponent } from './admin/imagelist/imagelist.component';
 import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
+=======
+//import { DocviewComponent } from './admin/doclist/docview/docview.component';
+//import { ImagelistComponent } from './admin/imagelist/imagelist.component';
+//import { AdminloginComponent } from './userlogin/adminlogin/adminlogin.component';
+import { DocacceptComponent } from './admin/docaccept/docaccept.component';
+import { ArticlesComponent } from './admin/articles/articles.component';
+import { NotificationComponent } from './admin/notification/notification.component';
+import{TimepickComponent} from '../app/doctor/timepick/timepick.component';
+import{FirstpageComponent} from '../app/doctor/firstpage/firstpage.component';
+import { JackartComponent } from './jackart/jackart.component';
+import { Art2Component } from './jackart/art2/art2.component';
+import { PostsComponent } from './posts/posts.component';
+//import{AboutUsComponent} from '../app/components/about-us/about-us.component';
+//import{ ContactUsComponent} from '../app/components/contact-us/contact-us.component';
+import { PostlistComponent } from './posts/postlist/postlist.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogcreateComponent } from './blogcreate/blogcreate.component';
+import { Blog2cComponent } from './blog2c/blog2c.component';
+>>>>>>> Stashed changes
 
 const routes: Routes =[
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -79,12 +99,60 @@ const routes: Routes =[
     { path: 'test', component:TestComponent},
     { path: 'dlogin', component:DocLoginComponent},
     { path: 'plogin', component:PatLoginComponent},
+<<<<<<< Updated upstream
     {path:'image' ,component:ImageComponent,children:[
     {path:'upload',component:ImageComponent},//image/upload
     {path:'list',component:ImageListComponent}, 
     
     {path:'docview',component:DocviewComponent}
 ]},
+=======
+    { path: 'jackart', component:JackartComponent},
+    { path: 'jackart/art2', component:Art2Component},
+    { path: 'posts', component:PostsComponent},
+    { path: 'postlist', component:PostlistComponent},
+    { path: 'blog', component:BlogComponent},
+    { path: 'blogc', component:BlogcreateComponent},
+    { path: 'blog2c', component:Blog2cComponent},   
+
+
+{path:'master',component:DoctorprofilepageComponent},
+
+{path:'comment',component:CommentComponent},
+    { path: 'googlemap/:City', component:GooglemapComponent},
+    { path: 'star' , component:StarreviewComponent },
+    
+    
+//     {path:'image' ,component:ImageComponent,children:[
+//     {path:'upload',component:ImageComponent},//image/upload
+//     {path:'list',component:ImageListComponent}   ,
+      
+// ]},
+
+// {path:'notepad',component:NotepadComponent},
+{path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent},
+{path:'adsearch',component:AdvancedsearchComponent},
+
+ {path:'reaction',component:ReactionComponent},
+ 
+ {path:'t',component:TComponent},
+ 
+{path:'complain',component:AddComplainsComponent},
+{path:'deletecomment',component:DeleteCommentComponent},
+{path:'bothcomment',component:BothCommentPageComponent},
+{path:'docAppoinment',component:DocAppoinmentComponent},
+{path:'docAppoinment/:id',component:DocAppoinmentComponent},
+{path:'viewappoinment',component:ViewappoinmentComponent},
+{path:'timePicker',component:TimeComponent},
+{path:'report',component:ReportComponent},
+{path:'articles',component:ArticlesComponent},
+{path:'admin/notification',component:NotificationComponent},
+
+
+
+{path:'time',component:TimepickComponent},
+{path:'fpage',component:FirstpageComponent},
+>>>>>>> Stashed changes
 
 {path:'notepad',component:NotepadComponent},
 {path:'doctor/doctorprofilepage',component:DoctorprofilepageComponent}
