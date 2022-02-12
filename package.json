@@ -29,7 +29,7 @@
     "@types/hammerjs": "^2.0.36",
     "@types/jquery": "^3.3.31",
     "@types/lodash": "^4.14.144",
-    "ajv": "6.10.0",
+    "ajv": "6.12.3",
     "ajv-keywords": "3.4.0",
     "angular-plotly.js": "^1.4.2",
     "aos": "^2.3.4",
