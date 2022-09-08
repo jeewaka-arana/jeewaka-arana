@@ -46,7 +46,7 @@
     "igniteui-angular": "^7.3.20",
     "jquery": "^3.4.1",
     "jspdf": "^1.5.3",
-    "jszip": "^3.1.5",
+    "jszip": "^3.7.0",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "lesshat": "^4.1.0",
     "minireset.css": "~0.0.4",
